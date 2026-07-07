@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Target Date Factor Automator</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="glow-bg glow-1"></div>
+  <div class="glow-bg glow-2"></div>
+  
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand">
+        <div class="logo-icon">
+          <i data-lucide="zap"></i>
+        </div>
+        <div>
+          <h1>Target Date Factor Automator</h1>
+          <p>Generate, validate, and export rules directly to Google Sheets</p>
+        </div>
+      </div>
+      <div class="system-status">
+        <span class="status-indicator"></span>
+        <span>Local Engine Ready</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="dashboard-container">
+    <div class="sidebar-column">
+      <!-- UNIFIED SIDEBAR CARD -->
+      <section class="card sidebar-card">
+        <!-- Tab Navigation Switcher -->
+        <div class="sidebar-tabs">
+          <button class="tab-btn active" data-tab="tab-rules">
+            <i data-lucide="sliders"></i>
+            <span>Rule Parameters</span>
+          </button>
+          <button class="tab-btn" data-tab="tab-calc">
+            <i data-lucide="calculator"></i>
+            <span>TDF Calculator</span>
+          </button>
+        </div>
+
+        <!-- Tab 1: Rules Form -->
+        <div class="tab-content active" id="tab-rules">
+          <form id="rule-form" novalidate>
+            <!-- Hotel ID -->
+            <div class="form-group">
+              <label for="hotel-ids">
+                Hotel ID(s) <span class="required">*</span>
+                <span class="tooltip-icon" title="Enter one or more 7-digit hotel IDs separated by commas or newlines. Format: ID: multiplier (e.g. 0050789: 1.15) to set custom multipliers.">
+                  <i data-lucide="help-circle"></i>
+                </span>
+              </label>
+              <textarea id="hotel-ids" placeholder="e.g. 2033589: 1.15, 2033590" rows="2" required></textarea>
+              <div class="error-msg" id="hotel-ids-error">Hotel ID must be a 7-digit number (or ID: multiplier format).</div>
+              <div class="hint">Separate multiple IDs with commas/newlines. Format: <code>ID: multiplier</code> (e.g. <code>0050789: 1.15</code>) for custom factors.</div>
+            </div>
+
+            <!-- Rule Type -->
+            <div class="form-group">
+              <label for="rule-type">Rule Type</label>
+              <select id="rule-type">
+                <option value="targetDate">targetDate</option>
+              </select>
+            </div>
+
+            <!-- Date Range -->
+            <div class="form-group">
+              <label>Date Range <span class="required">*</span></label>
+              <div class="date-range-inputs">
+                <div class="date-input-wrapper">
+                  <span class="date-label">Start</span>
+                  <input type="date" id="start-date" required>
+                </div>
+                <div class="date-input-wrapper">
+                  <span class="date-label">End</span>
+                  <input type="date" id="end-date" required>
+                </div>
+              </div>
+              <div class="error-msg" id="date-range-error">Start date cannot be after end date.</div>
+              
+              <!-- Date Helpers -->
+              <div class="date-helpers">
+                <button type="button" class="btn btn-helper" data-period="today">Today</button>
+                <button type="button" class="btn btn-helper" data-period="tomorrow">Tomorrow</button>
+                <button type="button" class="btn btn-helper" data-period="weekend">This Weekend</button>
+                <button type="button" class="btn btn-helper" data-period="next7">Next 7 Days</button>
+              </div>
+            </div>
+
+            <!-- Pricing Modifiers -->
+            <div class="form-row">
+              <div class="form-group col">
+                <label for="multiplier">
+                  Multiplier <span class="required">*</span>
+                </label>
+                <div class="input-prefix-wrapper">
+                  <span class="input-prefix">×</span>
+                  <input type="number" id="multiplier" step="0.01" min="0.01" value="1.30" required>
+                </div>
+                <div class="error-msg" id="multiplier-error">Enter a numeric value up to 2 decimal places.</div>
+              </div>
+
+              <div class="form-group col">
+                <label for="addition">Addition (Optional)</label>
+                <div class="input-prefix-wrapper">
+                  <span class="input-prefix">+</span>
+                  <input type="number" id="addition" step="0.01" placeholder="e.g. 10.00">
+                </div>
+              </div>
+            </div>
+
+            <!-- Price Range Modifiers -->
+            <div class="form-row">
+              <div class="form-group col">
+                <label for="start-price">Min Price (Optional)</label>
+                <input type="number" id="start-price" step="0.01" placeholder="Start Price">
+              </div>
+
+              <div class="form-group col">
+                <label for="end-price">Max Price (Optional)</label>
+                <input type="number" id="end-price" step="0.01" placeholder="End Price">
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">
+              <i data-lucide="plus-circle"></i>
+              <span>Generate Rule Rows</span>
+            </button>
+          </form>
+        </div>
+
+        <!-- Tab 2: Calculator -->
+        <div class="tab-content" id="tab-calc">
+          <div class="form-group">
+            <label for="calc-ask-price">Ask Price <span class="required">*</span></label>
+            <input type="number" id="calc-ask-price" placeholder="e.g. 5000" step="0.01" required>
+          </div>
+
+          <div class="form-group">
+            <label for="calc-flexibility">Flexibility</label>
+            <select id="calc-flexibility">
+              <option value="flex">Flex (divided by 0.72)</option>
+              <option value="non-flex">Non-Flex (divided by 0.69)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>P-Values (P0 to P5)</label>
+            <div class="p-values-grid">
+              <div class="p-val-col">
+                <label for="calc-p0">P0</label>
+                <input type="number" id="calc-p0" placeholder="P0" step="1">
+              </div>
+              <div class="p-val-col">
+                <label for="calc-p1">P1</label>
+                <input type="number" id="calc-p1" placeholder="P1" step="1">
+              </div>
+              <div class="p-val-col">
+                <label for="calc-p2">P2</label>
+                <input type="number" id="calc-p2" placeholder="P2" step="1">
+              </div>
+            </div>
+            <div class="p-values-grid" style="margin-top: 10px;">
+              <div class="p-val-col">
+                <label for="calc-p3">P3</label>
+                <input type="number" id="calc-p3" placeholder="P3" step="1">
+              </div>
+              <div class="p-val-col">
+                <label for="calc-p4">P4</label>
+                <input type="number" id="calc-p4" placeholder="P4" step="1">
+              </div>
+              <div class="p-val-col">
+                <label for="calc-p5">P5</label>
+                <input type="number" id="calc-p5" placeholder="P5" step="1">
+              </div>
+            </div>
+          </div>
+
+          <div id="calc-results-section" style="margin-top: 16px; display: none;">
+            <h3 style="font-size: 0.9rem; margin-bottom: 8px; color: var(--text-secondary);">Calculated Factors:</h3>
+            <div class="calc-results-table-wrapper">
+              <table class="calc-results-table">
+                <thead>
+                  <tr>
+                    <th>Tier</th>
+                    <th>Value</th>
+                    <th>TDF Factor</th>
+                    <th width="40">Use</th>
+                  </tr>
+                </thead>
+                <tbody id="calc-results-body">
+                  <!-- Calculated rows will go here -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- LIVE PREVIEW TABLE CARD -->
+    <section class="card preview-card">
+      <div class="card-header preview-header">
+        <div class="header-left">
+          <i data-lucide="table" class="header-icon"></i>
+          <h2>Rules Preview</h2>
+        </div>
+        <div class="header-actions">
+          <button id="btn-clear" class="btn btn-danger btn-sm" disabled>
+            <i data-lucide="trash-2"></i>
+            <span>Clear Table</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Stats Bar -->
+      <div class="stats-bar">
+        <div class="stat-item">
+          <span class="stat-label">Unique Hotels</span>
+          <span class="stat-value" id="stat-hotels">0</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Days Covered</span>
+          <span class="stat-value" id="stat-days">0</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Total Rows</span>
+          <span class="stat-value text-accent" id="stat-rows">0</span>
+        </div>
+      </div>
+
+      <!-- Joined Hotels Box -->
+      <div id="joined-hotels-box" class="joined-hotels-box" style="display: none;">
+        <div class="joined-hotels-header">
+          <div class="header-title">
+            <i data-lucide="hash" class="header-icon-sm"></i>
+            <span>Joined Hotel IDs (for Hawkeye Admin)</span>
+          </div>
+        </div>
+        <div class="joined-hotels-body">
+          <input type="text" id="joined-hotels-text" readonly placeholder="No hotels generated">
+          <button id="btn-copy-joined" class="btn btn-secondary btn-sm" title="Copy to Clipboard">
+            <i data-lucide="copy"></i>
+            <span>Copy</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Table Wrapper -->
+      <div class="table-container">
+        <table id="preview-table">
+          <thead>
+            <tr>
+              <th>hotel_ID</th>
+              <th>rule_type</th>
+              <th>start_range</th>
+              <th>end_range</th>
+              <th>multiplier</th>
+              <th>addition</th>
+              <th>start_price</th>
+              <th>end_price</th>
+              <th width="60"></th>
+            </tr>
+          </thead>
+          <tbody id="table-body">
+            <!-- Dynamic Rows go here -->
+            <tr class="empty-state-row">
+              <td colspan="9">
+                <div class="empty-state">
+                  <i data-lucide="inbox"></i>
+                  <p>No rules generated yet</p>
+                  <span>Fill in the parameters and click "Generate Rule Rows" to populate the data.</span>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Export / Action Bar -->
+      <div class="export-actions">
+        <button id="btn-copy" class="btn btn-secondary flex-1" disabled>
+          <i data-lucide="clipboard"></i>
+          <span>Copy for Google Sheets</span>
+        </button>
+        <button id="btn-download" class="btn btn-secondary flex-1" disabled>
+          <i data-lucide="download"></i>
+          <span>Download CSV</span>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <footer class="app-footer-bar">
+    <p>Target Date Factor Automator &bull; Paste friendly &bull; Auto-validating</p>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>
