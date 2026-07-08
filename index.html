@@ -67,12 +67,21 @@
               <div class="hint">Separate multiple IDs with commas/newlines. Format: <code>ID: multiplier</code> (e.g. <code>0050789: 1.15</code>) for custom factors.</div>
             </div>
 
-            <!-- Rule Type -->
-            <div class="form-group">
-              <label for="rule-type">Rule Type</label>
-              <select id="rule-type">
-                <option value="targetDate">targetDate</option>
-              </select>
+            <!-- Rule Type and Pricing Mode -->
+            <div class="form-row">
+              <div class="form-group col">
+                <label for="rule-type">Rule Type</label>
+                <select id="rule-type">
+                  <option value="targetDate">targetDate</option>
+                </select>
+              </div>
+              <div class="form-group col">
+                <label for="pricing-mode">Pricing Mode</label>
+                <select id="pricing-mode">
+                  <option value="fixed">Fixed Multiplier</option>
+                  <option value="split">Weekday / Weekend Split</option>
+                </select>
+              </div>
             </div>
 
             <!-- Date Range -->
@@ -99,8 +108,8 @@
               </div>
             </div>
 
-            <!-- Pricing Modifiers -->
-            <div class="form-row">
+            <!-- Fixed Pricing Modifiers (Fixed Mode) -->
+            <div class="form-row" id="fixed-pricing-container">
               <div class="form-group col">
                 <label for="multiplier">
                   Multiplier <span class="required">*</span>
@@ -118,6 +127,54 @@
                   <span class="input-prefix">+</span>
                   <input type="number" id="addition" step="0.01" placeholder="e.g. 10.00">
                 </div>
+              </div>
+            </div>
+
+            <!-- Split Pricing Modifiers (Split Mode) -->
+            <div id="split-pricing-container" style="display: none; margin-bottom: 18px;">
+              <div class="form-row">
+                <div class="form-group col">
+                  <label for="split-base-price">Base Floor Price <span class="required">*</span></label>
+                  <input type="number" id="split-base-price" value="2000" step="1">
+                  <div class="error-msg" id="split-base-price-error">Enter a positive base price.</div>
+                </div>
+                <div class="form-group col">
+                  <label for="split-flexibility">Flexibility</label>
+                  <select id="split-flexibility">
+                    <option value="flex">Flex (divided by 0.72)</option>
+                    <option value="non-flex">Non-Flex (divided by 0.69)</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col">
+                  <label for="split-weekday-target">Weekday (Mon-Thu) Target <span class="required">*</span></label>
+                  <input type="number" id="split-weekday-target" value="1800" step="1">
+                  <div class="error-msg" id="split-weekday-target-error">Enter a target price.</div>
+                </div>
+                <div class="form-group col">
+                  <label for="split-weekend-target">Weekend (Fri-Sat) Target <span class="required">*</span></label>
+                  <input type="number" id="split-weekend-target" value="2200" step="1">
+                  <div class="error-msg" id="split-weekend-target-error">Enter a target price.</div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col">
+                  <label for="split-sunday-behavior">Sunday Behavior</label>
+                  <select id="split-sunday-behavior">
+                    <option value="custom">Use Custom Target Price</option>
+                    <option value="skip">Skip Sunday Entirely</option>
+                  </select>
+                </div>
+                <div class="form-group col" id="split-sunday-target-wrapper">
+                  <label for="split-sunday-target">Sunday Target Price <span class="required">*</span></label>
+                  <input type="number" id="split-sunday-target" value="2000" step="1">
+                  <div class="error-msg" id="split-sunday-target-error">Enter a target price.</div>
+                </div>
+              </div>
+              <!-- Live Split Multipliers preview -->
+              <div class="split-preview-text" style="font-size: 0.75rem; color: var(--accent-secondary); margin-top: 10px; font-weight: 600; background: rgba(6, 182, 212, 0.05); padding: 8px; border-radius: 6px; border: 1px solid rgba(6, 182, 212, 0.15);">
+                Live Preview Multipliers: Mon-Thu: <span id="preview-wd" style="color: var(--text-primary);">-</span> | Fri-Sat: <span id="preview-we" style="color: var(--text-primary);">-</span> | Sunday: <span id="preview-su" style="color: var(--text-primary);">-</span>
               </div>
             </div>
 

@@ -7,12 +7,29 @@ let rulesState = [];
 const form = document.getElementById('rule-form');
 const hotelIdsInput = document.getElementById('hotel-ids');
 const ruleTypeSelect = document.getElementById('rule-type');
+const pricingModeSelect = document.getElementById('pricing-mode');
+const fixedPricingContainer = document.getElementById('fixed-pricing-container');
+const splitPricingContainer = document.getElementById('split-pricing-container');
+
 const startDateInput = document.getElementById('start-date');
 const endDateInput = document.getElementById('end-date');
 const multiplierInput = document.getElementById('multiplier');
 const additionInput = document.getElementById('addition');
 const startPriceInput = document.getElementById('start-price');
 const endPriceInput = document.getElementById('end-price');
+
+// Split Pricing Modifiers
+const splitBasePriceInput = document.getElementById('split-base-price');
+const splitFlexibilitySelect = document.getElementById('split-flexibility');
+const splitWeekdayTargetInput = document.getElementById('split-weekday-target');
+const splitWeekendTargetInput = document.getElementById('split-weekend-target');
+const splitSundayBehaviorSelect = document.getElementById('split-sunday-behavior');
+const splitSundayTargetInput = document.getElementById('split-sunday-target');
+const splitSundayTargetWrapper = document.getElementById('split-sunday-target-wrapper');
+
+const previewWdText = document.getElementById('preview-wd');
+const previewWeText = document.getElementById('preview-we');
+const previewSuText = document.getElementById('preview-su');
 
 const tableBody = document.getElementById('table-body');
 const btnClear = document.getElementById('btn-clear');
@@ -32,6 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setupDateDefaults();
   setupJoinedHotelsListeners();
   setupTabs();
+  setupPricingModeListeners();
 });
 
 // Setup Default Dates (Today to Tomorrow)
@@ -175,34 +193,101 @@ function validateForm() {
     endDateInput.classList.remove('invalid');
   }
 
-  // 3. Validate Multiplier (up to 2 decimals, positive number)
-  // Only required if there is at least one hotel in the list without a custom multiplier
-  const hasHotelWithoutCustomMultiplier = hotelList.some(entry => !entry.includes(':'));
+  // 3. Validate pricing depending on mode
+  const mode = pricingModeSelect ? pricingModeSelect.value : 'fixed';
   
-  if (hasHotelWithoutCustomMultiplier || hotelList.length === 0) {
-    const multiplierVal = parseFloat(multiplierInput.value);
-    if (isNaN(multiplierVal) || multiplierVal <= 0) {
-      showError('multiplier-error', true);
-      multiplierInput.classList.add('invalid');
-      isValid = false;
+  if (mode === 'fixed') {
+    // Clear split errors
+    showError('split-base-price-error', false);
+    splitBasePriceInput.classList.remove('invalid');
+    showError('split-weekday-target-error', false);
+    splitWeekdayTargetInput.classList.remove('invalid');
+    showError('split-weekend-target-error', false);
+    splitWeekendTargetInput.classList.remove('invalid');
+    showError('split-sunday-target-error', false);
+    splitSundayTargetInput.classList.remove('invalid');
+
+    // Only required if there is at least one hotel in the list without a custom multiplier
+    const hasHotelWithoutCustomMultiplier = hotelList.some(entry => !entry.includes(':'));
+    
+    if (hasHotelWithoutCustomMultiplier || hotelList.length === 0) {
+      const multiplierVal = parseFloat(multiplierInput.value);
+      if (isNaN(multiplierVal) || multiplierVal <= 0) {
+        showError('multiplier-error', true);
+        multiplierInput.classList.add('invalid');
+        isValid = false;
+      } else {
+        showError('multiplier-error', false);
+        multiplierInput.classList.remove('invalid');
+      }
     } else {
       showError('multiplier-error', false);
       multiplierInput.classList.remove('invalid');
     }
   } else {
-    // If all hotels have custom multipliers, the main multiplier field is optional
+    // Clear fixed errors
     showError('multiplier-error', false);
     multiplierInput.classList.remove('invalid');
+
+    // Validate Base Price
+    const basePriceVal = parseFloat(splitBasePriceInput.value);
+    if (isNaN(basePriceVal) || basePriceVal <= 0) {
+      showError('split-base-price-error', true);
+      splitBasePriceInput.classList.add('invalid');
+      isValid = false;
+    } else {
+      showError('split-base-price-error', false);
+      splitBasePriceInput.classList.remove('invalid');
+    }
+
+    // Validate Weekday Target
+    const wdTargetVal = parseFloat(splitWeekdayTargetInput.value);
+    if (isNaN(wdTargetVal) || wdTargetVal <= 0) {
+      showError('split-weekday-target-error', true);
+      splitWeekdayTargetInput.classList.add('invalid');
+      isValid = false;
+    } else {
+      showError('split-weekday-target-error', false);
+      splitWeekdayTargetInput.classList.remove('invalid');
+    }
+
+    // Validate Weekend Target
+    const weTargetVal = parseFloat(splitWeekendTargetInput.value);
+    if (isNaN(weTargetVal) || weTargetVal <= 0) {
+      showError('split-weekend-target-error', true);
+      splitWeekendTargetInput.classList.add('invalid');
+      isValid = false;
+    } else {
+      showError('split-weekend-target-error', false);
+      splitWeekendTargetInput.classList.remove('invalid');
+    }
+
+    // Validate Sunday Target if custom mode
+    const sunBehavior = splitSundayBehaviorSelect.value;
+    if (sunBehavior === 'custom') {
+      const suTargetVal = parseFloat(splitSundayTargetInput.value);
+      if (isNaN(suTargetVal) || suTargetVal <= 0) {
+        showError('split-sunday-target-error', true);
+        splitSundayTargetInput.classList.add('invalid');
+        isValid = false;
+      } else {
+        showError('split-sunday-target-error', false);
+        splitSundayTargetInput.classList.remove('invalid');
+      }
+    } else {
+      showError('split-sunday-target-error', false);
+      splitSundayTargetInput.classList.remove('invalid');
+    }
   }
 
   return isValid;
 }
 
-// Parser for comma/newline-delimited Hotel IDs
+// Parser for comma/newline-delimited Hotel IDs (supporting spreadsheet column copy-paste)
 function parseHotelIds(rawText) {
   if (!rawText) return [];
   return rawText
-    .split(/[,\n]/)
+    .split(/[,\r\n]+/)
     .map(id => id.trim())
     .filter(id => id.length > 0);
 }
@@ -214,7 +299,12 @@ function generateRows() {
   const startDateVal = startDateInput.value;
   const endDateVal = endDateInput.value;
   
-  const multiplier = multiplierInput.value ? parseFloat(multiplierInput.value).toFixed(2) : '';
+  const mode = pricingModeSelect ? pricingModeSelect.value : 'fixed';
+  
+  let fixedMultiplier = '';
+  if (mode === 'fixed') {
+    fixedMultiplier = multiplierInput.value ? parseFloat(multiplierInput.value).toFixed(2) : '';
+  }
   
   // Parse optional inputs
   const addition = additionInput.value ? parseFloat(additionInput.value).toFixed(2) : '';
@@ -237,17 +327,57 @@ function generateRows() {
   // Generate matrix
   hotelList.forEach(entry => {
     let hotelId = entry;
-    let rowMultiplier = multiplier;
+    let customMultiplierValue = null;
     
     if (entry.includes(':')) {
       const parts = entry.split(':');
       hotelId = parts[0].trim();
-      rowMultiplier = parseFloat(parts[1].trim()).toFixed(2);
+      customMultiplierValue = parseFloat(parts[1].trim()).toFixed(2);
     }
     
     dateList.forEach(date => {
-      const formattedDate = formatToYYYYMMDD(date);
+      const dateParts = date.split('-'); // YYYY-MM-DD
+      const dObj = new Date(dateParts[0], dateParts[1] - 1, dateParts[2]);
+      const dayOfWeek = dObj.getDay(); // 0 = Sunday, 1 = Monday...
       
+      let rowMultiplier = '';
+      
+      if (customMultiplierValue !== null) {
+        // If this specific hotel ID has a custom hardcoded multiplier, we use it directly
+        rowMultiplier = customMultiplierValue;
+      } else if (mode === 'fixed') {
+        rowMultiplier = fixedMultiplier;
+      } else {
+        // We are in Split mode, so calculate the multiplier based on weekday/weekend/Sunday targets
+        const basePrice = parseFloat(splitBasePriceInput.value);
+        const flex = splitFlexibilitySelect.value;
+        const flexFactor = flex === 'flex' ? 0.72 : 0.69;
+        
+        let targetPrice = basePrice;
+        let shouldSkip = false;
+        
+        if (dayOfWeek >= 1 && dayOfWeek <= 4) { // Mon-Thu
+          targetPrice = parseFloat(splitWeekdayTargetInput.value) || basePrice;
+        } else if (dayOfWeek === 5 || dayOfWeek === 6) { // Fri-Sat
+          targetPrice = parseFloat(splitWeekendTargetInput.value) || basePrice;
+        } else { // Sunday (0)
+          const sunBehavior = splitSundayBehaviorSelect.value;
+          if (sunBehavior === 'skip') {
+            shouldSkip = true;
+          } else {
+            targetPrice = parseFloat(splitSundayTargetInput.value) || basePrice;
+          }
+        }
+        
+        if (shouldSkip) {
+          return; // Skip generating this row for Sunday
+        }
+        
+        const newPrice = Math.round(targetPrice / 1.05 / flexFactor);
+        rowMultiplier = (newPrice / basePrice).toFixed(2);
+      }
+      
+      const formattedDate = formatToYYYYMMDD(date);
       newRows.push({
         id: crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).substr(2, 9),
         hotel_ID: hotelId,
@@ -655,5 +785,83 @@ function setupTabs() {
       });
     });
   });
+}
+
+// Setup event listeners for Pricing Mode toggles and split calculations
+function setupPricingModeListeners() {
+  if (!pricingModeSelect) return;
+
+  pricingModeSelect.addEventListener('change', () => {
+    const mode = pricingModeSelect.value;
+    if (mode === 'fixed') {
+      fixedPricingContainer.style.display = 'flex';
+      splitPricingContainer.style.display = 'none';
+    } else {
+      fixedPricingContainer.style.display = 'none';
+      splitPricingContainer.style.display = 'block';
+      updateSplitMultipliersPreview();
+    }
+  });
+
+  // Toggle Sunday Target visibility based on behavior
+  splitSundayBehaviorSelect.addEventListener('change', () => {
+    const behavior = splitSundayBehaviorSelect.value;
+    if (behavior === 'skip') {
+      splitSundayTargetWrapper.style.display = 'none';
+    } else {
+      splitSundayTargetWrapper.style.display = 'block';
+    }
+    updateSplitMultipliersPreview();
+  });
+
+  const splitInputs = [
+    splitBasePriceInput,
+    splitFlexibilitySelect,
+    splitWeekdayTargetInput,
+    splitWeekendTargetInput,
+    splitSundayBehaviorSelect,
+    splitSundayTargetInput
+  ];
+
+  splitInputs.forEach(input => {
+    if (input) {
+      input.addEventListener('input', updateSplitMultipliersPreview);
+      input.addEventListener('change', updateSplitMultipliersPreview);
+    }
+  });
+}
+
+// Update the calculated split multipliers preview text in real-time
+function updateSplitMultipliersPreview() {
+  const basePrice = parseFloat(splitBasePriceInput.value);
+  const flex = splitFlexibilitySelect.value;
+  const flexFactor = flex === 'flex' ? 0.72 : 0.69;
+
+  if (isNaN(basePrice) || basePrice <= 0) {
+    previewWdText.textContent = '-';
+    previewWeText.textContent = '-';
+    previewSuText.textContent = '-';
+    return;
+  }
+
+  const wdTarget = parseFloat(splitWeekdayTargetInput.value);
+  const weTarget = parseFloat(splitWeekendTargetInput.value);
+  const suTarget = parseFloat(splitSundayTargetInput.value);
+  const suBehavior = splitSundayBehaviorSelect.value;
+
+  const calculateSplitMultiplier = (target) => {
+    if (isNaN(target) || target <= 0) return '-';
+    const newPrice = Math.round(target / 1.05 / flexFactor);
+    return (newPrice / basePrice).toFixed(2);
+  };
+
+  previewWdText.textContent = calculateSplitMultiplier(wdTarget);
+  previewWeText.textContent = calculateSplitMultiplier(weTarget);
+  
+  if (suBehavior === 'skip') {
+    previewSuText.textContent = 'Skipped';
+  } else {
+    previewSuText.textContent = calculateSplitMultiplier(suTarget);
+  }
 }
 
