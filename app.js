@@ -411,7 +411,7 @@ function deleteRow(id) {
   showToast('Row removed', 'info');
 }
 
-// Render rules table from state
+// Render rules table from state (optimized for large datasets)
 function renderTable() {
   tableBody.innerHTML = '';
 
@@ -448,18 +448,26 @@ function renderTable() {
   // Track unique hotels and dates for stats
   const uniqueHotels = new Set();
   const uniqueDates = new Set();
-
-  // Draw rows
-  rulesState.forEach((row, index) => {
+  
+  rulesState.forEach(row => {
     uniqueHotels.add(row.hotel_ID);
     uniqueDates.add(row.start_range);
+  });
 
+  const fragment = document.createDocumentFragment();
+  const displayLimit = 1000;
+  
+  // Render up to displayLimit rows
+  const rowsToRender = rulesState.slice(0, displayLimit);
+  
+  rowsToRender.forEach((row) => {
     const tr = document.createElement('tr');
     
     // Use index-based coloring to distinguish hotels visually
     const hotelIndex = Array.from(uniqueHotels).indexOf(row.hotel_ID);
     tr.className = hotelIndex % 2 === 0 ? 'hotel-group-even' : 'hotel-group-odd';
 
+    // Inline the trash icon SVG directly to avoid running lucide.createIcons() on the entire list
     tr.innerHTML = `
       <td><strong>${row.hotel_ID}</strong></td>
       <td><span class="badge">${row.rule_type}</span></td>
@@ -471,7 +479,7 @@ function renderTable() {
       <td>${row.end_price || '-'}</td>
       <td>
         <button class="btn-delete-row" data-id="${row.id}" title="Delete Row">
-          <i data-lucide="trash-2"></i>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trash-2"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/><line x1="10" x2="10" y1="11" y2="17"/><line x1="14" x2="14" y1="11" y2="17"/></svg>
         </button>
       </td>
     `;
@@ -481,13 +489,23 @@ function renderTable() {
       deleteRow(row.id);
     });
 
-    tableBody.appendChild(tr);
+    fragment.appendChild(tr);
   });
 
-  // Re-initialize dynamic icons
-  if (window.lucide) {
-    window.lucide.createIcons();
+  // If there are more than 1000 rows, show an informational row at the bottom
+  if (rulesState.length > displayLimit) {
+    const infoRow = document.createElement('tr');
+    infoRow.className = 'table-info-row';
+    infoRow.innerHTML = `
+      <td colspan="9" style="text-align: center; color: var(--accent-secondary); background: rgba(6, 182, 212, 0.05); font-weight: 500; font-size: 0.85rem; padding: 12px; border-top: 1px solid rgba(6, 182, 212, 0.15);">
+        Showing first 1,000 of ${rulesState.length} generated rows. All rows will be included in the CSV Download and Copy actions.
+      </td>
+    `;
+    fragment.appendChild(infoRow);
   }
+
+  // Batch insert into DOM
+  tableBody.appendChild(fragment);
 
   // Update Stats
   updateStats(uniqueHotels.size, uniqueDates.size, rulesState.length);
@@ -565,39 +583,65 @@ btnDownload.addEventListener('click', () => {
   if (rulesState.length === 0) return;
 
   const headers = ['hotel_ID', 'rule_type', 'start_range', 'end_range', 'multiplier', 'addition', 'start_price', 'end_price'];
-  
-  let csvContent = headers.join(',') + '\n';
-  
-  rulesState.forEach(row => {
-    const line = [
-      row.hotel_ID,
-      row.rule_type,
-      row.start_range,
-      row.end_range,
-      row.multiplier,
-      row.addition,
-      row.start_price,
-      row.end_price
-    ];
-    csvContent += line.join(',') + '\n';
-  });
-
-  // Create downloadable file blob
-  const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-  const url = URL.createObjectURL(blob);
-  const link = document.createElement("a");
-  
-  // Dynamic filename based on date and hotels count
+  const chunkSize = 1000;
   const dateStr = formatDateString(new Date()).replace(/-/g, '');
-  link.setAttribute("href", url);
-  link.setAttribute("download", `target_date_factors_${dateStr}.csv`);
-  link.style.visibility = 'hidden';
+
+  const triggerDownload = (chunk, partIndex, totalParts) => {
+    let csvContent = headers.join(',') + '\n';
+    chunk.forEach(row => {
+      const line = [
+        row.hotel_ID,
+        row.rule_type,
+        row.start_range,
+        row.end_range,
+        row.multiplier,
+        row.addition || '',
+        row.start_price || '',
+        row.end_price || ''
+      ];
+      csvContent += line.join(',') + '\n';
+    });
+
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    
+    const filename = totalParts > 1 
+      ? `target_date_factors_${dateStr}_part${partIndex + 1}.csv` 
+      : `target_date_factors_${dateStr}.csv`;
+
+    link.setAttribute("href", url);
+    link.setAttribute("download", filename);
+    link.style.visibility = 'hidden';
+    
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
+    // Revoke URL to release memory
+    setTimeout(() => URL.revokeObjectURL(url), 100);
+  };
+
+  const totalParts = Math.ceil(rulesState.length / chunkSize);
   
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-  
-  showToast('CSV downloaded successfully!', 'success');
+  for (let i = 0; i < totalParts; i++) {
+    const startIdx = i * chunkSize;
+    const endIdx = startIdx + chunkSize;
+    const chunk = rulesState.slice(startIdx, endIdx);
+    
+    // Stagger downloads by 200ms to prevent browser blocking simultaneous downloads
+    setTimeout(() => {
+      triggerDownload(chunk, i, totalParts);
+      if (i === totalParts - 1) {
+        showToast(
+          totalParts > 1 
+            ? `Successfully downloaded ${totalParts} CSV files (split into ${chunkSize}-row parts).` 
+            : 'CSV downloaded successfully!', 
+          'success'
+        );
+      }
+    }, i * 200);
+  }
 });
 
 // Custom Toast notification generator
@@ -760,6 +804,30 @@ if (calcAskInput) {
       pInput.addEventListener('input', calculateTDF);
     }
   });
+
+  // Bulk paste listener for P0 to automatically distribute values to P0-P5
+  if (pInputs[0]) {
+    pInputs[0].addEventListener('paste', (e) => {
+      const pastedText = (e.clipboardData || window.clipboardData).getData('text');
+      
+      // Split by tabs, commas, newlines, or spaces
+      const values = pastedText.split(/[\t,\n\r ]+/).map(val => val.trim()).filter(val => val.length > 0);
+      
+      if (values.length > 1) {
+        e.preventDefault(); // Stop default single-input paste
+        
+        pInputs.forEach((input, index) => {
+          if (input && values[index] !== undefined) {
+            input.value = values[index];
+          }
+        });
+        
+        // Recalculate
+        calculateTDF();
+        showToast(`Successfully distributed ${Math.min(values.length, 6)} P-values!`, 'success');
+      }
+    });
+  }
 }
 
 // Tab Switching Navigation Logic
