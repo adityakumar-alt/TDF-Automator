@@ -84,7 +84,7 @@ document.querySelectorAll('.btn-helper').forEach(btn => {
 
     const period = e.target.dataset.period;
     const today = new Date();
-    
+
     let start = new Date(today);
     let end = new Date(today);
 
@@ -101,7 +101,7 @@ document.querySelectorAll('.btn-helper').forEach(btn => {
         const dayOfWeek = today.getDay(); // 0 is Sunday, 5 is Friday
         let daysToFriday = 5 - dayOfWeek;
         if (daysToFriday < 0) daysToFriday += 7; // If it's already Saturday or Sunday, go to next Friday
-        
+
         start.setDate(today.getDate() + daysToFriday);
         end.setDate(start.getDate() + 2); // Friday + 2 days = Sunday
         break;
@@ -113,7 +113,7 @@ document.querySelectorAll('.btn-helper').forEach(btn => {
 
     startDateInput.value = formatDateString(start);
     endDateInput.value = formatDateString(end);
-    
+
     // Clear date error if present
     document.getElementById('date-range-error').style.display = 'none';
   });
@@ -122,7 +122,7 @@ document.querySelectorAll('.btn-helper').forEach(btn => {
 // Form Submission & Validation Logic
 form.addEventListener('submit', (e) => {
   e.preventDefault();
-  
+
   if (validateForm()) {
     generateRows();
   }
@@ -143,9 +143,9 @@ function validateForm() {
   // 1. Validate Hotel IDs (7-digit positive integer, with optional : multiplier)
   const rawHotels = hotelIdsInput.value;
   const hotelList = parseHotelIds(rawHotels);
-  
+
   let isHotelListValid = hotelList.length > 0;
-  
+
   for (let i = 0; i < hotelList.length; i++) {
     const entry = hotelList[i];
     if (entry.includes(':')) {
@@ -156,7 +156,7 @@ function validateForm() {
       }
       const hotelId = parts[0].trim();
       const customMultiplier = parseFloat(parts[1].trim());
-      
+
       if (!/^\d{7}$/.test(hotelId) || isNaN(customMultiplier) || customMultiplier <= 0) {
         isHotelListValid = false;
         break;
@@ -181,7 +181,7 @@ function validateForm() {
   // 2. Validate Date logical order
   const startDateVal = startDateInput.value;
   const endDateVal = endDateInput.value;
-  
+
   if (!startDateVal || !endDateVal || new Date(startDateVal) > new Date(endDateVal)) {
     showError('date-range-error', true);
     startDateInput.classList.add('invalid');
@@ -195,7 +195,7 @@ function validateForm() {
 
   // 3. Validate pricing depending on mode
   const mode = pricingModeSelect ? pricingModeSelect.value : 'fixed';
-  
+
   if (mode === 'fixed') {
     // Clear split errors
     showError('split-base-price-error', false);
@@ -209,7 +209,7 @@ function validateForm() {
 
     // Only required if there is at least one hotel in the list without a custom multiplier
     const hasHotelWithoutCustomMultiplier = hotelList.some(entry => !entry.includes(':'));
-    
+
     if (hasHotelWithoutCustomMultiplier || hotelList.length === 0) {
       const multiplierVal = parseFloat(multiplierInput.value);
       if (isNaN(multiplierVal) || multiplierVal <= 0) {
@@ -283,13 +283,35 @@ function validateForm() {
   return isValid;
 }
 
-// Parser for comma/newline-delimited Hotel IDs (supporting spreadsheet column copy-paste)
+// Parser for comma/newline/tab-delimited Hotel IDs (supporting 2-column Excel copy-paste)
 function parseHotelIds(rawText) {
   if (!rawText) return [];
-  return rawText
-    .split(/[,\r\n]+/)
-    .map(id => id.trim())
-    .filter(id => id.length > 0);
+  const lines = rawText.split(/[\r\n]+/);
+  const result = [];
+
+  lines.forEach(line => {
+    let trimmed = line.trim();
+    if (!trimmed) return;
+
+    // Check if line contains tab, colon, or space separating 7-digit ID and Multiplier (e.g. "0243121\t1.2")
+    if (/^(\d{7})[\t\s,:]+([0-9.]+)$/.test(trimmed)) {
+      const match = trimmed.match(/^(\d{7})[\t\s,:]+([0-9.]+)$/);
+      result.push(`${match[1]}: ${match[2]}`);
+    } else {
+      // Split by commas for single or multiple items on one line
+      const items = trimmed.split(',').map(id => id.trim()).filter(id => id.length > 0);
+      items.forEach(item => {
+        if (/^(\d{7})[\t\s:]+([0-9.]+)$/.test(item)) {
+          const match = item.match(/^(\d{7})[\t\s:]+([0-9.]+)$/);
+          result.push(`${match[1]}: ${match[2]}`);
+        } else {
+          result.push(item);
+        }
+      });
+    }
+  });
+
+  return result;
 }
 
 // Generate the individual rows
@@ -298,26 +320,26 @@ function generateRows() {
   const ruleType = ruleTypeSelect.value;
   const startDateVal = startDateInput.value;
   const endDateVal = endDateInput.value;
-  
+
   const mode = pricingModeSelect ? pricingModeSelect.value : 'fixed';
-  
+
   let fixedMultiplier = '';
   if (mode === 'fixed') {
     fixedMultiplier = multiplierInput.value ? parseFloat(multiplierInput.value).toFixed(2) : '';
   }
-  
+
   // Parse optional inputs
   const addition = additionInput.value ? parseFloat(additionInput.value).toFixed(2) : '';
   const startPrice = startPriceInput.value ? parseFloat(startPriceInput.value).toFixed(2) : '';
   const endPrice = endPriceInput.value ? parseFloat(endPriceInput.value).toFixed(2) : '';
 
   const newRows = [];
-  
+
   // Calculate list of dates in-between
   const start = new Date(startDateVal);
   const end = new Date(endDateVal);
   const dateList = [];
-  
+
   let current = new Date(start);
   while (current <= end) {
     dateList.push(formatDateString(current));
@@ -328,20 +350,20 @@ function generateRows() {
   hotelList.forEach(entry => {
     let hotelId = entry;
     let customMultiplierValue = null;
-    
+
     if (entry.includes(':')) {
       const parts = entry.split(':');
       hotelId = parts[0].trim();
       customMultiplierValue = parseFloat(parts[1].trim()).toFixed(2);
     }
-    
+
     dateList.forEach(date => {
       const dateParts = date.split('-'); // YYYY-MM-DD
       const dObj = new Date(dateParts[0], dateParts[1] - 1, dateParts[2]);
       const dayOfWeek = dObj.getDay(); // 0 = Sunday, 1 = Monday...
-      
+
       let rowMultiplier = '';
-      
+
       if (customMultiplierValue !== null) {
         // If this specific hotel ID has a custom hardcoded multiplier, we use it directly
         rowMultiplier = customMultiplierValue;
@@ -352,10 +374,10 @@ function generateRows() {
         const basePrice = parseFloat(splitBasePriceInput.value);
         const flex = splitFlexibilitySelect.value;
         const flexFactor = flex === 'flex' ? 0.72 : 0.69;
-        
+
         let targetPrice = basePrice;
         let shouldSkip = false;
-        
+
         if (dayOfWeek >= 1 && dayOfWeek <= 4) { // Mon-Thu
           targetPrice = parseFloat(splitWeekdayTargetInput.value) || basePrice;
         } else if (dayOfWeek === 5 || dayOfWeek === 6) { // Fri-Sat
@@ -368,15 +390,15 @@ function generateRows() {
             targetPrice = parseFloat(splitSundayTargetInput.value) || basePrice;
           }
         }
-        
+
         if (shouldSkip) {
           return; // Skip generating this row for Sunday
         }
-        
+
         const newPrice = Math.round(targetPrice / 1.05 / flexFactor);
         rowMultiplier = (newPrice / basePrice).toFixed(2);
       }
-      
+
       const formattedDate = formatToYYYYMMDD(date);
       newRows.push({
         id: crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).substr(2, 9),
@@ -394,13 +416,13 @@ function generateRows() {
 
   // Append to state
   rulesState = [...rulesState, ...newRows];
-  
+
   // Render
   renderTable();
-  
+
   // Reset active button helpers
   document.querySelectorAll('.btn-helper').forEach(b => b.classList.remove('active'));
-  
+
   showToast(`Successfully generated ${newRows.length} rule rows!`, 'success');
 }
 
@@ -427,15 +449,15 @@ function renderTable() {
         </td>
       </tr>
     `;
-    
+
     // Disable buttons
     btnClear.disabled = true;
     btnCopy.disabled = true;
     btnDownload.disabled = true;
-    
+
     // Update Stats
     updateStats(0, 0, 0);
-    
+
     if (window.lucide) window.lucide.createIcons();
     return;
   }
@@ -448,7 +470,7 @@ function renderTable() {
   // Track unique hotels and dates for stats
   const uniqueHotels = new Set();
   const uniqueDates = new Set();
-  
+
   rulesState.forEach(row => {
     uniqueHotels.add(row.hotel_ID);
     uniqueDates.add(row.start_range);
@@ -456,13 +478,13 @@ function renderTable() {
 
   const fragment = document.createDocumentFragment();
   const displayLimit = 1000;
-  
+
   // Render up to displayLimit rows
   const rowsToRender = rulesState.slice(0, displayLimit);
-  
+
   rowsToRender.forEach((row) => {
     const tr = document.createElement('tr');
-    
+
     // Use index-based coloring to distinguish hotels visually
     const hotelIndex = Array.from(uniqueHotels).indexOf(row.hotel_ID);
     tr.className = hotelIndex % 2 === 0 ? 'hotel-group-even' : 'hotel-group-odd';
@@ -483,7 +505,7 @@ function renderTable() {
         </button>
       </td>
     `;
-    
+
     // Wire up delete button event listener
     tr.querySelector('.btn-delete-row').addEventListener('click', () => {
       deleteRow(row.id);
@@ -519,24 +541,51 @@ function updateStats(hotels, days, totalRows) {
   statRows.textContent = totalRows;
 }
 
-// Clear table event handler
-btnClear.addEventListener('click', () => {
-  if (confirm('Are you sure you want to clear all generated rules?')) {
+// Modal elements for Clear Table confirmation
+const modalConfirm = document.getElementById('modal-confirm');
+const btnModalCancel = document.getElementById('btn-modal-cancel');
+const btnModalConfirm = document.getElementById('btn-modal-confirm');
+
+function openConfirmModal() {
+  if (rulesState.length === 0) return;
+  if (modalConfirm) modalConfirm.classList.add('active');
+}
+
+function closeConfirmModal() {
+  if (modalConfirm) modalConfirm.classList.remove('active');
+}
+
+// Clear table event handler - opens custom confirmation modal
+btnClear.addEventListener('click', openConfirmModal);
+
+if (btnModalCancel) {
+  btnModalCancel.addEventListener('click', closeConfirmModal);
+}
+
+if (modalConfirm) {
+  modalConfirm.addEventListener('click', (e) => {
+    if (e.target === modalConfirm) closeConfirmModal();
+  });
+}
+
+if (btnModalConfirm) {
+  btnModalConfirm.addEventListener('click', () => {
     rulesState = [];
     renderTable();
-    showToast('Table cleared', 'info');
-  }
-});
+    closeConfirmModal();
+    showToast('Table cleared successfully', 'info');
+  });
+}
 
 // Copy to Clipboard (Format as Tab-Separated Values for Excel/Google Sheets compatibility)
 btnCopy.addEventListener('click', () => {
   if (rulesState.length === 0) return;
 
   const headers = ['hotel_ID', 'rule_type', 'start_range', 'end_range', 'multiplier', 'addition', 'start_price', 'end_price'];
-  
+
   // Format TSV lines
   let tsvContent = headers.join('\t') + '\n';
-  
+
   rulesState.forEach(row => {
     // Convert YYYYMMDD (e.g., "20260706") to YYYY-MM-DD (e.g., "2026-07-06") so Google Sheets parses it as a valid date
     const formatDateForSheets = (dateStr) => {
@@ -605,38 +654,38 @@ btnDownload.addEventListener('click', () => {
     const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
-    
-    const filename = totalParts > 1 
-      ? `target_date_factors_${dateStr}_part${partIndex + 1}.csv` 
+
+    const filename = totalParts > 1
+      ? `target_date_factors_${dateStr}_part${partIndex + 1}.csv`
       : `target_date_factors_${dateStr}.csv`;
 
     link.setAttribute("href", url);
     link.setAttribute("download", filename);
     link.style.visibility = 'hidden';
-    
+
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-    
+
     // Revoke URL to release memory
     setTimeout(() => URL.revokeObjectURL(url), 100);
   };
 
   const totalParts = Math.ceil(rulesState.length / chunkSize);
-  
+
   for (let i = 0; i < totalParts; i++) {
     const startIdx = i * chunkSize;
     const endIdx = startIdx + chunkSize;
     const chunk = rulesState.slice(startIdx, endIdx);
-    
+
     // Stagger downloads by 200ms to prevent browser blocking simultaneous downloads
     setTimeout(() => {
       triggerDownload(chunk, i, totalParts);
       if (i === totalParts - 1) {
         showToast(
-          totalParts > 1 
-            ? `Successfully downloaded ${totalParts} CSV files (split into ${chunkSize}-row parts).` 
-            : 'CSV downloaded successfully!', 
+          totalParts > 1
+            ? `Successfully downloaded ${totalParts} CSV files (split into ${chunkSize}-row parts).`
+            : 'CSV downloaded successfully!',
           'success'
         );
       }
@@ -647,25 +696,25 @@ btnDownload.addEventListener('click', () => {
 // Custom Toast notification generator
 function showToast(message, type = 'success') {
   const container = document.getElementById('toast-container');
-  
+
   const toast = document.createElement('div');
   toast.className = `toast toast-${type}`;
-  
+
   let iconName = 'info';
   if (type === 'success') iconName = 'check-circle';
   if (type === 'error') iconName = 'alert-triangle';
-  
+
   toast.innerHTML = `
     <i data-lucide="${iconName}"></i>
     <span class="toast-message">${message}</span>
   `;
-  
+
   container.appendChild(toast);
-  
+
   if (window.lucide) {
     window.lucide.createIcons();
   }
-  
+
   // Animation timing
   setTimeout(() => {
     toast.style.animation = 'fadeOut 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards';
@@ -679,7 +728,7 @@ function showToast(message, type = 'success') {
 function updateJoinedHotels() {
   const joinedBox = document.getElementById('joined-hotels-box');
   const joinedInput = document.getElementById('joined-hotels-text');
-  
+
   if (rulesState.length === 0) {
     joinedBox.style.display = 'none';
     joinedInput.value = '';
@@ -688,7 +737,7 @@ function updateJoinedHotels() {
 
   // Get unique hotels
   const uniqueHotels = Array.from(new Set(rulesState.map(row => row.hotel_ID)));
-  
+
   // Join by comma only
   const joinedText = uniqueHotels.join(',');
   joinedInput.value = joinedText;
@@ -730,7 +779,7 @@ const pInputs = [calcP0, calcP1, calcP2, calcP3, calcP4, calcP5];
 function calculateTDF() {
   const askPrice = parseFloat(calcAskInput.value);
   const flexibility = calcFlexibility.value;
-  
+
   if (isNaN(askPrice) || askPrice <= 0) {
     calcResultsSection.style.display = 'none';
     return;
@@ -748,11 +797,11 @@ function calculateTDF() {
 
   pInputs.forEach((pInput, index) => {
     const pVal = parseFloat(pInput.value);
-    
+
     if (!isNaN(pVal) && pVal > 0) {
       hasValidPValue = true;
       const tdfFactor = (adjustedPrice / pVal).toFixed(2);
-      
+
       htmlContent += `
         <tr>
           <td><strong>P${index}</strong></td>
@@ -771,7 +820,7 @@ function calculateTDF() {
   if (hasValidPValue) {
     calcResultsBody.innerHTML = htmlContent;
     calcResultsSection.style.display = 'block';
-    
+
     // Wire up the button click events
     calcResultsBody.querySelectorAll('.btn-use-factor').forEach(btn => {
       btn.addEventListener('click', (e) => {
@@ -780,7 +829,7 @@ function calculateTDF() {
         const multiplierInput = document.getElementById('multiplier');
         multiplierInput.value = factor;
         showToast(`Multiplier set to ${factor} from P${pIndex} calculation!`, 'success');
-        
+
         // Clear any error states on multiplier input
         multiplierInput.classList.remove('invalid');
         document.getElementById('multiplier-error').style.display = 'none';
@@ -809,19 +858,19 @@ if (calcAskInput) {
   if (pInputs[0]) {
     pInputs[0].addEventListener('paste', (e) => {
       const pastedText = (e.clipboardData || window.clipboardData).getData('text');
-      
+
       // Split by tabs, commas, newlines, or spaces
       const values = pastedText.split(/[\t,\n\r ]+/).map(val => val.trim()).filter(val => val.length > 0);
-      
+
       if (values.length > 1) {
         e.preventDefault(); // Stop default single-input paste
-        
+
         pInputs.forEach((input, index) => {
           if (input && values[index] !== undefined) {
             input.value = values[index];
           }
         });
-        
+
         // Recalculate
         calculateTDF();
         showToast(`Successfully distributed ${Math.min(values.length, 6)} P-values!`, 'success');
@@ -925,7 +974,7 @@ function updateSplitMultipliersPreview() {
 
   previewWdText.textContent = calculateSplitMultiplier(wdTarget);
   previewWeText.textContent = calculateSplitMultiplier(weTarget);
-  
+
   if (suBehavior === 'skip') {
     previewSuText.textContent = 'Skipped';
   } else {

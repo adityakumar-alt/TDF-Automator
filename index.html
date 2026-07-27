@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +8,14 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
   <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
   <div class="glow-bg glow-1"></div>
   <div class="glow-bg glow-2"></div>
@@ -58,13 +62,14 @@
             <div class="form-group">
               <label for="hotel-ids">
                 Hotel ID(s) <span class="required">*</span>
-                <span class="tooltip-icon" title="Enter one or more 7-digit hotel IDs separated by commas or newlines. Format: ID: multiplier (e.g. 0050789: 1.15) to set custom multipliers.">
+                <span class="tooltip-icon"
+                  title="Enter one or more 7-digit hotel IDs separated by commas or newlines. Format: ID: multiplier (e.g. 0050789: 1.15) to set custom multipliers.">
                   <i data-lucide="help-circle"></i>
                 </span>
               </label>
-              <textarea id="hotel-ids" placeholder="e.g. 2033589: 1.15, 2033590" rows="2" required></textarea>
-              <div class="error-msg" id="hotel-ids-error">Hotel ID must be a 7-digit number (or ID: multiplier format).</div>
-              <div class="hint">Separate multiple IDs with commas/newlines. Format: <code>ID: multiplier</code> (e.g. <code>0050789: 1.15</code>) for custom factors.</div>
+              <textarea id="hotel-ids" placeholder="Paste 1 or 2 columns from Excel e.g.:&#10;0243121    1.2&#10;1247345    0.9" rows="3" required></textarea>
+              <div class="error-msg" id="hotel-ids-error">Hotel ID must be a 7-digit number (or ID: multiplier / Excel 2-column format).</div>
+              <div class="hint">Copy & paste directly from Excel/Google Sheets (Column 1: Hotel ID, Column 2: Multiplier) or format as <code>ID: multiplier</code>.</div>
             </div>
 
             <!-- Rule Type and Pricing Mode -->
@@ -98,7 +103,7 @@
                 </div>
               </div>
               <div class="error-msg" id="date-range-error">Start date cannot be after end date.</div>
-              
+
               <!-- Date Helpers -->
               <div class="date-helpers">
                 <button type="button" class="btn btn-helper" data-period="today">Today</button>
@@ -173,8 +178,11 @@
                 </div>
               </div>
               <!-- Live Split Multipliers preview -->
-              <div class="split-preview-text" style="font-size: 0.75rem; color: var(--accent-secondary); margin-top: 10px; font-weight: 600; background: rgba(6, 182, 212, 0.05); padding: 8px; border-radius: 6px; border: 1px solid rgba(6, 182, 212, 0.15);">
-                Live Preview Multipliers: Mon-Thu: <span id="preview-wd" style="color: var(--text-primary);">-</span> | Fri-Sat: <span id="preview-we" style="color: var(--text-primary);">-</span> | Sunday: <span id="preview-su" style="color: var(--text-primary);">-</span>
+              <div class="split-preview-text"
+                style="font-size: 0.75rem; color: var(--accent-secondary); margin-top: 10px; font-weight: 600; background: rgba(6, 182, 212, 0.05); padding: 8px; border-radius: 6px; border: 1px solid rgba(6, 182, 212, 0.15);">
+                Live Preview Multipliers: Mon-Thu: <span id="preview-wd" style="color: var(--text-primary);">-</span> |
+                Fri-Sat: <span id="preview-we" style="color: var(--text-primary);">-</span> | Sunday: <span
+                  id="preview-su" style="color: var(--text-primary);">-</span>
               </div>
             </div>
 
@@ -363,10 +371,30 @@
   <!-- Toast Notification Container -->
   <div id="toast-container" class="toast-container"></div>
 
+  <!-- Clear Table Confirmation Modal -->
+  <div id="modal-confirm" class="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-icon danger">
+          <i data-lucide="alert-triangle"></i>
+        </div>
+        <h3>Clear All Rules?</h3>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to clear all generated rules? This action cannot be undone.</p>
+      </div>
+      <div class="modal-actions">
+        <button id="btn-modal-cancel" class="btn btn-secondary">Cancel</button>
+        <button id="btn-modal-confirm" class="btn btn-danger-filled">Clear Table</button>
+      </div>
+    </div>
+  </div>
+
   <footer class="app-footer-bar">
     <p>Target Date Factor Automator &bull; Paste friendly &bull; Auto-validating</p>
   </footer>
 
   <script src="./app.js"></script>
 </body>
+
 </html>
