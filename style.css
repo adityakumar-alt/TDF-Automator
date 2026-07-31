@@ -235,31 +235,34 @@ body {
 }
 
 /* Form Styles */
-.form-group {
-  margin-bottom: 18px;
-}
-
 .form-row {
   display: flex;
   gap: 16px;
+  align-items: flex-end;
+  margin-bottom: 18px;
 }
 
 .form-row .col {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 label {
-  display: flex;
+  display: inline-flex;
   align-items: center;
+  white-space: nowrap;
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--text-secondary);
   margin-bottom: 6px;
-  gap: 6px;
+  gap: 4px;
 }
 
 .required {
   color: var(--accent-danger);
+  display: inline;
 }
 
 .tooltip-icon {
