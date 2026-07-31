@@ -284,7 +284,7 @@ function validateForm() {
   return isValid;
 }
 
-// Date Token Parser (supports YYYY-MM-DD, YYYY/MM/DD, MM/DD/YYYY, DD-MM-YYYY, YYYYMMDD)
+// Date Token Parser (supports YYYY-MM-DD, YYYY/MM/DD, DD-MM-YYYY, MM/DD/YYYY, YYYYMMDD)
 function parseDateToken(token) {
   if (!token) return null;
   const str = token.trim();
@@ -298,19 +298,27 @@ function parseDateToken(token) {
     return `${y}-${m}-${d}`;
   }
 
-  // MM/DD/YYYY or DD-MM-YYYY or MM-DD-YYYY
-  match = str.match(/^(\d{1,2})[-/](\d{1,2})[-/](\d{4})$/);
+  // DD-MM-YYYY or MM/DD/YYYY or DD/MM/YYYY
+  match = str.match(/^(\d{1,2})([-/])(\d{1,2})[-/](\d{4})$/);
   if (match) {
     let p1 = parseInt(match[1], 10);
-    let p2 = parseInt(match[2], 10);
-    let y = match[3];
+    let sep = match[2];
+    let p2 = parseInt(match[3], 10);
+    let y = match[4];
     let m, d;
+
     if (p1 > 12) {
+      // First part is definitely Day (e.g. 31-07-2026)
       d = String(p1).padStart(2, '0');
       m = String(p2).padStart(2, '0');
-    } else {
+    } else if (p2 > 12) {
+      // Second part is definitely Day (e.g. 07/31/2026)
       m = String(p1).padStart(2, '0');
       d = String(p2).padStart(2, '0');
+    } else {
+      // Both numbers are <= 12 (e.g. 01-08-2026). Default to DD-MM-YYYY
+      d = String(p1).padStart(2, '0');
+      m = String(p2).padStart(2, '0');
     }
     return `${y}-${m}-${d}`;
   }
