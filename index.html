@@ -45,7 +45,11 @@
       <section class="card sidebar-card">
         <!-- Tab Navigation Switcher -->
         <div class="sidebar-tabs">
-          <button class="tab-btn active" data-tab="tab-rules">
+          <button class="tab-btn active" data-tab="tab-dashboard">
+            <i data-lucide="bar-chart-3"></i>
+            <span>TDF Dashboard</span>
+          </button>
+          <button class="tab-btn" data-tab="tab-rules">
             <i data-lucide="sliders"></i>
             <span>Rule Parameters</span>
           </button>
@@ -55,8 +59,215 @@
           </button>
         </div>
 
+        <!-- Tab 0: Interactive TDF Analytics & Property Dashboard -->
+        <div class="tab-content active" id="tab-dashboard">
+          <div class="dash-welcome-bar">
+            <div class="dash-title-group">
+              <h2>Property TDF Performance Dashboard</h2>
+              <p>Compare Current Occ %, Current TDF vs Recommended TDF across all portfolio properties.</p>
+            </div>
+            <div class="dash-action-buttons">
+              <button id="btn-load-workspace-csv" class="btn btn-accent btn-sm">
+                <i data-lucide="sparkles"></i>
+                <span>Auto-Load Portfolio Datasets</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Executive KPI Stat Cards -->
+          <div class="kpi-cards-grid">
+            <div class="kpi-card">
+              <div class="kpi-header">
+                <span class="kpi-title">Total Active Properties</span>
+                <i data-lucide="building" class="kpi-icon"></i>
+              </div>
+              <div class="kpi-value" id="kpi-total-hotels">--</div>
+              <div class="kpi-subtext" id="kpi-total-cities">-- Cities covered</div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-header">
+                <span class="kpi-title">Avg Upcoming Occ %</span>
+                <i data-lucide="pie-chart" class="kpi-icon"></i>
+              </div>
+              <div class="kpi-value text-accent" id="kpi-avg-occ">--%</div>
+              <div class="kpi-subtext" id="kpi-occ-sub">Upcoming 10-day average</div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-header">
+                <span class="kpi-title">Portfolio Current TDF</span>
+                <i data-lucide="trending-up" class="kpi-icon"></i>
+              </div>
+              <div class="kpi-value" id="kpi-current-tdf">--</div>
+              <div class="kpi-subtext">Baseline multiplier average</div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-header">
+                <span class="kpi-title">Recommended TDF</span>
+                <i data-lucide="target" class="kpi-icon"></i>
+              </div>
+              <div class="kpi-value text-success" id="kpi-rec-tdf">--</div>
+              <div class="kpi-subtext" id="kpi-tdf-delta">Net Delta: --</div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-header">
+                <span class="kpi-title">Action Summary</span>
+                <i data-lucide="layers" class="kpi-icon"></i>
+              </div>
+              <div class="kpi-value" id="kpi-actions">--</div>
+              <div class="kpi-subtext" id="kpi-action-sub">Rate Surges vs Markdowns</div>
+            </div>
+          </div>
+
+          <!-- Operational Zone (OpZone) Breakdown Cards -->
+          <div class="opzone-section-header">
+            <h3><i data-lucide="map-pin"></i> Operational Zone (OpZone) Breakdown</h3>
+          </div>
+          <div class="opzone-cards-grid" id="opzone-cards-container">
+            <div class="opzone-card-empty">
+              <i data-lucide="info"></i>
+              <span>Click "Auto-Load Portfolio Datasets" to view OpZone performance.</span>
+            </div>
+          </div>
+
+          <!-- Filter & Search Controls Bar -->
+          <div class="table-controls-bar">
+            <!-- View Switcher Toggle -->
+            <div class="view-switch-group">
+              <button id="btn-dash-view-list" class="btn-view-toggle active">
+                <i data-lucide="list"></i>
+                <span>List View</span>
+              </button>
+              <button id="btn-dash-view-calendar" class="btn-view-toggle">
+                <i data-lucide="calendar"></i>
+                <span>Calendar View</span>
+              </button>
+            </div>
+
+            <div class="search-wrapper">
+              <i data-lucide="search" class="search-icon"></i>
+              <input type="text" id="dash-search-input" placeholder="Search property name, CS ID, city...">
+            </div>
+            <div class="filters-group">
+              <select id="dash-filter-opzone" class="dash-select">
+                <option value="all">All OpZones</option>
+                <option value="North 1">North 1</option>
+                <option value="North 2">North 2</option>
+                <option value="South 1">South 1</option>
+                <option value="South 2">South 2</option>
+                <option value="East">East</option>
+                <option value="West">West</option>
+              </select>
+              <select id="dash-filter-segment" class="dash-select">
+                <option value="all">All Segments</option>
+                <option value="Leisure">Leisure</option>
+                <option value="Metro">Metro</option>
+                <option value="Non-Metro">Non-Metro</option>
+              </select>
+              <select id="dash-filter-flex" class="dash-select">
+                <option value="all">All Flex Configs</option>
+                <option value="Flex">Flex Only</option>
+                <option value="Nonflex">Non-Flex Only</option>
+              </select>
+              <select id="dash-filter-strategy" class="dash-select">
+                <option value="all">All Strategies</option>
+                <option value="surge">Rate Increase / Surge</option>
+                <option value="markdown">Markdown / Stimulus</option>
+                <option value="baseline">Maintain Baseline</option>
+              </select>
+            </div>
+            <button id="btn-generate-hawkeye-from-dash" class="btn btn-primary btn-sm">
+              <i data-lucide="zap"></i>
+              <span>Generate Hawkeye Rules</span>
+            </button>
+          </div>
+
+          <!-- Active Date Filter Indicator Bar -->
+          <div id="dash-active-date-bar" class="active-date-filter-bar" style="display: none;">
+            <span class="active-date-pill"><i data-lucide="calendar"></i> Target Date Filter Active: <strong id="dash-active-date-label">--</strong></span>
+            <button id="btn-clear-date-filter" class="btn-clear-date">Clear Date Filter ✖</button>
+          </div>
+
+          <!-- Panel 1: Property List Table View -->
+          <div id="dash-panel-list-view" class="dash-view-panel">
+            <div class="dash-table-wrapper">
+              <table class="dash-table">
+                <thead>
+                  <tr>
+                    <th>CS_ID</th>
+                    <th>Hotel Name</th>
+                    <th>City</th>
+                    <th>OpZone</th>
+                    <th>Rev Segment</th>
+                    <th>Rate Flex</th>
+                    <th>Target Date</th>
+                    <th>Current Occ %</th>
+                    <th>Current TDF</th>
+                    <th>Recommended TDF</th>
+                    <th>TDF Delta</th>
+                    <th>Strategy Action</th>
+                  </tr>
+                </thead>
+                <tbody id="dash-table-body">
+                  <tr class="empty-state-row">
+                    <td colspan="12">
+                      <div class="empty-state">
+                        <i data-lucide="bar-chart-2"></i>
+                        <p>No Property Dashboard Data Loaded</p>
+                        <span>Click "Auto-Load Portfolio Datasets" above to populate real-time property TDF metrics.</span>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Panel 2: Portfolio 7-Column Monthly Calendar Grid View -->
+          <div id="dash-panel-calendar-view" class="dash-view-panel" style="display: none;">
+            <div class="calendar-card" style="padding: 16px;">
+              <!-- Calendar Header Bar -->
+              <div class="calendar-top-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">
+                <div class="month-nav-controls" style="display: flex; align-items: center; gap: 12px;">
+                  <button class="btn-month-arrow" id="btn-dash-cal-prev" style="padding: 6px 12px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--card-bg); cursor: pointer;"><i data-lucide="chevron-left"></i></button>
+                  <span class="month-name-heading" id="dash-cal-month-heading" style="font-weight: 700; font-size: 1.1rem; min-width: 150px; text-align: center;">August 2026</span>
+                  <button class="btn-month-arrow" id="btn-dash-cal-next" style="padding: 6px 12px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--card-bg); cursor: pointer;"><i data-lucide="chevron-right"></i></button>
+                  <button id="btn-dash-cal-today" class="btn btn-secondary btn-sm">Today</button>
+                </div>
+
+                <!-- Legend Bar -->
+                <div class="cal-legend-bar" style="display: flex; align-items: center; gap: 14px; font-size: 0.8rem; font-weight: 600;">
+                  <span style="display: flex; align-items: center; gap: 5px;"><span style="width: 12px; height: 12px; border-radius: 3px; background: #e0e7ff; border: 1px solid #c7d2fe; display: inline-block;"></span> Baseline</span>
+                  <span style="display: flex; align-items: center; gap: 5px;"><span style="width: 12px; height: 12px; border-radius: 3px; background: #ffe4e6; border: 1px solid #fecdd3; display: inline-block;"></span> Surge</span>
+                  <span style="display: flex; align-items: center; gap: 5px;"><span style="width: 12px; height: 12px; border-radius: 3px; background: #ffedd5; border: 1px solid #fed7aa; display: inline-block;"></span> Markdown</span>
+                  <span style="display: flex; align-items: center; gap: 5px;"><span style="width: 12px; height: 12px; border-radius: 3px; background: #dcfce7; border: 1px solid #bbf7d0; display: inline-block;"></span> High Occ</span>
+                </div>
+              </div>
+
+              <!-- 7-Column Weekday Headers -->
+              <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; margin-bottom: 8px; text-align: center; font-weight: 700; font-size: 0.85rem; color: var(--text-muted);">
+                <div>Sun</div>
+                <div>Mon</div>
+                <div>Tue</div>
+                <div>Wed</div>
+                <div>Thu</div>
+                <div>Fri</div>
+                <div>Sat</div>
+              </div>
+
+              <!-- 7-Column Grid Cells -->
+              <div id="dash-portfolio-calendar-grid" style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px;">
+                <!-- Populated dynamically by app.js -->
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- Tab 1: Rules Form -->
-        <div class="tab-content active" id="tab-rules">
+        <div class="tab-content" id="tab-rules">
           <form id="rule-form" novalidate>
             <!-- Hotel ID -->
             <div class="form-group">
@@ -216,7 +427,7 @@
 
             <div class="form-group" style="margin-top: 15px; margin-bottom: 15px;">
               <label class="checkbox-label" style="display: flex; align-items: center; gap: 8px; font-weight: 500; cursor: pointer; user-select: none;">
-                <input type="checkbox" id="chk-append-rules" style="width: 16px; height: 16px; accent-color: var(--primary);">
+                <input type="checkbox" id="chk-append-rules" style="width: 16px; height: 16px; accent-color: var(--accent-primary);">
                 <span>Append generated rules to existing table (don't clear previous)</span>
               </label>
             </div>
