@@ -54,6 +54,10 @@ document.addEventListener('DOMContentLoaded', () => {
   setupJoinedHotelsListeners();
   setupTabs();
   setupPricingModeListeners();
+
+  // Set initial landscape mode layout for default active tab (TDF Dashboard)
+  const activeTabBtn = document.querySelector('.sidebar-tabs .tab-btn.active');
+  if (activeTabBtn) activeTabBtn.click();
 });
 
 // Setup Default Dates (Today to Tomorrow)
@@ -989,6 +993,7 @@ if (calcAskInput) {
 function setupTabs() {
   const tabButtons = document.querySelectorAll('.tab-btn');
   const tabContents = document.querySelectorAll('.tab-content');
+  const previewCard = document.querySelector('.preview-card');
 
   tabButtons.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -1006,6 +1011,21 @@ function setupTabs() {
           content.classList.remove('active');
         }
       });
+
+      // Handle layout for Blackout Summary & TDF Dashboard tabs (Landscape Mode)
+      const dashContainer = document.querySelector('.dashboard-container');
+      const sidebarCol = document.querySelector('.sidebar-column');
+      const previewCard = document.querySelector('.preview-card');
+
+      if (targetTab === 'tab-dashboard') {
+        if (dashContainer) dashContainer.classList.add('landscape-mode');
+        if (previewCard) previewCard.style.display = 'none';
+        if (sidebarCol) sidebarCol.style.width = '100%';
+      } else {
+        if (dashContainer) dashContainer.classList.remove('landscape-mode');
+        if (previewCard) previewCard.style.display = 'flex';
+        if (sidebarCol) sidebarCol.style.width = '';
+      }
     });
   });
 }
@@ -1112,4 +1132,1359 @@ function updateSplitMultipliersPreview() {
 // Initialize App Listeners
 setupTabs();
 setupPricingModeListeners();
+setupBlackoutCalendar();
+
+// ==========================================================================
+// BLACKOUT INTEL / BLACKOUT SUMMARY CALENDAR LOGIC
+// ==========================================================================
+let currentCalYear = 2026;
+let currentCalMonth = 7; // 0-indexed: 7 is August
+
+// Blackout Events Dataset (Initializes clean & empty)
+const blackoutEventsData = [];
+
+function setupBlackoutCalendar() {
+  const btnCalendarView = document.getElementById('btn-view-calendar');
+  const btnListView = document.getElementById('btn-view-list');
+  const panelCalendar = document.getElementById('panel-calendar-view');
+  const panelList = document.getElementById('panel-list-view');
+
+  const btnPrevMonth = document.getElementById('btn-prev-month');
+  const btnNextMonth = document.getElementById('btn-next-month');
+
+  if (btnCalendarView && btnListView) {
+    btnCalendarView.addEventListener('click', () => {
+      btnCalendarView.classList.add('active');
+      btnListView.classList.remove('active');
+      panelCalendar.style.display = 'block';
+      panelList.style.display = 'none';
+    });
+
+    btnListView.addEventListener('click', () => {
+      btnListView.classList.add('active');
+      btnCalendarView.classList.remove('active');
+      panelCalendar.style.display = 'none';
+      panelList.style.display = 'block';
+      renderBlackoutListView();
+    });
+  }
+
+  if (btnPrevMonth && btnNextMonth) {
+    btnPrevMonth.addEventListener('click', () => {
+      currentCalMonth--;
+      if (currentCalMonth < 0) {
+        currentCalMonth = 11;
+        currentCalYear--;
+      }
+      renderBlackoutCalendar(currentCalYear, currentCalMonth);
+    });
+
+    btnNextMonth.addEventListener('click', () => {
+      currentCalMonth++;
+      if (currentCalMonth > 11) {
+        currentCalMonth = 0;
+        currentCalYear++;
+      }
+      renderBlackoutCalendar(currentCalYear, currentCalMonth);
+    });
+  }
+
+  // Filter Selects
+  const filterIds = ['filter-region', 'filter-state', 'filter-city', 'filter-category', 'filter-hotel'];
+  filterIds.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.addEventListener('change', () => {
+        renderBlackoutCalendar(currentCalYear, currentCalMonth);
+        renderBlackoutListView();
+      });
+    }
+  });
+}
+
+function renderBlackoutCalendar(year, month) {
+  const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  const headingEl = document.getElementById('current-month-heading');
+  if (headingEl) {
+    headingEl.textContent = `${monthNames[month]} ${year}`;
+  }
+
+  const cellsGrid = document.getElementById('calendar-cells-grid');
+  if (!cellsGrid) return;
+
+  cellsGrid.innerHTML = '';
+
+  const firstDay = new Date(year, month, 1).getDay(); // Day of week (0=Sun, 6=Sat)
+  const totalDays = new Date(year, month + 1, 0).getDate();
+
+  // Read filter values
+  const filterRegion = document.getElementById('filter-region')?.value || 'all';
+  const filterCategory = document.getElementById('filter-category')?.value || 'all';
+
+  // Render blank padding cells for previous month
+  for (let i = 0; i < firstDay; i++) {
+    const emptyCell = document.createElement('div');
+    emptyCell.className = 'calendar-cell';
+    emptyCell.style.opacity = '0.3';
+    cellsGrid.appendChild(emptyCell);
+  }
+
+  // Render day cells 1..totalDays
+  for (let d = 1; d <= totalDays; d++) {
+    const cell = document.createElement('div');
+    cell.className = 'calendar-cell';
+
+    const dayNum = document.createElement('span');
+    dayNum.className = 'cell-day-num';
+    dayNum.textContent = d;
+    cell.appendChild(dayNum);
+
+    // Find event for this day (only in August 2026 for demo matching screenshot)
+    if (month === 7 && year === 2026) {
+      const event = blackoutEventsData.find(e => e.day === d);
+      if (event) {
+        let matchesFilter = true;
+        if (filterRegion !== 'all' && event.region !== filterRegion) matchesFilter = false;
+        if (filterCategory !== 'all' && event.category !== filterCategory) matchesFilter = false;
+
+        if (matchesFilter) {
+          cell.classList.add('has-event');
+          const chip = document.createElement('div');
+          chip.className = `event-chip ${event.type}`;
+          chip.innerHTML = `<span>${event.title}</span>`;
+          cell.appendChild(chip);
+
+          cell.addEventListener('click', () => {
+            if (typeof showToast === 'function') {
+              showToast(`August ${d}, 2026: ${event.title} - ${event.hotel}`, 'info');
+            }
+          });
+        }
+      }
+    }
+
+    cellsGrid.appendChild(cell);
+  }
+}
+
+function renderBlackoutListView() {
+  const tableBody = document.getElementById('blackout-table-body');
+  if (!tableBody) return;
+
+  const filterCategory = document.getElementById('filter-category')?.value || 'all';
+  tableBody.innerHTML = '';
+
+  const filtered = blackoutEventsData.filter(e => {
+    if (filterCategory !== 'all' && e.category !== filterCategory) return false;
+    return true;
+  });
+
+  if (filtered.length === 0) {
+    tableBody.innerHTML = `<tr><td colspan="7" style="text-align:center; padding:20px; color:#94a3b8;">No blackout events match filters</td></tr>`;
+    return;
+  }
+
+  filtered.forEach(e => {
+    const dateStr = `2026-08-${String(e.day).padStart(2, '0')}`;
+    tableBody.innerHTML += `
+      <tr>
+        <td><strong>${dateStr}</strong></td>
+        <td>${e.title}</td>
+        <td><span class="event-chip ${e.type}" style="display:inline-block;">${e.category}</span></td>
+        <td>${e.hotel}</td>
+        <td>${e.city}</td>
+        <td>₹${e.price}</td>
+        <td><span style="color:#10b981; font-weight:600;">Active</span></td>
+      </tr>
+    `;
+  });
+}
+
+// ==============================================================================
+// TDF PERFORMANCE DASHBOARD WEB APPLICATION ENGINE
+// ==============================================================================
+
+let dashboardState = [];
+let rawOccData = null;
+let rawFactorData = null;
+
+document.addEventListener('DOMContentLoaded', () => {
+  setupDashboardEvents();
+});
+
+function setupDashboardEvents() {
+  const btnLoadLocal = document.getElementById('btn-load-workspace-csv');
+  const searchInput = document.getElementById('dash-search-input');
+  const filterOpzone = document.getElementById('dash-filter-opzone');
+  const filterSegment = document.getElementById('dash-filter-segment');
+  const filterStrategy = document.getElementById('dash-filter-strategy');
+  const btnGenHawkeye = document.getElementById('btn-generate-hawkeye-from-dash');
+
+  if (btnLoadLocal) {
+    btnLoadLocal.addEventListener('click', autoLoadWorkspaceDatasets);
+  }
+
+  const handleFilterChange = () => {
+    renderDashTable();
+    if (document.getElementById('dash-panel-calendar-view')?.style.display !== 'none') {
+      renderPortfolioDashboardCalendar();
+    }
+  };
+
+  if (searchInput) searchInput.addEventListener('input', handleFilterChange);
+  if (filterOpzone) filterOpzone.addEventListener('change', handleFilterChange);
+  if (filterSegment) filterSegment.addEventListener('change', handleFilterChange);
+  if (filterStrategy) filterStrategy.addEventListener('change', handleFilterChange);
+  const filterFlex = document.getElementById('dash-filter-flex');
+  if (filterFlex) filterFlex.addEventListener('change', handleFilterChange);
+
+  if (btnGenHawkeye) {
+    btnGenHawkeye.addEventListener('click', generateHawkeyeRulesFromDash);
+  }
+
+  setupDashboardViewToggle();
+}
+
+// Auto-Load Workspace Datasets via fetch()
+async function autoLoadWorkspaceDatasets() {
+  showToast('Connecting to Google Sheets...', 'info');
+
+  try {
+    const response = await fetch('http://localhost:3000/api/sheet-data');
+
+    const result = await response.json();
+
+    // Google authentication is required
+    if (response.status === 401) {
+      showToast('Please login with Google first.', 'warning');
+
+      window.open(
+        'http://localhost:3000/auth/google',
+        '_blank'
+      );
+
+      return;
+    }
+
+    if (!result.success) {
+      throw new Error(result.error || 'Failed to fetch Google Sheets data');
+    }
+
+    const futureOccRows = result.data.futureOcc || [];
+    const factorRows = result.data.next10DaysFactors || [];
+    const rateFlexRows = result.data.rateFlex || [];
+
+    console.log('Google Sheets data received:');
+    console.log('Future Occ rows:', futureOccRows.length);
+    console.log('Factor rows:', factorRows.length);
+    console.log('Rate Flex rows:', rateFlexRows.length);
+
+    // Convert Google Sheets arrays into CSV text.
+    // This lets us keep your existing dashboard processing logic unchanged.
+    const rowsToCsv = (rows) => {
+      return rows
+        .map(row =>
+          row.map(value => {
+            const text = String(value ?? '');
+            return `"${text.replace(/"/g, '""')}"`;
+          }).join(',')
+        )
+        .join('\n');
+    };
+
+    const occText = rowsToCsv(futureOccRows);
+    const facText = rowsToCsv(factorRows);
+    const flexText = rowsToCsv(rateFlexRows);
+
+    // Use the existing dashboard processing engine
+    parseAndProcessDashboardData(
+      occText,
+      facText,
+      flexText
+    );
+
+    showToast(
+      `Loaded live Google Sheets data: ${futureOccRows.length - 1} occupancy rows, ${factorRows.length - 1} factor rows, ${rateFlexRows.length - 1} rate-flex rows.`,
+      'success'
+    );
+
+  } catch (err) {
+
+    console.error('Google Sheets loading error:', err);
+
+    showToast(
+      `Error loading Google Sheets data: ${err.message}`,
+      'danger'
+    );
+  }
+}
+
+// Helper: Formats CS ID to 7-digit padded string
+function padCSId7Digit(idStr) {
+  if (!idStr && idStr !== 0) return '';
+  let cleaned = String(idStr).replace(/\.0$/, '').trim();
+  if (cleaned && !isNaN(cleaned)) {
+    while (cleaned.length < 7) {
+      cleaned = '0' + cleaned;
+    }
+  }
+  return cleaned;
+}
+
+// Fast CSV Parser
+function parseCsvSimple(text) {
+  if (!text) return [];
+  const lines = text.split(/\r?\n/);
+  return lines.map(line => {
+    const result = [];
+    let cur = '';
+    let inQuotes = false;
+    for (let i = 0; i < line.length; i++) {
+      const char = line[i];
+      if (char === '"') inQuotes = !inQuotes;
+      else if (char === ',' && !inQuotes) {
+        result.push(cur.trim().replace(/^"|"$/g, ''));
+        cur = '';
+      } else cur += char;
+    }
+    result.push(cur.trim().replace(/^"|"$/g, ''));
+    return result;
+  });
+}
+
+// Parse and process datasets (Only LIVE properties)
+function parseAndProcessDashboardData(occText, facText, flexText) {
+  const occRows = parseCsvSimple(occText);
+  const facRows = facText ? parseCsvSimple(facText) : [];
+  const flexRows = flexText ? parseCsvSimple(flexText) : [];
+
+  // Helper: Cleans hotel name by stripping descriptive suffixes (e.g. ', Mall Road', 'With Swimming Pool')
+  function getCleanBaseName(name) {
+    if (!name) return '';
+    let str = String(name).toLowerCase().trim();
+    str = str.split(',')[0];
+    str = str.split(' with ')[0];
+    str = str.split(' near ')[0];
+    str = str.split(' - ')[0];
+    return str.trim();
+  }
+
+  // 1. Build Rate Flex & Status Map with dynamic header resolution
+  const rateFlexMap = {};
+  if (flexRows.length > 0) {
+    const header = flexRows[0];
+    let colHx = 1, colCs = 2, colName = 3, colRegion = 5, colStatus = 8, colFlex = 11;
+    header.forEach((h, idx) => {
+      const hStr = h.toLowerCase().trim();
+      if (hStr === 'hx_id') colHx = idx;
+      else if (hStr === 'cs_id' || hStr === 'cs id') colCs = idx;
+      else if (hStr === 'hotel name' || hStr === 'name') colName = idx;
+      else if (hStr === 'region' || hStr === 'op zone' || hStr === 'zone') colRegion = idx;
+      else if (hStr === 'status') colStatus = idx;
+      else if (hStr.includes('flex')) colFlex = idx;
+    });
+
+    for (let f = 1; f < flexRows.length; f++) {
+      const fRow = flexRows[f];
+      if (!fRow || fRow.length < 4) continue;
+      const hxId = String(fRow[colHx] || '').replace(/\.0$/, '').trim();
+      const csId = padCSId7Digit(fRow[colCs]);
+      const hName = String(fRow[colName] || '').toLowerCase().trim();
+      const baseName = getCleanBaseName(hName);
+      const region = String(fRow[colRegion] || '').trim();
+      const status = String(fRow[colStatus] || '').trim().toLowerCase();
+      const flexVal = String(fRow[colFlex] || 'Flex').trim();
+
+      const item = { flex: flexVal, status: status, region: region };
+      if (hxId) rateFlexMap[hxId] = item;
+      if (csId) rateFlexMap[csId] = item;
+      if (hName) rateFlexMap[hName] = item;
+      if (baseName) rateFlexMap[baseName] = item;
+    }
+  }
+
+  // 2. Build Factors Map with dynamic header resolution
+  const factorMap = {};
+  const factorDateCols = {};
+
+  if (facRows.length > 0) {
+    const fHeaders = facRows[0];
+    let colCs = 0, colHx = 1, colName = 2, colCity = 3, colSeg = 4, colZone = 5;
+    fHeaders.forEach((h, idx) => {
+      const hStr = h.toLowerCase().trim();
+      if (hStr === 'cs id' || hStr === 'cs_id') colCs = idx;
+      else if (hStr === 'hx_id' || hStr === 'hx id') colHx = idx;
+      else if (hStr === 'hotel name' || hStr === 'name') colName = idx;
+      else if (hStr === 'city') colCity = idx;
+      else if (hStr.includes('segment')) colSeg = idx;
+      else if (hStr.includes('zone') || hStr.includes('region')) colZone = idx;
+
+      if (h.trim().includes('-Aug') || h.trim().includes('-Sep') || h.trim().includes('2026')) {
+        factorDateCols[h.trim()] = idx;
+      }
+    });
+
+    for (let f = 1; f < facRows.length; f++) {
+      const fRow = facRows[f];
+      if (!fRow || fRow.length < 3) continue;
+
+      const csId = padCSId7Digit(fRow[colCs]);
+      const hxId = String(fRow[colHx] || '').replace(/\.0$/, '').trim();
+      const hName = String(fRow[colName] || '').toLowerCase().trim();
+      const baseName = getCleanBaseName(hName);
+      const city = String(fRow[colCity] || 'Unknown').trim();
+      const revSegment = String(fRow[colSeg] || 'Standard').trim();
+      const opZone = String(fRow[colZone] || 'Unknown').trim();
+
+      const item = { csId, hxId, city, revSegment, opZone, row: fRow };
+      if (hxId) factorMap[hxId] = item;
+      if (csId) factorMap[csId] = item;
+      if (hName) factorMap[hName] = item;
+      if (baseName) factorMap[baseName] = item;
+    }
+  }
+
+  const CITY_OPZONE_MAP = {
+    // East
+    'kolkata': 'East', 'sealdah': 'East', 'ranchi': 'East', 'patna': 'East', 'bhubaneswar': 'East', 'guwahati': 'East', 'siliguri': 'East', 'gangtok': 'East', 'howrah': 'East', 'durgapur': 'East', 'park circus': 'East', 'kalighat': 'East', 'rabindra sarobar': 'East', 'marine drive': 'East',
+    // West
+    'pune': 'West', 'mumbai': 'West', 'vashi': 'West', 'indore': 'West', 'surat': 'West', 'nagpur': 'West', 'goa': 'West', 'calangute': 'West', 'morjim': 'West', 'nashik': 'West', 'aurangabad': 'West', 'rajkot': 'West', 'vadodara': 'West', 'satara': 'West', 'bkc': 'West', 'hinjewadi': 'West', 'hadapsar': 'West', 'viman nagar': 'West', 'pench': 'West', 'seaside': 'West', 'water park': 'West',
+    // South 1
+    'bangalore': 'South 1', 'bengaluru': 'South 1', 'mangalore': 'South 1', 'mysore': 'South 1', 'mysuru': 'South 1', 'hubli': 'South 1', 'belgaum': 'South 1', 'koramangala': 'South 1', 'indiranagar': 'South 1', 'bommasandra': 'South 1', 'yeshwanthpur': 'South 1', 'lalbagh': 'South 1', 'itpl': 'South 1', 'marathahalli': 'South 1', 'bellandur': 'South 1', 'shrey': 'South 1',
+    // South 2
+    'chennai': 'South 2', 'hyderabad': 'South 2', 'coimbatore': 'South 2', 'pondicherry': 'South 2', 'puducherry': 'South 2', 'kochi': 'South 2', 'cochin': 'South 2', 'trivandrum': 'South 2', 'thiruvananthapuram': 'South 2', 'madikeri': 'South 2', 'coorg': 'South 2', 'vijayawada': 'South 2', 'vizag': 'South 2', 'visakhapatnam': 'South 2', 'ooty': 'South 2', 'kodaikanal': 'South 2', 'tirupati': 'South 2', 'alleppey': 'South 2', 'alappuzha': 'South 2', 'yelagiri': 'South 2', 'alandur': 'South 2', 'nungambakkam': 'South 2', 'rk beach': 'South 2', 'rushikonda': 'South 2', 'rock beach': 'South 2', 'hi-tech city': 'South 2', 'khairatabad': 'South 2', 'aiswaryam': 'South 2', 'umaiyyal': 'South 2',
+    // North 1
+    'ahmedabad': 'North 1', 'delhi': 'North 1', 'new delhi': 'North 1', 'gurgaon': 'North 1', 'gurugram': 'North 1', 'noida': 'North 1', 'jaipur': 'North 1', 'lucknow': 'North 1', 'prayagraj': 'North 1', 'allahabad': 'North 1', 'agra': 'North 1', 'kanpur': 'North 1', 'varanasi': 'North 1', 'ghaziabad': 'North 1', 'gwalior': 'North 1', 'jodhpur': 'North 1', 'udaipur': 'North 1', 'jalmahal': 'North 1', 'singapore mall': 'North 1', '32 milestone': 'North 1', 'accent park': 'North 1', 'citi international': 'North 1',
+    // North 2
+    'shimla': 'North 2', 'dharamshala': 'North 2', 'amritsar': 'North 2', 'dehradun': 'North 2', 'chandigarh': 'North 2', 'zirakpur': 'North 2', 'manali': 'North 2', 'mussoorie': 'North 2', 'rishikesh': 'North 2', 'haridwar': 'North 2', 'kasauli': 'North 2', 'solan': 'North 2', 'dalhousie': 'North 2', 'mohali': 'North 2', 'panchkula': 'North 2', 'mcleodganj': 'North 2', 'queen of hills': 'North 2', 'blue mountain': 'North 2', 'grand legacy': 'North 2', 'misty garden': 'North 2', 'winsome': 'North 2', 'mountain view': 'North 2', 'samsara': 'North 2'
+  };
+
+  // Helper: Resolves OpZone ensuring North is cleanly split into North 1 and North 2, and auto-resolving unassigned properties
+  function resolveOpZone(city, hName, flexRegion, factorOpZone) {
+    if (flexRegion && flexRegion.trim() !== '' && flexRegion !== 'Unknown' && flexRegion !== 'Unassigned') {
+      const fTrim = flexRegion.trim();
+      if (fTrim === 'North') {
+        const c = ((city || '') + ' ' + (hName || '')).toLowerCase();
+        const n2Cities = ['dharamshala', 'dehradun', 'shimla', 'amritsar', 'chandigarh', 'zirakpur', 'mussoorie', 'rishikesh', 'haridwar', 'manali', 'kasauli', 'solan', 'dalhousie', 'mohali', 'panchkula', 'mcleodganj'];
+        return n2Cities.some(n2 => c.includes(n2)) ? 'North 2' : 'North 1';
+      }
+      return fTrim;
+    }
+
+    let zone = factorOpZone || '';
+    if (zone && zone !== 'Unassigned' && zone !== 'Unknown') {
+      if (zone === 'North') {
+        const c = ((city || '') + ' ' + (hName || '')).toLowerCase();
+        const n2Cities = ['dharamshala', 'dehradun', 'shimla', 'amritsar', 'chandigarh', 'zirakpur', 'mussoorie', 'rishikesh', 'haridwar', 'manali', 'kasauli', 'solan', 'dalhousie', 'mohali', 'panchkula', 'mcleodganj'];
+        return n2Cities.some(n2 => c.includes(n2)) ? 'North 2' : 'North 1';
+      }
+      return zone;
+    }
+
+    const searchStr = ((city || '') + ' ' + (hName || '')).toLowerCase();
+    for (const [key, val] of Object.entries(CITY_OPZONE_MAP)) {
+      if (searchStr.includes(key)) {
+        return val;
+      }
+    }
+
+    return 'Unassigned';
+  }
+
+  // 3. Parse Occupancy Rows
+  // Dynamic rolling 10-day window:
+  // Today + next 9 days
+  const today = new Date();
+
+  // Normalize to local midnight so time-of-day does not affect comparisons.
+  today.setHours(0, 0, 0, 0);
+
+  const todayStr =
+    `${today.getFullYear()}${String(today.getMonth() + 1).padStart(2, '0')}${String(today.getDate()).padStart(2, '0')}`;
+
+  const maxDate = new Date(today);
+  maxDate.setDate(maxDate.getDate() + 9);
+
+  const maxDateStr =
+    `${maxDate.getFullYear()}${String(maxDate.getMonth() + 1).padStart(2, '0')}${String(maxDate.getDate()).padStart(2, '0')}`;
+  console.log(
+    `Dashboard date window: ${todayStr} → ${maxDateStr}`
+  );
+
+  dashboardState = [];
+
+  const uniqueHotels = new Set();
+  const uniqueCities = new Set();
+  const opZoneStats = {};
+
+  for (let r = 1; r < occRows.length; r++) {
+    const row = occRows[r];
+    if (!row || row.length < 4) continue;
+    const rawId = row[0];
+    if (!rawId || isNaN(rawId) || String(row[10] || '').includes('#DIV')) continue;
+
+    const hId = String(Math.floor(Number(rawId)));
+    const hName = String(row[1] || '').trim();
+    const rawDate = row[2];
+
+    const baseName = getCleanBaseName(hName);
+    const meta = factorMap[hId] || factorMap[hName.toLowerCase()] || factorMap[baseName] || { csId: padCSId7Digit(hId), city: 'Unknown', opZone: 'Unassigned', revSegment: 'Standard', row: [] };
+    const displayCsId = padCSId7Digit(meta.csId || hId);
+
+    // -------------------------------------------------------------------------
+    // CRITICAL FILTER: ONLY SHOW LIVE PROPERTIES!
+    // -------------------------------------------------------------------------
+    const flexMeta = rateFlexMap[hId] || rateFlexMap[displayCsId] || rateFlexMap[hName.toLowerCase()] || rateFlexMap[baseName] || { flex: 'Flex', status: 'live', region: '' };
+    if (flexMeta.status && flexMeta.status !== 'live') {
+      continue; // Exclude Churned or Stop Sell properties!
+    }
+
+    const rateFlex = flexMeta.flex || 'Flex';
+    const finalOpZone = resolveOpZone(meta.city, hName, flexMeta.region, meta.opZone);
+
+    // Format Date YYYYMMDD and Display string
+    let targetDateStr = '';
+    let formattedDate = '';
+    const dt = new Date(rawDate);
+    if (!isNaN(dt.getTime())) {
+      const yyyy = dt.getFullYear();
+      const mm = String(dt.getMonth() + 1).padStart(2, '0');
+      const dd = String(dt.getDate()).padStart(2, '0');
+      targetDateStr = `${yyyy}${mm}${dd}`;
+
+      const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+      const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+      formattedDate = `${days[dt.getDay()]}, ${dt.getDate()} ${months[dt.getMonth()]} ${yyyy}`;
+    } else {
+      targetDateStr = String(rawDate).replace(/[-/]/g, '');
+      formattedDate = targetDateStr;
+    }
+
+    // Keep only today's date through the next 9 days.
+    // Total window = 10 days.
+    if (
+      targetDateStr < todayStr ||
+      targetDateStr > maxDateStr
+    ) {
+      continue;
+    }
+
+    const occVal = parseFloat(String(row[3] || '0').replace('%', '')) || 0;
+
+    // Day Short for factor lookup (e.g. '15-Aug')
+    let dayShort = '';
+    if (!isNaN(dt.getTime())) {
+      const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+      dayShort = `${dt.getDate()}-${months[dt.getMonth()]}`;
+    }
+
+    // Lookup Current TDF
+    let currentTDF = 1.00;
+    if (meta.row && meta.row.length > 0 && factorDateCols[dayShort] !== undefined) {
+      const fVal = parseFloat(meta.row[factorDateCols[dayShort]]);
+      if (!isNaN(fVal) && fVal > 0) currentTDF = fVal;
+    }
+
+    // Multiplier Adjustment
+    let occAdj = 1.00;
+    if (occVal < 20) occAdj = 0.90;
+    else if (occVal <= 50) occAdj = 1.00;
+    else if (occVal <= 75) occAdj = 1.05;
+    else if (occVal <= 90) occAdj = 1.15;
+    else occAdj = 1.30;
+
+    let recTDF = currentTDF * occAdj;
+
+    const dayOfWeek = !isNaN(dt.getTime()) ? dt.getDay() : 1;
+    if (meta.revSegment && meta.revSegment.toLowerCase().includes('leisure') && (dayOfWeek === 5 || dayOfWeek === 6)) {
+      recTDF += 0.15;
+    }
+    if (meta.revSegment && meta.revSegment.toLowerCase().includes('metro') && recTDF < 0.85) {
+      recTDF = 0.85;
+    }
+    if (occVal > 100 && recTDF > 1.40) recTDF = 1.40;
+
+    recTDF = Math.round(recTDF * 100) / 100;
+    const delta = Math.round((recTDF - currentTDF) * 100) / 100;
+
+    let strategyKey = 'baseline';
+    let strategyLabel = 'Maintain Baseline';
+    if (delta > 0.05) { strategyKey = 'surge'; strategyLabel = 'Rate Increase / Surge'; }
+    else if (delta < -0.05) { strategyKey = 'markdown'; strategyLabel = 'Markdown / Stimulus'; }
+
+    dashboardState.push({
+      csId: displayCsId,
+      hotelId: hId,
+      hotelName: hName,
+      city: meta.city,
+      opZone: finalOpZone,
+      revSegment: meta.revSegment,
+      rateFlex: rateFlex,
+      targetDateStr: targetDateStr,
+      dateStr: formattedDate,
+      occVal: occVal,
+      currentTDF: currentTDF,
+      recTDF: recTDF,
+      delta: delta,
+      strategyKey: strategyKey,
+      strategyLabel: strategyLabel
+    });
+
+    uniqueHotels.add(displayCsId);
+    if (meta.city && meta.city !== 'Unknown') uniqueCities.add(meta.city);
+
+    // OpZone stats (grouped cleanly by finalOpZone e.g. North 1, North 2)
+    const z = finalOpZone;
+    if (!opZoneStats[z]) {
+      opZoneStats[z] = { hotels: new Set(), totalOcc: 0, count: 0, totalDelta: 0, surges: 0, markdowns: 0 };
+    }
+    opZoneStats[z].hotels.add(displayCsId);
+    opZoneStats[z].totalOcc += occVal;
+    opZoneStats[z].count++;
+    opZoneStats[z].totalDelta += delta;
+    if (delta > 0.05) opZoneStats[z].surges++;
+    if (delta < -0.05) opZoneStats[z].markdowns++;
+  }
+
+  // Render KPIs, OpZone Cards, Table & Calendar Dropdown
+  renderKPIs(uniqueHotels.size, uniqueCities.size);
+  renderOpZoneCards(opZoneStats);
+  renderDashTable();
+  populateTDFCalendarDropdown();
+}
+
+// Render Executive KPI Stat Cards
+function renderKPIs(hotelCount, cityCount) {
+  const elHotels = document.getElementById('kpi-total-hotels');
+  const elCities = document.getElementById('kpi-total-cities');
+  const elOcc = document.getElementById('kpi-avg-occ');
+  const elCurrTdf = document.getElementById('kpi-current-tdf');
+  const elRecTdf = document.getElementById('kpi-rec-tdf');
+  const elDelta = document.getElementById('kpi-tdf-delta');
+  const elActions = document.getElementById('kpi-actions');
+
+  if (dashboardState.length === 0) return;
+
+  const totalOcc = dashboardState.reduce((sum, r) => sum + r.occVal, 0);
+  const avgOcc = (totalOcc / dashboardState.length).toFixed(1);
+
+  const totalCurrTDF = dashboardState.reduce((sum, r) => sum + r.currentTDF, 0);
+  const avgCurrTDF = (totalCurrTDF / dashboardState.length).toFixed(2);
+
+  const totalRecTDF = dashboardState.reduce((sum, r) => sum + r.recTDF, 0);
+  const avgRecTDF = (totalRecTDF / dashboardState.length).toFixed(2);
+
+  const netDelta = (avgRecTDF - avgCurrTDF).toFixed(2);
+  const surges = dashboardState.filter(r => r.strategyKey === 'surge').length;
+  const markdowns = dashboardState.filter(r => r.strategyKey === 'markdown').length;
+
+  if (elHotels) elHotels.textContent = hotelCount;
+  if (elCities) elCities.textContent = `${cityCount} Cities covered`;
+  if (elOcc) elOcc.textContent = `${avgOcc}%`;
+  if (elCurrTdf) elCurrTdf.textContent = avgCurrTDF;
+  if (elRecTdf) elRecTdf.textContent = avgRecTDF;
+  if (elDelta) elDelta.textContent = `Net Delta: ${netDelta >= 0 ? '+' : ''}${netDelta}`;
+  if (elActions) elActions.textContent = `${surges} ↑ / ${markdowns} ↓`;
+}
+
+// Render OpZone Cards Grid
+function renderOpZoneCards(opZoneStats) {
+  const container = document.getElementById('opzone-cards-container');
+  if (!container) return;
+
+  container.innerHTML = '';
+
+  const zones = Object.keys(opZoneStats).sort();
+  if (zones.length === 0) {
+    container.innerHTML = `<div class="opzone-card-empty">No OpZone metrics available</div>`;
+    return;
+  }
+
+  zones.forEach(zoneName => {
+    const st = opZoneStats[zoneName];
+    const avgOcc = st.count > 0 ? (st.totalOcc / st.count).toFixed(1) : 0;
+    const avgDelta = st.count > 0 ? (st.totalDelta / st.count).toFixed(2) : 0;
+
+    let stratBadgeClass = 'strat-baseline';
+    let stratBadgeText = 'Maintain Baseline';
+    if (avgDelta > 0.03) { stratBadgeClass = 'strat-surge'; stratBadgeText = 'Demand Surge Boost'; }
+    else if (avgDelta < -0.03) { stratBadgeClass = 'strat-markdown'; stratBadgeText = 'Volume Markdown'; }
+
+    const cardHtml = `
+      <div class="opzone-card">
+        <div class="opzone-card-title">
+          <span>${zoneName}</span>
+          <span style="font-size:0.75rem; color:#ea580c; font-weight:600;">${st.hotels.size} Hotels</span>
+        </div>
+        <div class="opzone-metric-row">
+          <span>Avg Occupancy:</span>
+          <strong>${avgOcc}%</strong>
+        </div>
+        <div class="opzone-progress-bar">
+          <div class="opzone-progress-fill" style="width: ${Math.min(avgOcc, 100)}%;"></div>
+        </div>
+        <div class="opzone-metric-row">
+          <span>TDF Net Delta:</span>
+          <strong>${avgDelta >= 0 ? '+' : ''}${avgDelta}</strong>
+        </div>
+        <span class="opzone-strat-badge ${stratBadgeClass}">${stratBadgeText}</span>
+      </div>
+    `;
+    container.innerHTML += cardHtml;
+  });
+}
+
+let dashSelectedDateFilter = '';
+
+// Helper: Returns rows filtered by search, active dropdown filters, and selected target date
+function getFilteredDashboardRows() {
+  const searchVal = (document.getElementById('dash-search-input')?.value || '').toLowerCase().trim();
+  const filterZone = document.getElementById('dash-filter-opzone')?.value || 'all';
+  const filterSeg = document.getElementById('dash-filter-segment')?.value || 'all';
+  const filterStrat = document.getElementById('dash-filter-strategy')?.value || 'all';
+  const filterFlex = document.getElementById('dash-filter-flex')?.value || 'all';
+
+  return dashboardState.filter(row => {
+    if (dashSelectedDateFilter && row.targetDateStr !== dashSelectedDateFilter) return false;
+    if (filterZone !== 'all' && row.opZone !== filterZone) return false;
+    if (filterSeg !== 'all' && row.revSegment !== filterSeg) return false;
+    if (filterStrat !== 'all' && row.strategyKey !== filterStrat) return false;
+    if (filterFlex !== 'all') {
+      const isFlex = row.rateFlex.toLowerCase().includes('flex') && !row.rateFlex.toLowerCase().includes('non');
+      if (filterFlex === 'Flex' && !isFlex) return false;
+      if (filterFlex === 'Nonflex' && isFlex) return false;
+    }
+
+    if (searchVal) {
+      const matchSearch = row.csId.toLowerCase().includes(searchVal) ||
+        row.hotelName.toLowerCase().includes(searchVal) ||
+        row.city.toLowerCase().includes(searchVal);
+      if (!matchSearch) return false;
+    }
+    return true;
+  });
+}
+
+// Render Property Inspection Data Table with search & filtering
+function renderDashTable() {
+  const tbody = document.getElementById('dash-table-body');
+  if (!tbody) return;
+
+  const filtered = getFilteredDashboardRows();
+
+  tbody.innerHTML = '';
+
+  if (filtered.length === 0) {
+    tbody.innerHTML = `
+      <tr class="empty-state-row">
+        <td colspan="12" style="text-align:center; padding:24px; color:var(--text-muted);">
+          No live property metrics match your search filters.
+        </td>
+      </tr>
+    `;
+    return;
+  }
+
+  const limit = 500;
+  const slice = filtered.slice(0, limit);
+
+  slice.forEach(r => {
+    const tr = document.createElement('tr');
+
+    let badgeClass = 'strat-baseline';
+    if (r.strategyKey === 'surge') badgeClass = 'strat-surge';
+    if (r.strategyKey === 'markdown') badgeClass = 'strat-markdown';
+
+    const isFlex = r.rateFlex.toLowerCase().includes('flex') && !r.rateFlex.toLowerCase().includes('non');
+    const flexBadgeClass = isFlex ? 'badge-flex' : 'badge-nonflex';
+    const flexBadgeText = isFlex ? 'Flex' : 'Non-Flex';
+
+    const deltaDisplay = (r.delta >= 0 ? '+' : '') + r.delta.toFixed(2);
+
+    tr.innerHTML = `
+      <td><span class="badge-csid">${r.csId}</span></td>
+      <td><strong>${r.hotelName}</strong></td>
+      <td>${r.city}</td>
+      <td>${r.opZone}</td>
+      <td>${r.revSegment}</td>
+      <td><span class="${flexBadgeClass}">${flexBadgeText}</span></td>
+      <td>${r.dateStr}</td>
+      <td><strong>${r.occVal.toFixed(1)}%</strong></td>
+      <td>${r.currentTDF.toFixed(2)}</td>
+      <td><strong style="color:#059669;">${r.recTDF.toFixed(2)}</strong></td>
+      <td><span style="font-weight:700; color:${r.delta > 0 ? '#15803d' : r.delta < 0 ? '#b91c1c' : '#0284c7'}">${deltaDisplay}</span></td>
+      <td><span class="opzone-strat-badge ${badgeClass}">${r.strategyLabel}</span></td>
+    `;
+    tbody.appendChild(tr);
+  });
+}
+
+function setupDashboardViewToggle() {
+  const btnList = document.getElementById('btn-dash-view-list');
+  const btnCal = document.getElementById('btn-dash-view-calendar');
+  const panelList = document.getElementById('dash-panel-list-view');
+  const panelCal = document.getElementById('dash-panel-calendar-view');
+  const btnClearDate = document.getElementById('btn-clear-date-filter');
+
+  if (btnList && btnCal) {
+    btnList.addEventListener('click', () => {
+      btnList.classList.add('active');
+      btnCal.classList.remove('active');
+      if (panelList) panelList.style.display = 'block';
+      if (panelCal) panelCal.style.display = 'none';
+      renderDashTable();
+    });
+
+    btnCal.addEventListener('click', () => {
+      btnCal.classList.add('active');
+      btnList.classList.remove('active');
+      if (panelCal) panelCal.style.display = 'block';
+      if (panelList) panelList.style.display = 'none';
+      renderPortfolioDashboardCalendar();
+    });
+  }
+
+  if (btnClearDate) {
+    btnClearDate.addEventListener('click', () => {
+      dashSelectedDateFilter = '';
+      const activeBar = document.getElementById('dash-active-date-bar');
+      if (activeBar) activeBar.style.display = 'none';
+      renderDashTable();
+      if (panelCal && panelCal.style.display !== 'none') {
+        renderPortfolioDashboardCalendar();
+      }
+    });
+  }
+}
+
+let dashCalYear = 2026;
+let dashCalMonth = 7; // August (0-indexed)
+
+function setupDashboardCalNav() {
+  const prevBtn = document.getElementById('btn-dash-cal-prev');
+  const nextBtn = document.getElementById('btn-dash-cal-next');
+  const todayBtn = document.getElementById('btn-dash-cal-today');
+
+  if (prevBtn && !prevBtn.dataset.hasListener) {
+    prevBtn.addEventListener('click', () => {
+      dashCalMonth--;
+      if (dashCalMonth < 0) {
+        dashCalMonth = 11;
+        dashCalYear--;
+      }
+      renderPortfolioDashboardCalendar();
+    });
+    prevBtn.dataset.hasListener = 'true';
+  }
+
+  if (nextBtn && !nextBtn.dataset.hasListener) {
+    nextBtn.addEventListener('click', () => {
+      dashCalMonth++;
+      if (dashCalMonth > 11) {
+        dashCalMonth = 0;
+        dashCalYear++;
+      }
+      renderPortfolioDashboardCalendar();
+    });
+    nextBtn.dataset.hasListener = 'true';
+  }
+
+  if (todayBtn && !todayBtn.dataset.hasListener) {
+    todayBtn.addEventListener('click', () => {
+      const now = new Date();
+      dashCalYear = now.getFullYear();
+      dashCalMonth = now.getMonth();
+      renderPortfolioDashboardCalendar();
+    });
+    todayBtn.dataset.hasListener = 'true';
+  }
+}
+
+function renderPortfolioDashboardCalendar() {
+  setupDashboardCalNav();
+
+  const container = document.getElementById('dash-portfolio-calendar-grid');
+  const monthHeading = document.getElementById('dash-cal-month-heading');
+  if (!container) return;
+
+  const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  if (monthHeading) {
+    monthHeading.textContent = `${monthNames[dashCalMonth]} ${dashCalYear}`;
+  }
+
+  // Get rows respecting all active filters (OpZone, Segment, Flex, Strategy, Search) except Date filter
+  const currentSavedDateFilter = dashSelectedDateFilter;
+  dashSelectedDateFilter = '';
+  const rows = getFilteredDashboardRows();
+  dashSelectedDateFilter = currentSavedDateFilter;
+
+  // Group rows by targetDateStr (key: YYYYMMDD)
+  const dateMap = {};
+  rows.forEach(r => {
+    const dt = r.targetDateStr;
+    if (!dateMap[dt]) {
+      dateMap[dt] = {
+        dateStr: dt,
+        dateDisplay: r.dateStr,
+        rows: []
+      };
+    }
+    dateMap[dt].rows.push(r);
+  });
+
+  const firstDay = new Date(dashCalYear, dashCalMonth, 1).getDay();
+  const daysInMonth = new Date(dashCalYear, dashCalMonth + 1, 0).getDate();
+
+  container.innerHTML = '';
+
+  // Padding cells before 1st day of month
+  for (let i = 0; i < firstDay; i++) {
+    const emptyCell = document.createElement('div');
+    emptyCell.style.cssText = `
+      background: #f8fafc;
+      border: 1px solid #f1f5f9;
+      border-radius: 10px;
+      min-height: 105px;
+      opacity: 0.5;
+    `;
+    container.appendChild(emptyCell);
+  }
+
+  // Days 1 to daysInMonth
+  for (let day = 1; day <= daysInMonth; day++) {
+    const yyyy = dashCalYear;
+    const mm = String(dashCalMonth + 1).padStart(2, '0');
+    const dd = String(day).padStart(2, '0');
+    const dateKey = `${yyyy}${mm}${dd}`;
+
+    const cell = document.createElement('div');
+    const grp = dateMap[dateKey];
+
+    const isSelected = (currentSavedDateFilter === dateKey);
+
+    if (grp) {
+      const grpRows = grp.rows;
+      const hotelCount = new Set(grpRows.map(r => r.csId)).size;
+      const avgOcc = (grpRows.reduce((s, r) => s + r.occVal, 0) / grpRows.length).toFixed(1);
+      const avgCurr = (grpRows.reduce((s, r) => s + r.currentTDF, 0) / grpRows.length).toFixed(2);
+      const avgRec = (grpRows.reduce((s, r) => s + r.recTDF, 0) / grpRows.length).toFixed(2);
+      const delta = (avgRec - avgCurr).toFixed(2);
+
+      // Color coding matching user's reference screenshot (pastel purple, pink, amber, green, white)
+      let bgColor = '#e0e7ff'; // Pastel Lavender/Purple for Baseline
+      let borderColor = '#c7d2fe';
+      let textColor = '#3730a3';
+
+      if (avgOcc >= 75) {
+        bgColor = '#dcfce7'; // Pastel Green for High Occ Peak
+        borderColor = '#bbf7d0';
+        textColor = '#166534';
+      } else if (delta > 0.05) {
+        bgColor = '#ffe4e6'; // Pastel Pink/Red for Surge
+        borderColor = '#fecdd3';
+        textColor = '#9f1239';
+      } else if (delta < -0.05) {
+        bgColor = '#ffedd5'; // Pastel Amber/Orange for Markdown
+        borderColor = '#fed7aa';
+        textColor = '#9a3412';
+      }
+
+      if (isSelected) {
+        bgColor = '#ffffff';
+        borderColor = '#ea580c';
+        textColor = '#ea580c';
+      }
+
+      cell.style.cssText = `
+        background: ${bgColor};
+        border: 2px solid ${borderColor};
+        border-radius: 10px;
+        padding: 8px 10px;
+        min-height: 105px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        box-shadow: ${isSelected ? '0 4px 14px rgba(234, 88, 12, 0.25)' : 'none'};
+      `;
+
+      // Cell inner HTML matching clean reference screenshot
+      cell.innerHTML = `
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-weight: 800; font-size: 1.05rem; color: ${textColor};">${day}</span>
+          <span style="font-size: 0.72rem; font-weight: 700; background: rgba(255,255,255,0.7); padding: 1px 6px; border-radius: 10px; color: ${textColor};">${avgOcc}% Occ</span>
+        </div>
+        <div style="font-size: 0.78rem; font-weight: 600; color: #475569; margin-top: 4px;">
+          ${hotelCount} Hotels
+        </div>
+        <div style="font-size: 0.78rem; font-weight: 700; display: flex; justify-content: space-between; align-items: center; margin-top: 6px; padding-top: 4px; border-top: 1px solid rgba(0,0,0,0.06);">
+          <span>${avgCurr} ➔ <strong style="color: ${textColor};">${avgRec}</strong></span>
+          <span style="font-size: 0.72rem; padding: 1px 5px; border-radius: 4px; background: rgba(255,255,255,0.8);">${delta >= 0 ? '+' : ''}${delta}</span>
+        </div>
+      `;
+
+      cell.addEventListener('mouseenter', () => {
+        cell.style.transform = 'translateY(-2px)';
+        cell.style.borderColor = '#ea580c';
+        cell.style.boxShadow = '0 6px 14px rgba(234, 88, 12, 0.2)';
+      });
+      cell.addEventListener('mouseleave', () => {
+        cell.style.transform = 'translateY(0)';
+        cell.style.borderColor = isSelected ? '#ea580c' : borderColor;
+        cell.style.boxShadow = isSelected ? '0 4px 14px rgba(234, 88, 12, 0.25)' : 'none';
+      });
+
+      cell.addEventListener('click', () => {
+        dashSelectedDateFilter = dateKey;
+
+        // Show active date filter bar
+        const activeBar = document.getElementById('dash-active-date-bar');
+        const activeLabel = document.getElementById('dash-active-date-label');
+        if (activeBar) activeBar.style.display = 'flex';
+        if (activeLabel) activeLabel.textContent = `${grp.dateDisplay} (${hotelCount} properties)`;
+
+        // Switch to List View
+        const btnList = document.getElementById('btn-dash-view-list');
+        if (btnList) btnList.click();
+
+        showToast(`Filtered List View for target date: ${grp.dateDisplay} (${hotelCount} properties)`, 'info');
+      });
+
+    } else {
+      // Empty day cell in month with no active records
+      cell.style.cssText = `
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 10px;
+        padding: 8px 10px;
+        min-height: 105px;
+        opacity: 0.6;
+      `;
+      cell.innerHTML = `
+        <div>
+          <span style="font-weight: 700; font-size: 0.95rem; color: #94a3b8;">${day}</span>
+        </div>
+      `;
+    }
+
+    container.appendChild(cell);
+  }
+
+  if (window.lucide) lucide.createIcons();
+}
+
+// Generate Hawkeye Rules directly from Filtered Dashboard state
+function generateHawkeyeRulesFromDash() {
+  if (dashboardState.length === 0) {
+    showToast('Please load portfolio datasets first!', 'warning');
+    return;
+  }
+
+  const targetRows = getFilteredDashboardRows();
+  if (targetRows.length === 0) {
+    showToast('No properties match your current search/filter selection!', 'warning');
+    return;
+  }
+
+  // Consolidate consecutive dates with matching recTDF per hotel for selected filter
+  const hotelGroups = {};
+  targetRows.forEach(r => {
+    if (!hotelGroups[r.csId]) hotelGroups[r.csId] = [];
+    hotelGroups[r.csId].push(r);
+  });
+
+  const generatedRules = [];
+
+  Object.keys(hotelGroups).forEach(csId => {
+    const list = hotelGroups[csId];
+    list.sort((a, b) => (a.targetDateStr || '').localeCompare(b.targetDateStr || ''));
+
+    if (list.length > 0) {
+      let cur = { start: list[0].targetDateStr, end: list[0].targetDateStr, mult: list[0].recTDF };
+
+      for (let i = 1; i < list.length; i++) {
+        const item = list[i];
+        if (item.targetDateStr === getNextDateStr(cur.end) && item.recTDF === cur.mult) {
+          cur.end = item.targetDateStr;
+        } else {
+          generatedRules.push({
+            id: Math.random().toString(36).substr(2, 9),
+            hotel_ID: csId,
+            rule_type: 'targetDate',
+            start_range: cur.start,
+            end_range: cur.end,
+            multiplier: cur.mult,
+            addition: '',
+            start_price: '',
+            end_price: ''
+          });
+          cur = { start: item.targetDateStr, end: item.targetDateStr, mult: item.recTDF };
+        }
+      }
+
+      generatedRules.push({
+        id: Math.random().toString(36).substr(2, 9),
+        hotel_ID: csId,
+        rule_type: 'targetDate',
+        start_range: cur.start,
+        end_range: cur.end,
+        multiplier: cur.mult,
+        addition: '',
+        start_price: '',
+        end_price: ''
+      });
+    }
+  });
+
+  rulesState = generatedRules;
+  renderTable();
+
+  // Switch to Rules Preview tab
+  const btnRulesTab = document.querySelector('.tab-btn[data-tab="tab-rules"]');
+  if (btnRulesTab) btnRulesTab.click();
+
+  const filterZone = document.getElementById('dash-filter-opzone')?.value || 'all';
+  const zoneTag = filterZone !== 'all' ? ` for ${filterZone} OpZone` : '';
+  showToast(`Generated ${generatedRules.length} consolidated Hawkeye rules${zoneTag}! (${Object.keys(hotelGroups).length} properties)`, 'success');
+}
+
+// Helper: Calculate next date string YYYYMMDD
+function getNextDateStr(yyyyMMdd) {
+  if (!yyyyMMdd || yyyyMMdd.length !== 8) return '';
+  const y = parseInt(yyyyMMdd.substr(0, 4));
+  const m = parseInt(yyyyMMdd.substr(4, 2)) - 1;
+  const d = parseInt(yyyyMMdd.substr(6, 2));
+  const dt = new Date(y, m, d);
+  dt.setDate(dt.getDate() + 1);
+
+  const ny = dt.getFullYear();
+  const nm = String(dt.getMonth() + 1).padStart(2, '0');
+  const nd = String(dt.getDate()).padStart(2, '0');
+  return `${ny}${nm}${nd}`;
+}
+
+// =============================================================================
+// INTERACTIVE TDF CALENDAR VIEW ENGINE
+// =============================================================================
+
+let tdfCalSelectedCsId = '';
+let tdfCalYear = 2026;
+let tdfCalMonth = 7; // August (0-indexed 7)
+
+function populateTDFCalendarDropdown() {
+  const selectEl = document.getElementById('tdf-cal-property-select');
+  if (!selectEl) return;
+
+  // Group unique properties by csId
+  const propertyMap = {};
+  dashboardState.forEach(r => {
+    if (!propertyMap[r.csId]) {
+      propertyMap[r.csId] = {
+        csId: r.csId,
+        name: r.hotelName,
+        city: r.city,
+        opZone: r.opZone,
+        revSegment: r.revSegment,
+        rateFlex: r.rateFlex
+      };
+    }
+  });
+
+  const sortedList = Object.values(propertyMap).sort((a, b) => a.name.localeCompare(b.name));
+
+  selectEl.innerHTML = '<option value="">-- Select Property to View Calendar --</option>';
+  sortedList.forEach(p => {
+    const opt = document.createElement('option');
+    opt.value = p.csId;
+    opt.textContent = `[${p.csId}] ${p.name} - ${p.city} (${p.opZone})`;
+    selectEl.appendChild(opt);
+  });
+
+  // Attach change listener once
+  if (!selectEl.dataset.hasListener) {
+    selectEl.addEventListener('change', (e) => {
+      tdfCalSelectedCsId = e.target.value;
+      renderTDFCalendar(tdfCalSelectedCsId, tdfCalYear, tdfCalMonth);
+    });
+    selectEl.dataset.hasListener = 'true';
+
+    // Navigation buttons
+    const prevBtn = document.getElementById('btn-tdf-cal-prev');
+    const nextBtn = document.getElementById('btn-tdf-cal-next');
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        tdfCalMonth--;
+        if (tdfCalMonth < 0) {
+          tdfCalMonth = 11;
+          tdfCalYear--;
+        }
+        renderTDFCalendar(tdfCalSelectedCsId, tdfCalYear, tdfCalMonth);
+      });
+    }
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        tdfCalMonth++;
+        if (tdfCalMonth > 11) {
+          tdfCalMonth = 0;
+          tdfCalYear++;
+        }
+        renderTDFCalendar(tdfCalSelectedCsId, tdfCalYear, tdfCalMonth);
+      });
+    }
+  }
+
+  // Auto-select first property if none selected
+  if (sortedList.length > 0 && !tdfCalSelectedCsId) {
+    tdfCalSelectedCsId = sortedList[0].csId;
+    selectEl.value = tdfCalSelectedCsId;
+  }
+
+  renderTDFCalendar(tdfCalSelectedCsId, tdfCalYear, tdfCalMonth);
+}
+
+function renderTDFCalendarCurrent() {
+  if (!tdfCalSelectedCsId && dashboardState.length > 0) {
+    populateTDFCalendarDropdown();
+  } else {
+    renderTDFCalendar(tdfCalSelectedCsId, tdfCalYear, tdfCalMonth);
+  }
+}
+
+function renderTDFCalendar(csId, year, month) {
+  const container = document.getElementById('tdf-calendar-cells-grid');
+  const monthHeading = document.getElementById('tdf-cal-month-heading');
+  const metaBanner = document.getElementById('tdf-cal-meta-banner');
+  if (!container) return;
+
+  const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  if (monthHeading) {
+    monthHeading.textContent = `${monthNames[month]} ${year}`;
+  }
+
+  if (!csId) {
+    if (metaBanner) metaBanner.style.display = 'none';
+    container.innerHTML = `
+      <div style="grid-column: span 7; text-align: center; padding: 40px; color: var(--text-muted);">
+        <i data-lucide="building-2" style="width: 48px; height: 48px; stroke-width: 1.5; margin-bottom: 12px; opacity: 0.5;"></i>
+        <p style="font-size: 1rem; font-weight: 600;">Please select a property from the dropdown above to view its monthly calendar matrix.</p>
+      </div>`;
+    if (window.lucide) lucide.createIcons();
+    return;
+  }
+
+  // Filter records for selected property
+  const propRows = dashboardState.filter(r => r.csId === csId);
+  if (propRows.length > 0) {
+    const meta = propRows[0];
+    if (metaBanner) {
+      metaBanner.style.display = 'flex';
+      document.getElementById('cal-meta-csid').textContent = meta.csId;
+      document.getElementById('cal-meta-city').textContent = meta.city;
+      document.getElementById('cal-meta-opzone').textContent = meta.opZone;
+      document.getElementById('cal-meta-segment').textContent = meta.revSegment;
+      document.getElementById('cal-meta-flex').textContent = meta.rateFlex;
+    }
+  }
+
+  // Calculate Property KPIs
+  const totalDays = propRows.length;
+  const avgOcc = totalDays > 0 ? (propRows.reduce((s, r) => s + r.occVal, 0) / totalDays).toFixed(1) : '--';
+  const avgCurrTDF = totalDays > 0 ? (propRows.reduce((s, r) => s + r.currentTDF, 0) / totalDays).toFixed(2) : '--';
+  const avgRecTDF = totalDays > 0 ? (propRows.reduce((s, r) => s + r.recTDF, 0) / totalDays).toFixed(2) : '--';
+  const netDelta = (totalDays > 0 && avgCurrTDF !== '--') ? (avgRecTDF - avgCurrTDF).toFixed(2) : '--';
+  const surges = propRows.filter(r => r.strategyKey === 'surge').length;
+  const markdowns = propRows.filter(r => r.strategyKey === 'markdown').length;
+
+  document.getElementById('cal-kpi-days').textContent = totalDays;
+  document.getElementById('cal-kpi-occ').textContent = `${avgOcc}%`;
+  document.getElementById('cal-kpi-current-tdf').textContent = avgCurrTDF;
+  document.getElementById('cal-kpi-rec-tdf').textContent = avgRecTDF;
+  document.getElementById('cal-kpi-delta').textContent = `Net Delta: ${netDelta >= 0 ? '+' : ''}${netDelta}`;
+  document.getElementById('cal-kpi-actions').textContent = `${surges} ↑ / ${markdowns} ↓`;
+
+  // Build Date Lookup Map (key: YYYYMMDD)
+  const dateMap = {};
+  propRows.forEach(r => {
+    dateMap[r.targetDateStr] = r;
+  });
+
+  // Calculate calendar days matrix
+  const firstDay = new Date(year, month, 1).getDay();
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+  container.innerHTML = '';
+
+  // Padding cells before first day
+  for (let i = 0; i < firstDay; i++) {
+    const emptyCell = document.createElement('div');
+    emptyCell.className = 'tdf-cal-cell empty-cell';
+    container.appendChild(emptyCell);
+  }
+
+  // Active days in month
+  for (let day = 1; day <= daysInMonth; day++) {
+    const yyyy = year;
+    const mm = String(month + 1).padStart(2, '0');
+    const dd = String(day).padStart(2, '0');
+    const dateStr = `${yyyy}${mm}${dd}`;
+
+    const cell = document.createElement('div');
+    cell.className = 'tdf-cal-cell';
+
+    const r = dateMap[dateStr];
+
+    if (r) {
+      // Occ color class
+      let occClass = 'badge-occ-low';
+      if (r.occVal >= 75) occClass = 'badge-occ-peak';
+      else if (r.occVal >= 50) occClass = 'badge-occ-high';
+      else if (r.occVal >= 25) occClass = 'badge-occ-mid';
+
+      // Delta class & text
+      let deltaClass = 'delta-baseline';
+      let deltaText = `${r.delta >= 0 ? '+' : ''}${r.delta.toFixed(2)}`;
+      if (r.delta > 0.05) deltaClass = 'delta-surge';
+      else if (r.delta < -0.05) deltaClass = 'delta-markdown';
+
+      cell.innerHTML = `
+        <div class="tdf-cal-cell-header">
+          <span class="tdf-cal-day-num">${day}</span>
+          <span class="badge-occ ${occClass}">${r.occVal.toFixed(1)}%</span>
+        </div>
+        <div class="cal-tdf-row">
+          Current: <strong>${r.currentTDF.toFixed(2)}</strong>
+        </div>
+        <div class="cal-tdf-row">
+          Rec: <span class="cal-tdf-compare">${r.recTDF.toFixed(2)}</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 6px;">
+          <span class="cal-delta-pill ${deltaClass}">${deltaText}</span>
+          <span class="opzone-strat-badge strat-${r.strategyKey}">${r.strategyLabel}</span>
+        </div>
+      `;
+
+      cell.style.cursor = 'pointer';
+      cell.addEventListener('click', () => {
+        showToast(
+          `📅 ${r.hotelName} (${r.targetDateStr}): Occ ${r.occVal}% | Current TDF ${r.currentTDF} ➔ Rec TDF ${r.recTDF} (${r.strategyLabel})`,
+          'info'
+        );
+      });
+    } else {
+      cell.classList.add('empty-cell');
+      cell.innerHTML = `
+        <div class="tdf-cal-cell-header">
+          <span class="tdf-cal-day-num" style="opacity: 0.5;">${day}</span>
+        </div>
+      `;
+    }
+
+    container.appendChild(cell);
+  }
+
+  if (window.lucide) lucide.createIcons();
+}
+
+
 
