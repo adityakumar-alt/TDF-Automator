@@ -1201,6 +1201,17 @@ function setupTabs() {
       }
     });
   });
+
+  // Ensure default active tab (tab-dashboard) initializes landscape mode immediately
+  const activeBtn = document.querySelector('.sidebar-nav-menu .tab-btn.active');
+  if (activeBtn && activeBtn.dataset.tab === 'tab-dashboard') {
+    const dashContainer = document.querySelector('.dashboard-container');
+    const sidebarCol = document.querySelector('.sidebar-column');
+    const previewCard = document.querySelector('.preview-card');
+    if (dashContainer) dashContainer.classList.add('landscape-mode');
+    if (previewCard) previewCard.style.display = 'none';
+    if (sidebarCol) sidebarCol.style.width = '100%';
+  }
 }
 
 // Setup event listeners for Pricing Mode toggles and split calculations
@@ -1567,6 +1578,44 @@ function setupDashboardEvents() {
 
   if (btnGenHawkeye) {
     btnGenHawkeye.addEventListener('click', generateHawkeyeRulesFromDash);
+  }
+
+  // Toggle Summary Section (Collapse KPI & OpZone Cards for Vertical Space)
+  const btnToggleSummary = document.getElementById('btn-toggle-summary');
+  const summarySection = document.getElementById('dash-summary-section');
+  const btnToggleSummaryText = document.getElementById('btn-toggle-summary-text');
+
+  if (btnToggleSummary && summarySection) {
+    btnToggleSummary.addEventListener('click', () => {
+      const isCollapsed = summarySection.style.display === 'none';
+      if (isCollapsed) {
+        summarySection.style.display = 'block';
+        if (btnToggleSummaryText) btnToggleSummaryText.textContent = 'Collapse Stats';
+        btnToggleSummary.classList.remove('btn-accent');
+        btnToggleSummary.classList.add('btn-secondary');
+      } else {
+        summarySection.style.display = 'none';
+        if (btnToggleSummaryText) btnToggleSummaryText.textContent = 'Show Stats';
+        btnToggleSummary.classList.remove('btn-secondary');
+        btnToggleSummary.classList.add('btn-accent');
+      }
+    });
+  }
+
+  // Toggle Screen Fit / Compact Density Mode
+  const btnToggleDensity = document.getElementById('btn-toggle-density');
+  const btnDensityText = document.getElementById('btn-toggle-density-text');
+  if (btnToggleDensity) {
+    btnToggleDensity.addEventListener('click', () => {
+      const tabDash = document.getElementById('tab-dashboard');
+      if (!tabDash) return;
+      const isCompact = tabDash.classList.toggle('compact-density-mode');
+      if (btnDensityText) {
+        btnDensityText.textContent = isCompact ? 'Normal View' : 'Fit Screen View';
+      }
+      btnToggleDensity.classList.toggle('btn-accent', isCompact);
+      btnToggleDensity.classList.toggle('btn-secondary', !isCompact);
+    });
   }
 
   setupDateFilterDropdown();
@@ -2047,6 +2096,7 @@ function parseAndProcessDashboardData(occText, facText, flexText, benchText, cha
     // Format Date YYYYMMDD and Display string
     let targetDateStr = '';
     let formattedDate = '';
+    let shortDate = '';
     const dt = new Date(rawDate);
     if (!isNaN(dt.getTime())) {
       const yyyy = dt.getFullYear();
@@ -2057,9 +2107,11 @@ function parseAndProcessDashboardData(occText, facText, flexText, benchText, cha
       const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
       const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
       formattedDate = `${days[dt.getDay()]}, ${dt.getDate()} ${months[dt.getMonth()]} ${yyyy}`;
+      shortDate = `${dt.getDate()} ${months[dt.getMonth()]} (${days[dt.getDay()]})`;
     } else {
       targetDateStr = String(rawDate).replace(/[-/]/g, '');
       formattedDate = targetDateStr;
+      shortDate = targetDateStr;
     }
 
     // Keep only today's date through the next 9 days.
@@ -2167,6 +2219,7 @@ function parseAndProcessDashboardData(occText, facText, flexText, benchText, cha
       rateFlex: rateFlex,
       targetDateStr: targetDateStr,
       dateStr: formattedDate,
+      dateDisplayCompact: shortDate,
       benchmarkOccVal: benchmarkOccVal,
       benchmarkOccDisplay: benchmarkOccDisplay,
       walkingShareVal: walkingShareVal,
@@ -2840,20 +2893,20 @@ function renderDashTable() {
 
     tr.innerHTML = `
       <td><span class="badge-csid">${r.csId}</span></td>
-      <td><strong>${r.hotelName}</strong></td>
-      <td>${r.city}</td>
-      <td>${r.opZone}</td>
+      <td><strong class="cell-hotel-name" title="${r.hotelName}">${r.hotelName}</strong></td>
+      <td><span class="cell-truncate" title="${r.city}">${r.city}</span></td>
+      <td><span class="cell-truncate" title="${r.opZone}">${r.opZone}</span></td>
       <td><span class="badge-city-type">${r.cityType}</span></td>
-      <td>${r.dateStr}</td>
-      <td><strong style="color:#6366f1;">${r.benchmarkOccDisplay || '-'}</strong></td>
-      <td><strong>${r.occVal.toFixed(1)}%</strong></td>
-      <td><strong style="color:#0284c7;">${r.walkingShareDisplay || '-'}</strong></td>
-      <td><strong style="color:#8b5cf6;">${r.b2bShareDisplay || '-'}</strong></td>
-      <td>${r.currentTDF.toFixed(2)}</td>
-      <td><strong class="cell-new-tdf" style="color:#059669;">${r.recTDF.toFixed(2)}</strong></td>
-      <td><strong style="color:#0284c7;">${pushedPriceDisplay}</strong></td>
-      <td>
-        <input type="number" class="desired-push-price-input" data-csid="${r.csId}" data-targetdate="${r.targetDateStr}" value="${desiredVal}" style="width: 100px; padding: 4px 8px; border: 1px solid #cbd5e1; border-radius: 6px; font-weight: 600; text-align: right; color: #0f172a; outline: none; transition: border-color 0.2s;" onfocus="this.style.borderColor='#3b82f6'" onblur="this.style.borderColor='#cbd5e1'" />
+      <td><span class="cell-date-compact" title="${r.dateStr}">${r.dateDisplayCompact || r.dateStr}</span></td>
+      <td class="cell-num-right"><strong style="color:#6366f1;">${r.benchmarkOccDisplay || '-'}</strong></td>
+      <td class="cell-num-right"><strong>${r.occVal.toFixed(1)}%</strong></td>
+      <td class="cell-num-right"><strong style="color:#0284c7;">${r.walkingShareDisplay || '-'}</strong></td>
+      <td class="cell-num-right"><strong style="color:#8b5cf6;">${r.b2bShareDisplay || '-'}</strong></td>
+      <td class="cell-num-right">${r.currentTDF.toFixed(2)}</td>
+      <td class="cell-num-right"><strong class="cell-new-tdf" style="color:#059669;">${r.recTDF.toFixed(2)}</strong></td>
+      <td class="cell-num-right"><strong style="color:#0284c7;">${pushedPriceDisplay}</strong></td>
+      <td class="cell-num-right">
+        <input type="number" class="desired-push-price-input" data-csid="${r.csId}" data-targetdate="${r.targetDateStr}" value="${desiredVal}" onfocus="this.style.borderColor='#3b82f6'" onblur="this.style.borderColor='#cbd5e1'" />
       </td>
     `;
     tbody.appendChild(tr);

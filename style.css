@@ -203,6 +203,13 @@ body {
 
 .dashboard-container.landscape-mode {
   grid-template-columns: 1fr !important;
+  padding: 12px 18px !important;
+  gap: 12px !important;
+}
+
+.dashboard-container.landscape-mode .card.sidebar-card {
+  padding: 14px 18px !important;
+  border-radius: 12px !important;
 }
 
 .sidebar-column {
@@ -1633,23 +1640,23 @@ tr.hotel-group-odd td {
 /* Executive KPI Stat Cards Grid */
 .kpi-cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 10px;
-  margin-bottom: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 8px;
+  margin-bottom: 8px;
 }
 
 .kpi-card {
   background: #ffffff;
   border: 1px solid #fed7aa;
-  border-radius: 10px;
-  padding: 12px 14px;
-  box-shadow: 0 4px 14px rgba(249, 115, 22, 0.05);
+  border-radius: 8px;
+  padding: 8px 12px;
+  box-shadow: 0 2px 8px rgba(249, 115, 22, 0.04);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .kpi-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(249, 115, 22, 0.12);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.1);
 }
 
 .kpi-header {
@@ -1674,7 +1681,7 @@ tr.hotel-group-odd td {
 }
 
 .kpi-value {
-  font-size: 1.35rem;
+  font-size: 1.15rem;
   font-weight: 800;
   font-family: var(--font-display);
   color: var(--text-primary);
@@ -1702,16 +1709,16 @@ tr.hotel-group-odd td {
 
 .opzone-cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-  gap: 8px;
-  margin-bottom: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 6px;
+  margin-bottom: 8px;
 }
 
 .opzone-card {
   background: #fff7ed;
   border: 1px solid #ffedd5;
-  border-radius: 10px;
-  padding: 10px 12px;
+  border-radius: 8px;
+  padding: 6px 10px;
 }
 
 .opzone-card-title {
@@ -2195,37 +2202,134 @@ tr.hotel-group-odd td {
 /* Property Inspection Table */
 .dash-table-wrapper {
   overflow-x: auto;
-  border-radius: 12px;
+  border-radius: 8px;
   border: 1px solid #e2e8f0;
   background: #ffffff;
-  max-height: 480px;
+  max-height: calc(100vh - 260px);
+  min-height: 380px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 .dash-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.84rem;
+  font-size: 0.77rem;
+  table-layout: auto;
 }
 
 .dash-table th {
   position: sticky;
   top: 0;
-  background: #1e293b;
-  color: #ffffff;
+  background: #0f172a;
+  color: #f8fafc;
   font-weight: 600;
-  padding: 10px 14px;
+  padding: 7px 8px;
   text-align: left;
   z-index: 10;
+  white-space: nowrap;
+  font-size: 0.73rem;
+  letter-spacing: 0.02em;
 }
 
 .dash-table td {
-  padding: 10px 14px;
+  padding: 5px 8px;
   border-bottom: 1px solid #f1f5f9;
   color: #334155;
+  white-space: nowrap;
+  font-size: 0.76rem;
 }
 
 .dash-table tr:hover td {
   background: #fff7ed;
+}
+
+.cell-hotel-name {
+  max-width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+  font-weight: 600;
+}
+
+.cell-truncate {
+  max-width: 90px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.cell-num-right {
+  text-align: right !important;
+  font-variant-numeric: tabular-nums;
+}
+
+.cell-date-compact {
+  white-space: nowrap;
+  font-weight: 500;
+  font-size: 0.74rem;
+  color: #475569;
+}
+
+.desired-push-price-input {
+  width: 72px !important;
+  padding: 2px 4px !important;
+  font-size: 0.76rem !important;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  font-weight: 600;
+  text-align: right;
+  color: #0f172a;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+/* Collapsible KPI summary section */
+#dash-summary-section {
+  transition: all 0.2s ease;
+}
+
+/* Fit Screen Compact Density Mode */
+.compact-density-mode .dash-table th {
+  padding: 4px 5px !important;
+  font-size: 0.69rem !important;
+}
+
+.compact-density-mode .dash-table td {
+  padding: 3px 5px !important;
+  font-size: 0.71rem !important;
+}
+
+.compact-density-mode .cell-hotel-name {
+  max-width: 135px !important;
+}
+
+.compact-density-mode .desired-push-price-input {
+  width: 60px !important;
+  padding: 1px 3px !important;
+  font-size: 0.70rem !important;
+}
+
+.compact-density-mode .badge-csid,
+.compact-density-mode .badge-city-type {
+  font-size: 0.67rem !important;
+  padding: 1px 3px !important;
+}
+
+.compact-density-mode .filter-toolbar-card {
+  padding: 4px 8px !important;
+  margin-bottom: 6px !important;
+}
+
+.compact-density-mode .dropdown-trigger-btn {
+  padding: 4px 6px !important;
+  font-size: 0.72rem !important;
+  min-width: 85px !important;
+}
+
+.compact-density-mode .table-controls-bar {
+  margin-bottom: 6px !important;
 }
 
 .badge-csid {

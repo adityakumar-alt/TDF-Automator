@@ -69,8 +69,8 @@
       </nav>
     </aside>
 
-    <main class="dashboard-container app-main-content">
-      <div class="sidebar-column">
+    <main class="dashboard-container app-main-content landscape-mode">
+      <div class="sidebar-column" style="width: 100%;">
         <!-- UNIFIED SIDEBAR CARD -->
         <section class="card sidebar-card">
 
@@ -82,12 +82,23 @@
               <p>Compare Current Occ %, Current TDF vs Recommended TDF across all portfolio properties.</p>
             </div>
             <div class="dash-action-buttons">
+              <button id="btn-toggle-summary" class="btn btn-secondary btn-sm" title="Toggle KPI cards to save vertical screen space">
+                <i data-lucide="chevrons-up-down"></i>
+                <span id="btn-toggle-summary-text">Collapse Stats</span>
+              </button>
+              <button id="btn-toggle-density" class="btn btn-secondary btn-sm" title="Toggle compact density view">
+                <i data-lucide="minimize-2"></i>
+                <span id="btn-toggle-density-text">Fit Screen View</span>
+              </button>
               <button id="btn-load-workspace-csv" class="btn btn-accent btn-sm">
                 <i data-lucide="sparkles"></i>
                 <span>Auto-Load Portfolio Datasets</span>
               </button>
             </div>
           </div>
+
+          <!-- Collapsible KPI & OpZone Summary Section -->
+          <div id="dash-summary-section">
 
           <!-- Executive KPI Stat Cards -->
           <div class="kpi-cards-grid">
@@ -141,12 +152,13 @@
           <div class="opzone-section-header">
             <h3><i data-lucide="map-pin"></i> Operational Zone (OpZone) Breakdown</h3>
           </div>
-          <div class="opzone-cards-grid" id="opzone-cards-container">
-            <div class="opzone-card-empty">
-              <i data-lucide="info"></i>
-              <span>Click "Auto-Load Portfolio Datasets" to view OpZone performance.</span>
+            <div class="opzone-cards-grid" id="opzone-cards-container">
+              <div class="opzone-card-empty">
+                <i data-lucide="info"></i>
+                <span>Click "Auto-Load Portfolio Datasets" to view OpZone performance.</span>
+              </div>
             </div>
-          </div>
+          </div> <!-- End #dash-summary-section -->
 
           <!-- Top Controls Bar: View Switcher, Search & Action -->
           <div class="table-controls-bar">
@@ -342,20 +354,20 @@
               <table class="dash-table">
                 <thead>
                   <tr>
-                    <th>CS_ID</th>
+                    <th style="width: 78px;">CS_ID</th>
                     <th>Hotel Name</th>
-                    <th>City</th>
-                    <th>Region</th>
-                    <th>City Type</th>
-                    <th>Date</th>
-                    <th>Benchmark_OCC%</th>
-                    <th>Occupancy %</th>
-                    <th>Walking Share</th>
-                    <th>B2B Share</th>
-                    <th>Factor</th>
-                    <th>New TDF</th>
-                    <th>Pushed Price</th>
-                    <th>Desired Push Price</th>
+                    <th style="width: 80px;">City</th>
+                    <th style="width: 70px;">Region</th>
+                    <th style="width: 85px;">City Type</th>
+                    <th style="width: 95px;">Date</th>
+                    <th class="cell-num-right" style="width: 75px;" title="Benchmark Occupancy %">Bench Occ</th>
+                    <th class="cell-num-right" style="width: 65px;" title="Occupancy %">Occ %</th>
+                    <th class="cell-num-right" style="width: 75px;" title="Walking Share %">Walk Share</th>
+                    <th class="cell-num-right" style="width: 75px;" title="B2B Share %">B2B Share</th>
+                    <th class="cell-num-right" style="width: 55px;" title="Current TDF Factor">Factor</th>
+                    <th class="cell-num-right" style="width: 65px;" title="Recommended New TDF">New TDF</th>
+                    <th class="cell-num-right" style="width: 78px;" title="Pushed Price">Pushed ₹</th>
+                    <th class="cell-num-right" style="width: 85px;" title="Desired Push Price">Desired ₹</th>
                   </tr>
                 </thead>
                 <tbody id="dash-table-body">
@@ -716,7 +728,7 @@
     </div>
 
     <!-- LIVE PREVIEW TABLE CARD -->
-    <section class="card preview-card">
+    <section class="card preview-card" style="display: none;">
       <div class="card-header preview-header">
         <div class="header-left">
           <i data-lucide="table" class="header-icon"></i>
