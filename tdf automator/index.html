@@ -39,25 +39,40 @@
     </div>
   </header>
 
-  <main class="dashboard-container">
-    <div class="sidebar-column">
-      <!-- UNIFIED SIDEBAR CARD -->
-      <section class="card sidebar-card">
-        <!-- Tab Navigation Switcher -->
-        <div class="sidebar-tabs">
-          <button class="tab-btn active" data-tab="tab-dashboard">
-            <i data-lucide="bar-chart-3"></i>
-            <span>TDF Dashboard</span>
-          </button>
-          <button class="tab-btn" data-tab="tab-rules">
-            <i data-lucide="sliders"></i>
-            <span>Rule Parameters</span>
-          </button>
-          <button class="tab-btn" data-tab="tab-calc">
-            <i data-lucide="calculator"></i>
-            <span>TDF Calculator</span>
-          </button>
-        </div>
+  <div class="app-layout">
+    <!-- Vertical Collapsible Navigation Sidebar -->
+    <aside class="vertical-nav-sidebar" id="vertical-sidebar">
+      <div class="sidebar-top-header">
+        <span class="sidebar-nav-heading">Navigation</span>
+        <button id="sidebar-toggle-btn" class="btn-sidebar-toggle" title="Collapse / Expand Navigation">
+          <i data-lucide="chevron-left"></i>
+        </button>
+      </div>
+
+      <nav class="sidebar-nav-menu">
+        <button class="tab-btn active" data-tab="tab-dashboard" title="TDF Dashboard">
+          <i data-lucide="bar-chart-3"></i>
+          <span class="nav-text">TDF Dashboard</span>
+        </button>
+        <button class="tab-btn" data-tab="tab-rules" title="Rule Parameters">
+          <i data-lucide="sliders"></i>
+          <span class="nav-text">Rule Parameters</span>
+        </button>
+        <button class="tab-btn" data-tab="tab-calc" title="TDF Calculator">
+          <i data-lucide="calculator"></i>
+          <span class="nav-text">TDF Calculator</span>
+        </button>
+        <a href="https://metabase.treebo.com/question/9713-target-date-factor?cs_id=1894945&date=&hotel_name=" target="_blank" rel="noopener noreferrer" class="tab-btn" title="Metabase TDF Dashboard">
+          <i data-lucide="external-link"></i>
+          <span class="nav-text">Metabase TDF Dashboard</span>
+        </a>
+      </nav>
+    </aside>
+
+    <main class="dashboard-container app-main-content">
+      <div class="sidebar-column">
+        <!-- UNIFIED SIDEBAR CARD -->
+        <section class="card sidebar-card">
 
         <!-- Tab 0: Interactive TDF Analytics & Property Dashboard -->
         <div class="tab-content active" id="tab-dashboard">
@@ -133,7 +148,7 @@
             </div>
           </div>
 
-          <!-- Filter & Search Controls Bar -->
+          <!-- Top Controls Bar: View Switcher, Search & Action -->
           <div class="table-controls-bar">
             <!-- View Switcher Toggle -->
             <div class="view-switch-group">
@@ -151,38 +166,168 @@
               <i data-lucide="search" class="search-icon"></i>
               <input type="text" id="dash-search-input" placeholder="Search property name, CS ID, city...">
             </div>
-            <div class="filters-group">
-              <select id="dash-filter-opzone" class="dash-select">
-                <option value="all">All OpZones</option>
-                <option value="North 1">North 1</option>
-                <option value="North 2">North 2</option>
-                <option value="South 1">South 1</option>
-                <option value="South 2">South 2</option>
-                <option value="East">East</option>
-                <option value="West">West</option>
-              </select>
-              <select id="dash-filter-segment" class="dash-select">
-                <option value="all">All Segments</option>
-                <option value="Leisure">Leisure</option>
-                <option value="Metro">Metro</option>
-                <option value="Non-Metro">Non-Metro</option>
-              </select>
-              <select id="dash-filter-flex" class="dash-select">
-                <option value="all">All Flex Configs</option>
-                <option value="Flex">Flex Only</option>
-                <option value="Nonflex">Non-Flex Only</option>
-              </select>
-              <select id="dash-filter-strategy" class="dash-select">
-                <option value="all">All Strategies</option>
-                <option value="surge">Rate Increase / Surge</option>
-                <option value="markdown">Markdown / Stimulus</option>
-                <option value="baseline">Maintain Baseline</option>
-              </select>
-            </div>
+
             <button id="btn-generate-hawkeye-from-dash" class="btn btn-primary btn-sm">
               <i data-lucide="zap"></i>
               <span>Generate Hawkeye Rules</span>
             </button>
+          </div>
+
+          <!-- Custom Filter Toolbar (Matching User Reference Images) -->
+          <div class="filter-toolbar-card">
+            <div class="filters-scroll-row">
+              <!-- Target Dates Multi-Select Dropdown -->
+              <div class="custom-dropdown dropdown-date-picker" id="dropdown-dates" data-filter-key="targetDates" data-placeholder="All 10 Days" data-search-placeholder="Search dates...">
+                <button type="button" class="dropdown-trigger-btn" id="btn-trigger-dates">
+                  <span class="dropdown-btn-label" id="label-dates-filter">All 10 Days</span>
+                  <i data-lucide="chevrons-up-down" class="dropdown-chevron"></i>
+                </button>
+                <div class="dropdown-panel date-panel-wide">
+                  <div class="dropdown-search-box">
+                    <i data-lucide="search" class="search-box-icon"></i>
+                    <input type="text" class="dropdown-search-input" id="search-dates-input" placeholder="Search date or day...">
+                  </div>
+
+                  <div class="date-actions-bar">
+                    <span class="date-count-summary" id="date-selection-summary">10 of 10 selected</span>
+                    <div class="date-actions-btns">
+                      <button type="button" class="btn-date-action" id="btn-date-select-all">Select All</button>
+                      <button type="button" class="btn-date-action" id="btn-date-clear">Clear</button>
+                    </div>
+                  </div>
+
+                  <!-- Dynamic 10-Date Checkbox List -->
+                  <div class="dropdown-options-list date-options-list" id="date-checkboxes-list">
+                    <!-- Loaded dynamically from dataset -->
+                  </div>
+                </div>
+              </div>
+
+              <!-- OpZone / Region Dropdown -->
+              <div class="custom-dropdown" id="dropdown-opzone" data-filter-key="opzone" data-placeholder="All OpZones" data-search-placeholder="Search region...">
+                <button type="button" class="dropdown-trigger-btn">
+                  <span class="dropdown-btn-label">All OpZones</span>
+                  <i data-lucide="chevrons-up-down" class="dropdown-chevron"></i>
+                </button>
+                <div class="dropdown-panel">
+                  <div class="dropdown-search-box">
+                    <i data-lucide="search" class="search-box-icon"></i>
+                    <input type="text" class="dropdown-search-input" placeholder="Search region...">
+                  </div>
+                  <div class="dropdown-clear-item" style="display: none;">
+                    <i data-lucide="x" class="clear-icon"></i>
+                    <span>Clear selection</span>
+                  </div>
+                  <div class="dropdown-options-list">
+                    <div class="dropdown-option selected" data-value="all"><span class="opt-check">✓</span> <span class="opt-label">All OpZones</span></div>
+                    <div class="dropdown-option" data-value="East"><span class="opt-check">✓</span> <span class="opt-label">East</span></div>
+                    <div class="dropdown-option" data-value="North 1"><span class="opt-check">✓</span> <span class="opt-label">North 1</span></div>
+                    <div class="dropdown-option" data-value="North 2"><span class="opt-check">✓</span> <span class="opt-label">North 2</span></div>
+                    <div class="dropdown-option" data-value="South 1"><span class="opt-check">✓</span> <span class="opt-label">South 1</span></div>
+                    <div class="dropdown-option" data-value="South 2"><span class="opt-check">✓</span> <span class="opt-label">South 2</span></div>
+                    <div class="dropdown-option" data-value="West"><span class="opt-check">✓</span> <span class="opt-label">West</span></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- City Category Dropdown -->
+              <div class="custom-dropdown" id="dropdown-city-type" data-filter-key="cityType" data-placeholder="All Categories" data-search-placeholder="Search category...">
+                <button type="button" class="dropdown-trigger-btn">
+                  <span class="dropdown-btn-label">All Categories</span>
+                  <i data-lucide="chevrons-up-down" class="dropdown-chevron"></i>
+                </button>
+                <div class="dropdown-panel">
+                  <div class="dropdown-search-box">
+                    <i data-lucide="search" class="search-box-icon"></i>
+                    <input type="text" class="dropdown-search-input" placeholder="Search category...">
+                  </div>
+                  <div class="dropdown-clear-item" style="display: none;">
+                    <i data-lucide="x" class="clear-icon"></i>
+                    <span>Clear selection</span>
+                  </div>
+                  <div class="dropdown-options-list">
+                    <div class="dropdown-option selected" data-value="all"><span class="opt-check">✓</span> <span class="opt-label">All Categories</span></div>
+                    <div class="dropdown-option" data-value="Mixed"><span class="opt-check">✓</span> <span class="opt-label">Mixed</span></div>
+                    <div class="dropdown-option" data-value="Tier-1 Business"><span class="opt-check">✓</span> <span class="opt-label">Tier-1 Business</span></div>
+                    <div class="dropdown-option" data-value="Tier-2 Business"><span class="opt-check">✓</span> <span class="opt-label">Tier-2 Business</span></div>
+                    <div class="dropdown-option" data-value="Winter Leisure"><span class="opt-check">✓</span> <span class="opt-label">Winter Leisure</span></div>
+                    <div class="dropdown-option" data-value="Summer Leisure"><span class="opt-check">✓</span> <span class="opt-label">Summer Leisure</span></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- City Dropdown -->
+              <div class="custom-dropdown" id="dropdown-city" data-filter-key="city" data-placeholder="All Cities" data-search-placeholder="Search city...">
+                <button type="button" class="dropdown-trigger-btn">
+                  <span class="dropdown-btn-label">All Cities</span>
+                  <i data-lucide="chevrons-up-down" class="dropdown-chevron"></i>
+                </button>
+                <div class="dropdown-panel">
+                  <div class="dropdown-search-box">
+                    <i data-lucide="search" class="search-box-icon"></i>
+                    <input type="text" class="dropdown-search-input" placeholder="Search city...">
+                  </div>
+                  <div class="dropdown-clear-item" style="display: none;">
+                    <i data-lucide="x" class="clear-icon"></i>
+                    <span>Clear selection</span>
+                  </div>
+                  <div class="dropdown-options-list">
+                    <div class="dropdown-option selected" data-value="all"><span class="opt-check">✓</span> <span class="opt-label">All Cities</span></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Flex Config Dropdown -->
+              <div class="custom-dropdown" id="dropdown-flex" data-filter-key="flex" data-placeholder="All Flex Configs" data-search-placeholder="Search flex...">
+                <button type="button" class="dropdown-trigger-btn">
+                  <span class="dropdown-btn-label">All Flex Configs</span>
+                  <i data-lucide="chevrons-up-down" class="dropdown-chevron"></i>
+                </button>
+                <div class="dropdown-panel">
+                  <div class="dropdown-search-box">
+                    <i data-lucide="search" class="search-box-icon"></i>
+                    <input type="text" class="dropdown-search-input" placeholder="Search flex...">
+                  </div>
+                  <div class="dropdown-clear-item" style="display: none;">
+                    <i data-lucide="x" class="clear-icon"></i>
+                    <span>Clear selection</span>
+                  </div>
+                  <div class="dropdown-options-list">
+                    <div class="dropdown-option selected" data-value="all"><span class="opt-check">✓</span> <span class="opt-label">All Flex Configs</span></div>
+                    <div class="dropdown-option" data-value="Flex"><span class="opt-check">✓</span> <span class="opt-label">Flex</span></div>
+                    <div class="dropdown-option" data-value="Nonflex"><span class="opt-check">✓</span> <span class="opt-label">Non-Flex</span></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Strategy Dropdown -->
+              <div class="custom-dropdown" id="dropdown-strategy" data-filter-key="strategy" data-placeholder="All Strategies" data-search-placeholder="Search strategy...">
+                <button type="button" class="dropdown-trigger-btn">
+                  <span class="dropdown-btn-label">All Strategies</span>
+                  <i data-lucide="chevrons-up-down" class="dropdown-chevron"></i>
+                </button>
+                <div class="dropdown-panel">
+                  <div class="dropdown-search-box">
+                    <i data-lucide="search" class="search-box-icon"></i>
+                    <input type="text" class="dropdown-search-input" placeholder="Search strategy...">
+                  </div>
+                  <div class="dropdown-clear-item" style="display: none;">
+                    <i data-lucide="x" class="clear-icon"></i>
+                    <span>Clear selection</span>
+                  </div>
+                  <div class="dropdown-options-list">
+                    <div class="dropdown-option selected" data-value="all"><span class="opt-check">✓</span> <span class="opt-label">All Strategies</span></div>
+                    <div class="dropdown-option" data-value="surge"><span class="opt-check">✓</span> <span class="opt-label">Rate Surge</span></div>
+                    <div class="dropdown-option" data-value="markdown"><span class="opt-check">✓</span> <span class="opt-label">Markdown</span></div>
+                    <div class="dropdown-option" data-value="baseline"><span class="opt-check">✓</span> <span class="opt-label">Maintain Baseline</span></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Action Buttons -->
+              <button type="button" id="btn-filter-apply" class="btn-filter-apply">Apply</button>
+              <button type="button" id="btn-filter-clear-all" class="btn-filter-clear">Clear All</button>
+            </div>
           </div>
 
           <!-- Active Date Filter Indicator Bar -->
@@ -200,20 +345,22 @@
                     <th>CS_ID</th>
                     <th>Hotel Name</th>
                     <th>City</th>
-                    <th>OpZone</th>
-                    <th>Rev Segment</th>
-                    <th>Rate Flex</th>
-                    <th>Target Date</th>
-                    <th>Current Occ %</th>
-                    <th>Current TDF</th>
-                    <th>Recommended TDF</th>
-                    <th>TDF Delta</th>
-                    <th>Strategy Action</th>
+                    <th>Region</th>
+                    <th>City Type</th>
+                    <th>Date</th>
+                    <th>Benchmark_OCC%</th>
+                    <th>Occupancy %</th>
+                    <th>Walking Share</th>
+                    <th>B2B Share</th>
+                    <th>Factor</th>
+                    <th>New TDF</th>
+                    <th>Pushed Price</th>
+                    <th>Desired Push Price</th>
                   </tr>
                 </thead>
                 <tbody id="dash-table-body">
                   <tr class="empty-state-row">
-                    <td colspan="12">
+                    <td colspan="14">
                       <div class="empty-state">
                         <i data-lucide="bar-chart-2"></i>
                         <p>No Property Dashboard Data Loaded</p>
@@ -233,7 +380,7 @@
               <div class="calendar-top-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">
                 <div class="month-nav-controls" style="display: flex; align-items: center; gap: 12px;">
                   <button class="btn-month-arrow" id="btn-dash-cal-prev" style="padding: 6px 12px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--card-bg); cursor: pointer;"><i data-lucide="chevron-left"></i></button>
-                  <span class="month-name-heading" id="dash-cal-month-heading" style="font-weight: 700; font-size: 1.1rem; min-width: 150px; text-align: center;">August 2026</span>
+                  <span class="month-name-heading" id="dash-cal-month-heading" style="font-weight: 700; font-size: 1.1rem; min-width: 150px; text-align: center;">September 2026</span>
                   <button class="btn-month-arrow" id="btn-dash-cal-next" style="padding: 6px 12px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--card-bg); cursor: pointer;"><i data-lucide="chevron-right"></i></button>
                   <button id="btn-dash-cal-today" class="btn btn-secondary btn-sm">Today</button>
                 </div>
@@ -321,6 +468,7 @@
                 <button type="button" class="btn btn-helper" data-period="tomorrow">Tomorrow</button>
                 <button type="button" class="btn btn-helper" data-period="weekend">This Weekend</button>
                 <button type="button" class="btn btn-helper" data-period="next7">Next 7 Days</button>
+                <button type="button" class="btn btn-helper" data-period="next30">Next 30 Days (1 Month)</button>
               </div>
             </div>
 
@@ -348,67 +496,126 @@
 
             <!-- Split Pricing Modifiers (Split Mode) -->
             <div id="split-pricing-container" style="display: none; margin-bottom: 18px;">
-              <div class="form-row">
+              <div class="form-row" style="margin-bottom: 12px;">
                 <div class="form-group col">
-                  <label for="split-base-price">P0 Price <span class="required">*</span></label>
-                  <input type="number" id="split-base-price" placeholder="e.g. 2000" step="1">
-                  <div class="error-msg" id="split-base-price-error">Enter a positive P0 price.</div>
-                </div>
-                <div class="form-group col">
-                  <label for="split-flexibility">Flexibility</label>
-                  <select id="split-flexibility">
-                    <option value="flex">Flex (divided by 0.72)</option>
-                    <option value="non-flex">Non-Flex (divided by 0.69)</option>
+                  <label for="split-method">Calculation Method</label>
+                  <select id="split-method">
+                    <option value="direct">Direct Multipliers (Mon-Thu / Fri-Sat / Sun)</option>
+                    <option value="target">Target Prices (P0 & Target Prices)</option>
                   </select>
                 </div>
               </div>
-              <div class="form-row">
-                <div class="form-group col">
-                  <label for="split-weekday-target">Mon-Thu Target Price <span class="required">*</span></label>
-                  <input type="number" id="split-weekday-target" placeholder="e.g. 1800" step="1">
-                  <div class="error-msg" id="split-weekday-target-error">Enter a target price.</div>
+
+              <!-- Direct Multipliers Sub-Container -->
+              <div id="split-direct-container">
+                <div class="form-row" style="margin-bottom: 12px;">
+                  <div class="form-group col">
+                    <label for="split-direct-weekend-behavior">Day Group Target</label>
+                    <select id="split-direct-weekend-behavior">
+                      <option value="include">All Days (Mon–Thu, Fri–Sat, Sunday)</option>
+                      <option value="weekdays_only">Weekdays Only (Mon–Thu, Skip Fri–Sat–Sun)</option>
+                      <option value="weekends_only">Weekends Only (Fri–Sat, Skip Mon–Thu, Sunday Optional)</option>
+                    </select>
+                  </div>
                 </div>
-                <div class="form-group col">
-                  <label for="split-friday-target">Friday Target Price <span class="required">*</span></label>
-                  <input type="number" id="split-friday-target" placeholder="e.g. 2200" step="1">
-                  <div class="error-msg" id="split-friday-target-error">Enter a target price.</div>
+                <div class="form-row">
+                  <div class="form-group col" id="split-direct-mon-thu-wrapper">
+                    <label for="split-direct-mon-thu">Mon–Thu Multiplier <span class="required">*</span></label>
+                    <div class="input-prefix-wrapper">
+                      <span class="input-prefix">×</span>
+                      <input type="number" id="split-direct-mon-thu" step="0.01" min="0.01" placeholder="e.g. 1.10">
+                    </div>
+                  </div>
+                  <div class="form-group col" id="split-direct-fri-sat-wrapper">
+                    <label for="split-direct-fri-sat">Fri–Sat Multiplier <span class="required">*</span></label>
+                    <div class="input-prefix-wrapper">
+                      <span class="input-prefix">×</span>
+                      <input type="number" id="split-direct-fri-sat" step="0.01" min="0.01" placeholder="e.g. 1.25">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row" id="split-direct-sunday-row">
+                  <div class="form-group col">
+                    <label for="split-direct-sunday-behavior">Sunday Behavior</label>
+                    <select id="split-direct-sunday-behavior">
+                      <option value="custom">Use Custom Sunday Multiplier</option>
+                      <option value="skip">Skip Sunday Entirely</option>
+                    </select>
+                  </div>
+                  <div class="form-group col" id="split-direct-sunday-wrapper">
+                    <label for="split-direct-sunday">Sunday Multiplier <span class="required">*</span></label>
+                    <div class="input-prefix-wrapper">
+                      <span class="input-prefix">×</span>
+                      <input type="number" id="split-direct-sunday" step="0.01" min="0.01" placeholder="e.g. 1.05">
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="form-row">
-                <div class="form-group col">
-                  <label for="split-saturday-behavior">Saturday Behavior</label>
-                  <select id="split-saturday-behavior">
-                    <option value="custom">Use Custom Saturday Target</option>
-                    <option value="same">Same as Friday Target</option>
-                  </select>
+
+              <!-- Target Prices Sub-Container -->
+              <div id="split-target-container" style="display: none;">
+                <div class="form-row">
+                  <div class="form-group col">
+                    <label for="split-base-price">P0 Price <span class="required">*</span></label>
+                    <input type="number" id="split-base-price" placeholder="e.g. 2000" step="1">
+                    <div class="error-msg" id="split-base-price-error">Enter a positive P0 price.</div>
+                  </div>
+                  <div class="form-group col">
+                    <label for="split-flexibility">Flexibility</label>
+                    <select id="split-flexibility">
+                      <option value="flex">Flex (divided by 0.72)</option>
+                      <option value="non-flex">Non-Flex (divided by 0.69)</option>
+                    </select>
+                  </div>
                 </div>
-                <div class="form-group col" id="split-saturday-target-wrapper">
-                  <label for="split-saturday-target">Saturday Target Price <span class="required">*</span></label>
-                  <input type="number" id="split-saturday-target" placeholder="e.g. 2400" step="1">
-                  <div class="error-msg" id="split-saturday-target-error">Enter a target price.</div>
+                <div class="form-row">
+                  <div class="form-group col">
+                    <label for="split-weekday-target">Mon-Thu Target Price <span class="required">*</span></label>
+                    <input type="number" id="split-weekday-target" placeholder="e.g. 1800" step="1">
+                    <div class="error-msg" id="split-weekday-target-error">Enter a target price.</div>
+                  </div>
+                  <div class="form-group col">
+                    <label for="split-friday-target">Friday Target Price <span class="required">*</span></label>
+                    <input type="number" id="split-friday-target" placeholder="e.g. 2200" step="1">
+                    <div class="error-msg" id="split-friday-target-error">Enter a target price.</div>
+                  </div>
                 </div>
-              </div>
-              <div class="form-row">
-                <div class="form-group col">
-                  <label for="split-sunday-behavior">Sunday Behavior</label>
-                  <select id="split-sunday-behavior">
-                    <option value="custom">Use Custom Target Price</option>
-                    <option value="skip">Skip Sunday Entirely</option>
-                  </select>
+                <div class="form-row">
+                  <div class="form-group col">
+                    <label for="split-saturday-behavior">Saturday Behavior</label>
+                    <select id="split-saturday-behavior">
+                      <option value="custom">Use Custom Saturday Target</option>
+                      <option value="same">Same as Friday Target</option>
+                    </select>
+                  </div>
+                  <div class="form-group col" id="split-saturday-target-wrapper">
+                    <label for="split-saturday-target">Saturday Target Price <span class="required">*</span></label>
+                    <input type="number" id="split-saturday-target" placeholder="e.g. 2400" step="1">
+                    <div class="error-msg" id="split-saturday-target-error">Enter a target price.</div>
+                  </div>
                 </div>
-                <div class="form-group col" id="split-sunday-target-wrapper">
-                  <label for="split-sunday-target">Sunday Target Price <span class="required">*</span></label>
-                  <input type="number" id="split-sunday-target" placeholder="e.g. 2000" step="1">
-                  <div class="error-msg" id="split-sunday-target-error">Enter a target price.</div>
+                <div class="form-row">
+                  <div class="form-group col">
+                    <label for="split-sunday-behavior">Sunday Behavior</label>
+                    <select id="split-sunday-behavior">
+                      <option value="custom">Use Custom Target Price</option>
+                      <option value="skip">Skip Sunday Entirely</option>
+                    </select>
+                  </div>
+                  <div class="form-group col" id="split-sunday-target-wrapper">
+                    <label for="split-sunday-target">Sunday Target Price <span class="required">*</span></label>
+                    <input type="number" id="split-sunday-target" placeholder="e.g. 2000" step="1">
+                    <div class="error-msg" id="split-sunday-target-error">Enter a target price.</div>
+                  </div>
                 </div>
-              </div>
-              <!-- Live Split Multipliers preview -->
-              <div class="split-preview-text"
-                style="font-size: 0.75rem; color: var(--accent-secondary); margin-top: 10px; font-weight: 600; background: #fff7ed; padding: 8px 12px; border-radius: 6px; border: 1px solid #fed7aa;">
-                Live Preview Multipliers: Mon-Thu: <span id="preview-wd" style="color: var(--text-primary);">-</span> |
-                Fri: <span id="preview-fr" style="color: var(--text-primary);">-</span> | Sat: <span
-                  id="preview-sa" style="color: var(--text-primary);">-</span> | Sun: <span
-                  id="preview-su" style="color: var(--text-primary);">-</span>
+                <!-- Live Split Multipliers preview -->
+                <div class="split-preview-text"
+                  style="font-size: 0.75rem; color: var(--accent-secondary); margin-top: 10px; font-weight: 600; background: #fff7ed; padding: 8px 12px; border-radius: 6px; border: 1px solid #fed7aa;">
+                  Live Preview Multipliers: Mon-Thu: <span id="preview-wd" style="color: var(--text-primary);">-</span> |
+                  Fri: <span id="preview-fr" style="color: var(--text-primary);">-</span> | Sat: <span
+                    id="preview-sa" style="color: var(--text-primary);">-</span> | Sun: <span
+                    id="preview-su" style="color: var(--text-primary);">-</span>
+                </div>
               </div>
             </div>
 
@@ -600,6 +807,7 @@
       </div>
     </section>
   </main>
+</div>
 
   <!-- Toast Notification Container -->
   <div id="toast-container" class="toast-container"></div>

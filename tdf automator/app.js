@@ -53,12 +53,28 @@ document.addEventListener('DOMContentLoaded', () => {
   setupDateDefaults();
   setupJoinedHotelsListeners();
   setupTabs();
+  setupSidebarToggle();
   setupPricingModeListeners();
 
   // Set initial landscape mode layout for default active tab (TDF Dashboard)
-  const activeTabBtn = document.querySelector('.sidebar-tabs .tab-btn.active');
+  const activeTabBtn = document.querySelector('.tab-btn.active');
   if (activeTabBtn) activeTabBtn.click();
 });
+
+// Setup Collapsible Sidebar Toggle
+function setupSidebarToggle() {
+  const btnToggle = document.getElementById('sidebar-toggle-btn');
+  const verticalSidebar = document.getElementById('vertical-sidebar');
+
+  if (btnToggle && verticalSidebar) {
+    btnToggle.addEventListener('click', () => {
+      verticalSidebar.classList.toggle('collapsed');
+      if (window.lucide) {
+        window.lucide.createIcons();
+      }
+    });
+  }
+}
 
 // Setup Default Dates (Today to Tomorrow)
 function setupDateDefaults() {
@@ -81,6 +97,39 @@ function formatDateString(date) {
 // Formatter to YYYYMMDD (used for spreadsheet output)
 function formatToYYYYMMDD(dateString) {
   return dateString.replace(/-/g, '');
+}
+
+// Helper: Parses any date header string (e.g. '9/1/2026', '1-Sep', '2026-09-01') to YYYYMMDD
+function parseHeaderToYYYYMMDD(str) {
+  if (!str) return '';
+  const s = String(str).trim();
+
+  // M/D/YYYY or MM/DD/YYYY or M/D/YY (e.g. 9/1/2026, 09/01/2026)
+  const m1 = s.match(/^(\d{1,2})[\/-](\d{1,2})[\/-](\d{2,4})$/);
+  if (m1) {
+    let m = parseInt(m1[1]);
+    let d = parseInt(m1[2]);
+    let y = parseInt(m1[3]);
+    if (y < 100) y += 2000;
+    return `${y}${String(m).padStart(2, '0')}${String(d).padStart(2, '0')}`;
+  }
+
+  // D-MMM or DD-MMM (e.g. 1-Sep, 15-Aug)
+  const monthMap = { jan: '01', feb: '02', mar: '03', apr: '04', may: '05', jun: '06', jul: '07', aug: '08', sep: '09', oct: '10', nov: '11', dec: '12' };
+  const m2 = s.match(/^(\d{1,2})[-/]([a-zA-Z]{3})$/i);
+  if (m2) {
+    const day = String(m2[1]).padStart(2, '0');
+    const mon = monthMap[m2[2].toLowerCase()];
+    if (mon) return `2026${mon}${day}`;
+  }
+
+  // YYYY-MM-DD or YYYY/MM/DD
+  const m3 = s.match(/^(\d{4})[\/-](\d{1,2})[\/-](\d{1,2})$/);
+  if (m3) {
+    return `${m3[1]}${String(m3[2]).padStart(2, '0')}${String(m3[3]).padStart(2, '0')}`;
+  }
+
+  return '';
 }
 
 // Date calculation helpers for quick presets
@@ -116,6 +165,10 @@ document.querySelectorAll('.btn-helper').forEach(btn => {
       case 'next7':
         // Today to 6 days from now
         end.setDate(today.getDate() + 6);
+        break;
+      case 'next30':
+        // Today to 29 days from now (1 Month)
+        end.setDate(today.getDate() + 29);
         break;
     }
 
@@ -217,71 +270,159 @@ function validateForm() {
     showError('multiplier-error', false);
     multiplierInput.classList.remove('invalid');
 
-    // Validate Base Price
-    const basePriceVal = parseFloat(splitBasePriceInput.value);
-    if (isNaN(basePriceVal) || basePriceVal <= 0) {
-      showError('split-base-price-error', true);
-      splitBasePriceInput.classList.add('invalid');
-      isValid = false;
-    } else {
+    const splitMethodEl = document.getElementById('split-method');
+    const splitMethod = splitMethodEl ? splitMethodEl.value : 'direct';
+
+    if (splitMethod === 'direct') {
+      // Clear target price errors
       showError('split-base-price-error', false);
-      splitBasePriceInput.classList.remove('invalid');
-    }
-
-    // Validate Weekday Target
-    const wdTargetVal = parseFloat(splitWeekdayTargetInput.value);
-    if (isNaN(wdTargetVal) || wdTargetVal <= 0) {
-      showError('split-weekday-target-error', true);
-      splitWeekdayTargetInput.classList.add('invalid');
-      isValid = false;
-    } else {
+      if (splitBasePriceInput) splitBasePriceInput.classList.remove('invalid');
       showError('split-weekday-target-error', false);
-      splitWeekdayTargetInput.classList.remove('invalid');
-    }
-
-    // Validate Friday Target
-    const frTargetVal = parseFloat(splitFridayTargetInput.value);
-    if (isNaN(frTargetVal) || frTargetVal <= 0) {
-      showError('split-friday-target-error', true);
-      if (splitFridayTargetInput) splitFridayTargetInput.classList.add('invalid');
-      isValid = false;
-    } else {
+      if (splitWeekdayTargetInput) splitWeekdayTargetInput.classList.remove('invalid');
       showError('split-friday-target-error', false);
       if (splitFridayTargetInput) splitFridayTargetInput.classList.remove('invalid');
-    }
+      showError('split-saturday-target-error', false);
+      if (splitSaturdayTargetInput) splitSaturdayTargetInput.classList.remove('invalid');
+      showError('split-sunday-target-error', false);
+      if (splitSundayTargetInput) splitSundayTargetInput.classList.remove('invalid');
 
-    // Validate Saturday Target if custom mode
-    const satBehavior = splitSaturdayBehaviorSelect ? splitSaturdayBehaviorSelect.value : 'custom';
-    if (satBehavior === 'custom') {
-      const saTargetVal = parseFloat(splitSaturdayTargetInput.value);
-      if (isNaN(saTargetVal) || saTargetVal <= 0) {
-        showError('split-saturday-target-error', true);
-        if (splitSaturdayTargetInput) splitSaturdayTargetInput.classList.add('invalid');
+      // Validate Direct Multipliers
+      const directMonThuInput = document.getElementById('split-direct-mon-thu');
+      const directFriSatInput = document.getElementById('split-direct-fri-sat');
+      const directSunInput = document.getElementById('split-direct-sunday');
+      const directSunBehEl = document.getElementById('split-direct-sunday-behavior');
+      const directWeekendBehEl = document.getElementById('split-direct-weekend-behavior');
+      const directWeekendBeh = directWeekendBehEl ? directWeekendBehEl.value : 'include';
+
+      if (directWeekendBeh === 'weekdays_only' || directWeekendBeh === 'skip') {
+        if (directMonThuInput) directMonThuInput.classList.remove('invalid');
+        const monThuVal = directMonThuInput ? parseFloat(directMonThuInput.value) : NaN;
+        if (isNaN(monThuVal) || monThuVal <= 0) {
+          if (directMonThuInput) directMonThuInput.classList.add('invalid');
+          isValid = false;
+        }
+        if (directFriSatInput) directFriSatInput.classList.remove('invalid');
+        if (directSunInput) directSunInput.classList.remove('invalid');
+      } else if (directWeekendBeh === 'weekends_only') {
+        if (directMonThuInput) directMonThuInput.classList.remove('invalid');
+
+        const friSatVal = directFriSatInput ? parseFloat(directFriSatInput.value) : NaN;
+        if (isNaN(friSatVal) || friSatVal <= 0) {
+          if (directFriSatInput) directFriSatInput.classList.add('invalid');
+          isValid = false;
+        } else {
+          if (directFriSatInput) directFriSatInput.classList.remove('invalid');
+        }
+
+        const sunBeh = directSunBehEl ? directSunBehEl.value : 'custom';
+        if (sunBeh === 'custom') {
+          const sunVal = directSunInput ? parseFloat(directSunInput.value) : NaN;
+          if (isNaN(sunVal) || sunVal <= 0) {
+            if (directSunInput) directSunInput.classList.add('invalid');
+            isValid = false;
+          } else {
+            if (directSunInput) directSunInput.classList.remove('invalid');
+          }
+        } else {
+          if (directSunInput) directSunInput.classList.remove('invalid');
+        }
+      } else {
+        const monThuVal = directMonThuInput ? parseFloat(directMonThuInput.value) : NaN;
+        if (isNaN(monThuVal) || monThuVal <= 0) {
+          if (directMonThuInput) directMonThuInput.classList.add('invalid');
+          isValid = false;
+        } else {
+          if (directMonThuInput) directMonThuInput.classList.remove('invalid');
+        }
+
+        const friSatVal = directFriSatInput ? parseFloat(directFriSatInput.value) : NaN;
+        if (isNaN(friSatVal) || friSatVal <= 0) {
+          if (directFriSatInput) directFriSatInput.classList.add('invalid');
+          isValid = false;
+        } else {
+          if (directFriSatInput) directFriSatInput.classList.remove('invalid');
+        }
+
+        const sunBeh = directSunBehEl ? directSunBehEl.value : 'custom';
+        if (sunBeh === 'custom') {
+          const sunVal = directSunInput ? parseFloat(directSunInput.value) : NaN;
+          if (isNaN(sunVal) || sunVal <= 0) {
+            if (directSunInput) directSunInput.classList.add('invalid');
+            isValid = false;
+          } else {
+            if (directSunInput) directSunInput.classList.remove('invalid');
+          }
+        } else {
+          if (directSunInput) directSunInput.classList.remove('invalid');
+        }
+      }
+    } else {
+      // Validate Target Prices
+      const basePriceVal = parseFloat(splitBasePriceInput.value);
+      if (isNaN(basePriceVal) || basePriceVal <= 0) {
+        showError('split-base-price-error', true);
+        splitBasePriceInput.classList.add('invalid');
         isValid = false;
+      } else {
+        showError('split-base-price-error', false);
+        splitBasePriceInput.classList.remove('invalid');
+      }
+
+      // Validate Weekday Target
+      const wdTargetVal = parseFloat(splitWeekdayTargetInput.value);
+      if (isNaN(wdTargetVal) || wdTargetVal <= 0) {
+        showError('split-weekday-target-error', true);
+        splitWeekdayTargetInput.classList.add('invalid');
+        isValid = false;
+      } else {
+        showError('split-weekday-target-error', false);
+        splitWeekdayTargetInput.classList.remove('invalid');
+      }
+
+      // Validate Friday Target
+      const frTargetVal = parseFloat(splitFridayTargetInput.value);
+      if (isNaN(frTargetVal) || frTargetVal <= 0) {
+        showError('split-friday-target-error', true);
+        if (splitFridayTargetInput) splitFridayTargetInput.classList.add('invalid');
+        isValid = false;
+      } else {
+        showError('split-friday-target-error', false);
+        if (splitFridayTargetInput) splitFridayTargetInput.classList.remove('invalid');
+      }
+
+      // Validate Saturday Target if custom mode
+      const satBehavior = splitSaturdayBehaviorSelect ? splitSaturdayBehaviorSelect.value : 'custom';
+      if (satBehavior === 'custom') {
+        const saTargetVal = parseFloat(splitSaturdayTargetInput.value);
+        if (isNaN(saTargetVal) || saTargetVal <= 0) {
+          showError('split-saturday-target-error', true);
+          if (splitSaturdayTargetInput) splitSaturdayTargetInput.classList.add('invalid');
+          isValid = false;
+        } else {
+          showError('split-saturday-target-error', false);
+          if (splitSaturdayTargetInput) splitSaturdayTargetInput.classList.remove('invalid');
+        }
       } else {
         showError('split-saturday-target-error', false);
         if (splitSaturdayTargetInput) splitSaturdayTargetInput.classList.remove('invalid');
       }
-    } else {
-      showError('split-saturday-target-error', false);
-      if (splitSaturdayTargetInput) splitSaturdayTargetInput.classList.remove('invalid');
-    }
 
-    // Validate Sunday Target if custom mode
-    const sunBehavior = splitSundayBehaviorSelect.value;
-    if (sunBehavior === 'custom') {
-      const suTargetVal = parseFloat(splitSundayTargetInput.value);
-      if (isNaN(suTargetVal) || suTargetVal <= 0) {
-        showError('split-sunday-target-error', true);
-        splitSundayTargetInput.classList.add('invalid');
-        isValid = false;
+      // Validate Sunday Target if custom mode
+      const sunBehavior = splitSundayBehaviorSelect.value;
+      if (sunBehavior === 'custom') {
+        const suTargetVal = parseFloat(splitSundayTargetInput.value);
+        if (isNaN(suTargetVal) || suTargetVal <= 0) {
+          showError('split-sunday-target-error', true);
+          splitSundayTargetInput.classList.add('invalid');
+          isValid = false;
+        } else {
+          showError('split-sunday-target-error', false);
+          splitSundayTargetInput.classList.remove('invalid');
+        }
       } else {
         showError('split-sunday-target-error', false);
         splitSundayTargetInput.classList.remove('invalid');
       }
-    } else {
-      showError('split-sunday-target-error', false);
-      splitSundayTargetInput.classList.remove('invalid');
     }
   }
 
@@ -462,40 +603,71 @@ function generateRows() {
       } else if (mode === 'fixed') {
         rowMultiplier = fixedMultiplier;
       } else {
-        // We are in Split mode, so calculate the multiplier based on weekday/weekend/Sunday targets
-        const basePrice = parseFloat(splitBasePriceInput.value);
-        const flex = splitFlexibilitySelect.value;
-        const flexFactor = flex === 'flex' ? 0.72 : 0.69;
-
-        let targetPrice = basePrice;
+        // We are in Split mode: Check method (Direct Multipliers vs Target Prices)
+        const splitMethodSelectEl = document.getElementById('split-method');
+        const splitMethod = splitMethodSelectEl ? splitMethodSelectEl.value : 'direct';
         let shouldSkip = false;
 
-        if (dayOfWeek >= 1 && dayOfWeek <= 4) { // Mon-Thu
-          targetPrice = parseFloat(splitWeekdayTargetInput.value) || basePrice;
-        } else if (dayOfWeek === 5) { // Friday
-          targetPrice = parseFloat(splitFridayTargetInput.value) || basePrice;
-        } else if (dayOfWeek === 6) { // Saturday
-          const satBehavior = splitSaturdayBehaviorSelect ? splitSaturdayBehaviorSelect.value : 'custom';
-          if (satBehavior === 'same') {
+        if (splitMethod === 'direct') {
+          const directWeekendBehEl = document.getElementById('split-direct-weekend-behavior');
+          const directWeekendBeh = directWeekendBehEl ? directWeekendBehEl.value : 'include';
+
+          const directMonThu = parseFloat(document.getElementById('split-direct-mon-thu')?.value || '1.10');
+          const directFriSat = parseFloat(document.getElementById('split-direct-fri-sat')?.value || '1.25');
+          const directSunBehaviorEl = document.getElementById('split-direct-sunday-behavior');
+          const directSundayBeh = directSunBehaviorEl ? directSunBehaviorEl.value : 'custom';
+          const directSunday = parseFloat(document.getElementById('split-direct-sunday')?.value || '1.05');
+
+          if ((directWeekendBeh === 'weekdays_only' || directWeekendBeh === 'skip') && (dayOfWeek === 5 || dayOfWeek === 6 || dayOfWeek === 0)) {
+            shouldSkip = true; // Skip Friday, Saturday, and Sunday in Weekday Only mode
+          } else if (directWeekendBeh === 'weekends_only' && dayOfWeek >= 1 && dayOfWeek <= 4) {
+            shouldSkip = true; // Skip Mon-Thu in Weekend Only mode
+          } else if (dayOfWeek >= 1 && dayOfWeek <= 4) { // Mon-Thu
+            rowMultiplier = (!isNaN(directMonThu) ? directMonThu : 1.10).toFixed(2);
+          } else if (dayOfWeek === 5 || dayOfWeek === 6) { // Fri-Sat
+            rowMultiplier = (!isNaN(directFriSat) ? directFriSat : 1.25).toFixed(2);
+          } else { // Sunday (0)
+            if (directSundayBeh === 'skip') {
+              shouldSkip = true;
+            } else {
+              rowMultiplier = (!isNaN(directSunday) ? directSunday : 1.05).toFixed(2);
+            }
+          }
+        } else {
+          // Target Prices mode
+          const basePrice = parseFloat(splitBasePriceInput.value);
+          const flex = splitFlexibilitySelect.value;
+          const flexFactor = flex === 'flex' ? 0.72 : 0.69;
+
+          let targetPrice = basePrice;
+
+          if (dayOfWeek >= 1 && dayOfWeek <= 4) { // Mon-Thu
+            targetPrice = parseFloat(splitWeekdayTargetInput.value) || basePrice;
+          } else if (dayOfWeek === 5) { // Friday
             targetPrice = parseFloat(splitFridayTargetInput.value) || basePrice;
-          } else {
-            targetPrice = parseFloat(splitSaturdayTargetInput.value) || basePrice;
+          } else if (dayOfWeek === 6) { // Saturday
+            const satBehavior = splitSaturdayBehaviorSelect ? splitSaturdayBehaviorSelect.value : 'custom';
+            if (satBehavior === 'same') {
+              targetPrice = parseFloat(splitFridayTargetInput.value) || basePrice;
+            } else {
+              targetPrice = parseFloat(splitSaturdayTargetInput.value) || basePrice;
+            }
+          } else { // Sunday (0)
+            const sunBehavior = splitSundayBehaviorSelect.value;
+            if (sunBehavior === 'skip') {
+              shouldSkip = true;
+            } else {
+              targetPrice = parseFloat(splitSundayTargetInput.value) || basePrice;
+            }
           }
-        } else { // Sunday (0)
-          const sunBehavior = splitSundayBehaviorSelect.value;
-          if (sunBehavior === 'skip') {
-            shouldSkip = true;
-          } else {
-            targetPrice = parseFloat(splitSundayTargetInput.value) || basePrice;
-          }
+
+          const newPrice = Math.round(targetPrice / 1.05 / flexFactor);
+          rowMultiplier = (newPrice / basePrice).toFixed(2);
         }
 
         if (shouldSkip) {
           return; // Skip generating this row for Sunday
         }
-
-        const newPrice = Math.round(targetPrice / 1.05 / flexFactor);
-        rowMultiplier = (newPrice / basePrice).toFixed(2);
       }
 
       const formattedDate = formatToYYYYMMDD(date);
@@ -996,8 +1168,9 @@ function setupTabs() {
   const previewCard = document.querySelector('.preview-card');
 
   tabButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', (e) => {
       const targetTab = btn.dataset.tab;
+      if (!targetTab) return; // Allow external navigation links to open in new tab
 
       // Toggle active class on buttons
       tabButtons.forEach(b => b.classList.remove('active'));
@@ -1045,6 +1218,60 @@ function setupPricingModeListeners() {
       updateSplitMultipliersPreview();
     }
   });
+
+  const splitMethodSelect = document.getElementById('split-method');
+  const splitDirectContainer = document.getElementById('split-direct-container');
+  const splitTargetContainer = document.getElementById('split-target-container');
+  const splitDirectSunBehavior = document.getElementById('split-direct-sunday-behavior');
+  const splitDirectSunWrapper = document.getElementById('split-direct-sunday-wrapper');
+  const splitDirectWeekendBeh = document.getElementById('split-direct-weekend-behavior');
+  const splitDirectFriSatWrapper = document.getElementById('split-direct-fri-sat-wrapper');
+  const splitDirectSunRow = document.getElementById('split-direct-sunday-row');
+
+  if (splitMethodSelect) {
+    splitMethodSelect.addEventListener('change', () => {
+      if (splitMethodSelect.value === 'direct') {
+        if (splitDirectContainer) splitDirectContainer.style.display = 'block';
+        if (splitTargetContainer) splitTargetContainer.style.display = 'none';
+      } else {
+        if (splitDirectContainer) splitDirectContainer.style.display = 'none';
+        if (splitTargetContainer) splitTargetContainer.style.display = 'block';
+      }
+    });
+  }
+
+  const splitDirectMonThuWrapper = document.getElementById('split-direct-mon-thu-wrapper');
+
+  if (splitDirectWeekendBeh) {
+    const updateWeekendBehUI = () => {
+      const val = splitDirectWeekendBeh.value;
+      if (val === 'weekdays_only' || val === 'skip') {
+        if (splitDirectMonThuWrapper?.style) splitDirectMonThuWrapper.style.display = 'block';
+        if (splitDirectFriSatWrapper?.style) splitDirectFriSatWrapper.style.display = 'none';
+        if (splitDirectSunRow?.style) splitDirectSunRow.style.display = 'none';
+      } else if (val === 'weekends_only') {
+        if (splitDirectMonThuWrapper?.style) splitDirectMonThuWrapper.style.display = 'none';
+        if (splitDirectFriSatWrapper?.style) splitDirectFriSatWrapper.style.display = 'block';
+        if (splitDirectSunRow?.style) splitDirectSunRow.style.display = 'flex';
+      } else {
+        if (splitDirectMonThuWrapper?.style) splitDirectMonThuWrapper.style.display = 'block';
+        if (splitDirectFriSatWrapper?.style) splitDirectFriSatWrapper.style.display = 'block';
+        if (splitDirectSunRow?.style) splitDirectSunRow.style.display = 'flex';
+      }
+    };
+    splitDirectWeekendBeh.addEventListener('change', updateWeekendBehUI);
+    updateWeekendBehUI();
+  }
+
+  if (splitDirectSunBehavior) {
+    splitDirectSunBehavior.addEventListener('change', () => {
+      if (splitDirectSunBehavior.value === 'skip') {
+        if (splitDirectSunWrapper) splitDirectSunWrapper.style.display = 'none';
+      } else {
+        if (splitDirectSunWrapper) splitDirectSunWrapper.style.display = 'block';
+      }
+    });
+  }
 
   // Toggle Saturday Target visibility based on behavior
   if (splitSaturdayBehaviorSelect) {
@@ -1342,6 +1569,7 @@ function setupDashboardEvents() {
     btnGenHawkeye.addEventListener('click', generateHawkeyeRulesFromDash);
   }
 
+  setupDateFilterDropdown();
   setupDashboardViewToggle();
 }
 
@@ -1373,11 +1601,15 @@ async function autoLoadWorkspaceDatasets() {
     const futureOccRows = result.data.futureOcc || [];
     const factorRows = result.data.next10DaysFactors || [];
     const rateFlexRows = result.data.rateFlex || [];
+    const benchmarkOccRows = result.data.benchmarkOcc || [];
+    const channelRNsRows = result.data.channelRNs || [];
 
     console.log('Google Sheets data received:');
     console.log('Future Occ rows:', futureOccRows.length);
     console.log('Factor rows:', factorRows.length);
     console.log('Rate Flex rows:', rateFlexRows.length);
+    console.log('Benchmark Occ rows:', benchmarkOccRows.length);
+    console.log('Channel RNs rows:', channelRNsRows.length);
 
     // Convert Google Sheets arrays into CSV text.
     // This lets us keep your existing dashboard processing logic unchanged.
@@ -1395,16 +1627,20 @@ async function autoLoadWorkspaceDatasets() {
     const occText = rowsToCsv(futureOccRows);
     const facText = rowsToCsv(factorRows);
     const flexText = rowsToCsv(rateFlexRows);
+    const benchText = rowsToCsv(benchmarkOccRows);
+    const channelText = rowsToCsv(channelRNsRows);
 
     // Use the existing dashboard processing engine
     parseAndProcessDashboardData(
       occText,
       facText,
-      flexText
+      flexText,
+      benchText,
+      channelText
     );
 
     showToast(
-      `Loaded live Google Sheets data: ${futureOccRows.length - 1} occupancy rows, ${factorRows.length - 1} factor rows, ${rateFlexRows.length - 1} rate-flex rows.`,
+      `Loaded live Google Sheets data: ${futureOccRows.length - 1} occupancy rows, ${benchmarkOccRows.length - 1} benchmark rows, ${channelRNsRows.length - 1} channel rows, ${rateFlexRows.length - 1} rate-flex rows.`,
       'success'
     );
 
@@ -1431,6 +1667,25 @@ function padCSId7Digit(idStr) {
   return cleaned;
 }
 
+// Helper: Normalizes any date format (YYYY-MM-DD, M/D/YYYY, Excel serial, etc.) to YYYYMMDD
+function normalizeDateToYYYYMMDD(raw) {
+  if (!raw) return '';
+  const s = String(raw).trim();
+  if (/^\d{4}[-/]\d{1,2}[-/]\d{1,2}$/.test(s)) {
+    const parts = s.split(/[-/]/);
+    return parts[0] + parts[1].padStart(2, '0') + parts[2].padStart(2, '0');
+  }
+  if (!isNaN(s) && Number(s) > 40000 && Number(s) < 60000) {
+    const d = new Date(Math.round((Number(s) - 25569) * 86400 * 1000));
+    return d.getUTCFullYear() + String(d.getUTCMonth() + 1).padStart(2, '0') + String(d.getUTCDate()).padStart(2, '0');
+  }
+  const dt = new Date(s);
+  if (!isNaN(dt.getTime())) {
+    return dt.getFullYear() + String(dt.getMonth() + 1).padStart(2, '0') + String(dt.getDate()).padStart(2, '0');
+  }
+  return s.replace(/[-/]/g, '').substring(0, 8);
+}
+
 // Fast CSV Parser
 function parseCsvSimple(text) {
   if (!text) return [];
@@ -1452,11 +1707,27 @@ function parseCsvSimple(text) {
   });
 }
 
+// Helper: Normalizes City Category to standard 5 categories: Mixed, Tier-1 Business, Tier-2 Business, Winter Leisure, Summer Leisure
+function normalizeCityCategory(rawType) {
+  if (!rawType) return 'Mixed';
+  const str = String(rawType).trim();
+  const lower = str.toLowerCase();
+
+  if (lower.includes('tier-1') || lower.includes('tier 1')) return 'Tier-1 Business';
+  if (lower.includes('tier-2') || lower.includes('tier 2')) return 'Tier-2 Business';
+  if (lower.includes('summer')) return 'Summer Leisure';
+  if (lower.includes('winter')) return 'Winter Leisure';
+  if (lower.includes('mixed')) return 'Mixed';
+  return str || 'Mixed';
+}
+
 // Parse and process datasets (Only LIVE properties)
-function parseAndProcessDashboardData(occText, facText, flexText) {
+function parseAndProcessDashboardData(occText, facText, flexText, benchText, channelText) {
   const occRows = parseCsvSimple(occText);
   const facRows = facText ? parseCsvSimple(facText) : [];
   const flexRows = flexText ? parseCsvSimple(flexText) : [];
+  const benchRows = benchText ? parseCsvSimple(benchText) : [];
+  const channelRows = channelText ? parseCsvSimple(channelText) : [];
 
   // Helper: Cleans hotel name by stripping descriptive suffixes (e.g. ', Mall Road', 'With Swimming Pool')
   function getCleanBaseName(name) {
@@ -1469,35 +1740,51 @@ function parseAndProcessDashboardData(occText, facText, flexText) {
     return str.trim();
   }
 
-  // 1. Build Rate Flex & Status Map with dynamic header resolution
+  // 1. Build Rate Flex & Status Map with dynamic header resolution (Master Property Metadata)
   const rateFlexMap = {};
   if (flexRows.length > 0) {
     const header = flexRows[0];
-    let colHx = 1, colCs = 2, colName = 3, colRegion = 5, colStatus = 8, colFlex = 11;
+    let colHotelId = 0, colHx = 1, colCs = 2, colName = 3, colCity = 4, colRegion = 5, colCityType = 6, colStatus = 8, colPretaxFloor = 9, colCurrentSku = 17, colFlex = 11;
     header.forEach((h, idx) => {
       const hStr = h.toLowerCase().trim();
-      if (hStr === 'hx_id') colHx = idx;
+      if (hStr === 'hotel id' || hStr === 'hotel_id' || hStr === 'hotelid') colHotelId = idx;
+      else if (hStr === 'hx_id' || hStr === 'hx id') colHx = idx;
       else if (hStr === 'cs_id' || hStr === 'cs id') colCs = idx;
       else if (hStr === 'hotel name' || hStr === 'name') colName = idx;
+      else if (hStr === 'city') colCity = idx;
       else if (hStr === 'region' || hStr === 'op zone' || hStr === 'zone') colRegion = idx;
-      else if (hStr === 'status') colStatus = idx;
+      else if (hStr.includes('city type') || hStr.includes('city_type') || hStr.includes('category')) colCityType = idx;
+      else if (hStr === 'status' || hStr.includes('status')) colStatus = idx;
+      else if (hStr.includes('pretax_floors') || hStr.includes('pretax floor')) colPretaxFloor = idx;
+      else if (hStr.includes('current pretax sku')) colCurrentSku = idx;
       else if (hStr.includes('flex')) colFlex = idx;
     });
 
     for (let f = 1; f < flexRows.length; f++) {
       const fRow = flexRows[f];
-      if (!fRow || fRow.length < 4) continue;
+      if (!fRow || fRow.length < 3) continue;
+      const hotelId = String(fRow[colHotelId] || '').replace(/\.0$/, '').trim();
       const hxId = String(fRow[colHx] || '').replace(/\.0$/, '').trim();
-      const csId = padCSId7Digit(fRow[colCs]);
-      const hName = String(fRow[colName] || '').toLowerCase().trim();
+      const rawCs = String(fRow[colCs] || '').replace(/\.0$/, '').trim();
+      const csId = padCSId7Digit(rawCs);
+      const rawName = String(fRow[colName] || '').trim();
+      const hName = rawName.toLowerCase();
       const baseName = getCleanBaseName(hName);
+      const city = String(fRow[colCity] || '').trim();
       const region = String(fRow[colRegion] || '').trim();
+      const cityType = normalizeCityCategory(fRow[colCityType]);
       const status = String(fRow[colStatus] || '').trim().toLowerCase();
       const flexVal = String(fRow[colFlex] || 'Flex').trim();
 
-      const item = { flex: flexVal, status: status, region: region };
+      const pretaxFloorVal = parseFloat(String(fRow[colPretaxFloor] || '0').replace(/,/g, '')) || 0;
+      const currentSkuVal = parseFloat(String(fRow[colCurrentSku] || '0').replace(/,/g, '')) || 0;
+      const basePrice = pretaxFloorVal > 0 ? pretaxFloorVal : (currentSkuVal > 0 ? currentSkuVal : 1500);
+
+      const item = { hotelId, csId, rawCs, hxId, rawName, hName, city, region, cityType, flex: flexVal, status: status, basePrice: basePrice };
+      if (hotelId) rateFlexMap[hotelId] = item;
       if (hxId) rateFlexMap[hxId] = item;
       if (csId) rateFlexMap[csId] = item;
+      if (rawCs) rateFlexMap[rawCs] = item;
       if (hName) rateFlexMap[hName] = item;
       if (baseName) rateFlexMap[baseName] = item;
     }
@@ -1519,9 +1806,11 @@ function parseAndProcessDashboardData(occText, facText, flexText) {
       else if (hStr.includes('segment')) colSeg = idx;
       else if (hStr.includes('zone') || hStr.includes('region')) colZone = idx;
 
-      if (h.trim().includes('-Aug') || h.trim().includes('-Sep') || h.trim().includes('2026')) {
-        factorDateCols[h.trim()] = idx;
+      const dateKey = parseHeaderToYYYYMMDD(h);
+      if (dateKey) {
+        factorDateCols[dateKey] = idx;
       }
+      factorDateCols[h.trim()] = idx;
     });
 
     for (let f = 1; f < facRows.length; f++) {
@@ -1541,6 +1830,106 @@ function parseAndProcessDashboardData(occText, facText, flexText) {
       if (csId) factorMap[csId] = item;
       if (hName) factorMap[hName] = item;
       if (baseName) factorMap[baseName] = item;
+    }
+  }
+
+  // 3. Build Benchmark Occ Map with dynamic header resolution (from 'Benchmark Occ' tab)
+  const benchmarkOccMap = {};
+  if (benchRows.length > 0) {
+    const bHeader = benchRows[0];
+    let colBCs = 0, colBDate = 3, colBPct = 6, colBHotel = 1;
+    bHeader.forEach((h, idx) => {
+      const hStr = h.toLowerCase().trim();
+      if (hStr === 'cs id' || hStr === 'cs_id' || hStr === 'csid') colBCs = idx;
+      else if (hStr === 'stay_date' || hStr === 'stay date' || hStr === 'date') colBDate = idx;
+      else if (hStr === 'benchmark_pct' || hStr.includes('benchmark')) colBPct = idx;
+      else if (hStr === 'hotel_name' || hStr.includes('hotel')) colBHotel = idx;
+    });
+
+    for (let b = 1; b < benchRows.length; b++) {
+      const bRow = benchRows[b];
+      if (!bRow || bRow.length <= colBDate) continue;
+
+      const rawCs = String(bRow[colBCs] || '').trim();
+      const rawDate = String(bRow[colBDate] || '').trim();
+      const rawPct = String(bRow[colBPct] || '').trim();
+      if (!rawDate) continue;
+
+      const dateKey = rawDate.replace(/[-/]/g, '').substring(0, 8);
+      let val = parseFloat(rawPct.replace('%', ''));
+      if (isNaN(val)) {
+        val = null;
+      } else if (val > 0 && val <= 1.0) {
+        val = val * 100;
+      }
+      const display = (val !== null) ? `${val.toFixed(1)}%` : '-';
+      const item = { val, display, raw: rawPct };
+
+      if (rawCs) {
+        const cleanId = String(parseInt(rawCs) || rawCs);
+        const paddedCs = padCSId7Digit(rawCs);
+        benchmarkOccMap[`${paddedCs}_${dateKey}`] = item;
+        benchmarkOccMap[`${cleanId}_${dateKey}`] = item;
+      }
+      const hotelName = String(bRow[colBHotel] || '').trim().toLowerCase();
+      if (hotelName) {
+        benchmarkOccMap[`${hotelName}_${dateKey}`] = item;
+        const baseName = getCleanBaseName(hotelName);
+        if (baseName) benchmarkOccMap[`${baseName}_${dateKey}`] = item;
+      }
+    }
+  }
+
+  // 4. Build Channel RNs Map with dynamic header resolution (from 'Channel RNs' tab)
+  const channelRNMap = {};
+  if (channelRows.length > 0) {
+    const cHeader = channelRows[0];
+    let colCCs = 0, colCDate = 1, colCWalkin = 2, colCTreebo = 3, colCB2B = 6;
+    cHeader.forEach((h, idx) => {
+      const hStr = h.toLowerCase().trim();
+      if (hStr === 'cs id' || hStr === 'cs_id' || hStr === 'csid' || hStr === 'id_hotel' || hStr === 'hotel_id') colCCs = idx;
+      else if (hStr === 'stay_date' || hStr === 'stay date' || hStr === 'date') colCDate = idx;
+      else if (hStr === 'walkin_rn' || hStr === 'walkin rn' || hStr === 'walking_rn' || hStr === 'walkin') colCWalkin = idx;
+      else if (hStr === 'treebo_rn' || hStr === 'treebo rn' || hStr === 'treebo') colCTreebo = idx;
+      else if (hStr === 'b2b_rn' || hStr === 'b2b rn' || hStr === 'b2b') colCB2B = idx;
+    });
+
+    for (let c = 1; c < channelRows.length; c++) {
+      const cRow = channelRows[c];
+      if (!cRow || cRow.length <= colCDate) continue;
+
+      const rawCs = String(cRow[colCCs] || '').trim();
+      const rawDate = String(cRow[colCDate] || '').trim();
+      if (!rawDate) continue;
+
+      const dateKey = normalizeDateToYYYYMMDD(rawDate);
+      if (!dateKey) continue;
+
+      const walkinRN = parseFloat(String(cRow[colCWalkin] || '0').replace(/,/g, '')) || 0;
+      const treeboRN = parseFloat(String(cRow[colCTreebo] || '0').replace(/,/g, '')) || 0;
+      const b2bRN = parseFloat(String(cRow[colCB2B] || '0').replace(/,/g, '')) || 0;
+
+      // Walking share = walkin_rn / (walkin_rn + treebo_rn)
+      // B2B share = b2b_rn / (walkin_rn + treebo_rn)
+      const totalRN = walkinRN + treeboRN;
+      const walkingShare = totalRN > 0 ? (walkinRN / totalRN) * 100 : 0;
+      const b2bShare = totalRN > 0 ? (b2bRN / totalRN) * 100 : 0;
+
+      const item = {
+        walkinRN,
+        treeboRN,
+        b2bRN,
+        totalRN,
+        walkingShare,
+        b2bShare
+      };
+
+      if (rawCs) {
+        const cleanId = String(parseInt(rawCs) || rawCs);
+        const paddedCs = padCSId7Digit(rawCs);
+        channelRNMap[`${paddedCs}_${dateKey}`] = item;
+        channelRNMap[`${cleanId}_${dateKey}`] = item;
+      }
     }
   }
 
@@ -1629,18 +2018,31 @@ function parseAndProcessDashboardData(occText, facText, flexText) {
 
     const baseName = getCleanBaseName(hName);
     const meta = factorMap[hId] || factorMap[hName.toLowerCase()] || factorMap[baseName] || { csId: padCSId7Digit(hId), city: 'Unknown', opZone: 'Unassigned', revSegment: 'Standard', row: [] };
-    const displayCsId = padCSId7Digit(meta.csId || hId);
 
     // -------------------------------------------------------------------------
-    // CRITICAL FILTER: ONLY SHOW LIVE PROPERTIES!
+    // CRITICAL FILTER: ONLY SHOW LIVE PROPERTIES FROM HAWKEYE BASE RATES MASTER!
     // -------------------------------------------------------------------------
-    const flexMeta = rateFlexMap[hId] || rateFlexMap[displayCsId] || rateFlexMap[hName.toLowerCase()] || rateFlexMap[baseName] || { flex: 'Flex', status: 'live', region: '' };
-    if (flexMeta.status && flexMeta.status !== 'live') {
-      continue; // Exclude Churned or Stop Sell properties!
+    const flexMeta = rateFlexMap[hId]
+      || (meta.csId ? rateFlexMap[meta.csId] : null)
+      || (meta.csId ? rateFlexMap[padCSId7Digit(meta.csId)] : null)
+      || (meta.hxId ? rateFlexMap[meta.hxId] : null)
+      || rateFlexMap[padCSId7Digit(hId)]
+      || rateFlexMap[hName.toLowerCase()]
+      || rateFlexMap[baseName];
+
+    // If Hawkeye base rates (Rate Flex) are loaded, strictly filter to LIVE properties only!
+    if (flexRows.length > 0) {
+      if (!flexMeta || flexMeta.status !== 'live') {
+        continue; // Exclude non-live, churned, stop sell, or unlisted properties!
+      }
     }
 
-    const rateFlex = flexMeta.flex || 'Flex';
-    const finalOpZone = resolveOpZone(meta.city, hName, flexMeta.region, meta.opZone);
+    const displayCsId = padCSId7Digit((flexMeta && flexMeta.csId) ? flexMeta.csId : (meta.csId || hId));
+    const masterHotelName = (flexMeta && flexMeta.rawName) ? flexMeta.rawName : hName;
+    const masterCity = (flexMeta && flexMeta.city) ? flexMeta.city : (meta.city || 'Unknown');
+    const masterCityType = (flexMeta && flexMeta.cityType) ? flexMeta.cityType : 'Mixed';
+    const rateFlex = (flexMeta && flexMeta.flex) ? flexMeta.flex : 'Flex';
+    const finalOpZone = resolveOpZone(masterCity, masterHotelName, flexMeta ? flexMeta.region : '', meta.opZone);
 
     // Format Date YYYYMMDD and Display string
     let targetDateStr = '';
@@ -1678,12 +2080,22 @@ function parseAndProcessDashboardData(occText, facText, flexText) {
       dayShort = `${dt.getDate()}-${months[dt.getMonth()]}`;
     }
 
-    // Lookup Current TDF
+    // Lookup Current TDF Factor
     let currentTDF = 1.00;
-    if (meta.row && meta.row.length > 0 && factorDateCols[dayShort] !== undefined) {
-      const fVal = parseFloat(meta.row[factorDateCols[dayShort]]);
-      if (!isNaN(fVal) && fVal > 0) currentTDF = fVal;
+    if (meta.row && meta.row.length > 0) {
+      let colIdx = factorDateCols[targetDateStr];
+      if (colIdx === undefined) colIdx = factorDateCols[dayShort];
+      if (colIdx === undefined) colIdx = factorDateCols[rawDate];
+
+      if (colIdx !== undefined && meta.row[colIdx] !== undefined) {
+        const fVal = parseFloat(String(meta.row[colIdx]).trim());
+        if (!isNaN(fVal) && fVal > 0) currentTDF = fVal;
+      }
     }
+
+    // Calculate Pushed Price = Base Rate * Factor
+    const baseRate = flexMeta.basePrice || 1500;
+    const pushedPrice = Math.round(baseRate * currentTDF);
 
     // Multiplier Adjustment
     let occAdj = 1.00;
@@ -1707,23 +2119,64 @@ function parseAndProcessDashboardData(occText, facText, flexText) {
     recTDF = Math.round(recTDF * 100) / 100;
     const delta = Math.round((recTDF - currentTDF) * 100) / 100;
 
+    // Reverse-engineer initial Desired Push Price matching recTDF (New TDF)
+    const initialDesiredPushPrice = (currentTDF > 0 && pushedPrice > 0)
+      ? Math.round(pushedPrice * (recTDF / currentTDF))
+      : pushedPrice;
+
     let strategyKey = 'baseline';
     let strategyLabel = 'Maintain Baseline';
     if (delta > 0.05) { strategyKey = 'surge'; strategyLabel = 'Rate Increase / Surge'; }
     else if (delta < -0.05) { strategyKey = 'markdown'; strategyLabel = 'Markdown / Stimulus'; }
 
+    // Lookup Benchmark Occupancy from Benchmark Occ tab
+    const benchMeta = benchmarkOccMap[`${displayCsId}_${targetDateStr}`]
+      || benchmarkOccMap[`${hId}_${targetDateStr}`]
+      || (meta.csId ? benchmarkOccMap[`${meta.csId}_${targetDateStr}`] : null)
+      || (meta.csId ? benchmarkOccMap[`${padCSId7Digit(meta.csId)}_${targetDateStr}`] : null)
+      || benchmarkOccMap[`${masterHotelName.toLowerCase()}_${targetDateStr}`]
+      || benchmarkOccMap[`${baseName}_${targetDateStr}`];
+
+    const benchmarkOccVal = benchMeta ? benchMeta.val : null;
+    const benchmarkOccDisplay = benchMeta ? benchMeta.display : '-';
+
+    // Lookup Channel RNs (Walking Share & B2B Share) from Channel RNs tab
+    const chanMeta = channelRNMap[`${displayCsId}_${targetDateStr}`]
+      || channelRNMap[`${hId}_${targetDateStr}`]
+      || (meta.csId ? channelRNMap[`${meta.csId}_${targetDateStr}`] : null)
+      || (meta.csId ? channelRNMap[`${padCSId7Digit(meta.csId)}_${targetDateStr}`] : null)
+      || (meta.hxId ? channelRNMap[`${meta.hxId}_${targetDateStr}`] : null)
+      || (meta.hxId ? channelRNMap[`${padCSId7Digit(meta.hxId)}_${targetDateStr}`] : null)
+      || channelRNMap[`${masterHotelName.toLowerCase()}_${targetDateStr}`]
+      || channelRNMap[`${baseName}_${targetDateStr}`];
+
+    const walkingShareVal = chanMeta ? chanMeta.walkingShare : null;
+    const walkingShareDisplay = (walkingShareVal !== null && !isNaN(walkingShareVal)) ? `${walkingShareVal.toFixed(1)}%` : '-';
+
+    const b2bShareVal = chanMeta ? chanMeta.b2bShare : null;
+    const b2bShareDisplay = (b2bShareVal !== null && !isNaN(b2bShareVal)) ? `${b2bShareVal.toFixed(1)}%` : '-';
+
     dashboardState.push({
       csId: displayCsId,
       hotelId: hId,
-      hotelName: hName,
-      city: meta.city,
+      hotelName: masterHotelName,
+      city: masterCity,
+      cityType: masterCityType,
       opZone: finalOpZone,
       revSegment: meta.revSegment,
       rateFlex: rateFlex,
       targetDateStr: targetDateStr,
       dateStr: formattedDate,
+      benchmarkOccVal: benchmarkOccVal,
+      benchmarkOccDisplay: benchmarkOccDisplay,
+      walkingShareVal: walkingShareVal,
+      walkingShareDisplay: walkingShareDisplay,
+      b2bShareVal: b2bShareVal,
+      b2bShareDisplay: b2bShareDisplay,
       occVal: occVal,
       currentTDF: currentTDF,
+      pushedPrice: pushedPrice,
+      desiredPushPrice: initialDesiredPushPrice,
       recTDF: recTDF,
       delta: delta,
       strategyKey: strategyKey,
@@ -1731,7 +2184,7 @@ function parseAndProcessDashboardData(occText, facText, flexText) {
     });
 
     uniqueHotels.add(displayCsId);
-    if (meta.city && meta.city !== 'Unknown') uniqueCities.add(meta.city);
+    if (masterCity && masterCity !== 'Unknown') uniqueCities.add(masterCity);
 
     // OpZone stats (grouped cleanly by finalOpZone e.g. North 1, North 2)
     const z = finalOpZone;
@@ -1746,9 +2199,23 @@ function parseAndProcessDashboardData(occText, facText, flexText) {
     if (delta < -0.05) opZoneStats[z].markdowns++;
   }
 
+  // Auto-detect calendar year/month from dataset dates (e.g. 20260901 -> Sept 2026)
+  if (dashboardState.length > 0) {
+    const firstDateStr = dashboardState[0].targetDateStr;
+    if (firstDateStr && firstDateStr.length === 8) {
+      dashCalYear = parseInt(firstDateStr.substring(0, 4));
+      dashCalMonth = parseInt(firstDateStr.substring(4, 6)) - 1;
+
+      tdfCalYear = dashCalYear;
+      tdfCalMonth = dashCalMonth;
+    }
+  }
+
   // Render KPIs, OpZone Cards, Table & Calendar Dropdown
   renderKPIs(uniqueHotels.size, uniqueCities.size);
   renderOpZoneCards(opZoneStats);
+  populateCityFilterDropdowns();
+  populateDateFilterOptions();
   renderDashTable();
   populateTDFCalendarDropdown();
 }
@@ -1834,20 +2301,496 @@ function renderOpZoneCards(opZoneStats) {
   });
 }
 
+// ==============================================================================
+// CUSTOM SEARCHABLE DROPDOWN FILTER ENGINE (Matching Reference Screenshots)
+// ==============================================================================
+
+class CustomFilterDropdown {
+  constructor(containerEl, onChangeCallback) {
+    this.container = containerEl;
+    this.onChangeCallback = onChangeCallback;
+    this.key = containerEl.dataset.filterKey;
+    this.placeholder = containerEl.dataset.placeholder || 'Select...';
+    this.triggerBtn = containerEl.querySelector('.dropdown-trigger-btn');
+    this.labelEl = containerEl.querySelector('.dropdown-btn-label');
+    this.panelEl = containerEl.querySelector('.dropdown-panel');
+    this.searchInput = containerEl.querySelector('.dropdown-search-input');
+    this.clearRow = containerEl.querySelector('.dropdown-clear-item');
+    this.optionsContainer = containerEl.querySelector('.dropdown-options-list');
+
+    this.selectedValue = 'all';
+    this.initEvents();
+  }
+
+  initEvents() {
+    if (!this.triggerBtn) return;
+
+    this.triggerBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = this.container.classList.contains('open');
+      closeAllCustomDropdowns();
+
+      if (!isOpen) {
+        this.container.classList.add('open');
+        if (this.searchInput) {
+          this.searchInput.value = '';
+          this.filterOptionsList('');
+          setTimeout(() => this.searchInput.focus(), 50);
+        }
+      }
+    });
+
+    if (this.searchInput) {
+      this.searchInput.addEventListener('input', (e) => {
+        this.filterOptionsList(e.target.value.toLowerCase().trim());
+      });
+      this.searchInput.addEventListener('click', (e) => e.stopPropagation());
+    }
+
+    if (this.clearRow) {
+      this.clearRow.addEventListener('click', (e) => {
+        e.stopPropagation();
+        this.selectValue('all');
+        closeAllCustomDropdowns();
+        if (this.onChangeCallback) this.onChangeCallback();
+      });
+    }
+
+    if (this.optionsContainer) {
+      this.optionsContainer.addEventListener('click', (e) => {
+        const optionEl = e.target.closest('.dropdown-option');
+        if (!optionEl) return;
+        e.stopPropagation();
+        const val = optionEl.dataset.value;
+        this.selectValue(val);
+        closeAllCustomDropdowns();
+        if (this.onChangeCallback) this.onChangeCallback();
+      });
+    }
+  }
+
+  filterOptionsList(query) {
+    if (!this.optionsContainer) return;
+    const options = this.optionsContainer.querySelectorAll('.dropdown-option');
+    options.forEach(opt => {
+      const text = opt.textContent.toLowerCase();
+      if (!query || text.includes(query) || opt.dataset.value === 'all') {
+        opt.style.display = 'flex';
+      } else {
+        opt.style.display = 'none';
+      }
+    });
+  }
+
+  selectValue(val) {
+    this.selectedValue = val;
+    if (!this.optionsContainer) return;
+
+    const options = this.optionsContainer.querySelectorAll('.dropdown-option');
+    options.forEach(opt => {
+      if (opt.dataset.value === val) {
+        opt.classList.add('selected');
+      } else {
+        opt.classList.remove('selected');
+      }
+    });
+
+    if (val === 'all') {
+      if (this.labelEl) this.labelEl.textContent = this.placeholder;
+      this.container.classList.remove('has-selection');
+      if (this.clearRow) this.clearRow.style.display = 'none';
+    } else {
+      const selectedOpt = this.optionsContainer.querySelector(`.dropdown-option[data-value="${CSS.escape(val)}"]`);
+      const labelText = selectedOpt ? selectedOpt.querySelector('.opt-label').textContent : val;
+      if (this.labelEl) this.labelEl.textContent = labelText;
+      this.container.classList.add('has-selection');
+      if (this.clearRow) this.clearRow.style.display = 'flex';
+    }
+  }
+
+  setOptions(optionsArray) {
+    if (!this.optionsContainer) return;
+    this.optionsContainer.innerHTML = '';
+
+    // Add default "All" option
+    const allOpt = document.createElement('div');
+    allOpt.className = 'dropdown-option' + (this.selectedValue === 'all' ? ' selected' : '');
+    allOpt.dataset.value = 'all';
+    allOpt.innerHTML = `<span class="opt-check">✓</span> <span class="opt-label">${this.placeholder}</span>`;
+    this.optionsContainer.appendChild(allOpt);
+
+    optionsArray.forEach(val => {
+      const opt = document.createElement('div');
+      opt.className = 'dropdown-option' + (this.selectedValue === val ? ' selected' : '');
+      opt.dataset.value = val;
+      opt.innerHTML = `<span class="opt-check">✓</span> <span class="opt-label">${val}</span>`;
+      this.optionsContainer.appendChild(opt);
+    });
+
+    this.selectValue(this.selectedValue);
+  }
+}
+
+const customFilterInstances = {};
+
+function closeAllCustomDropdowns() {
+  document.querySelectorAll('.custom-dropdown').forEach(d => d.classList.remove('open'));
+}
+
+function initCustomFilterSystem() {
+  document.querySelectorAll('.custom-dropdown').forEach(el => {
+    if (el.id === 'dropdown-dates') return; // Handled exclusively by Target Date Filter Manager
+    const key = el.dataset.filterKey;
+    if (key && !customFilterInstances[key]) {
+      customFilterInstances[key] = new CustomFilterDropdown(el, () => {
+        renderDashTable();
+        if (document.getElementById('dash-panel-calendar-view')?.style.display !== 'none') {
+          renderPortfolioDashboardCalendar();
+        }
+      });
+    }
+  });
+
+  // Global click outside to close dropdown panels
+  if (!document.datasetHasCustomDropdownGlobalClick) {
+    document.datasetHasCustomDropdownGlobalClick = 'true';
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.custom-dropdown')) {
+        closeAllCustomDropdowns();
+      }
+    });
+  }
+
+  // Apply Button Listener
+  const btnApply = document.getElementById('btn-filter-apply');
+  if (btnApply && !btnApply.dataset.hasListener) {
+    btnApply.dataset.hasListener = 'true';
+    btnApply.addEventListener('click', () => {
+      renderDashTable();
+      if (document.getElementById('dash-panel-calendar-view')?.style.display !== 'none') {
+        renderPortfolioDashboardCalendar();
+      }
+      showToast('Filters applied successfully', 'info');
+    });
+  }
+
+  // Clear All Button Listener
+  const btnClearAll = document.getElementById('btn-filter-clear-all');
+  if (btnClearAll && !btnClearAll.dataset.hasListener) {
+    btnClearAll.dataset.hasListener = 'true';
+    btnClearAll.addEventListener('click', () => {
+      Object.values(customFilterInstances).forEach(inst => inst.selectValue('all'));
+      resetDateFilterToAll();
+      renderDashTable();
+      if (document.getElementById('dash-panel-calendar-view')?.style.display !== 'none') {
+        renderPortfolioDashboardCalendar();
+      }
+      showToast('All filters cleared', 'info');
+    });
+  }
+}
+
+function populateCityFilterDropdowns() {
+  if (customFilterInstances.city) {
+    const cities = Array.from(new Set(dashboardState.map(r => r.city).filter(c => c && c !== 'Unknown'))).sort();
+    customFilterInstances.city.setOptions(cities);
+  }
+  if (customFilterInstances.cityType) {
+    const defaultCategories = ['Mixed', 'Tier-1 Business', 'Tier-2 Business', 'Winter Leisure', 'Summer Leisure'];
+    const presentCategories = Array.from(new Set(dashboardState.map(r => r.cityType).filter(Boolean)));
+    const allCategories = Array.from(new Set([...defaultCategories, ...presentCategories])).sort();
+    customFilterInstances.cityType.setOptions(allCategories);
+  }
+}
+
+// ==============================================================================
+// TARGET DATES MULTI-SELECT FILTER MANAGER
+// ==============================================================================
+
+let dashAvailableDates = []; // Array of { key: 'YYYYMMDD', display: 'Thu, 17 Sep 2026', dateObj: Date, badges: [] }
+let dashSelectedDates = new Set(); // Set of 'YYYYMMDD' strings
 let dashSelectedDateFilter = '';
+
+function setupDateFilterDropdown() {
+  const container = document.getElementById('dropdown-dates');
+  if (!container || container.dataset.hasDateEvents) return;
+  container.dataset.hasDateEvents = 'true';
+
+  const triggerBtn = document.getElementById('btn-trigger-dates');
+  const searchInput = document.getElementById('search-dates-input');
+  const btnSelectAll = document.getElementById('btn-date-select-all');
+  const btnClear = document.getElementById('btn-date-clear');
+  const presetContainer = container.querySelector('.date-preset-chips');
+
+  // Trigger button opens/closes panel
+  if (triggerBtn) {
+    triggerBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = container.classList.contains('open');
+      closeAllCustomDropdowns();
+      if (!isOpen) {
+        container.classList.add('open');
+        if (searchInput) {
+          searchInput.value = '';
+          filterDateOptionsList('');
+          setTimeout(() => searchInput.focus(), 50);
+        }
+      }
+    });
+  }
+
+  // Prevent clicks inside panel from closing dropdown
+  const panel = container.querySelector('.dropdown-panel');
+  if (panel) {
+    panel.addEventListener('click', (e) => {
+      e.stopPropagation();
+    });
+  }
+
+  // Search input filter
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      filterDateOptionsList(e.target.value.toLowerCase().trim());
+    });
+  }
+
+  // Quick Preset Chips
+  if (presetContainer) {
+    presetContainer.addEventListener('click', (e) => {
+      const chip = e.target.closest('.chip-preset');
+      if (!chip) return;
+      const preset = chip.dataset.preset;
+      applyDatePreset(preset);
+    });
+  }
+
+  // Select All button
+  if (btnSelectAll) {
+    btnSelectAll.addEventListener('click', () => {
+      dashSelectedDates = new Set(dashAvailableDates.map(d => d.key));
+      dashSelectedDateFilter = '';
+      updateDateFilterUI();
+      onDateFilterChanged();
+    });
+  }
+
+  // Clear button
+  if (btnClear) {
+    btnClear.addEventListener('click', () => {
+      dashSelectedDates.clear();
+      dashSelectedDateFilter = '';
+      updateDateFilterUI();
+      onDateFilterChanged();
+    });
+  }
+
+  // Active Date Bar Clear Button (#btn-clear-date-filter)
+  const btnClearActiveDate = document.getElementById('btn-clear-date-filter');
+  if (btnClearActiveDate && !btnClearActiveDate.dataset.hasListener) {
+    btnClearActiveDate.dataset.hasListener = 'true';
+    btnClearActiveDate.addEventListener('click', () => {
+      resetDateFilterToAll();
+      showToast('Reset date filter to All 10 Days', 'info');
+    });
+  }
+}
+
+function resetDateFilterToAll() {
+  dashSelectedDates = new Set(dashAvailableDates.map(d => d.key));
+  dashSelectedDateFilter = '';
+  const activeBar = document.getElementById('dash-active-date-bar');
+  if (activeBar) activeBar.style.display = 'none';
+  updateDateFilterUI();
+  onDateFilterChanged();
+}
+
+function onDateFilterChanged() {
+  renderDashTable();
+  if (document.getElementById('dash-panel-calendar-view')?.style.display !== 'none') {
+    renderPortfolioDashboardCalendar();
+  }
+}
+
+function populateDateFilterOptions() {
+  const dateMap = new Map();
+  dashboardState.forEach(r => {
+    if (r.targetDateStr && !dateMap.has(r.targetDateStr)) {
+      let dt = null;
+      if (r.targetDateStr.length === 8) {
+        const y = parseInt(r.targetDateStr.substring(0, 4));
+        const m = parseInt(r.targetDateStr.substring(4, 6)) - 1;
+        const d = parseInt(r.targetDateStr.substring(6, 8));
+        dt = new Date(y, m, d);
+      }
+
+      dateMap.set(r.targetDateStr, {
+        key: r.targetDateStr,
+        display: r.dateStr || r.targetDateStr,
+        dateObj: dt
+      });
+    }
+  });
+
+  const sortedKeys = Array.from(dateMap.keys()).sort();
+  dashAvailableDates = sortedKeys.map(k => dateMap.get(k));
+
+  // Default: select all 10 dates
+  dashSelectedDates = new Set(sortedKeys);
+  dashSelectedDateFilter = '';
+
+  renderDateCheckboxesList();
+  updateDateFilterUI();
+}
+
+function renderDateCheckboxesList() {
+  const container = document.getElementById('date-checkboxes-list');
+  if (!container) return;
+
+  container.innerHTML = '';
+
+  if (dashAvailableDates.length === 0) {
+    container.innerHTML = '<div style="padding: 12px; text-align:center; color:#94a3b8; font-size:0.8rem;">No dates available</div>';
+    return;
+  }
+
+  dashAvailableDates.forEach(dateItem => {
+    const isChecked = dashSelectedDates.has(dateItem.key);
+    const itemEl = document.createElement('label');
+    itemEl.className = `date-option-item${isChecked ? ' checked' : ''}`;
+    itemEl.dataset.dateKey = dateItem.key;
+
+    itemEl.innerHTML = `
+      <div class="date-option-left">
+        <input type="checkbox" class="date-option-checkbox" value="${dateItem.key}" ${isChecked ? 'checked' : ''}>
+        <span class="date-option-text">${dateItem.display}</span>
+      </div>
+    `;
+
+    const checkbox = itemEl.querySelector('.date-option-checkbox');
+    checkbox.addEventListener('change', (e) => {
+      const key = e.target.value;
+      if (e.target.checked) {
+        dashSelectedDates.add(key);
+      } else {
+        dashSelectedDates.delete(key);
+      }
+      dashSelectedDateFilter = dashSelectedDates.size === 1 ? Array.from(dashSelectedDates)[0] : '';
+      itemEl.classList.toggle('checked', e.target.checked);
+      updateDateFilterUI();
+      onDateFilterChanged();
+    });
+
+    container.appendChild(itemEl);
+  });
+}
+
+function filterDateOptionsList(query) {
+  const container = document.getElementById('date-checkboxes-list');
+  if (!container) return;
+  const items = container.querySelectorAll('.date-option-item');
+  items.forEach(item => {
+    const text = item.textContent.toLowerCase();
+    if (!query || text.includes(query)) {
+      item.style.display = 'flex';
+    } else {
+      item.style.display = 'none';
+    }
+  });
+}
+
+function updateDateFilterUI() {
+  const labelEl = document.getElementById('label-dates-filter');
+  const summaryEl = document.getElementById('date-selection-summary');
+  const dropdownContainer = document.getElementById('dropdown-dates');
+  const activeBar = document.getElementById('dash-active-date-bar');
+  const activeLabel = document.getElementById('dash-active-date-label');
+
+  const total = dashAvailableDates.length;
+  const selectedCount = dashSelectedDates.size;
+
+  if (summaryEl) {
+    summaryEl.textContent = `${selectedCount} of ${total} selected`;
+  }
+
+  // Update Checkboxes inside list without destroying DOM (preserves search and focus)
+  const container = document.getElementById('date-checkboxes-list');
+  if (container) {
+    container.querySelectorAll('.date-option-item').forEach(item => {
+      const key = item.dataset.dateKey;
+      const isChecked = dashSelectedDates.has(key);
+      const cb = item.querySelector('.date-option-checkbox');
+      if (cb) cb.checked = isChecked;
+      item.classList.toggle('checked', isChecked);
+    });
+  }
+
+  // Update Dropdown Button Label
+  if (labelEl) {
+    if (selectedCount === total || total === 0) {
+      labelEl.textContent = 'All 10 Days';
+      if (dropdownContainer) dropdownContainer.classList.remove('has-selection');
+    } else if (selectedCount === 0) {
+      labelEl.textContent = 'No Dates Selected';
+      if (dropdownContainer) dropdownContainer.classList.add('has-selection');
+    } else if (selectedCount === 1) {
+      const singleKey = Array.from(dashSelectedDates)[0];
+      const found = dashAvailableDates.find(d => d.key === singleKey);
+      labelEl.textContent = found ? (found.display.split(',')[0] + ', ' + found.display.split(',')[1]?.trim()) : singleKey;
+      if (dropdownContainer) dropdownContainer.classList.add('has-selection');
+    } else {
+      labelEl.textContent = `${selectedCount} Dates Selected`;
+      if (dropdownContainer) dropdownContainer.classList.add('has-selection');
+    }
+  }
+
+  // Update Top Active Filter Bar
+  if (activeBar && activeLabel) {
+    if (selectedCount < total && selectedCount > 0) {
+      activeBar.style.display = 'flex';
+      if (selectedCount === 1) {
+        const singleKey = Array.from(dashSelectedDates)[0];
+        const found = dashAvailableDates.find(d => d.key === singleKey);
+        activeLabel.textContent = `Filtered Date: ${found ? found.display : singleKey}`;
+      } else {
+        activeLabel.textContent = `Filtered Dates: ${selectedCount} of ${total} days selected`;
+      }
+    } else if (selectedCount === 0) {
+      activeBar.style.display = 'flex';
+      activeLabel.textContent = 'Filtered Dates: None (0 dates selected)';
+    } else {
+      activeBar.style.display = 'none';
+    }
+  }
+}
 
 // Helper: Returns rows filtered by search, active dropdown filters, and selected target date
 function getFilteredDashboardRows() {
   const searchVal = (document.getElementById('dash-search-input')?.value || '').toLowerCase().trim();
-  const filterZone = document.getElementById('dash-filter-opzone')?.value || 'all';
-  const filterSeg = document.getElementById('dash-filter-segment')?.value || 'all';
-  const filterStrat = document.getElementById('dash-filter-strategy')?.value || 'all';
-  const filterFlex = document.getElementById('dash-filter-flex')?.value || 'all';
+
+  const filterZone = customFilterInstances.opzone ? customFilterInstances.opzone.selectedValue : 'all';
+  const filterCityType = customFilterInstances.cityType ? customFilterInstances.cityType.selectedValue : 'all';
+  const filterCity = customFilterInstances.city ? customFilterInstances.city.selectedValue : 'all';
+  const filterFlex = customFilterInstances.flex ? customFilterInstances.flex.selectedValue : 'all';
+  const filterStrat = customFilterInstances.strategy ? customFilterInstances.strategy.selectedValue : 'all';
 
   return dashboardState.filter(row => {
-    if (dashSelectedDateFilter && row.targetDateStr !== dashSelectedDateFilter) return false;
+    // Multi-Select Target Date Filtering
+    if (dashAvailableDates.length > 0) {
+      if (dashSelectedDates.size === 0) return false;
+      if (dashSelectedDates.size < dashAvailableDates.length && !dashSelectedDates.has(row.targetDateStr)) {
+        return false;
+      }
+    } else if (dashSelectedDateFilter && row.targetDateStr !== dashSelectedDateFilter) {
+      return false;
+    }
+
+    if (filterCity !== 'all' && row.city.toLowerCase() !== filterCity.toLowerCase()) return false;
+    if (filterCityType !== 'all') {
+      const rowCat = normalizeCityCategory(row.cityType).toLowerCase();
+      const filterCat = normalizeCityCategory(filterCityType).toLowerCase();
+      if (rowCat !== filterCat) return false;
+    }
     if (filterZone !== 'all' && row.opZone !== filterZone) return false;
-    if (filterSeg !== 'all' && row.revSegment !== filterSeg) return false;
     if (filterStrat !== 'all' && row.strategyKey !== filterStrat) return false;
     if (filterFlex !== 'all') {
       const isFlex = row.rateFlex.toLowerCase().includes('flex') && !row.rateFlex.toLowerCase().includes('non');
@@ -1858,7 +2801,8 @@ function getFilteredDashboardRows() {
     if (searchVal) {
       const matchSearch = row.csId.toLowerCase().includes(searchVal) ||
         row.hotelName.toLowerCase().includes(searchVal) ||
-        row.city.toLowerCase().includes(searchVal);
+        row.city.toLowerCase().includes(searchVal) ||
+        row.cityType.toLowerCase().includes(searchVal);
       if (!matchSearch) return false;
     }
     return true;
@@ -1877,7 +2821,7 @@ function renderDashTable() {
   if (filtered.length === 0) {
     tbody.innerHTML = `
       <tr class="empty-state-row">
-        <td colspan="12" style="text-align:center; padding:24px; color:var(--text-muted);">
+        <td colspan="14" style="text-align:center; padding:24px; color:var(--text-muted);">
           No live property metrics match your search filters.
         </td>
       </tr>
@@ -1891,40 +2835,82 @@ function renderDashTable() {
   slice.forEach(r => {
     const tr = document.createElement('tr');
 
-    let badgeClass = 'strat-baseline';
-    if (r.strategyKey === 'surge') badgeClass = 'strat-surge';
-    if (r.strategyKey === 'markdown') badgeClass = 'strat-markdown';
-
-    const isFlex = r.rateFlex.toLowerCase().includes('flex') && !r.rateFlex.toLowerCase().includes('non');
-    const flexBadgeClass = isFlex ? 'badge-flex' : 'badge-nonflex';
-    const flexBadgeText = isFlex ? 'Flex' : 'Non-Flex';
-
-    const deltaDisplay = (r.delta >= 0 ? '+' : '') + r.delta.toFixed(2);
+    const pushedPriceDisplay = r.pushedPrice > 0 ? `₹${r.pushedPrice.toLocaleString('en-IN')}` : '-';
+    const desiredVal = (r.desiredPushPrice !== undefined && r.desiredPushPrice !== null) ? r.desiredPushPrice : r.pushedPrice;
 
     tr.innerHTML = `
       <td><span class="badge-csid">${r.csId}</span></td>
       <td><strong>${r.hotelName}</strong></td>
       <td>${r.city}</td>
       <td>${r.opZone}</td>
-      <td>${r.revSegment}</td>
-      <td><span class="${flexBadgeClass}">${flexBadgeText}</span></td>
+      <td><span class="badge-city-type">${r.cityType}</span></td>
       <td>${r.dateStr}</td>
+      <td><strong style="color:#6366f1;">${r.benchmarkOccDisplay || '-'}</strong></td>
       <td><strong>${r.occVal.toFixed(1)}%</strong></td>
+      <td><strong style="color:#0284c7;">${r.walkingShareDisplay || '-'}</strong></td>
+      <td><strong style="color:#8b5cf6;">${r.b2bShareDisplay || '-'}</strong></td>
       <td>${r.currentTDF.toFixed(2)}</td>
-      <td><strong style="color:#059669;">${r.recTDF.toFixed(2)}</strong></td>
-      <td><span style="font-weight:700; color:${r.delta > 0 ? '#15803d' : r.delta < 0 ? '#b91c1c' : '#0284c7'}">${deltaDisplay}</span></td>
-      <td><span class="opzone-strat-badge ${badgeClass}">${r.strategyLabel}</span></td>
+      <td><strong class="cell-new-tdf" style="color:#059669;">${r.recTDF.toFixed(2)}</strong></td>
+      <td><strong style="color:#0284c7;">${pushedPriceDisplay}</strong></td>
+      <td>
+        <input type="number" class="desired-push-price-input" data-csid="${r.csId}" data-targetdate="${r.targetDateStr}" value="${desiredVal}" style="width: 100px; padding: 4px 8px; border: 1px solid #cbd5e1; border-radius: 6px; font-weight: 600; text-align: right; color: #0f172a; outline: none; transition: border-color 0.2s;" onfocus="this.style.borderColor='#3b82f6'" onblur="this.style.borderColor='#cbd5e1'" />
+      </td>
     `;
     tbody.appendChild(tr);
   });
+
+  if (!tbody.dataset.hasDesiredPriceListener) {
+    tbody.dataset.hasDesiredPriceListener = 'true';
+
+    const handleDesiredPriceUpdate = (e) => {
+      if (e.target && e.target.classList.contains('desired-push-price-input')) {
+        const csId = e.target.dataset.csid;
+        const targetDate = e.target.dataset.targetdate;
+        const desiredVal = parseFloat(e.target.value);
+        const match = dashboardState.find(row => row.csId === csId && row.targetDateStr === targetDate);
+        if (match) {
+          match.desiredPushPrice = isNaN(desiredVal) ? 0 : desiredVal;
+          if (!isNaN(desiredVal) && desiredVal > 0 && match.pushedPrice > 0) {
+            const calculatedNewTDF = (desiredVal / match.pushedPrice) * match.currentTDF;
+            match.recTDF = Math.round(calculatedNewTDF * 100) / 100;
+            match.delta = Math.round((match.recTDF - match.currentTDF) * 100) / 100;
+
+            const tr = e.target.closest('tr');
+            if (tr) {
+              const cellNewTdf = tr.querySelector('.cell-new-tdf');
+              if (cellNewTdf) {
+                cellNewTdf.innerText = match.recTDF.toFixed(2);
+              }
+            }
+          }
+        }
+      }
+    };
+
+    tbody.addEventListener('input', handleDesiredPriceUpdate);
+    tbody.addEventListener('change', handleDesiredPriceUpdate);
+  }
 }
 
 function setupDashboardViewToggle() {
+  initCustomFilterSystem();
+
   const btnList = document.getElementById('btn-dash-view-list');
   const btnCal = document.getElementById('btn-dash-view-calendar');
   const panelList = document.getElementById('dash-panel-list-view');
   const panelCal = document.getElementById('dash-panel-calendar-view');
   const btnClearDate = document.getElementById('btn-clear-date-filter');
+
+  const searchInput = document.getElementById('dash-search-input');
+  if (searchInput && !searchInput.dataset.hasSearchListener) {
+    searchInput.dataset.hasSearchListener = 'true';
+    searchInput.addEventListener('input', () => {
+      renderDashTable();
+      if (panelCal && panelCal.style.display !== 'none') {
+        renderPortfolioDashboardCalendar();
+      }
+    });
+  }
 
   if (btnList && btnCal) {
     btnList.addEventListener('click', () => {
@@ -1946,19 +2932,13 @@ function setupDashboardViewToggle() {
 
   if (btnClearDate) {
     btnClearDate.addEventListener('click', () => {
-      dashSelectedDateFilter = '';
-      const activeBar = document.getElementById('dash-active-date-bar');
-      if (activeBar) activeBar.style.display = 'none';
-      renderDashTable();
-      if (panelCal && panelCal.style.display !== 'none') {
-        renderPortfolioDashboardCalendar();
-      }
+      resetDateFilterToAll();
     });
   }
 }
 
 let dashCalYear = 2026;
-let dashCalMonth = 7; // August (0-indexed)
+let dashCalMonth = 8; // September (0-indexed 8)
 
 function setupDashboardCalNav() {
   const prevBtn = document.getElementById('btn-dash-cal-prev');
@@ -2014,9 +2994,12 @@ function renderPortfolioDashboardCalendar() {
 
   // Get rows respecting all active filters (OpZone, Segment, Flex, Strategy, Search) except Date filter
   const currentSavedDateFilter = dashSelectedDateFilter;
+  const currentSavedSelectedDates = new Set(dashSelectedDates);
   dashSelectedDateFilter = '';
+  dashSelectedDates = new Set(dashAvailableDates.map(d => d.key));
   const rows = getFilteredDashboardRows();
   dashSelectedDateFilter = currentSavedDateFilter;
+  dashSelectedDates = currentSavedSelectedDates;
 
   // Group rows by targetDateStr (key: YYYYMMDD)
   const dateMap = {};
@@ -2060,7 +3043,7 @@ function renderPortfolioDashboardCalendar() {
     const cell = document.createElement('div');
     const grp = dateMap[dateKey];
 
-    const isSelected = (currentSavedDateFilter === dateKey);
+    const isSelected = (dashSelectedDates.size > 0 && dashSelectedDates.size < dashAvailableDates.length && dashSelectedDates.has(dateKey));
 
     if (grp) {
       const grpRows = grp.rows;
@@ -2136,13 +3119,10 @@ function renderPortfolioDashboardCalendar() {
       });
 
       cell.addEventListener('click', () => {
+        dashSelectedDates = new Set([dateKey]);
         dashSelectedDateFilter = dateKey;
-
-        // Show active date filter bar
-        const activeBar = document.getElementById('dash-active-date-bar');
-        const activeLabel = document.getElementById('dash-active-date-label');
-        if (activeBar) activeBar.style.display = 'flex';
-        if (activeLabel) activeLabel.textContent = `${grp.dateDisplay} (${hotelCount} properties)`;
+        updateDateFilterUI();
+        onDateFilterChanged();
 
         // Switch to List View
         const btnList = document.getElementById('btn-dash-view-list');
@@ -2270,7 +3250,7 @@ function getNextDateStr(yyyyMMdd) {
 
 let tdfCalSelectedCsId = '';
 let tdfCalYear = 2026;
-let tdfCalMonth = 7; // August (0-indexed 7)
+let tdfCalMonth = 8; // September (0-indexed 8)
 
 function populateTDFCalendarDropdown() {
   const selectEl = document.getElementById('tdf-cal-property-select');
