@@ -145,14 +145,16 @@ app.get("/api/sheet-data", async (req, res) => {
             auth: oauth2Client
         });
 
-        // Fetch all three tabs in ONE request
+        // Fetch all tabs in ONE request
         const response = await sheets.spreadsheets.values.batchGet({
             spreadsheetId: SPREADSHEET_ID,
 
             ranges: [
                 "future occ%!A:Z",
                 "next 10 days factors!A:Z",
-                "Rate flex!A:Z"
+                "Rate flex!A:Z",
+                "Benchmark Occ!A:G",
+                "Channel RNs!A:P"
             ]
         });
 
@@ -164,7 +166,9 @@ app.get("/api/sheet-data", async (req, res) => {
             data: {
                 futureOcc: valueRanges[0]?.values || [],
                 next10DaysFactors: valueRanges[1]?.values || [],
-                rateFlex: valueRanges[2]?.values || []
+                rateFlex: valueRanges[2]?.values || [],
+                benchmarkOcc: valueRanges[3]?.values || [],
+                channelRNs: valueRanges[4]?.values || []
             }
         });
 
