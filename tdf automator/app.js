@@ -19,13 +19,18 @@ const startPriceInput = document.getElementById('start-price');
 const endPriceInput = document.getElementById('end-price');
 
 // Split Pricing Modifiers
+const splitTargetWeekendBehaviorSelect = document.getElementById('split-target-weekend-behavior');
 const splitBasePriceInput = document.getElementById('split-base-price');
 const splitFlexibilitySelect = document.getElementById('split-flexibility');
 const splitWeekdayTargetInput = document.getElementById('split-weekday-target');
+const splitTargetMonThuWrapper = document.getElementById('split-target-mon-thu-wrapper');
 const splitFridayTargetInput = document.getElementById('split-friday-target');
+const splitTargetFridayWrapper = document.getElementById('split-target-friday-wrapper');
+const splitTargetSaturdayRow = document.getElementById('split-target-saturday-row');
 const splitSaturdayBehaviorSelect = document.getElementById('split-saturday-behavior');
 const splitSaturdayTargetInput = document.getElementById('split-saturday-target');
 const splitSaturdayTargetWrapper = document.getElementById('split-saturday-target-wrapper');
+const splitTargetSundayRow = document.getElementById('split-target-sunday-row');
 const splitSundayBehaviorSelect = document.getElementById('split-sunday-behavior');
 const splitSundayTargetInput = document.getElementById('split-sunday-target');
 const splitSundayTargetWrapper = document.getElementById('split-sunday-target-wrapper');
@@ -288,7 +293,9 @@ function validateForm() {
 
       // Validate Direct Multipliers
       const directMonThuInput = document.getElementById('split-direct-mon-thu');
-      const directFriSatInput = document.getElementById('split-direct-fri-sat');
+      const directFriInput = document.getElementById('split-direct-fri') || document.getElementById('split-direct-fri-sat');
+      const directSatInput = document.getElementById('split-direct-sat');
+      const directSatBehEl = document.getElementById('split-direct-saturday-behavior');
       const directSunInput = document.getElementById('split-direct-sunday');
       const directSunBehEl = document.getElementById('split-direct-sunday-behavior');
       const directWeekendBehEl = document.getElementById('split-direct-weekend-behavior');
@@ -301,17 +308,31 @@ function validateForm() {
           if (directMonThuInput) directMonThuInput.classList.add('invalid');
           isValid = false;
         }
-        if (directFriSatInput) directFriSatInput.classList.remove('invalid');
+        if (directFriInput) directFriInput.classList.remove('invalid');
+        if (directSatInput) directSatInput.classList.remove('invalid');
         if (directSunInput) directSunInput.classList.remove('invalid');
       } else if (directWeekendBeh === 'weekends_only') {
         if (directMonThuInput) directMonThuInput.classList.remove('invalid');
 
-        const friSatVal = directFriSatInput ? parseFloat(directFriSatInput.value) : NaN;
-        if (isNaN(friSatVal) || friSatVal <= 0) {
-          if (directFriSatInput) directFriSatInput.classList.add('invalid');
+        const friVal = directFriInput ? parseFloat(directFriInput.value) : NaN;
+        if (isNaN(friVal) || friVal <= 0) {
+          if (directFriInput) directFriInput.classList.add('invalid');
           isValid = false;
         } else {
-          if (directFriSatInput) directFriSatInput.classList.remove('invalid');
+          if (directFriInput) directFriInput.classList.remove('invalid');
+        }
+
+        const satBeh = directSatBehEl ? directSatBehEl.value : 'custom';
+        if (satBeh === 'custom') {
+          const satVal = directSatInput ? parseFloat(directSatInput.value) : NaN;
+          if (isNaN(satVal) || satVal <= 0) {
+            if (directSatInput) directSatInput.classList.add('invalid');
+            isValid = false;
+          } else {
+            if (directSatInput) directSatInput.classList.remove('invalid');
+          }
+        } else {
+          if (directSatInput) directSatInput.classList.remove('invalid');
         }
 
         const sunBeh = directSunBehEl ? directSunBehEl.value : 'custom';
@@ -335,12 +356,25 @@ function validateForm() {
           if (directMonThuInput) directMonThuInput.classList.remove('invalid');
         }
 
-        const friSatVal = directFriSatInput ? parseFloat(directFriSatInput.value) : NaN;
-        if (isNaN(friSatVal) || friSatVal <= 0) {
-          if (directFriSatInput) directFriSatInput.classList.add('invalid');
+        const friVal = directFriInput ? parseFloat(directFriInput.value) : NaN;
+        if (isNaN(friVal) || friVal <= 0) {
+          if (directFriInput) directFriInput.classList.add('invalid');
           isValid = false;
         } else {
-          if (directFriSatInput) directFriSatInput.classList.remove('invalid');
+          if (directFriInput) directFriInput.classList.remove('invalid');
+        }
+
+        const satBeh = directSatBehEl ? directSatBehEl.value : 'custom';
+        if (satBeh === 'custom') {
+          const satVal = directSatInput ? parseFloat(directSatInput.value) : NaN;
+          if (isNaN(satVal) || satVal <= 0) {
+            if (directSatInput) directSatInput.classList.add('invalid');
+            isValid = false;
+          } else {
+            if (directSatInput) directSatInput.classList.remove('invalid');
+          }
+        } else {
+          if (directSatInput) directSatInput.classList.remove('invalid');
         }
 
         const sunBeh = directSunBehEl ? directSunBehEl.value : 'custom';
@@ -357,6 +391,16 @@ function validateForm() {
         }
       }
     } else {
+      // Clear direct multiplier errors
+      const directMonThuInput = document.getElementById('split-direct-mon-thu');
+      const directFriInput = document.getElementById('split-direct-fri') || document.getElementById('split-direct-fri-sat');
+      const directSatInput = document.getElementById('split-direct-sat');
+      const directSunInput = document.getElementById('split-direct-sunday');
+      if (directMonThuInput) directMonThuInput.classList.remove('invalid');
+      if (directFriInput) directFriInput.classList.remove('invalid');
+      if (directSatInput) directSatInput.classList.remove('invalid');
+      if (directSunInput) directSunInput.classList.remove('invalid');
+
       // Validate Target Prices
       const basePriceVal = parseFloat(splitBasePriceInput.value);
       if (isNaN(basePriceVal) || basePriceVal <= 0) {
@@ -368,60 +412,134 @@ function validateForm() {
         splitBasePriceInput.classList.remove('invalid');
       }
 
-      // Validate Weekday Target
-      const wdTargetVal = parseFloat(splitWeekdayTargetInput.value);
-      if (isNaN(wdTargetVal) || wdTargetVal <= 0) {
-        showError('split-weekday-target-error', true);
-        splitWeekdayTargetInput.classList.add('invalid');
-        isValid = false;
-      } else {
-        showError('split-weekday-target-error', false);
-        splitWeekdayTargetInput.classList.remove('invalid');
-      }
+      const targetWeekendBehEl = document.getElementById('split-target-weekend-behavior');
+      const targetWeekendBeh = targetWeekendBehEl ? targetWeekendBehEl.value : 'include';
 
-      // Validate Friday Target
-      const frTargetVal = parseFloat(splitFridayTargetInput.value);
-      if (isNaN(frTargetVal) || frTargetVal <= 0) {
-        showError('split-friday-target-error', true);
-        if (splitFridayTargetInput) splitFridayTargetInput.classList.add('invalid');
-        isValid = false;
-      } else {
+      if (targetWeekendBeh === 'weekdays_only' || targetWeekendBeh === 'skip') {
+        // Validate Weekday Target
+        const wdTargetVal = parseFloat(splitWeekdayTargetInput.value);
+        if (isNaN(wdTargetVal) || wdTargetVal <= 0) {
+          showError('split-weekday-target-error', true);
+          splitWeekdayTargetInput.classList.add('invalid');
+          isValid = false;
+        } else {
+          showError('split-weekday-target-error', false);
+          splitWeekdayTargetInput.classList.remove('invalid');
+        }
+
+        // Clear weekend errors
         showError('split-friday-target-error', false);
         if (splitFridayTargetInput) splitFridayTargetInput.classList.remove('invalid');
-      }
+        showError('split-saturday-target-error', false);
+        if (splitSaturdayTargetInput) splitSaturdayTargetInput.classList.remove('invalid');
+        showError('split-sunday-target-error', false);
+        if (splitSundayTargetInput) splitSundayTargetInput.classList.remove('invalid');
+      } else if (targetWeekendBeh === 'weekends_only') {
+        // Clear weekday error
+        showError('split-weekday-target-error', false);
+        if (splitWeekdayTargetInput) splitWeekdayTargetInput.classList.remove('invalid');
 
-      // Validate Saturday Target if custom mode
-      const satBehavior = splitSaturdayBehaviorSelect ? splitSaturdayBehaviorSelect.value : 'custom';
-      if (satBehavior === 'custom') {
-        const saTargetVal = parseFloat(splitSaturdayTargetInput.value);
-        if (isNaN(saTargetVal) || saTargetVal <= 0) {
-          showError('split-saturday-target-error', true);
-          if (splitSaturdayTargetInput) splitSaturdayTargetInput.classList.add('invalid');
+        // Validate Friday Target
+        const frTargetVal = parseFloat(splitFridayTargetInput.value);
+        if (isNaN(frTargetVal) || frTargetVal <= 0) {
+          showError('split-friday-target-error', true);
+          if (splitFridayTargetInput) splitFridayTargetInput.classList.add('invalid');
           isValid = false;
+        } else {
+          showError('split-friday-target-error', false);
+          if (splitFridayTargetInput) splitFridayTargetInput.classList.remove('invalid');
+        }
+
+        // Validate Saturday Target if custom mode
+        const satBehavior = splitSaturdayBehaviorSelect ? splitSaturdayBehaviorSelect.value : 'custom';
+        if (satBehavior === 'custom') {
+          const saTargetVal = parseFloat(splitSaturdayTargetInput.value);
+          if (isNaN(saTargetVal) || saTargetVal <= 0) {
+            showError('split-saturday-target-error', true);
+            if (splitSaturdayTargetInput) splitSaturdayTargetInput.classList.add('invalid');
+            isValid = false;
+          } else {
+            showError('split-saturday-target-error', false);
+            if (splitSaturdayTargetInput) splitSaturdayTargetInput.classList.remove('invalid');
+          }
         } else {
           showError('split-saturday-target-error', false);
           if (splitSaturdayTargetInput) splitSaturdayTargetInput.classList.remove('invalid');
         }
-      } else {
-        showError('split-saturday-target-error', false);
-        if (splitSaturdayTargetInput) splitSaturdayTargetInput.classList.remove('invalid');
-      }
 
-      // Validate Sunday Target if custom mode
-      const sunBehavior = splitSundayBehaviorSelect.value;
-      if (sunBehavior === 'custom') {
-        const suTargetVal = parseFloat(splitSundayTargetInput.value);
-        if (isNaN(suTargetVal) || suTargetVal <= 0) {
-          showError('split-sunday-target-error', true);
-          splitSundayTargetInput.classList.add('invalid');
-          isValid = false;
+        // Validate Sunday Target if custom mode
+        const sunBehavior = splitSundayBehaviorSelect.value;
+        if (sunBehavior === 'custom') {
+          const suTargetVal = parseFloat(splitSundayTargetInput.value);
+          if (isNaN(suTargetVal) || suTargetVal <= 0) {
+            showError('split-sunday-target-error', true);
+            splitSundayTargetInput.classList.add('invalid');
+            isValid = false;
+          } else {
+            showError('split-sunday-target-error', false);
+            splitSundayTargetInput.classList.remove('invalid');
+          }
         } else {
           showError('split-sunday-target-error', false);
           splitSundayTargetInput.classList.remove('invalid');
         }
       } else {
-        showError('split-sunday-target-error', false);
-        splitSundayTargetInput.classList.remove('invalid');
+        // All Days (include)
+        // Validate Weekday Target
+        const wdTargetVal = parseFloat(splitWeekdayTargetInput.value);
+        if (isNaN(wdTargetVal) || wdTargetVal <= 0) {
+          showError('split-weekday-target-error', true);
+          splitWeekdayTargetInput.classList.add('invalid');
+          isValid = false;
+        } else {
+          showError('split-weekday-target-error', false);
+          splitWeekdayTargetInput.classList.remove('invalid');
+        }
+
+        // Validate Friday Target
+        const frTargetVal = parseFloat(splitFridayTargetInput.value);
+        if (isNaN(frTargetVal) || frTargetVal <= 0) {
+          showError('split-friday-target-error', true);
+          if (splitFridayTargetInput) splitFridayTargetInput.classList.add('invalid');
+          isValid = false;
+        } else {
+          showError('split-friday-target-error', false);
+          if (splitFridayTargetInput) splitFridayTargetInput.classList.remove('invalid');
+        }
+
+        // Validate Saturday Target if custom mode
+        const satBehavior = splitSaturdayBehaviorSelect ? splitSaturdayBehaviorSelect.value : 'custom';
+        if (satBehavior === 'custom') {
+          const saTargetVal = parseFloat(splitSaturdayTargetInput.value);
+          if (isNaN(saTargetVal) || saTargetVal <= 0) {
+            showError('split-saturday-target-error', true);
+            if (splitSaturdayTargetInput) splitSaturdayTargetInput.classList.add('invalid');
+            isValid = false;
+          } else {
+            showError('split-saturday-target-error', false);
+            if (splitSaturdayTargetInput) splitSaturdayTargetInput.classList.remove('invalid');
+          }
+        } else {
+          showError('split-saturday-target-error', false);
+          if (splitSaturdayTargetInput) splitSaturdayTargetInput.classList.remove('invalid');
+        }
+
+        // Validate Sunday Target if custom mode
+        const sunBehavior = splitSundayBehaviorSelect.value;
+        if (sunBehavior === 'custom') {
+          const suTargetVal = parseFloat(splitSundayTargetInput.value);
+          if (isNaN(suTargetVal) || suTargetVal <= 0) {
+            showError('split-sunday-target-error', true);
+            splitSundayTargetInput.classList.add('invalid');
+            isValid = false;
+          } else {
+            showError('split-sunday-target-error', false);
+            splitSundayTargetInput.classList.remove('invalid');
+          }
+        } else {
+          showError('split-sunday-target-error', false);
+          splitSundayTargetInput.classList.remove('invalid');
+        }
       }
     }
   }
@@ -613,7 +731,12 @@ function generateRows() {
           const directWeekendBeh = directWeekendBehEl ? directWeekendBehEl.value : 'include';
 
           const directMonThu = parseFloat(document.getElementById('split-direct-mon-thu')?.value || '1.10');
-          const directFriSat = parseFloat(document.getElementById('split-direct-fri-sat')?.value || '1.25');
+          const directFri = parseFloat((document.getElementById('split-direct-fri') || document.getElementById('split-direct-fri-sat'))?.value || '1.25');
+          const directSatBehaviorEl = document.getElementById('split-direct-saturday-behavior');
+          const directSatBeh = directSatBehaviorEl ? directSatBehaviorEl.value : 'custom';
+          const directSatInputVal = parseFloat(document.getElementById('split-direct-sat')?.value);
+          const directSat = (directSatBeh === 'same' || isNaN(directSatInputVal)) ? directFri : directSatInputVal;
+
           const directSunBehaviorEl = document.getElementById('split-direct-sunday-behavior');
           const directSundayBeh = directSunBehaviorEl ? directSunBehaviorEl.value : 'custom';
           const directSunday = parseFloat(document.getElementById('split-direct-sunday')?.value || '1.05');
@@ -624,8 +747,10 @@ function generateRows() {
             shouldSkip = true; // Skip Mon-Thu in Weekend Only mode
           } else if (dayOfWeek >= 1 && dayOfWeek <= 4) { // Mon-Thu
             rowMultiplier = (!isNaN(directMonThu) ? directMonThu : 1.10).toFixed(2);
-          } else if (dayOfWeek === 5 || dayOfWeek === 6) { // Fri-Sat
-            rowMultiplier = (!isNaN(directFriSat) ? directFriSat : 1.25).toFixed(2);
+          } else if (dayOfWeek === 5) { // Friday
+            rowMultiplier = (!isNaN(directFri) ? directFri : 1.25).toFixed(2);
+          } else if (dayOfWeek === 6) { // Saturday
+            rowMultiplier = (!isNaN(directSat) ? directSat : directFri).toFixed(2);
           } else { // Sunday (0)
             if (directSundayBeh === 'skip') {
               shouldSkip = true;
@@ -635,34 +760,45 @@ function generateRows() {
           }
         } else {
           // Target Prices mode
-          const basePrice = parseFloat(splitBasePriceInput.value);
-          const flex = splitFlexibilitySelect.value;
-          const flexFactor = flex === 'flex' ? 0.72 : 0.69;
+          const targetWeekendBehEl = document.getElementById('split-target-weekend-behavior');
+          const targetWeekendBeh = targetWeekendBehEl ? targetWeekendBehEl.value : 'include';
 
-          let targetPrice = basePrice;
+          if ((targetWeekendBeh === 'weekdays_only' || targetWeekendBeh === 'skip') && (dayOfWeek === 5 || dayOfWeek === 6 || dayOfWeek === 0)) {
+            shouldSkip = true; // Skip Friday, Saturday, and Sunday in Weekdays Only mode
+          } else if (targetWeekendBeh === 'weekends_only' && dayOfWeek >= 1 && dayOfWeek <= 4) {
+            shouldSkip = true; // Skip Mon-Thu in Weekends Only mode
+          } else {
+            const basePrice = parseFloat(splitBasePriceInput.value);
+            const flex = splitFlexibilitySelect.value;
+            const flexFactor = flex === 'flex' ? 0.72 : 0.69;
 
-          if (dayOfWeek >= 1 && dayOfWeek <= 4) { // Mon-Thu
-            targetPrice = parseFloat(splitWeekdayTargetInput.value) || basePrice;
-          } else if (dayOfWeek === 5) { // Friday
-            targetPrice = parseFloat(splitFridayTargetInput.value) || basePrice;
-          } else if (dayOfWeek === 6) { // Saturday
-            const satBehavior = splitSaturdayBehaviorSelect ? splitSaturdayBehaviorSelect.value : 'custom';
-            if (satBehavior === 'same') {
+            let targetPrice = basePrice;
+
+            if (dayOfWeek >= 1 && dayOfWeek <= 4) { // Mon-Thu
+              targetPrice = parseFloat(splitWeekdayTargetInput.value) || basePrice;
+            } else if (dayOfWeek === 5) { // Friday
               targetPrice = parseFloat(splitFridayTargetInput.value) || basePrice;
-            } else {
-              targetPrice = parseFloat(splitSaturdayTargetInput.value) || basePrice;
+            } else if (dayOfWeek === 6) { // Saturday
+              const satBehavior = splitSaturdayBehaviorSelect ? splitSaturdayBehaviorSelect.value : 'custom';
+              if (satBehavior === 'same') {
+                targetPrice = parseFloat(splitFridayTargetInput.value) || basePrice;
+              } else {
+                targetPrice = parseFloat(splitSaturdayTargetInput.value) || basePrice;
+              }
+            } else { // Sunday (0)
+              const sunBehavior = splitSundayBehaviorSelect.value;
+              if (sunBehavior === 'skip') {
+                shouldSkip = true;
+              } else {
+                targetPrice = parseFloat(splitSundayTargetInput.value) || basePrice;
+              }
             }
-          } else { // Sunday (0)
-            const sunBehavior = splitSundayBehaviorSelect.value;
-            if (sunBehavior === 'skip') {
-              shouldSkip = true;
-            } else {
-              targetPrice = parseFloat(splitSundayTargetInput.value) || basePrice;
+
+            if (!shouldSkip) {
+              const newPrice = Math.round(targetPrice / 1.05 / flexFactor);
+              rowMultiplier = (newPrice / basePrice).toFixed(2);
             }
           }
-
-          const newPrice = Math.round(targetPrice / 1.05 / flexFactor);
-          rowMultiplier = (newPrice / basePrice).toFixed(2);
         }
 
         if (shouldSkip) {
@@ -1236,7 +1372,10 @@ function setupPricingModeListeners() {
   const splitDirectSunBehavior = document.getElementById('split-direct-sunday-behavior');
   const splitDirectSunWrapper = document.getElementById('split-direct-sunday-wrapper');
   const splitDirectWeekendBeh = document.getElementById('split-direct-weekend-behavior');
-  const splitDirectFriSatWrapper = document.getElementById('split-direct-fri-sat-wrapper');
+  const splitDirectFriWrapper = document.getElementById('split-direct-fri-wrapper') || document.getElementById('split-direct-fri-sat-wrapper');
+  const splitDirectSatRow = document.getElementById('split-direct-saturday-row');
+  const splitDirectSatBehavior = document.getElementById('split-direct-saturday-behavior');
+  const splitDirectSatWrapper = document.getElementById('split-direct-sat-wrapper');
   const splitDirectSunRow = document.getElementById('split-direct-sunday-row');
 
   if (splitMethodSelect) {
@@ -1258,20 +1397,33 @@ function setupPricingModeListeners() {
       const val = splitDirectWeekendBeh.value;
       if (val === 'weekdays_only' || val === 'skip') {
         if (splitDirectMonThuWrapper?.style) splitDirectMonThuWrapper.style.display = 'block';
-        if (splitDirectFriSatWrapper?.style) splitDirectFriSatWrapper.style.display = 'none';
+        if (splitDirectFriWrapper?.style) splitDirectFriWrapper.style.display = 'none';
+        if (splitDirectSatRow?.style) splitDirectSatRow.style.display = 'none';
         if (splitDirectSunRow?.style) splitDirectSunRow.style.display = 'none';
       } else if (val === 'weekends_only') {
         if (splitDirectMonThuWrapper?.style) splitDirectMonThuWrapper.style.display = 'none';
-        if (splitDirectFriSatWrapper?.style) splitDirectFriSatWrapper.style.display = 'block';
+        if (splitDirectFriWrapper?.style) splitDirectFriWrapper.style.display = 'block';
+        if (splitDirectSatRow?.style) splitDirectSatRow.style.display = 'flex';
         if (splitDirectSunRow?.style) splitDirectSunRow.style.display = 'flex';
       } else {
         if (splitDirectMonThuWrapper?.style) splitDirectMonThuWrapper.style.display = 'block';
-        if (splitDirectFriSatWrapper?.style) splitDirectFriSatWrapper.style.display = 'block';
+        if (splitDirectFriWrapper?.style) splitDirectFriWrapper.style.display = 'block';
+        if (splitDirectSatRow?.style) splitDirectSatRow.style.display = 'flex';
         if (splitDirectSunRow?.style) splitDirectSunRow.style.display = 'flex';
       }
     };
     splitDirectWeekendBeh.addEventListener('change', updateWeekendBehUI);
     updateWeekendBehUI();
+  }
+
+  if (splitDirectSatBehavior) {
+    splitDirectSatBehavior.addEventListener('change', () => {
+      if (splitDirectSatBehavior.value === 'same') {
+        if (splitDirectSatWrapper) splitDirectSatWrapper.style.display = 'none';
+      } else {
+        if (splitDirectSatWrapper) splitDirectSatWrapper.style.display = 'block';
+      }
+    });
   }
 
   if (splitDirectSunBehavior) {
@@ -1298,19 +1450,54 @@ function setupPricingModeListeners() {
   }
 
   // Toggle Sunday Target visibility based on behavior
-  splitSundayBehaviorSelect.addEventListener('change', () => {
-    const behavior = splitSundayBehaviorSelect.value;
-    if (behavior === 'skip') {
-      splitSundayTargetWrapper.style.display = 'none';
-    } else {
-      splitSundayTargetWrapper.style.display = 'block';
-    }
-    updateSplitMultipliersPreview();
-  });
+  if (splitSundayBehaviorSelect) {
+    splitSundayBehaviorSelect.addEventListener('change', () => {
+      const behavior = splitSundayBehaviorSelect.value;
+      if (behavior === 'skip') {
+        if (splitSundayTargetWrapper) splitSundayTargetWrapper.style.display = 'none';
+      } else {
+        if (splitSundayTargetWrapper) splitSundayTargetWrapper.style.display = 'block';
+      }
+      updateSplitMultipliersPreview();
+    });
+  }
+
+  // Toggle Day Group Target visibility for Target Prices
+  const splitTargetWeekendBeh = document.getElementById('split-target-weekend-behavior');
+  const splitTargetMonThuWrapper = document.getElementById('split-target-mon-thu-wrapper');
+  const splitTargetFriWrapper = document.getElementById('split-target-friday-wrapper');
+  const splitTargetSatRow = document.getElementById('split-target-saturday-row');
+  const splitTargetSunRow = document.getElementById('split-target-sunday-row');
+
+  if (splitTargetWeekendBeh) {
+    const updateTargetWeekendBehUI = () => {
+      const val = splitTargetWeekendBeh.value;
+      if (val === 'weekdays_only' || val === 'skip') {
+        if (splitTargetMonThuWrapper?.style) splitTargetMonThuWrapper.style.display = 'block';
+        if (splitTargetFriWrapper?.style) splitTargetFriWrapper.style.display = 'none';
+        if (splitTargetSatRow?.style) splitTargetSatRow.style.display = 'none';
+        if (splitTargetSunRow?.style) splitTargetSunRow.style.display = 'none';
+      } else if (val === 'weekends_only') {
+        if (splitTargetMonThuWrapper?.style) splitTargetMonThuWrapper.style.display = 'none';
+        if (splitTargetFriWrapper?.style) splitTargetFriWrapper.style.display = 'block';
+        if (splitTargetSatRow?.style) splitTargetSatRow.style.display = 'flex';
+        if (splitTargetSunRow?.style) splitTargetSunRow.style.display = 'flex';
+      } else {
+        if (splitTargetMonThuWrapper?.style) splitTargetMonThuWrapper.style.display = 'block';
+        if (splitTargetFriWrapper?.style) splitTargetFriWrapper.style.display = 'block';
+        if (splitTargetSatRow?.style) splitTargetSatRow.style.display = 'flex';
+        if (splitTargetSunRow?.style) splitTargetSunRow.style.display = 'flex';
+      }
+      updateSplitMultipliersPreview();
+    };
+    splitTargetWeekendBeh.addEventListener('change', updateTargetWeekendBehUI);
+    updateTargetWeekendBehUI();
+  }
 
   const splitInputs = [
     splitBasePriceInput,
     splitFlexibilitySelect,
+    splitTargetWeekendBeh,
     splitWeekdayTargetInput,
     splitFridayTargetInput,
     splitSaturdayBehaviorSelect,
@@ -1341,6 +1528,9 @@ function updateSplitMultipliersPreview() {
     return;
   }
 
+  const targetWeekendBehEl = document.getElementById('split-target-weekend-behavior');
+  const targetWeekendBeh = targetWeekendBehEl ? targetWeekendBehEl.value : 'include';
+
   const wdTarget = parseFloat(splitWeekdayTargetInput.value);
   const frTarget = splitFridayTargetInput ? parseFloat(splitFridayTargetInput.value) : NaN;
   const satBehavior = splitSaturdayBehaviorSelect ? splitSaturdayBehaviorSelect.value : 'custom';
@@ -1354,12 +1544,32 @@ function updateSplitMultipliersPreview() {
     return (newPrice / basePrice).toFixed(2);
   };
 
-  if (previewWdText) previewWdText.textContent = calculateSplitMultiplier(wdTarget);
-  if (previewFrText) previewFrText.textContent = calculateSplitMultiplier(frTarget);
-  if (previewSaText) previewSaText.textContent = calculateSplitMultiplier(saTarget);
+  if (previewWdText) {
+    if (targetWeekendBeh === 'weekends_only') {
+      previewWdText.textContent = 'Skipped';
+    } else {
+      previewWdText.textContent = calculateSplitMultiplier(wdTarget);
+    }
+  }
+
+  if (previewFrText) {
+    if (targetWeekendBeh === 'weekdays_only' || targetWeekendBeh === 'skip') {
+      previewFrText.textContent = 'Skipped';
+    } else {
+      previewFrText.textContent = calculateSplitMultiplier(frTarget);
+    }
+  }
+
+  if (previewSaText) {
+    if (targetWeekendBeh === 'weekdays_only' || targetWeekendBeh === 'skip') {
+      previewSaText.textContent = 'Skipped';
+    } else {
+      previewSaText.textContent = calculateSplitMultiplier(saTarget);
+    }
+  }
 
   if (previewSuText) {
-    if (suBehavior === 'skip') {
+    if (targetWeekendBeh === 'weekdays_only' || targetWeekendBeh === 'skip' || suBehavior === 'skip') {
       previewSuText.textContent = 'Skipped';
     } else {
       previewSuText.textContent = calculateSplitMultiplier(suTarget);
