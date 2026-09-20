@@ -154,7 +154,8 @@ app.get("/api/sheet-data", async (req, res) => {
                 "next 10 days factors!A:Z",
                 "Rate flex!A:Z",
                 "Benchmark Occ!A:G",
-                "Channel RNs!A:P"
+                "Channel RNs!A:P",
+                "Future rates!A:D"
             ]
         });
 
@@ -168,7 +169,8 @@ app.get("/api/sheet-data", async (req, res) => {
                 next10DaysFactors: valueRanges[1]?.values || [],
                 rateFlex: valueRanges[2]?.values || [],
                 benchmarkOcc: valueRanges[3]?.values || [],
-                channelRNs: valueRanges[4]?.values || []
+                channelRNs: valueRanges[4]?.values || [],
+                futureRates: valueRanges[5]?.values || []
             }
         });
 

@@ -1664,6 +1664,7 @@ async function autoLoadWorkspaceDatasets() {
     const rateFlexRows = result.data.rateFlex || [];
     const benchmarkOccRows = result.data.benchmarkOcc || [];
     const channelRNsRows = result.data.channelRNs || [];
+    const futureRatesRows = result.data.futureRates || [];
 
     console.log('Google Sheets data received:');
     console.log('Future Occ rows:', futureOccRows.length);
@@ -1671,6 +1672,7 @@ async function autoLoadWorkspaceDatasets() {
     console.log('Rate Flex rows:', rateFlexRows.length);
     console.log('Benchmark Occ rows:', benchmarkOccRows.length);
     console.log('Channel RNs rows:', channelRNsRows.length);
+    console.log('Future Rates rows:', futureRatesRows.length);
 
     // Convert Google Sheets arrays into CSV text.
     // This lets us keep your existing dashboard processing logic unchanged.
@@ -1690,6 +1692,7 @@ async function autoLoadWorkspaceDatasets() {
     const flexText = rowsToCsv(rateFlexRows);
     const benchText = rowsToCsv(benchmarkOccRows);
     const channelText = rowsToCsv(channelRNsRows);
+    const futureRatesText = rowsToCsv(futureRatesRows);
 
     // Use the existing dashboard processing engine
     parseAndProcessDashboardData(
@@ -1697,11 +1700,12 @@ async function autoLoadWorkspaceDatasets() {
       facText,
       flexText,
       benchText,
-      channelText
+      channelText,
+      futureRatesText
     );
 
     showToast(
-      `Loaded live Google Sheets data: ${futureOccRows.length - 1} occupancy rows, ${benchmarkOccRows.length - 1} benchmark rows, ${channelRNsRows.length - 1} channel rows, ${rateFlexRows.length - 1} rate-flex rows.`,
+      `Loaded live Google Sheets data: ${futureOccRows.length - 1} occ rows, ${futureRatesRows.length - 1} future rate rows, ${benchmarkOccRows.length - 1} benchmark rows, ${channelRNsRows.length - 1} channel rows.`,
       'success'
     );
 
@@ -1732,6 +1736,11 @@ function padCSId7Digit(idStr) {
 function normalizeDateToYYYYMMDD(raw) {
   if (!raw) return '';
   const s = String(raw).trim();
+  if (/^\d{2}[-/]\d{1,2}[-/]\d{1,2}$/.test(s)) {
+    const parts = s.split(/[-/]/);
+    const yr = Number(parts[0]) > 50 ? '19' + parts[0] : '20' + parts[0];
+    return yr + parts[1].padStart(2, '0') + parts[2].padStart(2, '0');
+  }
   if (/^\d{4}[-/]\d{1,2}[-/]\d{1,2}$/.test(s)) {
     const parts = s.split(/[-/]/);
     return parts[0] + parts[1].padStart(2, '0') + parts[2].padStart(2, '0');
@@ -1783,12 +1792,13 @@ function normalizeCityCategory(rawType) {
 }
 
 // Parse and process datasets (Only LIVE properties)
-function parseAndProcessDashboardData(occText, facText, flexText, benchText, channelText) {
+function parseAndProcessDashboardData(occText, facText, flexText, benchText, channelText, futureRatesText) {
   const occRows = parseCsvSimple(occText);
   const facRows = facText ? parseCsvSimple(facText) : [];
   const flexRows = flexText ? parseCsvSimple(flexText) : [];
   const benchRows = benchText ? parseCsvSimple(benchText) : [];
   const channelRows = channelText ? parseCsvSimple(channelText) : [];
+  const futureRatesRows = futureRatesText ? parseCsvSimple(futureRatesText) : [];
 
   // Helper: Cleans hotel name by stripping descriptive suffixes (e.g. ', Mall Road', 'With Swimming Pool')
   function getCleanBaseName(name) {
@@ -1994,6 +2004,47 @@ function parseAndProcessDashboardData(occText, facText, flexText, benchText, cha
     }
   }
 
+  // 3. Build Future Rates Map (Pushed Price & Factor from Future rates tab)
+  const futureRatesMap = {};
+  if (futureRatesRows.length > 0) {
+    const frHeader = futureRatesRows[0];
+    let colProp = 0, colDate = 1, colFactor = 2, colPrice = 3;
+    frHeader.forEach((h, idx) => {
+      const hStr = h.toLowerCase().trim();
+      if (hStr.includes('property') || hStr.includes('hotel') || hStr.includes('cs')) colProp = idx;
+      else if (hStr.includes('stay') || hStr.includes('date')) colDate = idx;
+      else if (hStr.includes('factor')) colFactor = idx;
+      else if (hStr.includes('price') || hStr.includes('rate') || hStr.includes('pushed')) colPrice = idx;
+    });
+
+    for (let f = 1; f < futureRatesRows.length; f++) {
+      const frRow = futureRatesRows[f];
+      if (!frRow || frRow.length < 2) continue;
+      const rawProp = String(frRow[colProp] || '').replace(/\.0$/, '').trim();
+      if (!rawProp) continue;
+      const cleanId = String(parseInt(rawProp) || rawProp);
+      const paddedCs = padCSId7Digit(rawProp);
+      const rawDate = String(frRow[colDate] || '').trim();
+      const normDate = normalizeDateToYYYYMMDD(rawDate);
+      const priceVal = parseFloat(String(frRow[colPrice] || '').replace(/,/g, ''));
+      const factorVal = parseFloat(String(frRow[colFactor] || '').trim());
+
+      const item = {
+        pushedPrice: (!isNaN(priceVal) && priceVal > 0) ? Math.round(priceVal) : null,
+        factor: (!isNaN(factorVal) && factorVal > 0) ? factorVal : null
+      };
+
+      if (normDate) {
+        futureRatesMap[`${cleanId}_${normDate}`] = item;
+        futureRatesMap[`${paddedCs}_${normDate}`] = item;
+      }
+      if (rawDate) {
+        futureRatesMap[`${cleanId}_${rawDate}`] = item;
+        futureRatesMap[`${paddedCs}_${rawDate}`] = item;
+      }
+    }
+  }
+
   const CITY_OPZONE_MAP = {
     // East
     'kolkata': 'East', 'sealdah': 'East', 'ranchi': 'East', 'patna': 'East', 'bhubaneswar': 'East', 'guwahati': 'East', 'siliguri': 'East', 'gangtok': 'East', 'howrah': 'East', 'durgapur': 'East', 'park circus': 'East', 'kalighat': 'East', 'rabindra sarobar': 'East', 'marine drive': 'East',
@@ -2157,9 +2208,22 @@ function parseAndProcessDashboardData(occText, facText, flexText, benchText, cha
       }
     }
 
-    // Calculate Pushed Price = Base Rate * Factor
+    // Lookup Future Rates (Pushed Price & Factor) from Future rates tab
+    const frMeta = futureRatesMap[`${displayCsId}_${targetDateStr}`]
+      || futureRatesMap[`${hId}_${targetDateStr}`]
+      || (meta.csId ? futureRatesMap[`${meta.csId}_${targetDateStr}`] : null)
+      || (meta.csId ? futureRatesMap[`${padCSId7Digit(meta.csId)}_${targetDateStr}`] : null)
+      || (meta.hxId ? futureRatesMap[`${meta.hxId}_${targetDateStr}`] : null);
+
+    if (frMeta && frMeta.factor && (!meta.row || meta.row.length === 0 || currentTDF === 1.00)) {
+      currentTDF = frMeta.factor;
+    }
+
+    // Pushed Price directly from 'Future rates' tab; fallback to Base Rate * Factor
     const baseRate = flexMeta.basePrice || 1500;
-    const pushedPrice = Math.round(baseRate * currentTDF);
+    const pushedPrice = (frMeta && frMeta.pushedPrice)
+      ? frMeta.pushedPrice
+      : Math.round(baseRate * currentTDF);
 
     // Multiplier Adjustment
     let occAdj = 1.00;
