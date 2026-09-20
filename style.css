@@ -2272,17 +2272,43 @@ tr.hotel-group-odd td {
   color: #475569;
 }
 
+/* Remove default spinner arrows on number inputs */
+input.desired-push-price-input::-webkit-outer-spin-button,
+input.desired-push-price-input::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+  display: none !important;
+  margin: 0 !important;
+}
+
 .desired-push-price-input {
-  width: 72px !important;
-  padding: 2px 4px !important;
-  font-size: 0.76rem !important;
-  border: 1px solid #cbd5e1;
-  border-radius: 4px;
+  -moz-appearance: textfield !important;
+  appearance: textfield !important;
+  width: 92px !important;
+  min-width: 90px !important;
+  padding: 4px 8px !important;
+  font-size: 0.82rem !important;
   font-weight: 600;
+  font-family: inherit;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
   text-align: right;
   color: #0f172a;
+  background: #ffffff;
   outline: none;
-  transition: border-color 0.2s;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+.cell-desired-price {
+  width: 104px;
+  min-width: 104px;
+  text-align: right !important;
+}
+
+.desired-push-price-input:focus {
+  border-color: #ea580c !important;
+  box-shadow: 0 0 0 2px rgba(234, 88, 12, 0.15);
+  background: #fffbfa;
 }
 
 /* Collapsible KPI summary section */
@@ -2305,10 +2331,16 @@ tr.hotel-group-odd td {
   max-width: 135px !important;
 }
 
+.compact-density-mode .cell-desired-price {
+  width: 94px !important;
+  min-width: 94px !important;
+}
+
 .compact-density-mode .desired-push-price-input {
-  width: 60px !important;
-  padding: 1px 3px !important;
-  font-size: 0.70rem !important;
+  width: 84px !important;
+  min-width: 82px !important;
+  padding: 3px 6px !important;
+  font-size: 0.78rem !important;
 }
 
 .compact-density-mode .badge-csid,
