@@ -2905,8 +2905,8 @@ function renderDashTable() {
       <td class="cell-num-right">${r.currentTDF.toFixed(2)}</td>
       <td class="cell-num-right"><strong class="cell-new-tdf" style="color:#059669;">${r.recTDF.toFixed(2)}</strong></td>
       <td class="cell-num-right"><strong style="color:#0284c7;">${pushedPriceDisplay}</strong></td>
-      <td class="cell-num-right">
-        <input type="number" class="desired-push-price-input" data-csid="${r.csId}" data-targetdate="${r.targetDateStr}" value="${desiredVal}" onfocus="this.style.borderColor='#3b82f6'" onblur="this.style.borderColor='#cbd5e1'" />
+      <td class="cell-num-right cell-desired-price">
+        <input type="text" inputmode="numeric" pattern="[0-9]*" class="desired-push-price-input" data-csid="${r.csId}" data-targetdate="${r.targetDateStr}" value="${desiredVal}" spellcheck="false" autocomplete="off" />
       </td>
     `;
     tbody.appendChild(tr);
@@ -2917,9 +2917,13 @@ function renderDashTable() {
 
     const handleDesiredPriceUpdate = (e) => {
       if (e.target && e.target.classList.contains('desired-push-price-input')) {
+        const cleaned = e.target.value.replace(/[^0-9.]/g, '');
+        if (e.target.value !== cleaned) {
+          e.target.value = cleaned;
+        }
         const csId = e.target.dataset.csid;
         const targetDate = e.target.dataset.targetdate;
-        const desiredVal = parseFloat(e.target.value);
+        const desiredVal = parseFloat(cleaned);
         const match = dashboardState.find(row => row.csId === csId && row.targetDateStr === targetDate);
         if (match) {
           match.desiredPushPrice = isNaN(desiredVal) ? 0 : desiredVal;
