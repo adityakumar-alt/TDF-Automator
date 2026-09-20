@@ -1627,7 +1627,22 @@ async function autoLoadWorkspaceDatasets() {
   showToast('Connecting to Google Sheets...', 'info');
 
   try {
-    const response = await fetch('http://localhost:3000/api/sheet-data');
+    const isFileProtocol = window.location.protocol === 'file:';
+    let apiUrl = isFileProtocol ? 'http://localhost:3000/api/sheet-data' : '/api/sheet-data';
+    let authUrl = isFileProtocol ? 'http://localhost:3000/auth/google' : '/auth/google';
+
+    let response;
+    try {
+      response = await fetch(apiUrl);
+    } catch (fetchErr) {
+      if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        apiUrl = 'http://localhost:3000/api/sheet-data';
+        authUrl = 'http://localhost:3000/auth/google';
+        response = await fetch(apiUrl);
+      } else {
+        throw fetchErr;
+      }
+    }
 
     const result = await response.json();
 
@@ -1635,10 +1650,7 @@ async function autoLoadWorkspaceDatasets() {
     if (response.status === 401) {
       showToast('Please login with Google first.', 'warning');
 
-      window.open(
-        'http://localhost:3000/auth/google',
-        '_blank'
-      );
+      window.open(authUrl, '_blank');
 
       return;
     }
