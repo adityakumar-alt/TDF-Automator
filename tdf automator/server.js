@@ -1,26 +1,39 @@
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const { google } = require("googleapis");
 const fs = require("fs");
+const path = require("path");
 
 const app = express();
 app.use(cors());
 app.use(express.json());
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
-console.log("Starting TDF Google Sheets server...");
+console.log("Starting Daily Pricing Dashboard server...");
 
 // =====================================================
 // GOOGLE OAUTH CONFIGURATION
 // =====================================================
 
-const credentials = JSON.parse(
-    fs.readFileSync("./oauth/client-secret.json", "utf8")
-);
+let client_id = process.env.GOOGLE_CLIENT_ID;
+let client_secret = process.env.GOOGLE_CLIENT_SECRET;
 
-const { client_id, client_secret } = credentials.web;
+if (!client_id || !client_secret) {
+    if (fs.existsSync("./oauth/client-secret.json")) {
+        try {
+            const credentials = JSON.parse(
+                fs.readFileSync("./oauth/client-secret.json", "utf8")
+            );
+            client_id = credentials.web.client_id;
+            client_secret = credentials.web.client_secret;
+        } catch (e) {
+            console.warn("Could not read ./oauth/client-secret.json:", e.message);
+        }
+    }
+}
 
-const REDIRECT_URI = "http://localhost:3000/oauth2callback";
+const REDIRECT_URI = process.env.REDIRECT_URI || `http://localhost:${PORT}/oauth2callback`;
 
 const oauth2Client = new google.auth.OAuth2(
     client_id,
@@ -30,8 +43,16 @@ const oauth2Client = new google.auth.OAuth2(
 
 const TOKENS_PATH = "./oauth/tokens.json";
 
-// Load saved tokens if available
-if (fs.existsSync(TOKENS_PATH)) {
+// Load saved tokens: check env var first, then file
+if (process.env.GOOGLE_SAVED_TOKENS) {
+    try {
+        const envTokens = JSON.parse(process.env.GOOGLE_SAVED_TOKENS);
+        oauth2Client.setCredentials(envTokens);
+        console.log("Loaded saved OAuth tokens from environment variable ✅");
+    } catch (err) {
+        console.warn("Error parsing GOOGLE_SAVED_TOKENS env var:", err.message);
+    }
+} else if (fs.existsSync(TOKENS_PATH)) {
     try {
         const savedTokens = JSON.parse(fs.readFileSync(TOKENS_PATH, "utf8"));
         oauth2Client.setCredentials(savedTokens);
@@ -45,8 +66,10 @@ if (fs.existsSync(TOKENS_PATH)) {
 oauth2Client.on("tokens", (tokens) => {
     try {
         const currentTokens = { ...oauth2Client.credentials, ...tokens };
-        fs.writeFileSync(TOKENS_PATH, JSON.stringify(currentTokens, null, 2));
-        console.log("Updated OAuth tokens saved to disk ✅");
+        if (fs.existsSync("./oauth")) {
+            fs.writeFileSync(TOKENS_PATH, JSON.stringify(currentTokens, null, 2));
+            console.log("Updated OAuth tokens saved to disk ✅");
+        }
     } catch (e) {
         console.error("Error saving updated tokens:", e);
     }
@@ -56,8 +79,7 @@ oauth2Client.on("tokens", (tokens) => {
 // YOUR GOOGLE SPREADSHEET
 // =====================================================
 
-const SPREADSHEET_ID =
-    "1HbhMErLh8N2CdkBBJ_ubiv6S2FYx5g1_pNqoFOPo8eE";
+const SPREADSHEET_ID = process.env.SPREADSHEET_ID || "1HbhMErLh8N2CdkBBJ_ubiv6S2FYx5g1_pNqoFOPo8eE";
 
 // =====================================================
 // GOOGLE LOGIN
@@ -188,31 +210,33 @@ app.get("/api/sheet-data", async (req, res) => {
 });
 
 // =====================================================
-// TEST HOME PAGE
+// FRONTEND SERVING (PRODUCTION DIST) OR TEST HOME PAGE
 // =====================================================
 
-app.get("/", (req, res) => {
-
-    res.send(`
-        <h1>TDF Dashboard Backend</h1>
-
-        <p>Server is running ✅</p>
-
-        <p>
-            <a href="/auth/google">
-                Login with Google
-            </a>
-        </p>
-
-        <p>
-            After login:
-            <a href="/api/sheet-data">
-                Test Google Sheet Data
-            </a>
-        </p>
-    `);
-
-});
+const distPath = path.join(__dirname, "dist");
+if (fs.existsSync(distPath)) {
+    console.log("Serving production frontend build from /dist ✅");
+    app.use(express.static(distPath));
+    app.use((req, res, next) => {
+        if (
+            req.path.startsWith("/api") ||
+            req.path.startsWith("/auth") ||
+            req.path.startsWith("/oauth2callback")
+        ) {
+            return next();
+        }
+        res.sendFile(path.join(distPath, "index.html"));
+    });
+} else {
+    app.get("/", (req, res) => {
+        res.send(`
+            <h1>Daily Pricing Dashboard Backend</h1>
+            <p>Server is running ✅</p>
+            <p><a href="/auth/google">Login with Google</a></p>
+            <p><a href="/api/sheet-data">Test Google Sheet Data</a></p>
+        `);
+    });
+}
 
 // =====================================================
 // START SERVER
@@ -221,7 +245,7 @@ app.get("/", (req, res) => {
 app.listen(PORT, () => {
 
     console.log(
-        `TDF Dashboard server running at http://localhost:${PORT}`
+        `Daily Pricing Dashboard server running at http://localhost:${PORT}`
     );
 
 });
