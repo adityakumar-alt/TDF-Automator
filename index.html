@@ -524,9 +524,9 @@
                   <div class="form-group col">
                     <label for="split-direct-weekend-behavior">Day Group Target</label>
                     <select id="split-direct-weekend-behavior">
-                      <option value="include">All Days (Mon–Thu, Fri–Sat, Sunday)</option>
+                      <option value="include">All Days (Mon–Thu, Friday, Saturday, Sunday)</option>
                       <option value="weekdays_only">Weekdays Only (Mon–Thu, Skip Fri–Sat–Sun)</option>
-                      <option value="weekends_only">Weekends Only (Fri–Sat, Skip Mon–Thu, Sunday Optional)</option>
+                      <option value="weekends_only">Weekends Only (Fri, Sat, Sun, Skip Mon–Thu)</option>
                     </select>
                   </div>
                 </div>
@@ -538,11 +538,27 @@
                       <input type="number" id="split-direct-mon-thu" step="0.01" min="0.01" placeholder="e.g. 1.10">
                     </div>
                   </div>
-                  <div class="form-group col" id="split-direct-fri-sat-wrapper">
-                    <label for="split-direct-fri-sat">Fri–Sat Multiplier <span class="required">*</span></label>
+                  <div class="form-group col" id="split-direct-fri-wrapper">
+                    <label for="split-direct-fri">Friday Multiplier <span class="required">*</span></label>
                     <div class="input-prefix-wrapper">
                       <span class="input-prefix">×</span>
-                      <input type="number" id="split-direct-fri-sat" step="0.01" min="0.01" placeholder="e.g. 1.25">
+                      <input type="number" id="split-direct-fri" step="0.01" min="0.01" placeholder="e.g. 1.25">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row" id="split-direct-saturday-row">
+                  <div class="form-group col">
+                    <label for="split-direct-saturday-behavior">Saturday Behavior</label>
+                    <select id="split-direct-saturday-behavior">
+                      <option value="custom">Use Custom Saturday Multiplier</option>
+                      <option value="same">Same as Friday Multiplier</option>
+                    </select>
+                  </div>
+                  <div class="form-group col" id="split-direct-sat-wrapper">
+                    <label for="split-direct-sat">Saturday Multiplier <span class="required">*</span></label>
+                    <div class="input-prefix-wrapper">
+                      <span class="input-prefix">×</span>
+                      <input type="number" id="split-direct-sat" step="0.01" min="0.01" placeholder="e.g. 1.30">
                     </div>
                   </div>
                 </div>
@@ -566,6 +582,16 @@
 
               <!-- Target Prices Sub-Container -->
               <div id="split-target-container" style="display: none;">
+                <div class="form-row" style="margin-bottom: 12px;">
+                  <div class="form-group col">
+                    <label for="split-target-weekend-behavior">Day Group Target</label>
+                    <select id="split-target-weekend-behavior">
+                      <option value="include">All Days (Mon–Thu, Friday, Saturday, Sunday)</option>
+                      <option value="weekdays_only">Weekdays Only (Mon–Thu, Skip Fri–Sat–Sun)</option>
+                      <option value="weekends_only">Weekends Only (Fri, Sat, Sun, Skip Mon–Thu)</option>
+                    </select>
+                  </div>
+                </div>
                 <div class="form-row">
                   <div class="form-group col">
                     <label for="split-base-price">P0 Price <span class="required">*</span></label>
@@ -581,18 +607,18 @@
                   </div>
                 </div>
                 <div class="form-row">
-                  <div class="form-group col">
+                  <div class="form-group col" id="split-target-mon-thu-wrapper">
                     <label for="split-weekday-target">Mon-Thu Target Price <span class="required">*</span></label>
                     <input type="number" id="split-weekday-target" placeholder="e.g. 1800" step="1">
                     <div class="error-msg" id="split-weekday-target-error">Enter a target price.</div>
                   </div>
-                  <div class="form-group col">
+                  <div class="form-group col" id="split-target-friday-wrapper">
                     <label for="split-friday-target">Friday Target Price <span class="required">*</span></label>
                     <input type="number" id="split-friday-target" placeholder="e.g. 2200" step="1">
                     <div class="error-msg" id="split-friday-target-error">Enter a target price.</div>
                   </div>
                 </div>
-                <div class="form-row">
+                <div class="form-row" id="split-target-saturday-row">
                   <div class="form-group col">
                     <label for="split-saturday-behavior">Saturday Behavior</label>
                     <select id="split-saturday-behavior">
@@ -606,7 +632,7 @@
                     <div class="error-msg" id="split-saturday-target-error">Enter a target price.</div>
                   </div>
                 </div>
-                <div class="form-row">
+                <div class="form-row" id="split-target-sunday-row">
                   <div class="form-group col">
                     <label for="split-sunday-behavior">Sunday Behavior</label>
                     <select id="split-sunday-behavior">
