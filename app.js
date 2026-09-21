@@ -4011,7 +4011,7 @@ function loadHawkeyeBaseRatesData(rawRows) {
     console.warn('Could not cache Hawkeye base rates in localStorage:', e);
   }
 
-  populateHawkeyeFilterDropdowns();
+  populateHawkeyeFilterDropdowns(false);
   applyHawkeyeFilters();
 }
 
@@ -4054,7 +4054,7 @@ function initHawkeyeBaseRatesFromCache() {
       if (Array.isArray(parsed) && parsed.length > 0 && parsed[0].status && (parsed[0].status === 'Live' || parsed[0].status === 'Stop Sell')) {
         hawkeyeBaseRatesMaster = parsed;
         console.log(`Loaded ${hawkeyeBaseRatesMaster.length} Hawkeye Base Rates from cache`);
-        populateHawkeyeFilterDropdowns();
+        populateHawkeyeFilterDropdowns(true);
         applyHawkeyeFilters();
         return;
       } else {
@@ -4070,7 +4070,7 @@ function initHawkeyeBaseRatesFromCache() {
   syncHawkeyeBaseRates(false);
 }
 
-function populateHawkeyeFilterDropdowns() {
+function populateHawkeyeFilterDropdowns(resetToAll = false) {
   const subOpzoneSelect = document.getElementById('hawkeye-filter-sub-opzone');
   const citySelect = document.getElementById('hawkeye-filter-city');
   const categorySelect = document.getElementById('hawkeye-filter-category');
@@ -4081,38 +4081,44 @@ function populateHawkeyeFilterDropdowns() {
 
   // Sub Opzones
   if (subOpzoneSelect) {
-    const currentVal = subOpzoneSelect.value;
+    const currentVal = resetToAll ? 'all' : subOpzoneSelect.value;
     const subOpzones = Array.from(new Set(hawkeyeBaseRatesMaster.map(item => item.subOpzone).filter(Boolean))).sort();
     subOpzoneSelect.innerHTML = '<option value="all">All Sub Opzones</option>' +
       subOpzones.map(z => `<option value="${z}">${z}</option>`).join('');
-    if (subOpzones.includes(currentVal)) subOpzoneSelect.value = currentVal;
+    subOpzoneSelect.value = (subOpzones.includes(currentVal)) ? currentVal : 'all';
   }
 
   // Cities
   if (citySelect) {
-    const currentVal = citySelect.value;
+    const currentVal = resetToAll ? 'all' : citySelect.value;
     const cities = Array.from(new Set(hawkeyeBaseRatesMaster.map(item => item.city).filter(Boolean))).sort();
     citySelect.innerHTML = '<option value="all">All Cities</option>' +
       cities.map(c => `<option value="${c}">${c}</option>`).join('');
-    if (cities.includes(currentVal)) citySelect.value = currentVal;
+    citySelect.value = (cities.includes(currentVal)) ? currentVal : 'all';
   }
 
   // City Categories
   if (categorySelect) {
-    const currentVal = categorySelect.value;
+    const currentVal = resetToAll ? 'all' : categorySelect.value;
     const categories = Array.from(new Set(hawkeyeBaseRatesMaster.map(item => item.cityCategory).filter(Boolean))).sort();
     categorySelect.innerHTML = '<option value="all">All Categories</option>' +
       categories.map(c => `<option value="${c}">${c}</option>`).join('');
-    if (categories.includes(currentVal)) categorySelect.value = currentVal;
+    categorySelect.value = (categories.includes(currentVal)) ? currentVal : 'all';
+  }
+
+  // Statuses
+  if (statusSelect) {
+    const currentVal = resetToAll ? 'all' : statusSelect.value;
+    statusSelect.value = ['Live', 'Stop Sell'].includes(currentVal) ? currentVal : 'all';
   }
 
   // Base Configs
   if (baseConfigSelect) {
-    const currentVal = baseConfigSelect.value;
+    const currentVal = resetToAll ? 'all' : baseConfigSelect.value;
     const configs = Array.from(new Set(hawkeyeBaseRatesMaster.map(item => item.baseConfig).filter(Boolean))).sort();
     baseConfigSelect.innerHTML = '<option value="all">All Base Configs</option>' +
       configs.map(cfg => `<option value="${cfg}">${cfg}</option>`).join('');
-    if (configs.includes(currentVal)) baseConfigSelect.value = currentVal;
+    baseConfigSelect.value = (configs.includes(currentVal)) ? currentVal : 'all';
   }
 }
 
@@ -4235,7 +4241,7 @@ function renderHawkeyeRatesTable() {
           <span style="font-size: 0.72rem; color: var(--text-secondary);">${item.cityCategory || '-'}</span>
         </td>
         <td>${statusBadge}</td>
-        <td>${configBadge}</td>
+        <td class="col-sep-right">${configBadge}</td>
         <td class="cell-num-right" style="font-weight: 600; color: #d97706;">${item.min}</td>
         <td class="cell-num-right" style="font-weight: 600; color: #d97706;">${item.max}</td>
         <td class="cell-num-right" style="font-weight: 700; color: #0284c7; background: rgba(2, 132, 199, 0.04);">${item.p0}</td>

@@ -2546,6 +2546,65 @@ input.desired-push-price-input::-webkit-inner-spin-button {
   color: #ffffff;
 }
 
+/* ==========================================================================
+   HAWKEYE BASE RATES MASTER STYLES
+   ========================================================================== */
+.dash-filter-select {
+  width: auto !important;
+  min-width: 125px;
+  max-width: 165px;
+  height: 36px;
+  padding: 6px 10px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  background-color: #ffffff;
+  color: #1e293b;
+  cursor: pointer;
+  flex: 0 0 auto !important;
+  line-height: normal;
+}
+
+.dash-filter-select:focus {
+  border-color: #ea580c;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(234, 88, 12, 0.15);
+}
+
+.th-group-prop {
+  background: #1e293b !important;
+  color: #cbd5e1 !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: left !important;
+  border-bottom: 1px solid #334155;
+  border-right: 2px solid #475569 !important;
+  padding: 6px 10px !important;
+}
+
+.th-group-rates {
+  background: #0f172a !important;
+  color: #38bdf8 !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: right !important;
+  border-bottom: 1px solid #334155;
+  padding: 6px 10px !important;
+}
+
+.col-sep-right {
+  border-right: 2px solid #e2e8f0 !important;
+}
+
+.dash-table th.col-sep-right {
+  border-right: 2px solid #475569 !important;
+}
+
 
 
 
