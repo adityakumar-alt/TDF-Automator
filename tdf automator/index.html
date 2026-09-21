@@ -13,7 +13,7 @@
     rel="stylesheet">
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
-  <link rel="stylesheet" href="./style.css?v=orange2">
+  <link rel="stylesheet" href="./style.css?v=hawkeye_v4">
 </head>
 
 <body>
@@ -459,36 +459,36 @@
             </div>
 
             <!-- Filters Bar -->
-            <div class="table-controls-bar" style="margin-bottom: 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
-              <div class="search-wrapper" style="flex: 1 1 240px; min-width: 200px; max-width: 320px;">
+            <div class="table-controls-bar" style="margin-bottom: 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; background: #ffffff; border: 1px solid #fed7aa; border-radius: 8px; padding: 8px 12px;">
+              <div class="search-wrapper" style="flex: 1 1 220px; min-width: 180px; max-width: 280px; margin: 0;">
                 <i data-lucide="search" class="search-icon"></i>
                 <input type="text" id="hawkeye-search-input" placeholder="Search by ID, Name, City, OpZone, Config...">
               </div>
 
               <div style="display: flex; gap: 6px; align-items: center; flex-wrap: wrap; justify-content: flex-end; flex: 2 1 auto;">
-                <select id="hawkeye-filter-sub-opzone" class="dash-filter-select">
+                <select id="hawkeye-filter-sub-opzone" class="dash-filter-select" style="width: auto !important; min-width: 125px; max-width: 155px; height: 36px; padding: 6px 10px; font-size: 0.8rem; font-weight: 500; border-radius: 6px; border: 1px solid #cbd5e1; background: #ffffff; color: #1e293b; cursor: pointer; flex: 0 0 auto !important;">
                   <option value="all">All Sub Opzones</option>
                 </select>
 
-                <select id="hawkeye-filter-city" class="dash-filter-select">
+                <select id="hawkeye-filter-city" class="dash-filter-select" style="width: auto !important; min-width: 115px; max-width: 150px; height: 36px; padding: 6px 10px; font-size: 0.8rem; font-weight: 500; border-radius: 6px; border: 1px solid #cbd5e1; background: #ffffff; color: #1e293b; cursor: pointer; flex: 0 0 auto !important;">
                   <option value="all">All Cities</option>
                 </select>
 
-                <select id="hawkeye-filter-category" class="dash-filter-select">
+                <select id="hawkeye-filter-category" class="dash-filter-select" style="width: auto !important; min-width: 125px; max-width: 155px; height: 36px; padding: 6px 10px; font-size: 0.8rem; font-weight: 500; border-radius: 6px; border: 1px solid #cbd5e1; background: #ffffff; color: #1e293b; cursor: pointer; flex: 0 0 auto !important;">
                   <option value="all">All Categories</option>
                 </select>
 
-                <select id="hawkeye-filter-status" class="dash-filter-select" style="min-width: 105px;">
+                <select id="hawkeye-filter-status" class="dash-filter-select" style="width: auto !important; min-width: 105px; max-width: 125px; height: 36px; padding: 6px 10px; font-size: 0.8rem; font-weight: 500; border-radius: 6px; border: 1px solid #cbd5e1; background: #ffffff; color: #1e293b; cursor: pointer; flex: 0 0 auto !important;">
                   <option value="all">All Statuses</option>
                   <option value="Live">Live</option>
                   <option value="Stop Sell">Stop Sell</option>
                 </select>
 
-                <select id="hawkeye-filter-base-config" class="dash-filter-select" style="min-width: 110px;">
+                <select id="hawkeye-filter-base-config" class="dash-filter-select" style="width: auto !important; min-width: 115px; max-width: 135px; height: 36px; padding: 6px 10px; font-size: 0.8rem; font-weight: 500; border-radius: 6px; border: 1px solid #cbd5e1; background: #ffffff; color: #1e293b; cursor: pointer; flex: 0 0 auto !important;">
                   <option value="all">All Base Configs</option>
                 </select>
 
-                <button id="btn-hawkeye-reset-filters" class="btn btn-secondary btn-sm" title="Reset Filters" style="padding: 6px 10px; height: 36px; display: inline-flex; align-items: center; gap: 4px;">
+                <button id="btn-hawkeye-reset-filters" class="btn btn-secondary btn-sm" title="Reset Filters" style="padding: 6px 10px; height: 36px; display: inline-flex; align-items: center; gap: 4px; flex: 0 0 auto;">
                   <i data-lucide="rotate-ccw"></i>
                   <span>Reset</span>
                 </button>
