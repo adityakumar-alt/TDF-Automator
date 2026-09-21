@@ -3997,12 +3997,16 @@ function parseHawkeyeBaseRates(rows) {
   return list;
 }
 
+const HAWKEYE_CACHE_KEY = 'hawkeye_base_rates_cache_v3';
+
 function loadHawkeyeBaseRatesData(rawRows) {
   hawkeyeBaseRatesMaster = parseHawkeyeBaseRates(rawRows);
   console.log(`Parsed ${hawkeyeBaseRatesMaster.length} Live/Stop Sell Hawkeye Base Rates`);
 
   try {
-    localStorage.setItem('hawkeye_base_rates_cache', JSON.stringify(hawkeyeBaseRatesMaster));
+    localStorage.removeItem('hawkeye_base_rates_cache');
+    localStorage.removeItem('hawkeye_base_rates_cache_v2');
+    localStorage.setItem(HAWKEYE_CACHE_KEY, JSON.stringify(hawkeyeBaseRatesMaster));
   } catch (e) {
     console.warn('Could not cache Hawkeye base rates in localStorage:', e);
   }
@@ -4011,18 +4015,59 @@ function loadHawkeyeBaseRatesData(rawRows) {
   applyHawkeyeFilters();
 }
 
+async function syncHawkeyeBaseRates(showNotice = false) {
+  const syncBtn = document.getElementById('btn-hawkeye-sync');
+  if (syncBtn) syncBtn.disabled = true;
+
+  try {
+    if (showNotice) showToast('Syncing Hawkeye base rates from Google Sheets...', 'info');
+    const res = await fetch('/api/sheet-data');
+    if (!res.ok) throw new Error(`Server responded with ${res.status}`);
+    const json = await res.json();
+    if (!json.success || !json.data || !json.data.hawkeyeBaseRates) {
+      throw new Error(json.error || 'No Hawkeye data returned');
+    }
+
+    loadHawkeyeBaseRatesData(json.data.hawkeyeBaseRates);
+    if (showNotice) {
+      showToast(`Successfully synced ${hawkeyeBaseRatesMaster.length} Live & Stop Sell properties!`, 'success');
+    }
+  } catch (err) {
+    console.warn('Failed to sync Hawkeye base rates:', err);
+    if (showNotice) {
+      showToast(`Hawkeye sync failed: ${err.message}`, 'error');
+    }
+  } finally {
+    if (syncBtn) syncBtn.disabled = false;
+    if (window.lucide) lucide.createIcons();
+  }
+}
+
 function initHawkeyeBaseRatesFromCache() {
   try {
-    const cached = localStorage.getItem('hawkeye_base_rates_cache');
+    localStorage.removeItem('hawkeye_base_rates_cache');
+    localStorage.removeItem('hawkeye_base_rates_cache_v2');
+
+    const cached = localStorage.getItem(HAWKEYE_CACHE_KEY);
     if (cached) {
-      hawkeyeBaseRatesMaster = JSON.parse(cached);
-      console.log(`Loaded ${hawkeyeBaseRatesMaster.length} Hawkeye Base Rates from cache`);
-      populateHawkeyeFilterDropdowns();
-      applyHawkeyeFilters();
+      const parsed = JSON.parse(cached);
+      if (Array.isArray(parsed) && parsed.length > 0 && parsed[0].status && (parsed[0].status === 'Live' || parsed[0].status === 'Stop Sell')) {
+        hawkeyeBaseRatesMaster = parsed;
+        console.log(`Loaded ${hawkeyeBaseRatesMaster.length} Hawkeye Base Rates from cache`);
+        populateHawkeyeFilterDropdowns();
+        applyHawkeyeFilters();
+        return;
+      } else {
+        console.warn('Outdated Hawkeye cache found. Purging...');
+        localStorage.removeItem(HAWKEYE_CACHE_KEY);
+      }
     }
   } catch (e) {
     console.warn('Failed to load cached Hawkeye base rates:', e);
   }
+
+  // If cache was purged or missing, automatically sync live from sheet API
+  syncHawkeyeBaseRates(false);
 }
 
 function populateHawkeyeFilterDropdowns() {
@@ -4133,7 +4178,7 @@ function renderHawkeyeRatesTable() {
       <tr>
         <td colspan="15" style="text-align: center; padding: 48px 20px; color: var(--text-muted);">
           <i data-lucide="search-x" style="width: 32px; height: 32px; margin-bottom: 8px; display: inline-block; opacity: 0.5;"></i>
-          <div>${totalMaster === 0 ? 'No Hawkeye base rates loaded yet. Click <strong>Auto-Load Portfolio Datasets</strong> on the Daily Pricing Dashboard.' : 'No properties match your current search and filter criteria.'}</div>
+          <div>${totalMaster === 0 ? 'No Hawkeye base rates loaded yet. Click <strong>Sync Rates</strong> to sync live rates from Google Sheets.' : 'No properties match your current search and filter criteria.'}</div>
         </td>
       </tr>
     `;
@@ -4165,10 +4210,12 @@ function renderHawkeyeRatesTable() {
 
   let html = '';
   for (const item of pageItems) {
-    const isLive = item.status === 'Live';
-    const statusBadge = isLive
-      ? `<span style="display: inline-flex; align-items: center; gap: 5px; font-size: 0.72rem; font-weight: 600; padding: 2px 8px; background: #ecfdf5; color: #059669; border: 1px solid #a7f3d0; border-radius: 9999px;"><span style="width: 6px; height: 6px; border-radius: 50%; background: #10b981;"></span>Live</span>`
-      : `<span style="display: inline-flex; align-items: center; gap: 5px; font-size: 0.72rem; font-weight: 600; padding: 2px 8px; background: #fff7ed; color: #c2410c; border: 1px solid #fed7aa; border-radius: 9999px;"><span style="width: 6px; height: 6px; border-radius: 50%; background: #f97316;"></span>Stop Sell</span>`;
+    let statusBadge = '<span style="color: var(--text-muted); font-size: 0.75rem;">-</span>';
+    if (item.status === 'Live') {
+      statusBadge = `<span style="display: inline-flex; align-items: center; gap: 5px; font-size: 0.72rem; font-weight: 600; padding: 2px 8px; background: #ecfdf5; color: #059669; border: 1px solid #a7f3d0; border-radius: 9999px;"><span style="width: 6px; height: 6px; border-radius: 50%; background: #10b981;"></span>Live</span>`;
+    } else if (item.status === 'Stop Sell') {
+      statusBadge = `<span style="display: inline-flex; align-items: center; gap: 5px; font-size: 0.72rem; font-weight: 600; padding: 2px 8px; background: #fff7ed; color: #c2410c; border: 1px solid #fed7aa; border-radius: 9999px;"><span style="width: 6px; height: 6px; border-radius: 50%; background: #f97316;"></span>Stop Sell</span>`;
+    }
 
     const configBadge = item.baseConfig
       ? `<span style="font-size: 0.72rem; font-weight: 600; padding: 2px 7px; background: #f8fafc; color: #334155; border: 1px solid #e2e8f0; border-radius: 4px; font-family: monospace;">${item.baseConfig}</span>`
@@ -4206,6 +4253,7 @@ function renderHawkeyeRatesTable() {
 }
 
 function setupHawkeyeBaseRatesListeners() {
+  const syncBtn = document.getElementById('btn-hawkeye-sync');
   const searchInput = document.getElementById('hawkeye-search-input');
   const subOpzoneSelect = document.getElementById('hawkeye-filter-sub-opzone');
   const citySelect = document.getElementById('hawkeye-filter-city');
@@ -4216,6 +4264,12 @@ function setupHawkeyeBaseRatesListeners() {
   const prevBtn = document.getElementById('btn-hawkeye-prev-page');
   const nextBtn = document.getElementById('btn-hawkeye-next-page');
   const pageSizeSelect = document.getElementById('hawkeye-page-size');
+
+  if (syncBtn) {
+    syncBtn.addEventListener('click', () => {
+      syncHawkeyeBaseRates(true);
+    });
+  }
 
   let debounceTimer;
   if (searchInput) {
