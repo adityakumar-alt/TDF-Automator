@@ -1142,41 +1142,137 @@ function showToast(message, type = 'success') {
   }, 4000);
 }
 
-// Update Joined Hotel IDs text box
+// Update Joined Hotel IDs text box (Chunks into parts of max 100 hotel IDs for Hawkeye Admin)
 function updateJoinedHotels() {
   const joinedBox = document.getElementById('joined-hotels-box');
-  const joinedInput = document.getElementById('joined-hotels-text');
+  const container = document.getElementById('joined-hotels-container');
+  const headerActions = document.getElementById('joined-hotels-header-actions');
+  if (!joinedBox || !container) return;
 
   if (rulesState.length === 0) {
     joinedBox.style.display = 'none';
-    joinedInput.value = '';
+    container.innerHTML = '';
+    if (headerActions) headerActions.innerHTML = '';
     return;
   }
 
   // Get unique hotels
-  const uniqueHotels = Array.from(new Set(rulesState.map(row => row.hotel_ID)));
+  const uniqueHotels = Array.from(new Set(rulesState.map(row => (row.hotel_ID || '').toString().trim()).filter(Boolean)));
+  const total = uniqueHotels.length;
 
-  // Join by comma only
-  const joinedText = uniqueHotels.join(',');
-  joinedInput.value = joinedText;
-  joinedBox.style.display = 'block'; // shows the joined block
+  if (total === 0) {
+    joinedBox.style.display = 'none';
+    container.innerHTML = '';
+    if (headerActions) headerActions.innerHTML = '';
+    return;
+  }
+
+  const CHUNK_SIZE = 100;
+  const numParts = Math.ceil(total / CHUNK_SIZE);
+
+  // Update header badge and actions
+  if (headerActions) {
+    if (numParts > 1) {
+      headerActions.innerHTML = `
+        <span class="joined-hotels-badge">${total} Hotels · ${numParts} Parts (Max 100 / part)</span>
+        <button id="btn-copy-all-joined" class="btn btn-secondary btn-sm" title="Copy all ${total} hotel IDs" style="padding: 4px 10px; font-size: 0.75rem;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+          <span>Copy All (${total})</span>
+        </button>
+      `;
+    } else {
+      headerActions.innerHTML = `
+        <span class="joined-hotels-badge">${total} Hotel${total > 1 ? 's' : ''}</span>
+      `;
+    }
+  }
+
+  // Generate part rows
+  let partsHtml = '';
+  for (let i = 0; i < numParts; i++) {
+    const startIdx = i * CHUNK_SIZE;
+    const endIdx = Math.min((i + 1) * CHUNK_SIZE, total);
+    const count = endIdx - startIdx;
+    const partHotels = uniqueHotels.slice(startIdx, endIdx);
+    const joinedText = partHotels.join(',');
+    const partNum = i + 1;
+
+    if (numParts > 1) {
+      partsHtml += `
+        <div class="joined-hotels-part">
+          <div class="joined-hotels-part-header">
+            <span>Part ${partNum} (Hotels ${startIdx + 1}–${endIdx} · ${count} IDs)</span>
+          </div>
+          <div class="joined-hotels-body">
+            <input type="text" class="joined-hotels-text" readonly value="${joinedText}" onclick="this.select()">
+            <button class="btn btn-secondary btn-sm btn-copy-part" data-part="${partNum}" data-range="${startIdx + 1}–${endIdx}" data-count="${count}" title="Copy Part ${partNum}">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+              <span>Copy Part ${partNum}</span>
+            </button>
+          </div>
+        </div>
+      `;
+    } else {
+      partsHtml += `
+        <div class="joined-hotels-body">
+          <input type="text" id="joined-hotels-text" class="joined-hotels-text" readonly value="${joinedText}" onclick="this.select()">
+          <button id="btn-copy-joined" class="btn btn-secondary btn-sm btn-copy-part" data-part="1" data-range="1–${total}" data-count="${total}" title="Copy to Clipboard">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+            <span>Copy</span>
+          </button>
+        </div>
+      `;
+    }
+  }
+
+  container.innerHTML = partsHtml;
+  joinedBox.style.display = 'block';
 }
 
 // Setup Event Listeners for Joined Hotels Box
 function setupJoinedHotelsListeners() {
-  // Copy joined hotels button listener
-  document.getElementById('btn-copy-joined').addEventListener('click', () => {
-    const joinedInput = document.getElementById('joined-hotels-text');
-    if (!joinedInput.value) return;
+  const joinedBox = document.getElementById('joined-hotels-box');
+  if (!joinedBox) return;
 
-    navigator.clipboard.writeText(joinedInput.value)
-      .then(() => {
-        showToast('Copied Joined Hotel IDs to clipboard!', 'success');
-      })
-      .catch(err => {
-        console.error('Failed to copy: ', err);
-        showToast('Failed to copy. Please copy the text manually.', 'error');
-      });
+  joinedBox.addEventListener('click', (e) => {
+    // Check if Copy All button was clicked
+    const copyAllBtn = e.target.closest('#btn-copy-all-joined');
+    if (copyAllBtn) {
+      const uniqueHotels = Array.from(new Set(rulesState.map(row => (row.hotel_ID || '').toString().trim()).filter(Boolean)));
+      const allText = uniqueHotels.join(',');
+      navigator.clipboard.writeText(allText)
+        .then(() => {
+          showToast(`Copied all ${uniqueHotels.length} Joined Hotel IDs to clipboard!`, 'success');
+        })
+        .catch(err => {
+          console.error('Failed to copy: ', err);
+          showToast('Failed to copy. Please copy the text manually.', 'error');
+        });
+      return;
+    }
+
+    // Check if a Part Copy button was clicked
+    const partBtn = e.target.closest('.btn-copy-part, #btn-copy-joined');
+    if (partBtn) {
+      const row = partBtn.closest('.joined-hotels-body');
+      const input = row ? row.querySelector('.joined-hotels-text') : null;
+      if (!input || !input.value) return;
+
+      const partNum = partBtn.dataset.part;
+      const range = partBtn.dataset.range;
+      const count = partBtn.dataset.count;
+      const isMultiPart = partNum && parseInt(partNum) > 1 || (document.querySelectorAll('.joined-hotels-part').length > 1);
+      const label = isMultiPart ? `Part ${partNum} (${range} · ${count} IDs)` : 'Joined Hotel IDs';
+
+      navigator.clipboard.writeText(input.value)
+        .then(() => {
+          showToast(`Copied ${label} to clipboard!`, 'success');
+        })
+        .catch(err => {
+          console.error('Failed to copy: ', err);
+          showToast('Failed to copy. Please copy the text manually.', 'error');
+        });
+    }
   });
 }
 
