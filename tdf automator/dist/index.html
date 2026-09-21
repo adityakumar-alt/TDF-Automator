@@ -13,8 +13,8 @@
     rel="stylesheet">
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
-  <script type="module" crossorigin src="/assets/index-D4HSR2Io.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-ChHHAITd.css">
+  <script type="module" crossorigin src="/assets/index-BiOST_XV.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-BvG3pHSd.css">
 </head>
 
 <body>
@@ -460,36 +460,36 @@
             </div>
 
             <!-- Filters Bar -->
-            <div class="table-controls-bar" style="margin-bottom: 0; flex-wrap: wrap; gap: 10px;">
-              <div class="search-wrapper" style="flex: 2; min-width: 220px;">
+            <div class="table-controls-bar" style="margin-bottom: 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+              <div class="search-wrapper" style="flex: 1 1 240px; min-width: 200px; max-width: 320px;">
                 <i data-lucide="search" class="search-icon"></i>
-                <input type="text" id="hawkeye-search-input" placeholder="Search by Hotel ID, Hotel Name, City, Sub Opzone...">
+                <input type="text" id="hawkeye-search-input" placeholder="Search by ID, Name, City, OpZone, Config...">
               </div>
 
-              <div style="display: flex; gap: 8px; flex-wrap: wrap; flex: 3; align-items: center;">
-                <select id="hawkeye-filter-sub-opzone" class="dash-filter-select" style="min-width: 130px;">
+              <div style="display: flex; gap: 6px; align-items: center; flex-wrap: wrap; justify-content: flex-end; flex: 2 1 auto;">
+                <select id="hawkeye-filter-sub-opzone" class="dash-filter-select">
                   <option value="all">All Sub Opzones</option>
                 </select>
 
-                <select id="hawkeye-filter-city" class="dash-filter-select" style="min-width: 120px;">
+                <select id="hawkeye-filter-city" class="dash-filter-select">
                   <option value="all">All Cities</option>
                 </select>
 
-                <select id="hawkeye-filter-category" class="dash-filter-select" style="min-width: 130px;">
+                <select id="hawkeye-filter-category" class="dash-filter-select">
                   <option value="all">All Categories</option>
                 </select>
 
-                <select id="hawkeye-filter-status" class="dash-filter-select" style="min-width: 110px;">
+                <select id="hawkeye-filter-status" class="dash-filter-select" style="min-width: 105px;">
                   <option value="all">All Statuses</option>
                   <option value="Live">Live</option>
                   <option value="Stop Sell">Stop Sell</option>
                 </select>
 
-                <select id="hawkeye-filter-base-config" class="dash-filter-select" style="min-width: 120px;">
+                <select id="hawkeye-filter-base-config" class="dash-filter-select" style="min-width: 110px;">
                   <option value="all">All Base Configs</option>
                 </select>
 
-                <button id="btn-hawkeye-reset-filters" class="btn btn-secondary btn-sm" title="Reset Filters" style="padding: 6px 10px;">
+                <button id="btn-hawkeye-reset-filters" class="btn btn-secondary btn-sm" title="Reset Filters" style="padding: 6px 10px; height: 36px; display: inline-flex; align-items: center; gap: 4px;">
                   <i data-lucide="rotate-ccw"></i>
                   <span>Reset</span>
                 </button>
@@ -497,9 +497,13 @@
             </div>
 
             <!-- Table Container -->
-            <div class="dash-table-wrapper" style="max-height: calc(100vh - 300px); min-height: 420px; overflow-x: auto;">
+            <div class="dash-table-wrapper" style="max-height: calc(100vh - 270px); min-height: 440px; overflow-x: auto;">
               <table class="dash-table" id="hawkeye-rates-table">
                 <thead>
+                  <tr>
+                    <th colspan="7" class="th-group-prop">Property Details</th>
+                    <th colspan="8" class="th-group-rates">Base Rates &amp; Price Tiers</th>
+                  </tr>
                   <tr>
                     <th style="min-width: 95px;">Hotel ID</th>
                     <th style="min-width: 210px;">Hotel</th>
@@ -507,7 +511,7 @@
                     <th style="min-width: 110px;">Sub Opzone</th>
                     <th style="min-width: 120px;">City Category</th>
                     <th style="min-width: 95px;">Status</th>
-                    <th style="min-width: 105px;">Base Config</th>
+                    <th class="col-sep-right" style="min-width: 105px;">Base Config</th>
                     <th class="cell-num-right" style="min-width: 75px; color: #f59e0b;" title="Min Base Rate">Min</th>
                     <th class="cell-num-right" style="min-width: 75px; color: #f59e0b;" title="Max Base Rate">Max</th>
                     <th class="cell-num-right" style="min-width: 75px; color: #38bdf8;" title="P0 Base Rate">P0</th>
@@ -522,7 +526,7 @@
                   <tr>
                     <td colspan="15" style="text-align: center; padding: 48px 20px; color: var(--text-muted);">
                       <i data-lucide="database" style="width: 32px; height: 32px; margin-bottom: 8px; display: inline-block; opacity: 0.5;"></i>
-                      <div>No Hawkeye base rates loaded yet. Click <strong>Auto-Load Portfolio Datasets</strong> on the Daily Pricing Dashboard to sync live rates.</div>
+                      <div>No Hawkeye base rates loaded yet. Click <strong>Sync Rates</strong> to sync live rates from Google Sheets.</div>
                     </td>
                   </tr>
                 </tbody>
