@@ -57,6 +57,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   setupDateDefaults();
   setupJoinedHotelsListeners();
+  setupHawkeyeBaseRatesListeners();
+  initHawkeyeBaseRatesFromCache();
   setupTabs();
   setupSidebarToggle();
   setupPricingModeListeners();
@@ -1422,7 +1424,7 @@ function setupTabs() {
       const sidebarCol = document.querySelector('.sidebar-column');
       const previewCard = document.querySelector('.preview-card');
 
-      if (targetTab === 'tab-dashboard') {
+      if (targetTab === 'tab-dashboard' || targetTab === 'tab-hawkeye-rates') {
         if (dashContainer) dashContainer.classList.add('landscape-mode');
         if (previewCard) previewCard.style.display = 'none';
         if (sidebarCol) sidebarCol.style.width = '100%';
@@ -1434,9 +1436,9 @@ function setupTabs() {
     });
   });
 
-  // Ensure default active tab (tab-dashboard) initializes landscape mode immediately
+  // Ensure default active tab (tab-dashboard or tab-hawkeye-rates) initializes landscape mode immediately
   const activeBtn = document.querySelector('.sidebar-nav-menu .tab-btn.active');
-  if (activeBtn && activeBtn.dataset.tab === 'tab-dashboard') {
+  if (activeBtn && (activeBtn.dataset.tab === 'tab-dashboard' || activeBtn.dataset.tab === 'tab-hawkeye-rates')) {
     const dashContainer = document.querySelector('.dashboard-container');
     const sidebarCol = document.querySelector('.sidebar-column');
     const previewCard = document.querySelector('.preview-card');
@@ -1971,6 +1973,7 @@ async function autoLoadWorkspaceDatasets() {
     const benchmarkOccRows = result.data.benchmarkOcc || [];
     const channelRNsRows = result.data.channelRNs || [];
     const futureRatesRows = result.data.futureRates || [];
+    const hawkeyeBaseRatesRows = result.data.hawkeyeBaseRates || [];
 
     console.log('Google Sheets data received:');
     console.log('Future Occ rows:', futureOccRows.length);
@@ -1979,6 +1982,11 @@ async function autoLoadWorkspaceDatasets() {
     console.log('Benchmark Occ rows:', benchmarkOccRows.length);
     console.log('Channel RNs rows:', channelRNsRows.length);
     console.log('Future Rates rows:', futureRatesRows.length);
+    console.log('Hawkeye Base Rates rows:', hawkeyeBaseRatesRows.length);
+
+    if (hawkeyeBaseRatesRows.length > 0) {
+      loadHawkeyeBaseRatesData(hawkeyeBaseRatesRows);
+    }
 
     // Convert Google Sheets arrays into CSV text.
     // This lets us keep your existing dashboard processing logic unchanged.
@@ -2011,7 +2019,7 @@ async function autoLoadWorkspaceDatasets() {
     );
 
     showToast(
-      `Loaded live Google Sheets data: ${futureOccRows.length - 1} occ rows, ${futureRatesRows.length - 1} future rate rows, ${benchmarkOccRows.length - 1} benchmark rows, ${channelRNsRows.length - 1} channel rows.`,
+      `Loaded live Google Sheets data: ${futureOccRows.length - 1} occ rows, ${futureRatesRows.length - 1} future rate rows, ${hawkeyeBaseRatesRows.length > 1 ? `${hawkeyeBaseRatesRows.length - 1} Hawkeye properties, ` : ''}${benchmarkOccRows.length - 1} benchmark rows.`,
       'success'
     );
 
@@ -3903,6 +3911,364 @@ function renderTDFCalendar(csId, year, month) {
   }
 
   if (window.lucide) lucide.createIcons();
+}
+
+// ==========================================================================
+// HAWKEYE BASE RATES MASTER TAB LOGIC
+// ==========================================================================
+let hawkeyeBaseRatesMaster = [];
+let hawkeyeFilteredData = [];
+let hawkeyeCurrentPage = 1;
+let hawkeyePageSize = 100;
+
+function parseHawkeyeBaseRates(rows) {
+  if (!rows || rows.length < 2) return [];
+  const rawHeaders = rows[0].map(h => (h || '').toString().trim());
+
+  const getColIndex = (names) => {
+    for (const name of names) {
+      const idx = rawHeaders.findIndex(h => h.toLowerCase() === name.toLowerCase());
+      if (idx !== -1) return idx;
+    }
+    return -1;
+  };
+
+  const idxHotelId = getColIndex(['hotel_id', 'hotel id']);
+  const idxHotelName = getColIndex(['hotel', 'hotel name']);
+  const idxCity = getColIndex(['city']);
+  const idxSubOpzone = getColIndex(['sub opzone', 'sub_opzone', 'subopzone']);
+  const idxCityCategory = getColIndex(['city category', 'city_category']);
+  const idxStatus = getColIndex(['status']);
+  const idxBaseConfig = getColIndex(['base config', 'base_config', 'baseconfig']);
+  const idxMin = getColIndex(['min', 'min ']);
+  const idxMax = getColIndex(['max', 'max ']);
+  const idxP0 = getColIndex(['p0']);
+  const idxP1 = getColIndex(['p1']);
+  const idxP2 = getColIndex(['p2']);
+  const idxP3 = getColIndex(['p3']);
+  const idxP4 = getColIndex(['p4']);
+  const idxP5 = getColIndex(['p5']);
+
+  const formatRate = (val) => {
+    if (val === undefined || val === null || val === '') return '-';
+    const num = parseFloat(String(val).replace(/,/g, ''));
+    if (isNaN(num)) return String(val).trim();
+    return Math.round(num).toLocaleString('en-IN');
+  };
+
+  const list = [];
+  for (let i = 1; i < rows.length; i++) {
+    const row = rows[i];
+    const rawId = row[idxHotelId] ? String(row[idxHotelId]).trim() : '';
+    if (!rawId) continue;
+
+    const rawStatus = row[idxStatus] ? String(row[idxStatus]).trim() : '';
+    const normStatus = rawStatus.toLowerCase().replace(/\s+/g, '');
+    // Only show properties which are Live and Stop Sell
+    if (normStatus !== 'live' && normStatus !== 'stopsell') {
+      continue;
+    }
+
+    // Format hotel_id with 7-digit zero padding (0000000)
+    const formattedHotelId = /^\d+$/.test(rawId) ? rawId.padStart(7, '0') : rawId;
+    const displayStatus = normStatus === 'live' ? 'Live' : 'Stop Sell';
+    const baseConfig = row[idxBaseConfig] ? String(row[idxBaseConfig]).trim() : '';
+
+    list.push({
+      hotelId: formattedHotelId,
+      rawHotelId: rawId,
+      hotelName: row[idxHotelName] ? String(row[idxHotelName]).trim() : '',
+      city: row[idxCity] ? String(row[idxCity]).trim() : '',
+      subOpzone: row[idxSubOpzone] ? String(row[idxSubOpzone]).trim() : '',
+      cityCategory: row[idxCityCategory] ? String(row[idxCityCategory]).trim() : '',
+      status: displayStatus,
+      baseConfig: baseConfig,
+      min: formatRate(row[idxMin]),
+      max: formatRate(row[idxMax]),
+      p0: formatRate(row[idxP0]),
+      p1: formatRate(row[idxP1]),
+      p2: formatRate(row[idxP2]),
+      p3: formatRate(row[idxP3]),
+      p4: formatRate(row[idxP4]),
+      p5: formatRate(row[idxP5])
+    });
+  }
+
+  return list;
+}
+
+function loadHawkeyeBaseRatesData(rawRows) {
+  hawkeyeBaseRatesMaster = parseHawkeyeBaseRates(rawRows);
+  console.log(`Parsed ${hawkeyeBaseRatesMaster.length} Live/Stop Sell Hawkeye Base Rates`);
+
+  try {
+    localStorage.setItem('hawkeye_base_rates_cache', JSON.stringify(hawkeyeBaseRatesMaster));
+  } catch (e) {
+    console.warn('Could not cache Hawkeye base rates in localStorage:', e);
+  }
+
+  populateHawkeyeFilterDropdowns();
+  applyHawkeyeFilters();
+}
+
+function initHawkeyeBaseRatesFromCache() {
+  try {
+    const cached = localStorage.getItem('hawkeye_base_rates_cache');
+    if (cached) {
+      hawkeyeBaseRatesMaster = JSON.parse(cached);
+      console.log(`Loaded ${hawkeyeBaseRatesMaster.length} Hawkeye Base Rates from cache`);
+      populateHawkeyeFilterDropdowns();
+      applyHawkeyeFilters();
+    }
+  } catch (e) {
+    console.warn('Failed to load cached Hawkeye base rates:', e);
+  }
+}
+
+function populateHawkeyeFilterDropdowns() {
+  const subOpzoneSelect = document.getElementById('hawkeye-filter-sub-opzone');
+  const citySelect = document.getElementById('hawkeye-filter-city');
+  const categorySelect = document.getElementById('hawkeye-filter-category');
+  const statusSelect = document.getElementById('hawkeye-filter-status');
+  const baseConfigSelect = document.getElementById('hawkeye-filter-base-config');
+
+  if (!hawkeyeBaseRatesMaster || hawkeyeBaseRatesMaster.length === 0) return;
+
+  // Sub Opzones
+  if (subOpzoneSelect) {
+    const currentVal = subOpzoneSelect.value;
+    const subOpzones = Array.from(new Set(hawkeyeBaseRatesMaster.map(item => item.subOpzone).filter(Boolean))).sort();
+    subOpzoneSelect.innerHTML = '<option value="all">All Sub Opzones</option>' +
+      subOpzones.map(z => `<option value="${z}">${z}</option>`).join('');
+    if (subOpzones.includes(currentVal)) subOpzoneSelect.value = currentVal;
+  }
+
+  // Cities
+  if (citySelect) {
+    const currentVal = citySelect.value;
+    const cities = Array.from(new Set(hawkeyeBaseRatesMaster.map(item => item.city).filter(Boolean))).sort();
+    citySelect.innerHTML = '<option value="all">All Cities</option>' +
+      cities.map(c => `<option value="${c}">${c}</option>`).join('');
+    if (cities.includes(currentVal)) citySelect.value = currentVal;
+  }
+
+  // City Categories
+  if (categorySelect) {
+    const currentVal = categorySelect.value;
+    const categories = Array.from(new Set(hawkeyeBaseRatesMaster.map(item => item.cityCategory).filter(Boolean))).sort();
+    categorySelect.innerHTML = '<option value="all">All Categories</option>' +
+      categories.map(c => `<option value="${c}">${c}</option>`).join('');
+    if (categories.includes(currentVal)) categorySelect.value = currentVal;
+  }
+
+  // Base Configs
+  if (baseConfigSelect) {
+    const currentVal = baseConfigSelect.value;
+    const configs = Array.from(new Set(hawkeyeBaseRatesMaster.map(item => item.baseConfig).filter(Boolean))).sort();
+    baseConfigSelect.innerHTML = '<option value="all">All Base Configs</option>' +
+      configs.map(cfg => `<option value="${cfg}">${cfg}</option>`).join('');
+    if (configs.includes(currentVal)) baseConfigSelect.value = currentVal;
+  }
+}
+
+function applyHawkeyeFilters() {
+  const searchInput = document.getElementById('hawkeye-search-input');
+  const subOpzoneSelect = document.getElementById('hawkeye-filter-sub-opzone');
+  const citySelect = document.getElementById('hawkeye-filter-city');
+  const categorySelect = document.getElementById('hawkeye-filter-category');
+  const statusSelect = document.getElementById('hawkeye-filter-status');
+  const baseConfigSelect = document.getElementById('hawkeye-filter-base-config');
+
+  const q = searchInput ? searchInput.value.toLowerCase().trim() : '';
+  const selSubOpzone = subOpzoneSelect ? subOpzoneSelect.value : 'all';
+  const selCity = citySelect ? citySelect.value : 'all';
+  const selCat = categorySelect ? categorySelect.value : 'all';
+  const selStatus = statusSelect ? statusSelect.value : 'all';
+  const selBaseConfig = baseConfigSelect ? baseConfigSelect.value : 'all';
+
+  hawkeyeFilteredData = hawkeyeBaseRatesMaster.filter(item => {
+    if (selSubOpzone !== 'all' && item.subOpzone !== selSubOpzone) return false;
+    if (selCity !== 'all' && item.city !== selCity) return false;
+    if (selCat !== 'all' && item.cityCategory !== selCat) return false;
+    if (selStatus !== 'all' && item.status !== selStatus) return false;
+    if (selBaseConfig !== 'all' && item.baseConfig !== selBaseConfig) return false;
+
+    if (q) {
+      const matchId = item.hotelId.toLowerCase().includes(q) || (item.rawHotelId && item.rawHotelId.toLowerCase().includes(q));
+      const matchName = item.hotelName.toLowerCase().includes(q);
+      const matchCity = item.city.toLowerCase().includes(q);
+      const matchZone = item.subOpzone.toLowerCase().includes(q);
+      const matchCat = item.cityCategory.toLowerCase().includes(q);
+      const matchStatus = item.status.toLowerCase().includes(q);
+      const matchConfig = item.baseConfig.toLowerCase().includes(q);
+      if (!matchId && !matchName && !matchCity && !matchZone && !matchCat && !matchStatus && !matchConfig) return false;
+    }
+
+    return true;
+  });
+
+  hawkeyeCurrentPage = 1;
+  renderHawkeyeRatesTable();
+}
+
+function renderHawkeyeRatesTable() {
+  const tbody = document.getElementById('hawkeye-rates-tbody');
+  const badge = document.getElementById('hawkeye-rates-count-badge');
+  const paginationInfo = document.getElementById('hawkeye-pagination-info');
+  const pageBadge = document.getElementById('hawkeye-current-page-badge');
+  const prevBtn = document.getElementById('btn-hawkeye-prev-page');
+  const nextBtn = document.getElementById('btn-hawkeye-next-page');
+
+  if (!tbody) return;
+
+  const totalFiltered = hawkeyeFilteredData.length;
+  const totalMaster = hawkeyeBaseRatesMaster.length;
+
+  if (badge) {
+    badge.textContent = `${totalFiltered.toLocaleString('en-IN')} Properties Loaded${totalFiltered !== totalMaster ? ` (Filtered from ${totalMaster.toLocaleString('en-IN')})` : ''}`;
+  }
+
+  if (totalFiltered === 0) {
+    tbody.innerHTML = `
+      <tr>
+        <td colspan="15" style="text-align: center; padding: 48px 20px; color: var(--text-muted);">
+          <i data-lucide="search-x" style="width: 32px; height: 32px; margin-bottom: 8px; display: inline-block; opacity: 0.5;"></i>
+          <div>${totalMaster === 0 ? 'No Hawkeye base rates loaded yet. Click <strong>Auto-Load Portfolio Datasets</strong> on the Daily Pricing Dashboard.' : 'No properties match your current search and filter criteria.'}</div>
+        </td>
+      </tr>
+    `;
+    if (paginationInfo) paginationInfo.textContent = '';
+    if (pageBadge) pageBadge.textContent = 'Page 0';
+    if (prevBtn) prevBtn.disabled = true;
+    if (nextBtn) nextBtn.disabled = true;
+    if (window.lucide) lucide.createIcons();
+    return;
+  }
+
+  // Calculate pagination
+  const effectivePageSize = hawkeyePageSize === 'all' ? totalFiltered : parseInt(hawkeyePageSize, 10);
+  const totalPages = Math.max(1, Math.ceil(totalFiltered / effectivePageSize));
+  if (hawkeyeCurrentPage > totalPages) hawkeyeCurrentPage = totalPages;
+
+  const startIdx = (hawkeyeCurrentPage - 1) * effectivePageSize;
+  const endIdx = Math.min(startIdx + effectivePageSize, totalFiltered);
+  const pageItems = hawkeyeFilteredData.slice(startIdx, endIdx);
+
+  if (paginationInfo) {
+    paginationInfo.textContent = `Showing ${startIdx + 1}–${endIdx} of ${totalFiltered.toLocaleString('en-IN')}`;
+  }
+  if (pageBadge) {
+    pageBadge.textContent = `Page ${hawkeyeCurrentPage} of ${totalPages}`;
+  }
+  if (prevBtn) prevBtn.disabled = hawkeyeCurrentPage <= 1;
+  if (nextBtn) nextBtn.disabled = hawkeyeCurrentPage >= totalPages;
+
+  let html = '';
+  for (const item of pageItems) {
+    const isLive = item.status === 'Live';
+    const statusBadge = isLive
+      ? `<span style="display: inline-flex; align-items: center; gap: 5px; font-size: 0.72rem; font-weight: 600; padding: 2px 8px; background: #ecfdf5; color: #059669; border: 1px solid #a7f3d0; border-radius: 9999px;"><span style="width: 6px; height: 6px; border-radius: 50%; background: #10b981;"></span>Live</span>`
+      : `<span style="display: inline-flex; align-items: center; gap: 5px; font-size: 0.72rem; font-weight: 600; padding: 2px 8px; background: #fff7ed; color: #c2410c; border: 1px solid #fed7aa; border-radius: 9999px;"><span style="width: 6px; height: 6px; border-radius: 50%; background: #f97316;"></span>Stop Sell</span>`;
+
+    const configBadge = item.baseConfig
+      ? `<span style="font-size: 0.72rem; font-weight: 600; padding: 2px 7px; background: #f8fafc; color: #334155; border: 1px solid #e2e8f0; border-radius: 4px; font-family: monospace;">${item.baseConfig}</span>`
+      : '<span style="color: var(--text-muted);">-</span>';
+
+    html += `
+      <tr>
+        <td style="font-family: monospace; font-weight: 700; color: var(--text-primary); letter-spacing: 0.5px;">${item.hotelId}</td>
+        <td>
+          <span class="cell-hotel-name" style="max-width: 220px;" title="${item.hotelName}">${item.hotelName || '-'}</span>
+        </td>
+        <td>${item.city || '-'}</td>
+        <td>
+          <span style="font-size: 0.72rem; font-weight: 600; padding: 2px 7px; background: #f1f5f9; color: #475569; border-radius: 4px;">${item.subOpzone || '-'}</span>
+        </td>
+        <td>
+          <span style="font-size: 0.72rem; color: var(--text-secondary);">${item.cityCategory || '-'}</span>
+        </td>
+        <td>${statusBadge}</td>
+        <td>${configBadge}</td>
+        <td class="cell-num-right" style="font-weight: 600; color: #d97706;">${item.min}</td>
+        <td class="cell-num-right" style="font-weight: 600; color: #d97706;">${item.max}</td>
+        <td class="cell-num-right" style="font-weight: 700; color: #0284c7; background: rgba(2, 132, 199, 0.04);">${item.p0}</td>
+        <td class="cell-num-right" style="font-weight: 600; color: #0284c7;">${item.p1}</td>
+        <td class="cell-num-right" style="font-weight: 600; color: #0284c7;">${item.p2}</td>
+        <td class="cell-num-right" style="font-weight: 600; color: #0284c7;">${item.p3}</td>
+        <td class="cell-num-right" style="font-weight: 600; color: #0284c7;">${item.p4}</td>
+        <td class="cell-num-right" style="font-weight: 600; color: #0284c7;">${item.p5}</td>
+      </tr>
+    `;
+  }
+
+  tbody.innerHTML = html;
+  if (window.lucide) lucide.createIcons();
+}
+
+function setupHawkeyeBaseRatesListeners() {
+  const searchInput = document.getElementById('hawkeye-search-input');
+  const subOpzoneSelect = document.getElementById('hawkeye-filter-sub-opzone');
+  const citySelect = document.getElementById('hawkeye-filter-city');
+  const categorySelect = document.getElementById('hawkeye-filter-category');
+  const statusSelect = document.getElementById('hawkeye-filter-status');
+  const baseConfigSelect = document.getElementById('hawkeye-filter-base-config');
+  const resetBtn = document.getElementById('btn-hawkeye-reset-filters');
+  const prevBtn = document.getElementById('btn-hawkeye-prev-page');
+  const nextBtn = document.getElementById('btn-hawkeye-next-page');
+  const pageSizeSelect = document.getElementById('hawkeye-page-size');
+
+  let debounceTimer;
+  if (searchInput) {
+    searchInput.addEventListener('input', () => {
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(() => {
+        applyHawkeyeFilters();
+      }, 150);
+    });
+  }
+
+  if (subOpzoneSelect) subOpzoneSelect.addEventListener('change', applyHawkeyeFilters);
+  if (citySelect) citySelect.addEventListener('change', applyHawkeyeFilters);
+  if (categorySelect) categorySelect.addEventListener('change', applyHawkeyeFilters);
+  if (statusSelect) statusSelect.addEventListener('change', applyHawkeyeFilters);
+  if (baseConfigSelect) baseConfigSelect.addEventListener('change', applyHawkeyeFilters);
+
+  if (resetBtn) {
+    resetBtn.addEventListener('click', () => {
+      if (searchInput) searchInput.value = '';
+      if (subOpzoneSelect) subOpzoneSelect.value = 'all';
+      if (citySelect) citySelect.value = 'all';
+      if (categorySelect) categorySelect.value = 'all';
+      if (statusSelect) statusSelect.value = 'all';
+      if (baseConfigSelect) baseConfigSelect.value = 'all';
+      applyHawkeyeFilters();
+      showToast('Hawkeye filters reset', 'info');
+    });
+  }
+
+  if (pageSizeSelect) {
+    pageSizeSelect.addEventListener('change', () => {
+      hawkeyePageSize = pageSizeSelect.value;
+      hawkeyeCurrentPage = 1;
+      renderHawkeyeRatesTable();
+    });
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      if (hawkeyeCurrentPage > 1) {
+        hawkeyeCurrentPage--;
+        renderHawkeyeRatesTable();
+      }
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      hawkeyeCurrentPage++;
+      renderHawkeyeRatesTable();
+    });
+  }
 }
 
 
