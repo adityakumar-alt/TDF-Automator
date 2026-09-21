@@ -13,8 +13,8 @@
     rel="stylesheet">
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
-  <script type="module" crossorigin src="/assets/index-7mHgie4h.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-BlnKWHQP.css">
+  <script type="module" crossorigin src="/assets/index-B6UTrccr.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-ChHHAITd.css">
 </head>
 
 <body>
@@ -792,13 +792,16 @@
             <i data-lucide="hash" class="header-icon-sm"></i>
             <span>Joined Hotel IDs (for Hawkeye Admin)</span>
           </div>
+          <div id="joined-hotels-header-actions" style="display: flex; align-items: center; gap: 8px;"></div>
         </div>
-        <div class="joined-hotels-body">
-          <input type="text" id="joined-hotels-text" readonly placeholder="No hotels generated">
-          <button id="btn-copy-joined" class="btn btn-secondary btn-sm" title="Copy to Clipboard">
-            <i data-lucide="copy"></i>
-            <span>Copy</span>
-          </button>
+        <div id="joined-hotels-container" style="display: flex; flex-direction: column; gap: 10px;">
+          <div class="joined-hotels-body">
+            <input type="text" id="joined-hotels-text" class="joined-hotels-text" readonly placeholder="No hotels generated">
+            <button id="btn-copy-joined" class="btn btn-secondary btn-sm btn-copy-part" title="Copy to Clipboard">
+              <i data-lucide="copy"></i>
+              <span>Copy</span>
+            </button>
+          </div>
         </div>
       </div>
 

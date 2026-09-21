@@ -665,6 +665,31 @@ textarea:focus {
   border-color: var(--border-focus);
 }
 
+.joined-hotels-part {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.joined-hotels-part-header {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #9a3412;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.joined-hotels-badge {
+  font-size: 0.72rem;
+  color: #9a3412;
+  font-weight: 600;
+  background: #ffedd5;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  border: 1px solid #fed7aa;
+}
+
 /* Table Scrollbox styling */
 .table-container {
   flex: 1;
