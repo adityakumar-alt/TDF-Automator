@@ -177,7 +177,8 @@ app.get("/api/sheet-data", async (req, res) => {
                 "Rate flex!A:Z",
                 "Benchmark Occ!A:G",
                 "Channel RNs!A:P",
-                "Future rates!A:D"
+                "Future rates!A:D",
+                "Hawkeye Base Rates!A:ZZ"
             ]
         });
 
@@ -192,7 +193,8 @@ app.get("/api/sheet-data", async (req, res) => {
                 rateFlex: valueRanges[2]?.values || [],
                 benchmarkOcc: valueRanges[3]?.values || [],
                 channelRNs: valueRanges[4]?.values || [],
-                futureRates: valueRanges[5]?.values || []
+                futureRates: valueRanges[5]?.values || [],
+                hawkeyeBaseRates: valueRanges[6]?.values || []
             }
         });
 
