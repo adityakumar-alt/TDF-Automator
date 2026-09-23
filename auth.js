@@ -1,6 +1,9 @@
-const jwt = require("jsonwebtoken");
+const jwt = require("jsonwebtoken")
+const JWT_SECRET = process.env.JWT_SECRET;
 
-const JWT_SECRET = process.env.JWT_SECRET || "treebo-tdf-automator-jwt-secret-2026";
+if (!JWT_SECRET) {
+  throw new Error("JWT_SECRET environment variable is required");
+}
 const COOKIE_NAME = "tdf_session";
 
 // =========================================================================
@@ -10,7 +13,8 @@ const COOKIE_NAME = "tdf_session";
 let dynamicRoster = [
   // 1. Admin (RevOps Lead)
   { id: "usr_admin", email: "admin@treebo.com", name: "Admin (RevOps Lead)", role: "Admin", active: true },
-  
+  { id: "usr_aditya", email: "aditya.kumar@treebo.com", name: "Aditya Kumar", role: "Admin", active: true },
+
   // 2. Pricing Managers (8 Users)
   { id: "usr_pm1", email: "pm1@treebo.com", name: "Pricing Manager 1", role: "Pricing Manager", active: true },
   { id: "usr_pm2", email: "pm2@treebo.com", name: "Pricing Manager 2", role: "Pricing Manager", active: true },
@@ -20,7 +24,7 @@ let dynamicRoster = [
   { id: "usr_pm6", email: "pm6@treebo.com", name: "Pricing Manager 6", role: "Pricing Manager", active: true },
   { id: "usr_pm7", email: "pm7@treebo.com", name: "Pricing Manager 7", role: "Pricing Manager", active: true },
   { id: "usr_pm8", email: "pm8@treebo.com", name: "Pricing Manager 8", role: "Pricing Manager", active: true },
-  
+
   // 3. RevOps Team (3 Users)
   { id: "usr_rev1", email: "revops1@treebo.com", name: "RevOps Team 1", role: "RevOps", active: true },
   { id: "usr_rev2", email: "revops2@treebo.com", name: "RevOps Team 2", role: "RevOps", active: true },
@@ -83,43 +87,19 @@ function getRoster() {
 
 function findUserByEmail(email) {
   if (!email) return null;
+
   const cleanEmail = email.toLowerCase().trim();
-  
-  // 1. Check exact match in dynamic roster
-  const found = dynamicRoster.find(u => u.email.toLowerCase() === cleanEmail && u.active);
-  if (found) return found;
 
-  // 2. Check if admin / aditya email
-  if (cleanEmail.includes('aditya') || cleanEmail.includes('admin')) {
-    return {
-      id: 'usr_admin',
-      email: cleanEmail,
-      name: cleanEmail.split('@')[0],
-      role: 'Admin',
-      active: true
-    };
-  }
+  // Only users present in the approved roster can log in
+  const found = dynamicRoster.find(
+    user =>
+      user.email.toLowerCase() === cleanEmail &&
+      user.active === true
+  );
 
-  // 3. Corporate Treebo email default
-  if (cleanEmail.endsWith('@treebo.com')) {
-    return {
-      id: `usr_${cleanEmail.split('@')[0]}`,
-      email: cleanEmail,
-      name: cleanEmail.split('@')[0],
-      role: 'Pricing Manager',
-      active: true
-    };
-  }
-
-  // 4. Default verified user
-  return {
-    id: `usr_${cleanEmail.split('@')[0]}`,
-    email: cleanEmail,
-    name: cleanEmail.split('@')[0],
-    role: 'Pricing Manager',
-    active: true
-  };
+  return found || null;
 }
+
 
 function findUserById(id) {
   return dynamicRoster.find(u => u.id === id && u.active);
