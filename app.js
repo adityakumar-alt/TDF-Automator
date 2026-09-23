@@ -79,24 +79,92 @@ async function setupAuthAndRBAC() {
   await checkAuthSession();
 }
 
-function setupAuthModalEvents() {
-  const selectUser = document.getElementById('auth-select-user');
-  const btnSignIn = document.getElementById('btn-auth-signin');
-  const btnSignOut = document.getElementById('btn-header-signout');
-  const passcodeInput = document.getElementById('auth-input-passcode');
-  const errorMsg = document.getElementById('auth-error-msg');
+let googleClientInitialized = false;
 
-  if (selectUser) {
-    selectUser.addEventListener('change', () => {
-      updateRolePreview(selectUser.value);
-    });
-    updateRolePreview(selectUser.value);
+async function initGoogleSignIn() {
+  const container = document.getElementById('google-signin-btn-container');
+  if (!container) return;
+
+  let clientId = '906825685733-khfmgsv2dhl427p1fkdv524etudsi39i.apps.googleusercontent.com';
+  try {
+    const cfgRes = await fetch('/api/auth/config');
+    const cfgData = await cfgRes.json();
+    if (cfgData && cfgData.clientId) {
+      clientId = cfgData.clientId;
+    }
+  } catch (e) {
+    // fallback to default client ID
   }
 
-  if (btnSignIn) {
-    btnSignIn.addEventListener('click', async () => {
-      const userId = selectUser ? selectUser.value : 'usr_admin';
-      const passcode = passcodeInput ? passcodeInput.value.trim() : '';
+  function tryRender() {
+    if (window.google && window.google.accounts && window.google.accounts.id) {
+      window.google.accounts.id.initialize({
+        client_id: clientId,
+        callback: handleGoogleCredentialResponse,
+        auto_select: false
+      });
+      window.google.accounts.id.renderButton(container, {
+        theme: 'filled_blue',
+        size: 'large',
+        text: 'signin_with',
+        shape: 'rectangular',
+        width: 320
+      });
+      googleClientInitialized = true;
+    } else {
+      setTimeout(tryRender, 300);
+    }
+  }
+  tryRender();
+}
+
+async function handleGoogleCredentialResponse(response) {
+  const errorMsg = document.getElementById('auth-error-msg');
+  if (errorMsg) errorMsg.style.display = 'none';
+
+  try {
+    const res = await fetch('/api/auth/google', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ credential: response.credential })
+    });
+    const data = await res.json();
+    if (data.success && data.user) {
+      currentUser = data.user;
+      applyUserSession(currentUser);
+      showToast(`Welcome, ${currentUser.name || currentUser.email}! (${currentUser.role})`, 'success');
+    } else {
+      if (errorMsg) {
+        errorMsg.textContent = data.error || 'Google authentication failed.';
+        errorMsg.style.display = 'block';
+      }
+    }
+  } catch (err) {
+    if (errorMsg) {
+      errorMsg.textContent = `Sign in error: ${err.message}`;
+      errorMsg.style.display = 'block';
+    }
+  }
+}
+
+function setupAuthModalEvents() {
+  const btnSignIn = document.getElementById('btn-auth-signin');
+  const btnSignOut = document.getElementById('btn-header-signout');
+  const emailInput = document.getElementById('auth-input-email');
+  const errorMsg = document.getElementById('auth-error-msg');
+
+  initGoogleSignIn();
+
+  if (btnSignIn && emailInput) {
+    const submitEmailAuth = async () => {
+      const email = emailInput.value.trim();
+      if (!email || !email.includes('@')) {
+        if (errorMsg) {
+          errorMsg.textContent = 'Please enter a valid work email address.';
+          errorMsg.style.display = 'block';
+        }
+        return;
+      }
       if (errorMsg) errorMsg.style.display = 'none';
 
       try {
@@ -107,13 +175,13 @@ function setupAuthModalEvents() {
         const res = await fetch('/api/auth/login', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ userId, passcode })
+          body: JSON.stringify({ email })
         });
         const data = await res.json();
         if (data.success && data.user) {
           currentUser = data.user;
           applyUserSession(currentUser);
-          showToast(`Welcome back, ${currentUser.name}!`, 'success');
+          showToast(`Welcome, ${currentUser.name || currentUser.email}! (${currentUser.role})`, 'success');
         } else {
           if (errorMsg) {
             errorMsg.textContent = data.error || 'Failed to sign in.';
@@ -127,8 +195,16 @@ function setupAuthModalEvents() {
         }
       } finally {
         btnSignIn.disabled = false;
-        btnSignIn.innerHTML = '<i data-lucide="log-in"></i> <span>Enter Workspace</span>';
+        btnSignIn.innerHTML = '<i data-lucide="mail"></i> <span>Continue with Email</span>';
         if (window.lucide) window.lucide.createIcons();
+      }
+    };
+
+    btnSignIn.addEventListener('click', submitEmailAuth);
+    emailInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        submitEmailAuth();
       }
     });
   }
@@ -143,45 +219,6 @@ function setupAuthModalEvents() {
       showToast('Signed out successfully.', 'info');
     });
   }
-}
-
-function updateRolePreview(userId) {
-  const selectUser = document.getElementById('auth-select-user');
-  const badge = document.getElementById('auth-preview-badge');
-  const permsList = document.getElementById('auth-preview-perms');
-  if (!selectUser || !badge || !permsList) return;
-
-  const opt = selectUser.options[selectUser.selectedIndex];
-  const role = opt ? opt.getAttribute('data-role') || 'Admin' : 'Admin';
-
-  badge.textContent = role;
-  badge.className = 'user-role-badge';
-  if (role === 'Admin') badge.classList.add('role-admin');
-  else if (role === 'Pricing Manager') badge.classList.add('role-pricing');
-  else if (role === 'RevOps') badge.classList.add('role-revops');
-  else if (role === 'Zonal Ops') badge.classList.add('role-zonal');
-
-  const hasDashboard = (role === 'Admin' || role === 'Pricing Manager');
-
-  permsList.innerHTML = `
-    <li class="${hasDashboard ? '' : 'forbidden'}">
-      <i data-lucide="${hasDashboard ? 'check' : 'x'}"></i>
-      <span>Daily Pricing Dashboard &amp; Portfolio Rates ${hasDashboard ? '' : '(Hidden)'}</span>
-    </li>
-    <li>
-      <i data-lucide="check"></i>
-      <span>Hawkeye Base Rates Master Table (Full Access)</span>
-    </li>
-    <li>
-      <i data-lucide="check"></i>
-      <span>Target Date Factor Rule Generation (Full Access)</span>
-    </li>
-    <li>
-      <i data-lucide="check"></i>
-      <span>TDF Calculator &amp; P0–P5 Price Solver (Full Access)</span>
-    </li>
-  `;
-  if (window.lucide) window.lucide.createIcons();
 }
 
 async function checkAuthSession() {
@@ -206,6 +243,7 @@ function showAuthModal() {
   if (overlay) overlay.style.display = 'flex';
   if (headerProfile) headerProfile.style.display = 'none';
   if (window.lucide) window.lucide.createIcons();
+  initGoogleSignIn();
 }
 
 function applyUserSession(user) {
