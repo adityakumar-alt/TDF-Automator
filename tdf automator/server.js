@@ -151,6 +151,13 @@ app.get(["/oauth2callback", "/api/oauth2callback"], async (req, res) => {
 // USER AUTHENTICATION & RBAC ENDPOINTS
 // =====================================================
 
+app.get(["/api/auth/config", "/auth/config"], (req, res) => {
+    res.json({
+        success: true,
+        clientId: client_id || "906825685733-khfmgsv2dhl427p1fkdv524etudsi39i.apps.googleusercontent.com"
+    });
+});
+
 app.get(["/api/me", "/me"], (req, res) => {
     if (!req.user) {
         return res.json({ authenticated: false, user: null });
@@ -168,20 +175,62 @@ app.get(["/api/auth/roster", "/auth/roster"], (req, res) => {
     res.json({ success: true, roster: list });
 });
 
-app.post(["/api/auth/login", "/auth/login"], (req, res) => {
-    const { userId, email, role, passcode } = req.body || {};
-    let matchedUser = null;
+app.post(["/api/auth/google", "/auth/google"], async (req, res) => {
+    try {
+        const { credential } = req.body || {};
+        if (!credential) {
+            return res.status(400).json({ success: false, error: "Missing Google credential token" });
+        }
 
-    if (userId) {
-        matchedUser = auth.findUserById(userId);
-    } else if (email) {
-        matchedUser = auth.findUserByEmail(email);
-    } else if (role) {
-        matchedUser = auth.getRoster().find(u => u.role.toLowerCase() === role.toLowerCase() && u.active);
-    } else if (passcode === "admin" || passcode === "treebo2026") {
-        matchedUser = auth.getRoster().find(u => u.role === "Admin" && u.active);
+        const { OAuth2Client } = require("google-auth-library");
+        const client = new OAuth2Client(client_id);
+        const ticket = await client.verifyIdToken({
+            idToken: credential,
+            audience: client_id
+        });
+        const payload = ticket.getPayload();
+        const email = payload.email;
+        const name = payload.name || email.split("@")[0];
+
+        // Identify role automatically from email without asking who they are
+        const matchedUser = auth.findUserByEmail(email) || {
+            id: `usr_${email.split("@")[0]}`,
+            email,
+            name,
+            role: "Pricing Manager",
+            active: true
+        };
+
+        const token = auth.generateToken(matchedUser);
+        auth.setSessionCookie(res, token);
+
+        res.json({
+            success: true,
+            user: {
+                id: matchedUser.id,
+                email: matchedUser.email,
+                name: matchedUser.name,
+                role: matchedUser.role,
+                picture: payload.picture
+            },
+            token
+        });
+    } catch (err) {
+        console.error("Google sign in verification error:", err);
+        res.status(401).json({
+            success: false,
+            error: `Google verification failed: ${err.message}`
+        });
+    }
+});
+
+app.post(["/api/auth/login", "/auth/login"], (req, res) => {
+    const { email } = req.body || {};
+    if (!email || !email.includes("@")) {
+        return res.status(400).json({ success: false, error: "Please enter a valid work email address." });
     }
 
+    const matchedUser = auth.findUserByEmail(email);
     if (!matchedUser) {
         return res.status(401).json({
             success: false,

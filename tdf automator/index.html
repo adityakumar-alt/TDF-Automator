@@ -13,6 +13,8 @@
     rel="stylesheet">
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Google Identity Services (Sign in with Google) -->
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
   <link rel="stylesheet" href="./style.css?v=hawkeye_v4">
 </head>
 
@@ -1031,62 +1033,25 @@
       </div>
 
       <div class="auth-body">
-        <div class="auth-section-title">
-          <span>Select Your Team Profile</span>
+        <!-- Google One-Tap / Button Container -->
+        <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 20px;">
+          <div id="google-signin-btn-container" style="min-height: 44px; display: flex; justify-content: center; width: 100%;"></div>
         </div>
 
-        <div class="form-group" style="margin-bottom: 16px;">
-          <label for="auth-select-user">Team Member / Account</label>
-          <select id="auth-select-user" class="auth-select">
-            <optgroup label="👑 Administration">
-              <option value="usr_admin" data-role="Admin">Admin (RevOps Lead)</option>
-            </optgroup>
-            <optgroup label="💼 Pricing Managers (Full Dashboard)">
-              <option value="usr_pm1" data-role="Pricing Manager">Pricing Manager 1</option>
-              <option value="usr_pm2" data-role="Pricing Manager">Pricing Manager 2</option>
-              <option value="usr_pm3" data-role="Pricing Manager">Pricing Manager 3</option>
-              <option value="usr_pm4" data-role="Pricing Manager">Pricing Manager 4</option>
-              <option value="usr_pm5" data-role="Pricing Manager">Pricing Manager 5</option>
-              <option value="usr_pm6" data-role="Pricing Manager">Pricing Manager 6</option>
-              <option value="usr_pm7" data-role="Pricing Manager">Pricing Manager 7</option>
-              <option value="usr_pm8" data-role="Pricing Manager">Pricing Manager 8</option>
-            </optgroup>
-            <optgroup label="📊 RevOps Team (Rules &amp; Calculator)">
-              <option value="usr_rev1" data-role="RevOps">RevOps Team 1</option>
-              <option value="usr_rev2" data-role="RevOps">RevOps Team 2</option>
-              <option value="usr_rev3" data-role="RevOps">RevOps Team 3</option>
-            </optgroup>
-            <optgroup label="🗺️ Zonal Ops Team (Rules &amp; Calculator)">
-              <option value="usr_zonal1" data-role="Zonal Ops">Zonal Ops 1</option>
-              <option value="usr_zonal2" data-role="Zonal Ops">Zonal Ops 2</option>
-              <option value="usr_zonal3" data-role="Zonal Ops">Zonal Ops 3</option>
-            </optgroup>
-          </select>
+        <div class="auth-divider">
+          <span>OR SIGN IN WITH WORK EMAIL</span>
         </div>
 
-        <div class="auth-role-preview" id="auth-role-preview">
-          <div class="role-preview-header">
-            <span class="role-preview-title">Assigned Permissions:</span>
-            <span class="user-role-badge role-admin" id="auth-preview-badge">Admin</span>
-          </div>
-          <ul class="role-permissions-list" id="auth-preview-perms">
-            <li><i data-lucide="check"></i> Daily Pricing Dashboard &amp; Portfolio Rates</li>
-            <li><i data-lucide="check"></i> Hawkeye Base Rates Master Table</li>
-            <li><i data-lucide="check"></i> Target Date Factor Rule Generation</li>
-            <li><i data-lucide="check"></i> TDF Calculator &amp; P0–P5 Price Solver</li>
-          </ul>
-        </div>
-
-        <div class="form-group" style="margin-top: 14px; margin-bottom: 16px;">
-          <label for="auth-input-passcode">Access Passcode (Optional for Quick Entry)</label>
-          <input type="password" id="auth-input-passcode" placeholder="Leave blank or enter team passcode" class="auth-input">
+        <div class="form-group" style="margin-top: 16px; margin-bottom: 14px;">
+          <label for="auth-input-email">Corporate Email Address</label>
+          <input type="email" id="auth-input-email" placeholder="e.g. name@treebo.com" class="auth-input">
         </div>
 
         <div id="auth-error-msg" class="auth-error" style="display: none;"></div>
 
-        <button id="btn-auth-signin" class="btn btn-primary btn-block btn-lg">
-          <i data-lucide="log-in"></i>
-          <span>Enter Workspace</span>
+        <button id="btn-auth-signin" class="btn btn-secondary btn-block">
+          <i data-lucide="mail"></i>
+          <span>Continue with Email</span>
         </button>
       </div>
 
