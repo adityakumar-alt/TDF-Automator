@@ -32,9 +32,21 @@
           <p>Generate, validate, and export rules directly to Google Sheets</p>
         </div>
       </div>
-      <div class="system-status">
-        <span class="status-indicator"></span>
-        <span>Local Engine Ready</span>
+      <div class="header-right-actions">
+        <div class="system-status">
+          <span class="status-indicator"></span>
+          <span id="system-status-text">Engine Ready</span>
+        </div>
+        <div class="user-profile-header" id="user-profile-header" style="display: none;">
+          <div class="user-avatar" id="header-user-avatar">AD</div>
+          <div class="user-meta">
+            <span class="user-name" id="header-user-name">Admin</span>
+            <span class="user-role-badge role-admin" id="header-user-role">Admin</span>
+          </div>
+          <button id="btn-header-signout" class="btn-signout" title="Sign Out">
+            <i data-lucide="log-out"></i>
+          </button>
+        </div>
       </div>
     </div>
   </header>
@@ -1003,6 +1015,84 @@
       <div class="modal-actions">
         <button id="btn-modal-cancel" class="btn btn-secondary">Cancel</button>
         <button id="btn-modal-confirm" class="btn btn-danger-filled">Clear Table</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Multi-User Authentication Sign-In Modal Overlay -->
+  <div id="modal-auth-overlay" class="auth-modal-overlay" style="display: none;">
+    <div class="auth-modal-card">
+      <div class="auth-brand-header">
+        <div class="auth-logo">
+          <i data-lucide="shield-check"></i>
+        </div>
+        <h2>Treebo Revenue Management</h2>
+        <p>Target Date Factor &amp; Pricing Rules Workspace</p>
+      </div>
+
+      <div class="auth-body">
+        <div class="auth-section-title">
+          <span>Select Your Team Profile</span>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 16px;">
+          <label for="auth-select-user">Team Member / Account</label>
+          <select id="auth-select-user" class="auth-select">
+            <optgroup label="👑 Administration">
+              <option value="usr_admin" data-role="Admin">Admin (RevOps Lead)</option>
+            </optgroup>
+            <optgroup label="💼 Pricing Managers (Full Dashboard)">
+              <option value="usr_pm1" data-role="Pricing Manager">Pricing Manager 1</option>
+              <option value="usr_pm2" data-role="Pricing Manager">Pricing Manager 2</option>
+              <option value="usr_pm3" data-role="Pricing Manager">Pricing Manager 3</option>
+              <option value="usr_pm4" data-role="Pricing Manager">Pricing Manager 4</option>
+              <option value="usr_pm5" data-role="Pricing Manager">Pricing Manager 5</option>
+              <option value="usr_pm6" data-role="Pricing Manager">Pricing Manager 6</option>
+              <option value="usr_pm7" data-role="Pricing Manager">Pricing Manager 7</option>
+              <option value="usr_pm8" data-role="Pricing Manager">Pricing Manager 8</option>
+            </optgroup>
+            <optgroup label="📊 RevOps Team (Rules &amp; Calculator)">
+              <option value="usr_rev1" data-role="RevOps">RevOps Team 1</option>
+              <option value="usr_rev2" data-role="RevOps">RevOps Team 2</option>
+              <option value="usr_rev3" data-role="RevOps">RevOps Team 3</option>
+            </optgroup>
+            <optgroup label="🗺️ Zonal Ops Team (Rules &amp; Calculator)">
+              <option value="usr_zonal1" data-role="Zonal Ops">Zonal Ops 1</option>
+              <option value="usr_zonal2" data-role="Zonal Ops">Zonal Ops 2</option>
+              <option value="usr_zonal3" data-role="Zonal Ops">Zonal Ops 3</option>
+            </optgroup>
+          </select>
+        </div>
+
+        <div class="auth-role-preview" id="auth-role-preview">
+          <div class="role-preview-header">
+            <span class="role-preview-title">Assigned Permissions:</span>
+            <span class="user-role-badge role-admin" id="auth-preview-badge">Admin</span>
+          </div>
+          <ul class="role-permissions-list" id="auth-preview-perms">
+            <li><i data-lucide="check"></i> Daily Pricing Dashboard &amp; Portfolio Rates</li>
+            <li><i data-lucide="check"></i> Hawkeye Base Rates Master Table</li>
+            <li><i data-lucide="check"></i> Target Date Factor Rule Generation</li>
+            <li><i data-lucide="check"></i> TDF Calculator &amp; P0–P5 Price Solver</li>
+          </ul>
+        </div>
+
+        <div class="form-group" style="margin-top: 14px; margin-bottom: 16px;">
+          <label for="auth-input-passcode">Access Passcode (Optional for Quick Entry)</label>
+          <input type="password" id="auth-input-passcode" placeholder="Leave blank or enter team passcode" class="auth-input">
+        </div>
+
+        <div id="auth-error-msg" class="auth-error" style="display: none;"></div>
+
+        <button id="btn-auth-signin" class="btn btn-primary btn-block btn-lg">
+          <i data-lucide="log-in"></i>
+          <span>Enter Workspace</span>
+        </button>
+      </div>
+
+      <div class="auth-footer-note">
+        <i data-lucide="lock" style="width: 13px; height: 13px;"></i>
+        <span>Session secured with encrypted JWT tokens &bull; RBAC Protected</span>
       </div>
     </div>
   </div>
