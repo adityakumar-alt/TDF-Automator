@@ -2,3 +2,5 @@ node_modules/
 credentials/
 oauth/
 .env
+.vercel
+dist/

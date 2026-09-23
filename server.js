@@ -85,7 +85,7 @@ const SPREADSHEET_ID = process.env.SPREADSHEET_ID || "1HbhMErLh8N2CdkBBJ_ubiv6S2
 // GOOGLE LOGIN
 // =====================================================
 
-app.get("/auth/google", (req, res) => {
+app.get(["/auth/google", "/api/auth/google"], (req, res) => {
 
     const authUrl = oauth2Client.generateAuthUrl({
         access_type: "offline",
@@ -103,7 +103,7 @@ app.get("/auth/google", (req, res) => {
 // GOOGLE OAUTH CALLBACK
 // =====================================================
 
-app.get("/oauth2callback", async (req, res) => {
+app.get(["/oauth2callback", "/api/oauth2callback"], async (req, res) => {
 
     const { code } = req.query;
 
@@ -147,7 +147,7 @@ app.get("/oauth2callback", async (req, res) => {
 // GOOGLE SHEETS TEST API
 // =====================================================
 
-app.get("/api/sheet-data", async (req, res) => {
+app.get(["/api/sheet-data", "/sheet-data"], async (req, res) => {
 
     try {
 
@@ -241,13 +241,15 @@ if (fs.existsSync(distPath)) {
 }
 
 // =====================================================
-// START SERVER
+// START SERVER (Local Development) & EXPORT (Vercel Serverless)
 // =====================================================
 
-app.listen(PORT, () => {
+if (!process.env.VERCEL) {
+    app.listen(PORT, () => {
+        console.log(
+            `Daily Pricing Dashboard server running at http://localhost:${PORT}`
+        );
+    });
+}
 
-    console.log(
-        `Daily Pricing Dashboard server running at http://localhost:${PORT}`
-    );
-
-});
+module.exports = app;

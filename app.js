@@ -2105,6 +2105,33 @@ function normalizeCityCategory(rawType) {
   return str || 'Mixed';
 }
 
+// Helper: Cleans hotel name by stripping descriptive suffixes (e.g. ', Mall Road', 'With Swimming Pool')
+function getCleanBaseName(name) {
+  if (!name) return '';
+  let str = String(name).toLowerCase().trim();
+  str = str.split(',')[0];
+  str = str.split(' with ')[0];
+  str = str.split(' near ')[0];
+  str = str.split(' - ')[0];
+  return str.trim();
+}
+
+// Explicit list of misclassified Partner, SOB, and ARR contract hotels to exclude ("dont show them")
+const EXCLUDED_SPECIAL_HOTELS = [
+  'treebo lazystay elite',
+  'treebo y hotels elite, khandagiri',
+  'treebo the aura',
+  'treebo sunheads',
+  'treebo five elements, lonavala',
+  'treebo jp cottage',
+  'treebo winter town venna lake',
+  'treebo nakshatra cottages mahabaleshwar',
+  'treebo anam international',
+  'treebo divine stay prayagraj',
+  'treebo premium landmark prayagraj',
+  'treebo bridge view regency, mall road'
+];
+
 // Parse and process datasets (Only LIVE properties)
 function parseAndProcessDashboardData(occText, facText, flexText, benchText, channelText, futureRatesText) {
   const occRows = parseCsvSimple(occText);
@@ -2113,17 +2140,6 @@ function parseAndProcessDashboardData(occText, facText, flexText, benchText, cha
   const benchRows = benchText ? parseCsvSimple(benchText) : [];
   const channelRows = channelText ? parseCsvSimple(channelText) : [];
   const futureRatesRows = futureRatesText ? parseCsvSimple(futureRatesText) : [];
-
-  // Helper: Cleans hotel name by stripping descriptive suffixes (e.g. ', Mall Road', 'With Swimming Pool')
-  function getCleanBaseName(name) {
-    if (!name) return '';
-    let str = String(name).toLowerCase().trim();
-    str = str.split(',')[0];
-    str = str.split(' with ')[0];
-    str = str.split(' near ')[0];
-    str = str.split(' - ')[0];
-    return str.trim();
-  }
 
   // 1. Build Rate Flex & Status Map with dynamic header resolution (Master Property Metadata)
   const rateFlexMap = {};
@@ -2461,6 +2477,22 @@ function parseAndProcessDashboardData(occText, facText, flexText, benchText, cha
       if (!flexMeta || flexMeta.status !== 'live') {
         continue; // Exclude non-live, churned, stop sell, or unlisted properties!
       }
+    }
+
+    // Exclude properties that are not standard Flex / Nonflex (e.g. Partner, SOB Properties, ARR Contract, Revman)
+    if (flexMeta && flexMeta.flex) {
+      const rawFlex = String(flexMeta.flex).trim().toLowerCase().replace(/[\s-_]/g, '');
+      if (rawFlex && !rawFlex.includes('flex')) {
+        continue;
+      }
+    }
+
+    // Explicitly exclude target misclassified properties ("dont show them")
+    const checkHName = (hName || '').toLowerCase().trim();
+    const checkBaseName = (baseName || '').toLowerCase().trim();
+    const checkMasterName = (flexMeta && flexMeta.rawName ? flexMeta.rawName : '').toLowerCase().trim();
+    if (EXCLUDED_SPECIAL_HOTELS.some(ex => checkHName.includes(ex) || checkBaseName.includes(getCleanBaseName(ex)) || checkMasterName.includes(ex))) {
+      continue;
     }
 
     const displayCsId = padCSId7Digit((flexMeta && flexMeta.csId) ? flexMeta.csId : (meta.csId || hId));
@@ -3952,8 +3984,8 @@ function parseHawkeyeBaseRates(rows) {
   const formatRate = (val) => {
     if (val === undefined || val === null || val === '') return '-';
     const num = parseFloat(String(val).replace(/,/g, ''));
-    if (isNaN(num)) return String(val).trim();
-    return Math.round(num).toLocaleString('en-IN');
+    if (isNaN(num)) return String(val).replace(/,/g, '').trim();
+    return String(Math.round(num));
   };
 
   const list = [];
@@ -3969,6 +4001,12 @@ function parseHawkeyeBaseRates(rows) {
       continue;
     }
 
+    const hotelName = row[idxHotelName] ? String(row[idxHotelName]).trim() : '';
+    const hotelNameLower = hotelName.toLowerCase();
+    if (EXCLUDED_SPECIAL_HOTELS.some(ex => hotelNameLower.includes(ex))) {
+      continue; // User specified: don't show them
+    }
+
     // Format hotel_id with 7-digit zero padding (0000000)
     const formattedHotelId = /^\d+$/.test(rawId) ? rawId.padStart(7, '0') : rawId;
     const displayStatus = normStatus === 'live' ? 'Live' : 'Stop Sell';
@@ -3977,7 +4015,7 @@ function parseHawkeyeBaseRates(rows) {
     list.push({
       hotelId: formattedHotelId,
       rawHotelId: rawId,
-      hotelName: row[idxHotelName] ? String(row[idxHotelName]).trim() : '',
+      hotelName: hotelName,
       city: row[idxCity] ? String(row[idxCity]).trim() : '',
       subOpzone: row[idxSubOpzone] ? String(row[idxSubOpzone]).trim() : '',
       cityCategory: row[idxCityCategory] ? String(row[idxCityCategory]).trim() : '',
@@ -3997,7 +4035,7 @@ function parseHawkeyeBaseRates(rows) {
   return list;
 }
 
-const HAWKEYE_CACHE_KEY = 'hawkeye_base_rates_cache_v3';
+const HAWKEYE_CACHE_KEY = 'hawkeye_base_rates_cache_v5';
 
 function loadHawkeyeBaseRatesData(rawRows) {
   hawkeyeBaseRatesMaster = parseHawkeyeBaseRates(rawRows);
@@ -4006,6 +4044,8 @@ function loadHawkeyeBaseRatesData(rawRows) {
   try {
     localStorage.removeItem('hawkeye_base_rates_cache');
     localStorage.removeItem('hawkeye_base_rates_cache_v2');
+    localStorage.removeItem('hawkeye_base_rates_cache_v3');
+    localStorage.removeItem('hawkeye_base_rates_cache_v4');
     localStorage.setItem(HAWKEYE_CACHE_KEY, JSON.stringify(hawkeyeBaseRatesMaster));
   } catch (e) {
     console.warn('Could not cache Hawkeye base rates in localStorage:', e);
@@ -4047,11 +4087,18 @@ function initHawkeyeBaseRatesFromCache() {
   try {
     localStorage.removeItem('hawkeye_base_rates_cache');
     localStorage.removeItem('hawkeye_base_rates_cache_v2');
+    localStorage.removeItem('hawkeye_base_rates_cache_v3');
+    localStorage.removeItem('hawkeye_base_rates_cache_v4');
 
     const cached = localStorage.getItem(HAWKEYE_CACHE_KEY);
     if (cached) {
       const parsed = JSON.parse(cached);
       if (Array.isArray(parsed) && parsed.length > 0 && parsed[0].status && (parsed[0].status === 'Live' || parsed[0].status === 'Stop Sell')) {
+        parsed.forEach(item => {
+          ['min', 'max', 'p0', 'p1', 'p2', 'p3', 'p4', 'p5'].forEach(k => {
+            if (item[k]) item[k] = String(item[k]).replace(/,/g, '');
+          });
+        });
         hawkeyeBaseRatesMaster = parsed;
         console.log(`Loaded ${hawkeyeBaseRatesMaster.length} Hawkeye Base Rates from cache`);
         populateHawkeyeFilterDropdowns(true);
