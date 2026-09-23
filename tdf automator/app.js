@@ -62,11 +62,208 @@ document.addEventListener('DOMContentLoaded', () => {
   setupTabs();
   setupSidebarToggle();
   setupPricingModeListeners();
+  setupAuthAndRBAC();
 
   // Set initial landscape mode layout for default active tab (TDF Dashboard)
   const activeTabBtn = document.querySelector('.tab-btn.active');
   if (activeTabBtn) activeTabBtn.click();
 });
+
+// =========================================================================
+// MULTI-USER RBAC & AUTHENTICATION STATE & CONTROLLER
+// =========================================================================
+let currentUser = null;
+
+async function setupAuthAndRBAC() {
+  setupAuthModalEvents();
+  await checkAuthSession();
+}
+
+function setupAuthModalEvents() {
+  const selectUser = document.getElementById('auth-select-user');
+  const btnSignIn = document.getElementById('btn-auth-signin');
+  const btnSignOut = document.getElementById('btn-header-signout');
+  const passcodeInput = document.getElementById('auth-input-passcode');
+  const errorMsg = document.getElementById('auth-error-msg');
+
+  if (selectUser) {
+    selectUser.addEventListener('change', () => {
+      updateRolePreview(selectUser.value);
+    });
+    updateRolePreview(selectUser.value);
+  }
+
+  if (btnSignIn) {
+    btnSignIn.addEventListener('click', async () => {
+      const userId = selectUser ? selectUser.value : 'usr_admin';
+      const passcode = passcodeInput ? passcodeInput.value.trim() : '';
+      if (errorMsg) errorMsg.style.display = 'none';
+
+      try {
+        btnSignIn.disabled = true;
+        btnSignIn.innerHTML = '<i data-lucide="loader"></i> Signing In...';
+        if (window.lucide) window.lucide.createIcons();
+
+        const res = await fetch('/api/auth/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ userId, passcode })
+        });
+        const data = await res.json();
+        if (data.success && data.user) {
+          currentUser = data.user;
+          applyUserSession(currentUser);
+          showToast(`Welcome back, ${currentUser.name}!`, 'success');
+        } else {
+          if (errorMsg) {
+            errorMsg.textContent = data.error || 'Failed to sign in.';
+            errorMsg.style.display = 'block';
+          }
+        }
+      } catch (err) {
+        if (errorMsg) {
+          errorMsg.textContent = `Sign in error: ${err.message}`;
+          errorMsg.style.display = 'block';
+        }
+      } finally {
+        btnSignIn.disabled = false;
+        btnSignIn.innerHTML = '<i data-lucide="log-in"></i> <span>Enter Workspace</span>';
+        if (window.lucide) window.lucide.createIcons();
+      }
+    });
+  }
+
+  if (btnSignOut) {
+    btnSignOut.addEventListener('click', async () => {
+      try {
+        await fetch('/api/auth/logout', { method: 'POST' });
+      } catch (e) {}
+      currentUser = null;
+      showAuthModal();
+      showToast('Signed out successfully.', 'info');
+    });
+  }
+}
+
+function updateRolePreview(userId) {
+  const selectUser = document.getElementById('auth-select-user');
+  const badge = document.getElementById('auth-preview-badge');
+  const permsList = document.getElementById('auth-preview-perms');
+  if (!selectUser || !badge || !permsList) return;
+
+  const opt = selectUser.options[selectUser.selectedIndex];
+  const role = opt ? opt.getAttribute('data-role') || 'Admin' : 'Admin';
+
+  badge.textContent = role;
+  badge.className = 'user-role-badge';
+  if (role === 'Admin') badge.classList.add('role-admin');
+  else if (role === 'Pricing Manager') badge.classList.add('role-pricing');
+  else if (role === 'RevOps') badge.classList.add('role-revops');
+  else if (role === 'Zonal Ops') badge.classList.add('role-zonal');
+
+  const hasDashboard = (role === 'Admin' || role === 'Pricing Manager');
+
+  permsList.innerHTML = `
+    <li class="${hasDashboard ? '' : 'forbidden'}">
+      <i data-lucide="${hasDashboard ? 'check' : 'x'}"></i>
+      <span>Daily Pricing Dashboard &amp; Portfolio Rates ${hasDashboard ? '' : '(Hidden)'}</span>
+    </li>
+    <li>
+      <i data-lucide="check"></i>
+      <span>Hawkeye Base Rates Master Table (Full Access)</span>
+    </li>
+    <li>
+      <i data-lucide="check"></i>
+      <span>Target Date Factor Rule Generation (Full Access)</span>
+    </li>
+    <li>
+      <i data-lucide="check"></i>
+      <span>TDF Calculator &amp; P0–P5 Price Solver (Full Access)</span>
+    </li>
+  `;
+  if (window.lucide) window.lucide.createIcons();
+}
+
+async function checkAuthSession() {
+  try {
+    const res = await fetch('/api/me');
+    const data = await res.json();
+    if (data.authenticated && data.user) {
+      currentUser = data.user;
+      applyUserSession(currentUser);
+    } else {
+      showAuthModal();
+    }
+  } catch (e) {
+    console.warn('Auth check fallback:', e);
+    showAuthModal();
+  }
+}
+
+function showAuthModal() {
+  const overlay = document.getElementById('modal-auth-overlay');
+  const headerProfile = document.getElementById('user-profile-header');
+  if (overlay) overlay.style.display = 'flex';
+  if (headerProfile) headerProfile.style.display = 'none';
+  if (window.lucide) window.lucide.createIcons();
+}
+
+function applyUserSession(user) {
+  const overlay = document.getElementById('modal-auth-overlay');
+  const headerProfile = document.getElementById('user-profile-header');
+  const avatar = document.getElementById('header-user-avatar');
+  const nameEl = document.getElementById('header-user-name');
+  const roleEl = document.getElementById('header-user-role');
+
+  if (overlay) overlay.style.display = 'none';
+  if (headerProfile) headerProfile.style.display = 'flex';
+
+  if (user) {
+    if (nameEl) nameEl.textContent = user.name || user.email || 'User';
+    if (avatar) {
+      const parts = (user.name || user.role || 'US').split(' ').filter(Boolean);
+      const initials = parts.length > 1 ? (parts[0][0] + parts[1][0]).toUpperCase() : (parts[0] ? parts[0].substring(0, 2).toUpperCase() : 'US');
+      avatar.textContent = initials;
+    }
+    if (roleEl) {
+      roleEl.textContent = user.role || 'Pricing Manager';
+      roleEl.className = 'user-role-badge';
+      const r = (user.role || '').toLowerCase();
+      if (r.includes('admin')) roleEl.classList.add('role-admin');
+      else if (r.includes('pricing')) roleEl.classList.add('role-pricing');
+      else if (r.includes('revops')) roleEl.classList.add('role-revops');
+      else if (r.includes('zonal')) roleEl.classList.add('role-zonal');
+    }
+
+    // Role-based Access Control for Navigation Tabs
+    const roleLower = (user.role || '').toLowerCase();
+    const canAccessDashboard = roleLower.includes('admin') || roleLower.includes('pricing');
+
+    const dashTabBtn = document.querySelector('.tab-btn[data-tab="tab-dashboard"]');
+    const hawkeyeTabBtn = document.querySelector('.tab-btn[data-tab="tab-hawkeye-rates"]');
+    const rulesTabBtn = document.querySelector('.tab-btn[data-tab="tab-rules"]');
+
+    if (dashTabBtn) {
+      dashTabBtn.style.display = canAccessDashboard ? 'flex' : 'none';
+    }
+
+    // If RevOps or Zonal Ops, landing is Hawkeye Base Rates or Rule Parameters
+    if (!canAccessDashboard) {
+      const activeTab = document.querySelector('.tab-btn.active');
+      if (!activeTab || activeTab.getAttribute('data-tab') === 'tab-dashboard') {
+        if (hawkeyeTabBtn) hawkeyeTabBtn.click();
+        else if (rulesTabBtn) rulesTabBtn.click();
+      }
+    } else {
+      const activeTab = document.querySelector('.tab-btn.active');
+      if (!activeTab) {
+        if (dashTabBtn) dashTabBtn.click();
+      }
+    }
+  }
+
+  if (window.lucide) window.lucide.createIcons();
+}
 
 // Setup Collapsible Sidebar Toggle
 function setupSidebarToggle() {

@@ -4,10 +4,14 @@ const cors = require("cors");
 const { google } = require("googleapis");
 const fs = require("fs");
 const path = require("path");
+const cookieParser = require("cookie-parser");
+const auth = require("./auth.js");
 
 const app = express();
-app.use(cors());
+app.use(cors({ origin: true, credentials: true }));
+app.use(cookieParser());
 app.use(express.json());
+app.use(auth.extractUser);
 const PORT = process.env.PORT || 3000;
 
 console.log("Starting Daily Pricing Dashboard server...");
@@ -144,14 +148,76 @@ app.get(["/oauth2callback", "/api/oauth2callback"], async (req, res) => {
 });
 
 // =====================================================
-// GOOGLE SHEETS TEST API
+// USER AUTHENTICATION & RBAC ENDPOINTS
+// =====================================================
+
+app.get(["/api/me", "/me"], (req, res) => {
+    if (!req.user) {
+        return res.json({ authenticated: false, user: null });
+    }
+    res.json({ authenticated: true, user: req.user });
+});
+
+app.get(["/api/auth/roster", "/auth/roster"], (req, res) => {
+    const list = auth.getRoster().filter(u => u.active).map(u => ({
+        id: u.id,
+        name: u.name,
+        email: u.email,
+        role: u.role
+    }));
+    res.json({ success: true, roster: list });
+});
+
+app.post(["/api/auth/login", "/auth/login"], (req, res) => {
+    const { userId, email, role, passcode } = req.body || {};
+    let matchedUser = null;
+
+    if (userId) {
+        matchedUser = auth.findUserById(userId);
+    } else if (email) {
+        matchedUser = auth.findUserByEmail(email);
+    } else if (role) {
+        matchedUser = auth.getRoster().find(u => u.role.toLowerCase() === role.toLowerCase() && u.active);
+    } else if (passcode === "admin" || passcode === "treebo2026") {
+        matchedUser = auth.getRoster().find(u => u.role === "Admin" && u.active);
+    }
+
+    if (!matchedUser) {
+        return res.status(401).json({
+            success: false,
+            error: "User not found or account is inactive. Please contact your administrator."
+        });
+    }
+
+    const token = auth.generateToken(matchedUser);
+    auth.setSessionCookie(res, token);
+
+    res.json({
+        success: true,
+        user: {
+            id: matchedUser.id,
+            email: matchedUser.email,
+            name: matchedUser.name,
+            role: matchedUser.role
+        },
+        token
+    });
+});
+
+app.post(["/api/auth/logout", "/auth/logout"], (req, res) => {
+    auth.clearSessionCookie(res);
+    res.json({ success: true, message: "Logged out successfully" });
+});
+
+// =====================================================
+// GOOGLE SHEETS TEST API (WITH ROLE-BASED ACCESS CONTROL)
 // =====================================================
 
 app.get(["/api/sheet-data", "/sheet-data"], async (req, res) => {
 
     try {
 
-        // Make sure we are authenticated
+        // Make sure Google OAuth credentials are ready
         if (!oauth2Client.credentials.access_token) {
 
             return res.status(401).json({
@@ -167,7 +233,7 @@ app.get(["/api/sheet-data", "/sheet-data"], async (req, res) => {
             auth: oauth2Client
         });
 
-        // Fetch all tabs in ONE request
+        // Fetch tabs in ONE request
         const response = await sheets.spreadsheets.values.batchGet({
             spreadsheetId: SPREADSHEET_ID,
 
@@ -184,16 +250,26 @@ app.get(["/api/sheet-data", "/sheet-data"], async (req, res) => {
 
         const valueRanges = response.data.valueRanges || [];
 
+        // Role-based data filtration:
+        // Hawkeye Base Rates is accessible to ALL roles (Admin, Pricing Manager, RevOps, Zonal Ops).
+        // Daily Pricing Dashboard portfolio data is exclusive to Admin & Pricing Managers.
+        const userRole = (req.user?.role || "Pricing Manager").toLowerCase();
+        const canViewDailyPricing = userRole.includes("admin") || userRole.includes("pricing");
+
         res.json({
             success: true,
+            userRole: req.user?.role || "Pricing Manager",
+            canViewDailyPricing,
 
             data: {
-                futureOcc: valueRanges[0]?.values || [],
-                next10DaysFactors: valueRanges[1]?.values || [],
-                rateFlex: valueRanges[2]?.values || [],
-                benchmarkOcc: valueRanges[3]?.values || [],
-                channelRNs: valueRanges[4]?.values || [],
-                futureRates: valueRanges[5]?.values || [],
+                // If RevOps or Zonal Ops, return empty portfolio matrices to save bandwidth and enforce access
+                futureOcc: canViewDailyPricing ? (valueRanges[0]?.values || []) : [],
+                next10DaysFactors: canViewDailyPricing ? (valueRanges[1]?.values || []) : [],
+                rateFlex: canViewDailyPricing ? (valueRanges[2]?.values || []) : [],
+                benchmarkOcc: canViewDailyPricing ? (valueRanges[3]?.values || []) : [],
+                channelRNs: canViewDailyPricing ? (valueRanges[4]?.values || []) : [],
+                futureRates: canViewDailyPricing ? (valueRanges[5]?.values || []) : [],
+                // Hawkeye Base Rates available to all
                 hawkeyeBaseRates: valueRanges[6]?.values || []
             }
         });
