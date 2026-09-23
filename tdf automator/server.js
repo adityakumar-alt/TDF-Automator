@@ -37,8 +37,11 @@ if (!client_id || !client_secret) {
     }
 }
 
-const REDIRECT_URI = process.env.REDIRECT_URI || `http://localhost:${PORT}/oauth2callback`;
+const REDIRECT_URI =
+    process.env.REDIRECT_URI ||
+    `http://localhost:${PORT}/oauth2callback`;
 
+// OAuth client used for Google LOGIN
 const oauth2Client = new google.auth.OAuth2(
     client_id,
     client_secret,
@@ -47,29 +50,48 @@ const oauth2Client = new google.auth.OAuth2(
 
 const TOKENS_PATH = "./oauth/tokens.json";
 
-// Load saved tokens: check env var first, then file
+// Separate OAuth client used for Google SHEETS
+const sheetsOAuthClient = new google.auth.OAuth2(
+    client_id,
+    client_secret,
+    REDIRECT_URI
+);
+
+// Load saved Google Sheets tokens
 if (process.env.GOOGLE_SAVED_TOKENS) {
     try {
         const envTokens = JSON.parse(process.env.GOOGLE_SAVED_TOKENS);
-        oauth2Client.setCredentials(envTokens);
-        console.log("Loaded saved OAuth tokens from environment variable ✅");
+
+        sheetsOAuthClient.setCredentials(envTokens);
+
+        console.log("Loaded saved Google Sheets OAuth tokens from environment variable ✅");
     } catch (err) {
-        console.warn("Error parsing GOOGLE_SAVED_TOKENS env var:", err.message);
+        console.warn(
+            "Error parsing GOOGLE_SAVED_TOKENS env var:",
+            err.message
+        );
     }
 } else if (fs.existsSync(TOKENS_PATH)) {
     try {
-        const savedTokens = JSON.parse(fs.readFileSync(TOKENS_PATH, "utf8"));
-        oauth2Client.setCredentials(savedTokens);
-        console.log("Loaded saved OAuth tokens from file ✅");
+        const savedTokens = JSON.parse(
+            fs.readFileSync(TOKENS_PATH, "utf8")
+        );
+
+        sheetsOAuthClient.setCredentials(savedTokens);
+
+        console.log("Loaded saved Google Sheets OAuth tokens from file ✅");
     } catch (err) {
-        console.warn("Error reading tokens file:", err.message);
+        console.warn(
+            "Error reading tokens file:",
+            err.message
+        );
     }
 }
 
 // Automatically save refreshed tokens
-oauth2Client.on("tokens", (tokens) => {
+sheetsOAuthClient.on("tokens", (tokens) => {
     try {
-        const currentTokens = { ...oauth2Client.credentials, ...tokens };
+        const currentTokens = { ...sheetsOAuthClient.credentials, ...tokens };
         if (fs.existsSync("./oauth")) {
             fs.writeFileSync(TOKENS_PATH, JSON.stringify(currentTokens, null, 2));
             console.log("Updated OAuth tokens saved to disk ✅");
@@ -96,19 +118,33 @@ app.get(["/auth/google", "/api/auth/google"], (req, res) => {
         prompt: "consent",
 
         scope: [
+            "openid",
+            "email",
+            "profile",
             "https://www.googleapis.com/auth/spreadsheets.readonly"
         ]
     });
 
     res.redirect(authUrl);
 });
+app.get(["/api/auth/me", "/auth/me"], auth.requireAuth, (req, res) => {
+    res.json({
+        success: true,
+        user: {
+            id: req.user.id,
+            email: req.user.email,
+            name: req.user.name,
+            role: req.user.role
+        }
+    });
+});
+
 
 // =====================================================
 // GOOGLE OAUTH CALLBACK
 // =====================================================
 
 app.get(["/oauth2callback", "/api/oauth2callback"], async (req, res) => {
-
     const { code } = req.query;
 
     if (!code) {
@@ -116,34 +152,56 @@ app.get(["/oauth2callback", "/api/oauth2callback"], async (req, res) => {
     }
 
     try {
-
+        // Exchange Google authorization code for login tokens
         const { tokens } = await oauth2Client.getToken(code);
-
         oauth2Client.setCredentials(tokens);
 
-        try {
-            fs.writeFileSync(TOKENS_PATH, JSON.stringify(tokens, null, 2));
-            console.log("OAuth tokens saved to disk ✅");
-        } catch (saveErr) {
-            console.error("Failed to save tokens to file:", saveErr);
+        // Get the Google user's identity
+        const oauth2 = google.oauth2({
+            auth: oauth2Client,
+            version: "v2"
+        });
+
+        const { data: googleUser } = await oauth2.userinfo.get();
+
+        const email = googleUser.email;
+
+        console.log("Google user:", email);
+
+        // Check whether this Google account is approved
+        const user = auth.findUserByEmail(email);
+
+        if (!user) {
+            return res.status(403).send(`
+                <h1>Access Denied</h1>
+                <p>Your Google account is not authorized to use TDF Automator.</p>
+                <p>Logged in as: ${email}</p>
+            `);
         }
 
-        console.log("Google authentication successful.");
+        // Create application session
+        const token = auth.generateToken(user);
 
-        res.send(`
-            <h1>Google authentication successful ✅</h1>
-            <p>You can close this tab and return to your project.</p>
-        `);
+        // Store session in HTTP-only cookie
+        auth.setSessionCookie(res, token);
+
+        console.log(
+            `Login successful: ${email} (${user.role})`
+        );
+
+        // Return to the deployed application
+        const frontendUrl =
+            process.env.FRONTEND_URL || "/";
+
+        res.redirect(frontendUrl);
 
     } catch (error) {
-
         console.error("OAuth error:", error);
 
         res.status(500).send(`
             <h1>Authentication failed ❌</h1>
-            <p>${error.message}</p>
+            <p>Please try again.</p>
         `);
-
     }
 });
 
@@ -193,13 +251,14 @@ app.post(["/api/auth/google", "/auth/google"], async (req, res) => {
         const name = payload.name || email.split("@")[0];
 
         // Identify role automatically from email without asking who they are
-        const matchedUser = auth.findUserByEmail(email) || {
-            id: `usr_${email.split("@")[0]}`,
-            email,
-            name,
-            role: "Pricing Manager",
-            active: true
-        };
+        const matchedUser = auth.findUserByEmail(email);
+
+        if (!matchedUser) {
+            return res.status(403).json({
+                success: false,
+                error: "Your Google account is not authorized to use TDF Automator. Please contact your administrator."
+            });
+        }
 
         const token = auth.generateToken(matchedUser);
         auth.setSessionCookie(res, token);
@@ -224,34 +283,6 @@ app.post(["/api/auth/google", "/auth/google"], async (req, res) => {
     }
 });
 
-app.post(["/api/auth/login", "/auth/login"], (req, res) => {
-    const { email } = req.body || {};
-    if (!email || !email.includes("@")) {
-        return res.status(400).json({ success: false, error: "Please enter a valid work email address." });
-    }
-
-    const matchedUser = auth.findUserByEmail(email);
-    if (!matchedUser) {
-        return res.status(401).json({
-            success: false,
-            error: "User not found or account is inactive. Please contact your administrator."
-        });
-    }
-
-    const token = auth.generateToken(matchedUser);
-    auth.setSessionCookie(res, token);
-
-    res.json({
-        success: true,
-        user: {
-            id: matchedUser.id,
-            email: matchedUser.email,
-            name: matchedUser.name,
-            role: matchedUser.role
-        },
-        token
-    });
-});
 
 app.post(["/api/auth/logout", "/auth/logout"], (req, res) => {
     auth.clearSessionCookie(res);
@@ -267,7 +298,7 @@ app.get(["/api/sheet-data", "/sheet-data"], async (req, res) => {
     try {
 
         // Make sure Google OAuth credentials are ready
-        if (!oauth2Client.credentials.access_token) {
+        if (!sheetsOAuthClient.credentials.access_token) {
 
             return res.status(401).json({
                 success: false,
@@ -279,7 +310,7 @@ app.get(["/api/sheet-data", "/sheet-data"], async (req, res) => {
 
         const sheets = google.sheets({
             version: "v4",
-            auth: oauth2Client
+            auth: sheetsOAuthClient
         });
 
         // Fetch tabs in ONE request
@@ -377,4 +408,4 @@ if (!process.env.VERCEL) {
     });
 }
 
-module.exports = app;
+module.exports = app;

@@ -35,10 +35,6 @@
         </div>
       </div>
       <div class="header-right-actions">
-        <div class="system-status">
-          <span class="status-indicator"></span>
-          <span id="system-status-text">Engine Ready</span>
-        </div>
         <div class="user-profile-header" id="user-profile-header" style="display: none;">
           <div class="user-avatar" id="header-user-avatar">AD</div>
           <div class="user-meta">
@@ -80,7 +76,8 @@
           <i data-lucide="calculator"></i>
           <span class="nav-text">TDF Calculator</span>
         </button>
-        <a href="https://metabase.treebo.com/question/9713-target-date-factor?cs_id=1894945&date=&hotel_name=" target="_blank" rel="noopener noreferrer" class="tab-btn" title="Metabase TDF Dashboard">
+        <a href="https://metabase.treebo.com/question/9713-target-date-factor?cs_id=1894945&date=&hotel_name="
+          target="_blank" rel="noopener noreferrer" class="tab-btn" title="Metabase TDF Dashboard">
           <i data-lucide="external-link"></i>
           <span class="nav-text">Metabase TDF Dashboard</span>
         </a>
@@ -92,912 +89,989 @@
         <!-- UNIFIED SIDEBAR CARD -->
         <section class="card sidebar-card">
 
-        <!-- Tab 0: Interactive TDF Analytics & Property Dashboard -->
-        <div class="tab-content active" id="tab-dashboard">
-          <div class="dash-welcome-bar">
-            <div class="dash-title-group">
-              <h2>Daily Pricing Dashboard</h2>
-              <p>Compare Current Occ %, Current TDF vs Recommended TDF across all portfolio properties.</p>
-            </div>
-            <div class="dash-action-buttons">
-              <button id="btn-toggle-summary" class="btn btn-secondary btn-sm" title="Toggle KPI cards to save vertical screen space">
-                <i data-lucide="chevrons-up-down"></i>
-                <span id="btn-toggle-summary-text">Collapse Stats</span>
-              </button>
-              <button id="btn-toggle-density" class="btn btn-secondary btn-sm" title="Toggle compact density view">
-                <i data-lucide="minimize-2"></i>
-                <span id="btn-toggle-density-text">Fit Screen View</span>
-              </button>
-              <button id="btn-load-workspace-csv" class="btn btn-accent btn-sm">
-                <i data-lucide="sparkles"></i>
-                <span>Auto-Load Portfolio Datasets</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Collapsible KPI & OpZone Summary Section -->
-          <div id="dash-summary-section">
-
-          <!-- Executive KPI Stat Cards -->
-          <div class="kpi-cards-grid">
-            <div class="kpi-card">
-              <div class="kpi-header">
-                <span class="kpi-title">Total Active Properties</span>
-                <i data-lucide="building" class="kpi-icon"></i>
+          <!-- Tab 0: Interactive TDF Analytics & Property Dashboard -->
+          <div class="tab-content active" id="tab-dashboard">
+            <div class="dash-welcome-bar">
+              <div class="dash-title-group">
+                <h2>Daily Pricing Dashboard</h2>
+                <p>Compare Current Occ %, Current TDF vs Recommended TDF across all portfolio properties.</p>
               </div>
-              <div class="kpi-value" id="kpi-total-hotels">--</div>
-              <div class="kpi-subtext" id="kpi-total-cities">-- Cities covered</div>
-            </div>
-
-            <div class="kpi-card">
-              <div class="kpi-header">
-                <span class="kpi-title">Avg Upcoming Occ %</span>
-                <i data-lucide="pie-chart" class="kpi-icon"></i>
-              </div>
-              <div class="kpi-value text-accent" id="kpi-avg-occ">--%</div>
-              <div class="kpi-subtext" id="kpi-occ-sub">Upcoming 10-day average</div>
-            </div>
-
-            <div class="kpi-card">
-              <div class="kpi-header">
-                <span class="kpi-title">Portfolio Current TDF</span>
-                <i data-lucide="trending-up" class="kpi-icon"></i>
-              </div>
-              <div class="kpi-value" id="kpi-current-tdf">--</div>
-              <div class="kpi-subtext">Baseline multiplier average</div>
-            </div>
-
-            <div class="kpi-card">
-              <div class="kpi-header">
-                <span class="kpi-title">Recommended TDF</span>
-                <i data-lucide="target" class="kpi-icon"></i>
-              </div>
-              <div class="kpi-value text-success" id="kpi-rec-tdf">--</div>
-              <div class="kpi-subtext" id="kpi-tdf-delta">Net Delta: --</div>
-            </div>
-
-            <div class="kpi-card">
-              <div class="kpi-header">
-                <span class="kpi-title">Action Summary</span>
-                <i data-lucide="layers" class="kpi-icon"></i>
-              </div>
-              <div class="kpi-value" id="kpi-actions">--</div>
-              <div class="kpi-subtext" id="kpi-action-sub">Rate Surges vs Markdowns</div>
-            </div>
-          </div>
-
-          <!-- Operational Zone (OpZone) Breakdown Cards -->
-          <div class="opzone-section-header">
-            <h3><i data-lucide="map-pin"></i> Operational Zone (OpZone) Breakdown</h3>
-          </div>
-            <div class="opzone-cards-grid" id="opzone-cards-container">
-              <div class="opzone-card-empty">
-                <i data-lucide="info"></i>
-                <span>Click "Auto-Load Portfolio Datasets" to view OpZone performance.</span>
-              </div>
-            </div>
-          </div> <!-- End #dash-summary-section -->
-
-          <!-- Top Controls Bar: View Switcher, Search & Action -->
-          <div class="table-controls-bar">
-            <!-- View Switcher Toggle -->
-            <div class="view-switch-group">
-              <button id="btn-dash-view-list" class="btn-view-toggle active">
-                <i data-lucide="list"></i>
-                <span>List View</span>
-              </button>
-              <button id="btn-dash-view-calendar" class="btn-view-toggle">
-                <i data-lucide="calendar"></i>
-                <span>Calendar View</span>
-              </button>
-            </div>
-
-            <div class="search-wrapper">
-              <i data-lucide="search" class="search-icon"></i>
-              <input type="text" id="dash-search-input" placeholder="Search property name, CS ID, city...">
-            </div>
-
-            <button id="btn-generate-hawkeye-from-dash" class="btn btn-primary btn-sm">
-              <i data-lucide="zap"></i>
-              <span>Generate Hawkeye Rules</span>
-            </button>
-          </div>
-
-          <!-- Custom Filter Toolbar (Matching User Reference Images) -->
-          <div class="filter-toolbar-card">
-            <div class="filters-scroll-row">
-              <!-- Target Dates Multi-Select Dropdown -->
-              <div class="custom-dropdown dropdown-date-picker" id="dropdown-dates" data-filter-key="targetDates" data-placeholder="All 10 Days" data-search-placeholder="Search dates...">
-                <button type="button" class="dropdown-trigger-btn" id="btn-trigger-dates">
-                  <span class="dropdown-btn-label" id="label-dates-filter">All 10 Days</span>
-                  <i data-lucide="chevrons-up-down" class="dropdown-chevron"></i>
+              <div class="dash-action-buttons">
+                <button id="btn-toggle-summary" class="btn btn-secondary btn-sm"
+                  title="Toggle KPI cards to save vertical screen space">
+                  <i data-lucide="chevrons-up-down"></i>
+                  <span id="btn-toggle-summary-text">Collapse Stats</span>
                 </button>
-                <div class="dropdown-panel date-panel-wide">
-                  <div class="dropdown-search-box">
-                    <i data-lucide="search" class="search-box-icon"></i>
-                    <input type="text" class="dropdown-search-input" id="search-dates-input" placeholder="Search date or day...">
-                  </div>
+                <button id="btn-toggle-density" class="btn btn-secondary btn-sm" title="Toggle compact density view">
+                  <i data-lucide="minimize-2"></i>
+                  <span id="btn-toggle-density-text">Fit Screen View</span>
+                </button>
+                <button id="btn-load-workspace-csv" class="btn btn-accent btn-sm">
+                  <i data-lucide="sparkles"></i>
+                  <span>Auto-Load Portfolio Datasets</span>
+                </button>
+              </div>
+            </div>
 
-                  <div class="date-actions-bar">
-                    <span class="date-count-summary" id="date-selection-summary">10 of 10 selected</span>
-                    <div class="date-actions-btns">
-                      <button type="button" class="btn-date-action" id="btn-date-select-all">Select All</button>
-                      <button type="button" class="btn-date-action" id="btn-date-clear">Clear</button>
+            <!-- Collapsible KPI & OpZone Summary Section -->
+            <div id="dash-summary-section">
+
+              <!-- Executive KPI Stat Cards -->
+              <div class="kpi-cards-grid">
+                <div class="kpi-card">
+                  <div class="kpi-header">
+                    <span class="kpi-title">Total Active Properties</span>
+                    <i data-lucide="building" class="kpi-icon"></i>
+                  </div>
+                  <div class="kpi-value" id="kpi-total-hotels">--</div>
+                  <div class="kpi-subtext" id="kpi-total-cities">-- Cities covered</div>
+                </div>
+
+                <div class="kpi-card">
+                  <div class="kpi-header">
+                    <span class="kpi-title">Avg Upcoming Occ %</span>
+                    <i data-lucide="pie-chart" class="kpi-icon"></i>
+                  </div>
+                  <div class="kpi-value text-accent" id="kpi-avg-occ">--%</div>
+                  <div class="kpi-subtext" id="kpi-occ-sub">Upcoming 10-day average</div>
+                </div>
+
+                <div class="kpi-card">
+                  <div class="kpi-header">
+                    <span class="kpi-title">Portfolio Current TDF</span>
+                    <i data-lucide="trending-up" class="kpi-icon"></i>
+                  </div>
+                  <div class="kpi-value" id="kpi-current-tdf">--</div>
+                  <div class="kpi-subtext">Baseline multiplier average</div>
+                </div>
+
+                <div class="kpi-card">
+                  <div class="kpi-header">
+                    <span class="kpi-title">Recommended TDF</span>
+                    <i data-lucide="target" class="kpi-icon"></i>
+                  </div>
+                  <div class="kpi-value text-success" id="kpi-rec-tdf">--</div>
+                  <div class="kpi-subtext" id="kpi-tdf-delta">Net Delta: --</div>
+                </div>
+
+                <div class="kpi-card">
+                  <div class="kpi-header">
+                    <span class="kpi-title">Action Summary</span>
+                    <i data-lucide="layers" class="kpi-icon"></i>
+                  </div>
+                  <div class="kpi-value" id="kpi-actions">--</div>
+                  <div class="kpi-subtext" id="kpi-action-sub">Rate Surges vs Markdowns</div>
+                </div>
+              </div>
+
+              <!-- Operational Zone (OpZone) Breakdown Cards -->
+              <div class="opzone-section-header">
+                <h3><i data-lucide="map-pin"></i> Operational Zone (OpZone) Breakdown</h3>
+              </div>
+              <div class="opzone-cards-grid" id="opzone-cards-container">
+                <div class="opzone-card-empty">
+                  <i data-lucide="info"></i>
+                  <span>Click "Auto-Load Portfolio Datasets" to view OpZone performance.</span>
+                </div>
+              </div>
+            </div> <!-- End #dash-summary-section -->
+
+            <!-- Top Controls Bar: View Switcher, Search & Action -->
+            <div class="table-controls-bar">
+              <!-- View Switcher Toggle -->
+              <div class="view-switch-group">
+                <button id="btn-dash-view-list" class="btn-view-toggle active">
+                  <i data-lucide="list"></i>
+                  <span>List View</span>
+                </button>
+                <button id="btn-dash-view-calendar" class="btn-view-toggle">
+                  <i data-lucide="calendar"></i>
+                  <span>Calendar View</span>
+                </button>
+              </div>
+
+              <div class="search-wrapper">
+                <i data-lucide="search" class="search-icon"></i>
+                <input type="text" id="dash-search-input" placeholder="Search property name, CS ID, city...">
+              </div>
+
+              <button id="btn-generate-hawkeye-from-dash" class="btn btn-primary btn-sm">
+                <i data-lucide="zap"></i>
+                <span>Generate Hawkeye Rules</span>
+              </button>
+            </div>
+
+            <!-- Custom Filter Toolbar (Matching User Reference Images) -->
+            <div class="filter-toolbar-card">
+              <div class="filters-scroll-row">
+                <!-- Target Dates Multi-Select Dropdown -->
+                <div class="custom-dropdown dropdown-date-picker" id="dropdown-dates" data-filter-key="targetDates"
+                  data-placeholder="All 10 Days" data-search-placeholder="Search dates...">
+                  <button type="button" class="dropdown-trigger-btn" id="btn-trigger-dates">
+                    <span class="dropdown-btn-label" id="label-dates-filter">All 10 Days</span>
+                    <i data-lucide="chevrons-up-down" class="dropdown-chevron"></i>
+                  </button>
+                  <div class="dropdown-panel date-panel-wide">
+                    <div class="dropdown-search-box">
+                      <i data-lucide="search" class="search-box-icon"></i>
+                      <input type="text" class="dropdown-search-input" id="search-dates-input"
+                        placeholder="Search date or day...">
+                    </div>
+
+                    <div class="date-actions-bar">
+                      <span class="date-count-summary" id="date-selection-summary">10 of 10 selected</span>
+                      <div class="date-actions-btns">
+                        <button type="button" class="btn-date-action" id="btn-date-select-all">Select All</button>
+                        <button type="button" class="btn-date-action" id="btn-date-clear">Clear</button>
+                      </div>
+                    </div>
+
+                    <!-- Dynamic 10-Date Checkbox List -->
+                    <div class="dropdown-options-list date-options-list" id="date-checkboxes-list">
+                      <!-- Loaded dynamically from dataset -->
                     </div>
                   </div>
+                </div>
 
-                  <!-- Dynamic 10-Date Checkbox List -->
-                  <div class="dropdown-options-list date-options-list" id="date-checkboxes-list">
-                    <!-- Loaded dynamically from dataset -->
+                <!-- OpZone / Region Dropdown -->
+                <div class="custom-dropdown" id="dropdown-opzone" data-filter-key="opzone"
+                  data-placeholder="All OpZones" data-search-placeholder="Search region...">
+                  <button type="button" class="dropdown-trigger-btn">
+                    <span class="dropdown-btn-label">All OpZones</span>
+                    <i data-lucide="chevrons-up-down" class="dropdown-chevron"></i>
+                  </button>
+                  <div class="dropdown-panel">
+                    <div class="dropdown-search-box">
+                      <i data-lucide="search" class="search-box-icon"></i>
+                      <input type="text" class="dropdown-search-input" placeholder="Search region...">
+                    </div>
+                    <div class="dropdown-clear-item" style="display: none;">
+                      <i data-lucide="x" class="clear-icon"></i>
+                      <span>Clear selection</span>
+                    </div>
+                    <div class="dropdown-options-list">
+                      <div class="dropdown-option selected" data-value="all"><span class="opt-check">✓</span> <span
+                          class="opt-label">All OpZones</span></div>
+                      <div class="dropdown-option" data-value="East"><span class="opt-check">✓</span> <span
+                          class="opt-label">East</span></div>
+                      <div class="dropdown-option" data-value="North 1"><span class="opt-check">✓</span> <span
+                          class="opt-label">North 1</span></div>
+                      <div class="dropdown-option" data-value="North 2"><span class="opt-check">✓</span> <span
+                          class="opt-label">North 2</span></div>
+                      <div class="dropdown-option" data-value="South 1"><span class="opt-check">✓</span> <span
+                          class="opt-label">South 1</span></div>
+                      <div class="dropdown-option" data-value="South 2"><span class="opt-check">✓</span> <span
+                          class="opt-label">South 2</span></div>
+                      <div class="dropdown-option" data-value="West"><span class="opt-check">✓</span> <span
+                          class="opt-label">West</span></div>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <!-- OpZone / Region Dropdown -->
-              <div class="custom-dropdown" id="dropdown-opzone" data-filter-key="opzone" data-placeholder="All OpZones" data-search-placeholder="Search region...">
-                <button type="button" class="dropdown-trigger-btn">
-                  <span class="dropdown-btn-label">All OpZones</span>
-                  <i data-lucide="chevrons-up-down" class="dropdown-chevron"></i>
-                </button>
-                <div class="dropdown-panel">
-                  <div class="dropdown-search-box">
-                    <i data-lucide="search" class="search-box-icon"></i>
-                    <input type="text" class="dropdown-search-input" placeholder="Search region...">
-                  </div>
-                  <div class="dropdown-clear-item" style="display: none;">
-                    <i data-lucide="x" class="clear-icon"></i>
-                    <span>Clear selection</span>
-                  </div>
-                  <div class="dropdown-options-list">
-                    <div class="dropdown-option selected" data-value="all"><span class="opt-check">✓</span> <span class="opt-label">All OpZones</span></div>
-                    <div class="dropdown-option" data-value="East"><span class="opt-check">✓</span> <span class="opt-label">East</span></div>
-                    <div class="dropdown-option" data-value="North 1"><span class="opt-check">✓</span> <span class="opt-label">North 1</span></div>
-                    <div class="dropdown-option" data-value="North 2"><span class="opt-check">✓</span> <span class="opt-label">North 2</span></div>
-                    <div class="dropdown-option" data-value="South 1"><span class="opt-check">✓</span> <span class="opt-label">South 1</span></div>
-                    <div class="dropdown-option" data-value="South 2"><span class="opt-check">✓</span> <span class="opt-label">South 2</span></div>
-                    <div class="dropdown-option" data-value="West"><span class="opt-check">✓</span> <span class="opt-label">West</span></div>
+                <!-- City Category Dropdown -->
+                <div class="custom-dropdown" id="dropdown-city-type" data-filter-key="cityType"
+                  data-placeholder="All Categories" data-search-placeholder="Search category...">
+                  <button type="button" class="dropdown-trigger-btn">
+                    <span class="dropdown-btn-label">All Categories</span>
+                    <i data-lucide="chevrons-up-down" class="dropdown-chevron"></i>
+                  </button>
+                  <div class="dropdown-panel">
+                    <div class="dropdown-search-box">
+                      <i data-lucide="search" class="search-box-icon"></i>
+                      <input type="text" class="dropdown-search-input" placeholder="Search category...">
+                    </div>
+                    <div class="dropdown-clear-item" style="display: none;">
+                      <i data-lucide="x" class="clear-icon"></i>
+                      <span>Clear selection</span>
+                    </div>
+                    <div class="dropdown-options-list">
+                      <div class="dropdown-option selected" data-value="all"><span class="opt-check">✓</span> <span
+                          class="opt-label">All Categories</span></div>
+                      <div class="dropdown-option" data-value="Mixed"><span class="opt-check">✓</span> <span
+                          class="opt-label">Mixed</span></div>
+                      <div class="dropdown-option" data-value="Tier-1 Business"><span class="opt-check">✓</span> <span
+                          class="opt-label">Tier-1 Business</span></div>
+                      <div class="dropdown-option" data-value="Tier-2 Business"><span class="opt-check">✓</span> <span
+                          class="opt-label">Tier-2 Business</span></div>
+                      <div class="dropdown-option" data-value="Winter Leisure"><span class="opt-check">✓</span> <span
+                          class="opt-label">Winter Leisure</span></div>
+                      <div class="dropdown-option" data-value="Summer Leisure"><span class="opt-check">✓</span> <span
+                          class="opt-label">Summer Leisure</span></div>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <!-- City Category Dropdown -->
-              <div class="custom-dropdown" id="dropdown-city-type" data-filter-key="cityType" data-placeholder="All Categories" data-search-placeholder="Search category...">
-                <button type="button" class="dropdown-trigger-btn">
-                  <span class="dropdown-btn-label">All Categories</span>
-                  <i data-lucide="chevrons-up-down" class="dropdown-chevron"></i>
-                </button>
-                <div class="dropdown-panel">
-                  <div class="dropdown-search-box">
-                    <i data-lucide="search" class="search-box-icon"></i>
-                    <input type="text" class="dropdown-search-input" placeholder="Search category...">
-                  </div>
-                  <div class="dropdown-clear-item" style="display: none;">
-                    <i data-lucide="x" class="clear-icon"></i>
-                    <span>Clear selection</span>
-                  </div>
-                  <div class="dropdown-options-list">
-                    <div class="dropdown-option selected" data-value="all"><span class="opt-check">✓</span> <span class="opt-label">All Categories</span></div>
-                    <div class="dropdown-option" data-value="Mixed"><span class="opt-check">✓</span> <span class="opt-label">Mixed</span></div>
-                    <div class="dropdown-option" data-value="Tier-1 Business"><span class="opt-check">✓</span> <span class="opt-label">Tier-1 Business</span></div>
-                    <div class="dropdown-option" data-value="Tier-2 Business"><span class="opt-check">✓</span> <span class="opt-label">Tier-2 Business</span></div>
-                    <div class="dropdown-option" data-value="Winter Leisure"><span class="opt-check">✓</span> <span class="opt-label">Winter Leisure</span></div>
-                    <div class="dropdown-option" data-value="Summer Leisure"><span class="opt-check">✓</span> <span class="opt-label">Summer Leisure</span></div>
+                <!-- City Dropdown -->
+                <div class="custom-dropdown" id="dropdown-city" data-filter-key="city" data-placeholder="All Cities"
+                  data-search-placeholder="Search city...">
+                  <button type="button" class="dropdown-trigger-btn">
+                    <span class="dropdown-btn-label">All Cities</span>
+                    <i data-lucide="chevrons-up-down" class="dropdown-chevron"></i>
+                  </button>
+                  <div class="dropdown-panel">
+                    <div class="dropdown-search-box">
+                      <i data-lucide="search" class="search-box-icon"></i>
+                      <input type="text" class="dropdown-search-input" placeholder="Search city...">
+                    </div>
+                    <div class="dropdown-clear-item" style="display: none;">
+                      <i data-lucide="x" class="clear-icon"></i>
+                      <span>Clear selection</span>
+                    </div>
+                    <div class="dropdown-options-list">
+                      <div class="dropdown-option selected" data-value="all"><span class="opt-check">✓</span> <span
+                          class="opt-label">All Cities</span></div>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <!-- City Dropdown -->
-              <div class="custom-dropdown" id="dropdown-city" data-filter-key="city" data-placeholder="All Cities" data-search-placeholder="Search city...">
-                <button type="button" class="dropdown-trigger-btn">
-                  <span class="dropdown-btn-label">All Cities</span>
-                  <i data-lucide="chevrons-up-down" class="dropdown-chevron"></i>
-                </button>
-                <div class="dropdown-panel">
-                  <div class="dropdown-search-box">
-                    <i data-lucide="search" class="search-box-icon"></i>
-                    <input type="text" class="dropdown-search-input" placeholder="Search city...">
-                  </div>
-                  <div class="dropdown-clear-item" style="display: none;">
-                    <i data-lucide="x" class="clear-icon"></i>
-                    <span>Clear selection</span>
-                  </div>
-                  <div class="dropdown-options-list">
-                    <div class="dropdown-option selected" data-value="all"><span class="opt-check">✓</span> <span class="opt-label">All Cities</span></div>
+                <!-- Flex Config Dropdown -->
+                <div class="custom-dropdown" id="dropdown-flex" data-filter-key="flex"
+                  data-placeholder="All Flex Configs" data-search-placeholder="Search flex...">
+                  <button type="button" class="dropdown-trigger-btn">
+                    <span class="dropdown-btn-label">All Flex Configs</span>
+                    <i data-lucide="chevrons-up-down" class="dropdown-chevron"></i>
+                  </button>
+                  <div class="dropdown-panel">
+                    <div class="dropdown-search-box">
+                      <i data-lucide="search" class="search-box-icon"></i>
+                      <input type="text" class="dropdown-search-input" placeholder="Search flex...">
+                    </div>
+                    <div class="dropdown-clear-item" style="display: none;">
+                      <i data-lucide="x" class="clear-icon"></i>
+                      <span>Clear selection</span>
+                    </div>
+                    <div class="dropdown-options-list">
+                      <div class="dropdown-option selected" data-value="all"><span class="opt-check">✓</span> <span
+                          class="opt-label">All Flex Configs</span></div>
+                      <div class="dropdown-option" data-value="Flex"><span class="opt-check">✓</span> <span
+                          class="opt-label">Flex</span></div>
+                      <div class="dropdown-option" data-value="Nonflex"><span class="opt-check">✓</span> <span
+                          class="opt-label">Non-Flex</span></div>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <!-- Flex Config Dropdown -->
-              <div class="custom-dropdown" id="dropdown-flex" data-filter-key="flex" data-placeholder="All Flex Configs" data-search-placeholder="Search flex...">
-                <button type="button" class="dropdown-trigger-btn">
-                  <span class="dropdown-btn-label">All Flex Configs</span>
-                  <i data-lucide="chevrons-up-down" class="dropdown-chevron"></i>
-                </button>
-                <div class="dropdown-panel">
-                  <div class="dropdown-search-box">
-                    <i data-lucide="search" class="search-box-icon"></i>
-                    <input type="text" class="dropdown-search-input" placeholder="Search flex...">
-                  </div>
-                  <div class="dropdown-clear-item" style="display: none;">
-                    <i data-lucide="x" class="clear-icon"></i>
-                    <span>Clear selection</span>
-                  </div>
-                  <div class="dropdown-options-list">
-                    <div class="dropdown-option selected" data-value="all"><span class="opt-check">✓</span> <span class="opt-label">All Flex Configs</span></div>
-                    <div class="dropdown-option" data-value="Flex"><span class="opt-check">✓</span> <span class="opt-label">Flex</span></div>
-                    <div class="dropdown-option" data-value="Nonflex"><span class="opt-check">✓</span> <span class="opt-label">Non-Flex</span></div>
+                <!-- Strategy Dropdown -->
+                <div class="custom-dropdown" id="dropdown-strategy" data-filter-key="strategy"
+                  data-placeholder="All Strategies" data-search-placeholder="Search strategy...">
+                  <button type="button" class="dropdown-trigger-btn">
+                    <span class="dropdown-btn-label">All Strategies</span>
+                    <i data-lucide="chevrons-up-down" class="dropdown-chevron"></i>
+                  </button>
+                  <div class="dropdown-panel">
+                    <div class="dropdown-search-box">
+                      <i data-lucide="search" class="search-box-icon"></i>
+                      <input type="text" class="dropdown-search-input" placeholder="Search strategy...">
+                    </div>
+                    <div class="dropdown-clear-item" style="display: none;">
+                      <i data-lucide="x" class="clear-icon"></i>
+                      <span>Clear selection</span>
+                    </div>
+                    <div class="dropdown-options-list">
+                      <div class="dropdown-option selected" data-value="all"><span class="opt-check">✓</span> <span
+                          class="opt-label">All Strategies</span></div>
+                      <div class="dropdown-option" data-value="surge"><span class="opt-check">✓</span> <span
+                          class="opt-label">Rate Surge</span></div>
+                      <div class="dropdown-option" data-value="markdown"><span class="opt-check">✓</span> <span
+                          class="opt-label">Markdown</span></div>
+                      <div class="dropdown-option" data-value="baseline"><span class="opt-check">✓</span> <span
+                          class="opt-label">Maintain Baseline</span></div>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <!-- Strategy Dropdown -->
-              <div class="custom-dropdown" id="dropdown-strategy" data-filter-key="strategy" data-placeholder="All Strategies" data-search-placeholder="Search strategy...">
-                <button type="button" class="dropdown-trigger-btn">
-                  <span class="dropdown-btn-label">All Strategies</span>
-                  <i data-lucide="chevrons-up-down" class="dropdown-chevron"></i>
-                </button>
-                <div class="dropdown-panel">
-                  <div class="dropdown-search-box">
-                    <i data-lucide="search" class="search-box-icon"></i>
-                    <input type="text" class="dropdown-search-input" placeholder="Search strategy...">
+                <!-- Action Buttons -->
+                <button type="button" id="btn-filter-apply" class="btn-filter-apply">Apply</button>
+                <button type="button" id="btn-filter-clear-all" class="btn-filter-clear">Clear All</button>
+              </div>
+            </div>
+
+            <!-- Active Date Filter Indicator Bar -->
+            <div id="dash-active-date-bar" class="active-date-filter-bar" style="display: none;">
+              <span class="active-date-pill"><i data-lucide="calendar"></i> Target Date Filter Active: <strong
+                  id="dash-active-date-label">--</strong></span>
+              <button id="btn-clear-date-filter" class="btn-clear-date">Clear Date Filter ✖</button>
+            </div>
+
+            <!-- Panel 1: Property List Table View -->
+            <div id="dash-panel-list-view" class="dash-view-panel">
+              <div class="dash-table-wrapper">
+                <table class="dash-table">
+                  <thead>
+                    <tr>
+                      <th style="width: 78px;">CS_ID</th>
+                      <th>Hotel Name</th>
+                      <th style="width: 80px;">City</th>
+                      <th style="width: 70px;">Region</th>
+                      <th style="width: 85px;">City Type</th>
+                      <th style="width: 95px;">Date</th>
+                      <th class="cell-num-right" style="width: 75px;" title="Benchmark Occupancy %">Bench Occ</th>
+                      <th class="cell-num-right" style="width: 65px;" title="Occupancy %">Occ %</th>
+                      <th class="cell-num-right" style="width: 75px;" title="Walking Share %">Walk Share</th>
+                      <th class="cell-num-right" style="width: 75px;" title="B2B Share %">B2B Share</th>
+                      <th class="cell-num-right" style="width: 55px;" title="Current TDF Factor">Factor</th>
+                      <th class="cell-num-right" style="width: 65px;" title="Recommended New TDF">New TDF</th>
+                      <th class="cell-num-right" style="width: 78px;" title="Pushed Price">Pushed ₹</th>
+                      <th class="cell-num-right cell-desired-price" style="width: 104px; min-width: 104px;"
+                        title="Desired Push Price">Desired ₹</th>
+                    </tr>
+                  </thead>
+                  <tbody id="dash-table-body">
+                    <tr class="empty-state-row">
+                      <td colspan="14">
+                        <div class="empty-state">
+                          <i data-lucide="bar-chart-2"></i>
+                          <p>No Property Dashboard Data Loaded</p>
+                          <span>Click "Auto-Load Portfolio Datasets" above to populate real-time property TDF
+                            metrics.</span>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Panel 2: Portfolio 7-Column Monthly Calendar Grid View -->
+            <div id="dash-panel-calendar-view" class="dash-view-panel" style="display: none;">
+              <div class="calendar-card" style="padding: 16px;">
+                <!-- Calendar Header Bar -->
+                <div class="calendar-top-bar"
+                  style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">
+                  <div class="month-nav-controls" style="display: flex; align-items: center; gap: 12px;">
+                    <button class="btn-month-arrow" id="btn-dash-cal-prev"
+                      style="padding: 6px 12px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--card-bg); cursor: pointer;"><i
+                        data-lucide="chevron-left"></i></button>
+                    <span class="month-name-heading" id="dash-cal-month-heading"
+                      style="font-weight: 700; font-size: 1.1rem; min-width: 150px; text-align: center;">September
+                      2026</span>
+                    <button class="btn-month-arrow" id="btn-dash-cal-next"
+                      style="padding: 6px 12px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--card-bg); cursor: pointer;"><i
+                        data-lucide="chevron-right"></i></button>
+                    <button id="btn-dash-cal-today" class="btn btn-secondary btn-sm">Today</button>
                   </div>
-                  <div class="dropdown-clear-item" style="display: none;">
-                    <i data-lucide="x" class="clear-icon"></i>
-                    <span>Clear selection</span>
-                  </div>
-                  <div class="dropdown-options-list">
-                    <div class="dropdown-option selected" data-value="all"><span class="opt-check">✓</span> <span class="opt-label">All Strategies</span></div>
-                    <div class="dropdown-option" data-value="surge"><span class="opt-check">✓</span> <span class="opt-label">Rate Surge</span></div>
-                    <div class="dropdown-option" data-value="markdown"><span class="opt-check">✓</span> <span class="opt-label">Markdown</span></div>
-                    <div class="dropdown-option" data-value="baseline"><span class="opt-check">✓</span> <span class="opt-label">Maintain Baseline</span></div>
+
+                  <!-- Legend Bar -->
+                  <div class="cal-legend-bar"
+                    style="display: flex; align-items: center; gap: 14px; font-size: 0.8rem; font-weight: 600;">
+                    <span style="display: flex; align-items: center; gap: 5px;"><span
+                        style="width: 12px; height: 12px; border-radius: 3px; background: #e0e7ff; border: 1px solid #c7d2fe; display: inline-block;"></span>
+                      Baseline</span>
+                    <span style="display: flex; align-items: center; gap: 5px;"><span
+                        style="width: 12px; height: 12px; border-radius: 3px; background: #ffe4e6; border: 1px solid #fecdd3; display: inline-block;"></span>
+                      Surge</span>
+                    <span style="display: flex; align-items: center; gap: 5px;"><span
+                        style="width: 12px; height: 12px; border-radius: 3px; background: #ffedd5; border: 1px solid #fed7aa; display: inline-block;"></span>
+                      Markdown</span>
+                    <span style="display: flex; align-items: center; gap: 5px;"><span
+                        style="width: 12px; height: 12px; border-radius: 3px; background: #dcfce7; border: 1px solid #bbf7d0; display: inline-block;"></span>
+                      High Occ</span>
                   </div>
                 </div>
-              </div>
 
-              <!-- Action Buttons -->
-              <button type="button" id="btn-filter-apply" class="btn-filter-apply">Apply</button>
-              <button type="button" id="btn-filter-clear-all" class="btn-filter-clear">Clear All</button>
+                <!-- 7-Column Weekday Headers -->
+                <div
+                  style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; margin-bottom: 8px; text-align: center; font-weight: 700; font-size: 0.85rem; color: var(--text-muted);">
+                  <div>Sun</div>
+                  <div>Mon</div>
+                  <div>Tue</div>
+                  <div>Wed</div>
+                  <div>Thu</div>
+                  <div>Fri</div>
+                  <div>Sat</div>
+                </div>
+
+                <!-- 7-Column Grid Cells -->
+                <div id="dash-portfolio-calendar-grid"
+                  style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px;">
+                  <!-- Populated dynamically by app.js -->
+                </div>
+              </div>
             </div>
           </div>
 
-          <!-- Active Date Filter Indicator Bar -->
-          <div id="dash-active-date-bar" class="active-date-filter-bar" style="display: none;">
-            <span class="active-date-pill"><i data-lucide="calendar"></i> Target Date Filter Active: <strong id="dash-active-date-label">--</strong></span>
-            <button id="btn-clear-date-filter" class="btn-clear-date">Clear Date Filter ✖</button>
-          </div>
-
-          <!-- Panel 1: Property List Table View -->
-          <div id="dash-panel-list-view" class="dash-view-panel">
-            <div class="dash-table-wrapper">
-              <table class="dash-table">
-                <thead>
-                  <tr>
-                    <th style="width: 78px;">CS_ID</th>
-                    <th>Hotel Name</th>
-                    <th style="width: 80px;">City</th>
-                    <th style="width: 70px;">Region</th>
-                    <th style="width: 85px;">City Type</th>
-                    <th style="width: 95px;">Date</th>
-                    <th class="cell-num-right" style="width: 75px;" title="Benchmark Occupancy %">Bench Occ</th>
-                    <th class="cell-num-right" style="width: 65px;" title="Occupancy %">Occ %</th>
-                    <th class="cell-num-right" style="width: 75px;" title="Walking Share %">Walk Share</th>
-                    <th class="cell-num-right" style="width: 75px;" title="B2B Share %">B2B Share</th>
-                    <th class="cell-num-right" style="width: 55px;" title="Current TDF Factor">Factor</th>
-                    <th class="cell-num-right" style="width: 65px;" title="Recommended New TDF">New TDF</th>
-                    <th class="cell-num-right" style="width: 78px;" title="Pushed Price">Pushed ₹</th>
-                    <th class="cell-num-right cell-desired-price" style="width: 104px; min-width: 104px;" title="Desired Push Price">Desired ₹</th>
-                  </tr>
-                </thead>
-                <tbody id="dash-table-body">
-                  <tr class="empty-state-row">
-                    <td colspan="14">
-                      <div class="empty-state">
-                        <i data-lucide="bar-chart-2"></i>
-                        <p>No Property Dashboard Data Loaded</p>
-                        <span>Click "Auto-Load Portfolio Datasets" above to populate real-time property TDF metrics.</span>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          <!-- Panel 2: Portfolio 7-Column Monthly Calendar Grid View -->
-          <div id="dash-panel-calendar-view" class="dash-view-panel" style="display: none;">
-            <div class="calendar-card" style="padding: 16px;">
-              <!-- Calendar Header Bar -->
-              <div class="calendar-top-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">
-                <div class="month-nav-controls" style="display: flex; align-items: center; gap: 12px;">
-                  <button class="btn-month-arrow" id="btn-dash-cal-prev" style="padding: 6px 12px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--card-bg); cursor: pointer;"><i data-lucide="chevron-left"></i></button>
-                  <span class="month-name-heading" id="dash-cal-month-heading" style="font-weight: 700; font-size: 1.1rem; min-width: 150px; text-align: center;">September 2026</span>
-                  <button class="btn-month-arrow" id="btn-dash-cal-next" style="padding: 6px 12px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--card-bg); cursor: pointer;"><i data-lucide="chevron-right"></i></button>
-                  <button id="btn-dash-cal-today" class="btn btn-secondary btn-sm">Today</button>
-                </div>
-
-                <!-- Legend Bar -->
-                <div class="cal-legend-bar" style="display: flex; align-items: center; gap: 14px; font-size: 0.8rem; font-weight: 600;">
-                  <span style="display: flex; align-items: center; gap: 5px;"><span style="width: 12px; height: 12px; border-radius: 3px; background: #e0e7ff; border: 1px solid #c7d2fe; display: inline-block;"></span> Baseline</span>
-                  <span style="display: flex; align-items: center; gap: 5px;"><span style="width: 12px; height: 12px; border-radius: 3px; background: #ffe4e6; border: 1px solid #fecdd3; display: inline-block;"></span> Surge</span>
-                  <span style="display: flex; align-items: center; gap: 5px;"><span style="width: 12px; height: 12px; border-radius: 3px; background: #ffedd5; border: 1px solid #fed7aa; display: inline-block;"></span> Markdown</span>
-                  <span style="display: flex; align-items: center; gap: 5px;"><span style="width: 12px; height: 12px; border-radius: 3px; background: #dcfce7; border: 1px solid #bbf7d0; display: inline-block;"></span> High Occ</span>
-                </div>
-              </div>
-
-              <!-- 7-Column Weekday Headers -->
-              <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; margin-bottom: 8px; text-align: center; font-weight: 700; font-size: 0.85rem; color: var(--text-muted);">
-                <div>Sun</div>
-                <div>Mon</div>
-                <div>Tue</div>
-                <div>Wed</div>
-                <div>Thu</div>
-                <div>Fri</div>
-                <div>Sat</div>
-              </div>
-
-              <!-- 7-Column Grid Cells -->
-              <div id="dash-portfolio-calendar-grid" style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px;">
-                <!-- Populated dynamically by app.js -->
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Tab: Hawkeye Base Rates -->
-        <div class="tab-content" id="tab-hawkeye-rates">
-          <div class="hawkeye-rates-card" style="display: flex; flex-direction: column; gap: 14px;">
-            <!-- Header Section -->
-            <div class="dash-welcome-bar" style="margin-bottom: 0;">
-              <div class="dash-title-group">
-                <div style="display: flex; align-items: center; gap: 10px;">
-                  <div style="width: 36px; height: 36px; border-radius: 8px; background: linear-gradient(135deg, #ea580c, #c2410c); display: flex; align-items: center; justify-content: center; color: #fff; flex-shrink: 0;">
-                    <i data-lucide="database" style="width: 20px; height: 20px;"></i>
-                  </div>
-                  <div>
-                    <h2 class="dash-main-title" style="margin: 0; font-size: 1.25rem;">Hawkeye Base Rates Master</h2>
-                    <p class="dash-subtitle" style="margin: 2px 0 0 0; font-size: 0.8rem; color: var(--text-muted);">
-                      Live property details, Status, Base Config, and Min/Max/P0–P5 base rates from Hawkeye (Live &amp; Stop Sell properties).
-                    </p>
+          <!-- Tab: Hawkeye Base Rates -->
+          <div class="tab-content" id="tab-hawkeye-rates">
+            <div class="hawkeye-rates-card" style="display: flex; flex-direction: column; gap: 14px;">
+              <!-- Header Section -->
+              <div class="dash-welcome-bar" style="margin-bottom: 0;">
+                <div class="dash-title-group">
+                  <div style="display: flex; align-items: center; gap: 10px;">
+                    <div
+                      style="width: 36px; height: 36px; border-radius: 8px; background: linear-gradient(135deg, #ea580c, #c2410c); display: flex; align-items: center; justify-content: center; color: #fff; flex-shrink: 0;">
+                      <i data-lucide="database" style="width: 20px; height: 20px;"></i>
+                    </div>
+                    <div>
+                      <h2 class="dash-main-title" style="margin: 0; font-size: 1.25rem;">Hawkeye Base Rates Master</h2>
+                      <p class="dash-subtitle" style="margin: 2px 0 0 0; font-size: 0.8rem; color: var(--text-muted);">
+                        Live property details, Status, Base Config, and Min/Max/P0–P5 base rates from Hawkeye (Live
+                        &amp; Stop Sell properties).
+                      </p>
+                    </div>
                   </div>
                 </div>
+                <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                  <span id="hawkeye-rates-count-badge"
+                    style="font-size: 0.78rem; font-weight: 600; padding: 6px 12px; background: #fff7ed; border: 1px solid #fed7aa; color: #9a3412; border-radius: 6px;">
+                    0 Properties Loaded
+                  </span>
+                  <button id="btn-hawkeye-sync" class="btn btn-secondary btn-sm"
+                    title="Sync Live Rates from Google Sheets">
+                    <i data-lucide="refresh-cw"></i>
+                    <span>Sync Rates</span>
+                  </button>
+                </div>
               </div>
-              <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
-                <span id="hawkeye-rates-count-badge" style="font-size: 0.78rem; font-weight: 600; padding: 6px 12px; background: #fff7ed; border: 1px solid #fed7aa; color: #9a3412; border-radius: 6px;">
-                  0 Properties Loaded
-                </span>
-                <button id="btn-hawkeye-sync" class="btn btn-secondary btn-sm" title="Sync Live Rates from Google Sheets">
-                  <i data-lucide="refresh-cw"></i>
-                  <span>Sync Rates</span>
-                </button>
+
+              <!-- Filters Bar -->
+              <div class="table-controls-bar"
+                style="margin-bottom: 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; background: #ffffff; border: 1px solid #fed7aa; border-radius: 8px; padding: 8px 12px;">
+                <div class="search-wrapper" style="flex: 1 1 220px; min-width: 180px; max-width: 280px; margin: 0;">
+                  <i data-lucide="search" class="search-icon"></i>
+                  <input type="text" id="hawkeye-search-input"
+                    placeholder="Search by ID, Name, City, OpZone, Config...">
+                </div>
+
+                <div
+                  style="display: flex; gap: 6px; align-items: center; flex-wrap: wrap; justify-content: flex-end; flex: 2 1 auto;">
+                  <select id="hawkeye-filter-sub-opzone" class="dash-filter-select"
+                    style="width: auto !important; min-width: 125px; max-width: 155px; height: 36px; padding: 6px 10px; font-size: 0.8rem; font-weight: 500; border-radius: 6px; border: 1px solid #cbd5e1; background: #ffffff; color: #1e293b; cursor: pointer; flex: 0 0 auto !important;">
+                    <option value="all">All Sub Opzones</option>
+                  </select>
+
+                  <select id="hawkeye-filter-city" class="dash-filter-select"
+                    style="width: auto !important; min-width: 115px; max-width: 150px; height: 36px; padding: 6px 10px; font-size: 0.8rem; font-weight: 500; border-radius: 6px; border: 1px solid #cbd5e1; background: #ffffff; color: #1e293b; cursor: pointer; flex: 0 0 auto !important;">
+                    <option value="all">All Cities</option>
+                  </select>
+
+                  <select id="hawkeye-filter-category" class="dash-filter-select"
+                    style="width: auto !important; min-width: 125px; max-width: 155px; height: 36px; padding: 6px 10px; font-size: 0.8rem; font-weight: 500; border-radius: 6px; border: 1px solid #cbd5e1; background: #ffffff; color: #1e293b; cursor: pointer; flex: 0 0 auto !important;">
+                    <option value="all">All Categories</option>
+                  </select>
+
+                  <select id="hawkeye-filter-status" class="dash-filter-select"
+                    style="width: auto !important; min-width: 105px; max-width: 125px; height: 36px; padding: 6px 10px; font-size: 0.8rem; font-weight: 500; border-radius: 6px; border: 1px solid #cbd5e1; background: #ffffff; color: #1e293b; cursor: pointer; flex: 0 0 auto !important;">
+                    <option value="all">All Statuses</option>
+                    <option value="Live">Live</option>
+                    <option value="Stop Sell">Stop Sell</option>
+                  </select>
+
+                  <select id="hawkeye-filter-base-config" class="dash-filter-select"
+                    style="width: auto !important; min-width: 115px; max-width: 135px; height: 36px; padding: 6px 10px; font-size: 0.8rem; font-weight: 500; border-radius: 6px; border: 1px solid #cbd5e1; background: #ffffff; color: #1e293b; cursor: pointer; flex: 0 0 auto !important;">
+                    <option value="all">All Base Configs</option>
+                  </select>
+
+                  <button id="btn-hawkeye-reset-filters" class="btn btn-secondary btn-sm" title="Reset Filters"
+                    style="padding: 6px 10px; height: 36px; display: inline-flex; align-items: center; gap: 4px; flex: 0 0 auto;">
+                    <i data-lucide="rotate-ccw"></i>
+                    <span>Reset</span>
+                  </button>
+                </div>
               </div>
+
+              <!-- Table Container -->
+              <div class="dash-table-wrapper"
+                style="max-height: calc(100vh - 270px); min-height: 440px; overflow-x: auto;">
+                <table class="dash-table" id="hawkeye-rates-table">
+                  <thead>
+                    <tr>
+                      <th colspan="7" class="th-group-prop">Property Details</th>
+                      <th colspan="8" class="th-group-rates">Base Rates &amp; Price Tiers</th>
+                    </tr>
+                    <tr>
+                      <th style="min-width: 95px;">Hotel ID</th>
+                      <th style="min-width: 210px;">Hotel</th>
+                      <th style="min-width: 110px;">City</th>
+                      <th style="min-width: 110px;">Sub Opzone</th>
+                      <th style="min-width: 120px;">City Category</th>
+                      <th style="min-width: 95px;">Status</th>
+                      <th class="col-sep-right" style="min-width: 105px;">Base Config</th>
+                      <th class="cell-num-right" style="min-width: 75px; color: #f59e0b;" title="Min Base Rate">Min</th>
+                      <th class="cell-num-right" style="min-width: 75px; color: #f59e0b;" title="Max Base Rate">Max</th>
+                      <th class="cell-num-right" style="min-width: 75px; color: #38bdf8;" title="P0 Base Rate">P0</th>
+                      <th class="cell-num-right" style="min-width: 75px; color: #38bdf8;" title="P1 Rate">P1</th>
+                      <th class="cell-num-right" style="min-width: 75px; color: #38bdf8;" title="P2 Rate">P2</th>
+                      <th class="cell-num-right" style="min-width: 75px; color: #38bdf8;" title="P3 Rate">P3</th>
+                      <th class="cell-num-right" style="min-width: 75px; color: #38bdf8;" title="P4 Rate">P4</th>
+                      <th class="cell-num-right" style="min-width: 75px; color: #38bdf8;" title="P5 Rate">P5</th>
+                    </tr>
+                  </thead>
+                  <tbody id="hawkeye-rates-tbody">
+                    <tr>
+                      <td colspan="15" style="text-align: center; padding: 48px 20px; color: var(--text-muted);">
+                        <i data-lucide="database"
+                          style="width: 32px; height: 32px; margin-bottom: 8px; display: inline-block; opacity: 0.5;"></i>
+                        <div>No Hawkeye base rates loaded yet. Click <strong>Sync Rates</strong> to sync live rates from
+                          Google Sheets.</div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- Pagination Toolbar -->
+              <div id="hawkeye-pagination-bar"
+                style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 0.8rem; color: var(--text-secondary); padding: 4px 2px;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span>Rows per page:</span>
+                  <select id="hawkeye-page-size"
+                    style="padding: 4px 8px; border-radius: 4px; border: 1px solid #cbd5e1; background: #fff; font-size: 0.8rem;">
+                    <option value="50">50</option>
+                    <option value="100" selected>100</option>
+                    <option value="250">250</option>
+                    <option value="all">All</option>
+                  </select>
+                  <span id="hawkeye-pagination-info" style="margin-left: 8px; font-weight: 500;"></span>
+                </div>
+                <div style="display: flex; gap: 6px; align-items: center;">
+                  <button id="btn-hawkeye-prev-page" class="btn btn-secondary btn-sm" style="padding: 4px 10px;"
+                    disabled>
+                    <i data-lucide="chevron-left"></i>
+                    <span>Previous</span>
+                  </button>
+                  <span id="hawkeye-current-page-badge" style="font-weight: 600; padding: 4px 8px;">Page 1</span>
+                  <button id="btn-hawkeye-next-page" class="btn btn-secondary btn-sm" style="padding: 4px 10px;">
+                    <span>Next</span>
+                    <i data-lucide="chevron-right"></i>
+                  </button>
+                </div>
+              </div>
+
             </div>
-
-            <!-- Filters Bar -->
-            <div class="table-controls-bar" style="margin-bottom: 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; background: #ffffff; border: 1px solid #fed7aa; border-radius: 8px; padding: 8px 12px;">
-              <div class="search-wrapper" style="flex: 1 1 220px; min-width: 180px; max-width: 280px; margin: 0;">
-                <i data-lucide="search" class="search-icon"></i>
-                <input type="text" id="hawkeye-search-input" placeholder="Search by ID, Name, City, OpZone, Config...">
-              </div>
-
-              <div style="display: flex; gap: 6px; align-items: center; flex-wrap: wrap; justify-content: flex-end; flex: 2 1 auto;">
-                <select id="hawkeye-filter-sub-opzone" class="dash-filter-select" style="width: auto !important; min-width: 125px; max-width: 155px; height: 36px; padding: 6px 10px; font-size: 0.8rem; font-weight: 500; border-radius: 6px; border: 1px solid #cbd5e1; background: #ffffff; color: #1e293b; cursor: pointer; flex: 0 0 auto !important;">
-                  <option value="all">All Sub Opzones</option>
-                </select>
-
-                <select id="hawkeye-filter-city" class="dash-filter-select" style="width: auto !important; min-width: 115px; max-width: 150px; height: 36px; padding: 6px 10px; font-size: 0.8rem; font-weight: 500; border-radius: 6px; border: 1px solid #cbd5e1; background: #ffffff; color: #1e293b; cursor: pointer; flex: 0 0 auto !important;">
-                  <option value="all">All Cities</option>
-                </select>
-
-                <select id="hawkeye-filter-category" class="dash-filter-select" style="width: auto !important; min-width: 125px; max-width: 155px; height: 36px; padding: 6px 10px; font-size: 0.8rem; font-weight: 500; border-radius: 6px; border: 1px solid #cbd5e1; background: #ffffff; color: #1e293b; cursor: pointer; flex: 0 0 auto !important;">
-                  <option value="all">All Categories</option>
-                </select>
-
-                <select id="hawkeye-filter-status" class="dash-filter-select" style="width: auto !important; min-width: 105px; max-width: 125px; height: 36px; padding: 6px 10px; font-size: 0.8rem; font-weight: 500; border-radius: 6px; border: 1px solid #cbd5e1; background: #ffffff; color: #1e293b; cursor: pointer; flex: 0 0 auto !important;">
-                  <option value="all">All Statuses</option>
-                  <option value="Live">Live</option>
-                  <option value="Stop Sell">Stop Sell</option>
-                </select>
-
-                <select id="hawkeye-filter-base-config" class="dash-filter-select" style="width: auto !important; min-width: 115px; max-width: 135px; height: 36px; padding: 6px 10px; font-size: 0.8rem; font-weight: 500; border-radius: 6px; border: 1px solid #cbd5e1; background: #ffffff; color: #1e293b; cursor: pointer; flex: 0 0 auto !important;">
-                  <option value="all">All Base Configs</option>
-                </select>
-
-                <button id="btn-hawkeye-reset-filters" class="btn btn-secondary btn-sm" title="Reset Filters" style="padding: 6px 10px; height: 36px; display: inline-flex; align-items: center; gap: 4px; flex: 0 0 auto;">
-                  <i data-lucide="rotate-ccw"></i>
-                  <span>Reset</span>
-                </button>
-              </div>
-            </div>
-
-            <!-- Table Container -->
-            <div class="dash-table-wrapper" style="max-height: calc(100vh - 270px); min-height: 440px; overflow-x: auto;">
-              <table class="dash-table" id="hawkeye-rates-table">
-                <thead>
-                  <tr>
-                    <th colspan="7" class="th-group-prop">Property Details</th>
-                    <th colspan="8" class="th-group-rates">Base Rates &amp; Price Tiers</th>
-                  </tr>
-                  <tr>
-                    <th style="min-width: 95px;">Hotel ID</th>
-                    <th style="min-width: 210px;">Hotel</th>
-                    <th style="min-width: 110px;">City</th>
-                    <th style="min-width: 110px;">Sub Opzone</th>
-                    <th style="min-width: 120px;">City Category</th>
-                    <th style="min-width: 95px;">Status</th>
-                    <th class="col-sep-right" style="min-width: 105px;">Base Config</th>
-                    <th class="cell-num-right" style="min-width: 75px; color: #f59e0b;" title="Min Base Rate">Min</th>
-                    <th class="cell-num-right" style="min-width: 75px; color: #f59e0b;" title="Max Base Rate">Max</th>
-                    <th class="cell-num-right" style="min-width: 75px; color: #38bdf8;" title="P0 Base Rate">P0</th>
-                    <th class="cell-num-right" style="min-width: 75px; color: #38bdf8;" title="P1 Rate">P1</th>
-                    <th class="cell-num-right" style="min-width: 75px; color: #38bdf8;" title="P2 Rate">P2</th>
-                    <th class="cell-num-right" style="min-width: 75px; color: #38bdf8;" title="P3 Rate">P3</th>
-                    <th class="cell-num-right" style="min-width: 75px; color: #38bdf8;" title="P4 Rate">P4</th>
-                    <th class="cell-num-right" style="min-width: 75px; color: #38bdf8;" title="P5 Rate">P5</th>
-                  </tr>
-                </thead>
-                <tbody id="hawkeye-rates-tbody">
-                  <tr>
-                    <td colspan="15" style="text-align: center; padding: 48px 20px; color: var(--text-muted);">
-                      <i data-lucide="database" style="width: 32px; height: 32px; margin-bottom: 8px; display: inline-block; opacity: 0.5;"></i>
-                      <div>No Hawkeye base rates loaded yet. Click <strong>Sync Rates</strong> to sync live rates from Google Sheets.</div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <!-- Pagination Toolbar -->
-            <div id="hawkeye-pagination-bar" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 0.8rem; color: var(--text-secondary); padding: 4px 2px;">
-              <div style="display: flex; align-items: center; gap: 8px;">
-                <span>Rows per page:</span>
-                <select id="hawkeye-page-size" style="padding: 4px 8px; border-radius: 4px; border: 1px solid #cbd5e1; background: #fff; font-size: 0.8rem;">
-                  <option value="50">50</option>
-                  <option value="100" selected>100</option>
-                  <option value="250">250</option>
-                  <option value="all">All</option>
-                </select>
-                <span id="hawkeye-pagination-info" style="margin-left: 8px; font-weight: 500;"></span>
-              </div>
-              <div style="display: flex; gap: 6px; align-items: center;">
-                <button id="btn-hawkeye-prev-page" class="btn btn-secondary btn-sm" style="padding: 4px 10px;" disabled>
-                  <i data-lucide="chevron-left"></i>
-                  <span>Previous</span>
-                </button>
-                <span id="hawkeye-current-page-badge" style="font-weight: 600; padding: 4px 8px;">Page 1</span>
-                <button id="btn-hawkeye-next-page" class="btn btn-secondary btn-sm" style="padding: 4px 10px;">
-                  <span>Next</span>
-                  <i data-lucide="chevron-right"></i>
-                </button>
-              </div>
-            </div>
-
           </div>
-        </div>
 
-        <!-- Tab 1: Rules Form -->
-        <div class="tab-content" id="tab-rules">
-          <form id="rule-form" novalidate>
-            <!-- Hotel ID -->
-            <div class="form-group">
-              <label for="hotel-ids">
-                Hotel ID(s) / CS ID(s) <span class="required">*</span>
-                <span class="tooltip-icon"
-                  title="Paste 1 to 4 columns from Excel: [CS ID] [Multiplier] [Start Date] [End Date]. Custom dates and TDF multipliers per row are supported!">
-                  <i data-lucide="help-circle"></i>
-                </span>
-              </label>
-              <textarea id="hotel-ids" placeholder="Paste 1 to 4 columns from Excel e.g.:&#10;0243121    1.20    2026-08-01    2026-08-10&#10;1247345    0.90    2026-08-05    2026-08-15&#10;0050789    1.15" rows="4" required></textarea>
-              <div class="error-msg" id="hotel-ids-error">Please enter at least one valid 7-digit Hotel/CS ID.</div>
-              <div class="hint">Paste up to 4 columns directly from Excel/Sheets: <code>CS ID | Multiplier | Start Date | End Date</code> or format as <code>ID: Multiplier: StartDate: EndDate</code>.</div>
-            </div>
-
-            <!-- Rule Type and Pricing Mode -->
-            <div class="form-row">
-              <div class="form-group col">
-                <label for="rule-type">Rule Type</label>
-                <select id="rule-type">
-                  <option value="targetDate">targetDate</option>
-                </select>
-              </div>
-              <div class="form-group col">
-                <label for="pricing-mode">Pricing Mode</label>
-                <select id="pricing-mode">
-                  <option value="fixed">Fixed Multiplier</option>
-                  <option value="split">Weekday / Weekend Split</option>
-                </select>
-              </div>
-            </div>
-
-            <!-- Date Range -->
-            <div class="form-group">
-              <label>Date Range <span class="required">*</span></label>
-              <div class="date-range-inputs">
-                <div class="date-input-wrapper">
-                  <span class="date-label">Start</span>
-                  <input type="date" id="start-date" required>
-                </div>
-                <div class="date-input-wrapper">
-                  <span class="date-label">End</span>
-                  <input type="date" id="end-date" required>
-                </div>
-              </div>
-              <div class="error-msg" id="date-range-error">Start date cannot be after end date.</div>
-
-              <!-- Date Helpers -->
-              <div class="date-helpers">
-                <button type="button" class="btn btn-helper" data-period="today">Today</button>
-                <button type="button" class="btn btn-helper" data-period="tomorrow">Tomorrow</button>
-                <button type="button" class="btn btn-helper" data-period="weekend">This Weekend</button>
-                <button type="button" class="btn btn-helper" data-period="next7">Next 7 Days</button>
-                <button type="button" class="btn btn-helper" data-period="next30">Next 30 Days (1 Month)</button>
-              </div>
-            </div>
-
-            <!-- Fixed Pricing Modifiers (Fixed Mode) -->
-            <div class="form-row" id="fixed-pricing-container">
-              <div class="form-group col">
-                <label for="multiplier">
-                  Multiplier <span class="required">*</span>
+          <!-- Tab 1: Rules Form -->
+          <div class="tab-content" id="tab-rules">
+            <form id="rule-form" novalidate>
+              <!-- Hotel ID -->
+              <div class="form-group">
+                <label for="hotel-ids">
+                  Hotel ID(s) / CS ID(s) <span class="required">*</span>
+                  <span class="tooltip-icon"
+                    title="Paste 1 to 4 columns from Excel: [CS ID] [Multiplier] [Start Date] [End Date]. Custom dates and TDF multipliers per row are supported!">
+                    <i data-lucide="help-circle"></i>
+                  </span>
                 </label>
-                <div class="input-prefix-wrapper">
-                  <span class="input-prefix">×</span>
-                  <input type="number" id="multiplier" step="0.01" min="0.01" placeholder="e.g. 1.30" required>
-                </div>
-                <div class="error-msg" id="multiplier-error">Enter a numeric value up to 2 decimal places.</div>
+                <textarea id="hotel-ids"
+                  placeholder="Paste 1 to 4 columns from Excel e.g.:&#10;0243121    1.20    2026-08-01    2026-08-10&#10;1247345    0.90    2026-08-05    2026-08-15&#10;0050789    1.15"
+                  rows="4" required></textarea>
+                <div class="error-msg" id="hotel-ids-error">Please enter at least one valid 7-digit Hotel/CS ID.</div>
+                <div class="hint">Paste up to 4 columns directly from Excel/Sheets:
+                  <code>CS ID | Multiplier | Start Date | End Date</code> or format as
+                  <code>ID: Multiplier: StartDate: EndDate</code>.</div>
               </div>
 
-              <div class="form-group col">
-                <label for="addition">Addition (Optional)</label>
-                <div class="input-prefix-wrapper">
-                  <span class="input-prefix">+</span>
-                  <input type="number" id="addition" step="0.01" placeholder="e.g. 10.00">
-                </div>
-              </div>
-            </div>
-
-            <!-- Split Pricing Modifiers (Split Mode) -->
-            <div id="split-pricing-container" style="display: none; margin-bottom: 18px;">
-              <div class="form-row" style="margin-bottom: 12px;">
+              <!-- Rule Type and Pricing Mode -->
+              <div class="form-row">
                 <div class="form-group col">
-                  <label for="split-method">Calculation Method</label>
-                  <select id="split-method">
-                    <option value="direct">Direct Multipliers (Mon-Thu / Fri-Sat / Sun)</option>
-                    <option value="target">Target Prices (P0 & Target Prices)</option>
+                  <label for="rule-type">Rule Type</label>
+                  <select id="rule-type">
+                    <option value="targetDate">targetDate</option>
+                  </select>
+                </div>
+                <div class="form-group col">
+                  <label for="pricing-mode">Pricing Mode</label>
+                  <select id="pricing-mode">
+                    <option value="fixed">Fixed Multiplier</option>
+                    <option value="split">Weekday / Weekend Split</option>
                   </select>
                 </div>
               </div>
 
-              <!-- Direct Multipliers Sub-Container -->
-              <div id="split-direct-container">
+              <!-- Date Range -->
+              <div class="form-group">
+                <label>Date Range <span class="required">*</span></label>
+                <div class="date-range-inputs">
+                  <div class="date-input-wrapper">
+                    <span class="date-label">Start</span>
+                    <input type="date" id="start-date" required>
+                  </div>
+                  <div class="date-input-wrapper">
+                    <span class="date-label">End</span>
+                    <input type="date" id="end-date" required>
+                  </div>
+                </div>
+                <div class="error-msg" id="date-range-error">Start date cannot be after end date.</div>
+
+                <!-- Date Helpers -->
+                <div class="date-helpers">
+                  <button type="button" class="btn btn-helper" data-period="today">Today</button>
+                  <button type="button" class="btn btn-helper" data-period="tomorrow">Tomorrow</button>
+                  <button type="button" class="btn btn-helper" data-period="weekend">This Weekend</button>
+                  <button type="button" class="btn btn-helper" data-period="next7">Next 7 Days</button>
+                  <button type="button" class="btn btn-helper" data-period="next30">Next 30 Days (1 Month)</button>
+                </div>
+              </div>
+
+              <!-- Fixed Pricing Modifiers (Fixed Mode) -->
+              <div class="form-row" id="fixed-pricing-container">
+                <div class="form-group col">
+                  <label for="multiplier">
+                    Multiplier <span class="required">*</span>
+                  </label>
+                  <div class="input-prefix-wrapper">
+                    <span class="input-prefix">×</span>
+                    <input type="number" id="multiplier" step="0.01" min="0.01" placeholder="e.g. 1.30" required>
+                  </div>
+                  <div class="error-msg" id="multiplier-error">Enter a numeric value up to 2 decimal places.</div>
+                </div>
+
+                <div class="form-group col">
+                  <label for="addition">Addition (Optional)</label>
+                  <div class="input-prefix-wrapper">
+                    <span class="input-prefix">+</span>
+                    <input type="number" id="addition" step="0.01" placeholder="e.g. 10.00">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Split Pricing Modifiers (Split Mode) -->
+              <div id="split-pricing-container" style="display: none; margin-bottom: 18px;">
                 <div class="form-row" style="margin-bottom: 12px;">
                   <div class="form-group col">
-                    <label for="split-direct-weekend-behavior">Day Group Target</label>
-                    <select id="split-direct-weekend-behavior">
-                      <option value="include">All Days (Mon–Thu, Friday, Saturday, Sunday)</option>
-                      <option value="weekdays_only">Weekdays Only (Mon–Thu, Skip Fri–Sat–Sun)</option>
-                      <option value="weekends_only">Weekends Only (Fri, Sat, Sun, Skip Mon–Thu)</option>
+                    <label for="split-method">Calculation Method</label>
+                    <select id="split-method">
+                      <option value="direct">Direct Multipliers (Mon-Thu / Fri-Sat / Sun)</option>
+                      <option value="target">Target Prices (P0 & Target Prices)</option>
                     </select>
                   </div>
                 </div>
-                <div class="form-row">
-                  <div class="form-group col" id="split-direct-mon-thu-wrapper">
-                    <label for="split-direct-mon-thu">Mon–Thu Multiplier <span class="required">*</span></label>
-                    <div class="input-prefix-wrapper">
-                      <span class="input-prefix">×</span>
-                      <input type="number" id="split-direct-mon-thu" step="0.01" min="0.01" placeholder="e.g. 1.10">
+
+                <!-- Direct Multipliers Sub-Container -->
+                <div id="split-direct-container">
+                  <div class="form-row" style="margin-bottom: 12px;">
+                    <div class="form-group col">
+                      <label for="split-direct-weekend-behavior">Day Group Target</label>
+                      <select id="split-direct-weekend-behavior">
+                        <option value="include">All Days (Mon–Thu, Friday, Saturday, Sunday)</option>
+                        <option value="weekdays_only">Weekdays Only (Mon–Thu, Skip Fri–Sat–Sun)</option>
+                        <option value="weekends_only">Weekends Only (Fri, Sat, Sun, Skip Mon–Thu)</option>
+                      </select>
                     </div>
                   </div>
-                  <div class="form-group col" id="split-direct-fri-wrapper">
-                    <label for="split-direct-fri">Friday Multiplier <span class="required">*</span></label>
-                    <div class="input-prefix-wrapper">
-                      <span class="input-prefix">×</span>
-                      <input type="number" id="split-direct-fri" step="0.01" min="0.01" placeholder="e.g. 1.25">
+                  <div class="form-row">
+                    <div class="form-group col" id="split-direct-mon-thu-wrapper">
+                      <label for="split-direct-mon-thu">Mon–Thu Multiplier <span class="required">*</span></label>
+                      <div class="input-prefix-wrapper">
+                        <span class="input-prefix">×</span>
+                        <input type="number" id="split-direct-mon-thu" step="0.01" min="0.01" placeholder="e.g. 1.10">
+                      </div>
+                    </div>
+                    <div class="form-group col" id="split-direct-fri-wrapper">
+                      <label for="split-direct-fri">Friday Multiplier <span class="required">*</span></label>
+                      <div class="input-prefix-wrapper">
+                        <span class="input-prefix">×</span>
+                        <input type="number" id="split-direct-fri" step="0.01" min="0.01" placeholder="e.g. 1.25">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-row" id="split-direct-saturday-row">
+                    <div class="form-group col">
+                      <label for="split-direct-saturday-behavior">Saturday Behavior</label>
+                      <select id="split-direct-saturday-behavior">
+                        <option value="custom">Use Custom Saturday Multiplier</option>
+                        <option value="same">Same as Friday Multiplier</option>
+                      </select>
+                    </div>
+                    <div class="form-group col" id="split-direct-sat-wrapper">
+                      <label for="split-direct-sat">Saturday Multiplier <span class="required">*</span></label>
+                      <div class="input-prefix-wrapper">
+                        <span class="input-prefix">×</span>
+                        <input type="number" id="split-direct-sat" step="0.01" min="0.01" placeholder="e.g. 1.30">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-row" id="split-direct-sunday-row">
+                    <div class="form-group col">
+                      <label for="split-direct-sunday-behavior">Sunday Behavior</label>
+                      <select id="split-direct-sunday-behavior">
+                        <option value="custom">Use Custom Sunday Multiplier</option>
+                        <option value="skip">Skip Sunday Entirely</option>
+                      </select>
+                    </div>
+                    <div class="form-group col" id="split-direct-sunday-wrapper">
+                      <label for="split-direct-sunday">Sunday Multiplier <span class="required">*</span></label>
+                      <div class="input-prefix-wrapper">
+                        <span class="input-prefix">×</span>
+                        <input type="number" id="split-direct-sunday" step="0.01" min="0.01" placeholder="e.g. 1.05">
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div class="form-row" id="split-direct-saturday-row">
-                  <div class="form-group col">
-                    <label for="split-direct-saturday-behavior">Saturday Behavior</label>
-                    <select id="split-direct-saturday-behavior">
-                      <option value="custom">Use Custom Saturday Multiplier</option>
-                      <option value="same">Same as Friday Multiplier</option>
-                    </select>
-                  </div>
-                  <div class="form-group col" id="split-direct-sat-wrapper">
-                    <label for="split-direct-sat">Saturday Multiplier <span class="required">*</span></label>
-                    <div class="input-prefix-wrapper">
-                      <span class="input-prefix">×</span>
-                      <input type="number" id="split-direct-sat" step="0.01" min="0.01" placeholder="e.g. 1.30">
+
+                <!-- Target Prices Sub-Container -->
+                <div id="split-target-container" style="display: none;">
+                  <div class="form-row" style="margin-bottom: 12px;">
+                    <div class="form-group col">
+                      <label for="split-target-weekend-behavior">Day Group Target</label>
+                      <select id="split-target-weekend-behavior">
+                        <option value="include">All Days (Mon–Thu, Friday, Saturday, Sunday)</option>
+                        <option value="weekdays_only">Weekdays Only (Mon–Thu, Skip Fri–Sat–Sun)</option>
+                        <option value="weekends_only">Weekends Only (Fri, Sat, Sun, Skip Mon–Thu)</option>
+                      </select>
                     </div>
                   </div>
-                </div>
-                <div class="form-row" id="split-direct-sunday-row">
-                  <div class="form-group col">
-                    <label for="split-direct-sunday-behavior">Sunday Behavior</label>
-                    <select id="split-direct-sunday-behavior">
-                      <option value="custom">Use Custom Sunday Multiplier</option>
-                      <option value="skip">Skip Sunday Entirely</option>
-                    </select>
-                  </div>
-                  <div class="form-group col" id="split-direct-sunday-wrapper">
-                    <label for="split-direct-sunday">Sunday Multiplier <span class="required">*</span></label>
-                    <div class="input-prefix-wrapper">
-                      <span class="input-prefix">×</span>
-                      <input type="number" id="split-direct-sunday" step="0.01" min="0.01" placeholder="e.g. 1.05">
+                  <div class="form-row">
+                    <div class="form-group col">
+                      <label for="split-base-price">P0 Price <span class="required">*</span></label>
+                      <input type="number" id="split-base-price" placeholder="e.g. 2000" step="1">
+                      <div class="error-msg" id="split-base-price-error">Enter a positive P0 price.</div>
                     </div>
+                    <div class="form-group col">
+                      <label for="split-flexibility">Flexibility</label>
+                      <select id="split-flexibility">
+                        <option value="flex">Flex (divided by 0.72)</option>
+                        <option value="non-flex">Non-Flex (divided by 0.69)</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col" id="split-target-mon-thu-wrapper">
+                      <label for="split-weekday-target">Mon-Thu Target Price <span class="required">*</span></label>
+                      <input type="number" id="split-weekday-target" placeholder="e.g. 1800" step="1">
+                      <div class="error-msg" id="split-weekday-target-error">Enter a target price.</div>
+                    </div>
+                    <div class="form-group col" id="split-target-friday-wrapper">
+                      <label for="split-friday-target">Friday Target Price <span class="required">*</span></label>
+                      <input type="number" id="split-friday-target" placeholder="e.g. 2200" step="1">
+                      <div class="error-msg" id="split-friday-target-error">Enter a target price.</div>
+                    </div>
+                  </div>
+                  <div class="form-row" id="split-target-saturday-row">
+                    <div class="form-group col">
+                      <label for="split-saturday-behavior">Saturday Behavior</label>
+                      <select id="split-saturday-behavior">
+                        <option value="custom">Use Custom Saturday Target</option>
+                        <option value="same">Same as Friday Target</option>
+                      </select>
+                    </div>
+                    <div class="form-group col" id="split-saturday-target-wrapper">
+                      <label for="split-saturday-target">Saturday Target Price <span class="required">*</span></label>
+                      <input type="number" id="split-saturday-target" placeholder="e.g. 2400" step="1">
+                      <div class="error-msg" id="split-saturday-target-error">Enter a target price.</div>
+                    </div>
+                  </div>
+                  <div class="form-row" id="split-target-sunday-row">
+                    <div class="form-group col">
+                      <label for="split-sunday-behavior">Sunday Behavior</label>
+                      <select id="split-sunday-behavior">
+                        <option value="custom">Use Custom Target Price</option>
+                        <option value="skip">Skip Sunday Entirely</option>
+                      </select>
+                    </div>
+                    <div class="form-group col" id="split-sunday-target-wrapper">
+                      <label for="split-sunday-target">Sunday Target Price <span class="required">*</span></label>
+                      <input type="number" id="split-sunday-target" placeholder="e.g. 2000" step="1">
+                      <div class="error-msg" id="split-sunday-target-error">Enter a target price.</div>
+                    </div>
+                  </div>
+                  <!-- Live Split Multipliers preview -->
+                  <div class="split-preview-text"
+                    style="font-size: 0.75rem; color: var(--accent-secondary); margin-top: 10px; font-weight: 600; background: #fff7ed; padding: 8px 12px; border-radius: 6px; border: 1px solid #fed7aa;">
+                    Live Preview Multipliers: Mon-Thu: <span id="preview-wd"
+                      style="color: var(--text-primary);">-</span> |
+                    Fri: <span id="preview-fr" style="color: var(--text-primary);">-</span> | Sat: <span id="preview-sa"
+                      style="color: var(--text-primary);">-</span> | Sun: <span id="preview-su"
+                      style="color: var(--text-primary);">-</span>
                   </div>
                 </div>
               </div>
 
-              <!-- Target Prices Sub-Container -->
-              <div id="split-target-container" style="display: none;">
-                <div class="form-row" style="margin-bottom: 12px;">
-                  <div class="form-group col">
-                    <label for="split-target-weekend-behavior">Day Group Target</label>
-                    <select id="split-target-weekend-behavior">
-                      <option value="include">All Days (Mon–Thu, Friday, Saturday, Sunday)</option>
-                      <option value="weekdays_only">Weekdays Only (Mon–Thu, Skip Fri–Sat–Sun)</option>
-                      <option value="weekends_only">Weekends Only (Fri, Sat, Sun, Skip Mon–Thu)</option>
-                    </select>
-                  </div>
+              <!-- Price Range Modifiers -->
+              <div class="form-row">
+                <div class="form-group col">
+                  <label for="start-price">Min Price (Optional)</label>
+                  <input type="number" id="start-price" step="0.01" placeholder="Start Price">
                 </div>
-                <div class="form-row">
-                  <div class="form-group col">
-                    <label for="split-base-price">P0 Price <span class="required">*</span></label>
-                    <input type="number" id="split-base-price" placeholder="e.g. 2000" step="1">
-                    <div class="error-msg" id="split-base-price-error">Enter a positive P0 price.</div>
-                  </div>
-                  <div class="form-group col">
-                    <label for="split-flexibility">Flexibility</label>
-                    <select id="split-flexibility">
-                      <option value="flex">Flex (divided by 0.72)</option>
-                      <option value="non-flex">Non-Flex (divided by 0.69)</option>
-                    </select>
-                  </div>
+
+                <div class="form-group col">
+                  <label for="end-price">Max Price (Optional)</label>
+                  <input type="number" id="end-price" step="0.01" placeholder="End Price">
                 </div>
-                <div class="form-row">
-                  <div class="form-group col" id="split-target-mon-thu-wrapper">
-                    <label for="split-weekday-target">Mon-Thu Target Price <span class="required">*</span></label>
-                    <input type="number" id="split-weekday-target" placeholder="e.g. 1800" step="1">
-                    <div class="error-msg" id="split-weekday-target-error">Enter a target price.</div>
-                  </div>
-                  <div class="form-group col" id="split-target-friday-wrapper">
-                    <label for="split-friday-target">Friday Target Price <span class="required">*</span></label>
-                    <input type="number" id="split-friday-target" placeholder="e.g. 2200" step="1">
-                    <div class="error-msg" id="split-friday-target-error">Enter a target price.</div>
-                  </div>
+              </div>
+
+              <div class="form-group" style="margin-top: 15px; margin-bottom: 15px;">
+                <label class="checkbox-label"
+                  style="display: flex; align-items: center; gap: 8px; font-weight: 500; cursor: pointer; user-select: none;">
+                  <input type="checkbox" id="chk-append-rules"
+                    style="width: 16px; height: 16px; accent-color: var(--accent-primary);">
+                  <span>Append generated rules to existing table (don't clear previous)</span>
+                </label>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block">
+                <i data-lucide="plus-circle"></i>
+                <span>Generate Rule Rows</span>
+              </button>
+            </form>
+          </div>
+
+          <!-- Tab 2: Calculator -->
+          <div class="tab-content" id="tab-calc">
+            <div class="form-group">
+              <label for="calc-ask-price">Ask Price <span class="required">*</span></label>
+              <input type="number" id="calc-ask-price" placeholder="e.g. 5000" step="0.01" required>
+            </div>
+
+            <div class="form-group">
+              <label for="calc-flexibility">Flexibility</label>
+              <select id="calc-flexibility">
+                <option value="flex">Flex (divided by 0.72)</option>
+                <option value="non-flex">Non-Flex (divided by 0.69)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>P-Values (P0 to P5)</label>
+              <div class="p-values-grid">
+                <div class="p-val-col">
+                  <label for="calc-p0">P0</label>
+                  <input type="number" id="calc-p0" placeholder="P0" step="1">
                 </div>
-                <div class="form-row" id="split-target-saturday-row">
-                  <div class="form-group col">
-                    <label for="split-saturday-behavior">Saturday Behavior</label>
-                    <select id="split-saturday-behavior">
-                      <option value="custom">Use Custom Saturday Target</option>
-                      <option value="same">Same as Friday Target</option>
-                    </select>
-                  </div>
-                  <div class="form-group col" id="split-saturday-target-wrapper">
-                    <label for="split-saturday-target">Saturday Target Price <span class="required">*</span></label>
-                    <input type="number" id="split-saturday-target" placeholder="e.g. 2400" step="1">
-                    <div class="error-msg" id="split-saturday-target-error">Enter a target price.</div>
-                  </div>
+                <div class="p-val-col">
+                  <label for="calc-p1">P1</label>
+                  <input type="number" id="calc-p1" placeholder="P1" step="1">
                 </div>
-                <div class="form-row" id="split-target-sunday-row">
-                  <div class="form-group col">
-                    <label for="split-sunday-behavior">Sunday Behavior</label>
-                    <select id="split-sunday-behavior">
-                      <option value="custom">Use Custom Target Price</option>
-                      <option value="skip">Skip Sunday Entirely</option>
-                    </select>
-                  </div>
-                  <div class="form-group col" id="split-sunday-target-wrapper">
-                    <label for="split-sunday-target">Sunday Target Price <span class="required">*</span></label>
-                    <input type="number" id="split-sunday-target" placeholder="e.g. 2000" step="1">
-                    <div class="error-msg" id="split-sunday-target-error">Enter a target price.</div>
-                  </div>
+                <div class="p-val-col">
+                  <label for="calc-p2">P2</label>
+                  <input type="number" id="calc-p2" placeholder="P2" step="1">
                 </div>
-                <!-- Live Split Multipliers preview -->
-                <div class="split-preview-text"
-                  style="font-size: 0.75rem; color: var(--accent-secondary); margin-top: 10px; font-weight: 600; background: #fff7ed; padding: 8px 12px; border-radius: 6px; border: 1px solid #fed7aa;">
-                  Live Preview Multipliers: Mon-Thu: <span id="preview-wd" style="color: var(--text-primary);">-</span> |
-                  Fri: <span id="preview-fr" style="color: var(--text-primary);">-</span> | Sat: <span
-                    id="preview-sa" style="color: var(--text-primary);">-</span> | Sun: <span
-                    id="preview-su" style="color: var(--text-primary);">-</span>
+              </div>
+              <div class="p-values-grid" style="margin-top: 10px;">
+                <div class="p-val-col">
+                  <label for="calc-p3">P3</label>
+                  <input type="number" id="calc-p3" placeholder="P3" step="1">
+                </div>
+                <div class="p-val-col">
+                  <label for="calc-p4">P4</label>
+                  <input type="number" id="calc-p4" placeholder="P4" step="1">
+                </div>
+                <div class="p-val-col">
+                  <label for="calc-p5">P5</label>
+                  <input type="number" id="calc-p5" placeholder="P5" step="1">
                 </div>
               </div>
             </div>
 
-            <!-- Price Range Modifiers -->
-            <div class="form-row">
-              <div class="form-group col">
-                <label for="start-price">Min Price (Optional)</label>
-                <input type="number" id="start-price" step="0.01" placeholder="Start Price">
-              </div>
-
-              <div class="form-group col">
-                <label for="end-price">Max Price (Optional)</label>
-                <input type="number" id="end-price" step="0.01" placeholder="End Price">
+            <div id="calc-results-section" style="margin-top: 16px; display: none;">
+              <h3 style="font-size: 0.9rem; margin-bottom: 8px; color: var(--text-secondary);">Calculated Factors:</h3>
+              <div class="calc-results-table-wrapper">
+                <table class="calc-results-table">
+                  <thead>
+                    <tr>
+                      <th>Tier</th>
+                      <th>Value</th>
+                      <th>TDF Factor</th>
+                      <th width="40">Use</th>
+                    </tr>
+                  </thead>
+                  <tbody id="calc-results-body">
+                    <!-- Calculated rows will go here -->
+                  </tbody>
+                </table>
               </div>
             </div>
+          </div>
+        </section>
+      </div>
 
-            <div class="form-group" style="margin-top: 15px; margin-bottom: 15px;">
-              <label class="checkbox-label" style="display: flex; align-items: center; gap: 8px; font-weight: 500; cursor: pointer; user-select: none;">
-                <input type="checkbox" id="chk-append-rules" style="width: 16px; height: 16px; accent-color: var(--accent-primary);">
-                <span>Append generated rules to existing table (don't clear previous)</span>
-              </label>
-            </div>
-
-            <button type="submit" class="btn btn-primary btn-block">
-              <i data-lucide="plus-circle"></i>
-              <span>Generate Rule Rows</span>
+      <!-- LIVE PREVIEW TABLE CARD -->
+      <section class="card preview-card" style="display: none;">
+        <div class="card-header preview-header">
+          <div class="header-left">
+            <i data-lucide="table" class="header-icon"></i>
+            <h2>Rules Preview</h2>
+          </div>
+          <div class="header-actions">
+            <button id="btn-clear" class="btn btn-danger btn-sm" disabled>
+              <i data-lucide="trash-2"></i>
+              <span>Clear Table</span>
             </button>
-          </form>
+          </div>
         </div>
 
-        <!-- Tab 2: Calculator -->
-        <div class="tab-content" id="tab-calc">
-          <div class="form-group">
-            <label for="calc-ask-price">Ask Price <span class="required">*</span></label>
-            <input type="number" id="calc-ask-price" placeholder="e.g. 5000" step="0.01" required>
+        <!-- Stats Bar -->
+        <div class="stats-bar">
+          <div class="stat-item">
+            <span class="stat-label">Unique Hotels</span>
+            <span class="stat-value" id="stat-hotels">0</span>
           </div>
-
-          <div class="form-group">
-            <label for="calc-flexibility">Flexibility</label>
-            <select id="calc-flexibility">
-              <option value="flex">Flex (divided by 0.72)</option>
-              <option value="non-flex">Non-Flex (divided by 0.69)</option>
-            </select>
+          <div class="stat-item">
+            <span class="stat-label">Days Covered</span>
+            <span class="stat-value" id="stat-days">0</span>
           </div>
+          <div class="stat-item">
+            <span class="stat-label">Total Rows</span>
+            <span class="stat-value text-accent" id="stat-rows">0</span>
+          </div>
+        </div>
 
-          <div class="form-group">
-            <label>P-Values (P0 to P5)</label>
-            <div class="p-values-grid">
-              <div class="p-val-col">
-                <label for="calc-p0">P0</label>
-                <input type="number" id="calc-p0" placeholder="P0" step="1">
-              </div>
-              <div class="p-val-col">
-                <label for="calc-p1">P1</label>
-                <input type="number" id="calc-p1" placeholder="P1" step="1">
-              </div>
-              <div class="p-val-col">
-                <label for="calc-p2">P2</label>
-                <input type="number" id="calc-p2" placeholder="P2" step="1">
-              </div>
+        <!-- Joined Hotels Box -->
+        <div id="joined-hotels-box" class="joined-hotels-box" style="display: none;">
+          <div class="joined-hotels-header">
+            <div class="header-title">
+              <i data-lucide="hash" class="header-icon-sm"></i>
+              <span>Joined Hotel IDs (for Hawkeye Admin)</span>
             </div>
-            <div class="p-values-grid" style="margin-top: 10px;">
-              <div class="p-val-col">
-                <label for="calc-p3">P3</label>
-                <input type="number" id="calc-p3" placeholder="P3" step="1">
-              </div>
-              <div class="p-val-col">
-                <label for="calc-p4">P4</label>
-                <input type="number" id="calc-p4" placeholder="P4" step="1">
-              </div>
-              <div class="p-val-col">
-                <label for="calc-p5">P5</label>
-                <input type="number" id="calc-p5" placeholder="P5" step="1">
-              </div>
-            </div>
+            <div id="joined-hotels-header-actions" style="display: flex; align-items: center; gap: 8px;"></div>
           </div>
-
-          <div id="calc-results-section" style="margin-top: 16px; display: none;">
-            <h3 style="font-size: 0.9rem; margin-bottom: 8px; color: var(--text-secondary);">Calculated Factors:</h3>
-            <div class="calc-results-table-wrapper">
-              <table class="calc-results-table">
-                <thead>
-                  <tr>
-                    <th>Tier</th>
-                    <th>Value</th>
-                    <th>TDF Factor</th>
-                    <th width="40">Use</th>
-                  </tr>
-                </thead>
-                <tbody id="calc-results-body">
-                  <!-- Calculated rows will go here -->
-                </tbody>
-              </table>
+          <div id="joined-hotels-container" style="display: flex; flex-direction: column; gap: 10px;">
+            <div class="joined-hotels-body">
+              <input type="text" id="joined-hotels-text" class="joined-hotels-text" readonly
+                placeholder="No hotels generated">
+              <button id="btn-copy-joined" class="btn btn-secondary btn-sm btn-copy-part" title="Copy to Clipboard">
+                <i data-lucide="copy"></i>
+                <span>Copy</span>
+              </button>
             </div>
           </div>
         </div>
-      </section>
-    </div>
 
-    <!-- LIVE PREVIEW TABLE CARD -->
-    <section class="card preview-card" style="display: none;">
-      <div class="card-header preview-header">
-        <div class="header-left">
-          <i data-lucide="table" class="header-icon"></i>
-          <h2>Rules Preview</h2>
+        <!-- Table Wrapper -->
+        <div class="table-container">
+          <table id="preview-table">
+            <thead>
+              <tr>
+                <th>hotel_ID</th>
+                <th>rule_type</th>
+                <th>start_range</th>
+                <th>end_range</th>
+                <th>multiplier</th>
+                <th>addition</th>
+                <th>start_price</th>
+                <th>end_price</th>
+                <th width="60"></th>
+              </tr>
+            </thead>
+            <tbody id="table-body">
+              <!-- Dynamic Rows go here -->
+              <tr class="empty-state-row">
+                <td colspan="9">
+                  <div class="empty-state">
+                    <i data-lucide="inbox"></i>
+                    <p>No rules generated yet</p>
+                    <span>Fill in the parameters and click "Generate Rule Rows" to populate the data.</span>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <div class="header-actions">
-          <button id="btn-clear" class="btn btn-danger btn-sm" disabled>
-            <i data-lucide="trash-2"></i>
-            <span>Clear Table</span>
+
+        <!-- Export / Action Bar -->
+        <div class="export-actions">
+          <button id="btn-copy" class="btn btn-secondary flex-1" disabled>
+            <i data-lucide="clipboard"></i>
+            <span>Copy for Google Sheets</span>
+          </button>
+          <button id="btn-download" class="btn btn-secondary flex-1" disabled>
+            <i data-lucide="download"></i>
+            <span>Download CSV</span>
           </button>
         </div>
-      </div>
-
-      <!-- Stats Bar -->
-      <div class="stats-bar">
-        <div class="stat-item">
-          <span class="stat-label">Unique Hotels</span>
-          <span class="stat-value" id="stat-hotels">0</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-label">Days Covered</span>
-          <span class="stat-value" id="stat-days">0</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-label">Total Rows</span>
-          <span class="stat-value text-accent" id="stat-rows">0</span>
-        </div>
-      </div>
-
-      <!-- Joined Hotels Box -->
-      <div id="joined-hotels-box" class="joined-hotels-box" style="display: none;">
-        <div class="joined-hotels-header">
-          <div class="header-title">
-            <i data-lucide="hash" class="header-icon-sm"></i>
-            <span>Joined Hotel IDs (for Hawkeye Admin)</span>
-          </div>
-          <div id="joined-hotels-header-actions" style="display: flex; align-items: center; gap: 8px;"></div>
-        </div>
-        <div id="joined-hotels-container" style="display: flex; flex-direction: column; gap: 10px;">
-          <div class="joined-hotels-body">
-            <input type="text" id="joined-hotels-text" class="joined-hotels-text" readonly placeholder="No hotels generated">
-            <button id="btn-copy-joined" class="btn btn-secondary btn-sm btn-copy-part" title="Copy to Clipboard">
-              <i data-lucide="copy"></i>
-              <span>Copy</span>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Table Wrapper -->
-      <div class="table-container">
-        <table id="preview-table">
-          <thead>
-            <tr>
-              <th>hotel_ID</th>
-              <th>rule_type</th>
-              <th>start_range</th>
-              <th>end_range</th>
-              <th>multiplier</th>
-              <th>addition</th>
-              <th>start_price</th>
-              <th>end_price</th>
-              <th width="60"></th>
-            </tr>
-          </thead>
-          <tbody id="table-body">
-            <!-- Dynamic Rows go here -->
-            <tr class="empty-state-row">
-              <td colspan="9">
-                <div class="empty-state">
-                  <i data-lucide="inbox"></i>
-                  <p>No rules generated yet</p>
-                  <span>Fill in the parameters and click "Generate Rule Rows" to populate the data.</span>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- Export / Action Bar -->
-      <div class="export-actions">
-        <button id="btn-copy" class="btn btn-secondary flex-1" disabled>
-          <i data-lucide="clipboard"></i>
-          <span>Copy for Google Sheets</span>
-        </button>
-        <button id="btn-download" class="btn btn-secondary flex-1" disabled>
-          <i data-lucide="download"></i>
-          <span>Download CSV</span>
-        </button>
-      </div>
-    </section>
-  </main>
-</div>
+      </section>
+    </main>
+  </div>
 
   <!-- Toast Notification Container -->
   <div id="toast-container" class="toast-container"></div>
@@ -1035,29 +1109,16 @@
       <div class="auth-body">
         <!-- Google One-Tap / Button Container -->
         <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 20px;">
-          <div id="google-signin-btn-container" style="min-height: 44px; display: flex; justify-content: center; width: 100%;"></div>
-        </div>
-
-        <div class="auth-divider">
-          <span>OR SIGN IN WITH WORK EMAIL</span>
-        </div>
-
-        <div class="form-group" style="margin-top: 16px; margin-bottom: 14px;">
-          <label for="auth-input-email">Corporate Email Address</label>
-          <input type="email" id="auth-input-email" placeholder="e.g. name@treebo.com" class="auth-input">
+          <div id="google-signin-btn-container"
+            style="min-height: 44px; display: flex; justify-content: center; width: 100%;"></div>
         </div>
 
         <div id="auth-error-msg" class="auth-error" style="display: none;"></div>
 
-        <button id="btn-auth-signin" class="btn btn-secondary btn-block">
-          <i data-lucide="mail"></i>
-          <span>Continue with Email</span>
-        </button>
-      </div>
-
-      <div class="auth-footer-note">
-        <i data-lucide="lock" style="width: 13px; height: 13px;"></i>
-        <span>Session secured with encrypted JWT tokens &bull; RBAC Protected</span>
+        <div class="auth-footer-note">
+          <i data-lucide="lock" style="width: 13px; height: 13px;"></i>
+          <span>Session secured with encrypted JWT tokens &bull; RBAC Protected</span>
+        </div>
       </div>
     </div>
   </div>
