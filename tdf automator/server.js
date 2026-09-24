@@ -273,7 +273,10 @@ app.get(["/api/me", "/me"], (req, res) => {
     res.json({ authenticated: true, user: req.user });
 });
 
-app.get(["/api/auth/roster", "/auth/roster"], (req, res) => {
+app.get(
+    ["/api/auth/roster", "/auth/roster"],
+    auth.requireRole("Admin"),
+    (req, res) => {
     const list = auth.getRoster().filter(u => u.active).map(u => ({
         id: u.id,
         name: u.name,
@@ -282,6 +285,386 @@ app.get(["/api/auth/roster", "/auth/roster"], (req, res) => {
     }));
     res.json({ success: true, roster: list });
 });
+
+
+// =========================================================================
+// ADMIN ACCESS CONTROL API
+// Google Sheet: Access Control!A:E
+// Columns: ID | Name | Email | Role | Active
+// =========================================================================
+
+const ACCESS_CONTROL_RANGE = "Access Control!A:E";
+
+const ALLOWED_ROLES = [
+    "Admin",
+    "Pricing Manager",
+    "RevOps",
+    "Zonal Ops"
+];
+
+async function getAccessControlRows() {
+    if (!sheetsOAuthClient.credentials.access_token) {
+        throw new Error("Google Sheets authentication is required.");
+    }
+
+    const sheets = google.sheets({
+        version: "v4",
+        auth: sheetsOAuthClient
+    });
+
+    const response = await sheets.spreadsheets.values.get({
+        spreadsheetId: SPREADSHEET_ID,
+        range: ACCESS_CONTROL_RANGE
+    });
+
+    return response.data.values || [];
+}
+
+async function saveAccessControlRows(rows) {
+    if (!sheetsOAuthClient.credentials.access_token) {
+        throw new Error("Google Sheets authentication is required.");
+    }
+
+    const sheets = google.sheets({
+        version: "v4",
+        auth: sheetsOAuthClient
+    });
+
+    await sheets.spreadsheets.values.update({
+        spreadsheetId: SPREADSHEET_ID,
+        range: ACCESS_CONTROL_RANGE,
+        valueInputOption: "USER_ENTERED",
+        requestBody: {
+            values: rows
+        }
+    });
+
+    auth.syncRosterFromSheetRows(rows);
+}
+
+app.get(
+    "/api/admin/access-control",
+    auth.requireRole("Admin"),
+    async (req, res) => {
+        try {
+            const rows = await getAccessControlRows();
+
+            if (rows.length === 0) {
+                return res.json({
+                    success: true,
+                    users: []
+                });
+            }
+
+            const headers = rows[0].map(h =>
+                String(h || "").trim().toLowerCase()
+            );
+
+            const colId = headers.indexOf("id");
+            const colName = headers.indexOf("name");
+            const colEmail = headers.indexOf("email");
+            const colRole = headers.indexOf("role");
+            const colActive = headers.indexOf("active");
+
+            const users = rows
+                .slice(1)
+                .filter(row => row[colEmail])
+                .map(row => ({
+                    id: row[colId] || "",
+                    name: row[colName] || "",
+                    email: String(row[colEmail] || "").trim().toLowerCase(),
+                    role: row[colRole] || "Pricing Manager",
+                    active: String(row[colActive] || "true").toLowerCase() !== "false"
+                }));
+
+            res.json({
+                success: true,
+                users
+            });
+
+        } catch (error) {
+            console.error("Admin Access Control GET error:", error);
+
+            res.status(500).json({
+                success: false,
+                message: error.message
+            });
+        }
+    }
+);
+
+app.post(
+    "/api/admin/access-control",
+    auth.requireRole("Admin"),
+    async (req, res) => {
+        try {
+            const {
+                name,
+                email,
+                role = "Pricing Manager",
+                active = true
+            } = req.body;
+
+            const cleanName = String(name || "").trim();
+            const cleanEmail = String(email || "").trim().toLowerCase();
+            const cleanRole = String(role || "").trim();
+
+            if (!cleanName || !cleanEmail) {
+                return res.status(400).json({
+                    success: false,
+                    message: "Name and email are required."
+                });
+            }
+
+            if (!cleanEmail.includes("@")) {
+                return res.status(400).json({
+                    success: false,
+                    message: "Please provide a valid email address."
+                });
+            }
+
+            if (!ALLOWED_ROLES.includes(cleanRole)) {
+                return res.status(400).json({
+                    success: false,
+                    message: "Invalid role."
+                });
+            }
+
+            const rows = await getAccessControlRows();
+
+            const existingUser = rows
+                .slice(1)
+                .find(row =>
+                    String(row[2] || "").trim().toLowerCase() === cleanEmail
+                );
+
+            if (existingUser) {
+                return res.status(409).json({
+                    success: false,
+                    message: "A user with this email already exists."
+                });
+            }
+
+            const userId = `usr_${Date.now()}`;
+
+            rows.push([
+                userId,
+                cleanName,
+                cleanEmail,
+                cleanRole,
+                active ? "TRUE" : "FALSE"
+            ]);
+
+            await saveAccessControlRows(rows);
+
+            res.json({
+                success: true,
+                message: "User added successfully.",
+                user: {
+                    id: userId,
+                    name: cleanName,
+                    email: cleanEmail,
+                    role: cleanRole,
+                    active: Boolean(active)
+                }
+            });
+
+        } catch (error) {
+            console.error("Admin Access Control POST error:", error);
+
+            res.status(500).json({
+                success: false,
+                message: error.message
+            });
+        }
+    }
+);
+
+app.put(
+    "/api/admin/access-control/:email",
+    auth.requireRole("Admin"),
+    async (req, res) => {
+        try {
+            const originalEmail = decodeURIComponent(req.params.email)
+                .trim()
+                .toLowerCase();
+
+            const {
+                name,
+                email,
+                role,
+                active
+            } = req.body;
+
+            const rows = await getAccessControlRows();
+
+            const rowIndex = rows.findIndex((row, index) =>
+                index > 0 &&
+                String(row[2] || "").trim().toLowerCase() === originalEmail
+            );
+
+            if (rowIndex === -1) {
+                return res.status(404).json({
+                    success: false,
+                    message: "User not found."
+                });
+            }
+
+            const currentRow = rows[rowIndex];
+
+            const updatedName =
+                name !== undefined
+                    ? String(name).trim()
+                    : String(currentRow[1] || "").trim();
+
+            const updatedEmail =
+                email !== undefined
+                    ? String(email).trim().toLowerCase()
+                    : String(currentRow[2] || "").trim().toLowerCase();
+
+            const updatedRole =
+                role !== undefined
+                    ? String(role).trim()
+                    : String(currentRow[3] || "Pricing Manager").trim();
+
+            const updatedActive =
+                active !== undefined
+                    ? Boolean(active)
+                    : String(currentRow[4] || "true").toLowerCase() !== "false";
+
+            if (!updatedName || !updatedEmail) {
+                return res.status(400).json({
+                    success: false,
+                    message: "Name and email are required."
+                });
+            }
+
+            if (!updatedEmail.includes("@")) {
+                return res.status(400).json({
+                    success: false,
+                    message: "Please provide a valid email address."
+                });
+            }
+
+            if (!ALLOWED_ROLES.includes(updatedRole)) {
+                return res.status(400).json({
+                    success: false,
+                    message: "Invalid role."
+                });
+            }
+
+            const duplicate = rows.some((row, index) =>
+                index !== rowIndex &&
+                String(row[2] || "").trim().toLowerCase() === updatedEmail
+            );
+
+            if (duplicate) {
+                return res.status(409).json({
+                    success: false,
+                    message: "Another user already has this email address."
+                });
+            }
+
+            const currentAdminEmail = String(req.user?.email || "")
+                .trim()
+                .toLowerCase();
+
+            if (
+                originalEmail === currentAdminEmail &&
+                !updatedActive
+            ) {
+                return res.status(400).json({
+                    success: false,
+                    message: "You cannot deactivate your own Admin account."
+                });
+            }
+
+            rows[rowIndex] = [
+                currentRow[0] || `usr_${rowIndex}`,
+                updatedName,
+                updatedEmail,
+                updatedRole,
+                updatedActive ? "TRUE" : "FALSE"
+            ];
+
+            await saveAccessControlRows(rows);
+
+            res.json({
+                success: true,
+                message: "User updated successfully.",
+                user: {
+                    id: rows[rowIndex][0],
+                    name: updatedName,
+                    email: updatedEmail,
+                    role: updatedRole,
+                    active: updatedActive
+                }
+            });
+
+        } catch (error) {
+            console.error("Admin Access Control PUT error:", error);
+
+            res.status(500).json({
+                success: false,
+                message: error.message
+            });
+        }
+    }
+);
+
+app.delete(
+    "/api/admin/access-control/:email",
+    auth.requireRole("Admin"),
+    async (req, res) => {
+        try {
+            const email = decodeURIComponent(req.params.email)
+                .trim()
+                .toLowerCase();
+
+            const currentAdminEmail = String(req.user?.email || "")
+                .trim()
+                .toLowerCase();
+
+            if (email === currentAdminEmail) {
+                return res.status(400).json({
+                    success: false,
+                    message: "You cannot deactivate your own Admin account."
+                });
+            }
+
+            const rows = await getAccessControlRows();
+
+            const rowIndex = rows.findIndex((row, index) =>
+                index > 0 &&
+                String(row[2] || "").trim().toLowerCase() === email
+            );
+
+            if (rowIndex === -1) {
+                return res.status(404).json({
+                    success: false,
+                    message: "User not found."
+                });
+            }
+
+            rows[rowIndex][4] = "FALSE";
+
+            await saveAccessControlRows(rows);
+
+            res.json({
+                success: true,
+                message: "User deactivated successfully."
+            });
+
+        } catch (error) {
+            console.error("Admin Access Control DELETE error:", error);
+
+            res.status(500).json({
+                success: false,
+                message: error.message
+            });
+        }
+    }
+);
 
 app.post(["/api/auth/google", "/auth/google"], async (req, res) => {
     try {
