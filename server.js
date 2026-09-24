@@ -101,11 +101,56 @@ sheetsOAuthClient.on("tokens", (tokens) => {
     }
 });
 
+
+
 // =====================================================
 // YOUR GOOGLE SPREADSHEET
 // =====================================================
 
 const SPREADSHEET_ID = process.env.SPREADSHEET_ID || "1HbhMErLh8N2CdkBBJ_ubiv6S2FYx5g1_pNqoFOPo8eE";
+
+// =====================================================
+// LOAD ACCESS CONTROL FROM GOOGLE SHEET
+// =====================================================
+
+async function loadAccessControl() {
+    try {
+        if (!sheetsOAuthClient.credentials.access_token) {
+            console.warn("Access Control: Google Sheets token not available.");
+            return;
+        }
+
+        const sheets = google.sheets({
+            version: "v4",
+            auth: sheetsOAuthClient
+        });
+
+        const response = await sheets.spreadsheets.values.get({
+            spreadsheetId: SPREADSHEET_ID,
+            range: "Access Control!A:Z"
+        });
+
+        const rows = response.data.values || [];
+
+        if (rows.length < 2) {
+            console.warn("Access Control sheet is empty or has no users.");
+            return;
+        }
+
+        auth.syncRosterFromSheetRows(rows);
+
+        console.log(
+            `Access Control loaded: ${rows.length - 1} users`
+        );
+
+    } catch (error) {
+        console.error(
+            "Failed to load Access Control from Google Sheets:",
+            error.message
+        );
+    }
+}
+loadAccessControl();
 
 // =====================================================
 // GOOGLE LOGIN
@@ -169,7 +214,12 @@ app.get(["/oauth2callback", "/api/oauth2callback"], async (req, res) => {
         console.log("Google user:", email);
 
         // Check whether this Google account is approved
-        const user = auth.findUserByEmail(email);
+        let user = auth.findUserByEmail(email);
+
+        if (!user) {
+            await loadAccessControl();
+            user = auth.findUserByEmail(email);
+        }
 
         if (!user) {
             return res.status(403).send(`
@@ -251,7 +301,12 @@ app.post(["/api/auth/google", "/auth/google"], async (req, res) => {
         const name = payload.name || email.split("@")[0];
 
         // Identify role automatically from email without asking who they are
-        const matchedUser = auth.findUserByEmail(email);
+        let matchedUser = auth.findUserByEmail(email);
+
+        if (!matchedUser) {
+            await loadAccessControl();
+            matchedUser = auth.findUserByEmail(email);
+        }
 
         if (!matchedUser) {
             return res.status(403).json({
@@ -282,7 +337,6 @@ app.post(["/api/auth/google", "/auth/google"], async (req, res) => {
         });
     }
 });
-
 
 app.post(["/api/auth/logout", "/auth/logout"], (req, res) => {
     auth.clearSessionCookie(res);
