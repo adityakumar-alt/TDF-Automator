@@ -264,6 +264,12 @@ function showAuthModal() {
       const dashTabBtn = document.querySelector('.tab-btn[data-tab="tab-dashboard"]');
       const hawkeyeTabBtn = document.querySelector('.tab-btn[data-tab="tab-hawkeye-rates"]');
       const rulesTabBtn = document.querySelector('.tab-btn[data-tab="tab-rules"]');
+      const accessControlTabBtn = document.querySelector('.tab-btn[data-tab="tab-access-control"]');
+      const isAdmin = roleLower.includes('admin');
+
+      if (accessControlTabBtn) {
+        accessControlTabBtn.style.display = isAdmin ? 'flex' : 'none';
+      }
 
       if (dashTabBtn) {
         dashTabBtn.style.display = canAccessDashboard ? 'flex' : 'none';

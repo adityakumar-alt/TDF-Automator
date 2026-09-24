@@ -81,6 +81,10 @@
           <i data-lucide="external-link"></i>
           <span class="nav-text">Metabase TDF Dashboard</span>
         </a>
+        <button class="tab-btn admin-only-tab" data-tab="tab-access-control" title="Access Control" style="display: none;">
+          <i data-lucide="shield-check"></i>
+          <span class="nav-text">Access Control</span>
+        </button>
       </nav>
     </aside>
 
@@ -1071,6 +1075,56 @@
         </div>
       </section>
     </main>
+    <!-- Tab: Admin Access Control -->
+    <div class="tab-content" id="tab-access-control" style="display: none;">
+      <div class="card-header">
+        <div class="header-left">
+          <i data-lucide="shield-check" class="header-icon"></i>
+          <div>
+            <h2>Access Control</h2>
+            <p>Manage users and their application access.</p>
+          </div>
+        </div>
+
+        <div class="header-actions">
+          <button id="btn-add-access-user" class="btn btn-primary">
+            <i data-lucide="user-plus"></i>
+            <span>Add User</span>
+          </button>
+        </div>
+      </div>
+
+      <div style="margin: 20px 0;">
+        <input
+          type="text"
+          id="access-control-search"
+          class="form-input"
+          placeholder="Search users by name or email..."
+        >
+      </div>
+
+      <div class="table-container">
+        <table id="access-control-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+
+          <tbody id="access-control-table-body">
+            <tr>
+              <td colspan="5" style="text-align: center; padding: 30px;">
+                Loading users...
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 
   <!-- Toast Notification Container -->
