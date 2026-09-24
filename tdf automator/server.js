@@ -275,7 +275,7 @@ app.get(["/api/me", "/me"], (req, res) => {
 
 app.get(
     ["/api/auth/roster", "/auth/roster"],
-    auth.requireRole("Admin"),
+    auth.requireRole(["Admin"]),
     (req, res) => {
     const list = auth.getRoster().filter(u => u.active).map(u => ({
         id: u.id,
@@ -344,7 +344,7 @@ async function saveAccessControlRows(rows) {
 
 app.get(
     "/api/admin/access-control",
-    auth.requireRole("Admin"),
+    auth.requireRole(["Admin"]),
     async (req, res) => {
         try {
             const rows = await getAccessControlRows();
@@ -395,7 +395,7 @@ app.get(
 
 app.post(
     "/api/admin/access-control",
-    auth.requireRole("Admin"),
+    auth.requireRole(["Admin"]),
     async (req, res) => {
         try {
             const {
@@ -482,7 +482,7 @@ app.post(
 
 app.put(
     "/api/admin/access-control/:email",
-    auth.requireRole("Admin"),
+    auth.requireRole(["Admin"]),
     async (req, res) => {
         try {
             const originalEmail = decodeURIComponent(req.params.email)
@@ -614,7 +614,7 @@ app.put(
 
 app.delete(
     "/api/admin/access-control/:email",
-    auth.requireRole("Admin"),
+    auth.requireRole(["Admin"]),
     async (req, res) => {
         try {
             const email = decodeURIComponent(req.params.email)
@@ -846,3 +846,4 @@ if (!process.env.VERCEL) {
 }
 
 module.exports = app;
+
