@@ -1,0 +1,17 @@
+{
+  "name": "strix-agents",
+  "version": "0.2.1",
+  "description": "Operation Strix: a skill bundle (spec, plan, execute, review) for driving features, enhancements, and bugfixes through a TDD workflow in Claude Code and Google Antigravity.",
+  "author": {
+    "name": "amalhanaja"
+  },
+  "license": "MIT",
+  "keywords": [
+    "antigravity",
+    "strix",
+    "tdd",
+    "spec",
+    "review",
+    "skills"
+  ]
+}

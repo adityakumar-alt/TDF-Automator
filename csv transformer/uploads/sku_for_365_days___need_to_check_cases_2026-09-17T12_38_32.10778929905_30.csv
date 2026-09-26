@@ -1,0 +1,578 @@
+property_code,sku_code,date,min_price,max_price,region,city,original_min_price,pct_diff,alert
+0050789,17,"September 21, 2026","1,666","23,600",West,Pune,"1,695",-1,Need to Check
+0050789,18,"September 21, 2026","1,666","23,600",West,Pune,"1,695",-1,Need to Check
+0050789,19,"September 21, 2026","1,804","23,600",West,Pune,"1,833",-1,Need to Check
+0050789,20,"September 21, 2026","1,804","23,600",West,Pune,"1,833",-1,Need to Check
+0050789,29,"September 21, 2026","2,080","23,600",West,Pune,"2,124",-1,Need to Check
+0050789,30,"September 21, 2026","2,080","23,600",West,Pune,"2,124",-1,Need to Check
+0050789,31,"September 21, 2026","2,080","23,600",West,Pune,"2,124",-1,Need to Check
+0050789,32,"September 21, 2026","2,218","23,600",West,Pune,"2,254",-1,Need to Check
+0050789,33,"September 21, 2026","2,218","23,600",West,Pune,"2,254",-1,Need to Check
+0050789,34,"September 21, 2026","2,218","23,600",West,Pune,"2,254",-1,Need to Check
+0050789,50,"September 21, 2026","1,666","23,600",West,Pune,"1,695",-1,Need to Check
+0050789,57,"September 21, 2026","2,080","23,600",West,Pune,"2,124",-1,Need to Check
+1013662,21,"September 17, 2026","1,553","20,000",West,Shirdi,"1,576",-1,Need to Check
+1013662,22,"September 17, 2026","1,553","20,000",West,Shirdi,"1,576",-1,Need to Check
+1013662,23,"September 17, 2026","1,622","20,000",West,Shirdi,"1,641",-1,Need to Check
+1013662,24,"September 17, 2026","1,622","20,000",West,Shirdi,"1,641",-1,Need to Check
+1013662,39,"September 17, 2026","1,553","20,000",West,Shirdi,"1,576",-1,Need to Check
+1013662,40,"September 17, 2026","1,622","20,000",West,Shirdi,"1,641",-1,Need to Check
+1013662,83,"September 17, 2026","1,553","20,000",West,Shirdi,"1,576",-1,Need to Check
+1197734,17,"September 25, 2026","2,293","23,600",South 1,Alleppey,"2,314",-1,Need to Check
+1197734,17,"September 26, 2026","2,314","23,600",South 1,Alleppey,"2,345",-1,Need to Check
+1197734,17,"September 27, 2026","2,314","23,600",South 1,Alleppey,"2,357",-1,Need to Check
+1197734,18,"September 25, 2026","2,293","23,600",South 1,Alleppey,"2,314",-1,Need to Check
+1197734,18,"September 26, 2026","2,314","23,600",South 1,Alleppey,"2,345",-1,Need to Check
+1197734,18,"September 27, 2026","2,314","23,600",South 1,Alleppey,"2,357",-1,Need to Check
+1197734,19,"September 25, 2026","2,293","23,600",South 1,Alleppey,"2,314",-1,Need to Check
+1197734,19,"September 26, 2026","2,314","23,600",South 1,Alleppey,"2,345",-1,Need to Check
+1197734,19,"September 27, 2026","2,314","23,600",South 1,Alleppey,"2,357",-1,Need to Check
+1197734,20,"September 25, 2026","2,293","23,600",South 1,Alleppey,"2,314",-1,Need to Check
+1197734,20,"September 26, 2026","2,314","23,600",South 1,Alleppey,"2,345",-1,Need to Check
+1197734,20,"September 27, 2026","2,314","23,600",South 1,Alleppey,"2,357",-1,Need to Check
+1197734,21,"September 18, 2026","4,249","23,600",South 1,Alleppey,"4,281",-1,Need to Check
+1197734,22,"September 18, 2026","4,249","23,600",South 1,Alleppey,"4,281",-1,Need to Check
+1197734,23,"September 18, 2026","4,249","23,600",South 1,Alleppey,"4,281",-1,Need to Check
+1197734,24,"September 18, 2026","4,249","23,600",South 1,Alleppey,"4,281",-1,Need to Check
+1197734,39,"September 18, 2026","4,249","23,600",South 1,Alleppey,"4,281",-1,Need to Check
+1197734,40,"September 18, 2026","4,249","23,600",South 1,Alleppey,"4,281",-1,Need to Check
+1197734,50,"September 25, 2026","2,293","23,600",South 1,Alleppey,"2,314",-1,Need to Check
+1197734,50,"September 26, 2026","2,314","23,600",South 1,Alleppey,"2,345",-1,Need to Check
+1197734,50,"September 27, 2026","2,314","23,600",South 1,Alleppey,"2,357",-1,Need to Check
+1197734,83,"September 18, 2026","4,249","23,600",South 1,Alleppey,"4,281",-1,Need to Check
+1416724,15,"September 18, 2026","1,149","23,600",East,Kolkata,"1,161",-1,Need to Check
+1416724,15,"September 19, 2026","1,140","23,600",East,Kolkata,"1,161",-1,Need to Check
+1416724,17,"September 19, 2026","1,244","23,600",East,Kolkata,"1,259",-1,Need to Check
+1416724,18,"September 19, 2026","1,244","23,600",East,Kolkata,"1,259",-1,Need to Check
+1416724,19,"September 19, 2026","1,451","23,600",East,Kolkata,"1,476",-1,Need to Check
+1416724,20,"September 19, 2026","1,451","23,600",East,Kolkata,"1,476",-1,Need to Check
+1416724,21,"September 19, 2026","1,451","23,600",East,Kolkata,"1,476",-1,Need to Check
+1416724,22,"September 19, 2026","1,451","23,600",East,Kolkata,"1,476",-1,Need to Check
+1416724,23,"September 19, 2026","1,589","23,600",East,Kolkata,"1,614",-1,Need to Check
+1416724,24,"September 19, 2026","1,589","23,600",East,Kolkata,"1,614",-1,Need to Check
+1416724,27,"September 19, 2026","1,865","23,600",East,Kolkata,"1,890",-1,Need to Check
+1416724,28,"September 19, 2026","1,865","23,600",East,Kolkata,"1,890",-1,Need to Check
+1416724,39,"September 19, 2026","1,451","23,600",East,Kolkata,"1,476",-1,Need to Check
+1416724,40,"September 19, 2026","1,589","23,600",East,Kolkata,"1,614",-1,Need to Check
+1416724,50,"September 19, 2026","1,244","23,600",East,Kolkata,"1,259",-1,Need to Check
+1416724,83,"September 19, 2026","1,451","23,600",East,Kolkata,"1,476",-1,Need to Check
+1479075,25,"September 19, 2026","1,443","23,600",South 1,Coorg,"1,457",-1,Need to Check
+1479075,26,"September 19, 2026","1,443","23,600",South 1,Coorg,"1,457",-1,Need to Check
+1013662,17,"September 17, 2026","1,346","20,000",West,Shirdi,"1,381",-2,Need to Check
+1013662,18,"September 17, 2026","1,346","20,000",West,Shirdi,"1,381",-2,Need to Check
+1013662,19,"September 17, 2026","1,415","20,000",West,Shirdi,"1,446",-2,Need to Check
+1013662,20,"September 17, 2026","1,415","20,000",West,Shirdi,"1,446",-2,Need to Check
+1013662,50,"September 17, 2026","1,346","20,000",West,Shirdi,"1,381",-2,Need to Check
+1416724,17,"September 18, 2026","1,253","23,600",East,Kolkata,"1,298",-2,Need to Check
+1416724,18,"September 18, 2026","1,253","23,600",East,Kolkata,"1,298",-2,Need to Check
+1416724,19,"September 18, 2026","1,460","23,600",East,Kolkata,"1,505",-2,Need to Check
+1416724,20,"September 18, 2026","1,460","23,600",East,Kolkata,"1,505",-2,Need to Check
+1416724,21,"September 18, 2026","1,460","23,600",East,Kolkata,"1,505",-2,Need to Check
+1416724,22,"September 18, 2026","1,460","23,600",East,Kolkata,"1,505",-2,Need to Check
+1416724,23,"September 18, 2026","1,598","23,600",East,Kolkata,"1,643",-2,Need to Check
+1416724,24,"September 18, 2026","1,598","23,600",East,Kolkata,"1,643",-2,Need to Check
+1416724,27,"September 18, 2026","1,874","23,600",East,Kolkata,"1,919",-2,Need to Check
+1416724,28,"September 18, 2026","1,874","23,600",East,Kolkata,"1,919",-2,Need to Check
+1416724,39,"September 18, 2026","1,460","23,600",East,Kolkata,"1,505",-2,Need to Check
+1416724,40,"September 18, 2026","1,598","23,600",East,Kolkata,"1,643",-2,Need to Check
+1416724,50,"September 18, 2026","1,253","23,600",East,Kolkata,"1,298",-2,Need to Check
+1416724,83,"September 18, 2026","1,460","23,600",East,Kolkata,"1,505",-2,Need to Check
+1929807,19,"September 19, 2026","1,578","23,600",South 2,Vellore,"1,658",-3,Need to Check
+1929807,20,"September 19, 2026","1,578","23,600",South 2,Vellore,"1,658",-3,Need to Check
+0003211,25,"November 29, 2026","2,419","23,600",North 1,Jaipur,"2,567",-4,Need to Check
+0003211,25,"December 15, 2026","2,805","23,600",North 1,Jaipur,"2,980",-4,Need to Check
+0003211,25,"December 16, 2026","2,805","23,600",North 1,Jaipur,"2,980",-4,Need to Check
+0017174,17,"September 22, 2026","2,307","23,600",South 1,Bangalore,"2,429",-4,Need to Check
+0017174,17,"September 23, 2026","2,307","23,600",South 1,Bangalore,"2,429",-4,Need to Check
+0017174,18,"September 22, 2026","2,307","23,600",South 1,Bangalore,"2,429",-4,Need to Check
+0017174,18,"September 23, 2026","2,307","23,600",South 1,Bangalore,"2,429",-4,Need to Check
+0017174,50,"September 22, 2026","2,307","23,600",South 1,Bangalore,"2,429",-4,Need to Check
+0017174,50,"September 23, 2026","2,307","23,600",South 1,Bangalore,"2,429",-4,Need to Check
+0019694,21,"September 22, 2026","2,370","23,600",South 1,Bangalore,"2,516",-4,Need to Check
+0019694,21,"September 23, 2026","2,368","23,600",South 1,Bangalore,"2,516",-4,Need to Check
+0019694,22,"September 22, 2026","2,370","23,600",South 1,Bangalore,"2,516",-4,Need to Check
+0019694,22,"September 23, 2026","2,368","23,600",South 1,Bangalore,"2,516",-4,Need to Check
+0019694,23,"September 22, 2026","2,577","23,600",South 1,Bangalore,"2,726",-4,Need to Check
+0019694,23,"September 23, 2026","2,575","23,600",South 1,Bangalore,"2,726",-4,Need to Check
+0019694,24,"September 22, 2026","2,577","23,600",South 1,Bangalore,"2,726",-4,Need to Check
+0019694,24,"September 23, 2026","2,575","23,600",South 1,Bangalore,"2,726",-4,Need to Check
+0019694,25,"September 22, 2026","2,577","23,600",South 1,Bangalore,"2,726",-4,Need to Check
+0019694,25,"September 23, 2026","2,575","23,600",South 1,Bangalore,"2,726",-4,Need to Check
+0019694,26,"September 22, 2026","2,577","23,600",South 1,Bangalore,"2,726",-4,Need to Check
+0019694,26,"September 23, 2026","2,575","23,600",South 1,Bangalore,"2,726",-4,Need to Check
+0019694,27,"September 22, 2026","2,991","23,600",South 1,Bangalore,"3,146",-4,Need to Check
+0019694,27,"September 23, 2026","2,989","23,600",South 1,Bangalore,"3,146",-4,Need to Check
+0019694,28,"September 22, 2026","2,991","23,600",South 1,Bangalore,"3,146",-4,Need to Check
+0019694,28,"September 23, 2026","2,989","23,600",South 1,Bangalore,"3,146",-4,Need to Check
+0019694,39,"September 22, 2026","2,370","23,600",South 1,Bangalore,"2,516",-4,Need to Check
+0019694,39,"September 23, 2026","2,368","23,600",South 1,Bangalore,"2,516",-4,Need to Check
+0019694,40,"September 22, 2026","2,577","23,600",South 1,Bangalore,"2,726",-4,Need to Check
+0019694,40,"September 23, 2026","2,575","23,600",South 1,Bangalore,"2,726",-4,Need to Check
+0019694,83,"September 22, 2026","2,370","23,600",South 1,Bangalore,"2,516",-4,Need to Check
+0019694,83,"September 23, 2026","2,368","23,600",South 1,Bangalore,"2,516",-4,Need to Check
+0045959,19,"October 30, 2026","1,782","20,000",South 2,Hyderabad,"1,882",-4,Need to Check
+0045959,19,"October 31, 2026","1,777","20,000",South 2,Hyderabad,"1,882",-4,Need to Check
+0045959,20,"October 30, 2026","1,782","20,000",South 2,Hyderabad,"1,882",-4,Need to Check
+0045959,20,"October 31, 2026","1,777","20,000",South 2,Hyderabad,"1,882",-4,Need to Check
+0045959,21,"October 17, 2026","1,861","20,000",South 2,Hyderabad,"1,980",-4,Need to Check
+0045959,21,"October 18, 2026","1,879","20,000",South 2,Hyderabad,"1,980",-4,Need to Check
+0045959,21,"October 19, 2026","1,879","20,000",South 2,Hyderabad,"1,980",-4,Need to Check
+0045959,21,"October 20, 2026","1,879","20,000",South 2,Hyderabad,"1,980",-4,Need to Check
+0045959,21,"October 21, 2026","1,879","20,000",South 2,Hyderabad,"1,980",-4,Need to Check
+0045959,21,"October 22, 2026","1,879","20,000",South 2,Hyderabad,"1,980",-4,Need to Check
+0045959,21,"October 27, 2026","1,879","20,000",South 2,Hyderabad,"1,980",-4,Need to Check
+0045959,21,"October 28, 2026","1,882","20,000",South 2,Hyderabad,"1,980",-4,Need to Check
+0045959,21,"October 29, 2026","1,884","20,000",South 2,Hyderabad,"1,980",-4,Need to Check
+0045959,21,"November 1, 2026","1,879","20,000",South 2,Hyderabad,"1,980",-4,Need to Check
+0045959,21,"November 2, 2026","1,879","20,000",South 2,Hyderabad,"1,980",-4,Need to Check
+0045959,21,"November 3, 2026","1,879","20,000",South 2,Hyderabad,"1,980",-4,Need to Check
+0045959,21,"November 4, 2026","1,879","20,000",South 2,Hyderabad,"1,980",-4,Need to Check
+0045959,21,"November 5, 2026","1,879","20,000",South 2,Hyderabad,"1,980",-4,Need to Check
+0045959,21,"November 6, 2026","1,879","20,000",South 2,Hyderabad,"1,980",-4,Need to Check
+0045959,21,"November 7, 2026","1,879","20,000",South 2,Hyderabad,"1,980",-4,Need to Check
+0045959,21,"November 8, 2026","1,879","20,000",South 2,Hyderabad,"1,980",-4,Need to Check
+0045959,21,"November 9, 2026","1,879","20,000",South 2,Hyderabad,"1,980",-4,Need to Check
+0045959,21,"November 10, 2026","1,879","20,000",South 2,Hyderabad,"1,980",-4,Need to Check
+0045959,21,"November 11, 2026","1,879","20,000",South 2,Hyderabad,"1,980",-4,Need to Check
+0045959,21,"November 12, 2026","1,879","20,000",South 2,Hyderabad,"1,980",-4,Need to Check
+0045959,21,"November 13, 2026","1,879","20,000",South 2,Hyderabad,"1,980",-4,Need to Check
+0045959,21,"November 14, 2026","1,879","20,000",South 2,Hyderabad,"1,980",-4,Need to Check
+0045959,21,"December 15, 2026","1,861","20,000",South 2,Hyderabad,"1,980",-4,Need to Check
+0045959,21,"December 16, 2026","1,861","20,000",South 2,Hyderabad,"1,980",-4,Need to Check
+0045959,22,"October 17, 2026","1,861","20,000",South 2,Hyderabad,"1,980",-4,Need to Check
+0045959,22,"October 18, 2026","1,879","20,000",South 2,Hyderabad,"1,980",-4,Need to Check
+0045959,22,"October 19, 2026","1,879","20,000",South 2,Hyderabad,"1,980",-4,Need to Check
+0045959,22,"October 20, 2026","1,879","20,000",South 2,Hyderabad,"1,980",-4,Need to Check
+0045959,22,"October 21, 2026","1,879","20,000",South 2,Hyderabad,"1,980",-4,Need to Check
+0045959,22,"October 22, 2026","1,879","20,000",South 2,Hyderabad,"1,980",-4,Need to Check
+0045959,22,"October 27, 2026","1,879","20,000",South 2,Hyderabad,"1,980",-4,Need to Check
+0045959,22,"October 28, 2026","1,882","20,000",South 2,Hyderabad,"1,980",-4,Need to Check
+0045959,22,"October 29, 2026","1,884","20,000",South 2,Hyderabad,"1,980",-4,Need to Check
+0045959,22,"November 1, 2026","1,879","20,000",South 2,Hyderabad,"1,980",-4,Need to Check
+0045959,22,"November 2, 2026","1,879","20,000",South 2,Hyderabad,"1,980",-4,Need to Check
+0045959,22,"November 3, 2026","1,879","20,000",South 2,Hyderabad,"1,980",-4,Need to Check
+0045959,22,"November 4, 2026","1,879","20,000",South 2,Hyderabad,"1,980",-4,Need to Check
+0045959,22,"November 5, 2026","1,879","20,000",South 2,Hyderabad,"1,980",-4,Need to Check
+0045959,22,"November 6, 2026","1,879","20,000",South 2,Hyderabad,"1,980",-4,Need to Check
+0045959,22,"November 7, 2026","1,879","20,000",South 2,Hyderabad,"1,980",-4,Need to Check
+0045959,22,"November 8, 2026","1,879","20,000",South 2,Hyderabad,"1,980",-4,Need to Check
+0045959,22,"November 9, 2026","1,879","20,000",South 2,Hyderabad,"1,980",-4,Need to Check
+0045959,22,"November 10, 2026","1,879","20,000",South 2,Hyderabad,"1,980",-4,Need to Check
+0045959,22,"November 11, 2026","1,879","20,000",South 2,Hyderabad,"1,980",-4,Need to Check
+0045959,22,"November 12, 2026","1,879","20,000",South 2,Hyderabad,"1,980",-4,Need to Check
+0045959,22,"November 13, 2026","1,879","20,000",South 2,Hyderabad,"1,980",-4,Need to Check
+0045959,22,"November 14, 2026","1,879","20,000",South 2,Hyderabad,"1,980",-4,Need to Check
+0045959,22,"December 15, 2026","1,861","20,000",South 2,Hyderabad,"1,980",-4,Need to Check
+0045959,22,"December 16, 2026","1,861","20,000",South 2,Hyderabad,"1,980",-4,Need to Check
+0045959,23,"October 18, 2026","1,983","20,000",South 2,Hyderabad,"2,110",-4,Need to Check
+0045959,23,"October 19, 2026","1,983","20,000",South 2,Hyderabad,"2,110",-4,Need to Check
+0045959,23,"October 20, 2026","1,983","20,000",South 2,Hyderabad,"2,110",-4,Need to Check
+0045959,23,"October 21, 2026","1,983","20,000",South 2,Hyderabad,"2,110",-4,Need to Check
+0045959,23,"October 22, 2026","1,983","20,000",South 2,Hyderabad,"2,110",-4,Need to Check
+0045959,23,"October 23, 2026","1,990","20,000",South 2,Hyderabad,"2,110",-4,Need to Check
+0045959,23,"October 24, 2026","1,990","20,000",South 2,Hyderabad,"2,110",-4,Need to Check
+0045959,23,"October 26, 2026","1,990","20,000",South 2,Hyderabad,"2,110",-4,Need to Check
+0045959,23,"October 27, 2026","1,983","20,000",South 2,Hyderabad,"2,110",-4,Need to Check
+0045959,23,"October 28, 2026","1,985","20,000",South 2,Hyderabad,"2,110",-4,Need to Check
+0045959,23,"October 29, 2026","1,987","20,000",South 2,Hyderabad,"2,110",-4,Need to Check
+0045959,23,"November 1, 2026","1,983","20,000",South 2,Hyderabad,"2,110",-4,Need to Check
+0045959,23,"November 2, 2026","1,983","20,000",South 2,Hyderabad,"2,110",-4,Need to Check
+0045959,23,"November 3, 2026","1,983","20,000",South 2,Hyderabad,"2,110",-4,Need to Check
+0045959,23,"November 4, 2026","1,983","20,000",South 2,Hyderabad,"2,110",-4,Need to Check
+0045959,23,"November 5, 2026","1,983","20,000",South 2,Hyderabad,"2,110",-4,Need to Check
+0045959,23,"November 6, 2026","1,983","20,000",South 2,Hyderabad,"2,110",-4,Need to Check
+0045959,23,"November 7, 2026","1,983","20,000",South 2,Hyderabad,"2,110",-4,Need to Check
+0045959,23,"November 8, 2026","1,983","20,000",South 2,Hyderabad,"2,110",-4,Need to Check
+0045959,23,"November 9, 2026","1,983","20,000",South 2,Hyderabad,"2,110",-4,Need to Check
+0045959,23,"November 10, 2026","1,983","20,000",South 2,Hyderabad,"2,110",-4,Need to Check
+0045959,23,"November 11, 2026","1,983","20,000",South 2,Hyderabad,"2,110",-4,Need to Check
+0045959,23,"November 12, 2026","1,983","20,000",South 2,Hyderabad,"2,110",-4,Need to Check
+0045959,23,"November 13, 2026","1,983","20,000",South 2,Hyderabad,"2,110",-4,Need to Check
+0045959,23,"November 14, 2026","1,983","20,000",South 2,Hyderabad,"2,110",-4,Need to Check
+0045959,24,"October 18, 2026","1,983","20,000",South 2,Hyderabad,"2,110",-4,Need to Check
+0045959,24,"October 19, 2026","1,983","20,000",South 2,Hyderabad,"2,110",-4,Need to Check
+0045959,24,"October 20, 2026","1,983","20,000",South 2,Hyderabad,"2,110",-4,Need to Check
+0045959,24,"October 21, 2026","1,983","20,000",South 2,Hyderabad,"2,110",-4,Need to Check
+0045959,24,"October 22, 2026","1,983","20,000",South 2,Hyderabad,"2,110",-4,Need to Check
+0045959,24,"October 23, 2026","1,990","20,000",South 2,Hyderabad,"2,110",-4,Need to Check
+0045959,24,"October 24, 2026","1,990","20,000",South 2,Hyderabad,"2,110",-4,Need to Check
+0045959,24,"October 26, 2026","1,990","20,000",South 2,Hyderabad,"2,110",-4,Need to Check
+0045959,24,"October 27, 2026","1,983","20,000",South 2,Hyderabad,"2,110",-4,Need to Check
+0045959,24,"October 28, 2026","1,985","20,000",South 2,Hyderabad,"2,110",-4,Need to Check
+0045959,24,"October 29, 2026","1,987","20,000",South 2,Hyderabad,"2,110",-4,Need to Check
+0045959,24,"November 1, 2026","1,983","20,000",South 2,Hyderabad,"2,110",-4,Need to Check
+0045959,24,"November 2, 2026","1,983","20,000",South 2,Hyderabad,"2,110",-4,Need to Check
+0045959,24,"November 3, 2026","1,983","20,000",South 2,Hyderabad,"2,110",-4,Need to Check
+0045959,24,"November 4, 2026","1,983","20,000",South 2,Hyderabad,"2,110",-4,Need to Check
+0045959,24,"November 5, 2026","1,983","20,000",South 2,Hyderabad,"2,110",-4,Need to Check
+0045959,24,"November 6, 2026","1,983","20,000",South 2,Hyderabad,"2,110",-4,Need to Check
+0045959,24,"November 7, 2026","1,983","20,000",South 2,Hyderabad,"2,110",-4,Need to Check
+0045959,24,"November 8, 2026","1,983","20,000",South 2,Hyderabad,"2,110",-4,Need to Check
+0045959,24,"November 9, 2026","1,983","20,000",South 2,Hyderabad,"2,110",-4,Need to Check
+0045959,24,"November 10, 2026","1,983","20,000",South 2,Hyderabad,"2,110",-4,Need to Check
+0045959,24,"November 11, 2026","1,983","20,000",South 2,Hyderabad,"2,110",-4,Need to Check
+0045959,24,"November 12, 2026","1,983","20,000",South 2,Hyderabad,"2,110",-4,Need to Check
+0045959,24,"November 13, 2026","1,983","20,000",South 2,Hyderabad,"2,110",-4,Need to Check
+0045959,24,"November 14, 2026","1,983","20,000",South 2,Hyderabad,"2,110",-4,Need to Check
+0045959,51,"October 30, 2026","1,782","20,000",South 2,Hyderabad,"1,882",-4,Need to Check
+0045959,51,"October 31, 2026","1,777","20,000",South 2,Hyderabad,"1,882",-4,Need to Check
+0063794,17,"September 20, 2026","1,336","23,600",West,Indore,"1,410",-4,Need to Check
+0063794,17,"September 23, 2026","1,336","23,600",West,Indore,"1,415",-4,Need to Check
+0063794,18,"September 20, 2026","1,336","23,600",West,Indore,"1,410",-4,Need to Check
+0063794,18,"September 23, 2026","1,336","23,600",West,Indore,"1,415",-4,Need to Check
+0063794,50,"September 20, 2026","1,336","23,600",West,Indore,"1,410",-4,Need to Check
+0063794,50,"September 23, 2026","1,336","23,600",West,Indore,"1,415",-4,Need to Check
+0124913,17,"September 25, 2026","1,719","23,600",North 2,Dehradun,"1,809",-4,Need to Check
+0124913,18,"September 25, 2026","1,719","23,600",North 2,Dehradun,"1,809",-4,Need to Check
+0124913,19,"September 25, 2026","1,788","23,600",North 2,Dehradun,"1,879",-4,Need to Check
+0124913,20,"September 25, 2026","1,788","23,600",North 2,Dehradun,"1,879",-4,Need to Check
+0124913,50,"September 25, 2026","1,719","23,600",North 2,Dehradun,"1,809",-4,Need to Check
+0191524,25,"September 22, 2026","2,660","23,600",South 1,Alleppey,"2,828",-4,Need to Check
+0191524,25,"September 23, 2026","2,674","23,600",South 1,Alleppey,"2,828",-4,Need to Check
+0191524,26,"September 22, 2026","2,660","23,600",South 1,Alleppey,"2,828",-4,Need to Check
+0191524,26,"September 23, 2026","2,674","23,600",South 1,Alleppey,"2,828",-4,Need to Check
+0191524,27,"September 22, 2026","2,867","23,600",South 1,Alleppey,"3,035",-4,Need to Check
+0191524,27,"September 23, 2026","2,881","23,600",South 1,Alleppey,"3,035",-4,Need to Check
+0191524,28,"September 22, 2026","2,867","23,600",South 1,Alleppey,"3,035",-4,Need to Check
+0191524,28,"September 23, 2026","2,881","23,600",South 1,Alleppey,"3,035",-4,Need to Check
+0191524,29,"September 23, 2026","2,398","23,600",South 1,Alleppey,"2,552",-4,Need to Check
+0191524,30,"September 23, 2026","2,398","23,600",South 1,Alleppey,"2,552",-4,Need to Check
+0191524,31,"September 23, 2026","2,398","23,600",South 1,Alleppey,"2,552",-4,Need to Check
+0191524,32,"September 23, 2026","2,536","23,600",South 1,Alleppey,"2,690",-4,Need to Check
+0191524,33,"September 23, 2026","2,536","23,600",South 1,Alleppey,"2,690",-4,Need to Check
+0191524,34,"September 23, 2026","2,536","23,600",South 1,Alleppey,"2,690",-4,Need to Check
+0191524,35,"September 22, 2026","3,212","23,600",South 1,Alleppey,"3,380",-4,Need to Check
+0191524,36,"September 22, 2026","3,212","23,600",South 1,Alleppey,"3,380",-4,Need to Check
+0191524,57,"September 23, 2026","2,398","23,600",South 1,Alleppey,"2,552",-4,Need to Check
+0207833,27,"September 17, 2027","2,647","27,848",North 2,Shimla,"2,811",-4,Need to Check
+0207833,28,"September 17, 2027","2,647","27,848",North 2,Shimla,"2,811",-4,Need to Check
+0233415,17,"September 22, 2026","1,858","23,600",South 2,Vijayawada,"1,953",-4,Need to Check
+0233415,18,"September 22, 2026","1,858","23,600",South 2,Vijayawada,"1,953",-4,Need to Check
+0233415,50,"September 22, 2026","1,858","23,600",South 2,Vijayawada,"1,953",-4,Need to Check
+0233415,87,"September 22, 2026","1,858","20,000",South 2,Vijayawada,"1,953",-4,Need to Check
+0242206,25,"September 17, 2026","2,732","23,600",South 2,Chennai,"2,881",-4,Need to Check
+0242206,25,"September 22, 2026","2,737","23,600",South 2,Chennai,"2,881",-4,Need to Check
+0242206,25,"September 23, 2026","2,737","23,600",South 2,Chennai,"2,881",-4,Need to Check
+0242206,27,"September 17, 2026","2,870","23,600",South 2,Chennai,"3,019",-4,Need to Check
+0242206,28,"September 17, 2026","2,870","23,600",South 2,Chennai,"3,019",-4,Need to Check
+0243121,21,"September 20, 2026","1,710","23,600",South 2,Chennai,"1,800",-4,Need to Check
+0243121,21,"September 21, 2026","1,710","23,600",South 2,Chennai,"1,800",-4,Need to Check
+0243121,21,"September 22, 2026","1,710","23,600",South 2,Chennai,"1,800",-4,Need to Check
+0243121,21,"September 23, 2026","1,710","23,600",South 2,Chennai,"1,800",-4,Need to Check
+0243121,22,"September 20, 2026","1,710","23,600",South 2,Chennai,"1,800",-4,Need to Check
+0243121,22,"September 21, 2026","1,710","23,600",South 2,Chennai,"1,800",-4,Need to Check
+0243121,22,"September 22, 2026","1,710","23,600",South 2,Chennai,"1,800",-4,Need to Check
+0243121,22,"September 23, 2026","1,710","23,600",South 2,Chennai,"1,800",-4,Need to Check
+0243121,39,"September 20, 2026","1,710","23,600",South 2,Chennai,"1,800",-4,Need to Check
+0243121,39,"September 21, 2026","1,710","23,600",South 2,Chennai,"1,800",-4,Need to Check
+0243121,39,"September 22, 2026","1,710","23,600",South 2,Chennai,"1,800",-4,Need to Check
+0243121,39,"September 23, 2026","1,710","23,600",South 2,Chennai,"1,800",-4,Need to Check
+0243121,83,"September 20, 2026","1,710","23,600",South 2,Chennai,"1,800",-4,Need to Check
+0243121,83,"September 21, 2026","1,710","23,600",South 2,Chennai,"1,800",-4,Need to Check
+0243121,83,"September 22, 2026","1,710","23,600",South 2,Chennai,"1,800",-4,Need to Check
+0243121,83,"September 23, 2026","1,710","23,600",South 2,Chennai,"1,800",-4,Need to Check
+0245564,19,"September 23, 2026","2,595","20,000",South 2,Chennai,"2,761",-4,Need to Check
+0245564,19,"September 23, 2026","2,595","20,000",South 2,Chennai,"2,761",-4,Need to Check
+0245564,20,"September 23, 2026","2,595","20,000",South 2,Chennai,"2,761",-4,Need to Check
+0245564,20,"September 23, 2026","2,595","20,000",South 2,Chennai,"2,761",-4,Need to Check
+0245564,23,"September 20, 2026","3,831","20,000",South 2,Chennai,"4,049",-4,Need to Check
+0245564,24,"September 20, 2026","3,831","20,000",South 2,Chennai,"4,049",-4,Need to Check
+0262502,35,"September 22, 2026","3,325","23,600",South 2,Coimbatore,"3,532",-4,Need to Check
+0262502,35,"September 23, 2026","3,325","23,600",South 2,Coimbatore,"3,532",-4,Need to Check
+0262502,36,"September 22, 2026","3,325","23,600",South 2,Coimbatore,"3,532",-4,Need to Check
+0262502,36,"September 23, 2026","3,325","23,600",South 2,Coimbatore,"3,532",-4,Need to Check
+0295705,17,"September 22, 2026","2,052","23,600",South 2,Visakhapatnam,"2,160",-4,Need to Check
+0295705,17,"September 23, 2026","2,052","23,600",South 2,Visakhapatnam,"2,160",-4,Need to Check
+0295705,18,"September 22, 2026","2,052","23,600",South 2,Visakhapatnam,"2,160",-4,Need to Check
+0295705,18,"September 23, 2026","2,052","23,600",South 2,Visakhapatnam,"2,160",-4,Need to Check
+0295705,50,"September 22, 2026","2,052","23,600",South 2,Visakhapatnam,"2,160",-4,Need to Check
+0295705,50,"September 23, 2026","2,052","23,600",South 2,Visakhapatnam,"2,160",-4,Need to Check
+0295705,87,"September 22, 2026","2,052","23,600",South 2,Visakhapatnam,"2,160",-4,Need to Check
+0295705,87,"September 23, 2026","2,052","23,600",South 2,Visakhapatnam,"2,160",-4,Need to Check
+0377942,17,"September 17, 2027","3,143","23,600",West,Mumbai,"3,333",-4,Need to Check
+0377942,18,"September 17, 2027","3,143","23,600",West,Mumbai,"3,333",-4,Need to Check
+0377942,19,"September 17, 2027","3,281","23,600",West,Mumbai,"3,473",-4,Need to Check
+0377942,21,"September 17, 2027","3,833","23,600",West,Mumbai,"4,033",-4,Need to Check
+0377942,22,"September 17, 2027","3,833","23,600",West,Mumbai,"4,033",-4,Need to Check
+0377942,23,"September 17, 2027","3,971","23,600",West,Mumbai,"4,173",-4,Need to Check
+0377942,24,"September 17, 2027","3,971","23,600",West,Mumbai,"4,173",-4,Need to Check
+0377942,39,"September 17, 2027","3,833","23,600",West,Mumbai,"4,033",-4,Need to Check
+0377942,40,"September 17, 2027","3,971","23,600",West,Mumbai,"4,173",-4,Need to Check
+0377942,83,"September 17, 2027","3,833","23,600",West,Mumbai,"4,033",-4,Need to Check
+0472129,27,"September 22, 2026","2,008","23,600",South 1,Coorg,"2,115",-4,Need to Check
+0472129,28,"September 22, 2026","2,008","23,600",South 1,Coorg,"2,115",-4,Need to Check
+0472129,29,"September 22, 2026","2,077","23,600",South 1,Coorg,"2,184",-4,Need to Check
+0472129,29,"September 22, 2026","2,077","23,600",South 1,Coorg,"2,184",-4,Need to Check
+0472129,30,"September 22, 2026","2,077","23,600",South 1,Coorg,"2,184",-4,Need to Check
+0472129,30,"September 22, 2026","2,077","23,600",South 1,Coorg,"2,184",-4,Need to Check
+0472129,31,"September 22, 2026","2,077","23,600",South 1,Coorg,"2,184",-4,Need to Check
+0472129,57,"September 22, 2026","2,077","23,600",South 1,Coorg,"2,184",-4,Need to Check
+0507680,17,"September 22, 2026","2,850","23,600",West,Pune,"3,000",-4,Need to Check
+0507680,17,"September 23, 2026","2,850","23,600",West,Pune,"3,000",-4,Need to Check
+0507680,18,"September 22, 2026","2,850","23,600",West,Pune,"3,000",-4,Need to Check
+0507680,18,"September 23, 2026","2,850","23,600",West,Pune,"3,000",-4,Need to Check
+0507680,50,"September 22, 2026","2,850","23,600",West,Pune,"3,000",-4,Need to Check
+0507680,50,"September 23, 2026","2,850","23,600",West,Pune,"3,000",-4,Need to Check
+1929807,17,"September 19, 2026","1,371","23,600",South 2,Vellore,"1,451",-4,Need to Check
+1929807,18,"September 19, 2026","1,371","23,600",South 2,Vellore,"1,451",-4,Need to Check
+1929807,25,"September 19, 2026","1,371","23,600",South 2,Vellore,"1,451",-4,Need to Check
+1929807,26,"September 19, 2026","1,371","23,600",South 2,Vellore,"1,451",-4,Need to Check
+1929807,50,"September 19, 2026","1,371","23,600",South 2,Vellore,"1,451",-4,Need to Check
+0003211,17,"November 29, 2026","2,005","23,600",North 1,Jaipur,"2,147",-5,Need to Check
+0003211,17,"December 15, 2026","2,391","23,600",North 1,Jaipur,"2,560",-5,Need to Check
+0003211,17,"December 16, 2026","2,391","23,600",North 1,Jaipur,"2,560",-5,Need to Check
+0003211,18,"November 29, 2026","2,005","23,600",North 1,Jaipur,"2,147",-5,Need to Check
+0003211,18,"December 15, 2026","2,391","23,600",North 1,Jaipur,"2,560",-5,Need to Check
+0003211,18,"December 16, 2026","2,391","23,600",North 1,Jaipur,"2,560",-5,Need to Check
+0003211,19,"November 29, 2026","2,074","23,600",North 1,Jaipur,"2,217",-5,Need to Check
+0003211,19,"December 15, 2026","2,460","23,600",North 1,Jaipur,"2,630",-5,Need to Check
+0003211,19,"December 16, 2026","2,460","23,600",North 1,Jaipur,"2,630",-5,Need to Check
+0003211,20,"November 29, 2026","2,074","23,600",North 1,Jaipur,"2,217",-5,Need to Check
+0003211,20,"December 15, 2026","2,460","23,600",North 1,Jaipur,"2,630",-5,Need to Check
+0003211,20,"December 16, 2026","2,460","23,600",North 1,Jaipur,"2,630",-5,Need to Check
+0003211,50,"November 29, 2026","2,005","23,600",North 1,Jaipur,"2,147",-5,Need to Check
+0003211,50,"December 15, 2026","2,391","23,600",North 1,Jaipur,"2,560",-5,Need to Check
+0003211,50,"December 16, 2026","2,391","23,600",North 1,Jaipur,"2,560",-5,Need to Check
+0019694,17,"September 22, 2026","1,956","23,600",South 1,Bangalore,"2,096",-5,Need to Check
+0019694,17,"September 23, 2026","1,954","23,600",South 1,Bangalore,"2,096",-5,Need to Check
+0019694,18,"September 22, 2026","1,956","23,600",South 1,Bangalore,"2,096",-5,Need to Check
+0019694,18,"September 23, 2026","1,954","23,600",South 1,Bangalore,"2,096",-5,Need to Check
+0019694,19,"September 22, 2026","2,163","23,600",South 1,Bangalore,"2,306",-5,Need to Check
+0019694,19,"September 23, 2026","2,161","23,600",South 1,Bangalore,"2,306",-5,Need to Check
+0019694,20,"September 22, 2026","2,163","23,600",South 1,Bangalore,"2,306",-5,Need to Check
+0019694,20,"September 23, 2026","2,161","23,600",South 1,Bangalore,"2,306",-5,Need to Check
+0019694,50,"September 22, 2026","1,956","23,600",South 1,Bangalore,"2,096",-5,Need to Check
+0019694,50,"September 23, 2026","1,954","23,600",South 1,Bangalore,"2,096",-5,Need to Check
+0019694,51,"September 22, 2026","2,163","23,600",South 1,Bangalore,"2,306",-5,Need to Check
+0019694,51,"September 23, 2026","2,161","23,600",South 1,Bangalore,"2,306",-5,Need to Check
+0019694,87,"September 22, 2026","1,956","23,600",South 1,Bangalore,"2,096",-5,Need to Check
+0019694,87,"September 23, 2026","1,954","23,600",South 1,Bangalore,"2,096",-5,Need to Check
+0045959,18,"October 18, 2026","1,638","20,000",South 2,Hyderabad,"1,752",-5,Need to Check
+0045959,18,"October 19, 2026","1,638","20,000",South 2,Hyderabad,"1,752",-5,Need to Check
+0045959,18,"October 20, 2026","1,638","20,000",South 2,Hyderabad,"1,752",-5,Need to Check
+0045959,18,"October 21, 2026","1,638","20,000",South 2,Hyderabad,"1,752",-5,Need to Check
+0045959,18,"October 22, 2026","1,638","20,000",South 2,Hyderabad,"1,752",-5,Need to Check
+0045959,18,"October 23, 2026","1,645","20,000",South 2,Hyderabad,"1,752",-5,Need to Check
+0045959,18,"October 24, 2026","1,645","20,000",South 2,Hyderabad,"1,752",-5,Need to Check
+0045959,18,"October 26, 2026","1,645","20,000",South 2,Hyderabad,"1,752",-5,Need to Check
+0045959,18,"October 27, 2026","1,638","20,000",South 2,Hyderabad,"1,752",-5,Need to Check
+0045959,18,"October 28, 2026","1,640","20,000",South 2,Hyderabad,"1,752",-5,Need to Check
+0045959,18,"October 29, 2026","1,642","20,000",South 2,Hyderabad,"1,752",-5,Need to Check
+0045959,18,"November 1, 2026","1,638","20,000",South 2,Hyderabad,"1,752",-5,Need to Check
+0045959,18,"November 2, 2026","1,638","20,000",South 2,Hyderabad,"1,752",-5,Need to Check
+0045959,18,"November 3, 2026","1,638","20,000",South 2,Hyderabad,"1,752",-5,Need to Check
+0045959,18,"November 4, 2026","1,638","20,000",South 2,Hyderabad,"1,752",-5,Need to Check
+0045959,18,"November 5, 2026","1,638","20,000",South 2,Hyderabad,"1,752",-5,Need to Check
+0045959,18,"November 6, 2026","1,638","20,000",South 2,Hyderabad,"1,752",-5,Need to Check
+0045959,18,"November 7, 2026","1,638","20,000",South 2,Hyderabad,"1,752",-5,Need to Check
+0045959,18,"November 8, 2026","1,638","20,000",South 2,Hyderabad,"1,752",-5,Need to Check
+0045959,18,"November 9, 2026","1,638","20,000",South 2,Hyderabad,"1,752",-5,Need to Check
+0045959,18,"November 10, 2026","1,638","20,000",South 2,Hyderabad,"1,752",-5,Need to Check
+0045959,18,"November 11, 2026","1,638","20,000",South 2,Hyderabad,"1,752",-5,Need to Check
+0045959,18,"November 12, 2026","1,638","20,000",South 2,Hyderabad,"1,752",-5,Need to Check
+0045959,18,"November 13, 2026","1,638","20,000",South 2,Hyderabad,"1,752",-5,Need to Check
+0045959,18,"November 14, 2026","1,638","20,000",South 2,Hyderabad,"1,752",-5,Need to Check
+0045959,19,"October 18, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,19,"October 18, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,19,"October 19, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,19,"October 19, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,19,"October 20, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,19,"October 20, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,19,"October 21, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,19,"October 21, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,19,"October 22, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,19,"October 22, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,19,"October 23, 2026","1,748","20,000",South 2,Hyderabad,"1,882",-5,Need to Check
+0045959,19,"October 24, 2026","1,748","20,000",South 2,Hyderabad,"1,882",-5,Need to Check
+0045959,19,"October 26, 2026","1,748","20,000",South 2,Hyderabad,"1,882",-5,Need to Check
+0045959,19,"October 27, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,19,"October 27, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,19,"October 28, 2026","1,744","20,000",South 2,Hyderabad,"1,865",-5,Need to Check
+0045959,19,"October 28, 2026","1,744","20,000",South 2,Hyderabad,"1,865",-5,Need to Check
+0045959,19,"October 29, 2026","1,746","20,000",South 2,Hyderabad,"1,868",-5,Need to Check
+0045959,19,"October 29, 2026","1,746","20,000",South 2,Hyderabad,"1,868",-5,Need to Check
+0045959,19,"November 1, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,19,"November 1, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,19,"November 2, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,19,"November 2, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,19,"November 3, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,19,"November 3, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,19,"November 4, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,19,"November 4, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,19,"November 5, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,19,"November 5, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,19,"November 6, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,19,"November 6, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,19,"November 7, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,19,"November 7, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,19,"November 8, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,19,"November 8, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,20,"October 18, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,20,"October 18, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,20,"October 19, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,20,"October 19, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,20,"October 20, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,20,"October 20, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,20,"October 21, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,20,"October 21, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,20,"October 22, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,20,"October 22, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,20,"October 23, 2026","1,748","20,000",South 2,Hyderabad,"1,882",-5,Need to Check
+0045959,20,"October 24, 2026","1,748","20,000",South 2,Hyderabad,"1,882",-5,Need to Check
+0045959,20,"October 26, 2026","1,748","20,000",South 2,Hyderabad,"1,882",-5,Need to Check
+0045959,20,"October 27, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,20,"October 27, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,20,"October 28, 2026","1,744","20,000",South 2,Hyderabad,"1,865",-5,Need to Check
+0045959,20,"October 28, 2026","1,744","20,000",South 2,Hyderabad,"1,865",-5,Need to Check
+0045959,20,"October 29, 2026","1,746","20,000",South 2,Hyderabad,"1,868",-5,Need to Check
+0045959,20,"October 29, 2026","1,746","20,000",South 2,Hyderabad,"1,868",-5,Need to Check
+0045959,20,"November 1, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,20,"November 1, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,20,"November 2, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,20,"November 2, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,20,"November 3, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,20,"November 3, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,20,"November 4, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,20,"November 4, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,20,"November 5, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,20,"November 5, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,20,"November 6, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,20,"November 6, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,20,"November 7, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,20,"November 7, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,20,"November 8, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,20,"November 8, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,23,"October 17, 2026","1,964","20,000",South 2,Hyderabad,"2,110",-5,Need to Check
+0045959,23,"December 15, 2026","1,964","20,000",South 2,Hyderabad,"2,110",-5,Need to Check
+0045959,23,"December 16, 2026","1,964","20,000",South 2,Hyderabad,"2,110",-5,Need to Check
+0045959,24,"October 17, 2026","1,964","20,000",South 2,Hyderabad,"2,110",-5,Need to Check
+0045959,24,"December 15, 2026","1,964","20,000",South 2,Hyderabad,"2,110",-5,Need to Check
+0045959,24,"December 16, 2026","1,964","20,000",South 2,Hyderabad,"2,110",-5,Need to Check
+0045959,50,"October 18, 2026","1,638","20,000",South 2,Hyderabad,"1,752",-5,Need to Check
+0045959,50,"October 19, 2026","1,638","20,000",South 2,Hyderabad,"1,752",-5,Need to Check
+0045959,50,"October 20, 2026","1,638","20,000",South 2,Hyderabad,"1,752",-5,Need to Check
+0045959,50,"October 21, 2026","1,638","20,000",South 2,Hyderabad,"1,752",-5,Need to Check
+0045959,50,"October 22, 2026","1,638","20,000",South 2,Hyderabad,"1,752",-5,Need to Check
+0045959,50,"October 23, 2026","1,645","20,000",South 2,Hyderabad,"1,752",-5,Need to Check
+0045959,50,"October 24, 2026","1,645","20,000",South 2,Hyderabad,"1,752",-5,Need to Check
+0045959,50,"October 26, 2026","1,645","20,000",South 2,Hyderabad,"1,752",-5,Need to Check
+0045959,50,"October 27, 2026","1,638","20,000",South 2,Hyderabad,"1,752",-5,Need to Check
+0045959,50,"October 28, 2026","1,640","20,000",South 2,Hyderabad,"1,752",-5,Need to Check
+0045959,50,"October 29, 2026","1,642","20,000",South 2,Hyderabad,"1,752",-5,Need to Check
+0045959,50,"November 1, 2026","1,638","20,000",South 2,Hyderabad,"1,752",-5,Need to Check
+0045959,50,"November 2, 2026","1,638","20,000",South 2,Hyderabad,"1,752",-5,Need to Check
+0045959,50,"November 3, 2026","1,638","20,000",South 2,Hyderabad,"1,752",-5,Need to Check
+0045959,50,"November 4, 2026","1,638","20,000",South 2,Hyderabad,"1,752",-5,Need to Check
+0045959,50,"November 5, 2026","1,638","20,000",South 2,Hyderabad,"1,752",-5,Need to Check
+0045959,50,"November 6, 2026","1,638","20,000",South 2,Hyderabad,"1,752",-5,Need to Check
+0045959,50,"November 7, 2026","1,638","20,000",South 2,Hyderabad,"1,752",-5,Need to Check
+0045959,50,"November 8, 2026","1,638","20,000",South 2,Hyderabad,"1,752",-5,Need to Check
+0045959,50,"November 9, 2026","1,638","20,000",South 2,Hyderabad,"1,752",-5,Need to Check
+0045959,50,"November 10, 2026","1,638","20,000",South 2,Hyderabad,"1,752",-5,Need to Check
+0045959,50,"November 11, 2026","1,638","20,000",South 2,Hyderabad,"1,752",-5,Need to Check
+0045959,50,"November 12, 2026","1,638","20,000",South 2,Hyderabad,"1,752",-5,Need to Check
+0045959,50,"November 13, 2026","1,638","20,000",South 2,Hyderabad,"1,752",-5,Need to Check
+0045959,50,"November 14, 2026","1,638","20,000",South 2,Hyderabad,"1,752",-5,Need to Check
+0045959,51,"October 18, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,51,"October 18, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,51,"October 19, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,51,"October 19, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,51,"October 20, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,51,"October 20, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,51,"October 21, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,51,"October 21, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,51,"October 22, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,51,"October 22, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,51,"October 23, 2026","1,748","20,000",South 2,Hyderabad,"1,882",-5,Need to Check
+0045959,51,"October 24, 2026","1,748","20,000",South 2,Hyderabad,"1,882",-5,Need to Check
+0045959,51,"October 26, 2026","1,748","20,000",South 2,Hyderabad,"1,882",-5,Need to Check
+0045959,51,"October 27, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,51,"October 27, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,51,"October 28, 2026","1,744","20,000",South 2,Hyderabad,"1,865",-5,Need to Check
+0045959,51,"October 28, 2026","1,744","20,000",South 2,Hyderabad,"1,865",-5,Need to Check
+0045959,51,"October 29, 2026","1,746","20,000",South 2,Hyderabad,"1,868",-5,Need to Check
+0045959,51,"October 29, 2026","1,746","20,000",South 2,Hyderabad,"1,868",-5,Need to Check
+0045959,51,"November 1, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,51,"November 1, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,51,"November 2, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,51,"November 2, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,51,"November 3, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,51,"November 3, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,51,"November 4, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,51,"November 4, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,51,"November 5, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,51,"November 5, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,51,"November 6, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,51,"November 6, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,51,"November 7, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,51,"November 7, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,51,"November 8, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0045959,51,"November 8, 2026","1,741","20,000",South 2,Hyderabad,"1,863",-5,Need to Check
+0063794,21,"September 17, 2026","1,547","23,600",West,Indore,"1,659",-5,Need to Check
+0063794,22,"September 17, 2026","1,547","23,600",West,Indore,"1,659",-5,Need to Check
+0063794,23,"September 17, 2026","1,685","23,600",West,Indore,"1,797",-5,Need to Check
+0063794,24,"September 17, 2026","1,685","23,600",West,Indore,"1,797",-5,Need to Check
+0063794,39,"September 17, 2026","1,547","23,600",West,Indore,"1,659",-5,Need to Check
+0063794,40,"September 17, 2026","1,685","23,600",West,Indore,"1,797",-5,Need to Check
+0063794,83,"September 17, 2026","1,547","23,600",West,Indore,"1,659",-5,Need to Check
+0191524,19,"September 23, 2026","1,984","23,600",South 1,Alleppey,"2,138",-5,Need to Check
+0191524,20,"September 23, 2026","1,984","23,600",South 1,Alleppey,"2,138",-5,Need to Check
+0191524,21,"September 23, 2026","2,053","23,600",South 1,Alleppey,"2,207",-5,Need to Check
+0191524,22,"September 23, 2026","2,053","23,600",South 1,Alleppey,"2,207",-5,Need to Check
+0191524,23,"September 22, 2026","2,177","23,600",South 1,Alleppey,"2,345",-5,Need to Check
+0191524,23,"September 23, 2026","2,191","23,600",South 1,Alleppey,"2,345",-5,Need to Check
+0191524,24,"September 22, 2026","2,177","23,600",South 1,Alleppey,"2,345",-5,Need to Check
+0191524,24,"September 23, 2026","2,191","23,600",South 1,Alleppey,"2,345",-5,Need to Check
+0191524,29,"September 22, 2026","2,384","23,600",South 1,Alleppey,"2,552",-5,Need to Check
+0191524,30,"September 22, 2026","2,384","23,600",South 1,Alleppey,"2,552",-5,Need to Check
+0191524,31,"September 22, 2026","2,384","23,600",South 1,Alleppey,"2,552",-5,Need to Check
+0191524,32,"September 22, 2026","2,522","23,600",South 1,Alleppey,"2,690",-5,Need to Check
+0191524,33,"September 22, 2026","2,522","23,600",South 1,Alleppey,"2,690",-5,Need to Check
+0191524,34,"September 22, 2026","2,522","23,600",South 1,Alleppey,"2,690",-5,Need to Check
+0191524,39,"September 23, 2026","2,053","23,600",South 1,Alleppey,"2,207",-5,Need to Check
+0191524,40,"September 22, 2026","2,177","23,600",South 1,Alleppey,"2,345",-5,Need to Check
+0191524,40,"September 23, 2026","2,191","23,600",South 1,Alleppey,"2,345",-5,Need to Check
+0191524,51,"September 23, 2026","1,984","23,600",South 1,Alleppey,"2,138",-5,Need to Check
+0191524,57,"September 22, 2026","2,384","23,600",South 1,Alleppey,"2,552",-5,Need to Check
+0191524,83,"September 23, 2026","2,053","23,600",South 1,Alleppey,"2,207",-5,Need to Check
+0245564,15,"September 23, 2026","2,181","20,000",South 2,Chennai,"2,349",-5,Need to Check
+0245564,16,"September 20, 2026","2,313","20,000",South 2,Chennai,"2,479",-5,Need to Check
+0245564,16,"September 23, 2026","2,319","20,000",South 2,Chennai,"2,479",-5,Need to Check
+0245564,17,"September 23, 2026","2,319","20,000",South 2,Chennai,"2,485",-5,Need to Check
+0245564,17,"September 23, 2026","2,319","20,000",South 2,Chennai,"2,485",-5,Need to Check
+0245564,18,"September 23, 2026","2,319","20,000",South 2,Chennai,"2,485",-5,Need to Check
+0245564,18,"September 23, 2026","2,319","20,000",South 2,Chennai,"2,485",-5,Need to Check
+0245564,21,"September 20, 2026","3,486","20,000",South 2,Chennai,"3,724",-5,Need to Check
+0245564,22,"September 20, 2026","3,486","20,000",South 2,Chennai,"3,724",-5,Need to Check
+0245564,38,"September 23, 2026","2,181","20,000",South 2,Chennai,"2,349",-5,Need to Check
+0245564,52,"September 20, 2026","2,313","20,000",South 2,Chennai,"2,479",-5,Need to Check
+0245564,52,"September 23, 2026","2,319","20,000",South 2,Chennai,"2,479",-5,Need to Check
+0265185,23,"September 17, 2027","2,199","23,600",South 2,Coimbatore,"2,374",-5,Need to Check
+0265185,24,"September 17, 2027","2,199","23,600",South 2,Coimbatore,"2,374",-5,Need to Check
+0265185,40,"September 17, 2027","2,199","23,600",South 2,Coimbatore,"2,374",-5,Need to Check
+0377942,29,"September 17, 2027","4,385","23,600",West,Mumbai,"4,733",-5,Need to Check
+0377942,30,"September 17, 2027","4,385","23,600",West,Mumbai,"4,733",-5,Need to Check
+0377942,31,"September 17, 2027","4,385","23,600",West,Mumbai,"4,733",-5,Need to Check
+0377942,32,"September 17, 2027","4,523","23,600",West,Mumbai,"4,873",-5,Need to Check
+0377942,33,"September 17, 2027","4,523","23,600",West,Mumbai,"4,873",-5,Need to Check
+0377942,34,"September 17, 2027","4,523","23,600",West,Mumbai,"4,873",-5,Need to Check
+0377942,35,"September 17, 2027","5,006","23,600",West,Mumbai,"5,363",-5,Need to Check
+0377942,36,"September 17, 2027","5,006","23,600",West,Mumbai,"5,363",-5,Need to Check
+0377942,57,"September 17, 2027","4,385","23,600",West,Mumbai,"4,733",-5,Need to Check
+0395630,15,"September 22, 2026","1,724","35,400",North 1,Ahmedabad,"1,852",-5,Need to Check
+0395630,15,"September 23, 2026","1,721","35,400",North 1,Ahmedabad,"1,852",-5,Need to Check
+0395630,27,"September 22, 2026","2,828","35,400",North 1,Ahmedabad,"3,032",-5,Need to Check
+0395630,27,"September 23, 2026","2,825","35,400",North 1,Ahmedabad,"3,032",-5,Need to Check
+0395630,28,"September 22, 2026","2,828","35,400",North 1,Ahmedabad,"3,032",-5,Need to Check
+0395630,28,"September 23, 2026","2,825","35,400",North 1,Ahmedabad,"3,032",-5,Need to Check
+0472129,21,"September 22, 2026","1,490","23,600",South 1,Coorg,"1,597",-5,Need to Check
+0472129,21,"September 22, 2026","1,490","23,600",South 1,Coorg,"1,597",-5,Need to Check
+0472129,22,"September 22, 2026","1,490","23,600",South 1,Coorg,"1,597",-5,Need to Check
+0472129,22,"September 22, 2026","1,490","23,600",South 1,Coorg,"1,597",-5,Need to Check
+0472129,23,"September 22, 2026","1,490","23,600",South 1,Coorg,"1,597",-5,Need to Check
+0472129,23,"September 22, 2026","1,490","23,600",South 1,Coorg,"1,597",-5,Need to Check
+0472129,24,"September 22, 2026","1,490","23,600",South 1,Coorg,"1,597",-5,Need to Check
+0472129,24,"September 22, 2026","1,490","23,600",South 1,Coorg,"1,597",-5,Need to Check
+0472129,39,"September 22, 2026","1,490","23,600",South 1,Coorg,"1,597",-5,Need to Check
+0472129,40,"September 22, 2026","1,490","23,600",South 1,Coorg,"1,597",-5,Need to Check
+0472129,83,"September 22, 2026","1,490","23,600",South 1,Coorg,"1,597",-5,Need to Check

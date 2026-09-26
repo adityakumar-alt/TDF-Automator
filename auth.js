@@ -11,29 +11,10 @@ const COOKIE_NAME = "tdf_session";
 // Based on MULTI_USER_ACCESS_PLAN.md
 // =========================================================================
 let dynamicRoster = [
-  // 1. Admin (RevOps Lead)
-  { id: "usr_admin", email: "admin@treebo.com", name: "Admin (RevOps Lead)", role: "Admin", active: true },
+  // Admin Lead
   { id: "usr_aditya", email: "aditya.kumar@treebo.com", name: "Aditya Kumar", role: "Admin", active: true },
-
-  // 2. Pricing Managers (8 Users)
-  { id: "usr_pm1", email: "pm1@treebo.com", name: "Pricing Manager 1", role: "Pricing Manager", active: true },
-  { id: "usr_pm2", email: "pm2@treebo.com", name: "Pricing Manager 2", role: "Pricing Manager", active: true },
-  { id: "usr_pm3", email: "pm3@treebo.com", name: "Pricing Manager 3", role: "Pricing Manager", active: true },
-  { id: "usr_pm4", email: "pm4@treebo.com", name: "Pricing Manager 4", role: "Pricing Manager", active: true },
-  { id: "usr_pm5", email: "pm5@treebo.com", name: "Pricing Manager 5", role: "Pricing Manager", active: true },
-  { id: "usr_pm6", email: "pm6@treebo.com", name: "Pricing Manager 6", role: "Pricing Manager", active: true },
-  { id: "usr_pm7", email: "pm7@treebo.com", name: "Pricing Manager 7", role: "Pricing Manager", active: true },
-  { id: "usr_pm8", email: "pm8@treebo.com", name: "Pricing Manager 8", role: "Pricing Manager", active: true },
-
-  // 3. RevOps Team (3 Users)
-  { id: "usr_rev1", email: "revops1@treebo.com", name: "RevOps Team 1", role: "RevOps", active: true },
-  { id: "usr_rev2", email: "revops2@treebo.com", name: "RevOps Team 2", role: "RevOps", active: true },
-  { id: "usr_rev3", email: "revops3@treebo.com", name: "RevOps Team 3", role: "RevOps", active: true },
-
-  // 4. Zonal Ops Team (3 Users)
-  { id: "usr_zonal1", email: "zonal1@treebo.com", name: "Zonal Ops 1", role: "Zonal Ops", active: true },
-  { id: "usr_zonal2", email: "zonal2@treebo.com", name: "Zonal Ops 2", role: "Zonal Ops", active: true },
-  { id: "usr_zonal3", email: "zonal3@treebo.com", name: "Zonal Ops 3", role: "Zonal Ops", active: true }
+  { id: "usr_admin", email: "admin@treebo.com", name: "Admin (RevOps Lead)", role: "Admin", active: true },
+  { id: "usr_saikumar", email: "mopuri.saikumar@treebo.com", name: "Mopuri Saikumar", role: "Pricing Manager", active: true }
 ];
 
 // Helper: Sync roster from Google Sheets 'Access Control' tab rows if available
@@ -83,6 +64,47 @@ function normalizeRole(roleStr) {
 
 function getRoster() {
   return dynamicRoster;
+}
+
+function upsertUser(user) {
+  const cleanEmail = (user.email || "").toLowerCase().trim();
+  const index = dynamicRoster.findIndex(u => u.email.toLowerCase() === cleanEmail);
+  if (index !== -1) {
+    dynamicRoster[index] = {
+      ...dynamicRoster[index],
+      ...user,
+      email: cleanEmail,
+      role: normalizeRole(user.role || dynamicRoster[index].role)
+    };
+    return dynamicRoster[index];
+  } else {
+    const newUser = {
+      id: user.id || `usr_${Date.now()}`,
+      email: cleanEmail,
+      name: user.name || cleanEmail.split("@")[0],
+      role: normalizeRole(user.role),
+      active: user.active !== false
+    };
+    dynamicRoster.push(newUser);
+    return newUser;
+  }
+}
+
+function updateUserByEmail(targetEmail, updates) {
+  const cleanEmail = (targetEmail || "").toLowerCase().trim();
+  const index = dynamicRoster.findIndex(u => u.email.toLowerCase() === cleanEmail);
+  if (index === -1) return null;
+
+  if (updates.name !== undefined) dynamicRoster[index].name = updates.name.trim();
+  if (updates.email !== undefined) dynamicRoster[index].email = updates.email.toLowerCase().trim();
+  if (updates.role !== undefined) dynamicRoster[index].role = normalizeRole(updates.role);
+  if (updates.active !== undefined) dynamicRoster[index].active = Boolean(updates.active);
+
+  return dynamicRoster[index];
+}
+
+function deactivateUser(targetEmail) {
+  return updateUserByEmail(targetEmail, { active: false });
 }
 
 function findUserByEmail(email) {
@@ -199,6 +221,10 @@ module.exports = {
   syncRosterFromSheetRows,
   findUserByEmail,
   findUserById,
+  upsertUser,
+  updateUserByEmail,
+  deactivateUser,
+  normalizeRole,
   generateToken,
   setSessionCookie,
   clearSessionCookie,

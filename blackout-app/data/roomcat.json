@@ -1,0 +1,11570 @@
+[
+  {
+    "cs_id": "2098048",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2041595",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1809628",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2072844",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1213613",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1474895",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1244531",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1507161",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1476116",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1555547",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1198531",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2016333",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1502048",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1504786",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1767140",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1446075",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1371857",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "3031441",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "3001642",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2013949",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1214931",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1214016",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2024354",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1161560",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1127927",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1164752",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1267489",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2063608",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "0616586",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1414822",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1501731",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1438288",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1558691",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2014750",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1379624",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1386481",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1229511",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2055589",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2059541",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "0414566",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1473477",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1559112",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1241638",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1596742",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1261835",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2013416",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1119600",
+    "room_type": "Maple",
+    "rld": 100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1291518",
+    "room_type": "Maple",
+    "rld": 250.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "3001862",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1508400",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2012106",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1437251",
+    "room_type": "Acacia",
+    "rld": -200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1218905",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1436029",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "4476459",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1434999",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1405295",
+    "room_type": "Mahogany",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1869742",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1503445",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1581295",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1439255",
+    "room_type": "Oak",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2088875",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1344052",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1305035",
+    "room_type": "Mahogany",
+    "rld": 600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1416724",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1453106",
+    "room_type": "Maple",
+    "rld": 350.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1766640",
+    "room_type": "Oak",
+    "rld": 150.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2024354",
+    "room_type": "Maple",
+    "rld": 250.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1214016",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1421319",
+    "room_type": "Mahogany",
+    "rld": 700.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1766640",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1416724",
+    "room_type": "Acacia",
+    "rld": -150.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1246802",
+    "room_type": "Maple",
+    "rld": 350.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1619814",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1456807",
+    "room_type": "Oak",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1211946",
+    "room_type": "Maple",
+    "rld": 250.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1431818",
+    "room_type": "Acacia",
+    "rld": -100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1197891",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1555547",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1879480",
+    "room_type": "Maple",
+    "rld": 350.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2014917",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1418549",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1244990",
+    "room_type": "Acacia",
+    "rld": -100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1200151",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1416642",
+    "room_type": "Maple",
+    "rld": 450.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1591224",
+    "room_type": "Mahogany",
+    "rld": 850.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1247536",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "3001642",
+    "room_type": "Mahogany",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1373375",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1438288",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1248264",
+    "room_type": "Mahogany",
+    "rld": 1150.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1248264",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1215006",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2064479",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1508506",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1371524",
+    "room_type": "Acacia",
+    "rld": -200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1391921",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0414566",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1150242",
+    "room_type": "Oak",
+    "rld": 100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1379742",
+    "room_type": "Maple",
+    "rld": 700.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1417406",
+    "room_type": "Acacia",
+    "rld": -300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1501731",
+    "room_type": "Maple",
+    "rld": 100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1166252",
+    "room_type": "Oak",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1963434",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2012154",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1509602",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1243669",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1598533",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1434818",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1242398",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1365790",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2065286",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0243121",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1242203",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1259110",
+    "room_type": "Mahogany",
+    "rld": 800.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1216141",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1291813",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1209749",
+    "room_type": "Oak",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1419130",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1327100",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1136293",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1702720",
+    "room_type": "Mahogany",
+    "rld": 900.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1702720",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1536242",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2041400",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2050302",
+    "room_type": "Mahogany",
+    "rld": 600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2026848",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2026148",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2024867",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2018177",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "3005564",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "6474322",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "4471338",
+    "room_type": "Oak",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "0015738",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1598533",
+    "room_type": "Mahogany",
+    "rld": 600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1399076",
+    "room_type": "Acacia",
+    "rld": -150.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2014111",
+    "room_type": "Acacia",
+    "rld": -250.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1883885",
+    "room_type": "Acacia",
+    "rld": -200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1609002",
+    "room_type": "Oak",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1453534",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1281900",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1504217",
+    "room_type": "Oak",
+    "rld": -300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1131768",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "0191524",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1242203",
+    "room_type": "Oak",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0016581",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1828376",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1344712",
+    "room_type": "Mahogany",
+    "rld": 1700.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1336968",
+    "room_type": "Maple",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1435639",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2065763",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1545063",
+    "room_type": "Mahogany",
+    "rld": 600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "3001250",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1505600",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1978478",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1398298",
+    "room_type": "Mahogany",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1557374",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1267644",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1675415",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1509768",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2043614",
+    "room_type": "Acacia",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1396947",
+    "room_type": "Mahogany",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1396947",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1291664",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1982002",
+    "room_type": "Mahogany",
+    "rld": 1000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1281900",
+    "room_type": "Acacia",
+    "rld": -600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1522763",
+    "room_type": "Mahogany",
+    "rld": 600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1371182",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "8459601",
+    "room_type": "Maple",
+    "rld": 1000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0238622",
+    "room_type": "Maple",
+    "rld": 250.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1256474",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1212547",
+    "room_type": "Acacia",
+    "rld": -300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0050789",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "0050789",
+    "room_type": "Mahogany",
+    "rld": 600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1139087",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1484845",
+    "room_type": "Mahogany",
+    "rld": 1100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1277010",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1884844",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2010531",
+    "room_type": "Maple",
+    "rld": 250.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1464454",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1393411",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1266739",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1767140",
+    "room_type": "Mahogany",
+    "rld": 1100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1501664",
+    "room_type": "Maple",
+    "rld": 600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2018373",
+    "room_type": "Mahogany",
+    "rld": 1461.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "3006134",
+    "room_type": "Maple",
+    "rld": 410.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2058446",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1197734",
+    "room_type": "Mahogany",
+    "rld": 4342.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "6141453",
+    "room_type": "Mahogany",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0325023",
+    "room_type": "Mahogany",
+    "rld": 800.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1372632",
+    "room_type": "Mahogany",
+    "rld": 1900.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1868924",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1444313",
+    "room_type": "Acacia",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1229040",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2016749",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1336018",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "9772256",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1436657",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1203621",
+    "room_type": "Acacia",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1229920",
+    "room_type": "Acacia",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1442176",
+    "room_type": "Maple",
+    "rld": 700.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1206030",
+    "room_type": "Mahogany",
+    "rld": 1200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1593820",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1147436",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1479104",
+    "room_type": "Acacia",
+    "rld": -400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "9772256",
+    "room_type": "Mahogany",
+    "rld": 2400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2025675",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1618342",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1294367",
+    "room_type": "Oak",
+    "rld": 100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2011116",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1506200",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1371857",
+    "room_type": "Maple",
+    "rld": 1000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1145293",
+    "room_type": "Mahogany",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1237644",
+    "room_type": "Maple",
+    "rld": 1000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1211750",
+    "room_type": "Maple",
+    "rld": 350.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0471678",
+    "room_type": "Maple",
+    "rld": 1000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0471678",
+    "room_type": "Mahogany",
+    "rld": 2000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "3005059",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1114303",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1414660",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1617763",
+    "room_type": "Acacia",
+    "rld": -400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2016693",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1592011",
+    "room_type": "Mahogany",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1148276",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1396900",
+    "room_type": "Mahogany",
+    "rld": 850.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1208576",
+    "room_type": "Mahogany",
+    "rld": 1300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1614818",
+    "room_type": "Mahogany",
+    "rld": 1450.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1512203",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2020755",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1209749",
+    "room_type": "Mahogany",
+    "rld": 2500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1204840",
+    "room_type": "Acacia",
+    "rld": -200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1124831",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1597997",
+    "room_type": "Mahogany",
+    "rld": 694.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1381541",
+    "room_type": "Mahogany",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1894945",
+    "room_type": "Maple",
+    "rld": 800.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1894945",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1475965",
+    "room_type": "Mahogany",
+    "rld": 800.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2031888",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1364455",
+    "room_type": "Acacia",
+    "rld": -400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1379032",
+    "room_type": "Maple",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1164752",
+    "room_type": "Mahogany",
+    "rld": 1585.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2051467",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1295755",
+    "room_type": "Acacia",
+    "rld": -450.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1912757",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1371983",
+    "room_type": "Maple",
+    "rld": 1000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1147235",
+    "room_type": "Acacia",
+    "rld": -250.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1759184",
+    "room_type": "Mahogany",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2011450",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2011450",
+    "room_type": "Mahogany",
+    "rld": 800.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1252200",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2037169",
+    "room_type": "Maple",
+    "rld": 1000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2067625",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1503729",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1246851",
+    "room_type": "Mahogany",
+    "rld": 1100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1374678",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1231999",
+    "room_type": "Mahogany",
+    "rld": 750.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1104841",
+    "room_type": "Maple",
+    "rld": 1200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1218728",
+    "room_type": "Acacia",
+    "rld": -300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1299102",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2055653",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2341617",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1292998",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "0256107",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2059540",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2083696",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "0003211",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1244990",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1379085",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1597226",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1378193",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1010517",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1153937",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1145980",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2013416",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1505168",
+    "room_type": "Acacia",
+    "rld": -100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1501143",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1593867",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1395021",
+    "room_type": "Maple",
+    "rld": 450.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1377622",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1873520",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1294367",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1437251",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1881696",
+    "room_type": "Mahogany",
+    "rld": 1400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2054931",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1464901",
+    "room_type": "Mahogany",
+    "rld": 1600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1912757",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2022230",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1384871",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "3721182",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1171648",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1329928",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2011740",
+    "room_type": "Maple",
+    "rld": 250.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1200151",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "3001380",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1398875",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0063794",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0414566",
+    "room_type": "Mahogany",
+    "rld": 650.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0544853",
+    "room_type": "Maple",
+    "rld": 350.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1508008",
+    "room_type": "Maple",
+    "rld": 250.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1503944",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1508980",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2031596",
+    "room_type": "Mahogany",
+    "rld": 450.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1599756",
+    "room_type": "Mahogany",
+    "rld": 1000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1217501",
+    "room_type": "Acacia",
+    "rld": -100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "5802951",
+    "room_type": "Oak",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1215006",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1596837",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1546480",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1305035",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1365284",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1144338",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1417406",
+    "room_type": "Maple",
+    "rld": 450.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1708941",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1379624",
+    "room_type": "Maple",
+    "rld": 1000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1418980",
+    "room_type": "Mahogany",
+    "rld": 800.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1165837",
+    "room_type": "Oak",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1169924",
+    "room_type": "Maple",
+    "rld": 700.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1505464",
+    "room_type": "Acacia",
+    "rld": -100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1505464",
+    "room_type": "Maple",
+    "rld": 150.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1505405",
+    "room_type": "Oak",
+    "rld": 100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1501731",
+    "room_type": "Acacia",
+    "rld": -100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1502698",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2026607",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2013148",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2016775",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1431135",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1435465",
+    "room_type": "Acacia",
+    "rld": -100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2019978",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1166076",
+    "room_type": "Maple",
+    "rld": 450.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0051416",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1161055",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1447642",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1212547",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1282785",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1292558",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1323582",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1324743",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1399076",
+    "room_type": "Mahogany",
+    "rld": 600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1399076",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1176148",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1176148",
+    "room_type": "Acacia",
+    "rld": -200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1594082",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1989439",
+    "room_type": "Mahogany",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1989216",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2051409",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2051409",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2052900",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2061639",
+    "room_type": "Maple",
+    "rld": 350.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "3005564",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1598533",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1065859",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1324672",
+    "room_type": "Acacia",
+    "rld": -200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1324672",
+    "room_type": "Oak",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1218072",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1837134",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1265433",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1198531",
+    "room_type": "Oak",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1609002",
+    "room_type": "Mahogany",
+    "rld": 800.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0191524",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1604662",
+    "room_type": "Maple",
+    "rld": -1000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0003211",
+    "room_type": "Acacia",
+    "rld": -300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2011649",
+    "room_type": "Maple",
+    "rld": 350.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1472376",
+    "room_type": "Maple",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1206030",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1323805",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1257676",
+    "room_type": "Acacia",
+    "rld": -300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1127927",
+    "room_type": "Mahogany",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1205898",
+    "room_type": "Maple",
+    "rld": 100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2014478",
+    "room_type": "Maple",
+    "rld": 600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1398298",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1557374",
+    "room_type": "Acacia",
+    "rld": -300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1336018",
+    "room_type": "Mahogany",
+    "rld": 800.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1261979",
+    "room_type": "Acacia",
+    "rld": -100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1458562",
+    "room_type": "Oak",
+    "rld": -400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1394588",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2016833",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1245015",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2010498",
+    "room_type": "Oak",
+    "rld": 900.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1379742",
+    "room_type": "Oak",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1711113",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2015932",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1142308",
+    "room_type": "Acacia",
+    "rld": -50.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2053564",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2052672",
+    "room_type": "Maple",
+    "rld": 100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1501176",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1982002",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1448519",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1522763",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1477699",
+    "room_type": "Maple",
+    "rld": 350.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1142067",
+    "room_type": "Maple",
+    "rld": 250.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1256474",
+    "room_type": "Mahogany",
+    "rld": 800.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1246851",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2013598",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0050789",
+    "room_type": "Acacia",
+    "rld": -200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1483570",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1383290",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1139087",
+    "room_type": "Mahogany",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1172490",
+    "room_type": "Oak",
+    "rld": -150.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1421319",
+    "room_type": "Maple",
+    "rld": 180.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1126500",
+    "room_type": "Mahogany",
+    "rld": 700.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1226887",
+    "room_type": "Acacia",
+    "rld": -200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1535153",
+    "room_type": "Maple",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "0376508",
+    "room_type": "Maple",
+    "rld": -500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1619814",
+    "room_type": "Oak",
+    "rld": 130.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1476116",
+    "room_type": "Maple",
+    "rld": 600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2013117",
+    "room_type": "Mahogany",
+    "rld": 1000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1483392",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2062247",
+    "room_type": "Oak",
+    "rld": -300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1505405",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2071352",
+    "room_type": "Oak",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1364455",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1322829",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0507680",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1234696",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1503729",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1535153",
+    "room_type": "Oak",
+    "rld": -400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1257912",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1509933",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1399076",
+    "room_type": "Oak",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "8459601",
+    "room_type": "Oak",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1397677",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2065763",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "6809984",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2052667",
+    "room_type": "Mahogany",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2018177",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1234388",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1456807",
+    "room_type": "Mahogany",
+    "rld": 1000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1419740",
+    "room_type": "Mahogany",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1133570",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1206030",
+    "room_type": "Acacia",
+    "rld": -1300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1594465",
+    "room_type": "Mahogany",
+    "rld": 650.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1432185",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2014266",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1247316",
+    "room_type": "Oak",
+    "rld": 100.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2046776",
+    "room_type": "Maple",
+    "rld": 450.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2059587",
+    "room_type": "Mahogany",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2019513",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1507731",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2011116",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1608379",
+    "room_type": "Oak",
+    "rld": 1000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0207833",
+    "room_type": "Oak",
+    "rld": -1000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1597997",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1396900",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1263729",
+    "room_type": "Maple",
+    "rld": 150.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1597119",
+    "room_type": "Acacia",
+    "rld": -250.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1767649",
+    "room_type": "Oak",
+    "rld": -500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1416642",
+    "room_type": "Acacia",
+    "rld": -530.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1412139",
+    "room_type": "Acacia",
+    "rld": -260.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2685639",
+    "room_type": "Mahogany",
+    "rld": 1500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1148276",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1755459",
+    "room_type": "Mahogany",
+    "rld": 1000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1104342",
+    "room_type": "Mahogany",
+    "rld": 800.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "3009824",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1462197",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1209749",
+    "room_type": "Maple",
+    "rld": 800.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1204840",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1472508",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1434248",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1357746",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1171648",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1416724",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1379105",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1191684",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "0395630",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1509340",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "0468785",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2031448",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "0238622",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1615703",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "3721182",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1512806",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1505893",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1197734",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1505464",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2058082",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1165811",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "0386234",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1126702",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2012715",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1766640",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2011161",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2037371",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "0371149",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1135897",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1418980",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "0042415",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1319620",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1431818",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2053245",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2011285",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1391921",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1521562",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1619814",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "0065263",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1414116",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1415591",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2012411",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2013937",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1596003",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1434858",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1382823",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2014883",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "0015738",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1378391",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2010498",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2043442",
+    "room_type": "Maple",
+    "rld": 150.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1295755",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1378193",
+    "room_type": "Mahogany",
+    "rld": 2800.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2686403",
+    "room_type": "Mahogany",
+    "rld": 700.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2031351",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "9112998",
+    "room_type": "Mahogany",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2067711",
+    "room_type": "Maple",
+    "rld": 1000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1126165",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1377622",
+    "room_type": "Maple",
+    "rld": 600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2061503",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1139252",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2014478",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1377628",
+    "room_type": "Mahogany",
+    "rld": 1700.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2074839",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2082832",
+    "room_type": "Maple",
+    "rld": 700.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1218034",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0124913",
+    "room_type": "Mahogany",
+    "rld": 700.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2072844",
+    "room_type": "Maple",
+    "rld": 250.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1384871",
+    "room_type": "Oak",
+    "rld": 250.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1879480",
+    "room_type": "Mahogany",
+    "rld": 600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1165642",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1837134",
+    "room_type": "Mahogany",
+    "rld": 2500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1213613",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1516017",
+    "room_type": "Mahogany",
+    "rld": 800.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1509593",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "3001642",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0415343",
+    "room_type": "Oak",
+    "rld": 350.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1215728",
+    "room_type": "Mahogany",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1508980",
+    "room_type": "Mahogany",
+    "rld": 800.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1344052",
+    "room_type": "Oak",
+    "rld": 100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1247345",
+    "room_type": "Maple",
+    "rld": 350.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "5000010",
+    "room_type": "Mahogany",
+    "rld": 1700.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1708941",
+    "room_type": "Mahogany",
+    "rld": 1000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1043825",
+    "room_type": "Mahogany",
+    "rld": 1100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1378391",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1555008",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2038886",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1165642",
+    "room_type": "Oak",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2018445",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2012398",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1509578",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2026607",
+    "room_type": "Mahogany",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1963434",
+    "room_type": "Maple",
+    "rld": 600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1464876",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1506967",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2018783",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1166076",
+    "room_type": "Mahogany",
+    "rld": 850.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1292558",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1209749",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1247056",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1429250",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1259110",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1174848",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1193381",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1324743",
+    "room_type": "Mahogany",
+    "rld": 1500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1365825",
+    "room_type": "Oak",
+    "rld": 110.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1989216",
+    "room_type": "Mahogany",
+    "rld": 850.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2041400",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2029800",
+    "room_type": "Mahogany",
+    "rld": 1400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2025497",
+    "room_type": "Mahogany",
+    "rld": 1100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2024867",
+    "room_type": "Maple",
+    "rld": 550.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "4138782",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "4471338",
+    "room_type": "Mahogany",
+    "rld": 1000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1881493",
+    "room_type": "Oak",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1458562",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1452205",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0191524",
+    "room_type": "Mahogany",
+    "rld": 800.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1412651",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1479104",
+    "room_type": "Oak",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1828376",
+    "room_type": "Oak",
+    "rld": -100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1344712",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1344712",
+    "room_type": "Maple",
+    "rld": 700.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1617763",
+    "room_type": "Maple",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1257676",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1213894",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1213894",
+    "room_type": "Maple",
+    "rld": 250.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0207833",
+    "room_type": "Maple",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1519378",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1472544",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1505609",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2057538",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2057014",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "3001380",
+    "room_type": "Mahogany",
+    "rld": 2900.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1619863",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1362285",
+    "room_type": "Oak",
+    "rld": 150.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1884441",
+    "room_type": "Mahogany",
+    "rld": 800.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2043614",
+    "room_type": "Oak",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1423815",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1551401",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2071014",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2052672",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1269686",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1288538",
+    "room_type": "Mahogany",
+    "rld": 1000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1281900",
+    "room_type": "Mahogany",
+    "rld": 800.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1767878",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1256474",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1229920",
+    "room_type": "Mahogany",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1221551",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1383290",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2034103",
+    "room_type": "Acacia",
+    "rld": -200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1266216",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1873520",
+    "room_type": "Mahogany",
+    "rld": 550.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1506200",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1277010",
+    "room_type": "Mahogany",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1145490",
+    "room_type": "Mahogany",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1213625",
+    "room_type": "Oak",
+    "rld": 50.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1477699",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1373375",
+    "room_type": "Maple",
+    "rld": 600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1076395",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1125534",
+    "room_type": "Mahogany",
+    "rld": 800.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2017175",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2012715",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1908074",
+    "room_type": "Mahogany",
+    "rld": 800.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1593685",
+    "room_type": "Maple",
+    "rld": 150.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2071352",
+    "room_type": "Maple",
+    "rld": 600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1324672",
+    "room_type": "Mahogany",
+    "rld": 600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2014856",
+    "room_type": "Oak",
+    "rld": 250.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1596296",
+    "room_type": "Maple",
+    "rld": 600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1176759",
+    "room_type": "Mahogany",
+    "rld": 1000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1702054",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1269686",
+    "room_type": "Acacia",
+    "rld": -150.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2054931",
+    "room_type": "Mahogany",
+    "rld": 2000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0377942",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2018823",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1297390",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1535153",
+    "room_type": "Mahogany",
+    "rld": 650.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1486131",
+    "room_type": "Acacia",
+    "rld": -300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1599756",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2066561",
+    "room_type": "Mahogany",
+    "rld": 1000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1125927",
+    "room_type": "Oak",
+    "rld": -300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1536242",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1464454",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1204404",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1182758",
+    "room_type": "Acacia",
+    "rld": -50.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1237644",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1479075",
+    "room_type": "Mahogany",
+    "rld": 1700.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1868924",
+    "room_type": "Mahogany",
+    "rld": 1600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2058505",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2039275",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1379202",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1593220",
+    "room_type": "Acacia",
+    "rld": -350.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1441289",
+    "room_type": "Mahogany",
+    "rld": 1000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1365284",
+    "room_type": "Maple",
+    "rld": 700.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2025675",
+    "room_type": "Mahogany",
+    "rld": 600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1594082",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1531125",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1047446",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2018835",
+    "room_type": "Mahogany",
+    "rld": 1100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1122516",
+    "room_type": "Mahogany",
+    "rld": 1000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1122516",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2011116",
+    "room_type": "Mahogany",
+    "rld": 700.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1385678",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1591221",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1396900",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1215301",
+    "room_type": "Maple",
+    "rld": 250.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1472508",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1538075",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "3005059",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1766857",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1375831",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2016822",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2019492",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1382823",
+    "room_type": "Oak",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1593382",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "4477291",
+    "room_type": "Acacia",
+    "rld": -100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1444313",
+    "room_type": "Maple",
+    "rld": 800.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1444313",
+    "room_type": "Mahogany",
+    "rld": 1200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2013677",
+    "room_type": "Acacia",
+    "rld": -100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1371682",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1245105",
+    "room_type": "Mahogany",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1203621",
+    "room_type": "Oak",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1203621",
+    "room_type": "Mahogany",
+    "rld": 2500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1265433",
+    "room_type": "Acacia",
+    "rld": -416.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1541487",
+    "room_type": "Maple",
+    "rld": 700.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1502698",
+    "room_type": "Maple",
+    "rld": 550.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2031888",
+    "room_type": "Maple",
+    "rld": 350.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1164752",
+    "room_type": "Maple",
+    "rld": 210.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1292887",
+    "room_type": "Oak",
+    "rld": -300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1593382",
+    "room_type": "Mahogany",
+    "rld": 600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0002365",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1363971",
+    "room_type": "Acacia",
+    "rld": -200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2047707",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1144366",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1596121",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1372632",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2031596",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1246347",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1248264",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "5802951",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2015941",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1555008",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1365209",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1442176",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1546480",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1438071",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1442173",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1418069",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1595009",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1534876",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1261835",
+    "room_type": "Mahogany",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1675415",
+    "room_type": "Mahogany",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1145980",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2011492",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1391899",
+    "room_type": "Mahogany",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1119600",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2031351",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1521270",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "3009824",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1414523",
+    "room_type": "Oak",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1508400",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1727724",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2015495",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1434999",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1299460",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2054931",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1221551",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1292171",
+    "room_type": "Mahogany",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2022230",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1504742",
+    "room_type": "Mahogany",
+    "rld": 5000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0395630",
+    "room_type": "Acacia",
+    "rld": -200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2050166",
+    "room_type": "Acacia",
+    "rld": -200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "3031441",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2079707",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1387536",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1879480",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1615703",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1267489",
+    "room_type": "Acacia",
+    "rld": -100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1618855",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2098048",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1593685",
+    "room_type": "Mahogany",
+    "rld": 350.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1381541",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1371682",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1617471",
+    "room_type": "Maple",
+    "rld": 1300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1418549",
+    "room_type": "Maple",
+    "rld": 900.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1511929",
+    "room_type": "Mahogany",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1364455",
+    "room_type": "Mahogany",
+    "rld": 800.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1292887",
+    "room_type": "Mahogany",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0017174",
+    "room_type": "Mahogany",
+    "rld": 2100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1144366",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1363971",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "4476459",
+    "room_type": "Mahogany",
+    "rld": 850.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1143227",
+    "room_type": "Acacia",
+    "rld": -150.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2061880",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1591753",
+    "room_type": "Oak",
+    "rld": 472.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1229511",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0050525",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1167277",
+    "room_type": "Mahogany",
+    "rld": 2065.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2059541",
+    "room_type": "Mahogany",
+    "rld": 2050.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2024578",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1597144",
+    "room_type": "Maple",
+    "rld": 140.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0065263",
+    "room_type": "Maple",
+    "rld": 600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2058082",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2063526",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1596003",
+    "room_type": "Mahogany",
+    "rld": 700.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1379624",
+    "room_type": "Acacia",
+    "rld": -700.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2014111",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1212851",
+    "room_type": "Mahogany",
+    "rld": 700.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1212851",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1375831",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1247345",
+    "room_type": "Acacia",
+    "rld": -150.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1477779",
+    "room_type": "Oak",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1502379",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1247300",
+    "room_type": "Acacia",
+    "rld": -100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1595009",
+    "room_type": "Mahogany",
+    "rld": 1200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0395630",
+    "room_type": "Maple",
+    "rld": 750.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1452205",
+    "room_type": "Mahogany",
+    "rld": 1400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0262017",
+    "room_type": "Mahogany",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1509593",
+    "room_type": "Mahogany",
+    "rld": 1100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "5000010",
+    "room_type": "Acacia",
+    "rld": -200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1379105",
+    "room_type": "Maple",
+    "rld": 700.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2018414",
+    "room_type": "Mahogany",
+    "rld": 1150.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2024354",
+    "room_type": "Mahogany",
+    "rld": 750.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1508506",
+    "room_type": "Mahogany",
+    "rld": 700.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1506055",
+    "room_type": "Maple",
+    "rld": 240.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2012106",
+    "room_type": "Mahogany",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2061111",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2017292",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1963434",
+    "room_type": "Oak",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1509602",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1457772",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1365790",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1166076",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1506967",
+    "room_type": "Maple",
+    "rld": 100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1204840",
+    "room_type": "Oak",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "0376508",
+    "room_type": "Mahogany",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1253706",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1259110",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1207440",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1257158",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1253706",
+    "room_type": "Mahogany",
+    "rld": 2200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1213625",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1394588",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1298362",
+    "room_type": "Acacia",
+    "rld": -400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1365825",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1379202",
+    "room_type": "Acacia",
+    "rld": -200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1298362",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1247316",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1176148",
+    "room_type": "Mahogany",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1176148",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1136293",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1539442",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1594082",
+    "room_type": "Mahogany",
+    "rld": 700.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1986521",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1532001",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1536242",
+    "room_type": "Acacia",
+    "rld": -200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2026848",
+    "room_type": "Acacia",
+    "rld": -300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "4146211",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2267797",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1883885",
+    "room_type": "Oak",
+    "rld": -100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1593220",
+    "room_type": "Maple",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2034103",
+    "room_type": "Oak",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1267644",
+    "room_type": "Oak",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1200151",
+    "room_type": "Oak",
+    "rld": 240.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1288538",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2025497",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1336968",
+    "room_type": "Oak",
+    "rld": -300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0233415",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1546230",
+    "room_type": "Oak",
+    "rld": -300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1594795",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1242203",
+    "room_type": "Maple",
+    "rld": 800.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1205898",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1206822",
+    "room_type": "Mahogany",
+    "rld": 1200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2015616",
+    "room_type": "Maple",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1466884",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1323805",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1591224",
+    "room_type": "Maple",
+    "rld": 100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1435639",
+    "room_type": "Acacia",
+    "rld": -300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1611760",
+    "room_type": "Oak",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1581295",
+    "room_type": "Oak",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1146139",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1213894",
+    "room_type": "Mahogany",
+    "rld": 1800.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2013937",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1463190",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1557374",
+    "room_type": "Mahogany",
+    "rld": 900.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2057538",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1508443",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1553354",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1501664",
+    "room_type": "Acacia",
+    "rld": -200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1336018",
+    "room_type": "Acacia",
+    "rld": -270.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1253600",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2052667",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "0262502",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1374286",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2058505",
+    "room_type": "Mahogany",
+    "rld": 1340.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1389059",
+    "room_type": "Oak",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2010498",
+    "room_type": "Maple",
+    "rld": 1500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1362285",
+    "room_type": "Maple",
+    "rld": 350.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2043614",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1393411",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1184336",
+    "room_type": "Acacia",
+    "rld": -200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1591618",
+    "room_type": "Maple",
+    "rld": 350.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1609002",
+    "room_type": "Acacia",
+    "rld": -100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1446609",
+    "room_type": "Mahogany",
+    "rld": 1000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1281900",
+    "room_type": "Oak",
+    "rld": -400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1767878",
+    "room_type": "Mahogany",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "5000022",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2032928",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2011435",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1266216",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1431135",
+    "room_type": "Acacia",
+    "rld": -150.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1595502",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1374088",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1277010",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1247190",
+    "room_type": "Acacia",
+    "rld": -200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1547096",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1881493",
+    "room_type": "Maple",
+    "rld": 900.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1881493",
+    "room_type": "Mahogany",
+    "rld": 1100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2014917",
+    "room_type": "Maple",
+    "rld": 900.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1509008",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1591654",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1226887",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1479075",
+    "room_type": "Acacia",
+    "rld": -200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1197734",
+    "room_type": "Maple",
+    "rld": 2942.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "6141453",
+    "room_type": "Oak",
+    "rld": -200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1503956",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1386944",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2062247",
+    "room_type": "Acacia",
+    "rld": -500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1617471",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1594926",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1594926",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2027305",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1372632",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1257912",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1218072",
+    "room_type": "Maple",
+    "rld": 700.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1429250",
+    "room_type": "Mahogany",
+    "rld": 600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1531125",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2013172",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "8459601",
+    "room_type": "Mahogany",
+    "rld": 6500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1436657",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1596296",
+    "room_type": "Oak",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1978478",
+    "room_type": "Mahogany",
+    "rld": 700.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1442173",
+    "room_type": "Maple",
+    "rld": 700.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1914908",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1206030",
+    "room_type": "Maple",
+    "rld": 800.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2057014",
+    "room_type": "Acacia",
+    "rld": -100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1419130",
+    "room_type": "Maple",
+    "rld": 1860.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2039275",
+    "room_type": "Mahogany",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1614818",
+    "room_type": "Acacia",
+    "rld": -300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1211750",
+    "room_type": "Oak",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1541487",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1593321",
+    "room_type": "Acacia",
+    "rld": -150.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1441289",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1608379",
+    "room_type": "Maple",
+    "rld": 2000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1505657",
+    "room_type": "Maple",
+    "rld": 700.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1552629",
+    "room_type": "Oak",
+    "rld": -500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1503990",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1591221",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1591753",
+    "room_type": "Maple",
+    "rld": 722.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1207440",
+    "room_type": "Mahogany",
+    "rld": 1700.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1766478",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2024578",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1314078",
+    "room_type": "Mahogany",
+    "rld": 850.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1892583",
+    "room_type": "Mahogany",
+    "rld": 1000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1464876",
+    "room_type": "Mahogany",
+    "rld": 150.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1237644",
+    "room_type": "Mahogany",
+    "rld": 1800.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1766857",
+    "room_type": "Mahogany",
+    "rld": 900.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1502324",
+    "room_type": "Maple",
+    "rld": 700.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1538075",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1319620",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "4477291",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1208576",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2020755",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1755459",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1512203",
+    "room_type": "Oak",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "9772256",
+    "room_type": "Oak",
+    "rld": -400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1245105",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1453534",
+    "room_type": "Acacia",
+    "rld": -966.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1124831",
+    "room_type": "Mahogany",
+    "rld": 800.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2033589",
+    "room_type": "Mahogany",
+    "rld": 2000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1381541",
+    "room_type": "Acacia",
+    "rld": -200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1168316",
+    "room_type": "Mahogany",
+    "rld": 900.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1291038",
+    "room_type": "Mahogany",
+    "rld": 1200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2051467",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1822909",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1371983",
+    "room_type": "Acacia",
+    "rld": -800.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0002365",
+    "room_type": "Maple",
+    "rld": 939.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1363971",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1552629",
+    "room_type": "Mahogany",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2063526",
+    "room_type": "Mahogany",
+    "rld": 1600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1596121",
+    "room_type": "Mahogany",
+    "rld": 600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1252200",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1075048",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1501649",
+    "room_type": "Oak",
+    "rld": -100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1452757",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1125534",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1329928",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1892272",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1122516",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1594795",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1212498",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1384871",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1166971",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2027305",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "4000617",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2079707",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1291664",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1373515",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1416642",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2061880",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2011740",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1253600",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1218034",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "5000010",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1618855",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1591224",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1215728",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1144338",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1898527",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1503944",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1616462",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1597934",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1150242",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1477779",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2018414",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1411710",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1594465",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1708941",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "0418304",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1505405",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1619452",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1075048",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1308848",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1502559",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1261835",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1157226",
+    "room_type": "Oak",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1908074",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1389059",
+    "room_type": "Maple",
+    "rld": 1000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1153937",
+    "room_type": "Acacia",
+    "rld": -250.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "9112998",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1593867",
+    "room_type": "Mahogany",
+    "rld": 1000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1611760",
+    "room_type": "Mahogany",
+    "rld": 600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1395021",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1503990",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1139252",
+    "room_type": "Acacia",
+    "rld": -100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1727724",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1527908",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1596319",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1377628",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1064422",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1553206",
+    "room_type": "Maple",
+    "rld": 650.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1292171",
+    "room_type": "Maple",
+    "rld": -300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0468785",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1135897",
+    "room_type": "Acacia",
+    "rld": -200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1267636",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1508873",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1776233",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2014917",
+    "room_type": "Oak",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1136669",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1311732",
+    "room_type": "Mahogany",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1512806",
+    "room_type": "Mahogany",
+    "rld": 1000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1809628",
+    "room_type": "Mahogany",
+    "rld": 600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1243281",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2015941",
+    "room_type": "Maple",
+    "rld": 350.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2015941",
+    "room_type": "Mahogany",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0616586",
+    "room_type": "Acacia",
+    "rld": -200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1414116",
+    "room_type": "Maple",
+    "rld": 250.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2011692",
+    "room_type": "Maple",
+    "rld": 250.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2055589",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1261979",
+    "room_type": "Oak",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1892272",
+    "room_type": "Mahogany",
+    "rld": 1000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2345375",
+    "room_type": "Maple",
+    "rld": 600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2686403",
+    "room_type": "Acacia",
+    "rld": -100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1152305",
+    "room_type": "Acacia",
+    "rld": -200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0256107",
+    "room_type": "Mahogany",
+    "rld": 1800.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1415591",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1150242",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1157226",
+    "room_type": "Acacia",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1165642",
+    "room_type": "Mahogany",
+    "rld": 3500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1365209",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1308848",
+    "room_type": "Oak",
+    "rld": -200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1166252",
+    "room_type": "Maple",
+    "rld": 1200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1357746",
+    "room_type": "Maple",
+    "rld": 650.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1241638",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1431135",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2026607",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2012154",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1509676",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1399581",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1107594",
+    "room_type": "Mahogany",
+    "rld": 1058.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1161055",
+    "room_type": "Oak",
+    "rld": 100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0472129",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1423815",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1247056",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1253706",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1414660",
+    "room_type": "Acacia",
+    "rld": -100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1327100",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1298362",
+    "room_type": "Oak",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1307656",
+    "room_type": "Maple",
+    "rld": 250.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1212498",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2013518",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1709272",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1896095",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2026848",
+    "room_type": "Mahogany",
+    "rld": 600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2018835",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2019492",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "4471338",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "3001712",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1473477",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1125927",
+    "room_type": "Mahogany",
+    "rld": 350.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1206822",
+    "room_type": "Oak",
+    "rld": -200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2018373",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2025497",
+    "room_type": "Oak",
+    "rld": -100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0233415",
+    "room_type": "Acacia",
+    "rld": -300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1436133",
+    "room_type": "Oak",
+    "rld": -200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1299102",
+    "room_type": "Mahogany",
+    "rld": 1200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1247056",
+    "room_type": "Mahogany",
+    "rld": 2000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1504217",
+    "room_type": "Maple",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1143227",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1484845",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1184622",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2075824",
+    "room_type": "Mahogany",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1509602",
+    "room_type": "Mahogany",
+    "rld": 700.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2066561",
+    "room_type": "Oak",
+    "rld": -500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1583653",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1257676",
+    "room_type": "Mahogany",
+    "rld": 800.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2075824",
+    "room_type": "Maple",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1242933",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1545063",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1474895",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1166971",
+    "room_type": "Mahogany",
+    "rld": 3000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1107176",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2061503",
+    "room_type": "Mahogany",
+    "rld": 1900.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2061503",
+    "room_type": "Maple",
+    "rld": 1000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1234388",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1398298",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2016331",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1381105",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1412651",
+    "room_type": "Oak",
+    "rld": 250.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1538075",
+    "room_type": "Acacia",
+    "rld": -140.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1675415",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1131768",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1591618",
+    "room_type": "Oak",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2057014",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1472459",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1619863",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1265433",
+    "room_type": "Mahogany",
+    "rld": 1500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2089527",
+    "room_type": "Maple",
+    "rld": 450.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2071014",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2071014",
+    "room_type": "Mahogany",
+    "rld": 1500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2057538",
+    "room_type": "Mahogany",
+    "rld": 793.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "4471338",
+    "room_type": "Acacia",
+    "rld": -100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1892583",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1507731",
+    "room_type": "Acacia",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1522763",
+    "room_type": "Maple",
+    "rld": 100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "5000022",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1288538",
+    "room_type": "Oak",
+    "rld": -200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2071224",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1508980",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1191684",
+    "room_type": "Mahogany",
+    "rld": 1600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1881493",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2034103",
+    "room_type": "Mahogany",
+    "rld": 700.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1504217",
+    "room_type": "Mahogany",
+    "rld": 800.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1462197",
+    "room_type": "Mahogany",
+    "rld": 1200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1509768",
+    "room_type": "Acacia",
+    "rld": -350.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1247190",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1594371",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1596296",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1047446",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2053245",
+    "room_type": "Mahogany",
+    "rld": 700.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "4000617",
+    "room_type": "Maple",
+    "rld": 245.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1145293",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1247991",
+    "room_type": "Mahogany",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1921658",
+    "room_type": "Mahogany",
+    "rld": 1700.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1433343",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2016333",
+    "room_type": "Maple",
+    "rld": 250.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "4146211",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2071352",
+    "room_type": "Acacia",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1291813",
+    "room_type": "Maple",
+    "rld": 600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2027305",
+    "room_type": "Mahogany",
+    "rld": 700.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1547789",
+    "room_type": "Maple",
+    "rld": 350.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1532001",
+    "room_type": "Maple",
+    "rld": 250.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2016833",
+    "room_type": "Mahogany",
+    "rld": 1200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1372632",
+    "room_type": "Acacia",
+    "rld": -300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1174848",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2013074",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2065763",
+    "room_type": "Mahogany",
+    "rld": 1300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1229920",
+    "room_type": "Maple",
+    "rld": 100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1486131",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1514039",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1617471",
+    "room_type": "Mahogany",
+    "rld": 2800.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "3007683",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1133570",
+    "room_type": "Mahogany",
+    "rld": 700.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1551401",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1472508",
+    "room_type": "Mahogany",
+    "rld": 1800.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1419130",
+    "room_type": "Mahogany",
+    "rld": 3650.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2063523",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1261557",
+    "room_type": "Acacia",
+    "rld": -100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1398627",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1211750",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1524406",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1215301",
+    "room_type": "Acacia",
+    "rld": -300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1591654",
+    "room_type": "Mahogany",
+    "rld": 250.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1477779",
+    "room_type": "Maple",
+    "rld": 700.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1446075",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1479104",
+    "room_type": "Maple",
+    "rld": 900.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2024299",
+    "room_type": "Mahogany",
+    "rld": 1100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1608379",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2052148",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1468702",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "6806341",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1365284",
+    "room_type": "Oak",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2034103",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2018835",
+    "room_type": "Maple",
+    "rld": 800.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2013172",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1381192",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1759184",
+    "room_type": "Oak",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0377366",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1617763",
+    "room_type": "Oak",
+    "rld": -300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1374678",
+    "room_type": "Oak",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1375831",
+    "room_type": "Mahogany",
+    "rld": 1000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "4477291",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1383741",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1207440",
+    "room_type": "Oak",
+    "rld": 350.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1136669",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "4146211",
+    "room_type": "Mahogany",
+    "rld": 800.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1597119",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1203621",
+    "room_type": "Maple",
+    "rld": 1000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1371682",
+    "room_type": "Acacia",
+    "rld": -250.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2013490",
+    "room_type": "Mahogany",
+    "rld": 450.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1597144",
+    "room_type": "Acacia",
+    "rld": -150.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1593382",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1912757",
+    "room_type": "Mahogany",
+    "rld": 1000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1371983",
+    "room_type": "Mahogany",
+    "rld": 2200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1619637",
+    "room_type": "Acacia",
+    "rld": -380.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1212547",
+    "room_type": "Mahogany",
+    "rld": 1850.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2016822",
+    "room_type": "Maple",
+    "rld": 550.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1165837",
+    "room_type": "Acacia",
+    "rld": -500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1837134",
+    "room_type": "Oak",
+    "rld": -500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1463190",
+    "room_type": "Maple",
+    "rld": 600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1218728",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1709272",
+    "room_type": "Acacia",
+    "rld": -200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1709272",
+    "room_type": "Mahogany",
+    "rld": 1300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1144366",
+    "room_type": "Mahogany",
+    "rld": 1000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1075048",
+    "room_type": "Mahogany",
+    "rld": 600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1314078",
+    "room_type": "Maple",
+    "rld": 450.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0016581",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2050166",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1522037",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "0124913",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "0327829",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1297390",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1553644",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1246802",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1603145",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1421319",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "3001466",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2076663",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "0392605",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2016331",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1432626",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1269736",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1311732",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2024299",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1479897",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "0019694",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "0017174",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1555580",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "0018651",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "0544853",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1508349",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "0551475",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1558817",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2011692",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2011649",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1508008",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1371524",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2038886",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1483570",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1247345",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1553264",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2345375",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1247300",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "0242206",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1534876",
+    "room_type": "Oak",
+    "rld": 100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1509356",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1596121",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2043442",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1389059",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1391899",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2011068",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "3001609",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1591753",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2077421",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1527908",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2043486",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1437251",
+    "room_type": "Mahogany",
+    "rld": 600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1218905",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1881696",
+    "room_type": "Maple",
+    "rld": 600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1405295",
+    "room_type": "Oak",
+    "rld": -300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1299460",
+    "room_type": "Mahogany",
+    "rld": 2200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2065286",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1503445",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1464901",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1553206",
+    "room_type": "Acacia",
+    "rld": -200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1399581",
+    "room_type": "Mahogany",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1522096",
+    "room_type": "Oak",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2074839",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1247536",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "0392605",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1432626",
+    "room_type": "Mahogany",
+    "rld": 600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2012715",
+    "room_type": "Acacia",
+    "rld": -150.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1326972",
+    "room_type": "Mahogany",
+    "rld": 450.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2011740",
+    "room_type": "Mahogany",
+    "rld": 600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1456807",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0042415",
+    "room_type": "Maple",
+    "rld": 350.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2011740",
+    "room_type": "Acacia",
+    "rld": -100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1336968",
+    "room_type": "Mahogany",
+    "rld": 5000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1398875",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1414523",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1206897",
+    "room_type": "Oak",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0019694",
+    "room_type": "Maple",
+    "rld": 600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0243252",
+    "room_type": "Maple",
+    "rld": 700.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0543621",
+    "room_type": "Mahogany",
+    "rld": 900.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1596003",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1434858",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1166252",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1385250",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1616462",
+    "room_type": "Oak",
+    "rld": 100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "5000010",
+    "room_type": "Maple",
+    "rld": 700.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1619452",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1673534",
+    "room_type": "Maple",
+    "rld": 600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1043825",
+    "room_type": "Maple",
+    "rld": 600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0050525",
+    "room_type": "Acacia",
+    "rld": -200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1107594",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0256107",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1261979",
+    "room_type": "Mahogany",
+    "rld": 1300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1379430",
+    "room_type": "Maple",
+    "rld": 700.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2065399",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1165642",
+    "room_type": "Maple",
+    "rld": 900.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0017174",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1546230",
+    "room_type": "Maple",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1596319",
+    "room_type": "Mahogany",
+    "rld": 1300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1248477",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1472459",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1505609",
+    "room_type": "Mahogany",
+    "rld": 700.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2067600",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1142067",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "0472129",
+    "room_type": "Mahogany",
+    "rld": 850.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0265185",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1446609",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1242933",
+    "room_type": "Mahogany",
+    "rld": 350.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1216141",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1307656",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1379202",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1327100",
+    "room_type": "Mahogany",
+    "rld": 1000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1394588",
+    "room_type": "Mahogany",
+    "rld": 900.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2018551",
+    "room_type": "Maple",
+    "rld": 250.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1702720",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2029800",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2061639",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2050302",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2017070",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2016532",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2025247",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "6474322",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1767649",
+    "room_type": "Maple",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1516017",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1245526",
+    "room_type": "Maple",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1172490",
+    "room_type": "Maple",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1609002",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2066561",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1184622",
+    "room_type": "Mahogany",
+    "rld": 650.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1591618",
+    "room_type": "Acacia",
+    "rld": -200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1619637",
+    "room_type": "Oak",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1115459",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1205898",
+    "room_type": "Mahogany",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2098401",
+    "room_type": "Mahogany",
+    "rld": 450.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1257676",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2076114",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1464617",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2011302",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1166971",
+    "room_type": "Maple",
+    "rld": 1400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1486131",
+    "room_type": "Oak",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1553354",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1378773",
+    "room_type": "Acacia",
+    "rld": -200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1412651",
+    "room_type": "Maple",
+    "rld": 900.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1269736",
+    "room_type": "Mahogany",
+    "rld": 1700.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1136517",
+    "room_type": "Oak",
+    "rld": -200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2022899",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1314078",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2089527",
+    "room_type": "Oak",
+    "rld": 150.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1884441",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1604662",
+    "room_type": "Mahogany",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2063330",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2053564",
+    "room_type": "Maple",
+    "rld": 450.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1269686",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1442176",
+    "room_type": "Mahogany",
+    "rld": 1000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1726039",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "8459601",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1365825",
+    "room_type": "Mahogany",
+    "rld": 800.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2065399",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2013598",
+    "room_type": "Oak",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1502324",
+    "room_type": "Mahogany",
+    "rld": 800.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2051131",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1152305",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1509768",
+    "room_type": "Oak",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1548950",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1597119",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1374088",
+    "room_type": "Acacia",
+    "rld": -250.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1176759",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2015616",
+    "room_type": "Mahogany",
+    "rld": 735.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1226887",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1503376",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1921658",
+    "room_type": "Maple",
+    "rld": 600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1166122",
+    "room_type": "Mahogany",
+    "rld": 569.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2016962",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "6141453",
+    "room_type": "Maple",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2016331",
+    "room_type": "Acacia",
+    "rld": -300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1594926",
+    "room_type": "Acacia",
+    "rld": -100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1364455",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1484845",
+    "room_type": "Maple",
+    "rld": 600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1104342",
+    "room_type": "Maple",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1115459",
+    "room_type": "Oak",
+    "rld": 600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1433791",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1397677",
+    "room_type": "Mahogany",
+    "rld": 600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1596296",
+    "room_type": "Mahogany",
+    "rld": 2900.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1547409",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2018823",
+    "room_type": "Acacia",
+    "rld": -200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1514039",
+    "room_type": "Oak",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1419740",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1133570",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1204404",
+    "room_type": "Oak",
+    "rld": -400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1593945",
+    "room_type": "Mahogany",
+    "rld": 650.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2013677",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1475870",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1479075",
+    "room_type": "Maple",
+    "rld": 1200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1147436",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2063523",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1398627",
+    "room_type": "Acacia",
+    "rld": -200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1524406",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1247316",
+    "room_type": "Acacia",
+    "rld": -160.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1215301",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1597119",
+    "room_type": "Mahogany",
+    "rld": 650.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1593220",
+    "room_type": "Oak",
+    "rld": -100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1608379",
+    "room_type": "Mahogany",
+    "rld": 3500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1507731",
+    "room_type": "Oak",
+    "rld": 100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1451268",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1167428",
+    "room_type": "Oak",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1531125",
+    "room_type": "Mahogany",
+    "rld": 800.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1385678",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1373375",
+    "room_type": "Oak",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1381192",
+    "room_type": "Mahogany",
+    "rld": 600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1464901",
+    "room_type": "Oak",
+    "rld": -200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1245015",
+    "room_type": "Oak",
+    "rld": -200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1921226",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "3005059",
+    "room_type": "Acacia",
+    "rld": -100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1759184",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2685639",
+    "room_type": "Oak",
+    "rld": -500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2017175",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1702054",
+    "room_type": "Mahogany",
+    "rld": 2000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1319620",
+    "room_type": "Mahogany",
+    "rld": 600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1292887",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2011450",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2011450",
+    "room_type": "Oak",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "0295705",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1136669",
+    "room_type": "Acacia",
+    "rld": -100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1307656",
+    "room_type": "Acacia",
+    "rld": -100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1453534",
+    "room_type": "Oak",
+    "rld": -866.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2098048",
+    "room_type": "Mahogany",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2033589",
+    "room_type": "Oak",
+    "rld": -500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1617471",
+    "room_type": "Oak",
+    "rld": 660.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1541487",
+    "room_type": "Mahogany",
+    "rld": 1200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1475965",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1517075",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1475965",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1378193",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1594795",
+    "room_type": "Acacia",
+    "rld": -150.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1371983",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1507161",
+    "room_type": "Maple",
+    "rld": 250.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "4476459",
+    "room_type": "Maple",
+    "rld": 450.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1147235",
+    "room_type": "Maple",
+    "rld": 150.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1295755",
+    "room_type": "Maple",
+    "rld": 550.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2012154",
+    "room_type": "Mahogany",
+    "rld": 700.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1552629",
+    "room_type": "Maple",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1581295",
+    "room_type": "Mahogany",
+    "rld": 1000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1165837",
+    "room_type": "Mahogany",
+    "rld": 2650.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1709272",
+    "room_type": "Maple",
+    "rld": 100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2067625",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1914908",
+    "room_type": "Mahogany",
+    "rld": 1500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1246851",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1593867",
+    "room_type": "Maple",
+    "rld": 600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1452757",
+    "room_type": "Mahogany",
+    "rld": 1300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1218728",
+    "room_type": "Mahogany",
+    "rld": 2600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1108510",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1505657",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1456807",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "0012622",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "0509914",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1452205",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1501004",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2098155",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "0295705",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1472544",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1556414",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1506055",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2037169",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1298420",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1206897",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1594371",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "0262017",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "0063794",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1884844",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1453106",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "0262502",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1504742",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "3006134",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "0325023",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1241567",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "0297519",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2089527",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1557929",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1508873",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1978478",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1136798",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1168906",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1267636",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2016484",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1416878",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1137116",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2017408",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1379430",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2018989",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1326972",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1509593",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "0377366",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1169924",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1442949",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1368078",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1167277",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1509603",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1599756",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1596837",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2013237",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "0471678",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2018949",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1929807",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1546728",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1555338",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2008591",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1326972",
+    "room_type": "Cottage",
+    "rld": 0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1509356",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1076395",
+    "room_type": "Maple",
+    "rld": 105.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2011492",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1391899",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1505168",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2018927",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1512203",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1921226",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1139252",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1294367",
+    "room_type": "Mahogany",
+    "rld": 1700.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0544853",
+    "room_type": "Mahogany",
+    "rld": 0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1508400",
+    "room_type": "Oak",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1615230",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1437251",
+    "room_type": "Oak",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1436029",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1613519",
+    "room_type": "Acacia",
+    "rld": -100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1593945",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1299460",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1405295",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1501649",
+    "room_type": "Maple",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1869742",
+    "room_type": "Maple",
+    "rld": 100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1439255",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1553206",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1522096",
+    "room_type": "Acacia",
+    "rld": -200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1438370",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2074839",
+    "room_type": "Mahogany",
+    "rld": 1000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1384871",
+    "room_type": "Mahogany",
+    "rld": 950.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1434248",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1432626",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1431818",
+    "room_type": "Maple",
+    "rld": 250.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0045959",
+    "room_type": "Maple",
+    "rld": 350.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1161560",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1211946",
+    "room_type": "Mahogany",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1536656",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2063608",
+    "room_type": "Mahogany",
+    "rld": 1600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1613519",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1197891",
+    "room_type": "Oak",
+    "rld": 250.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0243252",
+    "room_type": "Mahogany",
+    "rld": 2000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0543621",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0415343",
+    "room_type": "Maple",
+    "rld": 700.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1414822",
+    "room_type": "Maple",
+    "rld": 350.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2062247",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1597934",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1555008",
+    "room_type": "Mahogany",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2013237",
+    "room_type": "Maple",
+    "rld": 800.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1212380",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2064479",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2063526",
+    "room_type": "Oak",
+    "rld": -100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1417406",
+    "room_type": "Oak",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2031448",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2083696",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1135897",
+    "room_type": "Maple",
+    "rld": 1000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2686403",
+    "room_type": "Oak",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1555580",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1244990",
+    "room_type": "Maple",
+    "rld": 150.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1246347",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1903843",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1809628",
+    "room_type": "Maple",
+    "rld": 350.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2043486",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1766191",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1593321",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1241638",
+    "room_type": "Acacia",
+    "rld": -150.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1435465",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1435465",
+    "room_type": "Maple",
+    "rld": 1100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1242398",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2013841",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1509676",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1434818",
+    "room_type": "Acacia",
+    "rld": -200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1506967",
+    "room_type": "Mahogany",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1292558",
+    "room_type": "Mahogany",
+    "rld": 1700.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1292850",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1414660",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1323582",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1166122",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1896095",
+    "room_type": "Mahogany",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2026848",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2050302",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2685639",
+    "room_type": "Maple",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2098401",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "4138782",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "3002526",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2013518",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1558691",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1172490",
+    "room_type": "Mahogany",
+    "rld": 700.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1883885",
+    "room_type": "Maple",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1125927",
+    "room_type": "Maple",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1184622",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1267644",
+    "room_type": "Acacia",
+    "rld": -100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1502379",
+    "room_type": "Oak",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0265185",
+    "room_type": "Mahogany",
+    "rld": 1000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1546230",
+    "room_type": "Mahogany",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1206897",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1436133",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1143227",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1884441",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1114107",
+    "room_type": "Maple",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1378773",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1435639",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1611760",
+    "room_type": "Acacia",
+    "rld": -200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1205898",
+    "room_type": "Acacia",
+    "rld": -100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1596716",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1206822",
+    "room_type": "Maple",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2013490",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1381105",
+    "room_type": "Mahogany",
+    "rld": 1100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1547409",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1136517",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1374286",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1766191",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1472459",
+    "room_type": "Mahogany",
+    "rld": 700.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1385250",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1898527",
+    "room_type": "Maple",
+    "rld": 800.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1184336",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1416806",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1182758",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1396947",
+    "room_type": "Acacia",
+    "rld": -300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1142308",
+    "room_type": "Maple",
+    "rld": 250.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2047707",
+    "room_type": "Acacia",
+    "rld": -100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1597226",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1593685",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1726039",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1441289",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1365825",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2013598",
+    "room_type": "Mahogany",
+    "rld": 1500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1559260",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1502324",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1596742",
+    "room_type": "Mahogany",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1152305",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1374088",
+    "room_type": "Mahogany",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1247190",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1257158",
+    "room_type": "Maple",
+    "rld": 352.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1368078",
+    "room_type": "Maple",
+    "rld": 380.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1146139",
+    "room_type": "Maple",
+    "rld": 100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1597144",
+    "room_type": "Mahogany",
+    "rld": 600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1986521",
+    "room_type": "Mahogany",
+    "rld": 1250.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1107176",
+    "room_type": "Mahogany",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2015616",
+    "room_type": "Oak",
+    "rld": -105.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1226887",
+    "room_type": "Mahogany",
+    "rld": 1500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1547096",
+    "room_type": "Mahogany",
+    "rld": 600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1547096",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "3006134",
+    "room_type": "Mahogany",
+    "rld": 960.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1479075",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2015932",
+    "room_type": "Oak",
+    "rld": -300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0325023",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1324743",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1386944",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1916713",
+    "room_type": "Maple",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1322829",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1291813",
+    "room_type": "Mahogany",
+    "rld": 900.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2018319",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2014266",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1466884",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2019978",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1114107",
+    "room_type": "Oak",
+    "rld": -160.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1343286",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1702054",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1583653",
+    "room_type": "Mahogany",
+    "rld": 800.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2011302",
+    "room_type": "Mahogany",
+    "rld": 1000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1581295",
+    "room_type": "Maple",
+    "rld": 550.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0207833",
+    "room_type": "Mahogany",
+    "rld": 1500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1397677",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2052667",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1914908",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1245526",
+    "room_type": "Oak",
+    "rld": -200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1539442",
+    "room_type": "Mahogany",
+    "rld": 1350.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1204404",
+    "room_type": "Acacia",
+    "rld": -500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1593820",
+    "room_type": "Maple",
+    "rld": 600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1432185",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1419130",
+    "room_type": "Oak",
+    "rld": 1040.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1261557",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1398627",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1299383",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2019513",
+    "room_type": "Mahogany",
+    "rld": 250.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0377942",
+    "room_type": "Maple",
+    "rld": 1000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2025675",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1618342",
+    "room_type": "Maple",
+    "rld": 330.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1451268",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1167428",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1047446",
+    "room_type": "Mahogany",
+    "rld": 1700.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2033589",
+    "room_type": "Maple",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2013172",
+    "room_type": "Mahogany",
+    "rld": 1000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1385678",
+    "room_type": "Mahogany",
+    "rld": 700.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1614818",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2317284",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1263729",
+    "room_type": "Acacia",
+    "rld": -150.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1475870",
+    "room_type": "Oak",
+    "rld": -500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1474809",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2053564",
+    "room_type": "Mahogany",
+    "rld": 2250.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1114303",
+    "room_type": "Mahogany",
+    "rld": 1400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1592011",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1755459",
+    "room_type": "Acacia",
+    "rld": -500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "6473852",
+    "room_type": "Oak",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1462197",
+    "room_type": "Maple",
+    "rld": 600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1379032",
+    "room_type": "Mahogany",
+    "rld": 1600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0377942",
+    "room_type": "Acacia",
+    "rld": -100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1282785",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1168316",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1291038",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1193381",
+    "room_type": "Mahogany",
+    "rld": 3000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0207833",
+    "room_type": "Acacia",
+    "rld": -1200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0616586",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1509933",
+    "room_type": "Mahogany",
+    "rld": 1100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "4476459",
+    "room_type": "Acacia",
+    "rld": -150.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1363971",
+    "room_type": "Mahogany",
+    "rld": 600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1759184",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2017070",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0050525",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1766478",
+    "room_type": "Mahogany",
+    "rld": 600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1237644",
+    "room_type": "Oak",
+    "rld": 100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1593867",
+    "room_type": "Oak",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2024578",
+    "room_type": "Mahogany",
+    "rld": 1500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1231999",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1064211",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1371182",
+    "room_type": "Mahogany",
+    "rld": 1800.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1218728",
+    "room_type": "Maple",
+    "rld": 1100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1903843",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1211946",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "0045959",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1168384",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "0243252",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "0543621",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1483392",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1416806",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1149810",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1504269",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1362285",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1212851",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1043825",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1217501",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1501664",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1344052",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2011351",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2015296",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1145490",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1107594",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1534876",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1374678",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1145980",
+    "room_type": "Mahogany",
+    "rld": 800.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1505168",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1291518",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1521270",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1611760",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2059587",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2067711",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2071224",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1243281",
+    "room_type": "Oak",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1435986",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1615230",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2018445",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2013117",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1881696",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1377628",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2082832",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2088875",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1438370",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1184336",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0045959",
+    "room_type": "Mahogany",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0262502",
+    "room_type": "Mahogany",
+    "rld": 1100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1504742",
+    "room_type": "Maple",
+    "rld": 600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1379742",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1298420",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1613519",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1416642",
+    "room_type": "Mahogany",
+    "rld": 1000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1247536",
+    "room_type": "Mahogany",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0245564",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "0245564",
+    "room_type": "Acacia",
+    "rld": -200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0245564",
+    "room_type": "Maple",
+    "rld": 1700.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0415343",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "0551475",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2011692",
+    "room_type": "Mahogany",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1558691",
+    "room_type": "Acacia",
+    "rld": -300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2011649",
+    "room_type": "Mahogany",
+    "rld": 750.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2014883",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2014111",
+    "room_type": "Maple",
+    "rld": 700.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1673534",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1217501",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "5802951",
+    "room_type": "Maple",
+    "rld": 1200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1508506",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1212380",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1305035",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1298420",
+    "room_type": "Acacia",
+    "rld": -200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2089527",
+    "room_type": "Mahogany",
+    "rld": 1100.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1558817",
+    "room_type": "Maple",
+    "rld": 340.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1386481",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2031448",
+    "room_type": "Mahogany",
+    "rld": 1000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1555338",
+    "room_type": "Maple",
+    "rld": 450.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0242206",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1418980",
+    "room_type": "Acacia",
+    "rld": -200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0327829",
+    "room_type": "Oak",
+    "rld": -550.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1267489",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1418069",
+    "room_type": "Mahogany",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1379430",
+    "room_type": "Oak",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2010531",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2061111",
+    "room_type": "Mahogany",
+    "rld": 450.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1399581",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2067600",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2010412",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2010412",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1776233",
+    "room_type": "Maple",
+    "rld": 800.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1448519",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1213625",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1505358",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1381105",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2018551",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2018551",
+    "room_type": "Mahogany",
+    "rld": 650.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2024867",
+    "room_type": "Mahogany",
+    "rld": 750.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2026148",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2087086",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2016532",
+    "room_type": "Maple",
+    "rld": 600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1065859",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2017563",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2077421",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1324672",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1597144",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1219455",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1115459",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1583653",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1381192",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2075824",
+    "room_type": "Oak",
+    "rld": -200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2076114",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1146139",
+    "room_type": "Acacia",
+    "rld": -500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1241870",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1557374",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1336018",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1896095",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1161055",
+    "room_type": "Maple",
+    "rld": 1200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2058505",
+    "room_type": "Oak",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1603145",
+    "room_type": "Maple",
+    "rld": 700.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "6473852",
+    "room_type": "Acacia",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "3001380",
+    "room_type": "Maple",
+    "rld": 1020.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1619863",
+    "room_type": "Acacia",
+    "rld": -250.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2047707",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1142308",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1396947",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1161055",
+    "room_type": "Mahogany",
+    "rld": 1550.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1412139",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1174848",
+    "room_type": "Mahogany",
+    "rld": 1500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1126500",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1767878",
+    "room_type": "Maple",
+    "rld": 350.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2011302",
+    "room_type": "Maple",
+    "rld": 600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "9112998",
+    "room_type": "Oak",
+    "rld": -200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1136517",
+    "room_type": "Acacia",
+    "rld": -500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1212547",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1262378",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2051131",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2024354",
+    "room_type": "Acacia",
+    "rld": -350.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1104841",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1418549",
+    "room_type": "Oak",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1374088",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1299383",
+    "room_type": "Mahogany",
+    "rld": 1700.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1767140",
+    "room_type": "Maple",
+    "rld": 700.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2058446",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1503376",
+    "room_type": "Mahogany",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1921658",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1145293",
+    "room_type": "Maple",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1247991",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1483392",
+    "room_type": "Mahogany",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1234696",
+    "room_type": "Acacia",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1868924",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1234696",
+    "room_type": "Oak",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1547789",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1382823",
+    "room_type": "Maple",
+    "rld": 900.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2014856",
+    "room_type": "Acacia",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1257912",
+    "room_type": "Mahogany",
+    "rld": 1200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1114107",
+    "room_type": "Acacia",
+    "rld": -270.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1379085",
+    "room_type": "Maple",
+    "rld": 800.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1433791",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1397677",
+    "room_type": "Acacia",
+    "rld": -200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1447642",
+    "room_type": "Maple",
+    "rld": 700.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0325023",
+    "room_type": "Acacia",
+    "rld": -300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2317284",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1446609",
+    "room_type": "Maple",
+    "rld": 700.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1419740",
+    "room_type": "Oak",
+    "rld": -300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1614818",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1595502",
+    "room_type": "Mahogany",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1432185",
+    "room_type": "Mahogany",
+    "rld": 600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1472376",
+    "room_type": "Oak",
+    "rld": -1000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1755459",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "2046776",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1371182",
+    "room_type": "Maple",
+    "rld": 800.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1596319",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1446075",
+    "room_type": "Mahogany",
+    "rld": 1000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1766857",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0377942",
+    "room_type": "Mahogany",
+    "rld": 1800.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1507731",
+    "room_type": "Mahogany",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1198531",
+    "room_type": "Maple",
+    "rld": 800.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1167428",
+    "room_type": "Maple",
+    "rld": 400.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1234388",
+    "room_type": "Mahogany",
+    "rld": 700.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2055653",
+    "room_type": "Mahogany",
+    "rld": 800.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1145980",
+    "room_type": "Oak",
+    "rld": 250.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1265433",
+    "room_type": "Oak",
+    "rld": -250.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1465445",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1466884",
+    "room_type": "Mahogany",
+    "rld": 2300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1263729",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1767649",
+    "room_type": "Mahogany",
+    "rld": 3300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1114303",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2016693",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1474809",
+    "room_type": "Maple",
+    "rld": 350.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1148276",
+    "room_type": "Mahogany",
+    "rld": 1600.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0377366",
+    "room_type": "Mahogany",
+    "rld": 800.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1383741",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1124831",
+    "room_type": "Maple",
+    "rld": 500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1597997",
+    "room_type": "Maple",
+    "rld": 278.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1282785",
+    "room_type": "Mahogany",
+    "rld": 1000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1381541",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1894945",
+    "room_type": "Mahogany",
+    "rld": 3000.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1511929",
+    "room_type": "Maple",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1147235",
+    "room_type": "Oak",
+    "rld": 0.0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1379032",
+    "room_type": "Oak",
+    "rld": -200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1429250",
+    "room_type": "Maple",
+    "rld": 300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1822909",
+    "room_type": "Oak",
+    "rld": 250.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1147235",
+    "room_type": "Mahogany",
+    "rld": 1800.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1165837",
+    "room_type": "Maple",
+    "rld": 800.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1144366",
+    "room_type": "Oak",
+    "rld": 200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1104342",
+    "room_type": "Oak",
+    "rld": -300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1167277",
+    "room_type": "Maple",
+    "rld": 823.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1207440",
+    "room_type": "Maple",
+    "rld": 950.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2037169",
+    "room_type": "Mahogany",
+    "rld": 1300.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "0050525",
+    "room_type": "Mahogany",
+    "rld": 1500.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1766478",
+    "room_type": "Oak",
+    "rld": 0,
+    "base_room": "OAK"
+  },
+  {
+    "cs_id": "1503956",
+    "room_type": "Acacia",
+    "rld": -200.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "2016833",
+    "room_type": "Maple",
+    "rld": 50.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1314078",
+    "room_type": "Oak",
+    "rld": 250.0,
+    "base_room": ""
+  },
+  {
+    "cs_id": "1064211",
+    "room_type": "Mahogany",
+    "rld": 700.0,
+    "base_room": ""
+  }
+]

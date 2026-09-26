@@ -1,0 +1,211 @@
+property_code,sku_code,date,min_price,max_price,region,city,original_min_price,pct_diff,alert
+0019694,21,"September 17, 2026","2,306","23,600",South 1,Bangalore,"2,516",-6,Critical
+0019694,22,"September 17, 2026","2,306","23,600",South 1,Bangalore,"2,516",-6,Critical
+0019694,23,"September 17, 2026","2,513","23,600",South 1,Bangalore,"2,726",-6,Critical
+0019694,24,"September 17, 2026","2,513","23,600",South 1,Bangalore,"2,726",-6,Critical
+0019694,25,"September 17, 2026","2,513","23,600",South 1,Bangalore,"2,726",-6,Critical
+0019694,26,"September 17, 2026","2,513","23,600",South 1,Bangalore,"2,726",-6,Critical
+0019694,39,"September 17, 2026","2,306","23,600",South 1,Bangalore,"2,516",-6,Critical
+0019694,40,"September 17, 2026","2,513","23,600",South 1,Bangalore,"2,726",-6,Critical
+0019694,83,"September 17, 2026","2,306","23,600",South 1,Bangalore,"2,516",-6,Critical
+1127927,27,"September 17, 2026","2,111","23,600",North 2,Dehradun,"2,299",-6,Critical
+1127927,28,"September 17, 2026","2,111","23,600",North 2,Dehradun,"2,299",-6,Critical
+1127927,29,"September 17, 2026","1,973","23,600",North 2,Dehradun,"2,159",-6,Critical
+1127927,30,"September 17, 2026","1,973","23,600",North 2,Dehradun,"2,159",-6,Critical
+1127927,31,"September 17, 2026","1,973","23,600",North 2,Dehradun,"2,159",-6,Critical
+1127927,32,"September 17, 2026","2,042","23,600",North 2,Dehradun,"2,229",-6,Critical
+1127927,33,"September 17, 2026","2,042","23,600",North 2,Dehradun,"2,229",-6,Critical
+1127927,34,"September 17, 2026","2,042","23,600",North 2,Dehradun,"2,229",-6,Critical
+1127927,57,"September 17, 2026","1,973","23,600",North 2,Dehradun,"2,159",-6,Critical
+1136293,17,"September 17, 2026","1,612","23,600",East,Patna,"1,750",-6,Critical
+1136293,18,"September 17, 2026","1,612","23,600",East,Patna,"1,750",-6,Critical
+1136293,19,"September 17, 2026","1,681","23,600",East,Patna,"1,820",-6,Critical
+1136293,20,"September 17, 2026","1,681","23,600",East,Patna,"1,820",-6,Critical
+1136293,50,"September 17, 2026","1,612","23,600",East,Patna,"1,750",-6,Critical
+1152305,21,"September 11, 2026","1,952","23,600",South 1,Kochi,"2,128",-6,Critical
+1152305,21,"September 11, 2026","1,952","23,600",South 1,Kochi,"2,128",-6,Critical
+1152305,22,"September 11, 2026","1,952","23,600",South 1,Kochi,"2,128",-6,Critical
+1152305,22,"September 11, 2026","1,952","23,600",South 1,Kochi,"2,128",-6,Critical
+1152305,39,"September 11, 2026","1,952","23,600",South 1,Kochi,"2,128",-6,Critical
+1152305,83,"September 11, 2026","1,952","23,600",South 1,Kochi,"2,128",-6,Critical
+1205898,19,"September 17, 2026","1,546","23,600",North 2,Prayagraj,"1,685",-6,Critical
+1205898,20,"September 17, 2026","1,546","23,600",North 2,Prayagraj,"1,685",-6,Critical
+1205898,21,"September 17, 2026","1,546","23,600",North 2,Prayagraj,"1,685",-6,Critical
+1205898,22,"September 17, 2026","1,546","23,600",North 2,Prayagraj,"1,685",-6,Critical
+1205898,23,"September 17, 2026","1,615","23,600",North 2,Prayagraj,"1,750",-6,Critical
+1205898,24,"September 17, 2026","1,615","23,600",North 2,Prayagraj,"1,750",-6,Critical
+1205898,39,"September 17, 2026","1,546","23,600",North 2,Prayagraj,"1,685",-6,Critical
+1205898,40,"September 17, 2026","1,615","23,600",North 2,Prayagraj,"1,750",-6,Critical
+1205898,83,"September 17, 2026","1,546","23,600",North 2,Prayagraj,"1,685",-6,Critical
+1405295,23,"September 17, 2026","1,398","23,600",North 1,Vadodara,"1,524",-6,Critical
+1405295,24,"September 17, 2026","1,398","23,600",North 1,Vadodara,"1,524",-6,Critical
+1405295,29,"September 17, 2026","1,519","23,600",North 1,Vadodara,"1,644",-6,Critical
+1405295,30,"September 17, 2026","1,519","23,600",North 1,Vadodara,"1,644",-6,Critical
+1405295,31,"September 17, 2026","1,519","23,600",North 1,Vadodara,"1,644",-6,Critical
+1405295,40,"September 17, 2026","1,398","23,600",North 1,Vadodara,"1,524",-6,Critical
+1405295,57,"September 17, 2026","1,519","23,600",North 1,Vadodara,"1,644",-6,Critical
+1416642,19,"September 17, 2026","1,865","23,600",East,Kolkata,"2,037",-6,Critical
+1416642,20,"September 17, 2026","1,865","23,600",East,Kolkata,"2,037",-6,Critical
+1416642,21,"September 17, 2026","1,969","23,600",East,Kolkata,"2,135",-6,Critical
+1416642,22,"September 17, 2026","1,969","23,600",East,Kolkata,"2,135",-6,Critical
+1416642,39,"September 17, 2026","1,969","23,600",East,Kolkata,"2,135",-6,Critical
+1416642,83,"September 17, 2026","1,969","23,600",East,Kolkata,"2,135",-6,Critical
+1519378,17,"September 12, 2026","1,094","23,600",West,Nashik,"1,197",-6,Critical
+1519378,18,"September 12, 2026","1,094","23,600",West,Nashik,"1,197",-6,Critical
+1519378,19,"September 12, 2026","1,163","23,600",West,Nashik,"1,262",-6,Critical
+1519378,19,"September 14, 2026","1,154","23,600",West,Nashik,"1,262",-6,Critical
+1519378,19,"September 15, 2026","1,154","23,600",West,Nashik,"1,262",-6,Critical
+1519378,20,"September 12, 2026","1,163","23,600",West,Nashik,"1,262",-6,Critical
+1519378,20,"September 14, 2026","1,154","23,600",West,Nashik,"1,262",-6,Critical
+1519378,20,"September 15, 2026","1,154","23,600",West,Nashik,"1,262",-6,Critical
+1519378,50,"September 12, 2026","1,094","23,600",West,Nashik,"1,197",-6,Critical
+1869742,17,"September 10, 2026","2,112","23,600",West,Ujjain,"2,297",-6,Critical
+1869742,18,"September 10, 2026","2,112","23,600",West,Ujjain,"2,297",-6,Critical
+1869742,50,"September 10, 2026","2,112","23,600",West,Ujjain,"2,297",-6,Critical
+2018835,21,"September 17, 2026","2,881","23,600",South 1,Bangalore,"3,131",-6,Critical
+2018835,22,"September 17, 2026","2,881","23,600",South 1,Bangalore,"3,131",-6,Critical
+2018835,23,"September 17, 2026","3,088","23,600",South 1,Bangalore,"3,341",-6,Critical
+2018835,24,"September 17, 2026","3,088","23,600",South 1,Bangalore,"3,341",-6,Critical
+2018835,29,"September 17, 2026","3,088","23,600",South 1,Bangalore,"3,341",-6,Critical
+2018835,30,"September 17, 2026","3,088","23,600",South 1,Bangalore,"3,341",-6,Critical
+2018835,31,"September 17, 2026","3,088","23,600",South 1,Bangalore,"3,341",-6,Critical
+2018835,39,"September 17, 2026","2,881","23,600",South 1,Bangalore,"3,131",-6,Critical
+2018835,40,"September 17, 2026","3,088","23,600",South 1,Bangalore,"3,341",-6,Critical
+2018835,83,"September 17, 2026","2,881","23,600",South 1,Bangalore,"3,131",-6,Critical
+2019978,21,"September 17, 2026","1,994","20,000",South 1,Bangalore,"2,181",-6,Critical
+2019978,22,"September 17, 2026","1,994","20,000",South 1,Bangalore,"2,181",-6,Critical
+2019978,23,"September 17, 2026","2,132","20,000",South 1,Bangalore,"2,319",-6,Critical
+2019978,24,"September 17, 2026","2,132","20,000",South 1,Bangalore,"2,319",-6,Critical
+2019978,39,"September 17, 2026","1,994","20,000",South 1,Bangalore,"2,181",-6,Critical
+2019978,40,"September 17, 2026","2,132","20,000",South 1,Bangalore,"2,319",-6,Critical
+2019978,83,"September 17, 2026","1,994","20,000",South 1,Bangalore,"2,181",-6,Critical
+0003211,19,"September 17, 2026","1,612","23,600",North 1,Jaipur,"1,783",-7,Critical
+0003211,20,"September 17, 2026","1,612","23,600",North 1,Jaipur,"1,783",-7,Critical
+0019694,17,"September 17, 2026","1,892","23,600",South 1,Bangalore,"2,096",-7,Critical
+0019694,18,"September 17, 2026","1,892","23,600",South 1,Bangalore,"2,096",-7,Critical
+0019694,19,"September 17, 2026","2,099","23,600",South 1,Bangalore,"2,306",-7,Critical
+0019694,20,"September 17, 2026","2,099","23,600",South 1,Bangalore,"2,306",-7,Critical
+0019694,50,"September 17, 2026","1,892","23,600",South 1,Bangalore,"2,096",-7,Critical
+0019694,51,"September 17, 2026","2,099","23,600",South 1,Bangalore,"2,306",-7,Critical
+0019694,87,"September 17, 2026","1,892","23,600",South 1,Bangalore,"2,096",-7,Critical
+0262017,35,"September 17, 2026","1,992","23,600",South 2,Coimbatore,"2,191",-7,Critical
+0262017,36,"September 17, 2026","1,992","23,600",South 2,Coimbatore,"2,191",-7,Critical
+1127927,23,"September 17, 2026","1,697","23,600",North 2,Dehradun,"1,879",-7,Critical
+1127927,24,"September 17, 2026","1,697","23,600",North 2,Dehradun,"1,879",-7,Critical
+1127927,40,"September 17, 2026","1,697","23,600",North 2,Dehradun,"1,879",-7,Critical
+1205898,17,"September 17, 2026","1,477","23,600",North 2,Prayagraj,"1,620",-7,Critical
+1205898,18,"September 17, 2026","1,477","23,600",North 2,Prayagraj,"1,620",-7,Critical
+1205898,50,"September 17, 2026","1,477","23,600",North 2,Prayagraj,"1,620",-7,Critical
+1405295,21,"September 17, 2026","1,312","23,600",North 1,Vadodara,"1,437",-7,Critical
+1405295,22,"September 17, 2026","1,312","23,600",North 1,Vadodara,"1,437",-7,Critical
+1405295,39,"September 17, 2026","1,312","23,600",North 1,Vadodara,"1,437",-7,Critical
+1405295,83,"September 17, 2026","1,312","23,600",North 1,Vadodara,"1,437",-7,Critical
+1416724,17,"September 17, 2026","1,241","23,600",East,Kolkata,"1,363",-7,Critical
+1416724,18,"September 17, 2026","1,241","23,600",East,Kolkata,"1,363",-7,Critical
+1416724,50,"September 17, 2026","1,241","23,600",East,Kolkata,"1,363",-7,Critical
+1519378,17,"September 14, 2026","1,085","23,600",West,Nashik,"1,197",-7,Critical
+1519378,17,"September 15, 2026","1,085","23,600",West,Nashik,"1,197",-7,Critical
+1519378,18,"September 14, 2026","1,085","23,600",West,Nashik,"1,197",-7,Critical
+1519378,18,"September 15, 2026","1,085","23,600",West,Nashik,"1,197",-7,Critical
+1519378,50,"September 14, 2026","1,085","23,600",West,Nashik,"1,197",-7,Critical
+1519378,50,"September 15, 2026","1,085","23,600",West,Nashik,"1,197",-7,Critical
+1869742,19,"September 16, 2026","2,382","23,600",West,Ujjain,"2,616",-7,Critical
+1869742,20,"September 16, 2026","2,382","23,600",West,Ujjain,"2,616",-7,Critical
+1869742,21,"September 16, 2026","2,382","23,600",West,Ujjain,"2,611",-7,Critical
+1869742,22,"September 16, 2026","2,382","23,600",West,Ujjain,"2,611",-7,Critical
+1869742,23,"September 16, 2026","2,658","23,600",West,Ujjain,"2,936",-7,Critical
+1869742,24,"September 16, 2026","2,658","23,600",West,Ujjain,"2,936",-7,Critical
+1869742,39,"September 16, 2026","2,382","23,600",West,Ujjain,"2,611",-7,Critical
+1869742,40,"September 16, 2026","2,658","23,600",West,Ujjain,"2,936",-7,Critical
+1869742,83,"September 16, 2026","2,382","23,600",West,Ujjain,"2,611",-7,Critical
+2018835,17,"September 17, 2026","2,329","23,600",South 1,Bangalore,"2,571",-7,Critical
+2018835,18,"September 17, 2026","2,329","23,600",South 1,Bangalore,"2,571",-7,Critical
+2018835,19,"September 17, 2026","2,536","23,600",South 1,Bangalore,"2,781",-7,Critical
+2018835,20,"September 17, 2026","2,536","23,600",South 1,Bangalore,"2,781",-7,Critical
+2018989,25,"September 17, 2026","2,617","23,600",South 1,Bangalore,"2,898",-7,Critical
+2018989,26,"September 17, 2026","2,617","23,600",South 1,Bangalore,"2,898",-7,Critical
+2079707,19,"September 17, 2026","1,354","23,600",West,Bhopal,"1,498",-7,Critical
+2079707,20,"September 17, 2026","1,354","23,600",West,Bhopal,"1,498",-7,Critical
+0003211,16,"September 17, 2026","1,439","23,600",North 1,Jaipur,"1,610",-8,Critical
+0003211,17,"September 17, 2026","1,543","23,600",North 1,Jaipur,"1,714",-8,Critical
+0003211,18,"September 17, 2026","1,543","23,600",North 1,Jaipur,"1,714",-8,Critical
+0003211,50,"September 17, 2026","1,543","23,600",North 1,Jaipur,"1,714",-8,Critical
+0262017,27,"September 17, 2026","1,785","23,600",South 2,Coimbatore,"1,996",-8,Critical
+0262017,28,"September 17, 2026","1,785","23,600",South 2,Coimbatore,"1,996",-8,Critical
+1127927,21,"September 17, 2026","1,628","23,600",North 2,Dehradun,"1,809",-8,Critical
+1127927,22,"September 17, 2026","1,628","23,600",North 2,Dehradun,"1,809",-8,Critical
+1127927,39,"September 17, 2026","1,628","23,600",North 2,Dehradun,"1,809",-8,Critical
+1127927,83,"September 17, 2026","1,628","23,600",North 2,Dehradun,"1,809",-8,Critical
+1381105,17,"September 16, 2026","1,424","23,600",West,Goa,"1,592",-8,Critical
+1381105,18,"September 16, 2026","1,424","23,600",West,Goa,"1,592",-8,Critical
+1381105,19,"September 16, 2026","1,493","23,600",West,Goa,"1,657",-8,Critical
+1381105,20,"September 16, 2026","1,493","23,600",West,Goa,"1,657",-8,Critical
+1381105,23,"September 16, 2026","1,785","23,600",West,Goa,"1,982",-8,Critical
+1381105,24,"September 16, 2026","1,785","23,600",West,Goa,"1,982",-8,Critical
+1381105,40,"September 16, 2026","1,785","23,600",West,Goa,"1,982",-8,Critical
+1381105,50,"September 16, 2026","1,424","23,600",West,Goa,"1,592",-8,Critical
+1416642,17,"September 17, 2026","1,658","23,600",East,Kolkata,"1,842",-8,Critical
+1416642,18,"September 17, 2026","1,658","23,600",East,Kolkata,"1,842",-8,Critical
+1416642,50,"September 17, 2026","1,658","23,600",East,Kolkata,"1,842",-8,Critical
+1869742,17,"September 16, 2026","2,106","23,600",West,Ujjain,"2,340",-8,Critical
+1869742,18,"September 16, 2026","2,106","23,600",West,Ujjain,"2,340",-8,Critical
+1869742,50,"September 16, 2026","2,106","23,600",West,Ujjain,"2,340",-8,Critical
+1908074,21,"September 10, 2026","1,464","23,600",West,Lonavala,"1,643",-8,Critical
+1908074,22,"September 10, 2026","1,464","23,600",West,Lonavala,"1,643",-8,Critical
+1908074,23,"September 10, 2026","1,464","23,600",West,Lonavala,"1,643",-8,Critical
+1908074,24,"September 10, 2026","1,464","23,600",West,Lonavala,"1,643",-8,Critical
+1908074,39,"September 10, 2026","1,464","23,600",West,Lonavala,"1,643",-8,Critical
+1908074,40,"September 10, 2026","1,464","23,600",West,Lonavala,"1,643",-8,Critical
+1908074,83,"September 10, 2026","1,464","23,600",West,Lonavala,"1,643",-8,Critical
+2019978,25,"September 17, 2026","1,718","20,000",South 1,Bangalore,"1,905",-8,Critical
+2019978,26,"September 17, 2026","1,718","20,000",South 1,Bangalore,"1,905",-8,Critical
+2079707,17,"September 17, 2026","1,285","23,600",West,Bhopal,"1,428",-8,Critical
+2079707,18,"September 17, 2026","1,285","23,600",West,Bhopal,"1,428",-8,Critical
+2079707,25,"September 17, 2026","1,285","23,600",West,Bhopal,"1,428",-8,Critical
+2079707,26,"September 17, 2026","1,285","23,600",West,Bhopal,"1,428",-8,Critical
+2079707,27,"September 17, 2026","1,906","23,600",West,Bhopal,"2,128",-8,Critical
+2079707,28,"September 17, 2026","1,906","23,600",West,Bhopal,"2,128",-8,Critical
+2079707,50,"September 17, 2026","1,285","23,600",West,Bhopal,"1,428",-8,Critical
+0003211,15,"September 17, 2026","1,336","23,600",North 1,Jaipur,"1,507",-9,Critical
+0003211,38,"September 17, 2026","1,336","23,600",North 1,Jaipur,"1,507",-9,Critical
+0262017,32,"September 17, 2026","1,647","23,600",South 2,Coimbatore,"1,866",-9,Critical
+0262017,33,"September 17, 2026","1,647","23,600",South 2,Coimbatore,"1,866",-9,Critical
+0262017,34,"September 17, 2026","1,647","23,600",South 2,Coimbatore,"1,866",-9,Critical
+1381192,19,"September 17, 2026","1,943","23,600",West,Goa,"2,210",-9,Critical
+1381192,20,"September 17, 2026","1,943","23,600",West,Goa,"2,210",-9,Critical
+2018989,19,"September 17, 2026","2,272","23,600",South 1,Bangalore,"2,573",-9,Critical
+2018989,20,"September 17, 2026","2,272","23,600",South 1,Bangalore,"2,573",-9,Critical
+2018989,51,"September 17, 2026","2,272","23,600",South 1,Bangalore,"2,573",-9,Critical
+0262017,29,"September 17, 2026","1,544","23,600",South 2,Coimbatore,"1,768",-10,Critical
+0262017,30,"September 17, 2026","1,544","23,600",South 2,Coimbatore,"1,768",-10,Critical
+0262017,31,"September 17, 2026","1,544","23,600",South 2,Coimbatore,"1,768",-10,Critical
+0262017,57,"September 17, 2026","1,544","23,600",South 2,Coimbatore,"1,768",-10,Critical
+1519378,19,"September 16, 2026","1,099","23,600",West,Nashik,"1,262",-10,Critical
+1519378,20,"September 16, 2026","1,099","23,600",West,Nashik,"1,262",-10,Critical
+2018989,17,"September 17, 2026","2,065","23,600",South 1,Bangalore,"2,378",-10,Critical
+2018989,18,"September 17, 2026","2,065","23,600",South 1,Bangalore,"2,378",-10,Critical
+2018989,50,"September 17, 2026","2,065","23,600",South 1,Bangalore,"2,378",-10,Critical
+2018989,87,"September 17, 2026","2,065","23,600",South 1,Bangalore,"2,378",-10,Critical
+2079707,21,"September 17, 2026","1,423","23,600",West,Bhopal,"1,638",-10,Critical
+2079707,22,"September 17, 2026","1,423","23,600",West,Bhopal,"1,638",-10,Critical
+2079707,23,"September 17, 2026","1,492","23,600",West,Bhopal,"1,708",-10,Critical
+2079707,24,"September 17, 2026","1,492","23,600",West,Bhopal,"1,708",-10,Critical
+2079707,39,"September 17, 2026","1,423","23,600",West,Bhopal,"1,638",-10,Critical
+2079707,40,"September 17, 2026","1,492","23,600",West,Bhopal,"1,708",-10,Critical
+2079707,83,"September 17, 2026","1,423","23,600",West,Bhopal,"1,638",-10,Critical
+0003211,25,"September 17, 2026","1,957","23,600",North 1,Jaipur,"2,271",-11,Critical
+0262017,23,"September 17, 2026","1,440","23,600",South 2,Coimbatore,"1,671",-11,Critical
+0262017,24,"September 17, 2026","1,440","23,600",South 2,Coimbatore,"1,671",-11,Critical
+0262017,40,"September 17, 2026","1,440","23,600",South 2,Coimbatore,"1,671",-11,Critical
+1519378,17,"September 16, 2026","1,030","23,600",West,Nashik,"1,197",-11,Critical
+1519378,18,"September 16, 2026","1,030","23,600",West,Nashik,"1,197",-11,Critical
+1519378,50,"September 16, 2026","1,030","23,600",West,Nashik,"1,197",-11,Critical
+0262017,21,"September 17, 2026","1,337","23,600",South 2,Coimbatore,"1,573",-12,Critical
+0262017,22,"September 17, 2026","1,337","23,600",South 2,Coimbatore,"1,573",-12,Critical
+0262017,39,"September 17, 2026","1,337","23,600",South 2,Coimbatore,"1,573",-12,Critical
+0262017,83,"September 17, 2026","1,337","23,600",South 2,Coimbatore,"1,573",-12,Critical
+2019978,19,"September 17, 2026","1,856","20,000",South 1,Bangalore,"2,188",-12,Critical
+2019978,20,"September 17, 2026","1,856","20,000",South 1,Bangalore,"2,188",-12,Critical
+2019978,17,"September 17, 2026","1,718","20,000",South 1,Bangalore,"2,048",-13,Critical
+2019978,18,"September 17, 2026","1,718","20,000",South 1,Bangalore,"2,048",-13,Critical
+2019978,50,"September 17, 2026","1,718","20,000",South 1,Bangalore,"2,048",-13,Critical

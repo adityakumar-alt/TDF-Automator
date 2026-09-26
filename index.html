@@ -68,6 +68,10 @@
           <i data-lucide="database"></i>
           <span class="nav-text">Hawkeye Base Rates</span>
         </button>
+        <button class="tab-btn" data-tab="tab-city-bulk" title="City Bulk Action">
+          <i data-lucide="layers"></i>
+          <span class="nav-text">City Bulk Action</span>
+        </button>
         <button class="tab-btn" data-tab="tab-rules" title="Rule Parameters">
           <i data-lucide="sliders"></i>
           <span class="nav-text">Rule Parameters</span>
@@ -640,6 +644,345 @@
             </div>
           </div>
 
+          <!-- Tab: City Bulk Action -->
+          <div class="tab-content" id="tab-city-bulk">
+            <div class="city-bulk-container" style="display: flex; flex-direction: column; gap: 14px;">
+              
+              <!-- Header Section -->
+              <div class="dash-welcome-bar" style="margin-bottom: 0;">
+                <div class="dash-title-group">
+                  <div style="display: flex; align-items: center; gap: 10px;">
+                    <div style="width: 36px; height: 36px; border-radius: 8px; background: linear-gradient(135deg, #0284c7, #0369a1); display: flex; align-items: center; justify-content: center; color: #fff; flex-shrink: 0;">
+                      <i data-lucide="layers" style="width: 20px; height: 20px;"></i>
+                    </div>
+                    <div>
+                      <h2 class="dash-main-title" style="margin: 0; font-size: 1.25rem;">City Bulk Action</h2>
+                      <p class="dash-subtitle" style="margin: 2px 0 0 0; font-size: 0.8rem; color: var(--text-muted);">
+                        Fetch properties from Hawkeye Base Rates by city, apply target prices &amp; non-flex calculation, preview daily multipliers, and export CSV rules.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                  <span id="city-bulk-status-badge" style="font-size: 0.78rem; font-weight: 600; padding: 6px 12px; background: #f0fdf4; border: 1px solid #bbf7d0; color: #166534; border-radius: 6px;">
+                    Select a city to begin
+                  </span>
+                  <button id="btn-city-bulk-sync-rates" class="btn btn-secondary btn-sm" title="Refresh Hawkeye Base Rates from Google Sheets">
+                    <i data-lucide="refresh-cw"></i>
+                    <span>Sync Hawkeye Rates</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Top Configuration & Parameters Panel -->
+              <div class="city-bulk-config-card" style="background: #ffffff; border: 1px solid #fed7aa; border-radius: 10px; padding: 16px; box-shadow: 0 2px 10px rgba(0,0,0,0.03);">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+                  
+                  <!-- Column 1: City Selection & Mode Settings -->
+                  <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <div class="form-group" style="margin-bottom: 0; position: relative;">
+                      <label for="city-bulk-city-input" style="font-weight: 600; display: flex; justify-content: space-between;">
+                        <span>Select City <span class="required">*</span></span>
+                        <span id="city-bulk-city-prop-count" style="font-size: 0.75rem; color: var(--accent-primary); font-weight: 600;"></span>
+                      </label>
+                      <div class="searchable-city-wrapper" style="position: relative;">
+                        <div style="position: relative; display: flex; align-items: center;">
+                          <i data-lucide="search" style="position: absolute; left: 10px; width: 16px; height: 16px; color: var(--text-muted); pointer-events: none;"></i>
+                          <input type="text" id="city-bulk-city-input" placeholder="Search or select city..." autocomplete="off"
+                            style="width: 100%; height: 38px; font-size: 0.88rem; font-weight: 600; border: 1px solid #cbd5e1; border-radius: 6px; padding: 0 34px 0 32px; background: #fff; color: #0f172a;">
+                          <button type="button" id="btn-city-bulk-city-clear" title="Clear selection"
+                            style="position: absolute; right: 28px; background: none; border: none; padding: 4px; cursor: pointer; color: var(--text-muted); display: none;">
+                            <i data-lucide="x" style="width: 14px; height: 14px;"></i>
+                          </button>
+                          <button type="button" id="btn-city-bulk-city-toggle" title="Toggle city dropdown list"
+                            style="position: absolute; right: 6px; background: none; border: none; padding: 4px; cursor: pointer; color: var(--text-muted);">
+                            <i data-lucide="chevron-down" style="width: 16px; height: 16px;"></i>
+                          </button>
+                        </div>
+                        <div id="city-bulk-city-dropdown-menu" class="searchable-city-dropdown"
+                          style="display: none; position: absolute; top: calc(100% + 4px); left: 0; right: 0; max-height: 220px; overflow-y: auto; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 6px; box-shadow: 0 8px 24px rgba(0,0,0,0.12); z-index: 1000;">
+                          <!-- City options rendered dynamically -->
+                        </div>
+                        <!-- Hidden input to hold current selected city value -->
+                        <input type="hidden" id="city-bulk-city-select" value="">
+                      </div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                      <div class="form-group" style="margin-bottom: 0;">
+                        <label style="font-size: 0.78rem; font-weight: 600; color: var(--text-secondary);">Pricing Mode</label>
+                        <input type="text" readonly value="Weekday / Weekend" class="form-control-readonly" style="height: 36px; font-size: 0.82rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 0 8px; color: #475569; font-weight: 600; cursor: not-allowed; width: 100%;">
+                      </div>
+                      <div class="form-group" style="margin-bottom: 0;">
+                        <label style="font-size: 0.78rem; font-weight: 600; color: var(--text-secondary);">Calc Method</label>
+                        <input type="text" readonly value="Target Prices" class="form-control-readonly" style="height: 36px; font-size: 0.82rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 0 8px; color: #475569; font-weight: 600; cursor: not-allowed; width: 100%;">
+                      </div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                      <div class="form-group" style="margin-bottom: 0;">
+                        <label for="city-bulk-flexibility" style="font-size: 0.78rem; font-weight: 600;">Flexibility <span class="required">*</span></label>
+                        <select id="city-bulk-flexibility" style="height: 36px; font-size: 0.82rem; border: 1px solid #cbd5e1; border-radius: 6px; padding: 0 8px; width: 100%;">
+                          <option value="non-flex" selected>Non-Flex (÷ 0.69)</option>
+                          <option value="flex">Flex (÷ 0.72)</option>
+                        </select>
+                      </div>
+                      <div class="form-group" style="margin-bottom: 0;">
+                        <label for="city-bulk-day-group" style="font-size: 0.78rem; font-weight: 600;">Day Group Target <span class="required">*</span></label>
+                        <select id="city-bulk-day-group" style="height: 36px; font-size: 0.82rem; border: 1px solid #cbd5e1; border-radius: 6px; padding: 0 8px; width: 100%;">
+                          <option value="all" selected>All Days (Mon–Sun)</option>
+                          <option value="weekdays_only">Weekdays Only (Mon–Thu)</option>
+                          <option value="weekends_only">Weekends Only (Fri–Sun)</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Column 2: Date Range & Actions -->
+                  <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                      <div class="form-group" style="margin-bottom: 0;">
+                        <label for="city-bulk-start-date" style="font-size: 0.78rem; font-weight: 600;">Start Date <span class="required">*</span></label>
+                        <input type="date" id="city-bulk-start-date" style="height: 36px; font-size: 0.85rem; border: 1px solid #cbd5e1; border-radius: 6px; padding: 0 8px; width: 100%;">
+                      </div>
+                      <div class="form-group" style="margin-bottom: 0;">
+                        <label for="city-bulk-end-date" style="font-size: 0.78rem; font-weight: 600;">End Date <span class="required">*</span></label>
+                        <input type="date" id="city-bulk-end-date" style="height: 36px; font-size: 0.85rem; border: 1px solid #cbd5e1; border-radius: 6px; padding: 0 8px; width: 100%;">
+                      </div>
+                    </div>
+
+                    <div style="margin-top: auto; display: flex; gap: 8px;">
+                      <button id="btn-city-bulk-preview" class="btn btn-primary btn-sm" style="flex: 2; height: 38px; display: flex; align-items: center; justify-content: center; gap: 6px; font-weight: 600;">
+                        <i data-lucide="eye"></i>
+                        <span>Generate Preview</span>
+                      </button>
+                      <button id="btn-city-bulk-reset" class="btn btn-secondary btn-sm" style="flex: 1; height: 38px; display: flex; align-items: center; justify-content: center; gap: 6px;" title="Reset all fields, selections, and preview">
+                        <i data-lucide="rotate-ccw"></i>
+                        <span>Reset</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Column 3: Property In-Scope Selector & Actions -->
+                  <div style="display: flex; flex-direction: column; gap: 8px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                      <span style="font-size: 0.78rem; font-weight: 600; color: var(--text-secondary);">Properties in Scope</span>
+                      <div style="display: flex; gap: 8px; font-size: 0.75rem;">
+                        <a href="javascript:void(0)" id="btn-city-bulk-select-all" style="color: var(--accent-primary); text-decoration: underline; font-weight: 600;">Select All</a>
+                        <span style="color: #cbd5e1;">|</span>
+                        <a href="javascript:void(0)" id="btn-city-bulk-deselect-all" style="color: var(--text-muted); text-decoration: underline;">Deselect All</a>
+                      </div>
+                    </div>
+                    
+                    <div id="city-bulk-properties-chip-container" style="max-height: 110px; min-height: 90px; overflow-y: auto; border: 1px solid #e2e8f0; border-radius: 6px; padding: 6px; background: #fafafa; display: flex; flex-direction: column; gap: 4px;">
+                      <div style="font-size: 0.78rem; color: var(--text-muted); text-align: center; padding: 18px 0;">
+                        Select a city to load properties and their P0 base rates.
+                      </div>
+                    </div>
+
+                    <div style="display: flex; gap: 8px; margin-top: auto; justify-content: flex-end;">
+                      <button id="btn-city-bulk-download" class="btn btn-accent btn-sm" style="flex: 1;" disabled>
+                        <i data-lucide="download"></i>
+                        <span>Export CSV</span>
+                      </button>
+                      <button id="btn-city-bulk-copy" class="btn btn-secondary btn-sm" title="Copy preview rows to clipboard" disabled>
+                        <i data-lucide="copy"></i>
+                        <span>Copy</span>
+                      </button>
+                    </div>
+                  </div>
+
+                </div>
+
+                <!-- 7-Day Ask Price Inputs Grid -->
+                <div style="margin-top: 14px; padding-top: 12px; border-top: 1px dashed #fed7aa;">
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 8px;">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                      <span style="font-size: 0.82rem; font-weight: 700; color: #1e293b;">Ask Price by Day of Week <span class="required">*</span></span>
+                      <span style="font-size: 0.72rem; color: var(--text-muted);">(Set target selling price per day)</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                      <label style="display: flex; align-items: center; gap: 6px; font-size: 0.76rem; cursor: pointer; user-select: none; color: #0284c7; font-weight: 600; background: #f0f9ff; padding: 4px 10px; border-radius: 6px; border: 1px solid #bae6fd;">
+                        <input type="checkbox" id="city-bulk-same-mon-thu" checked>
+                        <span>Same price for Mon–Thu</span>
+                      </label>
+                      <label style="display: flex; align-items: center; gap: 6px; font-size: 0.76rem; cursor: pointer; user-select: none; color: #92400e; font-weight: 600; background: #fef3c7; padding: 4px 10px; border-radius: 6px; border: 1px solid #fde68a;">
+                        <input type="checkbox" id="city-bulk-same-weekend" checked>
+                        <span>Same price for Weekend</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="city-bulk-7days-grid" style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px;">
+                    <!-- Mon -->
+                    <div class="city-bulk-day-col" id="city-bulk-day-col-mon">
+                      <div class="city-bulk-day-header badge-weekday">Mon</div>
+                      <div class="input-prefix-wrapper" style="height: 34px;">
+                        <span class="input-prefix">₹</span>
+                        <input type="number" id="city-bulk-ask-mon" class="city-bulk-day-input" placeholder="2400" min="1" step="1" style="height: 34px; font-size: 0.85rem;">
+                      </div>
+                    </div>
+                    <!-- Tue -->
+                    <div class="city-bulk-day-col" id="city-bulk-day-col-tue">
+                      <div class="city-bulk-day-header badge-weekday">Tue</div>
+                      <div class="input-prefix-wrapper" style="height: 34px;">
+                        <span class="input-prefix">₹</span>
+                        <input type="number" id="city-bulk-ask-tue" class="city-bulk-day-input" placeholder="2400" min="1" step="1" style="height: 34px; font-size: 0.85rem;" disabled>
+                      </div>
+                    </div>
+                    <!-- Wed -->
+                    <div class="city-bulk-day-col" id="city-bulk-day-col-wed">
+                      <div class="city-bulk-day-header badge-weekday">Wed</div>
+                      <div class="input-prefix-wrapper" style="height: 34px;">
+                        <span class="input-prefix">₹</span>
+                        <input type="number" id="city-bulk-ask-wed" class="city-bulk-day-input" placeholder="2400" min="1" step="1" style="height: 34px; font-size: 0.85rem;" disabled>
+                      </div>
+                    </div>
+                    <!-- Thu -->
+                    <div class="city-bulk-day-col" id="city-bulk-day-col-thu">
+                      <div class="city-bulk-day-header badge-weekday">Thu</div>
+                      <div class="input-prefix-wrapper" style="height: 34px;">
+                        <span class="input-prefix">₹</span>
+                        <input type="number" id="city-bulk-ask-thu" class="city-bulk-day-input" placeholder="2400" min="1" step="1" style="height: 34px; font-size: 0.85rem;" disabled>
+                      </div>
+                    </div>
+                    <!-- Fri -->
+                    <div class="city-bulk-day-col" id="city-bulk-day-col-fri">
+                      <div class="city-bulk-day-header badge-weekend">Fri</div>
+                      <div class="input-prefix-wrapper" style="height: 34px;">
+                        <span class="input-prefix">₹</span>
+                        <input type="number" id="city-bulk-ask-fri" class="city-bulk-day-input" placeholder="2800" min="1" step="1" style="height: 34px; font-size: 0.85rem;">
+                      </div>
+                    </div>
+                    <!-- Sat -->
+                    <div class="city-bulk-day-col" id="city-bulk-day-col-sat">
+                      <div class="city-bulk-day-header badge-weekend">Sat</div>
+                      <div class="input-prefix-wrapper" style="height: 34px;">
+                        <span class="input-prefix">₹</span>
+                        <input type="number" id="city-bulk-ask-sat" class="city-bulk-day-input" placeholder="2800" min="1" step="1" style="height: 34px; font-size: 0.85rem;" disabled>
+                      </div>
+                    </div>
+                    <!-- Sun -->
+                    <div class="city-bulk-day-col" id="city-bulk-day-col-sun">
+                      <div class="city-bulk-day-header badge-weekend">Sun</div>
+                      <div class="input-prefix-wrapper" style="height: 34px;">
+                        <span class="input-prefix">₹</span>
+                        <input type="number" id="city-bulk-ask-sun" class="city-bulk-day-input" placeholder="2800" min="1" step="1" style="height: 34px; font-size: 0.85rem;" disabled>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- KPI Metrics Summary Cards -->
+              <div class="kpi-cards-grid" id="city-bulk-kpi-grid">
+                <div class="kpi-card">
+                  <div class="kpi-header">
+                    <span class="kpi-title">Properties Selected</span>
+                    <i data-lucide="building" class="kpi-icon"></i>
+                  </div>
+                  <div class="kpi-value" id="kpi-bulk-props">0</div>
+                  <div class="kpi-subtext" id="kpi-bulk-props-sub">0 in city</div>
+                </div>
+
+                <div class="kpi-card">
+                  <div class="kpi-header">
+                    <span class="kpi-title">Active Days</span>
+                    <i data-lucide="calendar" class="kpi-icon"></i>
+                  </div>
+                  <div class="kpi-value" id="kpi-bulk-days">0</div>
+                  <div class="kpi-subtext" id="kpi-bulk-days-sub">Matching day group</div>
+                </div>
+
+                <div class="kpi-card">
+                  <div class="kpi-header">
+                    <span class="kpi-title">Rule Rows</span>
+                    <i data-lucide="file-spreadsheet" class="kpi-icon"></i>
+                  </div>
+                  <div class="kpi-value text-accent" id="kpi-bulk-rows">0</div>
+                  <div class="kpi-subtext">Props × Active Days</div>
+                </div>
+
+                <div class="kpi-card">
+                  <div class="kpi-header">
+                    <span class="kpi-title">Avg Multiplier</span>
+                    <i data-lucide="trending-up" class="kpi-icon"></i>
+                  </div>
+                  <div class="kpi-value" id="kpi-bulk-avg-mult">--</div>
+                  <div class="kpi-subtext">Across generated rules</div>
+                </div>
+              </div>
+
+              <!-- Preview Table Section -->
+              <div class="table-controls-bar" style="margin-bottom: 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; background: #ffffff; border: 1px solid #fed7aa; border-radius: 8px; padding: 8px 12px;">
+                <div class="search-wrapper" style="flex: 1 1 220px; min-width: 180px; max-width: 320px; margin: 0;">
+                  <i data-lucide="search" class="search-icon"></i>
+                  <input type="text" id="city-bulk-preview-search" placeholder="Search preview (ID, Hotel, Date)...">
+                </div>
+
+                <div style="display: flex; gap: 8px; align-items: center; font-size: 0.8rem;">
+                  <span id="city-bulk-preview-count-badge" style="font-weight: 600; color: var(--text-secondary);">
+                    0 Rows
+                  </span>
+                </div>
+              </div>
+
+              <div class="table-responsive-wrapper" style="border: 1px solid #fed7aa; border-radius: 8px; max-height: 480px; overflow-y: auto;">
+                <table class="custom-table hawkeye-rates-table" id="city-bulk-preview-table" style="width: 100%;">
+                  <thead>
+                    <tr>
+                      <th style="min-width: 45px;">#</th>
+                      <th style="min-width: 95px;">CS ID</th>
+                      <th style="min-width: 220px;">Property Name</th>
+                      <th style="min-width: 105px;">City</th>
+                      <th style="min-width: 100px;">Date</th>
+                      <th style="min-width: 60px;">Day</th>
+                      <th style="min-width: 85px;">Day Group</th>
+                      <th class="cell-num-right" style="min-width: 80px; color: #0284c7;" title="P0 Base Rate from Hawkeye">P0 Base</th>
+                      <th class="cell-num-right" style="min-width: 80px; color: #ea580c;" title="User Ask Price">Ask Price</th>
+                      <th class="cell-num-right" style="min-width: 90px; color: #16a34a;" title="Target Price ÷ 1.05 ÷ Flexibility">Calc Price</th>
+                      <th class="cell-num-right" style="min-width: 85px; color: #d97706; font-weight: 700;" title="Calculated Multiplier (Calc Price / P0)">Multiplier</th>
+                    </tr>
+                  </thead>
+                  <tbody id="city-bulk-preview-tbody">
+                    <tr>
+                      <td colspan="11" style="text-align: center; padding: 48px 20px; color: var(--text-muted);">
+                        <i data-lucide="layers" style="width: 32px; height: 32px; margin-bottom: 8px; display: inline-block; opacity: 0.5;"></i>
+                        <div>Select a city, set dates &amp; ask price, then click <strong>Generate Preview</strong> to inspect daily rule rows.</div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- Pagination Toolbar -->
+              <div id="city-bulk-pagination-bar" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 0.8rem; color: var(--text-secondary); padding: 4px 2px;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span>Rows per page:</span>
+                  <select id="city-bulk-page-size" style="padding: 4px 8px; border-radius: 4px; border: 1px solid #cbd5e1; background: #fff; font-size: 0.8rem;">
+                    <option value="50">50</option>
+                    <option value="100" selected>100</option>
+                    <option value="250">250</option>
+                    <option value="all">All</option>
+                  </select>
+                  <span id="city-bulk-pagination-info" style="margin-left: 8px; font-weight: 500;"></span>
+                </div>
+                <div style="display: flex; gap: 6px; align-items: center;">
+                  <button id="btn-city-bulk-prev-page" class="btn btn-secondary btn-sm" style="padding: 4px 10px;" disabled>
+                    <i data-lucide="chevron-left"></i>
+                    <span>Previous</span>
+                  </button>
+                  <span id="city-bulk-current-page-badge" style="font-weight: 600; padding: 4px 8px;">Page 1</span>
+                  <button id="btn-city-bulk-next-page" class="btn btn-secondary btn-sm" style="padding: 4px 10px;">
+                    <span>Next</span>
+                    <i data-lucide="chevron-right"></i>
+                  </button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
           <!-- Tab 1: Rules Form -->
           <div class="tab-content" id="tab-rules">
             <form id="rule-form" novalidate>
@@ -1075,6 +1418,8 @@
 
   <!-- Toast Notification Container -->
   <div id="toast-container" class="toast-container"></div>
+
+
 
   <!-- Clear Table Confirmation Modal -->
   <div id="modal-confirm" class="modal-overlay">

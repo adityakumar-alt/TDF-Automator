@@ -63,6 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setupSidebarToggle();
   setupPricingModeListeners();
   setupAuthAndRBAC();
+  setupCityBulkActionListeners();
 
   // Set initial landscape mode layout for default active tab (TDF Dashboard)
   const activeTabBtn = document.querySelector('.tab-btn.active');
@@ -227,6 +228,10 @@ function showAuthModal() {
     if (overlay) overlay.style.display = 'flex';
     if (headerProfile) headerProfile.style.display = 'none';
 
+    document.querySelectorAll('.admin-only-tab').forEach(tab => {
+      tab.style.display = 'none';
+    });
+
     if (window.lucide) window.lucide.createIcons();
   }
 
@@ -257,34 +262,86 @@ function showAuthModal() {
         else if (r.includes('zonal')) roleEl.classList.add('role-zonal');
       }
 
-      // Role-based Access Control for Navigation Tabs
-      const roleLower = (user.role || '').toLowerCase();
-      const canAccessDashboard = roleLower.includes('admin') || roleLower.includes('pricing');
-
-      const dashTabBtn = document.querySelector('.tab-btn[data-tab="tab-dashboard"]');
-      const hawkeyeTabBtn = document.querySelector('.tab-btn[data-tab="tab-hawkeye-rates"]');
-      const rulesTabBtn = document.querySelector('.tab-btn[data-tab="tab-rules"]');
-
-      if (dashTabBtn) {
-        dashTabBtn.style.display = canAccessDashboard ? 'flex' : 'none';
-      }
-
-      // If RevOps or Zonal Ops, landing is Hawkeye Base Rates or Rule Parameters
-      if (!canAccessDashboard) {
-        const activeTab = document.querySelector('.tab-btn.active');
-        if (!activeTab || activeTab.getAttribute('data-tab') === 'tab-dashboard') {
-          if (hawkeyeTabBtn) hawkeyeTabBtn.click();
-          else if (rulesTabBtn) rulesTabBtn.click();
-        }
-      } else {
-        const activeTab = document.querySelector('.tab-btn.active');
-        if (!activeTab) {
-          if (dashTabBtn) dashTabBtn.click();
-        }
-      }
+      // Enforce centralized tab permissions matrix (Solution B)
+      applyTabPermissions(user);
     }
 
     if (window.lucide) window.lucide.createIcons();
+  }
+
+  // =========================================================================
+  // TAB-LEVEL RBAC PERMISSIONS MATRIX (Solution B)
+  // Edit this mapping to grant or revoke tab access for any role.
+  // Any new tab added in the future that is NOT listed here automatically
+  // defaults to ['Admin'] only for safe development rollout!
+  // =========================================================================
+  const TAB_PERMISSIONS = {
+    // 1. Daily Pricing Dashboard
+    'tab-dashboard': ['Admin', 'Pricing Manager'],
+
+    // 2. Hawkeye Base Rates (Live Google Sheets Rates dataset)
+    'tab-hawkeye-rates': ['Admin', 'Pricing Manager', 'RevOps'],
+
+    // 3. City Bulk Action (Multi-Day Ask Price & Rule Generation)
+    'tab-city-bulk': ['Admin', 'Pricing Manager'],
+
+    // 4. Rule Parameters (Fixed & Split Multipliers)
+    'tab-rules': ['Admin', 'Pricing Manager', 'RevOps', 'Zonal Ops'],
+
+    // 5. TDF Calculator (P0-P5 calculations)
+    'tab-calc': ['Admin', 'Pricing Manager', 'RevOps', 'Zonal Ops']
+  };
+
+  // Expose on window for easy developer inspection in console
+  window.TAB_PERMISSIONS = TAB_PERMISSIONS;
+
+  // Dynamically evaluate and apply tab visibility & redirection
+  function applyTabPermissions(user) {
+    if (!user) return;
+    const userRole = (user.role || 'Pricing Manager').trim();
+    const roleLower = userRole.toLowerCase();
+    const isAdmin = roleLower.includes('admin');
+
+    const navButtons = document.querySelectorAll('.sidebar-nav-menu .tab-btn[data-tab]');
+    let firstAllowedTabBtn = null;
+    let currentActiveIsAllowed = false;
+
+    navButtons.forEach(btn => {
+      const tabId = btn.getAttribute('data-tab');
+      // If tab not in TAB_PERMISSIONS, default to Admin only (safe default for new development)
+      const allowedRoles = TAB_PERMISSIONS[tabId] || ['Admin'];
+
+      // Admin always has full access to everything
+      const isAllowed = isAdmin || allowedRoles.some(r => r.toLowerCase() === roleLower);
+
+      if (isAllowed) {
+        btn.style.display = 'flex';
+        if (!firstAllowedTabBtn) firstAllowedTabBtn = btn;
+        if (btn.classList.contains('active')) currentActiveIsAllowed = true;
+      } else {
+        btn.style.display = 'none';
+      }
+    });
+
+    // If current active tab is hidden or not allowed for this role, switch to first allowed tab
+    if (!currentActiveIsAllowed && firstAllowedTabBtn) {
+      firstAllowedTabBtn.click();
+    } else {
+      const activeTabBtn = document.querySelector('.sidebar-nav-menu .tab-btn.active');
+      if (!activeTabBtn && firstAllowedTabBtn) {
+        firstAllowedTabBtn.click();
+      }
+    }
+  }
+
+  function escapeHtml(str) {
+    if (str === null || str === undefined) return '';
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
   }
 
   // Setup Collapsible Sidebar Toggle
@@ -1638,15 +1695,23 @@ function showAuthModal() {
           }
         });
 
-        // Handle layout for Blackout Summary & TDF Dashboard tabs (Landscape Mode)
+        // Handle layout for Landscape Mode tabs (TDF Dashboard, Hawkeye Rates, City Bulk)
         const dashContainer = document.querySelector('.dashboard-container');
         const sidebarCol = document.querySelector('.sidebar-column');
         const previewCard = document.querySelector('.preview-card');
 
-        if (targetTab === 'tab-dashboard' || targetTab === 'tab-hawkeye-rates') {
+        const isLandscape =
+          targetTab === 'tab-dashboard' ||
+          targetTab === 'tab-hawkeye-rates' ||
+          targetTab === 'tab-city-bulk';
+
+        if (isLandscape) {
           if (dashContainer) dashContainer.classList.add('landscape-mode');
           if (previewCard) previewCard.style.display = 'none';
           if (sidebarCol) sidebarCol.style.width = '100%';
+          if (targetTab === 'tab-city-bulk') {
+            populateCityBulkCityDropdown(false);
+          }
         } else {
           if (dashContainer) dashContainer.classList.remove('landscape-mode');
           if (previewCard) previewCard.style.display = 'flex';
@@ -1655,9 +1720,9 @@ function showAuthModal() {
       });
     });
 
-    // Ensure default active tab (tab-dashboard or tab-hawkeye-rates) initializes landscape mode immediately
+    // Ensure default active tab initializes landscape mode immediately
     const activeBtn = document.querySelector('.sidebar-nav-menu .tab-btn.active');
-    if (activeBtn && (activeBtn.dataset.tab === 'tab-dashboard' || activeBtn.dataset.tab === 'tab-hawkeye-rates')) {
+    if (activeBtn && (activeBtn.dataset.tab === 'tab-dashboard' || activeBtn.dataset.tab === 'tab-hawkeye-rates' || activeBtn.dataset.tab === 'tab-city-bulk')) {
       const dashContainer = document.querySelector('.dashboard-container');
       const sidebarCol = document.querySelector('.sidebar-column');
       const previewCard = document.querySelector('.preview-card');
@@ -2165,10 +2230,31 @@ function showAuthModal() {
         if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
           apiUrl = 'http://localhost:3000/api/sheet-data';
           authUrl = 'http://localhost:3000/auth/google';
-          response = await fetch(apiUrl);
+          try {
+            response = await fetch(apiUrl);
+          } catch (retryErr) {
+            console.warn('Local API unreachable, attempting production fallback...');
+          }
         } else {
           throw fetchErr;
         }
+      }
+
+      // If local server returned 401 or was unreachable, fallback directly to production endpoint
+      if ((!response || response.status === 401 || !response.ok) && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || isFileProtocol)) {
+        try {
+          console.log('Local endpoint returned status', response?.status, 'Attempting fallback to live production endpoint...');
+          const prodResponse = await fetch('https://tdf-automator.vercel.app/api/sheet-data');
+          if (prodResponse.ok) {
+            response = prodResponse;
+          }
+        } catch (prodErr) {
+          console.warn('Production fallback failed:', prodErr);
+        }
+      }
+
+      if (!response) {
+        throw new Error('Unable to connect to sheet data service');
       }
 
       const result = await response.json();
@@ -4280,7 +4366,10 @@ function showAuthModal() {
 
     try {
       if (showNotice) showToast('Syncing Hawkeye base rates from Google Sheets...', 'info');
-      const res = await fetch('/api/sheet-data');
+      let res = await fetch('/api/sheet-data');
+      if (!res.ok && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')) {
+        res = await fetch('https://tdf-automator.vercel.app/api/sheet-data');
+      }
       if (!res.ok) throw new Error(`Server responded with ${res.status}`);
       const json = await res.json();
       if (!json.success || !json.data || !json.data.hawkeyeBaseRates) {
@@ -4385,6 +4474,10 @@ function showAuthModal() {
       baseConfigSelect.innerHTML = '<option value="all">All Base Configs</option>' +
         configs.map(cfg => `<option value="${cfg}">${cfg}</option>`).join('');
       baseConfigSelect.value = (configs.includes(currentVal)) ? currentVal : 'all';
+    }
+
+    if (typeof populateCityBulkCityDropdown === 'function') {
+      populateCityBulkCityDropdown(resetToAll);
     }
   }
 
@@ -4596,3 +4689,1112 @@ function showAuthModal() {
       });
     }
   }
+
+  // =========================================================================
+  // CITY BULK ACTION CONTROLLER & CALCULATOR
+  // =========================================================================
+  let cityBulkProperties = [];
+  let cityBulkPreviewRows = [];
+  let cityBulkFilteredRows = [];
+  let cityBulkCurrentPage = 1;
+  let cityBulkPageSize = 100;
+  let cityBulkAvailableCities = [];
+  let cityBulkActiveIndex = -1;
+
+  function setupCityBulkActionListeners() {
+    const citySelect = document.getElementById('city-bulk-city-select');
+    const startDateInput = document.getElementById('city-bulk-start-date');
+    const endDateInput = document.getElementById('city-bulk-end-date');
+    const flexibilitySelect = document.getElementById('city-bulk-flexibility');
+    const dayGroupSelect = document.getElementById('city-bulk-day-group');
+    
+    // 7-Day Ask Price Inputs
+    const askMon = document.getElementById('city-bulk-ask-mon');
+    const askTue = document.getElementById('city-bulk-ask-tue');
+    const askWed = document.getElementById('city-bulk-ask-wed');
+    const askThu = document.getElementById('city-bulk-ask-thu');
+    const askFri = document.getElementById('city-bulk-ask-fri');
+    const askSat = document.getElementById('city-bulk-ask-sat');
+    const askSun = document.getElementById('city-bulk-ask-sun');
+
+    const colMon = document.getElementById('city-bulk-day-col-mon');
+    const colTue = document.getElementById('city-bulk-day-col-tue');
+    const colWed = document.getElementById('city-bulk-day-col-wed');
+    const colThu = document.getElementById('city-bulk-day-col-thu');
+    const colFri = document.getElementById('city-bulk-day-col-fri');
+    const colSat = document.getElementById('city-bulk-day-col-sat');
+    const colSun = document.getElementById('city-bulk-day-col-sun');
+
+    const sameMonThuCb = document.getElementById('city-bulk-same-mon-thu');
+    const sameWeekendCb = document.getElementById('city-bulk-same-weekend');
+    
+    const btnSelectAll = document.getElementById('btn-city-bulk-select-all');
+    const btnDeselectAll = document.getElementById('btn-city-bulk-deselect-all');
+    const btnPreview = document.getElementById('btn-city-bulk-preview');
+    const btnSyncRates = document.getElementById('btn-city-bulk-sync-rates');
+    const btnDownload = document.getElementById('btn-city-bulk-download');
+    const btnCopy = document.getElementById('btn-city-bulk-copy');
+    const searchInput = document.getElementById('city-bulk-preview-search');
+    const pageSizeSelect = document.getElementById('city-bulk-page-size');
+    const prevBtn = document.getElementById('btn-city-bulk-prev-page');
+    const nextBtn = document.getElementById('btn-city-bulk-next-page');
+
+    // Initialize Default Dates (Today to +6 days)
+    const today = new Date();
+    const nextWeek = new Date();
+    nextWeek.setDate(today.getDate() + 6);
+    if (startDateInput && !startDateInput.value) startDateInput.value = formatDateString(today);
+    if (endDateInput && !endDateInput.value) endDateInput.value = formatDateString(nextWeek);
+
+    // City Selection Change
+    if (citySelect) {
+      citySelect.addEventListener('change', onCityBulkCityChange);
+    }
+
+    // Searchable City Dropdown Elements
+    const cityInput = document.getElementById('city-bulk-city-input');
+    const cityClearBtn = document.getElementById('btn-city-bulk-city-clear');
+    const cityToggleBtn = document.getElementById('btn-city-bulk-city-toggle');
+    const cityDropdownMenu = document.getElementById('city-bulk-city-dropdown-menu');
+
+    if (cityInput && cityDropdownMenu) {
+      // Focus & Click: show dropdown
+      cityInput.addEventListener('focus', () => {
+        renderCityBulkDropdown(cityInput.value);
+        cityDropdownMenu.style.display = 'block';
+      });
+
+      cityInput.addEventListener('click', (e) => {
+        e.stopPropagation();
+        renderCityBulkDropdown(cityInput.value);
+        cityDropdownMenu.style.display = 'block';
+      });
+
+      // Live search typing
+      cityInput.addEventListener('input', () => {
+        const val = cityInput.value;
+        if (cityClearBtn) {
+          cityClearBtn.style.display = val.length > 0 ? 'block' : 'none';
+        }
+        renderCityBulkDropdown(val);
+        cityDropdownMenu.style.display = 'block';
+
+        if (!val.trim()) {
+          if (citySelect && citySelect.value) {
+            citySelect.value = '';
+            onCityBulkCityChange();
+          }
+        }
+      });
+
+      // Keyboard navigation
+      cityInput.addEventListener('keydown', (e) => {
+        const items = cityDropdownMenu.querySelectorAll('.searchable-city-item');
+        if (!items.length) return;
+
+        if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          if (cityDropdownMenu.style.display === 'none') {
+            cityDropdownMenu.style.display = 'block';
+            return;
+          }
+          cityBulkActiveIndex = (cityBulkActiveIndex + 1) % items.length;
+          items.forEach((it, idx) => it.classList.toggle('active', idx === cityBulkActiveIndex));
+          items[cityBulkActiveIndex]?.scrollIntoView({ block: 'nearest' });
+        } else if (e.key === 'ArrowUp') {
+          e.preventDefault();
+          if (cityDropdownMenu.style.display === 'none') {
+            cityDropdownMenu.style.display = 'block';
+            return;
+          }
+          cityBulkActiveIndex = (cityBulkActiveIndex - 1 + items.length) % items.length;
+          items.forEach((it, idx) => it.classList.toggle('active', idx === cityBulkActiveIndex));
+          items[cityBulkActiveIndex]?.scrollIntoView({ block: 'nearest' });
+        } else if (e.key === 'Enter') {
+          e.preventDefault();
+          if (cityBulkActiveIndex >= 0 && items[cityBulkActiveIndex]) {
+            const cityName = items[cityBulkActiveIndex].getAttribute('data-city');
+            selectCityBulkCity(cityName);
+          } else if (items.length === 1) {
+            const cityName = items[0].getAttribute('data-city');
+            selectCityBulkCity(cityName);
+          } else {
+            const match = cityBulkAvailableCities.find(c => c.name.toLowerCase() === cityInput.value.trim().toLowerCase());
+            if (match) {
+              selectCityBulkCity(match.name);
+            }
+          }
+        } else if (e.key === 'Escape') {
+          cityDropdownMenu.style.display = 'none';
+        }
+      });
+
+      // Dropdown toggle button
+      if (cityToggleBtn) {
+        cityToggleBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          if (cityDropdownMenu.style.display === 'block') {
+            cityDropdownMenu.style.display = 'none';
+          } else {
+            renderCityBulkDropdown('');
+            cityDropdownMenu.style.display = 'block';
+            cityInput.focus();
+          }
+        });
+      }
+
+      // Clear button
+      if (cityClearBtn) {
+        cityClearBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          cityInput.value = '';
+          cityClearBtn.style.display = 'none';
+          selectCityBulkCity('');
+          renderCityBulkDropdown('');
+          cityInput.focus();
+        });
+      }
+
+      // Outside click listener
+      document.addEventListener('click', (e) => {
+        const wrapper = document.querySelector('.searchable-city-wrapper');
+        if (wrapper && !wrapper.contains(e.target)) {
+          cityDropdownMenu.style.display = 'none';
+          const curVal = citySelect ? citySelect.value : '';
+          if (cityInput.value.trim().toLowerCase() !== curVal.toLowerCase()) {
+            const exactMatch = cityBulkAvailableCities.find(c => c.name.toLowerCase() === cityInput.value.trim().toLowerCase());
+            if (exactMatch) {
+              selectCityBulkCity(exactMatch.name);
+            } else {
+              cityInput.value = curVal;
+              if (cityClearBtn) cityClearBtn.style.display = curVal ? 'block' : 'none';
+            }
+          }
+        }
+      });
+    }
+
+    if (window.lucide) window.lucide.createIcons();
+
+    // Refresh Hawkeye Rates button
+    if (btnSyncRates) {
+      btnSyncRates.addEventListener('click', () => {
+        syncHawkeyeBaseRates(true);
+      });
+    }
+
+    // Mon–Thu Sync Logic: Typing in Monday syncs to Tuesday, Wednesday, Thursday
+    const syncMonToWeekdays = () => {
+      if (sameMonThuCb && sameMonThuCb.checked && askMon) {
+        const val = askMon.value;
+        if (askTue) askTue.value = val;
+        if (askWed) askWed.value = val;
+        if (askThu) askThu.value = val;
+      }
+    };
+
+    if (sameMonThuCb) {
+      sameMonThuCb.addEventListener('change', () => {
+        const isSynced = sameMonThuCb.checked;
+        if (askTue) askTue.disabled = isSynced;
+        if (askWed) askWed.disabled = isSynced;
+        if (askThu) askThu.disabled = isSynced;
+        if (isSynced) syncMonToWeekdays();
+      });
+    }
+
+    if (askMon) {
+      askMon.addEventListener('input', syncMonToWeekdays);
+    }
+
+    // Weekend Sync Logic: Typing in Friday syncs to Saturday and Sunday
+    const syncFriToWeekend = () => {
+      if (sameWeekendCb && sameWeekendCb.checked && askFri) {
+        const val = askFri.value;
+        if (askSat) askSat.value = val;
+        if (askSun) askSun.value = val;
+      }
+    };
+
+    if (sameWeekendCb) {
+      sameWeekendCb.addEventListener('change', () => {
+        const isSynced = sameWeekendCb.checked;
+        if (askSat) askSat.disabled = isSynced;
+        if (askSun) askSun.disabled = isSynced;
+        if (isSynced) syncFriToWeekend();
+      });
+    }
+
+    if (askFri) {
+      askFri.addEventListener('input', syncFriToWeekend);
+    }
+
+    // Day Group Target visibility & skip state adjustment
+    if (dayGroupSelect) {
+      const updateDayGroupUI = () => {
+        const val = dayGroupSelect.value;
+        if (val === 'weekdays_only') {
+          // Mon-Thu active, Fri-Sun skipped
+          [colMon, colTue, colWed, colThu].forEach(c => c && c.classList.remove('day-skipped'));
+          [colFri, colSat, colSun].forEach(c => c && c.classList.add('day-skipped'));
+          if (sameMonThuCb?.parentElement) sameMonThuCb.parentElement.style.display = 'flex';
+          if (sameWeekendCb?.parentElement) sameWeekendCb.parentElement.style.display = 'none';
+        } else if (val === 'weekends_only') {
+          // Fri-Sun active, Mon-Thu skipped
+          [colMon, colTue, colWed, colThu].forEach(c => c && c.classList.add('day-skipped'));
+          [colFri, colSat, colSun].forEach(c => c && c.classList.remove('day-skipped'));
+          if (sameMonThuCb?.parentElement) sameMonThuCb.parentElement.style.display = 'none';
+          if (sameWeekendCb?.parentElement) sameWeekendCb.parentElement.style.display = 'flex';
+        } else {
+          // All Days active
+          [colMon, colTue, colWed, colThu, colFri, colSat, colSun].forEach(c => c && c.classList.remove('day-skipped'));
+          if (sameMonThuCb?.parentElement) sameMonThuCb.parentElement.style.display = 'flex';
+          if (sameWeekendCb?.parentElement) sameWeekendCb.parentElement.style.display = 'flex';
+        }
+      };
+      dayGroupSelect.addEventListener('change', updateDayGroupUI);
+      updateDayGroupUI();
+    }
+
+    // Select All / Deselect All
+    if (btnSelectAll) {
+      btnSelectAll.addEventListener('click', (e) => {
+        e.preventDefault();
+        cityBulkProperties.forEach(p => p.selected = true);
+        renderCityBulkPropertyChips();
+        updateCityBulkSelectionKPI();
+        if (cityBulkPreviewRows.length > 0) generateCityBulkPreview(false);
+      });
+    }
+
+    if (btnDeselectAll) {
+      btnDeselectAll.addEventListener('click', (e) => {
+        e.preventDefault();
+        cityBulkProperties.forEach(p => p.selected = false);
+        renderCityBulkPropertyChips();
+        updateCityBulkSelectionKPI();
+        if (cityBulkPreviewRows.length > 0) generateCityBulkPreview(false);
+      });
+    }
+
+    // Generate Preview
+    if (btnPreview) {
+      btnPreview.addEventListener('click', () => {
+        generateCityBulkPreview(true);
+      });
+    }
+
+    // Download CSV
+    if (btnDownload) {
+      btnDownload.addEventListener('click', downloadCityBulkCSV);
+    }
+
+    // Copy to Clipboard
+    if (btnCopy) {
+      btnCopy.addEventListener('click', copyCityBulkCSV);
+    }
+
+    // Table Search
+    if (searchInput) {
+      searchInput.addEventListener('input', applyCityBulkPreviewFilters);
+    }
+
+    // Page Size
+    if (pageSizeSelect) {
+      pageSizeSelect.addEventListener('change', () => {
+        cityBulkPageSize = pageSizeSelect.value;
+        cityBulkCurrentPage = 1;
+        renderCityBulkPreviewTable();
+      });
+    }
+
+    // Pagination Controls
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        if (cityBulkCurrentPage > 1) {
+          cityBulkCurrentPage--;
+          renderCityBulkPreviewTable();
+        }
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        cityBulkCurrentPage++;
+        renderCityBulkPreviewTable();
+      });
+    }
+
+    // Reset Form & State
+    const btnReset = document.getElementById('btn-city-bulk-reset');
+    if (btnReset) {
+      btnReset.addEventListener('click', resetCityBulkAction);
+    }
+
+    // Try populating city dropdown right away if cache is ready
+    populateCityBulkCityDropdown(false);
+  }
+
+  // Reset City Bulk Action Form, Selections, and Preview State
+  function resetCityBulkAction() {
+    const citySelect = document.getElementById('city-bulk-city-select');
+    const startDateInput = document.getElementById('city-bulk-start-date');
+    const endDateInput = document.getElementById('city-bulk-end-date');
+    const flexibilitySelect = document.getElementById('city-bulk-flexibility');
+    const dayGroupSelect = document.getElementById('city-bulk-day-group');
+
+    const askMon = document.getElementById('city-bulk-ask-mon');
+    const askTue = document.getElementById('city-bulk-ask-tue');
+    const askWed = document.getElementById('city-bulk-ask-wed');
+    const askThu = document.getElementById('city-bulk-ask-thu');
+    const askFri = document.getElementById('city-bulk-ask-fri');
+    const askSat = document.getElementById('city-bulk-ask-sat');
+    const askSun = document.getElementById('city-bulk-ask-sun');
+
+    const colMon = document.getElementById('city-bulk-day-col-mon');
+    const colTue = document.getElementById('city-bulk-day-col-tue');
+    const colWed = document.getElementById('city-bulk-day-col-wed');
+    const colThu = document.getElementById('city-bulk-day-col-thu');
+    const colFri = document.getElementById('city-bulk-day-col-fri');
+    const colSat = document.getElementById('city-bulk-day-col-sat');
+    const colSun = document.getElementById('city-bulk-day-col-sun');
+
+    const sameMonThuCb = document.getElementById('city-bulk-same-mon-thu');
+    const sameWeekendCb = document.getElementById('city-bulk-same-weekend');
+
+    const searchInput = document.getElementById('city-bulk-preview-search');
+    const statusBadge = document.getElementById('city-bulk-status-badge');
+    const propCountSpan = document.getElementById('city-bulk-city-prop-count');
+
+    const kpiProps = document.getElementById('kpi-bulk-props');
+    const kpiSub = document.getElementById('kpi-bulk-props-sub');
+    const kpiDays = document.getElementById('kpi-bulk-days');
+    const kpiRows = document.getElementById('kpi-bulk-rows');
+    const kpiAvgMult = document.getElementById('kpi-bulk-avg-mult');
+    const btnDownload = document.getElementById('btn-city-bulk-download');
+    const btnCopy = document.getElementById('btn-city-bulk-copy');
+
+    // 1. Reset dropdown & dates
+    if (citySelect) citySelect.value = '';
+    const cityInput = document.getElementById('city-bulk-city-input');
+    const cityClearBtn = document.getElementById('btn-city-bulk-city-clear');
+    const cityDropdownMenu = document.getElementById('city-bulk-city-dropdown-menu');
+    if (cityInput) cityInput.value = '';
+    if (cityClearBtn) cityClearBtn.style.display = 'none';
+    if (cityDropdownMenu) cityDropdownMenu.style.display = 'none';
+    renderCityBulkDropdown('');
+    if (propCountSpan) propCountSpan.textContent = '';
+
+    const today = new Date();
+    const nextWeek = new Date();
+    nextWeek.setDate(today.getDate() + 6);
+    if (startDateInput) startDateInput.value = formatDateString(today);
+    if (endDateInput) endDateInput.value = formatDateString(nextWeek);
+
+    if (flexibilitySelect) flexibilitySelect.value = 'non-flex';
+    if (dayGroupSelect) {
+      dayGroupSelect.value = 'all';
+      dayGroupSelect.dispatchEvent(new Event('change'));
+    }
+
+    if (sameMonThuCb) sameMonThuCb.checked = true;
+    if (sameWeekendCb) sameWeekendCb.checked = true;
+
+    // Clear day prices
+    [askMon, askTue, askWed, askThu, askFri, askSat, askSun].forEach(input => {
+      if (input) input.value = '';
+    });
+    if (askTue) askTue.disabled = true;
+    if (askWed) askWed.disabled = true;
+    if (askThu) askThu.disabled = true;
+    if (askSat) askSat.disabled = true;
+    if (askSun) askSun.disabled = true;
+
+    [colMon, colTue, colWed, colThu, colFri, colSat, colSun].forEach(c => {
+      if (c) c.classList.remove('day-skipped');
+    });
+
+    if (searchInput) searchInput.value = '';
+
+    // 2. Clear state
+    cityBulkProperties = [];
+    cityBulkPreviewRows = [];
+    cityBulkFilteredRows = [];
+    cityBulkCurrentPage = 1;
+
+    // 3. Reset chips & KPIs
+    renderCityBulkPropertyChips();
+    if (kpiProps) kpiProps.textContent = '0';
+    if (kpiSub) kpiSub.textContent = '0 in city';
+    if (kpiDays) kpiDays.textContent = '0';
+    if (kpiRows) kpiRows.textContent = '0';
+    if (kpiAvgMult) kpiAvgMult.textContent = '--';
+
+    if (statusBadge) {
+      statusBadge.textContent = 'Select a city to begin';
+      statusBadge.style.background = '#f0fdf4';
+      statusBadge.style.color = '#166534';
+      statusBadge.style.borderColor = '#bbf7d0';
+    }
+
+    if (btnDownload) btnDownload.disabled = true;
+    if (btnCopy) btnCopy.disabled = true;
+
+    // 4. Re-render empty preview table
+    renderCityBulkPreviewTable();
+
+    showToast('City Bulk Action reset', 'info');
+  }
+
+  // Populate City Bulk Action City Dropdown
+  function populateCityBulkCityDropdown(resetToAll = false) {
+    const citySelect = document.getElementById('city-bulk-city-select');
+    const cityInput = document.getElementById('city-bulk-city-input');
+    const clearBtn = document.getElementById('btn-city-bulk-city-clear');
+    if (!hawkeyeBaseRatesMaster || hawkeyeBaseRatesMaster.length === 0) return;
+
+    const currentVal = resetToAll ? '' : (citySelect ? citySelect.value : '');
+
+    // Aggregate unique cities and count hotels per city
+    const cityCounts = {};
+    const seen = new Set();
+    hawkeyeBaseRatesMaster.forEach(item => {
+      const city = (item.city || '').trim();
+      const id = item.rawHotelId || item.hotelId;
+      if (!city || !id || seen.has(id)) return;
+      seen.add(id);
+      cityCounts[city] = (cityCounts[city] || 0) + 1;
+    });
+
+    cityBulkAvailableCities = Object.keys(cityCounts)
+      .sort((a, b) => a.localeCompare(b))
+      .map(city => ({
+        name: city,
+        count: cityCounts[city]
+      }));
+
+    if (cityInput) {
+      cityInput.placeholder = `Search or select city (${cityBulkAvailableCities.length} available)...`;
+    }
+
+    if (resetToAll || !currentVal) {
+      if (citySelect) citySelect.value = '';
+      if (cityInput) cityInput.value = '';
+      if (clearBtn) clearBtn.style.display = 'none';
+    } else {
+      const exists = cityBulkAvailableCities.find(c => c.name.toLowerCase() === currentVal.toLowerCase());
+      if (exists) {
+        if (citySelect) citySelect.value = exists.name;
+        if (cityInput) cityInput.value = exists.name;
+        if (clearBtn) clearBtn.style.display = 'block';
+      } else {
+        if (citySelect) citySelect.value = '';
+        if (cityInput) cityInput.value = '';
+        if (clearBtn) clearBtn.style.display = 'none';
+      }
+    }
+
+    renderCityBulkDropdown('');
+  }
+
+  // Render City Bulk Dropdown List
+  function renderCityBulkDropdown(query = '') {
+    const menu = document.getElementById('city-bulk-city-dropdown-menu');
+    if (!menu) return;
+
+    const q = (query || '').toLowerCase().trim();
+    const currentSelected = (document.getElementById('city-bulk-city-select')?.value || '');
+    const isShowingCurrentCity = currentSelected && q === currentSelected.toLowerCase();
+
+    const filtered = (q && !isShowingCurrentCity)
+      ? cityBulkAvailableCities.filter(c => c.name.toLowerCase().includes(q))
+      : cityBulkAvailableCities;
+
+    cityBulkActiveIndex = -1;
+
+    if (filtered.length === 0) {
+      menu.innerHTML = `<div style="padding: 12px; font-size: 0.82rem; color: #94a3b8; text-align: center;">No cities matching "${escapeHtml(query)}"</div>`;
+      return;
+    }
+
+    menu.innerHTML = filtered.map((c, idx) => {
+      const isSel = currentSelected && c.name.toLowerCase() === currentSelected.toLowerCase();
+      return `
+        <div class="searchable-city-item ${isSel ? 'selected' : ''}" data-index="${idx}" data-city="${escapeHtml(c.name)}">
+          <span>${escapeHtml(c.name)}</span>
+          <span class="city-prop-badge">${c.count} ${c.count === 1 ? 'hotel' : 'hotels'}</span>
+        </div>
+      `;
+    }).join('');
+
+    // Attach click events
+    const items = menu.querySelectorAll('.searchable-city-item');
+    items.forEach(item => {
+      item.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const cityName = item.getAttribute('data-city');
+        selectCityBulkCity(cityName);
+      });
+    });
+  }
+
+  // Select a City from Dropdown
+  function selectCityBulkCity(cityName) {
+    const citySelect = document.getElementById('city-bulk-city-select');
+    const cityInput = document.getElementById('city-bulk-city-input');
+    const clearBtn = document.getElementById('btn-city-bulk-city-clear');
+    const menu = document.getElementById('city-bulk-city-dropdown-menu');
+
+    if (citySelect) citySelect.value = cityName;
+    if (cityInput) cityInput.value = cityName;
+    if (clearBtn) clearBtn.style.display = cityName ? 'block' : 'none';
+    if (menu) menu.style.display = 'none';
+
+    renderCityBulkDropdown(cityName);
+    onCityBulkCityChange();
+  }
+
+  // When User Selects a City
+  function onCityBulkCityChange() {
+    const citySelect = document.getElementById('city-bulk-city-select');
+    const selectedCity = citySelect ? citySelect.value.trim() : '';
+    const statusBadge = document.getElementById('city-bulk-status-badge');
+    const propCountSpan = document.getElementById('city-bulk-city-prop-count');
+
+    if (!selectedCity) {
+      cityBulkProperties = [];
+      cityBulkPreviewRows = [];
+      cityBulkFilteredRows = [];
+      if (propCountSpan) propCountSpan.textContent = '';
+      if (statusBadge) {
+        statusBadge.textContent = 'Select a city to begin';
+        statusBadge.style.background = '#f0fdf4';
+        statusBadge.style.color = '#166534';
+        statusBadge.style.borderColor = '#bbf7d0';
+      }
+      renderCityBulkPropertyChips();
+      updateCityBulkSelectionKPI();
+      renderCityBulkPreviewTable();
+      return;
+    }
+
+    // Filter properties for selected city
+    const matching = hawkeyeBaseRatesMaster.filter(h => (h.city || '').toLowerCase() === selectedCity.toLowerCase());
+    const seen = new Set();
+    cityBulkProperties = [];
+
+    matching.forEach(item => {
+      const id = item.rawHotelId || item.hotelId;
+      if (!id || seen.has(id)) return;
+      seen.add(id);
+
+      cityBulkProperties.push({
+        hotelId: item.hotelId,
+        rawHotelId: id,
+        hotelName: item.hotelName || `Hotel ${id}`,
+        city: item.city,
+        p0: item.p0,
+        status: item.status || 'Live',
+        selected: true
+      });
+    });
+
+    // Sort by Hotel Name
+    cityBulkProperties.sort((a, b) => a.hotelName.localeCompare(b.hotelName));
+
+    if (propCountSpan) {
+      propCountSpan.textContent = `${cityBulkProperties.length} Properties`;
+    }
+
+    if (statusBadge) {
+      statusBadge.textContent = `${cityBulkProperties.length} Properties in ${selectedCity}`;
+      statusBadge.style.background = '#e0f2fe';
+      statusBadge.style.color = '#0369a1';
+      statusBadge.style.borderColor = '#bae6fd';
+    }
+
+    renderCityBulkPropertyChips();
+    updateCityBulkSelectionKPI();
+
+    // Auto-generate preview if dates and ask price are already filled
+    const askMonInput = document.getElementById('city-bulk-ask-mon');
+    const monVal = parseFloat(askMonInput?.value);
+    if (!isNaN(monVal) && monVal > 0) {
+      generateCityBulkPreview(false);
+    } else {
+      cityBulkPreviewRows = [];
+      cityBulkFilteredRows = [];
+      renderCityBulkPreviewTable();
+    }
+  }
+
+  // Render Property Scope Checkbox Chips
+  function renderCityBulkPropertyChips() {
+    const container = document.getElementById('city-bulk-properties-chip-container');
+    if (!container) return;
+
+    if (cityBulkProperties.length === 0) {
+      container.innerHTML = `
+        <div style="font-size: 0.78rem; color: var(--text-muted); text-align: center; padding: 18px 0;">
+          Select a city to load properties and their P0 base rates.
+        </div>`;
+      return;
+    }
+
+    container.innerHTML = cityBulkProperties.map(prop => {
+      const hasP0 = prop.p0 && prop.p0 !== '-' && !isNaN(parseFloat(String(prop.p0).replace(/,/g, '')));
+      const p0Display = hasP0 ? `₹${prop.p0}` : 'No P0';
+      const p0Color = hasP0 ? '#0369a1' : '#dc2626';
+      const p0Bg = hasP0 ? '#e0f2fe' : '#fee2e2';
+
+      return `
+        <div class="city-bulk-property-chip ${prop.selected ? '' : 'excluded'}">
+          <label style="display: flex; align-items: center; gap: 6px; cursor: pointer; flex: 1; min-width: 0; margin-bottom: 0;">
+            <input type="checkbox" class="city-bulk-prop-cb" data-hotel-id="${prop.rawHotelId}" ${prop.selected ? 'checked' : ''}>
+            <span style="font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: #1e293b;" title="${prop.hotelName}">
+              ${prop.hotelName}
+            </span>
+            <span style="color: var(--text-muted); font-size: 0.7rem; flex-shrink: 0;">(${prop.rawHotelId})</span>
+          </label>
+          <div style="display: flex; align-items: center; gap: 6px; margin-left: 8px; flex-shrink: 0;">
+            <span class="badge-p0" style="background: ${p0Bg}; color: ${p0Color}; border-color: ${hasP0 ? '#bae6fd' : '#fecaca'};" title="Hawkeye P0 Base Rate">
+              ${p0Display}
+            </span>
+            ${prop.status === 'Stop Sell' ? '<span class="status-badge status-stopsell" style="font-size: 0.65rem; padding: 1px 4px;">StopSell</span>' : ''}
+          </div>
+        </div>`;
+    }).join('');
+
+    // Bind checkbox change events
+    const checkboxes = container.querySelectorAll('.city-bulk-prop-cb');
+    checkboxes.forEach(cb => {
+      cb.addEventListener('change', (e) => {
+        const id = cb.dataset.hotelId;
+        const checked = cb.checked;
+        const chip = cb.closest('.city-bulk-property-chip');
+        if (chip) {
+          if (checked) chip.classList.remove('excluded');
+          else chip.classList.add('excluded');
+        }
+
+        const prop = cityBulkProperties.find(p => p.rawHotelId === id);
+        if (prop) prop.selected = checked;
+
+        updateCityBulkSelectionKPI();
+        if (cityBulkPreviewRows.length > 0) {
+          generateCityBulkPreview(false);
+        }
+      });
+    });
+  }
+
+  // Update Scope KPI Count
+  function updateCityBulkSelectionKPI() {
+    const kpiProps = document.getElementById('kpi-bulk-props');
+    const kpiSub = document.getElementById('kpi-bulk-props-sub');
+    const selectedCount = cityBulkProperties.filter(p => p.selected).length;
+    const totalCount = cityBulkProperties.length;
+
+    if (kpiProps) kpiProps.textContent = selectedCount;
+    if (kpiSub) kpiSub.textContent = `${totalCount} in city`;
+  }
+
+  // Generate Daily Rule Rows Preview
+  function generateCityBulkPreview(showNotice = true) {
+    const citySelect = document.getElementById('city-bulk-city-select');
+    const selectedCity = citySelect ? citySelect.value.trim() : '';
+
+    if (!selectedCity) {
+      if (showNotice) showToast('Please select a city first', 'warning');
+      return;
+    }
+
+    const selectedProps = cityBulkProperties.filter(p => p.selected);
+    if (selectedProps.length === 0) {
+      if (showNotice) showToast('Please select at least one property in scope', 'warning');
+      return;
+    }
+
+    const startDateInput = document.getElementById('city-bulk-start-date');
+    const endDateInput = document.getElementById('city-bulk-end-date');
+    const startDateVal = startDateInput ? startDateInput.value : '';
+    const endDateVal = endDateInput ? endDateInput.value : '';
+
+    if (!startDateVal || !endDateVal) {
+      if (showNotice) showToast('Please select both Start Date and End Date', 'warning');
+      return;
+    }
+
+    const startParts = startDateVal.split('-').map(Number);
+    const endParts = endDateVal.split('-').map(Number);
+    const curDate = new Date(startParts[0], startParts[1] - 1, startParts[2]);
+    const endDateObj = new Date(endParts[0], endParts[1] - 1, endParts[2]);
+
+    if (curDate > endDateObj) {
+      if (showNotice) showToast('Start Date cannot be after End Date', 'error');
+      return;
+    }
+
+    const flexibility = document.getElementById('city-bulk-flexibility')?.value || 'non-flex';
+    const flexFactor = (flexibility === 'flex') ? 0.72 : 0.69;
+    const dayGroup = document.getElementById('city-bulk-day-group')?.value || 'all';
+
+    const askMon = document.getElementById('city-bulk-ask-mon');
+    const askTue = document.getElementById('city-bulk-ask-tue');
+    const askWed = document.getElementById('city-bulk-ask-wed');
+    const askThu = document.getElementById('city-bulk-ask-thu');
+    const askFri = document.getElementById('city-bulk-ask-fri');
+    const askSat = document.getElementById('city-bulk-ask-sat');
+    const askSun = document.getElementById('city-bulk-ask-sun');
+
+    const sameMonThuCb = document.getElementById('city-bulk-same-mon-thu');
+    const sameWeekendCb = document.getElementById('city-bulk-same-weekend');
+
+    const valMon = parseFloat(askMon?.value);
+    const valTue = (sameMonThuCb && sameMonThuCb.checked) ? valMon : parseFloat(askTue?.value);
+    const valWed = (sameMonThuCb && sameMonThuCb.checked) ? valMon : parseFloat(askWed?.value);
+    const valThu = (sameMonThuCb && sameMonThuCb.checked) ? valMon : parseFloat(askThu?.value);
+
+    const valFri = parseFloat(askFri?.value);
+    const valSat = (sameWeekendCb && sameWeekendCb.checked) ? valFri : parseFloat(askSat?.value);
+    const valSun = (sameWeekendCb && sameWeekendCb.checked) ? valFri : parseFloat(askSun?.value);
+
+    // Validation for active day groups
+    if (dayGroup !== 'weekends_only') {
+      if (isNaN(valMon) || valMon <= 0) {
+        if (showNotice) showToast('Please enter a valid positive Ask Price for Monday', 'warning');
+        if (askMon) askMon.focus();
+        return;
+      }
+      if (!sameMonThuCb || !sameMonThuCb.checked) {
+        if (isNaN(valTue) || valTue <= 0 || isNaN(valWed) || valWed <= 0 || isNaN(valThu) || valThu <= 0) {
+          if (showNotice) showToast('Please enter valid positive Ask Prices for all weekdays (Tue, Wed, Thu)', 'warning');
+          return;
+        }
+      }
+    }
+
+    if (dayGroup !== 'weekdays_only') {
+      if (isNaN(valFri) || valFri <= 0) {
+        if (showNotice) showToast('Please enter a valid positive Ask Price for Friday', 'warning');
+        if (askFri) askFri.focus();
+        return;
+      }
+      if (!sameWeekendCb || !sameWeekendCb.checked) {
+        if (isNaN(valSat) || valSat <= 0 || isNaN(valSun) || valSun <= 0) {
+          if (showNotice) showToast('Please enter valid positive Ask Prices for Saturday and Sunday', 'warning');
+          return;
+        }
+      }
+    }
+
+    const dayPrices = {
+      1: valMon,
+      2: valTue,
+      3: valWed,
+      4: valThu,
+      5: valFri,
+      6: valSat,
+      0: valSun
+    };
+
+    const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    const rows = [];
+    const activeDaysSet = new Set();
+    let totalMultipliersSum = 0;
+    let validMultipliersCount = 0;
+
+    while (curDate <= endDateObj) {
+      const dow = curDate.getDay(); // 0 = Sun, 1 = Mon, ..., 6 = Sat
+      const isWeekend = (dow === 5 || dow === 6 || dow === 0);
+
+      let skip = false;
+      if (dayGroup === 'weekdays_only' && isWeekend) skip = true;
+      if (dayGroup === 'weekends_only' && !isWeekend) skip = true;
+
+      if (!skip) {
+        const yyyy = curDate.getFullYear();
+        const mm = String(curDate.getMonth() + 1).padStart(2, '0');
+        const dd = String(curDate.getDate()).padStart(2, '0');
+        const dateStr = `${yyyy}-${mm}-${dd}`;
+        const yyyymmdd = `${yyyy}${mm}${dd}`;
+        const dayName = dayNames[dow];
+        const dayType = isWeekend ? 'Weekend' : 'Weekday';
+        const targetAskPrice = dayPrices[dow];
+        const newPrice = Math.round(targetAskPrice / 1.05 / flexFactor);
+
+        activeDaysSet.add(dateStr);
+
+        selectedProps.forEach(prop => {
+          const p0Num = parseFloat(String(prop.p0).replace(/,/g, ''));
+          let multiplier = '-';
+          let isValid = false;
+
+          if (!isNaN(p0Num) && p0Num > 0) {
+            multiplier = (newPrice / p0Num).toFixed(2);
+            isValid = true;
+            totalMultipliersSum += parseFloat(multiplier);
+            validMultipliersCount++;
+          }
+
+          rows.push({
+            hotelId: prop.hotelId,
+            rawHotelId: prop.rawHotelId,
+            hotelName: prop.hotelName,
+            city: prop.city,
+            date: dateStr,
+            yyyymmdd: yyyymmdd,
+            dayName: dayName,
+            isWeekend: isWeekend,
+            dayType: dayType,
+            p0: (!isNaN(p0Num) && p0Num > 0) ? String(Math.round(p0Num)) : (prop.p0 || '-'),
+            askPrice: Math.round(targetAskPrice),
+            newPrice: newPrice,
+            multiplier: multiplier,
+            isValid: isValid
+          });
+        });
+      }
+
+      curDate.setDate(curDate.getDate() + 1);
+    }
+
+    cityBulkPreviewRows = rows;
+
+    // Update KPI Metric Cards
+    const kpiProps = document.getElementById('kpi-bulk-props');
+    const kpiDays = document.getElementById('kpi-bulk-days');
+    const kpiRows = document.getElementById('kpi-bulk-rows');
+    const kpiAvgMult = document.getElementById('kpi-bulk-avg-mult');
+    const btnDownload = document.getElementById('btn-city-bulk-download');
+    const btnCopy = document.getElementById('btn-city-bulk-copy');
+    const statusBadge = document.getElementById('city-bulk-status-badge');
+
+    if (kpiProps) kpiProps.textContent = selectedProps.length;
+    if (kpiDays) kpiDays.textContent = activeDaysSet.size;
+    if (kpiRows) kpiRows.textContent = rows.length;
+
+    if (kpiAvgMult) {
+      if (validMultipliersCount > 0) {
+        kpiAvgMult.textContent = (totalMultipliersSum / validMultipliersCount).toFixed(2) + '×';
+      } else {
+        kpiAvgMult.textContent = '--';
+      }
+    }
+
+    if (btnDownload) btnDownload.disabled = rows.length === 0;
+    if (btnCopy) btnCopy.disabled = rows.length === 0;
+
+    if (statusBadge) {
+      statusBadge.textContent = `Generated ${rows.length} rows (${selectedProps.length} props × ${activeDaysSet.size} days)`;
+      statusBadge.style.background = '#f0fdf4';
+      statusBadge.style.color = '#166534';
+      statusBadge.style.borderColor = '#bbf7d0';
+    }
+
+    if (showNotice) {
+      showToast(`Generated preview for ${rows.length} rule rows across ${selectedProps.length} properties!`, 'success');
+    }
+
+    applyCityBulkPreviewFilters();
+  }
+
+  // Search Filter on Preview Rows
+  function applyCityBulkPreviewFilters() {
+    const searchInput = document.getElementById('city-bulk-preview-search');
+    const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
+
+    if (!query) {
+      cityBulkFilteredRows = cityBulkPreviewRows;
+    } else {
+      cityBulkFilteredRows = cityBulkPreviewRows.filter(r =>
+        (r.rawHotelId && r.rawHotelId.toLowerCase().includes(query)) ||
+        (r.hotelId && r.hotelId.toLowerCase().includes(query)) ||
+        (r.hotelName && r.hotelName.toLowerCase().includes(query)) ||
+        (r.date && r.date.includes(query)) ||
+        (r.dayName && r.dayName.toLowerCase().includes(query)) ||
+        (r.city && r.city.toLowerCase().includes(query))
+      );
+    }
+
+    cityBulkCurrentPage = 1;
+    renderCityBulkPreviewTable();
+  }
+
+  // Render Daily Preview Grid Table
+  function renderCityBulkPreviewTable() {
+    const tbody = document.getElementById('city-bulk-preview-tbody');
+    const countBadge = document.getElementById('city-bulk-preview-count-badge');
+    const pageBadge = document.getElementById('city-bulk-current-page-badge');
+    const prevBtn = document.getElementById('btn-city-bulk-prev-page');
+    const nextBtn = document.getElementById('btn-city-bulk-next-page');
+    const paginationInfo = document.getElementById('city-bulk-pagination-info');
+
+    if (!tbody) return;
+
+    const totalFiltered = cityBulkFilteredRows.length;
+    const totalMaster = cityBulkPreviewRows.length;
+
+    if (countBadge) {
+      countBadge.textContent = `${totalFiltered} of ${totalMaster} Rows`;
+    }
+
+    if (totalFiltered === 0) {
+      tbody.innerHTML = `
+        <tr>
+          <td colspan="11" style="text-align: center; padding: 48px 20px; color: var(--text-muted);">
+            <i data-lucide="layers" style="width: 32px; height: 32px; margin-bottom: 8px; display: inline-block; opacity: 0.5;"></i>
+            <div>${totalMaster === 0 ? 'Select a city, set dates & ask price, then click <strong>Generate Preview</strong>.' : 'No preview rows match your search filter.'}</div>
+          </td>
+        </tr>`;
+      if (pageBadge) pageBadge.textContent = 'Page 1 of 1';
+      if (prevBtn) prevBtn.disabled = true;
+      if (nextBtn) nextBtn.disabled = true;
+      if (paginationInfo) paginationInfo.textContent = '0 items';
+      if (window.lucide) lucide.createIcons();
+      return;
+    }
+
+    // Pagination calculations
+    const effectivePageSize = cityBulkPageSize === 'all' ? totalFiltered : parseInt(cityBulkPageSize, 10);
+    const totalPages = Math.ceil(totalFiltered / effectivePageSize) || 1;
+
+    if (cityBulkCurrentPage > totalPages) cityBulkCurrentPage = totalPages;
+    if (cityBulkCurrentPage < 1) cityBulkCurrentPage = 1;
+
+    const startIdx = (cityBulkCurrentPage - 1) * effectivePageSize;
+    const endIdx = Math.min(startIdx + effectivePageSize, totalFiltered);
+    const pageItems = cityBulkFilteredRows.slice(startIdx, endIdx);
+
+    if (paginationInfo) {
+      paginationInfo.textContent = `Showing ${startIdx + 1}–${endIdx} of ${totalFiltered}`;
+    }
+    if (pageBadge) {
+      pageBadge.textContent = `Page ${cityBulkCurrentPage} of ${totalPages}`;
+    }
+    if (prevBtn) prevBtn.disabled = cityBulkCurrentPage <= 1;
+    if (nextBtn) nextBtn.disabled = cityBulkCurrentPage >= totalPages;
+
+    tbody.innerHTML = pageItems.map((r, i) => {
+      const rowNum = startIdx + i + 1;
+      const typeBadge = r.isWeekend
+        ? `<span class="badge-weekend">Weekend</span>`
+        : `<span class="badge-weekday">Weekday</span>`;
+
+      const multiplierDisplay = r.isValid
+        ? `<span style="font-weight: 700; color: #0284c7; background: #f0f9ff; padding: 2px 8px; border-radius: 4px; border: 1px solid #bae6fd;">${r.multiplier}×</span>`
+        : `<span style="font-weight: 600; color: #dc2626; background: #fef2f2; padding: 2px 6px; border-radius: 4px; border: 1px solid #fecaca;" title="Missing P0 rate in Hawkeye dataset">Missing P0</span>`;
+
+      return `
+        <tr>
+          <td style="color: var(--text-muted); font-size: 0.75rem;">${rowNum}</td>
+          <td style="font-family: monospace; font-weight: 700; color: #0f172a;">${r.rawHotelId}</td>
+          <td style="font-weight: 600; color: #1e293b; max-width: 240px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="${r.hotelName}">
+            ${r.hotelName}
+          </td>
+          <td>${r.city}</td>
+          <td style="font-family: monospace; font-weight: 600;">${r.date}</td>
+          <td><span style="font-weight: 600; color: ${r.isWeekend ? '#92400e' : '#475569'};">${r.dayName}</span></td>
+          <td>${typeBadge}</td>
+          <td class="cell-num-right" style="color: #0284c7; font-weight: 600;">₹${r.p0}</td>
+          <td class="cell-num-right" style="color: #ea580c; font-weight: 600;">₹${r.askPrice}</td>
+          <td class="cell-num-right" style="color: #16a34a; font-weight: 600;">₹${r.newPrice}</td>
+          <td class="cell-num-right">${multiplierDisplay}</td>
+        </tr>`;
+    }).join('');
+
+    if (window.lucide) lucide.createIcons();
+  }
+
+  // Download City Bulk Action Rules as CSV
+  function downloadCityBulkCSV() {
+    const validRows = cityBulkPreviewRows.filter(r => r.isValid);
+
+    if (validRows.length === 0) {
+      showToast('No valid rule rows available to export. Ensure properties have P0 prices loaded.', 'error');
+      return;
+    }
+
+    const headers = ['hotel_ID', 'rule_type', 'start_range', 'end_range', 'multiplier', 'addition', 'start_price', 'end_price'];
+    const chunkSize = 1000;
+    const totalParts = Math.ceil(validRows.length / chunkSize);
+
+    const citySelect = document.getElementById('city-bulk-city-select');
+    const rawCityName = citySelect ? citySelect.value : 'city';
+    const citySlug = rawCityName.toLowerCase().replace(/[^a-z0-9]+/g, '_');
+    const startDate = (document.getElementById('city-bulk-start-date')?.value || '').replace(/-/g, '');
+    const endDate = (document.getElementById('city-bulk-end-date')?.value || '').replace(/-/g, '');
+
+    for (let p = 0; p < totalParts; p++) {
+      const chunk = validRows.slice(p * chunkSize, (p + 1) * chunkSize);
+      let csvContent = headers.join(',') + '\n';
+
+      chunk.forEach(row => {
+        const line = [
+          row.hotelId,
+          'targetDate',
+          row.yyyymmdd,
+          row.yyyymmdd,
+          row.multiplier,
+          '',
+          '',
+          ''
+        ];
+        csvContent += line.join(',') + '\n';
+      });
+
+      const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+
+      const filename = totalParts > 1
+        ? `city_bulk_${citySlug}_${startDate}_${endDate}_part${p + 1}.csv`
+        : `city_bulk_${citySlug}_${startDate}_${endDate}.csv`;
+
+      link.setAttribute('href', url);
+      link.setAttribute('download', filename);
+      link.style.visibility = 'hidden';
+
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+    }
+
+    showToast(`Successfully exported ${validRows.length} rule rows (${totalParts} CSV file${totalParts > 1 ? 's' : ''})!`, 'success');
+  }
+
+  // Copy City Bulk Action Rules to Clipboard
+  function copyCityBulkCSV() {
+    const validRows = cityBulkPreviewRows.filter(r => r.isValid);
+
+    if (validRows.length === 0) {
+      showToast('No valid rule rows available to copy.', 'error');
+      return;
+    }
+
+    const headers = ['hotel_ID', 'rule_type', 'start_range', 'end_range', 'multiplier', 'addition', 'start_price', 'end_price'];
+    let csvContent = headers.join('\t') + '\n';
+
+    validRows.forEach(row => {
+      const line = [
+        row.hotelId,
+        'targetDate',
+        row.yyyymmdd,
+        row.yyyymmdd,
+        row.multiplier,
+        '',
+        '',
+        ''
+      ];
+      csvContent += line.join('\t') + '\n';
+    });
+
+    navigator.clipboard.writeText(csvContent).then(() => {
+      showToast(`Copied ${validRows.length} rule rows to clipboard!`, 'success');
+    }).catch(err => {
+      console.warn('Clipboard copy failed:', err);
+      showToast('Could not copy to clipboard', 'error');
+    });
+  }
+

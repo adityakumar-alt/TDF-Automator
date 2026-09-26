@@ -2911,6 +2911,444 @@ input.desired-push-price-input::-webkit-inner-spin-button {
   padding: 0 10px;
 }
 
+/* ==========================================================================
+   Access Control & RBAC Table, Actions & Modal Styles
+   ========================================================================== */
+
+.access-control-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.search-input-wrapper {
+  position: relative;
+  flex: 1;
+  min-width: 260px;
+}
+
+.search-input-wrapper .search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  color: #94a3b8;
+  pointer-events: none;
+}
+
+.search-input-wrapper .search-input {
+  padding-left: 38px;
+  width: 100%;
+  height: 38px;
+  font-size: 0.86rem;
+  border-radius: 8px;
+}
+
+.access-filter-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.select-sm {
+  height: 38px;
+  padding: 0 12px;
+  font-size: 0.84rem;
+  min-width: 130px;
+}
+
+.access-table-wrapper {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.access-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.access-table th {
+  background: #f8fafc;
+  padding: 12px 18px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748b;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.access-table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 0.88rem;
+  vertical-align: middle;
+}
+
+.access-user-row:hover td {
+  background-color: #fafbfd;
+}
+
+.user-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-avatar-sm {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #fed7aa, #fdba74);
+  color: #9a3412;
+  font-weight: 700;
+  font-size: 0.78rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.user-cell-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.user-cell-name {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.user-cell-email {
+  color: #475569;
+  font-size: 0.84rem;
+  font-family: monospace;
+}
+
+.badge-self {
+  font-size: 0.68rem;
+  font-weight: 700;
+  background: rgba(249, 115, 22, 0.12);
+  color: #ea580c;
+  padding: 1px 6px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.user-role-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 9px;
+  border-radius: 9999px;
+  font-size: 0.76rem;
+  font-weight: 600;
+}
+
+.user-role-badge.role-admin {
+  background: rgba(220, 38, 38, 0.1);
+  color: #dc2626;
+  border: 1px solid rgba(220, 38, 38, 0.25);
+}
+
+.user-role-badge.role-pricing {
+  background: rgba(249, 115, 22, 0.1);
+  color: #ea580c;
+  border: 1px solid rgba(249, 115, 22, 0.25);
+}
+
+.user-role-badge.role-revops {
+  background: rgba(14, 165, 233, 0.1);
+  color: #0284c7;
+  border: 1px solid rgba(14, 165, 233, 0.25);
+}
+
+.user-role-badge.role-zonal {
+  background: rgba(168, 85, 247, 0.1);
+  color: #9333ea;
+  border: 1px solid rgba(168, 85, 247, 0.25);
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 0.76rem;
+  font-weight: 600;
+}
+
+.status-badge .status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+
+.status-badge.badge-active {
+  background-color: #ecfdf5;
+  color: #059669;
+  border: 1px solid #a7f3d0;
+}
+
+.status-badge.badge-inactive {
+  background-color: #f1f5f9;
+  color: #64748b;
+  border: 1px solid #e2e8f0;
+}
+
+.row-actions-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-action-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  color: #64748b;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-action-icon svg {
+  width: 15px;
+  height: 15px;
+}
+
+.btn-action-icon:hover {
+  background: #f8fafc;
+  color: #1e293b;
+  border-color: #cbd5e1;
+}
+
+.btn-action-edit:hover {
+  background: #fff7ed;
+  color: #ea580c;
+  border-color: #fed7aa;
+}
+
+.btn-action-deactivate:hover {
+  background: #fef2f2;
+  color: #dc2626;
+  border-color: #fecaca;
+}
+
+.btn-action-activate:hover {
+  background: #ecfdf5;
+  color: #059669;
+  border-color: #a7f3d0;
+}
+
+.btn-action-icon[disabled] {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.modal-card-form {
+  max-width: 480px;
+}
+
+.modal-icon.primary {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: rgba(249, 115, 22, 0.1);
+  color: #ea580c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-icon.primary svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* =========================================================================
+   CITY BULK ACTION STYLES
+   ========================================================================= */
+.city-bulk-property-chip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 8px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.city-bulk-property-chip:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+.city-bulk-property-chip.excluded {
+  opacity: 0.5;
+  background: #f1f5f9;
+  text-decoration: line-through;
+}
+
+.badge-p0 {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 6px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  border-radius: 4px;
+  background: #e0f2fe;
+  color: #0369a1;
+  border: 1px solid #bae6fd;
+}
+
+.badge-weekday {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 6px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  border-radius: 4px;
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.badge-weekend {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 6px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  border-radius: 4px;
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fde68a;
+}
+
+.city-bulk-day-col {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: #f8fafc;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s ease;
+}
+
+.city-bulk-day-col:hover {
+  border-color: #cbd5e1;
+}
+
+.city-bulk-day-col.day-skipped {
+  opacity: 0.4;
+  background: #f1f5f9;
+  filter: grayscale(0.6);
+  pointer-events: none;
+}
+
+.city-bulk-day-header {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 2px 0;
+  border-radius: 4px;
+}
+
+.city-bulk-day-input:disabled {
+  background: #f1f5f9 !important;
+  color: #64748b !important;
+  cursor: not-allowed;
+  opacity: 0.85;
+}
+
+@media (max-width: 900px) {
+  .city-bulk-7days-grid {
+    grid-template-columns: repeat(auto-fit, minmax(95px, 1fr)) !important;
+  }
+}
+
+/* Searchable City Dropdown */
+.searchable-city-dropdown {
+  animation: fadeInDown 0.15s ease-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.searchable-city-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #1e293b;
+  cursor: pointer;
+  transition: background 0.12s ease, color 0.12s ease;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.searchable-city-item:last-child {
+  border-bottom: none;
+}
+
+.searchable-city-item:hover,
+.searchable-city-item.active {
+  background: #f0f9ff;
+  color: #0284c7;
+}
+
+.searchable-city-item.selected {
+  background: #e0f2fe;
+  color: #0369a1;
+  font-weight: 700;
+}
+
+.searchable-city-item .city-prop-badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #64748b;
+  background: #f1f5f9;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+
+
+
 
 
 

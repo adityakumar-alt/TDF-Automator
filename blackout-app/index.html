@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blackout Pricing Automator - Google Sheets</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <!-- 1. GOOGLE SHEETS HEADER BAR -->
+  <header class="sheets-top-header">
+    <div class="sheets-logo">
+      <i data-lucide="file-spreadsheet"></i>
+    </div>
+    <div class="sheets-title-container">
+      <input type="text" class="sheets-doc-title" value="Blackout Pricing Automator - Google Sheets">
+      <div class="sheets-menu-bar">
+        <span class="sheets-menu-item">File</span>
+        <span class="sheets-menu-item">Edit</span>
+        <span class="sheets-menu-item">View</span>
+        <span class="sheets-menu-item">Insert</span>
+        <span class="sheets-menu-item">Format</span>
+        <span class="sheets-menu-item">Data</span>
+        <span class="sheets-menu-item">Tools</span>
+        <span class="sheets-menu-item">Extensions</span>
+        <span class="sheets-menu-item">Help</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2. GOOGLE SHEETS ACTION TOOLBAR -->
+  <div class="sheets-toolbar">
+    <button class="sheets-btn" id="btn-add-row">
+      <i data-lucide="plus"></i>
+      <span>➕ Add Row</span>
+    </button>
+    <button class="sheets-btn sheets-btn-green" id="btn-copy-inputs-down">
+      <i data-lucide="copy"></i>
+      <span>📋 Fill Down Ask & Dates to All Rows</span>
+    </button>
+    <button class="sheets-btn" id="btn-clear-sheet">
+      <i data-lucide="trash-2"></i>
+      <span>🧹 Clear Sheet</span>
+    </button>
+
+    <div style="height: 18px; width: 1px; background: #dadce0; margin: 0 4px;"></div>
+
+    <button class="sheets-btn sheets-btn-green" id="btn-populate-b2b">
+      <i data-lucide="list-tree"></i>
+      <span>⚡ Populate B2B Input</span>
+    </button>
+    <button class="sheets-btn sheets-btn-green" id="btn-populate-room-types">
+      <i data-lucide="home"></i>
+      <span>⚡ Populate Room Types & Rates</span>
+    </button>
+    <button class="sheets-btn sheets-btn-green" id="btn-cs-repeat">
+      <i data-lucide="repeat"></i>
+      <span>🔁 CS ID Repeat (Expand)</span>
+    </button>
+    <button class="sheets-btn sheets-btn-green" id="btn-final-b2b">
+      <i data-lucide="calculator"></i>
+      <span>⚡ Final Output (B2B)</span>
+    </button>
+    <button class="sheets-btn sheets-btn-green" id="btn-b2c-output">
+      <i data-lucide="target"></i>
+      <span>⚡ B2C Output</span>
+    </button>
+
+    <div style="height: 18px; width: 1px; background: #dadce0; margin: 0 4px;"></div>
+
+    <button class="sheets-btn" id="btn-export-active">
+      <i data-lucide="download"></i>
+      <span>Export CSV</span>
+    </button>
+    <button class="sheets-btn" id="btn-paste-modal">
+      <i data-lucide="clipboard"></i>
+      <span>Paste Table</span>
+    </button>
+    <button class="sheets-btn" id="btn-open-config">
+      <i data-lucide="settings"></i>
+      <span>Live Settings</span>
+    </button>
+
+    <div style="margin-left: auto; font-size: 0.8rem; font-weight: 500; color: #0f9d58;">
+      <span id="status-indicator">● Editable Sheets Ready</span>
+    </div>
+  </div>
+
+  <!-- 3. FORMULA BAR -->
+  <div class="sheets-formula-bar">
+    <div class="cell-indicator" id="cell-indicator">A8</div>
+    <div class="fx-icon">fx</div>
+    <input type="text" class="formula-input" id="formula-input" value="2011302">
+  </div>
+
+  <!-- 4. MAIN SPREADSHEET GRID CONTAINER -->
+  <main class="sheets-grid-container" id="grid-container">
+    <table class="sheets-grid" id="main-sheets-grid">
+      <!-- Grid contents rendered dynamically via app.js -->
+    </table>
+  </main>
+
+  <!-- 5. BOTTOM SHEET TABS -->
+  <footer class="sheets-tabs-bar">
+    <button class="sheet-tab active" data-sheet="Input">
+      <i data-lucide="table"></i>
+      <span>Input</span>
+    </button>
+    <button class="sheet-tab" data-sheet="RLD/Roomcat">
+      <i data-lucide="database"></i>
+      <span>RLD/Roomcat</span>
+    </button>
+    <button class="sheet-tab" data-sheet="rack_rates">
+      <i data-lucide="list"></i>
+      <span>rack_rates</span>
+    </button>
+    <button class="sheet-tab" data-sheet="B2B_Output">
+      <i data-lucide="file-output"></i>
+      <span>B2B_Output</span>
+    </button>
+    <button class="sheet-tab" data-sheet="B2C_Output">
+      <i data-lucide="layers"></i>
+      <span>B2C_Output</span>
+    </button>
+  </footer>
+
+  <!-- PASTE TABLE MODAL DIALOG -->
+  <div class="modal-overlay" id="paste-modal">
+    <div class="modal-card">
+      <h3 style="font-size: 1.1rem; margin-bottom: 12px; font-weight: 500;">Paste Data from Google Sheets / Excel</h3>
+      <p style="font-size: 0.82rem; color: #5f6368; margin-bottom: 12px;">Paste multi-column rows (CS ID, Pretax Ask, Start Date, End Date):</p>
+      <textarea id="paste-input-area" rows="6" style="width: 100%; font-family: monospace; padding: 8px; font-size: 0.85rem; border: 1px solid #dadce0; border-radius: 4px;" placeholder="2011302&#t1905&#t2026-08-12&#t2026-08-18&#10;1115459&#t1524&#t2026-08-12&#t2026-08-18"></textarea>
+      <div style="display: flex; gap: 8px; justify-content: flex-end; margin-top: 16px;">
+        <button class="sheets-btn" id="btn-close-paste">Cancel</button>
+        <button class="sheets-btn sheets-btn-green" id="btn-apply-paste">Insert Rows into Input Sheet</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- LIVE CONFIG MODAL DIALOG -->
+  <div class="modal-overlay" id="config-modal">
+    <div class="modal-card">
+      <h3 style="font-size: 1.1rem; margin-bottom: 12px; font-weight: 500;">Live Google Sheets Settings</h3>
+      <p style="font-size: 0.82rem; color: #5f6368; margin-bottom: 12px;">Enter live published Google Sheets CSV URLs:</p>
+      <div style="margin-bottom: 12px;">
+        <label style="font-size: 0.8rem; font-weight: 500;">RLD/Roomcat CSV URL</label>
+        <input type="text" id="url-roomcat" style="width: 100%; padding: 6px; border: 1px solid #dadce0; border-radius: 4px; font-size: 0.85rem;" placeholder="https://docs.google.com/spreadsheets/d/.../export?format=csv...">
+      </div>
+      <div style="margin-bottom: 16px;">
+        <label style="font-size: 0.8rem; font-weight: 500;">rack_rates CSV URL</label>
+        <input type="text" id="url-rack" style="width: 100%; padding: 6px; border: 1px solid #dadce0; border-radius: 4px; font-size: 0.85rem;" placeholder="https://docs.google.com/spreadsheets/d/.../export?format=csv...">
+      </div>
+      <div style="display: flex; gap: 8px; justify-content: flex-end;">
+        <button class="sheets-btn" id="btn-close-config">Cancel</button>
+        <button class="sheets-btn sheets-btn-green" id="btn-save-config">Connect Live Sheets</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>

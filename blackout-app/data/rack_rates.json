@@ -1,0 +1,4202 @@
+[
+  {
+    "cs_id": "0507680",
+    "hotel_id": "21693",
+    "property_name": "Treebo Premium Grand Emerald"
+  },
+  {
+    "cs_id": "0418304",
+    "hotel_id": "22063",
+    "property_name": "Treebo Globe International"
+  },
+  {
+    "cs_id": "0050525",
+    "hotel_id": "22362",
+    "property_name": "Treebo Premium Niraali Executive, Hinjewadi"
+  },
+  {
+    "cs_id": "0395630",
+    "hotel_id": "22422",
+    "property_name": "Treebo Ambassador"
+  },
+  {
+    "cs_id": "0019694",
+    "hotel_id": "22464",
+    "property_name": "Treebo Akshaya Lalbagh Inn"
+  },
+  {
+    "cs_id": "0262502",
+    "hotel_id": "22452",
+    "property_name": "Treebo Ess Grande"
+  },
+  {
+    "cs_id": "0065263",
+    "hotel_id": "23074",
+    "property_name": "Treebo Daksh Residency"
+  },
+  {
+    "cs_id": "0016581",
+    "hotel_id": "23078",
+    "property_name": "Treebo Worldtree Itpl"
+  },
+  {
+    "cs_id": "0063794",
+    "hotel_id": "23899",
+    "property_name": "Treebo Shivani"
+  },
+  {
+    "cs_id": "0265185",
+    "hotel_id": "24219",
+    "property_name": "Treebo Premium Corner Stay"
+  },
+  {
+    "cs_id": "0002365",
+    "hotel_id": "24195",
+    "property_name": "Treebo Pappilon Palace - Pvs Circle"
+  },
+  {
+    "cs_id": "0243121",
+    "hotel_id": "24567",
+    "property_name": "Treebo Adin Residence Chennai Trade Centre"
+  },
+  {
+    "cs_id": "0050789",
+    "hotel_id": "24264",
+    "property_name": "Treebo Park View Hadapsar"
+  },
+  {
+    "cs_id": "0045959",
+    "hotel_id": "25142",
+    "property_name": "Treebo Fort Club"
+  },
+  {
+    "cs_id": "0015738",
+    "hotel_id": "25120",
+    "property_name": "Treebo Greenwood Premier Suites, Old Airport Road"
+  },
+  {
+    "cs_id": "0256107",
+    "hotel_id": "25228",
+    "property_name": "Treebo South Avenue, 700 Mts From Promenade Beach"
+  },
+  {
+    "cs_id": "0243252",
+    "hotel_id": "25232",
+    "property_name": "Treebo Nestlay Casa"
+  },
+  {
+    "cs_id": "0207833",
+    "hotel_id": "25335",
+    "property_name": "Treebo Varuna With Mountain View"
+  },
+  {
+    "cs_id": "0238622",
+    "hotel_id": "25393",
+    "property_name": "Treebo Empire"
+  },
+  {
+    "cs_id": "0471678",
+    "hotel_id": "26836",
+    "property_name": "Treebo Vrindavan, 3 Km From Madikeri Fort"
+  },
+  {
+    "cs_id": "0414566",
+    "hotel_id": "26649",
+    "property_name": "Treebo Green View"
+  },
+  {
+    "cs_id": "0245564",
+    "hotel_id": "26832",
+    "property_name": "Treebo Nestlay Airport Alandur"
+  },
+  {
+    "cs_id": "0042415",
+    "hotel_id": "28538",
+    "property_name": "Itsy Hotels Arastu Inn"
+  },
+  {
+    "cs_id": "0191524",
+    "hotel_id": "28769",
+    "property_name": "Treebo Premium Palmyra Milford, 2 Km From Alleppey Beach"
+  },
+  {
+    "cs_id": "0376508",
+    "hotel_id": "29287",
+    "property_name": "Treebo Olive Nest"
+  },
+  {
+    "cs_id": "0371149",
+    "hotel_id": "30572",
+    "property_name": "Treebo Olive Inn Near Bkc"
+  },
+  {
+    "cs_id": "0124913",
+    "hotel_id": "31114",
+    "property_name": "Treebo Blessing Bells"
+  },
+  {
+    "cs_id": "0297519",
+    "hotel_id": "31184",
+    "property_name": "Treebo Celeste"
+  },
+  {
+    "cs_id": "0017174",
+    "hotel_id": "32889",
+    "property_name": "Treebo Edha Suites Koramangala"
+  },
+  {
+    "cs_id": "0242206",
+    "hotel_id": "33122",
+    "property_name": "Treebo Pechis Castle"
+  },
+  {
+    "cs_id": "0377942",
+    "hotel_id": "33576",
+    "property_name": "Treebo Amber International"
+  },
+  {
+    "cs_id": "0233415",
+    "hotel_id": "34143",
+    "property_name": "Treebo C Plaza"
+  },
+  {
+    "cs_id": "0616586",
+    "hotel_id": "33808",
+    "property_name": "Treebo King'S Court Chandrasekharpur"
+  },
+  {
+    "cs_id": "0543621",
+    "hotel_id": "34937",
+    "property_name": "Treebo Jp Cottage"
+  },
+  {
+    "cs_id": "0392605",
+    "hotel_id": "35361",
+    "property_name": "Treebo Paradise"
+  },
+  {
+    "cs_id": "0468785",
+    "hotel_id": "35681",
+    "property_name": "Treebo Premium Akshaya Mahal Inn - Near Mysore Palace"
+  },
+  {
+    "cs_id": "0327829",
+    "hotel_id": "36198",
+    "property_name": "Treebo The Anchorage Malviya Nagar"
+  },
+  {
+    "cs_id": "0415343",
+    "hotel_id": "36866",
+    "property_name": "Treebo Hoops - Airport"
+  },
+  {
+    "cs_id": "0262017",
+    "hotel_id": "36837",
+    "property_name": "Treebo Hi Line Apartments Kalapatti"
+  },
+  {
+    "cs_id": "0051416",
+    "hotel_id": "36745",
+    "property_name": "Treebo Premium Eden Residency Near Sec 29"
+  },
+  {
+    "cs_id": "0003211",
+    "hotel_id": "37244",
+    "property_name": "Treebo Bliss"
+  },
+  {
+    "cs_id": "0509914",
+    "hotel_id": "37552",
+    "property_name": "Itsy Hotels Hill View Ex"
+  },
+  {
+    "cs_id": "0012622",
+    "hotel_id": "37936",
+    "property_name": "Itsy Hotels Worldtree Bellandur"
+  },
+  {
+    "cs_id": "0018651",
+    "hotel_id": "22701",
+    "property_name": "Treebo Raj Premier, Indiranagar"
+  },
+  {
+    "cs_id": "0325023",
+    "hotel_id": "37498",
+    "property_name": "Treebo Natraj - Jaipur"
+  },
+  {
+    "cs_id": "0551475",
+    "hotel_id": "38275",
+    "property_name": "Treebo Chalets, Nagpur Airport"
+  },
+  {
+    "cs_id": "0295705",
+    "hotel_id": "38752",
+    "property_name": "Treebo Premium Pl Grand, Visakhapatnam"
+  },
+  {
+    "cs_id": "0544853",
+    "hotel_id": "38784",
+    "property_name": "Treebo Winter Town Venna Lake"
+  },
+  {
+    "cs_id": "0377366",
+    "hotel_id": "38844",
+    "property_name": "Treebo Blue Moon Powai"
+  },
+  {
+    "cs_id": "0386234",
+    "hotel_id": "38868",
+    "property_name": "Treebo Lands End Beach Resort Morjim"
+  },
+  {
+    "cs_id": "0472129",
+    "hotel_id": "38841",
+    "property_name": "Treebo Durga Boji Grand, Gonikoppal Town"
+  },
+  {
+    "cs_id": "1509933",
+    "hotel_id": "40851",
+    "property_name": "Treebo Brahma Regency"
+  },
+  {
+    "cs_id": "1989439",
+    "hotel_id": "39671",
+    "property_name": "Treebo Laa Gardenia Resort, Yelagiri"
+  },
+  {
+    "cs_id": "1107594",
+    "hotel_id": "41784",
+    "property_name": "Treebo Elite Residency Belgaum"
+  },
+  {
+    "cs_id": "2065399",
+    "hotel_id": "41961",
+    "property_name": "Treebo Omni Palace"
+  },
+  {
+    "cs_id": "1486131",
+    "hotel_id": "41785",
+    "property_name": "Treebo Balaji Residency, Kolhapur"
+  },
+  {
+    "cs_id": "2034103",
+    "hotel_id": "41297",
+    "property_name": "Treebo Jd Residency Mohali"
+  },
+  {
+    "cs_id": "1127927",
+    "hotel_id": "42865",
+    "property_name": "Treebo Grand Legacy Elite With Roof Top Cafe"
+  },
+  {
+    "cs_id": "1512806",
+    "hotel_id": "42976",
+    "property_name": "Treebo Sapphire Studio"
+  },
+  {
+    "cs_id": "1442173",
+    "hotel_id": "43056",
+    "property_name": "Treebo Light House, 900 Mtrs From Botanical Garden"
+  },
+  {
+    "cs_id": "2025247",
+    "hotel_id": "42462",
+    "property_name": "Itsy Hotels Red Lotus Heritage, Promenade Beach"
+  },
+  {
+    "cs_id": "1546230",
+    "hotel_id": "41302",
+    "property_name": "Treebo Hillway Inn Main Market"
+  },
+  {
+    "cs_id": "1597119",
+    "hotel_id": "43459",
+    "property_name": "Treebo Address Inn, Banjara Hills"
+  },
+  {
+    "cs_id": "1152305",
+    "hotel_id": "43584",
+    "property_name": "Treebo The Qasr"
+  },
+  {
+    "cs_id": "1559112",
+    "hotel_id": "43395",
+    "property_name": "Treebo Ivory House"
+  },
+  {
+    "cs_id": "1618855",
+    "hotel_id": "42899",
+    "property_name": "Treebo Oasis, Laxmisagar"
+  },
+  {
+    "cs_id": "1556414",
+    "hotel_id": "43729",
+    "property_name": "Itsy Hotels Le Clover"
+  },
+  {
+    "cs_id": "1414822",
+    "hotel_id": "43921",
+    "property_name": "Treebo Vedanta"
+  },
+  {
+    "cs_id": "2012715",
+    "hotel_id": "44284",
+    "property_name": "Treebo Apple Villa"
+  },
+  {
+    "cs_id": "2014917",
+    "hotel_id": "44519",
+    "property_name": "Treebo Akshaya Bull Temple"
+  },
+  {
+    "cs_id": "2016333",
+    "hotel_id": "44889",
+    "property_name": "Itsy Hotels Shivas Kuteera"
+  },
+  {
+    "cs_id": "2011692",
+    "hotel_id": "44959",
+    "property_name": "Treebo Stay Tuned Jp Nagar"
+  },
+  {
+    "cs_id": "1892272",
+    "hotel_id": "45520",
+    "property_name": "Treebo Premium Blue Mountain Country Club AND Resort"
+  },
+  {
+    "cs_id": "1558817",
+    "hotel_id": "45448",
+    "property_name": "Treebo Hotel A1"
+  },
+  {
+    "cs_id": "1501004",
+    "hotel_id": "45624",
+    "property_name": "Treebo Brooks Manor"
+  },
+  {
+    "cs_id": "1522096",
+    "hotel_id": "1522096",
+    "property_name": "Treebo Resto- Near Lucknow Railway Station"
+  },
+  {
+    "cs_id": "1475870",
+    "hotel_id": "46553",
+    "property_name": "Itsy Hotels Jammabane Cottage"
+  },
+  {
+    "cs_id": "1269686",
+    "hotel_id": "46080",
+    "property_name": "Itsy Hotels Jansi Residency"
+  },
+  {
+    "cs_id": "2024299",
+    "hotel_id": "2024299",
+    "property_name": "Treebo Comforts Inn, University Road Deralakatte"
+  },
+  {
+    "cs_id": "1204840",
+    "hotel_id": "47057",
+    "property_name": "Treebo Maharaja, Near Mall Road"
+  },
+  {
+    "cs_id": "1381105",
+    "hotel_id": "46799",
+    "property_name": "Treebo Premium Dona Eliza, 700 Metres From Calangute Beach"
+  },
+  {
+    "cs_id": "2018414",
+    "hotel_id": "2018414",
+    "property_name": "Treebo Blu Orchid"
+  },
+  {
+    "cs_id": "1978478",
+    "hotel_id": "1978478",
+    "property_name": "Treebo Red Petal Jalandhar"
+  },
+  {
+    "cs_id": "1609002",
+    "hotel_id": "1609002",
+    "property_name": "Treebo Mayur, Mall Road"
+  },
+  {
+    "cs_id": "1702720",
+    "hotel_id": "1702720",
+    "property_name": "Treebo Casino"
+  },
+  {
+    "cs_id": "2014856",
+    "hotel_id": "2014856",
+    "property_name": "Itsy Hotels Kes Residency, 10 Min From Ksr Bangalore City Junction"
+  },
+  {
+    "cs_id": "1503376",
+    "hotel_id": "1503376",
+    "property_name": "Treebo Regency - Bund Garden, Dhole Patil Road"
+  },
+  {
+    "cs_id": "1142067",
+    "hotel_id": "1142067",
+    "property_name": "Treebo B&B"
+  },
+  {
+    "cs_id": "1343286",
+    "hotel_id": "1343286",
+    "property_name": "Treebo City Inn Satara"
+  },
+  {
+    "cs_id": "1458562",
+    "hotel_id": "1458562",
+    "property_name": "Itsy Hotels Riyas Grand"
+  },
+  {
+    "cs_id": "2083696",
+    "hotel_id": "2083696",
+    "property_name": "Treebo Lalaji's Executive"
+  },
+  {
+    "cs_id": "1505405",
+    "hotel_id": "1505405",
+    "property_name": "Treebo Bhagyashree Executive"
+  },
+  {
+    "cs_id": "1453106",
+    "hotel_id": "1453106",
+    "property_name": "Treebo Sls Grand"
+  },
+  {
+    "cs_id": "3001642",
+    "hotel_id": "3001642",
+    "property_name": "Treebo The Galaxy Chandapura"
+  },
+  {
+    "cs_id": "1416642",
+    "hotel_id": "1416642",
+    "property_name": "Treebo Radhe Palace"
+  },
+  {
+    "cs_id": "1504742",
+    "hotel_id": "1504742",
+    "property_name": "Treebo Five Elements, Lonavala"
+  },
+  {
+    "cs_id": "1594795",
+    "hotel_id": "1594795",
+    "property_name": "Treebo Srico"
+  },
+  {
+    "cs_id": "1206897",
+    "hotel_id": "1206897",
+    "property_name": "Itsy Hotels Avantika With Forest View"
+  },
+  {
+    "cs_id": "1373375",
+    "hotel_id": "1373375",
+    "property_name": "Treebo Arvind Residency"
+  },
+  {
+    "cs_id": "3001380",
+    "hotel_id": "3001380",
+    "property_name": "Treebo Sahara Suites"
+  },
+  {
+    "cs_id": "2058082",
+    "hotel_id": "2058082",
+    "property_name": "Treebo Mall View, Dlf Phase Ii"
+  },
+  {
+    "cs_id": "1241870",
+    "hotel_id": "1241870",
+    "property_name": "Itsy Hotels Mirra"
+  },
+  {
+    "cs_id": "1896095",
+    "hotel_id": "1896095",
+    "property_name": "Itsy Hotels The Villa Retreat"
+  },
+  {
+    "cs_id": "3001466",
+    "hotel_id": "3001466",
+    "property_name": "Itsy Hotels Shree Comforts"
+  },
+  {
+    "cs_id": "1165811",
+    "hotel_id": "1165811",
+    "property_name": "Itsy Hotels Dew Dreams"
+  },
+  {
+    "cs_id": "1168384",
+    "hotel_id": "1168384",
+    "property_name": "Itsy Hotels Rain Tulsi Stayz, Palarivattom Junction"
+  },
+  {
+    "cs_id": "1539442",
+    "hotel_id": "1539442",
+    "property_name": "Treebo Arna Residency"
+  },
+  {
+    "cs_id": "2041595",
+    "hotel_id": "2041595",
+    "property_name": "Treebo Pawan Putra"
+  },
+  {
+    "cs_id": "1416724",
+    "hotel_id": "1416724",
+    "property_name": "Itsy Hotels Neeranand Plaza"
+  },
+  {
+    "cs_id": "1709272",
+    "hotel_id": "1709272",
+    "property_name": "Itsy Hotels Ammu Regency"
+  },
+  {
+    "cs_id": "2053245",
+    "hotel_id": "2053245",
+    "property_name": "Treebo M2m Residency Sector 46"
+  },
+  {
+    "cs_id": "1136798",
+    "hotel_id": "1136798",
+    "property_name": "Treebo Park - 500m From Medical College"
+  },
+  {
+    "cs_id": "1418069",
+    "hotel_id": "1418069",
+    "property_name": "Treebo Sreema"
+  },
+  {
+    "cs_id": "1767140",
+    "hotel_id": "1767140",
+    "property_name": "Treebo Orchid"
+  },
+  {
+    "cs_id": "1166122",
+    "hotel_id": "1166122",
+    "property_name": "Treebo Petals Suites"
+  },
+  {
+    "cs_id": "2013172",
+    "hotel_id": "2013172",
+    "property_name": "Treebo Galaxy Suites Mathikere"
+  },
+  {
+    "cs_id": "1594371",
+    "hotel_id": "1594371",
+    "property_name": "Itsy Hotels D'Comfort Inn"
+  },
+  {
+    "cs_id": "1555580",
+    "hotel_id": "1555580",
+    "property_name": "Treebo The Pavilion, Railway Station"
+  },
+  {
+    "cs_id": "2079707",
+    "hotel_id": "2079707",
+    "property_name": "Treebo Royal Sun Palace Mp Nagar Zone 2"
+  },
+  {
+    "cs_id": "1244990",
+    "hotel_id": "1244990",
+    "property_name": "Treebo Samhaar Residency Thoraipakkam"
+  },
+  {
+    "cs_id": "2043486",
+    "hotel_id": "2043486",
+    "property_name": "Itsy Hotels Swastika Inn Sector 26"
+  },
+  {
+    "cs_id": "1384871",
+    "hotel_id": "1384871",
+    "property_name": "Treebo Sunheads"
+  },
+  {
+    "cs_id": "1442949",
+    "hotel_id": "1442949",
+    "property_name": "Treebo Atithi Bhavan, 1 Km From Ooty Lake"
+  },
+  {
+    "cs_id": "1243281",
+    "hotel_id": "1243281",
+    "property_name": "Itsy Hotels Deluxe Inn"
+  },
+  {
+    "cs_id": "2076114",
+    "hotel_id": "2076114",
+    "property_name": "Treebo The Meridian"
+  },
+  {
+    "cs_id": "1414116",
+    "hotel_id": "1414116",
+    "property_name": "Treebo Sreemaa Newtown"
+  },
+  {
+    "cs_id": "1387536",
+    "hotel_id": "1387536",
+    "property_name": "Treebo Aquamarine Arpora"
+  },
+  {
+    "cs_id": "1298362",
+    "hotel_id": "1298362",
+    "property_name": "Treebo Seaesta RK Beach"
+  },
+  {
+    "cs_id": "1419130",
+    "hotel_id": "1419130",
+    "property_name": "Treebo Premium Tahoora International"
+  },
+  {
+    "cs_id": "2011450",
+    "hotel_id": "2011450",
+    "property_name": "Treebo Premium Raj Elegance Manyata Tech Park"
+  },
+  {
+    "cs_id": "1507161",
+    "hotel_id": "1507161",
+    "property_name": "Treebo Lotus Baner"
+  },
+  {
+    "cs_id": "1297390",
+    "hotel_id": "1297390",
+    "property_name": "Treebo Rainbow Grand"
+  },
+  {
+    "cs_id": "1215728",
+    "hotel_id": "1215728",
+    "property_name": "Treebo Premium Relax Inn Patel Nagar"
+  },
+  {
+    "cs_id": "1532001",
+    "hotel_id": "1532001",
+    "property_name": "Treebo Umal Homestay Ganeshguri"
+  },
+  {
+    "cs_id": "1197734",
+    "hotel_id": "1197734",
+    "property_name": "Treebo Premium Travancore Palace Cherthala"
+  },
+  {
+    "cs_id": "2014750",
+    "hotel_id": "2014750",
+    "property_name": "Treebo 12 Degrees West, Domlur"
+  },
+  {
+    "cs_id": "2017070",
+    "hotel_id": "2017070",
+    "property_name": "Treebo Sampradaya Bistro, Mailasandra"
+  },
+  {
+    "cs_id": "2027305",
+    "hotel_id": "2027305",
+    "property_name": "Treebo The Horizon Kankanady"
+  },
+  {
+    "cs_id": "1508008",
+    "hotel_id": "1508008",
+    "property_name": "Treebo Vikrant Residency"
+  },
+  {
+    "cs_id": "1108510",
+    "hotel_id": "1108510",
+    "property_name": "Treebo Omega Stay Inn"
+  },
+  {
+    "cs_id": "1423815",
+    "hotel_id": "1423815",
+    "property_name": "Treebo Golden Heights"
+  },
+  {
+    "cs_id": "1144338",
+    "hotel_id": "1144338",
+    "property_name": "Treebo Archie Regency"
+  },
+  {
+    "cs_id": "1505657",
+    "hotel_id": "1505657",
+    "property_name": "Treebo Ranjeet Shivaji Nagar"
+  },
+  {
+    "cs_id": "1418549",
+    "hotel_id": "1418549",
+    "property_name": "Treebo Glassotel"
+  },
+  {
+    "cs_id": "2012411",
+    "hotel_id": "2012411",
+    "property_name": "Treebo Sai Suites Inn Nagavara"
+  },
+  {
+    "cs_id": "2018989",
+    "hotel_id": "2018989",
+    "property_name": "Treebo Kings Suits, Hsr Layout"
+  },
+  {
+    "cs_id": "1921658",
+    "hotel_id": "1921658",
+    "property_name": "Treebo Kingsbury Fiesta Vellore"
+  },
+  {
+    "cs_id": "1371524",
+    "hotel_id": "1371524",
+    "property_name": "Treebo Lake Bloom Powai"
+  },
+  {
+    "cs_id": "1243669",
+    "hotel_id": "1243669",
+    "property_name": "Treebo Vapr Guindy Ekkatuthangal"
+  },
+  {
+    "cs_id": "2014111",
+    "hotel_id": "2014111",
+    "property_name": "Treebo Savoury Sea Shell Residency"
+  },
+  {
+    "cs_id": "1166971",
+    "hotel_id": "1166971",
+    "property_name": "Treebo Golden Terminal, Kochi Airport"
+  },
+  {
+    "cs_id": "1479897",
+    "hotel_id": "1479897",
+    "property_name": "Treebo Avyukta Stay"
+  },
+  {
+    "cs_id": "1386481",
+    "hotel_id": "1386481",
+    "property_name": "Treebo Green Park"
+  },
+  {
+    "cs_id": "1311732",
+    "hotel_id": "1311732",
+    "property_name": "Medalio Resort Udaipur Shobhagpura"
+  },
+  {
+    "cs_id": "2011740",
+    "hotel_id": "2011740",
+    "property_name": "Treebo Akshaya Mayflower Vijaya Bank Layout"
+  },
+  {
+    "cs_id": "1246802",
+    "hotel_id": "1246802",
+    "property_name": "Treebo Eco Stay Nandanam"
+  },
+  {
+    "cs_id": "1246347",
+    "hotel_id": "1246347",
+    "property_name": "Treebo Innside"
+  },
+  {
+    "cs_id": "1431818",
+    "hotel_id": "1431818",
+    "property_name": "Itsy Hotels Hamlets Stay"
+  },
+  {
+    "cs_id": "1382823",
+    "hotel_id": "1382823",
+    "property_name": "Itsy Hotels Vailankanni Natures Inn"
+  },
+  {
+    "cs_id": "1502048",
+    "hotel_id": "1502048",
+    "property_name": "Treebo Sumati Baner"
+  },
+  {
+    "cs_id": "1475965",
+    "hotel_id": "1475965",
+    "property_name": "Treebo Concerto Residentia"
+  },
+  {
+    "cs_id": "1446075",
+    "hotel_id": "1446075",
+    "property_name": "Treebo Skydale Inn & Suites With Mountain View"
+  },
+  {
+    "cs_id": "1617763",
+    "hotel_id": "1617763",
+    "property_name": "Treebo The Bollywood"
+  },
+  {
+    "cs_id": "1462197",
+    "hotel_id": "1462197",
+    "property_name": "Treebo Komfort Suites, 3 Km From Mysore Palace"
+  },
+  {
+    "cs_id": "2018835",
+    "hotel_id": "2018835",
+    "property_name": "Treebo Premium Raj Vista Global Village"
+  },
+  {
+    "cs_id": "1213894",
+    "hotel_id": "1213894",
+    "property_name": "Treebo Paras International"
+  },
+  {
+    "cs_id": "1326972",
+    "hotel_id": "1326972",
+    "property_name": "Treebo New Rockwell Vivek Vihar"
+  },
+  {
+    "cs_id": "1472544",
+    "hotel_id": "1472544",
+    "property_name": "Treebo Green Land Kushalnagar"
+  },
+  {
+    "cs_id": "1182758",
+    "hotel_id": "1182758",
+    "property_name": "Treebo Sidhartha Inn Baliapanda"
+  },
+  {
+    "cs_id": "2018445",
+    "hotel_id": "2018445",
+    "property_name": "Itsy Hotels Kozy Rooms"
+  },
+  {
+    "cs_id": "1416878",
+    "hotel_id": "1416878",
+    "property_name": "Itsy Hotels Reotel"
+  },
+  {
+    "cs_id": "1547789",
+    "hotel_id": "1547789",
+    "property_name": "Treebo Nakshatra Cottages Mahabaleshwar"
+  },
+  {
+    "cs_id": "2013949",
+    "hotel_id": "2013949",
+    "property_name": "Treebo Fortune Stay"
+  },
+  {
+    "cs_id": "1247300",
+    "hotel_id": "1247300",
+    "property_name": "Itsy Hotels Rithika Inn Blossoms"
+  },
+  {
+    "cs_id": "1596837",
+    "hotel_id": "1596837",
+    "property_name": "Itsy Hotels Sunrise Grand"
+  },
+  {
+    "cs_id": "1344052",
+    "hotel_id": "1344052",
+    "property_name": "Treebo Siddharth"
+  },
+  {
+    "cs_id": "2098048",
+    "hotel_id": "2098048",
+    "property_name": "Itsy Hotels Nv, Tapovan"
+  },
+  {
+    "cs_id": "1247345",
+    "hotel_id": "1247345",
+    "property_name": "Treebo Rithikha Inn Elite Chennai Trade Centre"
+  },
+  {
+    "cs_id": "1298420",
+    "hotel_id": "1298420",
+    "property_name": "Treebo MVP Grand"
+  },
+  {
+    "cs_id": "1169924",
+    "hotel_id": "1169924",
+    "property_name": "Treebo Time Square Marine Drive"
+  },
+  {
+    "cs_id": "1452205",
+    "hotel_id": "1452205",
+    "property_name": "Treebo Sripadha Residency Alipiri Road"
+  },
+  {
+    "cs_id": "1373515",
+    "hotel_id": "1373515",
+    "property_name": "Itsy Hotels Shivshakti"
+  },
+  {
+    "cs_id": "1122516",
+    "hotel_id": "1122516",
+    "property_name": "Treebo Kanopy Greens"
+  },
+  {
+    "cs_id": "1596716",
+    "hotel_id": "1596716",
+    "property_name": "Itsy Hotels J A Royal Suites Manikonda"
+  },
+  {
+    "cs_id": "1506200",
+    "hotel_id": "1506200",
+    "property_name": "Treebo Sahara Shivaji Nagar"
+  },
+  {
+    "cs_id": "1244531",
+    "hotel_id": "1244531",
+    "property_name": "Treebo Fourth Avenue"
+  },
+  {
+    "cs_id": "2063608",
+    "hotel_id": "2063608",
+    "property_name": "Treebo Symphony Hotels And Resorts Angamally"
+  },
+  {
+    "cs_id": "1476116",
+    "hotel_id": "1476116",
+    "property_name": "Treebo Doha King"
+  },
+  {
+    "cs_id": "1269736",
+    "hotel_id": "1269736",
+    "property_name": "Treebo Everest Residency Tidel Park"
+  },
+  {
+    "cs_id": "1368078",
+    "hotel_id": "1368078",
+    "property_name": "Treebo The Pearl Bliss"
+  },
+  {
+    "cs_id": "1253706",
+    "hotel_id": "1253706",
+    "property_name": "Treebo Premium Raffis' Andalusia Bay Way"
+  },
+  {
+    "cs_id": "2061880",
+    "hotel_id": "2061880",
+    "property_name": "Treebo Grand Euro Pipliyahana Square"
+  },
+  {
+    "cs_id": "2052900",
+    "hotel_id": "2052900",
+    "property_name": "Treebo Sai Village Gold Souk - Sec 43"
+  },
+  {
+    "cs_id": "1184622",
+    "hotel_id": "1184622",
+    "property_name": "Treebo Sidhartha International Baliapanda"
+  },
+  {
+    "cs_id": "1553264",
+    "hotel_id": "1553264",
+    "property_name": "Treebo Chandraprasth Residency"
+  },
+  {
+    "cs_id": "1508873",
+    "hotel_id": "1508873",
+    "property_name": "Treebo Atithi Corporate Stay Baner It Hub"
+  },
+  {
+    "cs_id": "1145490",
+    "hotel_id": "1145490",
+    "property_name": "Treebo Elite City Upper Bazar"
+  },
+  {
+    "cs_id": "2053564",
+    "hotel_id": "2053564",
+    "property_name": "Treebo Hotel Mobi Vip Airport"
+  },
+  {
+    "cs_id": "1291664",
+    "hotel_id": "1291664",
+    "property_name": "Treebo Sriz Cozy Seethamadhara"
+  },
+  {
+    "cs_id": "1595009",
+    "hotel_id": "1595009",
+    "property_name": "Treebo Tee"
+  },
+  {
+    "cs_id": "2031448",
+    "hotel_id": "2031448",
+    "property_name": "Treebo The Fresco Lake Pichola"
+  },
+  {
+    "cs_id": "1167277",
+    "hotel_id": "1167277",
+    "property_name": "Treebo Thoduvas Star Plaza Cochin Airport"
+  },
+  {
+    "cs_id": "2072844",
+    "hotel_id": "2072844",
+    "property_name": "Treebo Krishna Regency Isbt Bus Stop"
+  },
+  {
+    "cs_id": "1557929",
+    "hotel_id": "1557929",
+    "property_name": "Itsy Hotels Shri Guru Service Apartment"
+  },
+  {
+    "cs_id": "1473477",
+    "hotel_id": "1473477",
+    "property_name": "Treebo Sans Sarav Kushalnagar"
+  },
+  {
+    "cs_id": "1336968",
+    "hotel_id": "1336968",
+    "property_name": "Treebo Premium Royal Amar With Mountain View,  2 Km From Pushkar Lake"
+  },
+  {
+    "cs_id": "1411710",
+    "hotel_id": "1411710",
+    "property_name": "Treebo Mira Inn"
+  },
+  {
+    "cs_id": "2046776",
+    "hotel_id": "2046776",
+    "property_name": "Treebo Rj Residency"
+  },
+  {
+    "cs_id": "1161055",
+    "hotel_id": "1161055",
+    "property_name": "Treebo Anchor Inn"
+  },
+  {
+    "cs_id": "1168906",
+    "hotel_id": "1168906",
+    "property_name": "Treebo Backpackers Inn"
+  },
+  {
+    "cs_id": "1438288",
+    "hotel_id": "1438288",
+    "property_name": "Treebo The Eden Roc"
+  },
+  {
+    "cs_id": "2061639",
+    "hotel_id": "2061639",
+    "property_name": "Treebo Nirvana Elite"
+  },
+  {
+    "cs_id": "4000617",
+    "hotel_id": "4000617",
+    "property_name": "Treebo Sidhartha Elite"
+  },
+  {
+    "cs_id": "1501176",
+    "hotel_id": "1501176",
+    "property_name": "Treebo Excellent Home"
+  },
+  {
+    "cs_id": "1125534",
+    "hotel_id": "1125534",
+    "property_name": "Treebo Grand Legacy Shahenshah"
+  },
+  {
+    "cs_id": "1508349",
+    "hotel_id": "1508349",
+    "property_name": "Treebo Naunidh Suites"
+  },
+  {
+    "cs_id": "2014883",
+    "hotel_id": "2014883",
+    "property_name": "Treebo Emora Grand"
+  },
+  {
+    "cs_id": "1898527",
+    "hotel_id": "1898527",
+    "property_name": "Treebo Sky Point"
+  },
+  {
+    "cs_id": "1509603",
+    "hotel_id": "1509603",
+    "property_name": "Treebo Royal Imperio, Hinjewadi"
+  },
+  {
+    "cs_id": "2018949",
+    "hotel_id": "2018949",
+    "property_name": "Treebo Three Drops"
+  },
+  {
+    "cs_id": "1596319",
+    "hotel_id": "1596319",
+    "property_name": "Treebo Premium Seven Lake View"
+  },
+  {
+    "cs_id": "2016749",
+    "hotel_id": "2016749",
+    "property_name": "Treebo White Inn"
+  },
+  {
+    "cs_id": "2066561",
+    "hotel_id": "2066561",
+    "property_name": "Treebo Roshan House Near Mcleodganj"
+  },
+  {
+    "cs_id": "1538075",
+    "hotel_id": "1538075",
+    "property_name": "Itsy Hotels Ransu Residency"
+  },
+  {
+    "cs_id": "2016962",
+    "hotel_id": "2016962",
+    "property_name": "Treebo White Inn Koramangala"
+  },
+  {
+    "cs_id": "1416806",
+    "hotel_id": "1416806",
+    "property_name": "Treebo Mangalam"
+  },
+  {
+    "cs_id": "1299102",
+    "hotel_id": "1299102",
+    "property_name": "Treebo Seabreeze Comforts"
+  },
+  {
+    "cs_id": "1379202",
+    "hotel_id": "1379202",
+    "property_name": "Treebo Amber Imperial"
+  },
+  {
+    "cs_id": "1075048",
+    "hotel_id": "1075048",
+    "property_name": "Treebo Surya Yatri Niwas"
+  },
+  {
+    "cs_id": "1521562",
+    "hotel_id": "1521562",
+    "property_name": "Treebo Silver Stallion"
+  },
+  {
+    "cs_id": "1591224",
+    "hotel_id": "1591224",
+    "property_name": "Itsy Hotels Aflah"
+  },
+  {
+    "cs_id": "2015296",
+    "hotel_id": "2015296",
+    "property_name": "Treebo JJ Residency"
+  },
+  {
+    "cs_id": "2031596",
+    "hotel_id": "2031596",
+    "property_name": "Treebo The Regal House, Near Fateh Sagar Lake"
+  },
+  {
+    "cs_id": "2087086",
+    "hotel_id": "2087086",
+    "property_name": "Treebo Villa Inn Aurangabad"
+  },
+  {
+    "cs_id": "2033589",
+    "hotel_id": "2033589",
+    "property_name": "Treebo Premium Arista"
+  },
+  {
+    "cs_id": "2050166",
+    "hotel_id": "2050166",
+    "property_name": "Treebo Malhaar Regency"
+  },
+  {
+    "cs_id": "1903843",
+    "hotel_id": "1903843",
+    "property_name": "Treebo Prince"
+  },
+  {
+    "cs_id": "2022899",
+    "hotel_id": "2022899",
+    "property_name": "Treebo Little Budhha"
+  },
+  {
+    "cs_id": "2059540",
+    "hotel_id": "2059540",
+    "property_name": "Treebo Kruthika Residency"
+  },
+  {
+    "cs_id": "1472508",
+    "hotel_id": "1472508",
+    "property_name": "Itsy Hotels Igloo Residency, 400 Meters From Raja Seat Garden"
+  },
+  {
+    "cs_id": "1417406",
+    "hotel_id": "1417406",
+    "property_name": "Treebo Sreema Saltlake"
+  },
+  {
+    "cs_id": "1214016",
+    "hotel_id": "1214016",
+    "property_name": "Itsy Hotels Arien International"
+  },
+  {
+    "cs_id": "1503944",
+    "hotel_id": "1503944",
+    "property_name": "Treebo Eagle Executive"
+  },
+  {
+    "cs_id": "1553644",
+    "hotel_id": "1553644",
+    "property_name": "Itsy Hotels Carnival Inn"
+  },
+  {
+    "cs_id": "1125927",
+    "hotel_id": "1125927",
+    "property_name": "Treebo Calista, Patel Nagar"
+  },
+  {
+    "cs_id": "1203621",
+    "hotel_id": "1203621",
+    "property_name": "Treebo Greenland, Mall Road"
+  },
+  {
+    "cs_id": "1535153",
+    "hotel_id": "1535153",
+    "property_name": "Treebo Spring Brook"
+  },
+  {
+    "cs_id": "1261979",
+    "hotel_id": "1261979",
+    "property_name": "Treebo Magnum Chandigarh"
+  },
+  {
+    "cs_id": "1344712",
+    "hotel_id": "1344712",
+    "property_name": "Itsy Hotels Sitara"
+  },
+  {
+    "cs_id": "1157226",
+    "hotel_id": "1157226",
+    "property_name": "Treebo Kings Inn Vashi"
+  },
+  {
+    "cs_id": "1438071",
+    "hotel_id": "1438071",
+    "property_name": "Treebo Aviraj Inn"
+  },
+  {
+    "cs_id": "1137116",
+    "hotel_id": "1137116",
+    "property_name": "Itsy Hotels Platinum Inn"
+  },
+  {
+    "cs_id": "1522037",
+    "hotel_id": "1522037",
+    "property_name": "Treebo Edesia"
+  },
+  {
+    "cs_id": "1599756",
+    "hotel_id": "1599756",
+    "property_name": "Treebo Arastu Grand"
+  },
+  {
+    "cs_id": "2267797",
+    "hotel_id": "2267797",
+    "property_name": "Treebo Ahinsa Residency Sohna Road"
+  },
+  {
+    "cs_id": "1484845",
+    "hotel_id": "1484845",
+    "property_name": "Treebo Surya Comforts, 200 Mtrs From Kolhapur Railway Station"
+  },
+  {
+    "cs_id": "1596003",
+    "hotel_id": "1596003",
+    "property_name": "Treebo Pride Inn Botanica"
+  },
+  {
+    "cs_id": "1212498",
+    "hotel_id": "1212498",
+    "property_name": "Treebo Galaxy Rooms"
+  },
+  {
+    "cs_id": "1383290",
+    "hotel_id": "1383290",
+    "property_name": "Treebo Majestic Palms, 2 Km From Colva Beach"
+  },
+  {
+    "cs_id": "2089527",
+    "hotel_id": "2089527",
+    "property_name": "Treebo Indrapuri Hotel & Resort Siliguri Junction"
+  },
+  {
+    "cs_id": "1412139",
+    "hotel_id": "1412139",
+    "property_name": "Treebo Naman'S Inn"
+  },
+  {
+    "cs_id": "1231999",
+    "hotel_id": "1231999",
+    "property_name": "Itsy Hotels Sri Sai Grand Inn"
+  },
+  {
+    "cs_id": "1267636",
+    "hotel_id": "1267636",
+    "property_name": "Treebo Vinayak Inn"
+  },
+  {
+    "cs_id": "1516017",
+    "hotel_id": "1516017",
+    "property_name": "Treebo The Utsav, Nashik"
+  },
+  {
+    "cs_id": "2013237",
+    "hotel_id": "2013237",
+    "property_name": "Treebo Elite Premium Homes"
+  },
+  {
+    "cs_id": "1200151",
+    "hotel_id": "1200151",
+    "property_name": "Treebo Silver Key, Marathahalli"
+  },
+  {
+    "cs_id": "1176148",
+    "hotel_id": "1176148",
+    "property_name": "Treebo Premium Sattva With Mountain View"
+  },
+  {
+    "cs_id": "1591618",
+    "hotel_id": "1591618",
+    "property_name": "Treebo Seventh Heaven Kukatpally"
+  },
+  {
+    "cs_id": "2345375",
+    "hotel_id": "2345375",
+    "property_name": "Treebo Risha"
+  },
+  {
+    "cs_id": "1916713",
+    "hotel_id": "1916713",
+    "property_name": "Treebo Vista Lago With Lake View"
+  },
+  {
+    "cs_id": "1214931",
+    "hotel_id": "1214931",
+    "property_name": "Itsy Hotels Connaught Mews"
+  },
+  {
+    "cs_id": "2685639",
+    "hotel_id": "2685639",
+    "property_name": "Treebo Premium La Orchid"
+  },
+  {
+    "cs_id": "2029800",
+    "hotel_id": "2029800",
+    "property_name": "Treebo Grand Milan"
+  },
+  {
+    "cs_id": "1483570",
+    "hotel_id": "1483570",
+    "property_name": "Itsy Hotels Ranjeet"
+  },
+  {
+    "cs_id": "1504217",
+    "hotel_id": "1504217",
+    "property_name": "Treebo Iris Suites"
+  },
+  {
+    "cs_id": "2008591",
+    "hotel_id": "2008591",
+    "property_name": "Treebo The Grand Skyla Marathahalli"
+  },
+  {
+    "cs_id": "1365209",
+    "hotel_id": "1365209",
+    "property_name": "Treebo Sonal Palace, Near Umaid Bhawan Palace"
+  },
+  {
+    "cs_id": "1509340",
+    "hotel_id": "1509340",
+    "property_name": "Itsy Hotels Oasis Pride"
+  },
+  {
+    "cs_id": "1379624",
+    "hotel_id": "1379624",
+    "property_name": "Treebo Hiramani Parel Lalbaug"
+  },
+  {
+    "cs_id": "1555338",
+    "hotel_id": "1555338",
+    "property_name": "Treebo Premium Brijinn"
+  },
+  {
+    "cs_id": "2041400",
+    "hotel_id": "2041400",
+    "property_name": "Treebo Soho Newtown"
+  },
+  {
+    "cs_id": "1442176",
+    "hotel_id": "1442176",
+    "property_name": "Itsy Hotels Kottaram Residency"
+  },
+  {
+    "cs_id": "1546728",
+    "hotel_id": "1546728",
+    "property_name": "Treebo Ss Residency Mountain View"
+  },
+  {
+    "cs_id": "1883885",
+    "hotel_id": "1883885",
+    "property_name": "Treebo Delmont"
+  },
+  {
+    "cs_id": "3031441",
+    "hotel_id": "3031441",
+    "property_name": "Treebo Baby Pearl"
+  },
+  {
+    "cs_id": "1357746",
+    "hotel_id": "1357746",
+    "property_name": "Treebo Desert Harmony Camp"
+  },
+  {
+    "cs_id": "1241567",
+    "hotel_id": "1241567",
+    "property_name": "Treebo Elite Inn"
+  },
+  {
+    "cs_id": "2011285",
+    "hotel_id": "2011285",
+    "property_name": "Itsy Hotels Hsr Comfort"
+  },
+  {
+    "cs_id": "1708941",
+    "hotel_id": "1708941",
+    "property_name": "Treebo Darwesh Residency - 500m From Railway Station"
+  },
+  {
+    "cs_id": "1414523",
+    "hotel_id": "1414523",
+    "property_name": "Itsy Hotels Transit Express"
+  },
+  {
+    "cs_id": "1126702",
+    "hotel_id": "1126702",
+    "property_name": "Treebo Premium Pearl Avenue Banquets And Lawn"
+  },
+  {
+    "cs_id": "1837134",
+    "hotel_id": "1837134",
+    "property_name": "Treebo Kumily Gate Thekkady"
+  },
+  {
+    "cs_id": "1555547",
+    "hotel_id": "1555547",
+    "property_name": "Treebo Hotel Rk Inn, Railway Station"
+  },
+  {
+    "cs_id": "2076663",
+    "hotel_id": "2076663",
+    "property_name": "Itsy Hotels Shrey'S Inn Mallandur Road"
+  },
+  {
+    "cs_id": "1508506",
+    "hotel_id": "1508506",
+    "property_name": "Treebo Tulip"
+  },
+  {
+    "cs_id": "1477699",
+    "hotel_id": "1477699",
+    "property_name": "Itsy Hotels Regalia Grand, 500 Mtrs From Madikeri Fort"
+  },
+  {
+    "cs_id": "3002526",
+    "hotel_id": "3002526",
+    "property_name": "Itsy Hotels Green Villaa, 2 Km From Pondicherry Railway Station"
+  },
+  {
+    "cs_id": "1434248",
+    "hotel_id": "1434248",
+    "property_name": "Treebo Modern Stays"
+  },
+  {
+    "cs_id": "1114303",
+    "hotel_id": "1114303",
+    "property_name": "Treebo Winsome Banquet And Resort"
+  },
+  {
+    "cs_id": "2062247",
+    "hotel_id": "2062247",
+    "property_name": "Treebo Merit"
+  },
+  {
+    "cs_id": "1324672",
+    "hotel_id": "1324672",
+    "property_name": "Treebo Maharaja Residency"
+  },
+  {
+    "cs_id": "1555008",
+    "hotel_id": "1555008",
+    "property_name": "Treebo Premium Golden Bliss Trimurti Nagar Square"
+  },
+  {
+    "cs_id": "1809628",
+    "hotel_id": "1809628",
+    "property_name": "Treebo Sky 5"
+  },
+  {
+    "cs_id": "1193381",
+    "hotel_id": "1193381",
+    "property_name": "Treebo Premium Vahada"
+  },
+  {
+    "cs_id": "1504269",
+    "hotel_id": "1504269",
+    "property_name": "Itsy Hotels Crown Inn"
+  },
+  {
+    "cs_id": "1319620",
+    "hotel_id": "1319620",
+    "property_name": "Treebo Paras Raj Near City Palace"
+  },
+  {
+    "cs_id": "2063526",
+    "hotel_id": "2063526",
+    "property_name": "Itsy Hotels Phoenix"
+  },
+  {
+    "cs_id": "1501664",
+    "hotel_id": "1501664",
+    "property_name": "Treebo Classic Grande, Camp"
+  },
+  {
+    "cs_id": "1288538",
+    "hotel_id": "1288538",
+    "property_name": "Treebo Aall Season"
+  },
+  {
+    "cs_id": "1281900",
+    "hotel_id": "1281900",
+    "property_name": "Treebo Kodai Kings Park, 650 M From Kodai Lake"
+  },
+  {
+    "cs_id": "1615703",
+    "hotel_id": "1615703",
+    "property_name": "Treebo Lazystay Elite"
+  },
+  {
+    "cs_id": "1374286",
+    "hotel_id": "1374286",
+    "property_name": "Itsy Hotels Sapphire Residency"
+  },
+  {
+    "cs_id": "3721182",
+    "hotel_id": "3721182",
+    "property_name": "Treebo Prime Elight"
+  },
+  {
+    "cs_id": "1292998",
+    "hotel_id": "1292998",
+    "property_name": "Treebo Raga"
+  },
+  {
+    "cs_id": "1619814",
+    "hotel_id": "1619814",
+    "property_name": "Itsy Hotels Aasma Luxury Villa"
+  },
+  {
+    "cs_id": "1168316",
+    "hotel_id": "1168316",
+    "property_name": "Treebo Pushpak 100 Mtrs From Chottanikkara Temple"
+  },
+  {
+    "cs_id": "2011649",
+    "hotel_id": "2011649",
+    "property_name": "Treebo Zion"
+  },
+  {
+    "cs_id": "1884844",
+    "hotel_id": "1884844",
+    "property_name": "Itsy Hotels Vedansh"
+  },
+  {
+    "cs_id": "2016484",
+    "hotel_id": "2016484",
+    "property_name": "Treebo Three Street Inn"
+  },
+  {
+    "cs_id": "1546480",
+    "hotel_id": "1546480",
+    "property_name": "Treebo La Paradise"
+  },
+  {
+    "cs_id": "1446609",
+    "hotel_id": "1446609",
+    "property_name": "Itsy Hotels Rain Forest"
+  },
+  {
+    "cs_id": "2055589",
+    "hotel_id": "2055589",
+    "property_name": "Treebo Finesta Suites, Nagpur Airport"
+  },
+  {
+    "cs_id": "1379085",
+    "hotel_id": "1379085",
+    "property_name": "Treebo Castle Rock Inn"
+  },
+  {
+    "cs_id": "1362285",
+    "hotel_id": "1362285",
+    "property_name": "Itsy Hotels Buddha Inn"
+  },
+  {
+    "cs_id": "1828376",
+    "hotel_id": "1828376",
+    "property_name": "Itsy Hotels The Waters Edge Beach Resort"
+  },
+  {
+    "cs_id": "1115459",
+    "hotel_id": "1115459",
+    "property_name": "Itsy Hotels Shri Gv Inn, 600 Mtrs From Tiffin Top"
+  },
+  {
+    "cs_id": "2686403",
+    "hotel_id": "2686403",
+    "property_name": "Treebo Naaz Royal"
+  },
+  {
+    "cs_id": "1547096",
+    "hotel_id": "1547096",
+    "property_name": "Treebo Kuber Palace With Swimming Pool"
+  },
+  {
+    "cs_id": "1448519",
+    "hotel_id": "1448519",
+    "property_name": "Itsy Hotels Twin Falls"
+  },
+  {
+    "cs_id": "4138782",
+    "hotel_id": "4138782",
+    "property_name": "Treebo Sai Village, Manesar"
+  },
+  {
+    "cs_id": "1616462",
+    "hotel_id": "1616462",
+    "property_name": "Itsy Hotels Sidhartha Residency"
+  },
+  {
+    "cs_id": "2012106",
+    "hotel_id": "2012106",
+    "property_name": "Treebo Blueberry Inn"
+  },
+  {
+    "cs_id": "4146211",
+    "hotel_id": "4146211",
+    "property_name": "Treebo Premium Metropolis"
+  },
+  {
+    "cs_id": "1198531",
+    "hotel_id": "1198531",
+    "property_name": "Itsy Hotels Gm Residency"
+  },
+  {
+    "cs_id": "1114107",
+    "hotel_id": "1114107",
+    "property_name": "Treebo Raj Inn Lalpur"
+  },
+  {
+    "cs_id": "1267489",
+    "hotel_id": "1267489",
+    "property_name": "Treebo Kamron Regency Sector 80"
+  },
+  {
+    "cs_id": "2017408",
+    "hotel_id": "2017408",
+    "property_name": "Treebo Elite 7"
+  },
+  {
+    "cs_id": "2013937",
+    "hotel_id": "2013937",
+    "property_name": "Treebo Celebrity Hotels And Suites"
+  },
+  {
+    "cs_id": "1378391",
+    "hotel_id": "1378391",
+    "property_name": "Treebo Premium Savera Inn"
+  },
+  {
+    "cs_id": "2015941",
+    "hotel_id": "2015941",
+    "property_name": "Treebo Terminus, Koramangala 5th Block"
+  },
+  {
+    "cs_id": "1434858",
+    "hotel_id": "1434858",
+    "property_name": "Treebo Primeone"
+  },
+  {
+    "cs_id": "2011351",
+    "hotel_id": "2011351",
+    "property_name": "Treebo Global Stay, Uttarahalli"
+  },
+  {
+    "cs_id": "1421319",
+    "hotel_id": "1421319",
+    "property_name": "Treebo Gyani'S"
+  },
+  {
+    "cs_id": "1619452",
+    "hotel_id": "1619452",
+    "property_name": "Treebo Aasma Downtown"
+  },
+  {
+    "cs_id": "2025497",
+    "hotel_id": "2025497",
+    "property_name": "Treebo Golden Inn, 700 Mtrs From Promenade Beach"
+  },
+  {
+    "cs_id": "1474809",
+    "hotel_id": "1474809",
+    "property_name": "Treebo Alaka Rester Homestay"
+  },
+  {
+    "cs_id": "1307656",
+    "hotel_id": "1307656",
+    "property_name": "Treebo The Empire Near Taj Mahal Agra"
+  },
+  {
+    "cs_id": "1379105",
+    "hotel_id": "1379105",
+    "property_name": "Treebo Prince Andheri East"
+  },
+  {
+    "cs_id": "1267644",
+    "hotel_id": "1267644",
+    "property_name": "Treebo The King Mohali"
+  },
+  {
+    "cs_id": "1165642",
+    "hotel_id": "1165642",
+    "property_name": "Treebo Love Shore Residency, Near Lakeshore Hospital"
+  },
+  {
+    "cs_id": "1483392",
+    "hotel_id": "1483392",
+    "property_name": "Treebo Shree Sai Suites"
+  },
+  {
+    "cs_id": "1505464",
+    "hotel_id": "1505464",
+    "property_name": "Itsy Hotels AY Plus Hotels"
+  },
+  {
+    "cs_id": "2341617",
+    "hotel_id": "2341617",
+    "property_name": "Treebo Royal, Chandrapur"
+  },
+  {
+    "cs_id": "1604662",
+    "hotel_id": "1604662",
+    "property_name": "Treebo Raj Mall Road"
+  },
+  {
+    "cs_id": "1212851",
+    "hotel_id": "1212851",
+    "property_name": "Treebo Corporate Park"
+  },
+  {
+    "cs_id": "1211946",
+    "hotel_id": "1211946",
+    "property_name": "Treebo Rockwell Plaza"
+  },
+  {
+    "cs_id": "1594465",
+    "hotel_id": "1594465",
+    "property_name": "Treebo De Alphabet Kondapur"
+  },
+  {
+    "cs_id": "1766857",
+    "hotel_id": "1766857",
+    "property_name": "Treebo Sky Vista Suites With Hill View"
+  },
+  {
+    "cs_id": "1043825",
+    "hotel_id": "1043825",
+    "property_name": "Treebo Regalia Inn Wayanad With Swimming Pool"
+  },
+  {
+    "cs_id": "1506055",
+    "hotel_id": "1506055",
+    "property_name": "Itsy Hotels Prince Regency"
+  },
+  {
+    "cs_id": "1329928",
+    "hotel_id": "1329928",
+    "property_name": "Treebo Pink City Grand"
+  },
+  {
+    "cs_id": "1415591",
+    "hotel_id": "1415591",
+    "property_name": "Treebo Asl Prime"
+  },
+  {
+    "cs_id": "1603145",
+    "hotel_id": "1603145",
+    "property_name": "Itsy Hotels Peak View, 300 Mts From Mall Road"
+  },
+  {
+    "cs_id": "1453534",
+    "hotel_id": "1453534",
+    "property_name": "Treebo Seven Inn"
+  },
+  {
+    "cs_id": "1399076",
+    "hotel_id": "1399076",
+    "property_name": "Treebo Prince Plaza"
+  },
+  {
+    "cs_id": "2037371",
+    "hotel_id": "2037371",
+    "property_name": "Treebo Atithi Inn Malad"
+  },
+  {
+    "cs_id": "1217501",
+    "hotel_id": "1217501",
+    "property_name": "Treebo MVM Residency"
+  },
+  {
+    "cs_id": "1253600",
+    "hotel_id": "1253600",
+    "property_name": "Treebo Aaravi Residency, 800 Mtrs From Promenade Beach"
+  },
+  {
+    "cs_id": "1164752",
+    "hotel_id": "1164752",
+    "property_name": "Treebo Amigos Residency"
+  },
+  {
+    "cs_id": "2037169",
+    "hotel_id": "2037169",
+    "property_name": "Treebo De Grandeur Anand Nagar"
+  },
+  {
+    "cs_id": "1375831",
+    "hotel_id": "1375831",
+    "property_name": "Treebo Zaid International Powai"
+  },
+  {
+    "cs_id": "1372632",
+    "hotel_id": "1372632",
+    "property_name": "Treebo Seven Olives"
+  },
+  {
+    "cs_id": "1248264",
+    "hotel_id": "1248264",
+    "property_name": "Treebo Golden Swan Tambaram"
+  },
+  {
+    "cs_id": "1504786",
+    "hotel_id": "1504786",
+    "property_name": "Treebo Tulip Comfort"
+  },
+  {
+    "cs_id": "1505893",
+    "hotel_id": "1505893",
+    "property_name": "Treebo Atithi Comforts Inn"
+  },
+  {
+    "cs_id": "2014478",
+    "hotel_id": "2014478",
+    "property_name": "Itsy Hotels Silver Keys"
+  },
+  {
+    "cs_id": "1229511",
+    "hotel_id": "1229511",
+    "property_name": "Itsy Hotels Kashi Grand, BHU"
+  },
+  {
+    "cs_id": "1929807",
+    "hotel_id": "1929807",
+    "property_name": "Treebo Pranav Park"
+  },
+  {
+    "cs_id": "1292558",
+    "hotel_id": "1292558",
+    "property_name": "Treebo Su Casa Grand"
+  },
+  {
+    "cs_id": "1444313",
+    "hotel_id": "1444313",
+    "property_name": "Treebo Windsor Heights"
+  },
+  {
+    "cs_id": "1171648",
+    "hotel_id": "1171648",
+    "property_name": "Treebo Punjabi Nature Residency, Near Faridabad Railway Station"
+  },
+  {
+    "cs_id": "1766640",
+    "hotel_id": "1766640",
+    "property_name": "Treebo Benaka Residency"
+  },
+  {
+    "cs_id": "2016331",
+    "hotel_id": "2016331",
+    "property_name": "Treebo Raghavendra Tranquil Inn Bellandur"
+  },
+  {
+    "cs_id": "1234696",
+    "hotel_id": "1234696",
+    "property_name": "Itsy Hotels N Square"
+  },
+  {
+    "cs_id": "1432626",
+    "hotel_id": "1432626",
+    "property_name": "Treebo Swastika Premium"
+  },
+  {
+    "cs_id": "1881493",
+    "hotel_id": "1881493",
+    "property_name": "Itsy Hotels P Grand"
+  },
+  {
+    "cs_id": "5802951",
+    "hotel_id": "5802951",
+    "property_name": "Treebo Oscar"
+  },
+  {
+    "cs_id": "1327100",
+    "hotel_id": "1327100",
+    "property_name": "Treebo Premium Baramasi By Jai Club Prime"
+  },
+  {
+    "cs_id": "1547409",
+    "hotel_id": "1547409",
+    "property_name": "Treebo The Venna Hill"
+  },
+  {
+    "cs_id": "1472376",
+    "hotel_id": "1472376",
+    "property_name": "Treebo The Rove"
+  },
+  {
+    "cs_id": "1218034",
+    "hotel_id": "1218034",
+    "property_name": "Treebo Royal Comfort"
+  },
+  {
+    "cs_id": "2013518",
+    "hotel_id": "2013518",
+    "property_name": "Itsy Hotels Ushodaya Royal Residency"
+  },
+  {
+    "cs_id": "1517075",
+    "hotel_id": "1517075",
+    "property_name": "Treebo Kaveri"
+  },
+  {
+    "cs_id": "2018551",
+    "hotel_id": "2018551",
+    "property_name": "Treebo Akshaya Residency"
+  },
+  {
+    "cs_id": "1593220",
+    "hotel_id": "1593220",
+    "property_name": "Treebo Address Inn Jubilee Hills"
+  },
+  {
+    "cs_id": "1608379",
+    "hotel_id": "1608379",
+    "property_name": "Treebo Premium Queen Of Hills Near Mall Road"
+  },
+  {
+    "cs_id": "1391921",
+    "hotel_id": "1391921",
+    "property_name": "Treebo The Square"
+  },
+  {
+    "cs_id": "1150242",
+    "hotel_id": "1150242",
+    "property_name": "Treebo Urban, 1 Km From Railway Station"
+  },
+  {
+    "cs_id": "1149810",
+    "hotel_id": "1149810",
+    "property_name": "Itsy Hotels Cradle Regency"
+  },
+  {
+    "cs_id": "1394588",
+    "hotel_id": "1394588",
+    "property_name": "Treebo Shree Krishna Palace"
+  },
+  {
+    "cs_id": "2013117",
+    "hotel_id": "2013117",
+    "property_name": "Treebo Kings Orchid"
+  },
+  {
+    "cs_id": "1597934",
+    "hotel_id": "1597934",
+    "property_name": "Treebo Navya The Park"
+  },
+  {
+    "cs_id": "2051409",
+    "hotel_id": "2051409",
+    "property_name": "Treebo Prasha"
+  },
+  {
+    "cs_id": "3006134",
+    "hotel_id": "3006134",
+    "property_name": "Itsy Hotels Greenland Jungle View"
+  },
+  {
+    "cs_id": "1265433",
+    "hotel_id": "1265433",
+    "property_name": "Treebo Sam Residency"
+  },
+  {
+    "cs_id": "1509593",
+    "hotel_id": "1509593",
+    "property_name": "Treebo Cocostay, Hadapsar"
+  },
+  {
+    "cs_id": "2038886",
+    "hotel_id": "2038886",
+    "property_name": "Treebo Gulmohar Beach Resort With Pool"
+  },
+  {
+    "cs_id": "1463190",
+    "hotel_id": "1463190",
+    "property_name": "Treebo Four Seasons"
+  },
+  {
+    "cs_id": "1308848",
+    "hotel_id": "1308848",
+    "property_name": "Treebo The Royal Taj"
+  },
+  {
+    "cs_id": "1135897",
+    "hotel_id": "1135897",
+    "property_name": "Treebo JP Residency"
+  },
+  {
+    "cs_id": "1477779",
+    "hotel_id": "1477779",
+    "property_name": "Treebo Elite Plaza, 700 Mtrs From Madikeri Fort"
+  },
+  {
+    "cs_id": "5000010",
+    "hotel_id": "5000010",
+    "property_name": "Treebo Tiba"
+  },
+  {
+    "cs_id": "1418980",
+    "hotel_id": "1418980",
+    "property_name": "Treebo Royal Orbit"
+  },
+  {
+    "cs_id": "1379430",
+    "hotel_id": "1379430",
+    "property_name": "Itsy Hotels Elegant"
+  },
+  {
+    "cs_id": "1371857",
+    "hotel_id": "1371857",
+    "property_name": "Treebo The Blue Roof"
+  },
+  {
+    "cs_id": "2059541",
+    "hotel_id": "2059541",
+    "property_name": "Treebo Premium D Consulate"
+  },
+  {
+    "cs_id": "1456807",
+    "hotel_id": "1456807",
+    "property_name": "Itsy Hotels Vijaya Residency"
+  },
+  {
+    "cs_id": "2015495",
+    "hotel_id": "2015495",
+    "property_name": "Treebo New Plus Point"
+  },
+  {
+    "cs_id": "1213613",
+    "hotel_id": "1213613",
+    "property_name": "Treebo Cabana"
+  },
+  {
+    "cs_id": "2024354",
+    "hotel_id": "2024354",
+    "property_name": "Treebo Golden Swan Pammal"
+  },
+  {
+    "cs_id": "1501731",
+    "hotel_id": "1501731",
+    "property_name": "Treebo Diamond Residency - Ddpk Inn"
+  },
+  {
+    "cs_id": "2098155",
+    "hotel_id": "2098155",
+    "property_name": "Itsy Hotels Kurinji Stay Inn"
+  },
+  {
+    "cs_id": "1894945",
+    "hotel_id": "1894945",
+    "property_name": "Treebo Suvarna Comforts"
+  },
+  {
+    "cs_id": "1209749",
+    "hotel_id": "1209749",
+    "property_name": "Treebo The Northern Retreat Resort With Mountain View"
+  },
+  {
+    "cs_id": "2011161",
+    "hotel_id": "2011161",
+    "property_name": "Treebo Anjani Fortune Suites"
+  },
+  {
+    "cs_id": "2055653",
+    "hotel_id": "2055653",
+    "property_name": "Treebo Silver Apartment"
+  },
+  {
+    "cs_id": "1379742",
+    "hotel_id": "1379742",
+    "property_name": "Treebo Express Inn"
+  },
+  {
+    "cs_id": "1613519",
+    "hotel_id": "1613519",
+    "property_name": "Treebo Y Hotels Elite, Khandagiri"
+  },
+  {
+    "cs_id": "2013598",
+    "hotel_id": "2013598",
+    "property_name": "Treebo Premium New Light Suites"
+  },
+  {
+    "cs_id": "1161560",
+    "hotel_id": "1161560",
+    "property_name": "Treebo Seagate"
+  },
+  {
+    "cs_id": "1553354",
+    "hotel_id": "1553354",
+    "property_name": "Treebo City Center"
+  },
+  {
+    "cs_id": "1474895",
+    "hotel_id": "1474895",
+    "property_name": "Itsy Hotels Hill Town, 500 Mtrs From Madikeri Fort"
+  },
+  {
+    "cs_id": "1552629",
+    "hotel_id": "1552629",
+    "property_name": "Treebo Premium The Memoir, Ramdaspeth"
+  },
+  {
+    "cs_id": "1558691",
+    "hotel_id": "1558691",
+    "property_name": "Treebo A1 Residency, Hingna T Point"
+  },
+  {
+    "cs_id": "1166076",
+    "hotel_id": "1166076",
+    "property_name": "Itsy Hotels Avani Stays, Vyttila, Kochi"
+  },
+  {
+    "cs_id": "2067600",
+    "hotel_id": "2067600",
+    "property_name": "Treebo Pure Earth Stay, Vijay Nagar"
+  },
+  {
+    "cs_id": "2010412",
+    "hotel_id": "2010412",
+    "property_name": "Treebo Brahma, Wayanad"
+  },
+  {
+    "cs_id": "1441289",
+    "hotel_id": "1441289",
+    "property_name": "Treebo Skydale Premium Suites, 1500 Mtrs From Ooty Lake"
+  },
+  {
+    "cs_id": "1594082",
+    "hotel_id": "1594082",
+    "property_name": "Treebo Purva Crest, Gachibowli Dlf"
+  },
+  {
+    "cs_id": "2013841",
+    "hotel_id": "2013841",
+    "property_name": "Treebo Nandi Comforts, Peenya"
+  },
+  {
+    "cs_id": "1191684",
+    "hotel_id": "1191684",
+    "property_name": "Treebo Vsaffron Regency,Punnamada Lake"
+  },
+  {
+    "cs_id": "1242398",
+    "hotel_id": "1242398",
+    "property_name": "Treebo Nestlay Rooms Gummidipoondi"
+  },
+  {
+    "cs_id": "2061503",
+    "hotel_id": "2061503",
+    "property_name": "Treebo Greenland Resort, Patia"
+  },
+  {
+    "cs_id": "1365790",
+    "hotel_id": "1365790",
+    "property_name": "Treebo Megh Niwas - Jodhpur"
+  },
+  {
+    "cs_id": "1598533",
+    "hotel_id": "1598533",
+    "property_name": "Treebo Acsys, Gachibowli"
+  },
+  {
+    "cs_id": "2018783",
+    "hotel_id": "2018783",
+    "property_name": "Treebo Rr Residency, Sanjay Nagar"
+  },
+  {
+    "cs_id": "2019978",
+    "hotel_id": "2019978",
+    "property_name": "Treebo Global Stay, Jayanagar"
+  },
+  {
+    "cs_id": "1399581",
+    "hotel_id": "1399581",
+    "property_name": "Itsy Hotels Signature, Nehru Nagar"
+  },
+  {
+    "cs_id": "1506967",
+    "hotel_id": "1506967",
+    "property_name": "Treebo Empire Executive, Hinjewadi"
+  },
+  {
+    "cs_id": "1479104",
+    "hotel_id": "1479104",
+    "property_name": "Treebo New Redfern, Madikeri"
+  },
+  {
+    "cs_id": "1464876",
+    "hotel_id": "1464876",
+    "property_name": "Treebo Samanvaya Retreat, Mysore"
+  },
+  {
+    "cs_id": "1434818",
+    "hotel_id": "1434818",
+    "property_name": "Treebo Elite Corporate, Sector 62"
+  },
+  {
+    "cs_id": "1508980",
+    "hotel_id": "1508980",
+    "property_name": "Treebo Blossom - Viman Nagar"
+  },
+  {
+    "cs_id": "2047707",
+    "hotel_id": "2047707",
+    "property_name": "Itsy Hotels Vijaya Comforts, Coorg"
+  },
+  {
+    "cs_id": "1509676",
+    "hotel_id": "1509676",
+    "property_name": "Treebo Bhairavee, Baner"
+  },
+  {
+    "cs_id": "1505609",
+    "hotel_id": "1505609",
+    "property_name": "Treebo Serenity Inn, Koregaon Park"
+  },
+  {
+    "cs_id": "1248477",
+    "hotel_id": "1248477",
+    "property_name": "Treebo Premium Vapr Ashok Nagar"
+  },
+  {
+    "cs_id": "2016775",
+    "hotel_id": "2016775",
+    "property_name": "Treebo Galaxy Kings Suites, Hebbal"
+  },
+  {
+    "cs_id": "1299383",
+    "hotel_id": "1299383",
+    "property_name": "Treebo Marina Grand Vizag - 5 Min Drive From Railway Station & Bus Stand"
+  },
+  {
+    "cs_id": "2013148",
+    "hotel_id": "2013148",
+    "property_name": "Treebo Sln Heritage"
+  },
+  {
+    "cs_id": "1766191",
+    "hotel_id": "1766191",
+    "property_name": "Itsy Hotels Kattari Komforts, Chikmagalur"
+  },
+  {
+    "cs_id": "1509578",
+    "hotel_id": "1509578",
+    "property_name": "Treebo Grand Lotus - 3 Km From Textile Market"
+  },
+  {
+    "cs_id": "2012398",
+    "hotel_id": "2012398",
+    "property_name": "Treebo Elmas Grand"
+  },
+  {
+    "cs_id": "1963434",
+    "hotel_id": "1963434",
+    "property_name": "Treebo Trinetar International"
+  },
+  {
+    "cs_id": "2012154",
+    "hotel_id": "2012154",
+    "property_name": "Treebo The Sai Leela Suites"
+  },
+  {
+    "cs_id": "2026607",
+    "hotel_id": "2026607",
+    "property_name": "Treebo Sky City Grand"
+  },
+  {
+    "cs_id": "1143227",
+    "hotel_id": "1143227",
+    "property_name": "Treebo Windsong Resort Munnar"
+  },
+  {
+    "cs_id": "1435465",
+    "hotel_id": "1435465",
+    "property_name": "Treebo Sunny Feast"
+  },
+  {
+    "cs_id": "1241638",
+    "hotel_id": "1241638",
+    "property_name": "Treebo Nestlay Rooms Nungambakkam"
+  },
+  {
+    "cs_id": "1509602",
+    "hotel_id": "1509602",
+    "property_name": "Treebo Kuval Inn"
+  },
+  {
+    "cs_id": "1502698",
+    "hotel_id": "1502698",
+    "property_name": "Itsy Hotels Anand Executive, Near Amanora"
+  },
+  {
+    "cs_id": "1593321",
+    "hotel_id": "1593321",
+    "property_name": "Treebo The Address Inn Mehdipatnam"
+  },
+  {
+    "cs_id": "2061111",
+    "hotel_id": "2061111",
+    "property_name": "Treebo Premium Omni Residency"
+  },
+  {
+    "cs_id": "1472459",
+    "hotel_id": "1472459",
+    "property_name": "Treebo Sandpipers Kushalnagar"
+  },
+  {
+    "cs_id": "1431135",
+    "hotel_id": "1431135",
+    "property_name": "Treebo Green View, Noida"
+  },
+  {
+    "cs_id": "1511929",
+    "hotel_id": "1511929",
+    "property_name": "Treebo Sai Rekha Inn"
+  },
+  {
+    "cs_id": "2017292",
+    "hotel_id": "2017292",
+    "property_name": "Treebo The Grand Skyla, Malleshwaram"
+  },
+  {
+    "cs_id": "1365284",
+    "hotel_id": "1365284",
+    "property_name": "Treebo Taj Square"
+  },
+  {
+    "cs_id": "1197891",
+    "hotel_id": "1197891",
+    "property_name": "Treebo Bombay Palace"
+  },
+  {
+    "cs_id": "1381541",
+    "hotel_id": "1381541",
+    "property_name": "Treebo Sunshine Beach Resort"
+  },
+  {
+    "cs_id": "2071014",
+    "hotel_id": "2071014",
+    "property_name": "Treebo Kamal Regency"
+  },
+  {
+    "cs_id": "2064479",
+    "hotel_id": "2064479",
+    "property_name": "Treebo Musk"
+  },
+  {
+    "cs_id": "1247536",
+    "hotel_id": "1247536",
+    "property_name": "Treebo Rakshitha"
+  },
+  {
+    "cs_id": "1166252",
+    "hotel_id": "1166252",
+    "property_name": "Treebo Airsuite Airport Hotel"
+  },
+  {
+    "cs_id": "1398875",
+    "hotel_id": "1398875",
+    "property_name": "Treebo Kbc"
+  },
+  {
+    "cs_id": "1305035",
+    "hotel_id": "1305035",
+    "property_name": "Treebo Empire Red Carpet"
+  },
+  {
+    "cs_id": "1212380",
+    "hotel_id": "1212380",
+    "property_name": "Treebo Twin Tree"
+  },
+  {
+    "cs_id": "2018177",
+    "hotel_id": "2018177",
+    "property_name": "Treebo Cranberry Delight"
+  },
+  {
+    "cs_id": "1215006",
+    "hotel_id": "1215006",
+    "property_name": "Treebo Stellar Inn"
+  },
+  {
+    "cs_id": "2016532",
+    "hotel_id": "2016532",
+    "property_name": "Treebo Skanda Suites"
+  },
+  {
+    "cs_id": "2010531",
+    "hotel_id": "2010531",
+    "property_name": "Treebo Maurice"
+  },
+  {
+    "cs_id": "1502379",
+    "hotel_id": "1502379",
+    "property_name": "Itsy Hotels Iconic"
+  },
+  {
+    "cs_id": "2050302",
+    "hotel_id": "2050302",
+    "property_name": "Treebo Royal Comfort Atithi"
+  },
+  {
+    "cs_id": "1165837",
+    "hotel_id": "1165837",
+    "property_name": "Treebo Premium Cochin Airport, 5 Min From Cochin Airport"
+  },
+  {
+    "cs_id": "1385250",
+    "hotel_id": "1385250",
+    "property_name": "Treebo Green Village Resort With Pool"
+  },
+  {
+    "cs_id": "1282785",
+    "hotel_id": "1282785",
+    "property_name": "Treebo Tranquil Heights"
+  },
+  {
+    "cs_id": "1673534",
+    "hotel_id": "1673534",
+    "property_name": "Itsy Hotels Krishna Residency, Govardhan Chauraha"
+  },
+  {
+    "cs_id": "1879480",
+    "hotel_id": "1879480",
+    "property_name": "Itsy Hotels Satya Shree"
+  },
+  {
+    "cs_id": "2026848",
+    "hotel_id": "2026848",
+    "property_name": "Treebo Kristal Sands Beach Resort"
+  },
+  {
+    "cs_id": "1136669",
+    "hotel_id": "1136669",
+    "property_name": "Treebo De Cloud 9 Regency"
+  },
+  {
+    "cs_id": "3001712",
+    "hotel_id": "3001712",
+    "property_name": "Treebo Ivory White Inn"
+  },
+  {
+    "cs_id": "1291813",
+    "hotel_id": "1291813",
+    "property_name": "Treebo Lalitha, Rk Beach"
+  },
+  {
+    "cs_id": "1292171",
+    "hotel_id": "1292171",
+    "property_name": "Treebo Imperia, Kommadi"
+  },
+  {
+    "cs_id": "4471338",
+    "hotel_id": "4471338",
+    "property_name": "Treebo Anjukul"
+  },
+  {
+    "cs_id": "1776233",
+    "hotel_id": "1776233",
+    "property_name": "Treebo Sree Varshavilas Regency"
+  },
+  {
+    "cs_id": "1216141",
+    "hotel_id": "1216141",
+    "property_name": "Treebo Marigold"
+  },
+  {
+    "cs_id": "1221551",
+    "hotel_id": "1221551",
+    "property_name": "Treebo Om Shree Banaras"
+  },
+  {
+    "cs_id": "1464901",
+    "hotel_id": "1464901",
+    "property_name": "Treebo Sanmaya Retreat, Mysore"
+  },
+  {
+    "cs_id": "2082832",
+    "hotel_id": "2082832",
+    "property_name": "Treebo Majestic Retreat"
+  },
+  {
+    "cs_id": "1439255",
+    "hotel_id": "1439255",
+    "property_name": "Treebo Premium Inn"
+  },
+  {
+    "cs_id": "1438370",
+    "hotel_id": "1438370",
+    "property_name": "Treebo Corporate Inn"
+  },
+  {
+    "cs_id": "1536656",
+    "hotel_id": "1536656",
+    "property_name": "Treebo Kashvijoy"
+  },
+  {
+    "cs_id": "1479075",
+    "hotel_id": "1479075",
+    "property_name": "Treebo Regalia Comforts"
+  },
+  {
+    "cs_id": "1581295",
+    "hotel_id": "1581295",
+    "property_name": "Treebo Corbett Hideout Dada'S"
+  },
+  {
+    "cs_id": "8459601",
+    "hotel_id": "8459601",
+    "property_name": "Treebo Premium Mowgli'S Den, Pench"
+  },
+  {
+    "cs_id": "1912757",
+    "hotel_id": "1912757",
+    "property_name": "Treebo Spring Birds"
+  },
+  {
+    "cs_id": "1064422",
+    "hotel_id": "1064422",
+    "property_name": "Treebo Brij Kaushal, Near Prem Mandir"
+  },
+  {
+    "cs_id": "2088875",
+    "hotel_id": "2088875",
+    "property_name": "Treebo Aroma Executive"
+  },
+  {
+    "cs_id": "1767649",
+    "hotel_id": "1767649",
+    "property_name": "Treebo Rc Comforts"
+  },
+  {
+    "cs_id": "2022230",
+    "hotel_id": "2022230",
+    "property_name": "Treebo Golden Kashi"
+  },
+  {
+    "cs_id": "1136517",
+    "hotel_id": "1136517",
+    "property_name": "Itsy Hotels Adrak"
+  },
+  {
+    "cs_id": "1257158",
+    "hotel_id": "1257158",
+    "property_name": "Treebo Royal Plaza, 700 Mts From Promenade Beach"
+  },
+  {
+    "cs_id": "6474322",
+    "hotel_id": "6474322",
+    "property_name": "Treebo Sadhoo Heritage"
+  },
+  {
+    "cs_id": "2065286",
+    "hotel_id": "2065286",
+    "property_name": "Treebo Cherry Tree"
+  },
+  {
+    "cs_id": "1553206",
+    "hotel_id": "1553206",
+    "property_name": "Treebo Shembekars Inn"
+  },
+  {
+    "cs_id": "2074839",
+    "hotel_id": "2074839",
+    "property_name": "Medalio Boutique Gangtok With Mountain View"
+  },
+  {
+    "cs_id": "1501649",
+    "hotel_id": "1501649",
+    "property_name": "Treebo Iris Executive, Hinjewadi"
+  },
+  {
+    "cs_id": "2054931",
+    "hotel_id": "2054931",
+    "property_name": "Treebo Divine Stay Prayagraj"
+  },
+  {
+    "cs_id": "1207440",
+    "hotel_id": "1207440",
+    "property_name": "Treebo Premium Torrentium - A Heritage Hotel"
+  },
+  {
+    "cs_id": "1377628",
+    "hotel_id": "1377628",
+    "property_name": "Treebo Palm Olive"
+  },
+  {
+    "cs_id": "6141453",
+    "hotel_id": "6141453",
+    "property_name": "Treebo Vitasta Villa"
+  },
+  {
+    "cs_id": "6473852",
+    "hotel_id": "6473852",
+    "property_name": "Treebo Mr Motel"
+  },
+  {
+    "cs_id": "1172490",
+    "hotel_id": "1172490",
+    "property_name": "Treebo Premium Silverstone Resort With Mountain Valley View"
+  },
+  {
+    "cs_id": "1147235",
+    "hotel_id": "1147235",
+    "property_name": "Treebo Wanderlust Residency With Mountain View"
+  },
+  {
+    "cs_id": "1184336",
+    "hotel_id": "1184336",
+    "property_name": "Treebo Premium The Mustard Inn, Lawrence Road"
+  },
+  {
+    "cs_id": "1414660",
+    "hotel_id": "1414660",
+    "property_name": "Treebo Petals Suites & Banquet - New Town"
+  },
+  {
+    "cs_id": "1436029",
+    "hotel_id": "1436029",
+    "property_name": "Treebo Royal City"
+  },
+  {
+    "cs_id": "1218905",
+    "hotel_id": "1218905",
+    "property_name": "Treebo Elegant Palace"
+  },
+  {
+    "cs_id": "1869742",
+    "hotel_id": "1869742",
+    "property_name": "Treebo Neel Orchid"
+  },
+  {
+    "cs_id": "1503445",
+    "hotel_id": "1503445",
+    "property_name": "Treebo Grand Royal Imperio, Hinjewadi"
+  },
+  {
+    "cs_id": "1434999",
+    "hotel_id": "1434999",
+    "property_name": "Treebo Luxury Stay Premium Inn"
+  },
+  {
+    "cs_id": "1986521",
+    "hotel_id": "1986521",
+    "property_name": "Treebo Premium Emerald Dove"
+  },
+  {
+    "cs_id": "2026148",
+    "hotel_id": "2026148",
+    "property_name": "Treebo Venition Inn"
+  },
+  {
+    "cs_id": "1593945",
+    "hotel_id": "1593945",
+    "property_name": "Treebo Hydotel Kompally"
+  },
+  {
+    "cs_id": "2024867",
+    "hotel_id": "2024867",
+    "property_name": "Treebo Premium Twin Star"
+  },
+  {
+    "cs_id": "1213625",
+    "hotel_id": "1213625",
+    "property_name": "Itsy Hotels Prime Stay"
+  },
+  {
+    "cs_id": "1229920",
+    "hotel_id": "1229920",
+    "property_name": "Treebo Saumendra Residency"
+  },
+  {
+    "cs_id": "1881696",
+    "hotel_id": "1881696",
+    "property_name": "Medalio Boutique Chandigarh Zirakpur"
+  },
+  {
+    "cs_id": "1429250",
+    "hotel_id": "1429250",
+    "property_name": "Treebo The Golden Sands, Bistupur"
+  },
+  {
+    "cs_id": "1365825",
+    "hotel_id": "1365825",
+    "property_name": "Treebo Una Regency - Near Danapur Railway Station"
+  },
+  {
+    "cs_id": "1508400",
+    "hotel_id": "1508400",
+    "property_name": "Treebo The Tree, Hinjewadi"
+  },
+  {
+    "cs_id": "1435986",
+    "hotel_id": "1435986",
+    "property_name": "Treebo Royal Grand, Sector 71"
+  },
+  {
+    "cs_id": "1405295",
+    "hotel_id": "1405295",
+    "property_name": "Treebo Rvg, Alkapuri"
+  },
+  {
+    "cs_id": "1299460",
+    "hotel_id": "1299460",
+    "property_name": "Treebo Ocean Echo, Rushikonda"
+  },
+  {
+    "cs_id": "4476459",
+    "hotel_id": "4476459",
+    "property_name": "Treebo Hilldaar Dalhousie"
+  },
+  {
+    "cs_id": "1527908",
+    "hotel_id": "1527908",
+    "property_name": "Treebo Shivam Inn Near Singapore Mall"
+  },
+  {
+    "cs_id": "1294367",
+    "hotel_id": "1294367",
+    "property_name": "Treebo Breeze Way Rushikonda With Swimming Pool"
+  },
+  {
+    "cs_id": "1921226",
+    "hotel_id": "1921226",
+    "property_name": "Treebo Sv Residency, Vellore"
+  },
+  {
+    "cs_id": "3001862",
+    "hotel_id": "3001862",
+    "property_name": "Treebo Emirates Suites Indiranagar"
+  },
+  {
+    "cs_id": "1324743",
+    "hotel_id": "1324743",
+    "property_name": "Treebo Premium Vinnie - Near Airport"
+  },
+  {
+    "cs_id": "1126165",
+    "hotel_id": "1126165",
+    "property_name": "Treebo Elysee, Patel Nagar"
+  },
+  {
+    "cs_id": "1212547",
+    "hotel_id": "1212547",
+    "property_name": "Treebo Ace Luxe"
+  },
+  {
+    "cs_id": "1139252",
+    "hotel_id": "1139252",
+    "property_name": "Treebo West Fort Divine \u2013 Near Padmanabhaswamy Temple"
+  },
+  {
+    "cs_id": "1615230",
+    "hotel_id": "1615230",
+    "property_name": "Treebo The Aura"
+  },
+  {
+    "cs_id": "1377622",
+    "hotel_id": "1377622",
+    "property_name": "Treebo Vro Boutique, Andheri East"
+  },
+  {
+    "cs_id": "1536242",
+    "hotel_id": "1536242",
+    "property_name": "Treebo Urban Oasis Inn, Sixmile"
+  },
+  {
+    "cs_id": "1873520",
+    "hotel_id": "1873520",
+    "property_name": "Treebo Iraa"
+  },
+  {
+    "cs_id": "1242203",
+    "hotel_id": "1242203",
+    "property_name": "Treebo Anand The Mall Solan"
+  },
+  {
+    "cs_id": "2059587",
+    "hotel_id": "2059587",
+    "property_name": "Treebo Address Inn Gachibowli"
+  },
+  {
+    "cs_id": "1591753",
+    "hotel_id": "1591753",
+    "property_name": "Treebo S3 Suites, Manikonda"
+  },
+  {
+    "cs_id": "1259110",
+    "hotel_id": "1259110",
+    "property_name": "Treebo Aishwarya Grand - 4 Km From Promenade Beach"
+  },
+  {
+    "cs_id": "1593867",
+    "hotel_id": "1593867",
+    "property_name": "Treebo Pride Inn Raidurg"
+  },
+  {
+    "cs_id": "1256474",
+    "hotel_id": "1256474",
+    "property_name": "Treebo Seasons, 5 Mins To Rock Beach"
+  },
+  {
+    "cs_id": "1727724",
+    "hotel_id": "1727724",
+    "property_name": "Treebo Pratham Inn, Manipal"
+  },
+  {
+    "cs_id": "1512203",
+    "hotel_id": "1512203",
+    "property_name": "Itsy Hotels K K Residency Staywell"
+  },
+  {
+    "cs_id": "1501143",
+    "hotel_id": "1501143",
+    "property_name": "Treebo Sayaji Residency"
+  },
+  {
+    "cs_id": "1521270",
+    "hotel_id": "1521270",
+    "property_name": "Treebo Silver Grand"
+  },
+  {
+    "cs_id": "3009824",
+    "hotel_id": "3009824",
+    "property_name": "Treebo Ak Residency"
+  },
+  {
+    "cs_id": "2067711",
+    "hotel_id": "2067711",
+    "property_name": "Itsy Hotels Anjali Mahal, 500 Mtrs From Mathura Railway Station"
+  },
+  {
+    "cs_id": "1174848",
+    "hotel_id": "1174848",
+    "property_name": "Treebo Premium The Takey'S, Mall Road"
+  },
+  {
+    "cs_id": "1292850",
+    "hotel_id": "1292850",
+    "property_name": "Treebo Ar Grand, Gajuwaka"
+  },
+  {
+    "cs_id": "1503990",
+    "hotel_id": "1503990",
+    "property_name": "Treebo Riwaayat Regency"
+  },
+  {
+    "cs_id": "2015616",
+    "hotel_id": "2015616",
+    "property_name": "Treebo Nestlay Rooms Whitefield"
+  },
+  {
+    "cs_id": "1611760",
+    "hotel_id": "1611760",
+    "property_name": "Treebo Kt Grand"
+  },
+  {
+    "cs_id": "3005564",
+    "hotel_id": "3005564",
+    "property_name": "Treebo Parashar Max"
+  },
+  {
+    "cs_id": "1505168",
+    "hotel_id": "1505168",
+    "property_name": "Treebo Aura Inn Regency"
+  },
+  {
+    "cs_id": "2011068",
+    "hotel_id": "2011068",
+    "property_name": "Treebo Purple Orchid Boutique"
+  },
+  {
+    "cs_id": "2077421",
+    "hotel_id": "2077421",
+    "property_name": "Treebo Lake City"
+  },
+  {
+    "cs_id": "1206030",
+    "hotel_id": "1206030",
+    "property_name": "Treebo Bridge View Regency, Mall Road"
+  },
+  {
+    "cs_id": "2031351",
+    "hotel_id": "2031351",
+    "property_name": "Treebo The Mountain Deer Valley Near Pgi"
+  },
+  {
+    "cs_id": "2071224",
+    "hotel_id": "2071224",
+    "property_name": "Treebo Ashirwad Regency"
+  },
+  {
+    "cs_id": "1145980",
+    "hotel_id": "1145980",
+    "property_name": "Treebo Golden Leaf"
+  },
+  {
+    "cs_id": "1619637",
+    "hotel_id": "1619637",
+    "property_name": "Treebo Airport Inn"
+  },
+  {
+    "cs_id": "1395021",
+    "hotel_id": "1395021",
+    "property_name": "Treebo Grand Shivay"
+  },
+  {
+    "cs_id": "2013416",
+    "hotel_id": "2013416",
+    "property_name": "Treebo Classic Highway Side"
+  },
+  {
+    "cs_id": "1245526",
+    "hotel_id": "1245526",
+    "property_name": "Treebo Deluxe Inn, Chromepet"
+  },
+  {
+    "cs_id": "1378193",
+    "hotel_id": "1378193",
+    "property_name": "Treebo Anam International"
+  },
+  {
+    "cs_id": "1505600",
+    "hotel_id": "1505600",
+    "property_name": "Itsy Hotels Metro"
+  },
+  {
+    "cs_id": "2043614",
+    "hotel_id": "2043614",
+    "property_name": "Treebo Raahgir Suites"
+  },
+  {
+    "cs_id": "1989216",
+    "hotel_id": "1989216",
+    "property_name": "Treebo Midvalley Residence"
+  },
+  {
+    "cs_id": "1242933",
+    "hotel_id": "1242933",
+    "property_name": "Treebo Premium Taara"
+  },
+  {
+    "cs_id": "2011492",
+    "hotel_id": "2011492",
+    "property_name": "Treebo Memories Inn"
+  },
+  {
+    "cs_id": "2043442",
+    "hotel_id": "2043442",
+    "property_name": "Treebo House Inn"
+  },
+  {
+    "cs_id": "1295755",
+    "hotel_id": "1295755",
+    "property_name": "Treebo Premium The Regal Park"
+  },
+  {
+    "cs_id": "1391899",
+    "hotel_id": "1391899",
+    "property_name": "Treebo Terrazzo Suites"
+  },
+  {
+    "cs_id": "1675415",
+    "hotel_id": "1675415",
+    "property_name": "Treebo Basera"
+  },
+  {
+    "cs_id": "1389059",
+    "hotel_id": "1389059",
+    "property_name": "Treebo Clarissa Resort"
+  },
+  {
+    "cs_id": "1010517",
+    "hotel_id": "1010517",
+    "property_name": "Treebo Blue Roof, Kelwa"
+  },
+  {
+    "cs_id": "1153937",
+    "hotel_id": "1153937",
+    "property_name": "Treebo Urban Nest"
+  },
+  {
+    "cs_id": "2019492",
+    "hotel_id": "2019492",
+    "property_name": "Treebo Silent Woods"
+  },
+  {
+    "cs_id": "1323582",
+    "hotel_id": "1323582",
+    "property_name": "Treebo Vienna"
+  },
+  {
+    "cs_id": "1261835",
+    "hotel_id": "1261835",
+    "property_name": "Treebo Dunag"
+  },
+  {
+    "cs_id": "2058505",
+    "hotel_id": "2058505",
+    "property_name": "Treebo Premium Gateway Triveni"
+  },
+  {
+    "cs_id": "1597226",
+    "hotel_id": "1597226",
+    "property_name": "Treebo Sapphire Bliss"
+  },
+  {
+    "cs_id": "1596121",
+    "hotel_id": "1596121",
+    "property_name": "Treebo The Infinity, Banjara"
+  },
+  {
+    "cs_id": "9112998",
+    "hotel_id": "9112998",
+    "property_name": "Treebo Green Olive"
+  },
+  {
+    "cs_id": "2098401",
+    "hotel_id": "2098401",
+    "property_name": "Treebo Sns Grand Inn"
+  },
+  {
+    "cs_id": "1596742",
+    "hotel_id": "1596742",
+    "property_name": "Treebo Destination Inn"
+  },
+  {
+    "cs_id": "2017563",
+    "hotel_id": "2017563",
+    "property_name": "Treebo Sai Fortune Gateway"
+  },
+  {
+    "cs_id": "1505358",
+    "hotel_id": "1505358",
+    "property_name": "Treebo Luxe Suite, Shivaji Nagar"
+  },
+  {
+    "cs_id": "1437251",
+    "hotel_id": "1437251",
+    "property_name": "Itsy Hotels Golden Vista"
+  },
+  {
+    "cs_id": "2018319",
+    "hotel_id": "2018319",
+    "property_name": "Treebo Millenium Suites"
+  },
+  {
+    "cs_id": "2010498",
+    "hotel_id": "2010498",
+    "property_name": "Treebo Premium Aasma Courtyard"
+  },
+  {
+    "cs_id": "1247316",
+    "hotel_id": "1247316",
+    "property_name": "Treebo Rkh Palace"
+  },
+  {
+    "cs_id": "1076395",
+    "hotel_id": "1076395",
+    "property_name": "Itsy Hotels Everest Leela Residency"
+  },
+  {
+    "cs_id": "1509356",
+    "hotel_id": "1509356",
+    "property_name": "Itsy Hotels Revmantra"
+  },
+  {
+    "cs_id": "2011116",
+    "hotel_id": "2011116",
+    "property_name": "Treebo Comfy Business"
+  },
+  {
+    "cs_id": "1502559",
+    "hotel_id": "1502559",
+    "property_name": "Treebo Sunrise Apartments"
+  },
+  {
+    "cs_id": "1374678",
+    "hotel_id": "1374678",
+    "property_name": "Itsy Hotels Bindra Elite"
+  },
+  {
+    "cs_id": "3001250",
+    "hotel_id": "3001250",
+    "property_name": "Itsy Hotels Manyu Inn"
+  },
+  {
+    "cs_id": "1519378",
+    "hotel_id": "1519378",
+    "property_name": "Itsy Hotels Mansi"
+  },
+  {
+    "cs_id": "1908074",
+    "hotel_id": "1908074",
+    "property_name": "Treebo Reveniir Resort With Pool"
+  },
+  {
+    "cs_id": "1247056",
+    "hotel_id": "1247056",
+    "property_name": "Treebo Flora Embassy"
+  },
+  {
+    "cs_id": "1559260",
+    "hotel_id": "1559260",
+    "property_name": "Itsy Hotels Aditya"
+  },
+  {
+    "cs_id": "1534876",
+    "hotel_id": "1534876",
+    "property_name": "Treebo Park Palace"
+  },
+  {
+    "cs_id": "1457772",
+    "hotel_id": "1457772",
+    "property_name": "Itsy Hotels Jonna Grand"
+  },
+  {
+    "cs_id": "1206822",
+    "hotel_id": "1206822",
+    "property_name": "Treebo Premium Tranquil Inn"
+  },
+  {
+    "cs_id": "2018373",
+    "hotel_id": "2018373",
+    "property_name": "Treebo Liyan Orchid, Hsr Layout"
+  },
+  {
+    "cs_id": "1435639",
+    "hotel_id": "1435639",
+    "property_name": "Treebo Accent Park Hotel & Banquet"
+  },
+  {
+    "cs_id": "1711113",
+    "hotel_id": "1711113",
+    "property_name": "Treebo Grand Town House"
+  },
+  {
+    "cs_id": "1065859",
+    "hotel_id": "1065859",
+    "property_name": "Treebo Gaur Vasundhara"
+  },
+  {
+    "cs_id": "1597144",
+    "hotel_id": "1597144",
+    "property_name": "Treebo Pride Inn Aero, Shamshabad"
+  },
+  {
+    "cs_id": "1884441",
+    "hotel_id": "1884441",
+    "property_name": "Medalio Signature Chandigarh Zirakpur"
+  },
+  {
+    "cs_id": "1176759",
+    "hotel_id": "1176759",
+    "property_name": "Treebo M R Villa"
+  },
+  {
+    "cs_id": "2075824",
+    "hotel_id": "2075824",
+    "property_name": "Treebo Executive Suites"
+  },
+  {
+    "cs_id": "1436133",
+    "hotel_id": "1436133",
+    "property_name": "Treebo Novis Stayz"
+  },
+  {
+    "cs_id": "1131768",
+    "hotel_id": "1131768",
+    "property_name": "Treebo Gt Residency, Thiruvananthapuram"
+  },
+  {
+    "cs_id": "1314078",
+    "hotel_id": "1314078",
+    "property_name": "Treebo Bella Vista By Kaushalya Hospitality"
+  },
+  {
+    "cs_id": "1136293",
+    "hotel_id": "1136293",
+    "property_name": "Treebo Buddha Pride"
+  },
+  {
+    "cs_id": "1219455",
+    "hotel_id": "1219455",
+    "property_name": "Itsy Hotels Svaruchi Inn"
+  },
+  {
+    "cs_id": "1412651",
+    "hotel_id": "1412651",
+    "property_name": "Itsy Hotels White Castle"
+  },
+  {
+    "cs_id": "1205898",
+    "hotel_id": "1205898",
+    "property_name": "Treebo Kgf Villa"
+  },
+  {
+    "cs_id": "1381192",
+    "hotel_id": "1381192",
+    "property_name": "Treebo Premium Nova Candolim"
+  },
+  {
+    "cs_id": "1447642",
+    "hotel_id": "1447642",
+    "property_name": "Treebo Lumino Crown"
+  },
+  {
+    "cs_id": "1452757",
+    "hotel_id": "1452757",
+    "property_name": "Treebo Hr Grand"
+  },
+  {
+    "cs_id": "1583653",
+    "hotel_id": "1583653",
+    "property_name": "Treebo Samsara Villas And Spa"
+  },
+  {
+    "cs_id": "1323805",
+    "hotel_id": "1323805",
+    "property_name": "Treebo Fort Mountview"
+  },
+  {
+    "cs_id": "2065763",
+    "hotel_id": "2065763",
+    "property_name": "Treebo Awadhvue"
+  },
+  {
+    "cs_id": "1464617",
+    "hotel_id": "1464617",
+    "property_name": "Treebo Global Orchid"
+  },
+  {
+    "cs_id": "1593820",
+    "hotel_id": "1593820",
+    "property_name": "Treebo Premium Hydotel Gachibowli"
+  },
+  {
+    "cs_id": "1146139",
+    "hotel_id": "1146139",
+    "property_name": "Treebo Nps Grand"
+  },
+  {
+    "cs_id": "1257676",
+    "hotel_id": "1257676",
+    "property_name": "Treebo Golden Bliss"
+  },
+  {
+    "cs_id": "1545063",
+    "hotel_id": "1545063",
+    "property_name": "Treebo Suyogg Retreat"
+  },
+  {
+    "cs_id": "1107176",
+    "hotel_id": "1107176",
+    "property_name": "Treebo Golden Paradise"
+  },
+  {
+    "cs_id": "1378773",
+    "hotel_id": "1378773",
+    "property_name": "Itsy Hotels Rexton Inn"
+  },
+  {
+    "cs_id": "1218072",
+    "hotel_id": "1218072",
+    "property_name": "Treebo Royal Star"
+  },
+  {
+    "cs_id": "1398298",
+    "hotel_id": "1398298",
+    "property_name": "Itsy Hotels Indra Palace"
+  },
+  {
+    "cs_id": "1557374",
+    "hotel_id": "1557374",
+    "property_name": "Treebo Premium Nagpur Automotive Square"
+  },
+  {
+    "cs_id": "1336018",
+    "hotel_id": "1336018",
+    "property_name": "Itsy Hotels Route 55"
+  },
+  {
+    "cs_id": "2013490",
+    "hotel_id": "2013490",
+    "property_name": "Treebo Premium Runway Suites, Marathahalli"
+  },
+  {
+    "cs_id": "3007683",
+    "hotel_id": "3007683",
+    "property_name": "Treebo Arabica Valley-Coffee Plantation Retreat"
+  },
+  {
+    "cs_id": "2015932",
+    "hotel_id": "2015932",
+    "property_name": "Treebo Orchid Silver"
+  },
+  {
+    "cs_id": "1466884",
+    "hotel_id": "1466884",
+    "property_name": "Treebo Akshaya Palace Inn"
+  },
+  {
+    "cs_id": "1508443",
+    "hotel_id": "1508443",
+    "property_name": "Treebo Maharaja"
+  },
+  {
+    "cs_id": "2057538",
+    "hotel_id": "2057538",
+    "property_name": "Treebo Advantage Inn"
+  },
+  {
+    "cs_id": "1234388",
+    "hotel_id": "1234388",
+    "property_name": "Treebo Ss Residency Gandhi Nagar"
+  },
+  {
+    "cs_id": "2011302",
+    "hotel_id": "2011302",
+    "property_name": "Treebo Green Oak"
+  },
+  {
+    "cs_id": "2052667",
+    "hotel_id": "2052667",
+    "property_name": "Treebo Premium Landmark Prayagraj"
+  },
+  {
+    "cs_id": "1291518",
+    "hotel_id": "1291518",
+    "property_name": "Hotel MVP Check Inn"
+  },
+  {
+    "cs_id": "2024578",
+    "hotel_id": "2024578",
+    "property_name": "Umaiyyal Home Stay"
+  },
+  {
+    "cs_id": "2018927",
+    "hotel_id": "2018927",
+    "property_name": "Hotel Verdisso"
+  },
+  {
+    "cs_id": "3001609",
+    "hotel_id": "3001609",
+    "property_name": "Hotel Galaxy Suites Hebbal"
+  },
+  {
+    "cs_id": "1119600",
+    "hotel_id": "1119600",
+    "property_name": "Hotel Albie Stay Inn"
+  },
+  {
+    "cs_id": "2016833",
+    "hotel_id": "2016833",
+    "property_name": "Treebo Brixton Luxe"
+  },
+  {
+    "cs_id": "1245015",
+    "hotel_id": "1245015",
+    "property_name": "Treebo Era City Stay"
+  },
+  {
+    "cs_id": "1104841",
+    "hotel_id": "1104841",
+    "property_name": "Treebo Red Coral"
+  },
+  {
+    "cs_id": "1507731",
+    "hotel_id": "1507731",
+    "property_name": "Treebo Sairadha"
+  },
+  {
+    "cs_id": "1464454",
+    "hotel_id": "1464454",
+    "property_name": "Treebo Adithi Comforts Inn And Suites"
+  },
+  {
+    "cs_id": "1509768",
+    "hotel_id": "1509768",
+    "property_name": "Treebo Himalayan Homestay"
+  },
+  {
+    "cs_id": "2057014",
+    "hotel_id": "2057014",
+    "property_name": "Itsy Hotels Saina Stay Inn"
+  },
+  {
+    "cs_id": "1142308",
+    "hotel_id": "1142308",
+    "property_name": "Itsy Hotels Abrigo"
+  },
+  {
+    "cs_id": "1393411",
+    "hotel_id": "1393411",
+    "property_name": "Itsy Hotels Prime Unity"
+  },
+  {
+    "cs_id": "1619863",
+    "hotel_id": "1619863",
+    "property_name": "Treebo Sri Krishna Palace"
+  },
+  {
+    "cs_id": "1551401",
+    "hotel_id": "1551401",
+    "property_name": "Treebo Aurum Leaf"
+  },
+  {
+    "cs_id": "1396947",
+    "hotel_id": "1396947",
+    "property_name": "Treebo Premium Bizz"
+  },
+  {
+    "cs_id": "2063330",
+    "hotel_id": "2063330",
+    "property_name": "Treebo Shridhar Stay"
+  },
+  {
+    "cs_id": "2052672",
+    "hotel_id": "2052672",
+    "property_name": "Treebo Twin Tree Suites"
+  },
+  {
+    "cs_id": "1522763",
+    "hotel_id": "1522763",
+    "property_name": "Treebo Masterprice Inn - 15 Mins From Airport"
+  },
+  {
+    "cs_id": "1226887",
+    "hotel_id": "1226887",
+    "property_name": "Treebo Royal Divine"
+  },
+  {
+    "cs_id": "1593685",
+    "hotel_id": "1593685",
+    "property_name": "Itsy Hotels Saffron Groves"
+  },
+  {
+    "cs_id": "1767878",
+    "hotel_id": "1767878",
+    "property_name": "Treebo Punarnava Bypass Road"
+  },
+  {
+    "cs_id": "5000022",
+    "hotel_id": "5000022",
+    "property_name": "Treebo Skyline"
+  },
+  {
+    "cs_id": "1726039",
+    "hotel_id": "1726039",
+    "property_name": "Treebo Pratham Inn Water Park And Resort"
+  },
+  {
+    "cs_id": "1433791",
+    "hotel_id": "1433791",
+    "property_name": "Treebo Premium Indus Crown"
+  },
+  {
+    "cs_id": "1246851",
+    "hotel_id": "1246851",
+    "property_name": "Treebo Sri Anand Residency"
+  },
+  {
+    "cs_id": "1371182",
+    "hotel_id": "1371182",
+    "property_name": "Treebo Alfa Suites"
+  },
+  {
+    "cs_id": "1502324",
+    "hotel_id": "1502324",
+    "property_name": "Itsy Hotels Lotus Executive"
+  },
+  {
+    "cs_id": "1126500",
+    "hotel_id": "1126500",
+    "property_name": "Treebo Arya Palace With Swimming Pool"
+  },
+  {
+    "cs_id": "1262378",
+    "hotel_id": "1262378",
+    "property_name": "Treebo Premium Cachet Suites"
+  },
+  {
+    "cs_id": "2051131",
+    "hotel_id": "2051131",
+    "property_name": "Treebo Twin Tree Residency"
+  },
+  {
+    "cs_id": "1759184",
+    "hotel_id": "1759184",
+    "property_name": "Treebo Arizona"
+  },
+  {
+    "cs_id": "1595502",
+    "hotel_id": "1595502",
+    "property_name": "Treebo De Alphabet Nagole"
+  },
+  {
+    "cs_id": "1982002",
+    "hotel_id": "1982002",
+    "property_name": "Treebo Cecil Resort Matheran With Swimming Pool"
+  },
+  {
+    "cs_id": "2013074",
+    "hotel_id": "2013074",
+    "property_name": "Treebo Cocoon Suites"
+  },
+  {
+    "cs_id": "1374088",
+    "hotel_id": "1374088",
+    "property_name": "Treebo Gateway Mansion"
+  },
+  {
+    "cs_id": "2019513",
+    "hotel_id": "2019513",
+    "property_name": "Treebo Tranquil Inn Marathalli"
+  },
+  {
+    "cs_id": "1277010",
+    "hotel_id": "1277010",
+    "property_name": "Itsy Hotels Sands & Serenity"
+  },
+  {
+    "cs_id": "1436657",
+    "hotel_id": "1436657",
+    "property_name": "Treebo The Royal Corporate"
+  },
+  {
+    "cs_id": "1247190",
+    "hotel_id": "1247190",
+    "property_name": "Itsy Hotels Relax"
+  },
+  {
+    "cs_id": "2011435",
+    "hotel_id": "2011435",
+    "property_name": "Treebo Hiland Suites"
+  },
+  {
+    "cs_id": "1139087",
+    "hotel_id": "1139087",
+    "property_name": "Treebo New Indraprastha"
+  },
+  {
+    "cs_id": "1596296",
+    "hotel_id": "1596296",
+    "property_name": "Treebo Sy Inn, Hi-Tech City"
+  },
+  {
+    "cs_id": "1266739",
+    "hotel_id": "1266739",
+    "property_name": "Treebo Viswa Vikas Residency"
+  },
+  {
+    "cs_id": "1047446",
+    "hotel_id": "1047446",
+    "property_name": "Treebo Premium Silva Lux"
+  },
+  {
+    "cs_id": "9772256",
+    "hotel_id": "9772256",
+    "property_name": "Treebo Melag Jispa With Mountain View"
+  },
+  {
+    "cs_id": "1245105",
+    "hotel_id": "1245105",
+    "property_name": "Treebo Premium Pine Tree Courtyard"
+  },
+  {
+    "cs_id": "1509008",
+    "hotel_id": "1509008",
+    "property_name": "Treebo Royal Empire"
+  },
+  {
+    "cs_id": "2032928",
+    "hotel_id": "2032928",
+    "property_name": "Treebo Aashirwad Bliss Inn With Swimming Pool"
+  },
+  {
+    "cs_id": "1266216",
+    "hotel_id": "1266216",
+    "property_name": "Treebo Aiswaryam Residency"
+  },
+  {
+    "cs_id": "2058446",
+    "hotel_id": "2058446",
+    "property_name": "Treebo Ivy Castle"
+  },
+  {
+    "cs_id": "1755459",
+    "hotel_id": "1755459",
+    "property_name": "Treebo The Velvet"
+  },
+  {
+    "cs_id": "1591654",
+    "hotel_id": "1591654",
+    "property_name": "Treebo Living Tree Khairatabad"
+  },
+  {
+    "cs_id": "1145293",
+    "hotel_id": "1145293",
+    "property_name": "Treebo Sloka Residency"
+  },
+  {
+    "cs_id": "1247991",
+    "hotel_id": "1247991",
+    "property_name": "Treebo Gt Meridian, T-Nagar"
+  },
+  {
+    "cs_id": "2071352",
+    "hotel_id": "2071352",
+    "property_name": "Treebo Holiday Hill"
+  },
+  {
+    "cs_id": "2017175",
+    "hotel_id": "2017175",
+    "property_name": "Treebo Global Stay Rajajinagar"
+  },
+  {
+    "cs_id": "1617471",
+    "hotel_id": "1617471",
+    "property_name": "Treebo Ayaansh, Patia"
+  },
+  {
+    "cs_id": "1503956",
+    "hotel_id": "1503956",
+    "property_name": "Itsy Hotels Sri Nidhi Executive"
+  },
+  {
+    "cs_id": "1503729",
+    "hotel_id": "1503729",
+    "property_name": "Treebo Lime Light"
+  },
+  {
+    "cs_id": "1386944",
+    "hotel_id": "1386944",
+    "property_name": "Treebo Calangute Beach Stay With Swimming Pool"
+  },
+  {
+    "cs_id": "1433343",
+    "hotel_id": "1433343",
+    "property_name": "Treebo Premium Inn 62"
+  },
+  {
+    "cs_id": "1868924",
+    "hotel_id": "1868924",
+    "property_name": "Treebo Vistara Gold Ujjain Junction"
+  },
+  {
+    "cs_id": "1104342",
+    "hotel_id": "1104342",
+    "property_name": "Treebo Premium Paarth Grand"
+  },
+  {
+    "cs_id": "2014266",
+    "hotel_id": "2014266",
+    "property_name": "Treebo Golden Stay Electronic City"
+  },
+  {
+    "cs_id": "1548950",
+    "hotel_id": "1548950",
+    "property_name": "Treebo The Appa'S Resort"
+  },
+  {
+    "cs_id": "1364455",
+    "hotel_id": "1364455",
+    "property_name": "Treebo Blu Vvu"
+  },
+  {
+    "cs_id": "1257912",
+    "hotel_id": "1257912",
+    "property_name": "Treebo Grace Inn, 3 Min Walk From Promenade Beach"
+  },
+  {
+    "cs_id": "1531125",
+    "hotel_id": "1531125",
+    "property_name": "Treebo Green Pearl Inn"
+  },
+  {
+    "cs_id": "1229040",
+    "hotel_id": "1229040",
+    "property_name": "Treebo Raj Palace"
+  },
+  {
+    "cs_id": "1322829",
+    "hotel_id": "1322829",
+    "property_name": "Treebo Indus"
+  },
+  {
+    "cs_id": "6809984",
+    "hotel_id": "6809984",
+    "property_name": "Treebo Ramayan Suites Ayodhya"
+  },
+  {
+    "cs_id": "1702054",
+    "hotel_id": "1702054",
+    "property_name": "Treebo Medco Mansion"
+  },
+  {
+    "cs_id": "2018823",
+    "hotel_id": "2018823",
+    "property_name": "Treebo Three Street Inn Rr Nagar"
+  },
+  {
+    "cs_id": "1514039",
+    "hotel_id": "1514039",
+    "property_name": "Itsy Hotels Flowers Park"
+  },
+  {
+    "cs_id": "1419740",
+    "hotel_id": "1419740",
+    "property_name": "Treebo Ivory Inn"
+  },
+  {
+    "cs_id": "1614818",
+    "hotel_id": "1614818",
+    "property_name": "Treebo Greenland Grand"
+  },
+  {
+    "cs_id": "1204404",
+    "hotel_id": "1204404",
+    "property_name": "Treebo The Alpine Heritage Residency"
+  },
+  {
+    "cs_id": "1147436",
+    "hotel_id": "1147436",
+    "property_name": "Treebo Babu Shivaansh Residency"
+  },
+  {
+    "cs_id": "1261557",
+    "hotel_id": "1261557",
+    "property_name": "Itsy Hotels Snowdrop"
+  },
+  {
+    "cs_id": "2013677",
+    "hotel_id": "2013677",
+    "property_name": "Itsy Hotels Salees Enclave - Near Padmanabhaswamy Temple"
+  },
+  {
+    "cs_id": "1914908",
+    "hotel_id": "1914908",
+    "property_name": "Treebo Kaler Hotel And Resorts"
+  },
+  {
+    "cs_id": "1594926",
+    "hotel_id": "1594926",
+    "property_name": "Treebo The Trio, Karmanghat"
+  },
+  {
+    "cs_id": "1432185",
+    "hotel_id": "1432185",
+    "property_name": "Treebo Noida Business Suites"
+  },
+  {
+    "cs_id": "1133570",
+    "hotel_id": "1133570",
+    "property_name": "Treebo Regalia"
+  },
+  {
+    "cs_id": "1397677",
+    "hotel_id": "1397677",
+    "property_name": "Itsy Hotels Grand Cg"
+  },
+  {
+    "cs_id": "1064211",
+    "hotel_id": "1064211",
+    "property_name": "Treebo Chanakya Palm"
+  },
+  {
+    "cs_id": "1237644",
+    "hotel_id": "1237644",
+    "property_name": "Itsy Hotels M"
+  },
+  {
+    "cs_id": "1211750",
+    "hotel_id": "1211750",
+    "property_name": "Treebo The Kings Plaza Near Airport"
+  },
+  {
+    "cs_id": "1215301",
+    "hotel_id": "1215301",
+    "property_name": "Treebo C T International"
+  },
+  {
+    "cs_id": "2317284",
+    "hotel_id": "2317284",
+    "property_name": "Treebo Prem Tower"
+  },
+  {
+    "cs_id": "1291038",
+    "hotel_id": "1291038",
+    "property_name": "Treebo Rushi Grand, 1 Km To Rushikonda Beach"
+  },
+  {
+    "cs_id": "2025675",
+    "hotel_id": "2025675",
+    "property_name": "Treebo Golden Sun Inn, 5 Mins To Rock Beach"
+  },
+  {
+    "cs_id": "1398627",
+    "hotel_id": "1398627",
+    "property_name": "Treebo Aaram Orchard"
+  },
+  {
+    "cs_id": "6806341",
+    "hotel_id": "6806341",
+    "property_name": "Treebo Ayodhya Grand"
+  },
+  {
+    "cs_id": "2052148",
+    "hotel_id": "2052148",
+    "property_name": "Treebo Maple Delite"
+  },
+  {
+    "cs_id": "1524406",
+    "hotel_id": "1524406",
+    "property_name": "Treebo Shakuntalam, Near Lucknow Airport"
+  },
+  {
+    "cs_id": "1597997",
+    "hotel_id": "1597997",
+    "property_name": "Treebo Saffron Suites, Near Financial District & Us Consulate"
+  },
+  {
+    "cs_id": "1591221",
+    "hotel_id": "1591221",
+    "property_name": "Itsy Hotels Aura Stays"
+  },
+  {
+    "cs_id": "2063523",
+    "hotel_id": "2063523",
+    "property_name": "Treebo Hub"
+  },
+  {
+    "cs_id": "1167428",
+    "hotel_id": "1167428",
+    "property_name": "Treebo Premium Lavender Kochi Infopark"
+  },
+  {
+    "cs_id": "1263729",
+    "hotel_id": "1263729",
+    "property_name": "Itsy Hotels Everest Grand"
+  },
+  {
+    "cs_id": "1468702",
+    "hotel_id": "1468702",
+    "property_name": "Itsy Hotels Nrm Residency - Near Mysore Palace"
+  },
+  {
+    "cs_id": "1396900",
+    "hotel_id": "1396900",
+    "property_name": "Treebo Vice President"
+  },
+  {
+    "cs_id": "2039275",
+    "hotel_id": "2039275",
+    "property_name": "Treebo Rio Crown Palace"
+  },
+  {
+    "cs_id": "2016693",
+    "hotel_id": "2016693",
+    "property_name": "Itsy Hotels Emirates Suites - Near Rmz Ecoworld, Bellandur"
+  },
+  {
+    "cs_id": "2016822",
+    "hotel_id": "2016822",
+    "property_name": "Treebo Blu Orchid Vista, Indiranagar - Near Bagmane Tech Park"
+  },
+  {
+    "cs_id": "1218728",
+    "hotel_id": "1218728",
+    "property_name": "Treebo Premium Royal Gold Palace"
+  },
+  {
+    "cs_id": "1451268",
+    "hotel_id": "1451268",
+    "property_name": "Itsy Hotels R S Bhavan, 2 Km From Mit Gate"
+  },
+  {
+    "cs_id": "1618342",
+    "hotel_id": "1618342",
+    "property_name": "Treebo Grace Stays"
+  },
+  {
+    "cs_id": "1465445",
+    "hotel_id": "1465445",
+    "property_name": "Itsy Hotels Cozy Retreat - Near Mysore Palace & Zoo"
+  },
+  {
+    "cs_id": "1385678",
+    "hotel_id": "1385678",
+    "property_name": "Treebo Grand Royale Eco Residency With Pool"
+  },
+  {
+    "cs_id": "1592011",
+    "hotel_id": "1592011",
+    "property_name": "Treebo Arastu Elite Inn, Lakdikapul Near Nampally Station"
+  },
+  {
+    "cs_id": "3005059",
+    "hotel_id": "3005059",
+    "property_name": "Treebo Horizon Arc"
+  },
+  {
+    "cs_id": "4477291",
+    "hotel_id": "4477291",
+    "property_name": "Itsy Hotels Twilight"
+  },
+  {
+    "cs_id": "1148276",
+    "hotel_id": "1148276",
+    "property_name": "Treebo Misty Garden Resorts & Spa With Swimming Pool"
+  },
+  {
+    "cs_id": "1208576",
+    "hotel_id": "1208576",
+    "property_name": "Treebo Fagu Peaks"
+  },
+  {
+    "cs_id": "1383741",
+    "hotel_id": "1383741",
+    "property_name": "Treebo Morjim Banyan Resort With Swimming Pool"
+  },
+  {
+    "cs_id": "1593382",
+    "hotel_id": "1593382",
+    "property_name": "Treebo Cultura"
+  },
+  {
+    "cs_id": "2020755",
+    "hotel_id": "2020755",
+    "property_name": "Treebo Sheel, Near Mall Road"
+  },
+  {
+    "cs_id": "1292887",
+    "hotel_id": "1292887",
+    "property_name": "Treebo Landmark"
+  },
+  {
+    "cs_id": "1379032",
+    "hotel_id": "1379032",
+    "property_name": "Treebo Premium Merrit"
+  },
+  {
+    "cs_id": "1371682",
+    "hotel_id": "1371682",
+    "property_name": "Treebo Empire Suite"
+  },
+  {
+    "cs_id": "1541487",
+    "hotel_id": "1541487",
+    "property_name": "Treebo Vhyomaan Resort With Swimming Pool"
+  },
+  {
+    "cs_id": "1892583",
+    "hotel_id": "1892583",
+    "property_name": "Treebo Ksheera Residency Near Railway Station"
+  },
+  {
+    "cs_id": "2051467",
+    "hotel_id": "2051467",
+    "property_name": "Itsy Hotel Sangam Retreat"
+  },
+  {
+    "cs_id": "1124831",
+    "hotel_id": "1124831",
+    "property_name": "Treebo Golden Leaf Ddn"
+  },
+  {
+    "cs_id": "1363971",
+    "hotel_id": "1363971",
+    "property_name": "Treebo Park View Villa"
+  },
+  {
+    "cs_id": "1144366",
+    "hotel_id": "1144366",
+    "property_name": "Treebo Belita Resort Munnar With Infinity Pool"
+  },
+  {
+    "cs_id": "1371983",
+    "hotel_id": "1371983",
+    "property_name": "Treebo Premium Widlor Boutique With Swimming Pool"
+  },
+  {
+    "cs_id": "1822909",
+    "hotel_id": "1822909",
+    "property_name": "Treebo Kohinoor Plaza, Bikaner Railway Station"
+  },
+  {
+    "cs_id": "1766478",
+    "hotel_id": "1766478",
+    "property_name": "Treebo Jaguar Comforts, 3 Kms From Mahatma Gandhi Park"
+  },
+  {
+    "cs_id": "1252200",
+    "hotel_id": "1252200",
+    "property_name": "Treebo Skanda Grande"
+  },
+  {
+    "cs_id": "2067625",
+    "hotel_id": "2067625",
+    "property_name": "Treebo Ten Eleven Grand, Scheme 78"
+  },
+  {
+    "cs_id": "2031888",
+    "hotel_id": "2031888",
+    "property_name": "Itsy Hotels Jashan"
+  },
+  {
+    "cs_id": "395630",
+    "hotel_id": "22422",
+    "property_name": "Treebo Ambassador"
+  },
+  {
+    "cs_id": "616586",
+    "hotel_id": "33808",
+    "property_name": "Treebo King'S Court Chandrasekharpur"
+  },
+  {
+    "cs_id": "243121",
+    "hotel_id": "24567",
+    "property_name": "Treebo Adin Residence Chennai Trade Centre"
+  },
+  {
+    "cs_id": "243252",
+    "hotel_id": "25232",
+    "property_name": "Treebo Nestlay Casa"
+  },
+  {
+    "cs_id": "245564",
+    "hotel_id": "26832",
+    "property_name": "Treebo Nestlay Airport Alandur"
+  },
+  {
+    "cs_id": "242206",
+    "hotel_id": "33122",
+    "property_name": "Treebo Pechis Castle"
+  },
+  {
+    "cs_id": "262502",
+    "hotel_id": "22452",
+    "property_name": "Treebo ESS Grande"
+  },
+  {
+    "cs_id": "265185",
+    "hotel_id": "24219",
+    "property_name": "Treebo Premium Corner Stay"
+  },
+  {
+    "cs_id": "262017",
+    "hotel_id": "36837",
+    "property_name": "Treebo Hi Line Apartments Kalapatti"
+  },
+  {
+    "cs_id": "327829",
+    "hotel_id": "36198",
+    "property_name": "Treebo The Anchorage Malviya Nagar"
+  },
+  {
+    "cs_id": "325023",
+    "hotel_id": "37498",
+    "property_name": "Treebo Natraj - Jaipur"
+  },
+  {
+    "cs_id": "418304",
+    "hotel_id": "22063",
+    "property_name": "Treebo Globe International, Near Kalighat Mandir"
+  },
+  {
+    "cs_id": "414566",
+    "hotel_id": "26649",
+    "property_name": "Treebo Green View, Park Circus"
+  },
+  {
+    "cs_id": "415343",
+    "hotel_id": "36866",
+    "property_name": "Treebo Hoops - Airport, VIP Road"
+  },
+  {
+    "cs_id": "376508",
+    "hotel_id": "29287",
+    "property_name": "Treebo Olive Nest"
+  },
+  {
+    "cs_id": "371149",
+    "hotel_id": "30572",
+    "property_name": "Treebo Olive Inn Near BKC"
+  },
+  {
+    "cs_id": "377942",
+    "hotel_id": "33576",
+    "property_name": "Treebo Amber International Mumbai Airport T2"
+  },
+  {
+    "cs_id": "377366",
+    "hotel_id": "38844",
+    "property_name": "Treebo Blue Moon Powai"
+  },
+  {
+    "cs_id": "551475",
+    "hotel_id": "38275",
+    "property_name": "Treebo Chalets, Nagpur Airport"
+  },
+  {
+    "cs_id": "507680",
+    "hotel_id": "21693",
+    "property_name": "Treebo Premium Grand Emerald"
+  },
+  {
+    "cs_id": "509914",
+    "hotel_id": "37552",
+    "property_name": "Itsy Hotels Hill View Ex"
+  },
+  {
+    "cs_id": "238622",
+    "hotel_id": "25393",
+    "property_name": "Treebo Empire"
+  },
+  {
+    "cs_id": "233415",
+    "hotel_id": "34143",
+    "property_name": "Treebo C Plaza"
+  },
+  {
+    "cs_id": "297519",
+    "hotel_id": "31184",
+    "property_name": "Treebo Celeste"
+  },
+  {
+    "cs_id": "295705",
+    "hotel_id": "38752",
+    "property_name": "Treebo Premium PL Grand, Visakhapatnam"
+  },
+  {
+    "cs_id": "1509274",
+    "hotel_id": "1509274",
+    "property_name": ""
+  }
+]

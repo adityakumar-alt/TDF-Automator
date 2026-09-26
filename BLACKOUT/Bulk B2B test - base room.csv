@@ -1,0 +1,1455 @@
+CS_ID,Hotel Name,City,Region,City Type,Rev Segment,Status,Pretax_floors,Floor (Post Tax Base Cat Single Pax),Flex/Non-Flex??,Static/Dynamic/Reverse Configs?,Hotel Min Vs Floor,Suggested Min (Pre Tax),Hotel Floor Vs SKU,Suggested Pre Tax SKU,Current PreTax SKU,Current Post Tax SKU Floor Single Occ Base Cat?,CompSet Rates,Min,P0,Factor of Min,Base Room
+1597119,"Treebo Address Inn, Banjara Hills",Hyderabad,South 2,Tier-1 Business,Metro,Live,1878,1972,Flex,Dynamic,0,2504,-86,1409,1960,2058,1245,2609,2663,1972,OAK
+0243121,Treebo Adin Residence Chennai Trade Centre,Chennai,South 2,Tier-1 Business,Metro,Live,2066,2170,Flex,Dynamic,0,2755,-13,1550,2079,2183,1754,2870,2929,2170,MAPLE
+2267797,Treebo Ahinsa Residency Sohna Road,Gurgaon,North 1,Tier-1 Business,Metro,Live,1944,2041,Flex,Dynamic,0,2592,-71,1458,2012,2112,2094,2700,2777,2041,MAPLE
+1715789,Akashdeep Churned,Dharamshala,North 2,Summer Leisure,Leisure,Churn,1157,1215,Flex,Dynamic,0,1543,1215,1107,,0,2206,1607,1817,1215,MAPLE
+2014917,Treebo Akshaya Bull Temple,Bangalore,South 1,Tier-1 Business,Metro,Live,1500,1576,Flex,Dynamic,0,2000,-10,1125,1510,1585,1263,2084,2234,1576,ACACIA
+0019694,Treebo Akshaya Lalbagh Inn,Bangalore,South 1,Tier-1 Business,Metro,Live,2096,2200,Nonflex,Dynamic,0,2795,-111,2096,2201,2311,1873,3037,3137,2200,OAK
+0468785,Treebo Premium Akshaya Mahal Inn - Near Mysore Palace,Mysore,South 1,Mixed,Leisure,Live,1826,1917,Nonflex,Dynamic,0,2435,-96,1826,1917,2013,1859,2646,2796,1917,OAK
+2043169,Amaya Inn Sector 72 Churned,Noida,North 1,Tier-1 Business,Metro,Churn,2674,2808,Nonflex,Dynamic,0,3565,2808,2674,,0,839,3876,3876,2808,OAK
+0395630,Treebo Ambassador,Ahmedabad,North 1,Tier-2 Business,Non-Metro,Live,2349,2466,Flex,Dynamic,0,3132,-16,1762,2364,2482,1335,3262,3328,2466,OAK
+0377942,Treebo Amber International,Mumbai,West,Tier-1 Business,Metro,Live,2831,2973,Nonflex,Dynamic,0,3775,-149,2831,2973,3121,1711,4103,4103,2973,OAK
+1161055,Treebo Anchor Inn,Kochi,South 1,Mixed,Non-Metro,Stop Sell,1619,1700,Flex,Dynamic,0,2159,45,1214,1576,1655,973,2249,2349,1700,ACACIA
+1677063,Treebo Prime Elight,Mathura,North 2,Summer Leisure,Leisure,Churn,1114,1170,Flex,Dynamic,0,1485,1170,1114,,0,1095,1548,1607,1170,ACACIA
+1438734,Apple Pie Churneds,Noida,North 1,Tier-1 Business,Metro,Churn,1125,1182,Flex,Dynamic,0,1500,1182,1125,,0,#N/A,1563,1649,1182,OAK
+2012715,Treebo Apple Villa,Bangalore,South 1,Tier-1 Business,Metro,Live,1503,1578,Flex,Dynamic,0,2004,-10,1127,1512,1588,2609,2087,2187,1578,OAK
+3001725,Apple Villa Jakkur Churned,Bangalore,South 1,Tier-1 Business,Metro,Churn,1200,1259,Flex,Dynamic,0,1600,1259,1150,,0,#N/A,1666,1683,1259,MAHOGANY
+1387536,Treebo Aquamarine Arpora,Goa,West,Winter Leisure,Leisure,Stop Sell,1691,1775,Flex,Dynamic,0,2255,60,1268,1634,1715,1876,2348,2396,1775,MAPLE
+1144338,Treebo Archie Regency,Ranchi,East,Tier-2 Business,Non-Metro,Live,1500,1575,Flex,Dynamic,0,2000,-10,1125,1509,1584,1741,2083,2183,1575,OAK
+1539442,Treebo Arna Residency,Guwahati,East,Mixed,Non-Metro,Live,1904,2000,Flex,Static,0,2539,-12,1428,1916,2012,1343,2645,2700,2000,MAPLE
+2083092,Aroma Executive Churned,Aurangabad,West,Tier-2 Business,Non-Metro,Churn,949,997,Nonflex,Dynamic,0,1271,997,953,,0,#N/A,1376,1419,997,OAK
+1373375,Treebo Arvind Residency,Mumbai,West,Tier-1 Business,Metro,Live,2381,2500,Nonflex,Dynamic,0,3175,-72,2381,2450,2572,1255,3451,3451,2500,ACACIA
+2013364,Astor Hsr Layout Churned,Bangalore,South 1,Tier-1 Business,Metro,Churn,1423,1495,Flex,Dynamic,0,1897,1495,1373,,0,635,1977,2168,1495,OAK
+1442949,"Treebo Atithi Bhavan, 1 Km From Ooty Lake",Ooty,South 1,Summer Leisure,Leisure,Stop Sell,2316,2432,Nonflex,Dynamic,0,3088,-3,2316,2319,2435,2093,3357,3357,2432,MAPLE
+2047410,"Treebo Atithi Comforts, 1 Km From Nisargadhama Forest",Coorg,South 1,Summer Leisure,Leisure,Churn,1619,1700,Nonflex,Dynamic,0,2159,1700,1619,,0,1585,2346,2346,1700,OAK
+1508873,Treebo Atithi Corporate Stay Baner It Hub,Pune,West,Tier-1 Business,Metro,Live,1878,1972,Flex,Static,0,2504,-12,1409,1890,1985,1157,2609,2663,1972,OAK
+2012230,Auzone & Spa Churned,Chandigarh,North 2,Mixed,Non-Metro,Churn,1479,1553,Nonflex,Dynamic,0,1972,1553,1479,,0,1672,2143,2143,1553,OAK
+1438071,Treebo Aviraj Inn,Noida,North 1,Tier-1 Business,Metro,Live,2066,2170,Flex,Dynamic,0,2755,-13,1550,2079,2183,1316,2870,2929,2170,MAPLE
+1479897,Treebo Avyukta Stay,Coorg,South 1,Summer Leisure,Leisure,Live,1409,1479,Flex,Dynamic,0,1879,-9,1359,1418,1488,554,1957,1997,1479,OAK
+1142067,Treebo B&B,Ranchi,East,Tier-2 Business,Non-Metro,Live,1315,1381,Flex,Static,0,1753,-9,1265,1324,1390,1210,1827,1864,1381,OAK
+1168906,Treebo Backpackers Inn,Kochi,South 1,Mixed,Non-Metro,Stop Sell,1511,1587,Flex,Dynamic,0,2015,124,1133,1393,1463,1544,2099,2299,1587,OAK
+1546989,Treebo Balaji Excellency & Spa,Mahabaleshwar,West,Winter Leisure,Leisure,Churn,1524,1600,Nonflex,Dynamic,0,2032,1600,1524,,0,#N/A,2208,2277,1600,MAPLE
+1486131,"Treebo Balaji Residency, Kolhapur",Kolhapur,West,Mixed,Leisure,Live,1738,1825,Flex,Dynamic,0,2317,-12,1304,1749,1837,1411,2414,2463,1825,OAK
+1505405,Treebo Bhagyashree Executive,Pune,West,Tier-1 Business,Metro,Live,1905,2000,Nonflex,Dynamic,0,2540,-100,1905,2000,2100,795,2761,2761,2000,ACACIA
+0124913,Treebo Blessing Bells,Dehradun,North 2,Mixed,Leisure,Live,1809,1900,Nonflex,Dynamic,0,2412,-95,1809,1899,1994,1197,2622,2622,1900,OAK
+0003211,Treebo Bliss,Jaipur,North 1,Mixed,Non-Metro,Live,1857,1950,Nonflex,Dynamic,0,2476,-56,1857,1911,2007,1460,2692,2692,1950,OAK
+2018414,Treebo Blu Orchid,Bangalore,South 1,Tier-1 Business,Metro,Live,2619,2750,Nonflex,Static,0,3492,-137,2619,2750,2887,#N/A,3796,3846,2750,OAK
+0377366,Treebo Blue Moon Powai,Mumbai,West,Tier-1 Business,Metro,Live,2118,2224,Flex,Dynamic,0,2824,-14,1589,2132,2238,3451,2942,,2224,OAK
+1509933,Treebo Brahma Regency,Pune,West,Tier-1 Business,Metro,Live,2301,2416,Flex,Dynamic,0,3068,-55,1726,2353,2471,1130,3196,3262,2416,OAK
+1501004,Treebo Brooks Manor,Pune,West,Tier-1 Business,Metro,Live,1738,1825,Flex,Dynamic,0,2317,-12,1304,1749,1837,#N/A,2414,2463,1825,MAPLE
+0233415,Treebo C Plaza,Vijayawada,South 2,Tier-2 Business,Non-Metro,Live,2048,2150,Nonflex,Static,0,2731,-62,2048,2107,2213,1704,2968,2968,2150,OAK
+1125927,"Treebo Calista, Patel Nagar",Dehradun,North 2,Mixed,Leisure,Live,1691,1775,Flex,Dynamic,0,2255,-11,1268,1701,1786,#N/A,2348,2396,1775,MAPLE
+1702720,Treebo Casino,Kozhikode,South 1,Mixed,Non-Metro,Live,2126,2232,Nonflex,Dynamic,0,2835,-64,2126,2187,2297,1186,3081,3081,2232,OAK
+0297519,Treebo Celeste,Visakhapatnam,South 2,Tier-2 Business,Non-Metro,Live,1430,1501,Flex,Dynamic,0,1907,-9,1073,1439,1510,831,1986,2131,1501,OAK
+0551475,"Treebo Chalets, Nagpur Airport",Nagpur,West,Tier-2 Business,Non-Metro,Live,1878,1972,Flex,Dynamic,0,2504,-12,1409,1890,1985,1286,2609,2663,1972,OAK
+1553264,Treebo Chandraprasth Residency,Nagpur,West,Tier-2 Business,Non-Metro,Live,2013,2114,Flex,Dynamic,0,2684,-13,1510,2025,2127,1799,2796,2796,2114,OAK
+2069545,Cherry Tree Churn,Indore,West,Tier-2 Business,Non-Metro,Churn,1355,1423,Nonflex,Dynamic,0,1807,1423,1355,,0,#N/A,1964,1989,1423,OAK
+1509844,Hotels Chetan Executive Hadapsar Phursungi Churned,Pune,West,Tier-1 Business,Metro,Churn,937,984,Flex,Dynamic,0,1249,984,937,,0,#N/A,1301,1351,984,OAK
+0212160,Treebo C T international,New Delhi,North 1,Tier-1 Business,Metro,Churn,1750,1838,Flex,Dynamic,0,2333,1838,1313,,0,1629,2431,2531,1838,OAK
+1343286,Treebo City Inn Satara,Satara,West,Winter Leisure,Leisure,Live,2096,2200,Nonflex,Dynamic,0,2795,-111,2096,2201,2311,1385,3037,3037,2200,MAPLE
+2013888,Itsy Hotels Classio Richmond,Bangalore,South 1,Tier-1 Business,Metro,Churn,1739,1826,Nonflex,Dynamic,0,2319,1826,1739,,0,1177,2521,2521,1826,OAK
+1475965,Treebo Concerto Residentia,Durgapur,East,Tier-2 Business,Non-Metro,Live,1314,1380,Flex,Dynamic,0,1752,-8,1264,1322,1388,513,1825,1925,1380,OAK
+0265185,Treebo Premium Corner Stay,Coimbatore,South 2,Tier-2 Business,Non-Metro,Live,2096,2200,Nonflex,Dynamic,0,2795,-111,2096,2201,2311,1892,3037,3087,2200,MAPLE
+2053231,Treebo Corporate 32,Gurgaon,North 1,Tier-1 Business,Metro,Churn,1470,1544,Flex,Dynamic,0,1960,1544,1103,,0,2331,2042,2083,1544,OAK
+1376597,Cruz Royale Santacruz West Churned,Mumbai,West,Tier-1 Business,Metro,Churn,2378,2497,Nonflex,Dynamic,0,3171,2497,2378,,0,2438,3446,3446,2497,OAK
+1594371,Itsy Hotels D'Comfort Inn,Hyderabad,South 2,Tier-1 Business,Metro,Live,1344,1411,Flex,Dynamic,0,1792,-61,1294,1403,1473,1038,1867,1905,1411,OAK
+0065263,Treebo Daksh Residency,Indore,West,Tier-2 Business,Non-Metro,Live,2120,2226,Flex,Dynamic,0,2827,-14,1590,2133,2239,2514,2944,2944,2226,OAK
+1708941,Treebo Darwesh Residency - 500m From Railway Station,Kozhikode,South 1,Mixed,Non-Metro,Live,1409,1479,Flex,Dynamic,0,1879,-9,1359,1418,1488,424,1957,2057,1479,OAK
+1182832,Dee Intercontinental Amritsar Churned,Amritsar,North 2,Mixed,Non-Metro,Churn,1144,1201,Nonflex,Static,0,1525,1201,1144,,0,754,1658,1658,1201,OAK
+1883885,Treebo Delmont,Zirakpur,North 2,Mixed,Non-Metro,Stop Sell,1333,1400,Flex,Dynamic,0,1777,47,1283,1288,1353,1514,1852,1918,1400,MAPLE
+1357746,Treebo Desert Harmony Camp,Jaisalmer,North 1,Winter Leisure,Leisure,Live,2524,2650,Nonflex,Dynamic,0,3365,-132,2524,2650,2783,0,3658,3658,2650,OAK
+1381105,"Treebo Premium Dona Eliza, 700 Metres From Calangute Beach",Goa,West,Winter Leisure,Leisure,Live,1597,1677,Flex,Dynamic,0,2129,-38,1198,1633,1714,3152,2218,2263,1677,OAK
+0472129,"Treebo Durga Boji Grand, Gonikoppal Town",Coorg,South 1,Summer Leisure,Leisure,Live,1809,1900,Flex,Dynamic,0,2412,-16,1357,1825,1916,1052,2513,2567,1900,MAPLE
+1503944,Treebo Eagle Executive,Pune,West,Tier-1 Business,Metro,Live,1619,1700,Nonflex,Dynamic,0,2159,-85,1619,1700,1785,437,2346,2346,1700,OAK
+1242728,Earth Aparthotel Churned,Chennai,South 2,Tier-1 Business,Metro,Churn,1035,1087,Flex,Dynamic,0,1380,1087,1035,,0,#N/A,1438,1539,1087,OAK
+1246802,Treebo Eco Stay Nandanam,Chennai,South 2,Tier-1 Business,Metro,Live,2066,2170,Flex,Dynamic,0,2755,-13,1550,2079,2183,1066,2870,2929,2170,OAK
+1522037,Treebo Edesia,Lucknow,North 2,Tier-2 Business,Non-Metro,Live,1962,2060,Flex,Dynamic,0,2616,-13,1472,1974,2073,1553,2725,2910,2060,MAPLE
+0017174,Treebo Edha Suites Koramangala,Bangalore,South 1,Tier-1 Business,Metro,Live,2429,2550,Nonflex,Static,0,3239,-128,2429,2550,2678,2340,3520,3620,2550,OAK
+0246253,Treebo Elan,Chennai,South 2,Tier-1 Business,Metro,Churn,2254,2367,Flex,Dynamic,0,3005,2367,1691,,0,1201,3131,3195,2367,OAK
+2004710,Treebo Elite Heritage,Bangalore,South 1,Tier-1 Business,Metro,Churn,1035,1087,Flex,Dynamic,0,1380,1087,1035,,0,#N/A,1438,1539,1087,OAK
+2013237,Treebo Elite Premium Homes,Bangalore,South 1,Tier-1 Business,Metro,Live,2000,2100,Nonflex,Static,0,2667,-105,2000,2100,2205,2163,2899,2999,2100,OAK
+1107594,Treebo Elite Residency Belgaum,Belgaum,South 1,Mixed,Non-Metro,Live,1644,1726,Flex,Static,0,2192,-10,1233,1654,1736,2250,2283,2330,1726,OAK
+2001662,Treebo Elmas Boutique,Bangalore,South 1,Tier-1 Business,Metro,Churn,1868,1961,Nonflex,Dynamic,0,2491,1961,1868,,0,1806,2707,2757,1961,OAK
+0238622,Treebo Empire,Vijayawada,South 2,Tier-2 Business,Non-Metro,Live,1619,1700,Flex,Dynamic,0,2159,-11,1214,1630,1711,1035,2249,2249,1700,OAK
+0262502,Treebo Ess Grande,Coimbatore,South 2,Tier-2 Business,Non-Metro,Live,2442,2564,Flex,Dynamic,0,3256,-15,1832,2457,2580,1965,3392,3461,2564,OAK
+1269736,Treebo Everest Residency Tidel Park,Coimbatore,South 2,Tier-2 Business,Non-Metro,Live,2000,2100,Nonflex,Dynamic,0,2667,-105,2000,2100,2205,1890,2899,2899,2100,OAK
+1293128,Treebo Excella,Visakhapatnam,South 2,Tier-2 Business,Non-Metro,Churn,1362,1430,Flex,Dynamic,0,1816,1430,1312,,0,1223,1892,1930,1430,OAK
+1501176,Treebo Excellent Home,Pune,West,Tier-1 Business,Metro,Live,1691,1775,Flex,Dynamic,0,2255,-11,1268,1701,1786,714,2348,2396,1775,MAPLE
+1518890,"Excellent Homes, Nashik Churned",Nashik,West,Mixed,Non-Metro,Churn,1488,1563,Nonflex,Dynamic,0,1984,1563,1488,,0,1667,2157,2519,1563,OAK
+1504742,"Treebo Five Elements, Lonavala",Lonavala,West,Summer Leisure,Leisure,Live,1683,1767,Partner,Static,0,2244,786,1683,935,981,1939,2337,2357,1767,OAK
+0045959,Treebo Fort Club,Hyderabad,South 2,Tier-1 Business,Metro,Live,1855,1948,Flex,Dynamic,0,2473,-12,1391,1867,1960,1872,2577,2629,1948,OAK
+2013949,Treebo Fortune Stay,Bangalore,South 1,Tier-1 Business,Metro,Live,1809,1900,Nonflex,Dynamic,0,2412,-95,1809,1899,1994,2508,2622,2722,1900,OAK
+1244531,Treebo Fourth Avenue,Chennai,South 2,Tier-1 Business,Metro,Live,3045,3197,Nonflex,Dynamic,0,4060,-160,3045,3197,3357,2496,4413,4463,3197,MAPLE
+1126534,Treebo G K Residency Near Dehradun Railway Station,Dehradun,North 2,Mixed,Leisure,Churn,1428,1500,Flex,Dynamic,0,1904,1500,1378,,0,1181,1984,2050,1500,OAK
+1212498,Treebo Galaxy Rooms,New Delhi,North 1,Tier-1 Business,Metro,Live,2254,2367,Flex,Dynamic,0,3005,-14,1691,2268,2381,791,3131,3195,2367,OAK
+2013172,Treebo Galaxy Suites Mathikere,Bangalore,South 1,Tier-1 Business,Metro,Live,2174,2282,Nonflex,Static,0,2899,-115,2174,2283,2397,1736,3150,3150,2282,OAK
+2014899,Hotels Galaxy Suites Churned,Bangalore,South 1,Tier-1 Business,Metro,Churn,1028,1080,Flex,Dynamic,0,1371,1080,1028,,0,0,1428,1442,1080,OAK
+1418549,Treebo Glassotel,Kolkata,East,Tier-1 Business,Metro,Live,1590,1669,Flex,Static,0,2120,-11,1193,1600,1680,1777,2208,2208,1669,ACACIA
+0418304,Treebo Globe International,Kolkata,East,Tier-1 Business,Metro,Live,2385,2505,Flex,Static,0,3180,-16,1789,2400,2520,1149,3313,3313,2505,OAK
+1166971,"Treebo Golden Terminal, Kochi Airport",Kochi,South 1,Mixed,Non-Metro,Live,1524,1600,Nonflex,Dynamic,0,2032,40,1524,1486,1560,1164,2208,2208,1600,OAK
+2013382,Goodland Residency - 500m From Railway Station Churned,Thiruvananthapuram,South 1,Mixed,Non-Metro,Churn,1961,2059,Nonflex,Dynamic,0,2615,2059,1961,,0,1944,2842,2842,2059,OAK
+0255141,"Treebo Grace Inn, 3 Min Walk From Promenade Beach",Pondicherry,South 2,Winter Leisure,Leisure,Churn,1714,1800,Flex,Reverse,0,2285,1800,1286,,0,7593,2381,3524,1800,OAK
+2061880,Treebo Grand Euro Pipliyahana Square,Indore,West,Tier-2 Business,Non-Metro,Live,1547,1625,Flex,Dynamic,0,2063,-90,1160,1633,1714,599,2149,2249,1625,OAK
+1127927,Treebo Grand Legacy Elite With Roof Top Cafe,Dehradun,North 2,Mixed,Leisure,Live,1809,1900,Nonflex,Dynamic,0,2412,-95,1809,1899,1994,1836,2622,2622,1900,MAPLE
+1125534,Treebo Grand Legacy Shahenshah,Dehradun,North 2,Mixed,Leisure,Live,1809,1900,Nonflex,Static,0,2412,-95,1809,1899,1994,1441,2622,2622,1900,OAK
+2029800,Treebo Grand Milan,Visakhapatnam,South 2,Tier-2 Business,Non-Metro,Live,1669,1752,Flex,Dynamic,0,2225,-10,1252,1679,1763,856,2318,2366,1752,OAK
+1716806,Treebo Grand Town House,Faridabad,North 1,Mixed,Metro,Churn,1832,1923,Flex,Dynamic,0,2443,1923,1374,,0,1736,2544,2596,1923,MAPLE
+1169332,Treebo Grand Vistara Airport Suites,Kochi,South 1,Mixed,Non-Metro,Churn,1658,1741,Nonflex,Dynamic,0,2211,1741,1658,,0,2256,2403,2403,1741,OAK
+1472544,Treebo Green Land Kushalnagar,Coorg,South 1,Summer Leisure,Leisure,Live,1315,1381,Flex,Dynamic,0,1753,-9,1265,1324,1390,1282,1827,1864,1381,OAK
+1386481,Treebo Green Park,Goa,West,Winter Leisure,Leisure,Live,1785,1874,Flex,Dynamic,0,2380,-12,1339,1797,1886,1204,2479,2529,1874,OAK
+0414566,Treebo Green View,Kolkata,East,Tier-1 Business,Metro,Live,1490,1565,Flex,Static,0,1987,-9,1118,1499,1574,1830,2070,2070,1565,OAK
+0015738,"Treebo Greenwood Premier Suites, Old Airport Road",Bangalore,South 1,Tier-1 Business,Metro,Live,1571,1650,Nonflex,Static,0,2095,-82,1571,1650,1732,352,2277,2277,1650,OAK
+1521102,Heaven Grand Churned,Lucknow,North 2,Tier-2 Business,Non-Metro,Churn,2353,2471,Flex,Dynamic,0,3137,2471,1765,,0,#N/A,3268,1674,2471,OAK
+0262017,Treebo Hi Line Apartments Kalapatti,Coimbatore,South 2,Tier-2 Business,Non-Metro,Live,1736,1823,Flex,Dynamic,0,2315,-12,1302,1747,1835,1495,2411,2465,1823,MAPLE
+1546230,Treebo Hillway Inn Main Market,Mahabaleshwar,West,Winter Leisure,Leisure,Live,1571,1650,Flex,Dynamic,0,2095,-100,1178,1666,1750,1138,2182,2282,1650,MAPLE
+1369959,Hinduja Mehrangarh Fort Churned,Jodhpur,North 1,Winter Leisure,Leisure,Churn,1028,1080,Flex,Dynamic,0,1371,1080,1028,,0,#N/A,1428,1488,1080,ACACIA
+1379624,Treebo Hiramani Parel Lalbaug,Mumbai,West,Tier-1 Business,Metro,Live,3194,3354,Flex,Dynamic,0,4259,-21,2396,3214,3375,2113,4436,4526,3354,OAK
+0415343,Treebo Hoops - Airport,Kolkata,East,Tier-1 Business,Metro,Live,1315,1381,Flex,Dynamic,0,1753,-9,1265,1324,1390,842,1827,1864,1381,ACACIA
+2014750,"Treebo 12 Degrees West, Domlur",Bangalore,South 1,Tier-1 Business,Metro,Live,1524,1600,Nonflex,Static,0,2032,-47,1524,1569,1647,2295,2208,2208,1600,OAK
+1558817,Treebo Hotel A1,Nagpur,West,Tier-2 Business,Non-Metro,Live,1905,2000,Flex,Dynamic,0,2540,-13,1429,1917,2013,1003,2646,2646,2000,OAK
+2076512,Treebo Alankar Hoshangabad Road,Bhopal,West,Mixed,Non-Metro,Churn,892,937,Flex,Dynamic,0,1189,937,892,,0,639,1239,1589,937,ACACIA
+1379202,Treebo Amber Imperial,Mumbai,West,Tier-1 Business,Metro,Live,3140,3297,Nonflex,Dynamic,0,4187,-165,3140,3297,3462,1599,4551,4551,3297,OAK
+1961730,Hotels Amrita Raghunath Bazaar Jammu Churned,Jammu,North 2,Mixed,Non-Metro,Churn,1076,1129,Flex,Dynamic,0,1435,1129,1076,,0,1164,1494,1503,1129,OAK
+1536175,Treebo Apollo,Guwahati,East,Mixed,Non-Metro,Churn,1452,1524,Flex,Dynamic,0,1936,1524,1089,,0,944,2016,2116,1524,OAK
+1599756,Treebo Arastu Grand,Hyderabad,South 2,Tier-1 Business,Metro,Live,1762,1850,Flex,Dynamic,0,2349,-163,1322,1917,2013,1152,2447,2447,1850,OAK
+3031441,Treebo Baby Pearl,Amravati,West,Mixed,Non-Metro,Live,1238,1300,Flex,Dynamic,0,1651,-8,1188,1246,1309,1649,1720,1770,1300,OAK
+2017275,"Dev With Valley View, Mall Road Churned",Manali,North 2,Winter Leisure,Leisure,Churn,930,977,Flex,Dynamic,0,1240,977,930,,0,1121,1292,1292,977,OAK
+1476116,Treebo Doha King,Coorg,South 1,Summer Leisure,Leisure,Live,1714,1800,Flex,Dynamic,0,2285,-11,1286,1725,1811,410,2381,2481,1800,OAK
+1544364,Dreamworld Churned,Mahabaleshwar,West,Winter Leisure,Leisure,Churn,720,756,Flex,Dynamic,0,1188,756,891,,0,#N/A,1000,1854,756,OAK
+1145490,Treebo Elite City Upper Bazar,Ranchi,East,Tier-2 Business,Non-Metro,Live,1953,2050,Nonflex,Static,0,2604,-103,1953,2051,2153,#N/A,2830,2830,2050,MAPLE
+2014883,Treebo Emora Grand,Bangalore,South 1,Tier-1 Business,Metro,Live,1714,1800,Nonflex,Static,0,2285,-53,1714,1764,1852,1293,2484,2484,1800,OAK
+1423815,Treebo Golden Heights,Jamshedpur,East,Tier-2 Business,Non-Metro,Live,1714,1800,Nonflex,Static,0,2285,-90,1714,1800,1890,655,2484,2484,1800,OAK
+1203621,"Treebo Greenland, Mall Road",Shimla,North 2,Summer Leisure,Leisure,Live,1409,1479,Flex,Dynamic,0,1879,-9,1359,1418,1488,990,1957,1997,1479,ACACIA
+1547318,Treebo Iceberg,Mahabaleshwar,West,Winter Leisure,Leisure,Churn,1467,1541,Flex,Dynamic,0,1956,1541,1100,,0,#N/A,2038,2107,1541,ACACIA
+2072844,Treebo Krishna Regency Isbt Bus Stop,Bhopal,West,Mixed,Non-Metro,Live,1606,1686,Flex,Dynamic,0,2141,-11,1205,1616,1697,#N/A,2230,2380,1686,OAK
+1944096,"Kumbhal Castle, 2 Km From Kumbhalgarh Fort Churned",Kumbhalgarh,North 1,Winter Leisure,Leisure,Churn,1760,1848,Nonflex,Dynamic,0,2347,1848,1760,,0,773,2551,2551,1848,OAK
+1324672,Treebo Maharaja Residency,Jaipur,North 1,Mixed,Non-Metro,Live,1277,1341,Nonflex,Dynamic,0,1703,-67,1277,1341,1408,2010,1851,2070,1341,OAK
+1416806,Treebo Mangalam,Kolkata,East,Tier-1 Business,Metro,Live,2096,2200,Nonflex,Static,0,2795,-111,2096,2201,2311,1440,3037,3037,2200,OAK
+2062247,Treebo Merit,Indore,West,Tier-2 Business,Non-Metro,Live,1786,1875,Flex,Dynamic,0,2381,-11,1340,1797,1886,937,2480,2580,1875,MAPLE
+2053564,Treebo Hotel Mobi Vip Airport,Guwahati,East,Mixed,Non-Metro,Live,1691,1775,Flex,Dynamic,0,2255,-11,1268,1701,1786,1575,2348,2396,1775,OAK
+1326972,Treebo New Rockwell Vivek Vihar,Jaipur,North 1,Mixed,Non-Metro,Live,1384,1453,Flex,Dynamic,0,1845,-9,1334,1392,1462,1614,1922,2035,1453,MAPLE
+2098048,"Itsy Hotels Nv, Tapovan",Rishikesh,North 2,Summer Leisure,Leisure,Live,976,1024,Flex,Dynamic,0,1301,-6,976,982,1031,1791,1355,1455,1024,OAK
+1618855,"Treebo Oasis, Laxmisagar",Bhubaneswar,East,Mixed,Non-Metro,Live,1737,1824,Flex,Dynamic,0,2316,-11,1303,1748,1836,1861,2413,2513,1824,OAK
+1411703,Treebo Orion Sapphire,Kolkata,East,Tier-1 Business,Metro,Churn,1801,1891,Flex,Dynamic,0,2401,1891,1351,,0,1983,2501,2551,1891,OAK
+1618408,Paradise Premium Rasulgarh Churned,Bhubaneswar,East,Mixed,Non-Metro,Churn,1629,1711,Flex,Dynamic,0,2172,1711,1222,,0,1395,2263,2309,1711,OAK
+1903843,Treebo Prince,Kottayam,South 1,Summer Leisure,Leisure,Live,1571,1650,Nonflex,Dynamic,0,2095,-82,1571,1650,1732,2370,2277,2277,1650,OAK
+1598778,Purple Square Churned,Hyderabad,South 2,Tier-1 Business,Metro,Churn,1243,1305,Flex,Dynamic,0,1657,1305,1193,,0,#N/A,1727,1813,1305,OAK
+2011450,Treebo Premium Raj Elegance Manyata Tech Park,Bangalore,South 1,Tier-1 Business,Metro,Live,1683,1767,Nonflex,Dynamic,0,2244,121,1683,1568,1646,1373,2439,2439,1767,OAK
+1538075,Itsy Hotels Ransu Residency,Guwahati,East,Mixed,Non-Metro,Live,1409,1479,Flex,Dynamic,0,1879,-9,1359,1418,1488,984,1957,1997,1479,OAK
+2345375,Treebo Risha,Chandrapur,West,Tier-2 Business,Non-Metro,Live,1333,1400,Flex,Dynamic,0,1777,-9,1283,1342,1409,2480,1852,1852,1400,OAK
+1555547,"Treebo Hotel Rk Inn, Railway Station",Nagpur,West,Tier-2 Business,Non-Metro,Live,1905,2000,Flex,Dynamic,0,2540,-13,1429,1917,2013,1548,2646,2696,2000,OAK
+1324831,Treebo Rockland Churned,Jaipur,North 1,Mixed,Non-Metro,Churn,1319,1385,Flex,Dynamic,0,1759,1385,1269,,0,1981,1832,1832,1385,OAK
+3001380,Treebo Sahara Suites,Bangalore,South 1,Tier-1 Business,Metro,Live,2000,2100,Nonflex,Static,0,2667,-105,2000,2100,2205,2084,2899,2899,2100,OAK
+2017070,"Treebo Sampradaya Bistro, Mailasandra",Bangalore,South 1,Tier-1 Business,Metro,Live,1404,1474,Nonflex,Dynamic,0,1872,-74,1404,1474,1548,437,2035,2085,1474,OAK
+1591618,Treebo Seventh Heaven Kukatpally,Hyderabad,South 2,Tier-1 Business,Metro,Live,1550,1628,Flex,Dynamic,0,2067,-122,1163,1666,1750,2651,2153,2197,1628,OAK
+2066242,Treebo Shivaay,Indore,West,Tier-2 Business,Non-Metro,Churn,1105,1160,Flex,Dynamic,0,1473,1160,1105,,0,#N/A,1535,1535,1160,MAPLE
+1344052,Treebo Siddharth,Ajmer,North 1,Winter Leisure,Leisure,Live,1314,1380,Flex,Dynamic,0,1752,-8,1264,1322,1388,1582,1825,1865,1380,ACACIA
+4000617,Treebo Sidhartha Elite,Bhubaneswar,East,Mixed,Non-Metro,Live,1166,1225,Flex,Dynamic,0,1555,-8,1116,1174,1233,1663,1620,1720,1225,OAK
+1184622,Treebo Sidhartha International Baliapanda,Puri,East,Mixed,Leisure,Live,1597,1677,Flex,Dynamic,0,2129,-10,1198,1607,1687,2299,2218,2263,1677,OAK
+1898527,Treebo Sky Point,Siliguri,East,Mixed,Non-Metro,Live,1503,1578,Flex,Dynamic,0,2004,-10,1127,1512,1588,1074,2087,2130,1578,OAK
+1535153,Treebo Spring Brook,Guwahati,East,Mixed,Non-Metro,Live,2048,2150,Nonflex,Dynamic,0,2731,-108,2048,2150,2258,1260,2968,2968,2150,MAPLE
+1452205,Treebo Sripadha Residency Alipiri Road,Tirupati,South 2,Mixed,Leisure,Live,1481,1555,Flex,Dynamic,0,1975,-9,1111,1490,1564,1068,2057,2099,1555,OAK
+1546728,Treebo Ss Residency Mountain View,Dapoli,West,Mixed,Leisure,Live,1619,1700,Nonflex,Dynamic,0,2159,-50,1619,1666,1750,1249,2346,2346,1700,OAK
+1484845,"Treebo Surya Comforts, 200 Mtrs From Kolhapur Railway Station",Kolhapur,West,Mixed,Leisure,Live,1905,2000,Flex,Dynamic,0,2540,-13,1429,1917,2013,1419,2646,2696,2000,OAK
+1075048,Treebo Surya Yatri Niwas,Belgaum,South 1,Mixed,Non-Metro,Live,1305,1370,Nonflex,Dynamic,0,1740,-19,1305,1323,1389,1351,1891,1891,1370,OAK
+1202478,Treebo The Alpine Heritage Residency,Shimla,North 2,Summer Leisure,Leisure,Churn,1905,2000,Flex,Dynamic,0,2540,2000,1429,,0,2209,2646,2646,2000,MAPLE
+1322624,Royal Cm - City Center Churned,Jaipur,North 1,Mixed,Non-Metro,Churn,1691,1776,Flex,Dynamic,0,2255,1776,1268,,0,1757,2349,2449,1776,ACACIA
+2018949,Treebo Three Drops,Bangalore,South 1,Tier-1 Business,Metro,Live,1428,1500,Nonflex,Static,0,1904,-75,1428,1499,1574,1409,2070,2070,1500,OAK
+1508506,Treebo Tulip,Pune,West,Tier-1 Business,Metro,Live,1785,1874,Flex,Dynamic,0,2380,-12,1339,1797,1886,1519,2479,2529,1874,ACACIA
+1503668,Yash Inn Kharadi Churned,Pune,West,Tier-1 Business,Metro,Churn,1074,1128,Flex,Dynamic,0,1432,1128,1074,,0,#N/A,1492,1592,1128,OAK
+1523755,Treebo Z,Bhilwara,North 1,Winter Leisure,Non-Metro,Churn,1760,1848,Nonflex,Dynamic,0,2347,1848,1760,,0,#N/A,2551,2551,1848,MAPLE
+0436744,Treebo House Inn,Noida,North 1,Tier-1 Business,Metro,Churn,1470,1544,Flex,Dynamic,0,1960,1544,1103,,0,1114,2042,2083,1544,OAK
+3005986,Treebo Iffco Chowk,Gurgaon,North 1,Tier-1 Business,Metro,Churn,1502,1577,Nonflex,Dynamic,0,2003,1577,1502,,0,#N/A,2177,2484,1577,MAPLE
+1472508,"Itsy Hotels Igloo Residency, 400 Meters From Raja Seat Garden",Coorg,South 1,Summer Leisure,Leisure,Live,1277,1340,Nonflex,Dynamic,0,1703,-129,1277,1400,1470,1442,1850,1850,1340,OAK
+2089527,Treebo Indrapuri Hotel & Resort Siliguri Junction,Siliguri,East,Mixed,Non-Metro,Live,1540,1617,Flex,Static,0,2053,-10,1155,1550,1627,1692,2139,2139,1617,ACACIA
+1549002,Infinity View Mahabaleswar Churned,Mahabaleshwar,West,Winter Leisure,Leisure,Churn,1643,1725,Nonflex,Dynamic,0,2191,1725,1643,,0,0,2381,2679,1725,OAK
+1246347,Treebo Innside,Chennai,South 2,Tier-1 Business,Metro,Live,1737,1824,Flex,Dynamic,0,2316,-11,1303,1748,1836,1878,2413,2513,1824,OAK
+1504217,Treebo Iris Suites,Pune,West,Tier-1 Business,Metro,Live,2000,2100,Nonflex,Dynamic,0,2667,-209,2000,2200,2310,#N/A,2899,2899,2100,MAPLE
+1596716,Itsy Hotels J A Royal Suites Manikonda,Hyderabad,South 2,Tier-1 Business,Metro,Live,1666,1750,Nonflex,Dynamic,0,2221,-87,1666,1749,1837,1226,2415,2415,1750,MAPLE
+1269686,Itsy Hotels Jansi Residency,Coimbatore,South 2,Tier-2 Business,Non-Metro,Live,1738,1825,Flex,Dynamic,0,2317,-12,1304,1749,1837,815,2414,2463,1825,OAK
+2068277,Treebo Jayshree Palace C21 Business Park,Indore,West,Tier-2 Business,Non-Metro,Churn,1028,1080,Flex,Dynamic,0,1371,1080,1028,,0,#N/A,1428,1488,1080,OAK
+2034103,Treebo Jd Residency Mohali,Chandigarh,North 2,Mixed,Non-Metro,Live,1691,1775,Flex,Dynamic,0,2255,89,1268,1605,1686,#N/A,2348,2396,1775,OAK
+1316764,Jheel Mahal Churned,Udaipur,North 1,Winter Leisure,Leisure,Churn,1303,1368,Flex,Dynamic,0,1737,1368,1253,,0,2361,1810,1810,1368,OAK
+2015296,Treebo JJ Residency,Bangalore,South 1,Tier-1 Business,Metro,Live,1172,1231,Flex,Static,0,1563,-11,1122,1182,1241,635,1628,1664,1231,OAK
+0543621,Treebo Jp Cottage,Mahabaleshwar,West,Winter Leisure,Leisure,Live,1611,1691,Partner,Static,0,2148,710,1611,935,981,3029,2237,2237,1691,OAK
+1519473,Hotels K K Residency Staywell Churned,Roorkee,North 2,Mixed,Non-Metro,Churn,1368,1436,Flex,Dynamic,0,1824,1436,1318,,0,2100,1900,2000,1436,ACACIA
+1581429,"Kaira Resort With Pool View, 5 Km From Jim Corbett Jungle Safari Churned",Ramnagar,North 2,Summer Leisure,Leisure,Churn,1286,1350,Flex,Dynamic,0,1715,1350,1236,,0,#N/A,1786,1964,1350,MAPLE
+1122516,Treebo Kanopy Greens,Dehradun,North 2,Mixed,Leisure,Live,1221,1282,Flex,Static,0,1628,-8,1171,1229,1290,#N/A,1696,1731,1282,OAK
+0616586,Treebo King'S Court Chandrasekharpur,Bhubaneswar,East,Mixed,Non-Metro,Live,1738,1825,Flex,Dynamic,0,2317,-12,1304,1749,1837,2095,2414,2463,1825,OAK
+1157226,Treebo Kings Inn Vashi,Mumbai,West,Tier-1 Business,Metro,Live,1786,1876,Flex,Dynamic,0,2381,-12,1340,1798,1887,1218,2481,2531,1876,ACACIA
+2018989,"Treebo Kings Suits, Hsr Layout",Bangalore,South 1,Tier-1 Business,Metro,Live,2532,2658,Flex,Dynamic,0,3376,-17,1899,2547,2675,3405,3516,3616,2658,OAK
+1921658,Treebo Kingsbury Fiesta Vellore,Vellore,South 2,Mixed,Non-Metro,Live,2349,2466,Flex,Dynamic,0,3132,-16,1762,2364,2482,1826,3262,3328,2466,OAK
+1462197,"Treebo Komfort Suites, 3 Km From Mysore Palace",Mysore,South 1,Mixed,Leisure,Live,1785,1874,Flex,Dynamic,0,2380,-42,1339,1825,1916,5179,2479,2529,1874,OAK
+2018445,Itsy Hotels Kozy Rooms,Bangalore,South 1,Tier-1 Business,Metro,Live,1719,1805,Nonflex,Static,0,2292,-90,1719,1805,1895,3405,2491,2491,1805,OAK
+2059540,Treebo Kruthika Residency,Hyderabad,South 2,Tier-1 Business,Metro,Live,1905,2000,Nonflex,Dynamic,0,2540,-100,1905,2000,2100,1582,2761,2761,2000,MAPLE
+1837134,Treebo Kumily Gate Thekkady,Thekkady,South 1,Winter Leisure,Leisure,Live,1905,2000,Nonflex,Dynamic,0,2540,-520,1905,2400,2520,3850,2761,2761,2000,MAPLE
+1989439,"Treebo Laa Gardenia Resort, Yelagiri",Yelagiri,South 2,Summer Leisure,Leisure,Live,2161,2269,Flex,Dynamic,0,2881,-15,1621,2175,2283,1957,3001,3062,2269,MAHOGANY
+1371524,Treebo Lake Bloom Powai,Mumbai,West,Tier-1 Business,Metro,Live,2349,2466,Flex,Dynamic,0,3132,-16,1762,2364,2482,1901,3262,3328,2466,OAK
+2083696,Treebo Lalaji's Executive,Aurangabad,West,Tier-2 Business,Non-Metro,Live,1809,1900,Flex,Dynamic,0,2412,-12,1357,1821,1912,1734,2513,2563,1900,OAK
+0386234,Treebo Lands End Beach Resort Morjim,Goa,West,Winter Leisure,Leisure,Live,1714,1800,Nonflex,Dynamic,0,2285,-90,1714,1800,1890,#N/A,2484,2484,1800,OAK
+1613672,Treebo Lazystay Grand Patia,Bhubaneswar,East,Mixed,Non-Metro,Churn,1563,1641,Partner,Static,0,2084,1641,1563,,0,1509,2171,2371,1641,ACACIA
+1442173,"Treebo Light House, 900 Mtrs From Botanical Garden",Ooty,South 1,Summer Leisure,Leisure,Live,1584,1663,Flex,Dynamic,0,2112,-10,1188,1594,1674,1517,2200,2250,1663,OAK
+2022899,Treebo Little Budhha,Varanasi,North 2,Mixed,Non-Metro,Live,1428,1500,Flex,Dynamic,0,1904,-9,1378,1437,1509,522,1984,2043,1500,MAPLE
+1507161,Treebo Lotus Baner,Pune,West,Tier-1 Business,Metro,Live,1667,1750,Flex,Dynamic,0,2223,-11,1250,1677,1761,1446,2315,2315,1750,OAK
+1501341,"Treebo Luxe Suite, Shivaji Nagar",Pune,West,Tier-1 Business,Metro,Churn,2196,2306,Flex,Dynamic,0,2928,2306,1647,,0,557,3050,3283,2306,MAPLE
+2053245,Treebo M2m Residency Sector 46,Gurgaon,North 1,Tier-1 Business,Metro,Live,1503,1578,Flex,Dynamic,0,2004,-10,1127,1512,1588,623,2087,2130,1578,MAPLE
+1261979,Treebo Magnum Chandigarh,Chandigarh,North 2,Mixed,Non-Metro,Live,1190,1250,Nonflex,Static,0,1587,-62,1190,1250,1312,1715,1725,1725,1250,OAK
+1204840,"Treebo Maharaja, Near Mall Road",Shimla,North 2,Summer Leisure,Leisure,Live,1503,1578,Flex,Dynamic,0,2004,-13,1127,1515,1591,1132,2087,2130,1578,OAK
+1383290,"Treebo Majestic Palms, 2 Km From Colva Beach",Goa,West,Winter Leisure,Leisure,Live,1762,1850,Nonflex,Dynamic,0,2349,-93,1762,1850,1943,1543,2553,2553,1850,OAK
+2050166,Treebo Malhaar Regency,Pune,West,Tier-1 Business,Metro,Live,2023,2124,Flex,Dynamic,0,2697,-139,1517,2156,2263,1267,2810,2910,2124,OAK
+2058082,"Treebo Mall View, Dlf Phase Ii",Gurgaon,North 1,Tier-1 Business,Metro,Live,1749,1836,Flex,Dynamic,0,2332,-11,1312,1760,1848,919,2429,2529,1836,OAK
+1609002,"Treebo Mayur, Mall Road",Mussoorie,North 2,Summer Leisure,Leisure,Live,2191,2300,Nonflex,Dynamic,0,2921,-115,2191,2301,2416,1970,3175,3175,2300,OAK
+1411710,Treebo Mira Inn,Kolkata,East,Tier-1 Business,Metro,Live,2023,2124,Flex,Dynamic,0,2697,-13,1517,2036,2138,2410,2810,2910,2124,OAK
+1434248,Treebo Modern Stays,Noida,North 1,Tier-1 Business,Metro,Live,1524,1600,Nonflex,Dynamic,0,2032,-81,1524,1600,1680,1475,2208,2208,1600,OAK
+1211759,Treebo Mona Grand,New Delhi,North 1,Tier-1 Business,Metro,Churn,1953,2050,Nonflex,Dynamic,0,2604,2050,1953,,0,1151,2830,2830,2050,OAK
+1298420,Treebo MVP Grand,Visakhapatnam,South 2,Tier-2 Business,Non-Metro,Live,1440,1512,Flex,Dynamic,0,1920,-9,1080,1449,1521,1484,2000,2041,1512,OAK
+1547789,Treebo Nakshatra Cottages Mahabaleshwar,Mahabaleshwar,West,Winter Leisure,Leisure,Live,2256,2369,Partner,Static,0,3008,1387,2256,935,981,4385,3133,3253,2369,OAK
+1412139,Treebo Naman'S Inn,Kolkata,East,Tier-1 Business,Metro,Live,1595,1675,Flex,Static,0,2127,-10,1196,1604,1685,1164,2215,2315,1675,OAK
+0325023,Treebo Natraj - Jaipur,Jaipur,North 1,Mixed,Non-Metro,Live,1878,1972,Flex,Dynamic,0,2504,-44,1409,1920,2016,2978,2609,2663,1972,OAK
+1508349,Treebo Naunidh Suites,Pune,West,Tier-1 Business,Metro,Live,1222,1283,Flex,Dynamic,0,1629,-106,1172,1323,1389,0,1697,1797,1283,MAPLE
+0245564,Treebo Nestlay Airport Alandur,Chennai,South 2,Tier-1 Business,Metro,Live,2547,2675,Flex,Dynamic,0,3396,-16,1910,2563,2691,2552,3538,3638,2675,OAK
+0243252,Treebo Nestlay Casa,Chennai,South 2,Tier-1 Business,Metro,Live,2395,2515,Flex,Dynamic,0,3193,-16,1796,2411,2531,931,3327,3395,2515,OAK
+0050525,"Treebo Premium Niraali Executive, Hinjewadi",Pune,West,Tier-1 Business,Metro,Live,2524,2650,Flex,Dynamic,0,3365,-16,1893,2539,2666,2391,3505,3555,2650,OAK
+2061639,Treebo Nirvana Elite,Indore,West,Tier-2 Business,Non-Metro,Live,1309,1374,Flex,Dynamic,0,1745,-56,1259,1362,1430,591,1818,1918,1374,OAK
+0371149,Treebo Olive Inn Near Bkc,Mumbai,West,Tier-1 Business,Metro,Live,3143,3300,Nonflex,Dynamic,0,4191,-165,3143,3300,3465,#N/A,4555,4555,3300,OAK
+0376508,Treebo Olive Nest,Mumbai,West,Tier-1 Business,Metro,Live,4321,4537,Flex,Dynamic,0,5761,-196,3241,4508,4733,3439,6001,6124,4537,MAHOGANY
+2698066,Om Villa With Mountain View Churned,Mukteshwar,North 2,Winter Leisure,Leisure,Churn,1714,1800,Flex,Dynamic,0,2285,1800,1286,,0,1639,2381,2381,1800,ACACIA
+1108510,Treebo Omega Stay Inn,Shillong,East,Summer Leisure,Leisure,Live,1361,1429,Flex,Dynamic,0,1815,-9,1311,1369,1438,2078,1890,1931,1429,OAK
+2065399,Treebo Omni Palace,Indore,West,Tier-2 Business,Non-Metro,Stop Sell,1100,1155,Flex,Dynamic,0,1467,-200,1100,1290,1355,1862,1528,1878,1155,OAK
+1767140,Treebo Orchid,Chikmagalur,South 1,Summer Leisure,Leisure,Live,1643,1725,Nonflex,Dynamic,0,2191,-86,1643,1725,1811,2001,2381,2481,1725,OAK
+1718873,Treebo Ortus Residency,Dharamshala,North 2,Summer Leisure,Leisure,Churn,2096,2200,Nonflex,Static,0,2795,-63,2096,2156,2263,2307,3037,3037,2200,OAK
+1429767,Pal Comfort Churned,Jamshedpur,East,Tier-2 Business,Non-Metro,Churn,1774,1863,Nonflex,Dynamic,0,2365,1863,1774,,0,1918,2571,2597,1863,OAK
+1169430,Itsy Hotels Palm Grove By D2V,Kochi,South 1,Mixed,Non-Metro,Churn,1179,1238,Flex,Dynamic,0,1572,1238,1129,,0,1900,1638,1839,1238,OAK
+1243813,Tia Value Churned,Chennai,South 2,Tier-1 Business,Metro,Churn,1423,1495,Flex,Dynamic,0,1897,1495,1373,,0,1047,1977,2116,1495,OAK
+0002365,Treebo Pappilon Palace - Pvs Circle,Mangalore,South 1,Mixed,Non-Metro,Live,1644,1726,Flex,Dynamic,0,2192,-10,1233,1654,1736,2097,2283,2330,1726,OAK
+0392605,Treebo Paradise,Ahmedabad,North 1,Tier-2 Business,Non-Metro,Stop Sell,1602,1682,Nonflex,Dynamic,0,2136,-315,1602,1903,1998,1892,2322,2622,1682,OAK
+1213894,Treebo Paras International,New Delhi,North 1,Tier-1 Business,Metro,Live,2191,2300,Nonflex,Dynamic,0,2921,-114,2191,2300,2414,2533,3175,3175,2300,OAK
+1136798,Treebo Park - 500m From Medical College,Thiruvananthapuram,South 1,Mixed,Non-Metro,Live,1857,1950,Nonflex,Dynamic,0,2476,-97,1857,1950,2047,#N/A,2692,2792,1950,OAK
+0050789,Treebo Park View Hadapsar,Pune,West,Tier-1 Business,Metro,Live,1905,2000,Flex,Dynamic,0,2540,-13,1429,1917,2013,460,2646,2696,2000,OAK
+2019809,Paul'S Inn Churnedd,Bangalore,South 1,Tier-1 Business,Metro,Churn,1028,1080,Flex,Dynamic,0,1371,1080,1028,,0,#N/A,1428,1499,1080,ACACIA
+2041595,Treebo Pawan Putra,Kolkata,East,Tier-1 Business,Metro,Live,1404,1474,Flex,Dynamic,0,1872,-10,1354,1413,1484,1680,1950,2050,1474,OAK
+0242206,Treebo Pechis Castle,Chennai,South 2,Tier-1 Business,Metro,Live,3006,3156,Flex,Dynamic,0,4008,-20,2255,3025,3176,1463,4175,4260,3156,OAK
+1166122,Treebo Petals Suites,Kochi,South 1,Mixed,Non-Metro,Live,1962,2060,Nonflex,Dynamic,0,2616,-103,1962,2060,2163,1876,2843,2843,2060,MAPLE
+0295705,"Treebo Premium Pl Grand, Visakhapatnam",Visakhapatnam,South 2,Tier-2 Business,Non-Metro,Live,2238,2350,Flex,Dynamic,0,2984,-15,1679,2252,2365,2276,3108,3307,2350,OAK
+1596003,Treebo Pride Inn Botanica,Hyderabad,South 2,Tier-1 Business,Metro,Live,1597,1677,Flex,Dynamic,0,2129,-10,1198,1607,1687,1739,2218,2263,1677,OAK
+2016293,"Primeland Suites, Mailasandra Churned",Bangalore,South 1,Tier-1 Business,Metro,Churn,1114,1170,Flex,Dynamic,0,1485,1170,1114,,0,1409,1548,1563,1170,OAK
+1492320,Treebo Prince Palace,Panchgani,West,Winter Leisure,Leisure,Churn,1333,1400,Nonflex,Dynamic,0,1777,1400,1333,,0,7150,1932,1932,1400,OAK
+1473539,Treebo Punarnava Bypass Road,Chikmagalur,South 1,Summer Leisure,Leisure,Churn,1333,1399,Flex,Dynamic,0,1777,1399,1283,,0,1493,1851,1951,1399,OAK
+2016826,Purple Orchid Boutique Churned,Bangalore,South 1,Tier-1 Business,Metro,Churn,1628,1710,Nonflex,Dynamic,0,2171,1710,1628,,0,2569,2360,2384,1710,OAK
+1549799,Raaya Regency Churned,Mahabaleshwar,West,Winter Leisure,Leisure,Churn,720,756,Flex,Dynamic,0,1188,756,891,,0,4385,1000,1756,756,MAHOGANY
+1416642,Treebo Radhe Palace,Kolkata,East,Tier-1 Business,Metro,Live,2066,2170,Flex,Static,0,2755,-13,1550,2079,2183,1410,2870,2929,2170,OAK
+1253706,Treebo Premium Raffis' Andalusia Bay Way,Pondicherry,South 2,Winter Leisure,Leisure,Live,1428,1500,Nonflex,Dynamic,0,1904,-75,1428,1499,1574,1992,2070,2070,1500,OAK
+1297390,Treebo Rainbow Grand,Visakhapatnam,South 2,Tier-2 Business,Non-Metro,Live,1409,1479,Flex,Dynamic,0,1879,-9,1359,1418,1488,942,1957,1997,1479,OAK
+1331605,"Raj Garden, Near Pushkar Lake Churned",Pushkar,North 1,Winter Leisure,Leisure,Churn,1390,1459,Flex,Dynamic,0,1853,1459,1340,,0,1609,1931,1931,1459,OAK
+0018651,"Treebo Raj Premier, Indiranagar",Bangalore,South 1,Tier-1 Business,Metro,Live,3141,3298,Nonflex,Static,0,4188,-165,3141,3298,3463,1872,4552,4652,3298,OAK
+1505657,Treebo Ranjeet Shivaji Nagar,Pune,West,Tier-1 Business,Metro,Live,2630,2762,Flex,Dynamic,0,3507,-18,1973,2647,2779,#N/A,3653,3728,2762,OAK
+1978478,Treebo Red Petal Jalandhar,Jalandhar,North 2,Tier-2 Business,Non-Metro,Live,1714,1800,Nonflex,Dynamic,0,2285,-90,1714,1800,1890,1368,2484,2484,1800,OAK
+1503376,"Treebo Regency - Bund Garden, Dhole Patil Road",Pune,West,Tier-1 Business,Metro,Live,2309,2424,Flex,Dynamic,0,3079,-15,1732,2324,2440,1496,3207,3307,2424,MAPLE
+1523837,Resto- Near Lucknow Railway Station Churned,Lucknow,North 2,Tier-2 Business,Non-Metro,Churn,942,990,Flex,Dynamic,0,1256,990,942,,0,1901,1309,1309,990,ACACIA
+1247345,Treebo Rithikha Inn Elite Chennai Trade Centre,Chennai,South 2,Tier-1 Business,Metro,Live,1762,1850,Flex,Dynamic,0,2349,-11,1322,1772,1861,1519,2447,2501,1850,OAK
+2046776,Treebo Rj Residency,Mysore,South 1,Mixed,Leisure,Live,1428,1500,Nonflex,Dynamic,0,1904,-75,1428,1499,1574,1721,2070,2070,1500,OAK
+2066561,Treebo Roshan House Near Mcleodganj,Dharamshala,North 2,Summer Leisure,Leisure,Live,1878,1972,Flex,Dynamic,0,2504,-45,1409,1922,2018,2201,2609,2663,1972,MAPLE
+2114621,"Royal Empire Adarsh Nagar, Chandigarh Churned",Chandigarh,North 2,Mixed,Non-Metro,Churn,909,955,Flex,Dynamic,0,1212,955,909,,0,875,1263,1263,955,ACACIA
+1509603,"Treebo Royal Imperio, Hinjewadi",Pune,West,Tier-1 Business,Metro,Live,1503,1578,Flex,Dynamic,0,2004,-10,1127,1512,1588,1662,2087,2130,1578,OAK
+2005798,Royal Splendid Churned,Bangalore,South 1,Tier-1 Business,Metro,Churn,993,1043,Flex,Dynamic,0,1324,1043,993,,0,1466,1379,1741,1043,OAK
+2079707,Treebo Royal Sun Palace Mp Nagar Zone 2,Bhopal,West,Mixed,Non-Metro,Live,1428,1500,Nonflex,Dynamic,0,1904,-75,1428,1499,1574,486,2070,2070,1500,OAK
+1506200,Treebo Sahara Shivaji Nagar,Pune,West,Tier-1 Business,Metro,Live,2381,2500,Flex,Dynamic,0,3175,-147,1786,2521,2647,1848,3307,3307,2500,OAK
+1342084,Sai Samrat Resort Satara Churned,Satara,West,Winter Leisure,Leisure,Churn,1372,1440,Flex,Dynamic,0,1829,1440,1322,,0,1385,1905,1980,1440,MAPLE
+2012411,Treebo Sai Suites Inn Nagavara,Bangalore,South 1,Tier-1 Business,Metro,Live,1205,1265,Nonflex,Dynamic,0,1607,-64,1205,1265,1329,2538,1746,1846,1265,OAK
+2052900,Treebo Sai Village Gold Souk - Sec 43,Gurgaon,North 1,Tier-1 Business,Metro,Live,1619,1700,Nonflex,Dynamic,0,2159,-85,1619,1700,1785,#N/A,2346,2346,1700,MAPLE
+2023460,Sai'S Urban Nest Churned,Vijayawada,South 2,Tier-2 Business,Non-Metro,Churn,991,1040,Flex,Dynamic,0,1321,1040,991,,0,#N/A,1376,1348,1040,MAPLE
+1244990,Treebo Samhaar Residency Thoraipakkam,Chennai,South 2,Tier-1 Business,Metro,Live,2355,2473,Nonflex,Dynamic,0,3140,-124,2355,2473,2596,1063,3413,3413,2473,OAK
+1473477,Treebo Sans Sarav Kushalnagar,Coorg,South 1,Summer Leisure,Leisure,Live,1524,1600,Flex,Dynamic,0,2032,-10,1143,1533,1610,1087,2116,2216,1600,OAK
+1512806,Treebo Sapphire Studio,Nashik,West,Mixed,Non-Metro,Live,2120,2226,Flex,Dynamic,0,2827,-14,1590,2133,2239,1667,2944,2944,2226,MAPLE
+2014111,Treebo Savoury Sea Shell Residency,Bangalore,South 1,Tier-1 Business,Metro,Live,1202,1263,Flex,Dynamic,0,1603,-8,1152,1210,1270,3736,1670,1770,1263,OAK
+1299102,Treebo Seabreeze Comforts,Visakhapatnam,South 2,Tier-2 Business,Non-Metro,Live,1456,1529,Flex,Dynamic,0,1941,-9,1092,1465,1538,999,2022,2063,1529,OAK
+1298362,Treebo Seaesta RK Beach,Visakhapatnam,South 2,Tier-2 Business,Non-Metro,Live,2089,2193,Flex,Dynamic,0,2785,-90,1567,2175,2283,1651,2901,3062,2193,OAK
+1986075,Shalimar In The Forest Matheran Churned,Matheran,West,Winter Leisure,Leisure,Churn,1234,1296,Flex,Dynamic,0,1645,1296,1184,,0,#N/A,1714,1905,1296,OAK
+1202644,"Shimla Ayurvedic Retreat, Kufri - Pure Veg Churned",Shimla,North 2,Summer Leisure,Leisure,Churn,1429,1500,Flex,Dynamic,0,1905,1500,1379,,0,1834,1984,2050,1500,OAK
+1545973,Shindola Resort Churned,Mahabaleshwar,West,Winter Leisure,Leisure,Churn,1320,1386,Nonflex,Dynamic,0,1760,1386,1320,,0,#N/A,1913,2168,1386,ACACIA
+1524505,Shivam Inn Near Singapore Mall Churned,Lucknow,North 2,Tier-2 Business,Non-Metro,Churn,1417,1488,Flex,Dynamic,0,1889,1488,1367,,0,#N/A,1968,2068,1488,OAK
+0063794,Treebo Shivani,Indore,West,Tier-2 Business,Non-Metro,Live,1547,1625,Flex,Dynamic,0,2063,-90,1160,1633,1714,974,2149,2249,1625,OAK
+2076663,Itsy Hotels Shrey'S Inn Mallandur Road,Chikmagalur,South 1,Summer Leisure,Leisure,Live,1333,1400,Flex,Dynamic,0,1777,-9,1283,1342,1409,1031,1852,1902,1400,OAK
+1182758,Treebo Sidhartha Inn Baliapanda,Puri,East,Mixed,Leisure,Live,1597,1677,Flex,Dynamic,0,2129,-10,1198,1607,1687,1083,2218,2263,1677,OAK
+1528968,Silver Grand Churned,Lucknow,North 2,Tier-2 Business,Non-Metro,Churn,1044,1096,Flex,Dynamic,0,1392,1096,1044,,0,#N/A,1450,1488,1096,OAK
+1200151,"Treebo Silver Key, Marathahalli",Bangalore,South 1,Tier-1 Business,Metro,Stop Sell,1174,1233,Flex,Dynamic,0,1565,-9,1124,1183,1243,1294,1631,1631,1233,ACACIA
+1521562,Treebo Silver Stallion,Lucknow,North 2,Tier-2 Business,Non-Metro,Live,1221,1282,Flex,Static,0,1628,-29,1171,1248,1311,1175,1696,1731,1282,OAK
+1809628,Treebo Sky 5,Panchkula,North 2,Mixed,Non-Metro,Live,1619,1700,Nonflex,Dynamic,0,2159,-85,1619,1700,1785,463,2346,2346,1700,OAK
+1446075,Treebo Skydale Inn & Suites With Mountain View,Ooty,South 1,Summer Leisure,Leisure,Live,2489,2613,Flex,Dynamic,0,3319,-16,1867,2504,2629,2847,3457,3528,2613,OAK
+1453106,Treebo Sls Grand,Tirupati,South 2,Mixed,Leisure,Live,1355,1423,Flex,Dynamic,0,1807,-9,1305,1364,1432,1305,1882,1882,1423,OAK
+2041400,Treebo Soho Newtown,Kolkata,East,Tier-1 Business,Metro,Live,1333,1400,Flex,Dynamic,0,1777,-9,1283,1342,1409,#N/A,1852,1902,1400,OAK
+1365209,"Treebo Sonal Palace, Near Umaid Bhawan Palace",Jodhpur,North 1,Winter Leisure,Leisure,Live,1691,1775,Flex,Dynamic,0,2255,-11,1268,1701,1786,2442,2348,2396,1775,OAK
+0256107,"Treebo South Avenue, 700 Mts From Promenade Beach",Pondicherry,South 2,Winter Leisure,Leisure,Live,1476,1550,Flex,Dynamic,0,1968,-10,1107,1486,1560,2678,2050,2097,1550,OAK
+1319225,Spirit Residency Churned,Udaipur,North 1,Winter Leisure,Leisure,Churn,1371,1440,Flex,Dynamic,0,1828,1440,1321,,0,2151,1905,1905,1440,OAK
+1418069,Treebo Sreema,Kolkata,East,Tier-1 Business,Metro,Live,1689,1774,Flex,Static,0,2252,-11,1267,1700,1785,1408,2346,2346,1774,OAK
+1417406,Treebo Sreema Saltlake,Kolkata,East,Tier-1 Business,Metro,Live,2187,2296,Flex,Static,0,2916,-15,1640,2201,2311,1408,3037,3037,2296,OAK
+1414116,Treebo Sreemaa Newtown,Kolkata,East,Tier-1 Business,Metro,Live,1691,1775,Flex,Dynamic,0,2255,-11,1268,1701,1786,951,2348,2396,1775,OAK
+1594795,Treebo Srico,Hyderabad,South 2,Tier-1 Business,Metro,Live,1762,1850,Nonflex,Dynamic,0,2349,-54,1762,1813,1904,1996,2553,2553,1850,OAK
+1207589,Srishti Vaikunth With Mountain View Churned,Shimla,North 2,Summer Leisure,Leisure,Churn,1286,1350,Flex,Dynamic,0,1715,1350,1236,,0,2251,1786,1786,1350,OAK
+1291664,Treebo Sriz Cozy Seethamadhara,Visakhapatnam,South 2,Tier-2 Business,Non-Metro,Live,1529,1605,Flex,Dynamic,0,2039,-10,1147,1538,1615,1335,2123,2166,1605,OAK
+2011692,Treebo Stay Tuned Jp Nagar,Bangalore,South 1,Tier-1 Business,Metro,Live,1905,2000,Nonflex,Dynamic,0,2540,-100,1905,2000,2100,1002,2761,2861,2000,OAK
+1502048,Treebo Sumati Baner,Pune,West,Tier-1 Business,Metro,Live,1973,2071,Flex,Dynamic,0,2631,-13,1480,1986,2085,1116,2740,2995,2071,OAK
+1384871,Treebo Sunheads,Goa,West,Winter Leisure,Leisure,Live,1742,1829,Partner,Static,0,2323,-53,1742,1792,1882,2433,2419,2740,1829,ACACIA
+1769318,Treebo Sunrise Ig Road,Chikmagalur,South 1,Summer Leisure,Leisure,Churn,1714,1800,Nonflex,Dynamic,0,2285,-53,1714,1764,1852,2076,2484,2484,1800,OAK
+1596837,Itsy Hotels Sunrise Grand,Hyderabad,South 2,Tier-1 Business,Metro,Live,1409,1479,Flex,Dynamic,0,1879,-33,1359,1441,1513,2098,1957,1997,1479,OAK
+2063608,Treebo Symphony Hotels And Resorts Angamally,Thrissur,South 1,Tier-2 Business,Non-Metro,Live,1356,1424,Flex,Dynamic,0,1808,-119,1306,1470,1544,1757,1884,1984,1424,OAK
+2026177,"Tao Residency, 2 Minutes Walk From Baga Beach Churned",Goa,West,Winter Leisure,Leisure,Churn,1028,1080,Flex,Dynamic,0,1371,1080,1028,,0,#N/A,1428,1428,1080,OAK
+1595009,Treebo Tee,Hyderabad,South 2,Tier-1 Business,Metro,Live,1691,1775,Flex,Dynamic,0,2255,-11,1268,1701,1786,445,2348,2396,1775,MAPLE
+0327829,Treebo The Anchorage Malviya Nagar,Jaipur,North 1,Mixed,Non-Metro,Live,1384,1453,Flex,Dynamic,0,1845,-9,1334,1392,1462,1627,1922,1965,1453,MAPLE
+1547072,Treebo The Appa'S Resort,Mahabaleshwar,West,Winter Leisure,Leisure,Churn,1714,1800,Nonflex,Dynamic,0,2285,1800,1714,,0,6251,2484,2484,1800,MAPLE
+1617763,Treebo The Bollywood,Bhubaneswar,East,Mixed,Non-Metro,Live,1785,1874,Flex,Dynamic,0,2380,-12,1339,1797,1886,1046,2479,2579,1874,MAPLE
+1552774,Treebo The Boss,Nagpur,West,Tier-2 Business,Non-Metro,Churn,1714,1800,Nonflex,Dynamic,0,2285,1800,1714,,0,848,2484,2484,1800,OAK
+1438288,Treebo The Eden Roc,Noida,North 1,Tier-1 Business,Metro,Live,1312,1377,Flex,Dynamic,0,1749,-62,1262,1371,1440,1269,1822,1872,1377,OAK
+2031448,Treebo The Fresco Lake Pichola,Udaipur,North 1,Winter Leisure,Leisure,Live,1878,1972,Flex,Dynamic,0,2504,-45,1409,1922,2018,2450,2609,2663,1972,OAK
+3001642,Treebo The Galaxy Chandapura,Bangalore,South 1,Tier-1 Business,Metro,Live,1150,1207,Flex,Static,0,1533,-8,1100,1157,1215,2585,1597,1632,1207,OAK
+2008591,Treebo The Grand Skyla Marathahalli,Bangalore,South 1,Tier-1 Business,Metro,Live,1878,1972,Flex,Dynamic,0,2504,-12,1409,1890,1985,693,2609,2663,1972,MAPLE
+2027305,Treebo The Horizon Kankanady,Mangalore,South 1,Mixed,Non-Metro,Live,1547,1625,Flex,Dynamic,0,2063,-10,1160,1557,1635,1093,2149,2399,1625,OAK
+2021888,Treebo The Kings Plaza,New Delhi,North 1,Tier-1 Business,Metro,Churn,2191,2300,Nonflex,Dynamic,0,2921,2300,2191,,0,892,3175,3175,2300,OAK
+2076114,Treebo The Meridian,Chikmagalur,South 1,Summer Leisure,Leisure,Live,1714,1800,Flex,Dynamic,0,2285,-11,1286,1725,1811,2780,2381,2431,1800,OAK
+1368078,Treebo The Pearl Bliss,Patna,East,Tier-2 Business,Non-Metro,Live,2000,2100,Nonflex,Static,0,2667,-105,2000,2100,2205,470,2899,2899,2100,OAK
+1152305,Treebo The Qasr,Kochi,South 1,Mixed,Non-Metro,Live,1881,1975,Flex,Dynamic,0,2508,-12,1411,1893,1988,1388,2613,2613,1975,OAK
+2031596,"Treebo The Regal House, Near Fateh Sagar Lake",Udaipur,North 1,Winter Leisure,Leisure,Live,1428,1500,Flex,Dynamic,0,1904,-9,1378,1437,1509,1594,1984,2130,1500,MAPLE
+1516017,"Treebo The Utsav, Nashik",Nashik,West,Mixed,Non-Metro,Live,1905,2000,Nonflex,Dynamic,0,2540,-100,1905,2000,2100,1920,2761,2761,2000,MAPLE
+1167277,Treebo Thoduvas Star Plaza Cochin Airport,Kochi,South 1,Mixed,Non-Metro,Live,1238,1300,Nonflex,Dynamic,0,1651,164,1238,1082,1136,1075,1794,1794,1300,OAK
+1169924,Treebo Time Square Marine Drive,Kochi,South 1,Mixed,Non-Metro,Live,1785,1874,Flex,Dynamic,0,2380,-12,1339,1797,1886,883,2479,2529,1874,OAK
+1219083,Treebo TMS Residency,New Delhi,North 1,Tier-1 Business,Metro,Churn,1333,1399,Flex,Dynamic,0,1777,1399,1283,,0,891,1851,2125,1399,OAK
+1532001,Treebo Umal Homestay Ganeshguri,Guwahati,East,Mixed,Non-Metro,Live,1456,1529,Flex,Dynamic,0,1941,-9,1092,1465,1538,1210,2022,2063,1529,OAK
+1183993,Hotels Unique Churned,Amritsar,North 2,Mixed,Non-Metro,Churn,930,977,Flex,Dynamic,0,1240,977,930,,0,993,1292,1292,977,OAK
+1243669,Treebo Vapr Guindy Ekkatuthangal,Chennai,South 2,Tier-1 Business,Metro,Live,2832,2974,Flex,Dynamic,0,3776,-18,2124,2850,2992,2232,3934,3934,2974,MAPLE
+0207833,Treebo Varuna With Mountain View,Shimla,North 2,Summer Leisure,Leisure,Live,2690,2824,Flex,Dynamic,0,3587,-18,2018,2707,2842,3292,3736,3836,2824,MAPLE
+1414822,Treebo Vedanta,Kolkata,East,Tier-1 Business,Metro,Live,1878,1972,Flex,Dynamic,0,2504,-12,1409,1890,1985,0,2609,2663,1972,OAK
+2054468,Treebo Vhyomaan Resort,Mahabaleshwar,West,Winter Leisure,Leisure,Churn,1714,1800,Nonflex,Dynamic,0,2285,1800,1714,,0,0,2484,2484,1800,OAK
+1508008,Treebo Vikrant Residency,Pune,West,Tier-1 Business,Metro,Live,1596,1675,Flex,Dynamic,0,2128,-10,1197,1605,1686,0,2216,2266,1675,OAK
+2087086,Treebo Villa Inn Aurangabad,Aurangabad,West,Tier-2 Business,Non-Metro,Live,1490,1565,Flex,Dynamic,0,1987,-9,1118,1499,1574,0,2070,2070,1565,MAPLE
+1267636,Treebo Vinayak Inn,Coimbatore,South 2,Tier-2 Business,Non-Metro,Live,1878,1972,Flex,Dynamic,0,2504,-12,1409,1890,1985,0,2609,2663,1972,OAK
+1916713,Treebo Vista Lago With Lake View,Bhimtal,North 2,Summer Leisure,Leisure,Live,2230,2341,Flex,Dynamic,0,2973,-52,1673,2280,2394,0,3097,3160,2341,MAPLE
+0471678,"Treebo Vrindavan, 3 Km From Madikeri Fort",Coorg,South 1,Summer Leisure,Leisure,Live,2857,3000,Nonflex,Reverse,0,3809,-150,2857,3000,3150,0,4141,4141,3000,OAK
+1378112,Welcome Apartments Churned,Mumbai,West,Tier-1 Business,Metro,Churn,3278,3441,Nonflex,Dynamic,0,4371,3441,3278,,0,0,4750,4750,3441,OAK
+2016749,Treebo White Inn,Bangalore,South 1,Tier-1 Business,Metro,Live,1571,1650,Nonflex,Static,0,2095,-82,1571,1650,1732,0,2277,2377,1650,OAK
+2016962,Treebo White Inn Koramangala,Bangalore,South 1,Tier-1 Business,Metro,Live,1571,1650,Nonflex,Static,0,2095,-82,1571,1650,1732,#N/A,2277,2377,1650,MAPLE
+1114303,Treebo Winsome Banquet And Resort,Ranchi,East,Tier-2 Business,Non-Metro,Live,1809,1900,Nonflex,Static,0,2412,-95,1809,1899,1994,0,2622,2622,1900,OAK
+0544853,Treebo Winter Town Venna Lake,Mahabaleshwar,West,Winter Leisure,Leisure,Live,1565,1644,Partner,Static,0,2087,662,1565,935,981,0,2174,2174,1644,OAK
+2002535,Treebo Worldtree Manyata Thanisandra,Bangalore,South 1,Tier-1 Business,Metro,Churn,1850,1943,Nonflex,Dynamic,0,2467,1943,1850,,0,0,2681,2681,1943,MAPLE
+2047256,Yajna Comforts Churned,Coorg,South 1,Summer Leisure,Leisure,Churn,2356,2473,Nonflex,Dynamic,0,3141,2473,2356,,0,#N/A,3414,3414,2473,OAK
+2011362,"Treebo Yc Grand Boutique, Electronic City",Bangalore,South 1,Tier-1 Business,Metro,Churn,1515,1591,Nonflex,Dynamic,0,2020,1591,1515,,0,#N/A,2196,2346,1591,OAK
+1397884,"Aakash,100 Mts From Sardar Patel Stadium Churned",Ahmedabad,North 1,Tier-2 Business,Non-Metro,Churn,1070,1124,Nonflex,Dynamic,0,1427,1124,1070,,0,453,1551,1551,1124,ACACIA
+2011740,Treebo Akshaya Mayflower Vijaya Bank Layout,Bangalore,South 1,Tier-1 Business,Metro,Live,1476,1550,Nonflex,Static,0,1968,-78,1476,1550,1627,1861,2139,2139,1550,OAK
+2035878,Hotels Albie Stay Inn Churned,Chandigarh,North 2,Mixed,Non-Metro,Churn,900,945,Flex,Dynamic,0,1200,945,900,,0,1115,1250,1250,945,OAK
+1479470,Hotels Allaranda Homestay Churned,Coorg,South 1,Summer Leisure,Leisure,Churn,1368,1436,Flex,Dynamic,0,1824,1436,1318,,0,1415,1900,1950,1436,ACACIA
+1709272,Itsy Hotels Ammu Regency,Thrissur,South 1,Tier-2 Business,Non-Metro,Live,1547,1625,Flex,Dynamic,0,2063,-244,1160,1780,1869,943,2149,2249,1625,OAK
+1462071,Hotels Anurag Inn Churned,Mysore,South 1,Mixed,Leisure,Churn,834,875,Flex,Dynamic,0,1188,875,891,,0,1140,1158,1186,875,OAK
+0042415,Itsy Hotels Arastu Inn,Hyderabad,South 2,Tier-1 Business,Metro,Live,1573,1652,Flex,Dynamic,0,2097,-11,1180,1583,1663,1465,2185,2230,1652,OAK
+1214016,Itsy Hotels Arien International,New Delhi,North 1,Tier-1 Business,Metro,Stop Sell,1619,1700,Nonflex,Dynamic,0,2159,-50,1619,1666,1750,2469,2346,2346,1700,OAK
+1206897,Itsy Hotels Avantika With Forest View,Shimla,North 2,Summer Leisure,Leisure,Live,1409,1479,Flex,Dynamic,0,1879,-9,1359,1418,1488,672,1957,1997,1479,ACACIA
+1553644,Itsy Hotels Carnival Inn,Nagpur,West,Tier-2 Business,Non-Metro,Live,1315,1381,Flex,Dynamic,0,1753,-9,1265,1324,1390,1442,1827,1864,1381,OAK
+2043854,Itsy Hotels Vizima,Noida,North 1,Tier-1 Business,Metro,Churn,1483,1557,Flex,Dynamic,0,1977,1557,1112,,0,1593,2060,2225,1557,OAK
+1765577,Hotels Colors Stay Churned,Chikmagalur,South 1,Summer Leisure,Leisure,Churn,862,906,Flex,Dynamic,0,1188,906,891,,0,#N/A,1198,1331,906,ACACIA
+2017198,Comfort Delight Churneds,Bangalore,South 1,Tier-1 Business,Metro,Churn,951,999,Flex,Dynamic,0,1268,999,951,,0,#N/A,1321,1348,999,OAK
+2024299,"Treebo Comforts Inn, University Road Deralakatte",Mangalore,South 1,Mixed,Non-Metro,Live,1714,1800,Nonflex,Dynamic,0,2285,-90,1714,1800,1890,777,2484,2484,1800,OAK
+1214931,Itsy Hotels Connaught Mews,New Delhi,North 1,Tier-1 Business,Metro,Live,2442,2564,Flex,Dynamic,0,3256,-15,1832,2457,2580,#N/A,3392,3461,2564,MAPLE
+1243281,Itsy Hotels Deluxe Inn,Chennai,South 2,Tier-1 Business,Metro,Live,1926,2022,Flex,Dynamic,0,2568,-13,1445,1938,2035,1005,2675,2729,2022,ACACIA
+1165811,Itsy Hotels Dew Dreams,Kochi,South 1,Mixed,Non-Metro,Live,1279,1342,Nonflex,Dynamic,0,1705,-68,1279,1343,1410,1277,1853,1893,1342,OAK
+1241567,Treebo Elite Inn,Chennai,South 2,Tier-1 Business,Metro,Live,2029,2130,Flex,Dynamic,0,2705,-13,1522,2041,2143,1760,2818,2876,2130,OAK
+1507163,Itsy Hotels Flowers Park,Nashik,West,Mixed,Non-Metro,Churn,1143,1201,Flex,Dynamic,0,1524,1201,1093,,0,1483,1588,1638,1201,ACACIA
+1237129,Itsy Hotels G Square,Vijayawada,South 2,Tier-2 Business,Non-Metro,Churn,1809,1900,Nonflex,Dynamic,0,2412,1900,1809,,0,#N/A,2622,2622,1900,OAK
+1896095,Itsy Hotels The Villa Retreat,Siliguri,East,Mixed,Non-Metro,Live,1285,1349,Flex,Dynamic,0,1713,-9,1235,1294,1358,1132,1785,1885,1349,OAK
+2014293,Hotels Guru Comforts Churned,Bangalore,South 1,Tier-1 Business,Metro,Churn,1156,1213,Flex,Dynamic,0,1541,1213,1106,,0,1195,1605,1705,1213,OAK
+1431818,Itsy Hotels Hamlets Stay,Noida,North 1,Tier-1 Business,Metro,Live,1428,1500,Flex,Dynamic,0,1904,-185,1378,1604,1685,8365,1984,2034,1500,OAK
+1372273,Hotels Heraa International Churned,Mumbai,West,Tier-1 Business,Metro,Churn,2247,2360,Nonflex,Dynamic,0,2996,2360,2247,,0,949,3257,3495,2360,OAK
+0509914,Itsy Hotels Hill View Ex,Pune,West,Tier-1 Business,Metro,Live,2048,2150,Flex,Dynamic,0,2731,-13,1536,2060,2163,3196,2844,2894,2150,OAK
+1558860,Itsy Hotels Aditya,Nagpur,West,Tier-2 Business,Non-Metro,Churn,2096,2200,Nonflex,Dynamic,0,2795,2200,2096,,0,1856,3037,3037,2200,OAK
+1591224,Itsy Hotels Aflah,Hyderabad,South 2,Tier-1 Business,Metro,Live,1197,1256,Flex,Dynamic,0,1596,-8,1147,1204,1265,1063,1662,1696,1256,OAK
+2014627,Hotels Bcp Suites Churned,Bangalore,South 1,Tier-1 Business,Metro,Churn,1301,1366,Nonflex,Dynamic,0,1735,1366,1301,,0,#N/A,1886,1924,1366,OAK
+1597962,Hotels Dunes Inn Churned,Hyderabad,South 2,Tier-1 Business,Metro,Churn,1122,1178,Flex,Dynamic,0,1496,1178,1122,,0,#N/A,1558,1668,1178,OAK
+2318705,Itsy Hotels Friends,Haldwani,North 2,Winter Leisure,Leisure,Churn,1029,1080,Flex,Dynamic,0,1372,1080,1029,,0,#N/A,1429,1451,1080,ACACIA
+1596105,Itsy Hotels Galaxy Park,Hyderabad,South 2,Tier-1 Business,Metro,Churn,949,996,Flex,Dynamic,0,1265,996,949,,0,#N/A,1318,1411,996,MAPLE
+3002526,"Itsy Hotels Green Villaa, 2 Km From Pondicherry Railway Station",Pondicherry,South 2,Winter Leisure,Leisure,Live,1080,1134,Flex,Dynamic,0,1440,-7,1080,1087,1141,1340,1500,1531,1134,OAK
+2011285,Itsy Hotels Hsr Comfort,Bangalore,South 1,Tier-1 Business,Metro,Stop Sell,1238,1300,Flex,Static,0,1651,43,1188,1197,1257,1260,1720,1770,1300,OAK
+1296259,Itsy Hotels MVP Check Inn,Visakhapatnam,South 2,Tier-2 Business,Non-Metro,Churn,1320,1386,Nonflex,Dynamic,0,1760,1386,1320,,0,533,1913,1932,1386,OAK
+1509340,Itsy Hotels Oasis Pride,Nashik,West,Mixed,Non-Metro,Live,1259,1321,Nonflex,Dynamic,0,1679,-67,1259,1322,1388,1185,1824,1824,1321,OAK
+2012319,Hotels Palm Emirates Churned,Bangalore,South 1,Tier-1 Business,Metro,Churn,968,1017,Flex,Dynamic,0,1291,1017,968,,0,1313,1345,1395,1017,OAK
+1483570,Itsy Hotels Ranjeet,Kolhapur,West,Mixed,Leisure,Live,1524,1600,Flex,Dynamic,0,2032,-10,1143,1533,1610,1221,2116,2166,1600,OAK
+2058301,Itsy Hotels Royal Galaxy,Prayagraj,North 2,Mixed,Non-Metro,Churn,1143,1200,Nonflex,Static,0,1524,-35,1143,1176,1235,#N/A,1656,1656,1200,ACACIA
+1414523,Itsy Hotels Transit Express,Kolkata,East,Tier-1 Business,Metro,Live,1456,1529,Flex,Dynamic,0,1941,-9,1092,1465,1538,1846,2022,2063,1529,ACACIA
+0016581,Treebo Worldtree Itpl,Bangalore,South 1,Tier-1 Business,Metro,Live,1512,1588,Flex,Dynamic,0,2016,-10,1134,1521,1598,#N/A,2100,2150,1588,OAK
+0012622,Itsy Hotels Worldtree Bellandur,Bangalore,South 1,Tier-1 Business,Metro,Stop Sell,1650,1732,Flex,Dynamic,0,2200,-165,1238,1807,1897,1393,2291,2538,1732,OAK
+1596728,"Itsy Hotels Infinity, Hitech City",Hyderabad,South 2,Tier-1 Business,Metro,Churn,1285,1350,Nonflex,Dynamic,0,1713,1350,1285,,0,1368,1863,1863,1350,OAK
+1559112,Treebo Ivory House,Nagpur,West,Tier-2 Business,Non-Metro,Live,1714,1800,Nonflex,Dynamic,0,2285,-90,1714,1800,1890,1474,2484,2484,1800,OAK
+1475870,Itsy Hotels Jammabane Cottage,Coorg,South 1,Summer Leisure,Leisure,Live,2381,2500,Nonflex,Reverse,0,3175,-125,2381,2500,2625,1499,3451,3451,2500,MAPLE
+2037799,Itsy Hotels Jashan,Chandigarh,North 2,Mixed,Non-Metro,Churn,1342,1409,Flex,Static,0,1789,1409,1292,,0,1791,1864,1864,1409,ACACIA
+1462008,Hotels Jasmine Churned,Mysore,South 1,Mixed,Leisure,Churn,964,1012,Flex,Dynamic,0,1285,1012,964,,0,1580,1339,1339,1012,MAPLE
+2033365,Hotels Kamron Churned,Chandigarh,North 2,Mixed,Non-Metro,Churn,1100,1155,Nonflex,Dynamic,0,1467,1155,1100,,0,#N/A,1594,1594,1155,OAK
+2014856,"Itsy Hotels Kes Residency, 10 Min From Ksr Bangalore City Junction",Bangalore,South 1,Tier-1 Business,Metro,Live,1118,1174,Nonflex,Dynamic,0,1491,-59,1118,1174,1233,844,1620,1670,1174,ACACIA
+1442176,Itsy Hotels Kottaram Residency,Ooty,South 1,Summer Leisure,Leisure,Live,1691,1775,Flex,Dynamic,0,2255,-11,1268,1701,1786,1999,2348,2396,1775,OAK
+1389298,Itsy Hotels La Prince Residency,Goa,West,Winter Leisure,Leisure,Churn,929,976,Flex,Dynamic,0,1239,976,929,,0,#N/A,1291,1434,976,OAK
+1556414,Itsy Hotels Le Clover,Nagpur,West,Tier-2 Business,Non-Metro,Live,1409,1479,Flex,Dynamic,0,1879,-9,1359,1418,1488,1066,1957,1997,1479,OAK
+1241870,Itsy Hotels Mirra,Chennai,South 2,Tier-1 Business,Metro,Live,2109,2214,Flex,Dynamic,0,2812,62,1582,2050,2152,1137,2929,3029,2214,MAPLE
+2029849,Morjim Pride Churneds,Goa,West,Winter Leisure,Leisure,Churn,1092,1147,Flex,Dynamic,0,1456,1147,1092,,0,956,1517,1548,1147,OAK
+1416724,Itsy Hotels Neeranand Plaza,Kolkata,East,Tier-1 Business,Metro,Live,1452,1524,Flex,Static,0,1936,-9,1089,1461,1534,1948,2016,2116,1524,OAK
+1165281,"Nirupama, 750m From Aluva Railway Station Churned",Kochi,South 1,Mixed,Non-Metro,Churn,1200,1260,Flex,Dynamic,0,1600,1260,1150,,0,1320,1667,1684,1260,ACACIA
+1464699,Nrm Residency Churned,Mysore,South 1,Mixed,Leisure,Churn,1025,1076,Flex,Dynamic,0,1367,1076,1025,,0,780,1423,1552,1076,OAK
+1978084,Hotels Oasis Inn Churned,Jalandhar,North 2,Tier-2 Business,Non-Metro,Churn,1654,1737,Nonflex,Static,0,2205,1737,1654,,0,836,2397,2551,1737,OAK
+1137116,Itsy Hotels Platinum Inn,Thiruvananthapuram,South 1,Mixed,Non-Metro,Live,1369,1437,Flex,Dynamic,0,1825,-9,1319,1378,1446,1523,1901,2001,1437,OAK
+2025487,Prakasam Residency Churned,Pondicherry,South 2,Winter Leisure,Leisure,Churn,943,990,Field,Static,0,1271,990,953,,0,#N/A,1310,1323,990,OAK
+1503929,Hotels Punest Churned,Pune,West,Tier-1 Business,Metro,Churn,973,1021,Flex,Dynamic,0,1297,1021,973,,0,529,1351,1399,1021,OAK
+2017775,Itsy Hotels Purple Suites,Bangalore,South 1,Tier-1 Business,Metro,Churn,1143,1200,Flex,Dynamic,0,1524,1200,1143,,0,1490,1587,1637,1200,ACACIA
+1168384,"Itsy Hotels Rain Tulsi Stayz, Palarivattom Junction",Kochi,South 1,Mixed,Non-Metro,Live,1214,1275,Flex,Dynamic,0,1619,-8,1164,1221,1282,946,1686,1786,1275,OAK
+2025247,"Itsy Hotels Red Lotus Heritage, Promenade Beach",Pondicherry,South 2,Winter Leisure,Leisure,Live,1550,1628,Flex,Dynamic,0,2067,-11,1163,1560,1638,2053,2153,2197,1628,MAPLE
+1477699,"Itsy Hotels Regalia Grand, 500 Mtrs From Madikeri Fort",Coorg,South 1,Summer Leisure,Leisure,Live,1221,1282,Flex,Dynamic,0,1628,-8,1171,1229,1290,823,1696,1731,1282,OAK
+1416878,Itsy Hotels Reotel,Kolkata,East,Tier-1 Business,Metro,Live,1315,1381,Flex,Static,0,1753,-9,1265,1324,1390,824,1827,1864,1381,OAK
+1247300,Itsy Hotels Rithika Inn Blossoms,Chennai,South 2,Tier-1 Business,Metro,Live,1691,1775,Flex,Dynamic,0,2255,-11,1268,1701,1786,1327,2348,2396,1775,OAK
+1458562,Itsy Hotels Riyas Grand,Tirupati,South 2,Mixed,Leisure,Live,1362,1430,Flex,Dynamic,0,1816,-8,1312,1370,1439,1252,1892,1930,1430,MAPLE
+1482055,Royal Monarch Churned,Gorakhpur,North 2,Mixed,Non-Metro,Churn,1232,1294,Nonflex,Dynamic,0,1643,1294,1232,,0,1641,1786,1786,1294,ACACIA
+1266806,Hotels Royal Residency Churned,Mohali,North 2,Tier-2 Business,Non-Metro,Churn,1020,1071,Flex,Dynamic,0,1360,1071,1020,,0,1097,1417,1465,1071,ACACIA
+1088246,Itsy Hotels Shillong Tower Guesthouse,Shillong,East,Summer Leisure,Leisure,Churn,1409,1479,Flex,Dynamic,0,1879,1479,1359,,0,967,1957,1997,1479,OAK
+1373515,Itsy Hotels Shivshakti,Aurangabad,West,Tier-2 Business,Non-Metro,Live,1381,1450,Nonflex,Dynamic,0,1841,-73,1381,1450,1523,1078,2001,2001,1450,OAK
+2016333,Itsy Hotels Shivas Kuteera,Bangalore,South 1,Tier-1 Business,Metro,Live,1547,1624,Nonflex,Dynamic,0,2063,-81,1547,1624,1706,3405,2242,2342,1624,OAK
+3001466,Itsy Hotels Shree Comforts,Bangalore,South 1,Tier-1 Business,Metro,Live,1387,1457,Flex,Dynamic,0,1849,-10,1337,1397,1466,3405,1927,2064,1457,OAK
+1557929,Itsy Hotels Shri Guru Service Apartment,Nagpur,West,Tier-2 Business,Non-Metro,Live,1268,1331,Flex,Dynamic,0,1691,-58,1218,1323,1389,1131,1761,1797,1331,OAK
+1344712,Itsy Hotels Sitara,Satara,West,Winter Leisure,Leisure,Live,1619,1700,Nonflex,Dynamic,0,2159,-85,1619,1700,1785,1197,2346,2484,1700,OAK
+2035891,Southend Churned,Chandigarh,North 2,Mixed,Non-Metro,Churn,1807,1897,Nonflex,Static,0,2409,1897,1807,,0,1512,2619,2619,1897,OAK
+1231999,Itsy Hotels Sri Sai Grand Inn,Vijayawada,South 2,Tier-2 Business,Non-Metro,Live,1456,1529,Flex,Dynamic,0,1941,-9,1092,1465,1538,1099,2022,2063,1529,MAPLE
+2043486,Itsy Hotels Swastika Inn Sector 26,Noida,North 1,Tier-1 Business,Metro,Live,2404,2524,Flex,Dynamic,0,3205,-16,1803,2419,2540,1676,3339,3439,2524,OAK
+1547077,"Hotel New Retreat - Main Market, Mahabaleshwar Churned",Mahabaleshwar,West,Winter Leisure,Leisure,Churn,1174,1233,Flex,Dynamic,0,1565,1233,1124,,0,1593,1631,1664,1233,OAK
+1684992,Umaiyyal Home Stay Churned,Kanyakumari,South 1,Winter Leisure,Leisure,Churn,1025,1076,Flex,Dynamic,0,1367,1076,1025,,0,1030,1423,1469,1076,MAPLE
+1382823,Itsy Hotels Vailankanni Natures Inn,Goa,West,Winter Leisure,Leisure,Live,1198,1258,Flex,Dynamic,0,1597,-8,1148,1205,1266,1121,1664,1714,1258,ACACIA
+2033589,Treebo Premium Arista,Chandigarh,North 2,Mixed,Non-Metro,Live,2524,2650,Nonflex,Static,0,3365,-132,2524,2650,2783,2596,3658,3658,2650,MAPLE
+1892272,Treebo Premium Blue Mountain Country Club AND Resort,Siliguri,East,Mixed,Non-Metro,Live,2349,2466,Flex,Dynamic,0,3132,-16,1762,2364,2482,3175,3262,3328,2466,MAPLE
+1555338,Treebo Premium Brijinn,Nagpur,West,Tier-2 Business,Non-Metro,Live,2214,2325,Nonflex,Dynamic,0,2952,-116,2214,2325,2441,1796,3209,3209,2325,OAK
+1417736,Treebo Premium Dee Empresa,Kolkata,East,Tier-1 Business,Metro,Churn,1944,2041,Flex,Static,0,2592,2041,1458,,0,1063,2700,2750,2041,OAK
+0051416,Treebo Premium Eden Residency Near Sec 29,Gurgaon,North 1,Tier-1 Business,Metro,Live,2254,2367,Flex,Dynamic,0,3005,-103,1691,2352,2470,#N/A,3131,3195,2367,MAPLE
+1555008,Treebo Premium Golden Bliss Trimurti Nagar Square,Nagpur,West,Tier-2 Business,Non-Metro,Live,2238,2350,Nonflex,Dynamic,0,2984,-117,2238,2350,2467,1345,3244,3244,2350,OAK
+0507680,Treebo Premium Grand Emerald,Pune,West,Tier-1 Business,Metro,Live,3143,3300,Nonflex,Dynamic,0,4191,-165,3143,3300,3465,2026,4555,4555,3300,OAK
+1336968,"Treebo Premium Royal Amar With Mountain View,  2 Km From Pushkar Lake",Pushkar,North 1,Winter Leisure,Leisure,Live,2000,2100,Nonflex,Dynamic,0,2667,-105,2000,2100,2205,5438,2899,3175,2100,MAPLE
+2004937,"Treebo Premium Runway Suites, Marathahalli",Bangalore,South 1,Tier-1 Business,Metro,Churn,1527,1603,Nonflex,Dynamic,0,2036,1603,1527,,0,1460,2213,2281,1603,MAPLE
+2685639,Treebo Premium La Orchid,Thanjavur,South 2,Mixed,Leisure,Live,2857,3000,Nonflex,Dynamic,0,3809,-150,2857,3000,3150,1917,4141,4141,3000,MAPLE
+1552850,Treebo Premium Median Inn,Nagpur,West,Tier-2 Business,Non-Metro,Churn,2476,2600,Nonflex,Dynamic,0,3301,2600,2476,,0,3449,3589,3589,2600,MAPLE
+1144938,Misty Garden Resorts Churned,Munnar,South 1,Summer Leisure,Leisure,Churn,1889,1984,Nonflex,Dynamic,0,2519,1984,1889,,0,#N/A,2738,2765,1984,OAK
+0191524,"Treebo Premium Palmyra Milford, 2 Km From Alleppey Beach",Alleppey,South 1,Winter Leisure,Leisure,Live,2000,2100,Nonflex,Dynamic,0,2667,-105,2000,2100,2205,351,2899,2899,2100,OAK
+1126702,Treebo Premium Pearl Avenue Banquets And Lawn,Dehradun,North 2,Mixed,Leisure,Live,2191,2300,Nonflex,Static,0,2921,-115,2191,2301,2416,#N/A,3175,3175,2300,OAK
+2018835,Treebo Premium Raj Vista Global Village,Bangalore,South 1,Tier-1 Business,Metro,Live,2571,2700,Nonflex,Dynamic,0,3428,-135,2571,2700,2835,1563,3727,3727,2700,OAK
+1215728,Treebo Premium Relax Inn Patel Nagar,New Delhi,North 1,Tier-1 Business,Metro,Live,3809,4000,Nonflex,Dynamic,0,5079,-199,3809,3999,4199,2757,5521,5521,4000,MAPLE
+1172728,Treebo Premium Sattva With Mountain View Churned,Manali,North 2,Winter Leisure,Leisure,Churn,1286,1350,Flex,Dynamic,0,1715,1350,1236,,0,1058,1786,1905,1350,OAK
+1596319,Treebo Premium Seven Lake View,Hyderabad,South 2,Tier-1 Business,Metro,Live,2429,2550,Nonflex,Dynamic,0,3239,-128,2429,2550,2678,1924,3520,3520,2550,OAK
+1311732,Medalio Resort Udaipur Shobhagpura,Udaipur,North 1,Winter Leisure,Leisure,Live,3500,2546,SOB Properties,Dynamic,0,4667,107,3500,2323,2439,3103,3368,3818,2546,MAPLE
+1419130,Treebo Premium Tahoora International,Kolkata,East,Tier-1 Business,Metro,Live,2336,2452,Flex,Static,0,3115,-15,1752,2350,2467,3056,3244,3244,2452,ACACIA
+1413844,Treebo Premium The Crystal,Kolkata,East,Tier-1 Business,Metro,Churn,2286,2400,Nonflex,Static,0,3048,-120,2286,2400,2520,1674,3313,3320,2400,OAK
+1555580,"Treebo The Pavilion, Railway Station",Nagpur,West,Tier-2 Business,Non-Metro,Live,2000,2100,Flex,Dynamic,0,2667,-13,1500,2013,2113,1818,2778,2828,2100,OAK
+1197734,Treebo Premium Travancore Palace Cherthala,Alleppey,South 1,Winter Leisure,Leisure,Live,2476,2600,Nonflex,Dynamic,0,3301,542,2476,1960,2058,#N/A,3589,3589,2600,OAK
+1193381,Treebo Premium Vahada,Alleppey,South 1,Winter Leisure,Leisure,Live,2667,2800,Nonflex,Dynamic,0,3556,-140,2667,2800,2940,#N/A,3865,3865,2800,MAPLE
+1251557,Treebo Premium Villa Escape In With Pool View,Pondicherry,South 2,Winter Leisure,Leisure,Churn,2132,2239,Flex,Dynamic,0,2843,2239,1599,,0,#N/A,2962,3291,2239,OAK
+1372258,Treebo Premium Widlor Boutique,Mumbai,West,Tier-1 Business,Metro,Churn,3714,3900,Nonflex,Dynamic,0,4952,3900,3714,,0,3569,5383,5383,3900,OAK
+1309218,Taj Dream Churned,Agra,North 2,Mixed,Non-Metro,Churn,770,808,Flex,Dynamic,0,1188,808,891,,0,#N/A,1069,1188,808,OAK
+1504269,Itsy Hotels Crown Inn,Pune,West,Tier-1 Business,Metro,Live,1503,1578,Flex,Dynamic,0,2004,-10,1127,1512,1588,663,2087,2130,1578,OAK
+1319620,Treebo Paras Raj Near City Palace,Udaipur,North 1,Winter Leisure,Leisure,Live,1409,1479,Flex,Dynamic,0,1879,-9,1359,1418,1488,2572,1957,1997,1479,OAK
+2063526,Itsy Hotels Phoenix,Indore,West,Tier-2 Business,Non-Metro,Live,1381,1450,Flex,Dynamic,0,1841,-9,1331,1389,1459,871,1918,1957,1450,MAPLE
+1501664,"Treebo Classic Grande, Camp",Pune,West,Tier-1 Business,Metro,Live,2336,2452,Flex,Dynamic,0,3115,-15,1752,2350,2467,#N/A,3244,3244,2452,OAK
+1288538,Treebo Aall Season,Kodaikanal,South 2,Summer Leisure,Leisure,Live,1714,1800,Nonflex,Dynamic,0,2285,-90,1714,1800,1890,1187,2484,2485,1800,MAPLE
+1324864,Dream Palace Near Jaipur International Airport Churned,Jaipur,North 1,Mixed,Non-Metro,Churn,1323,1390,Flex,Dynamic,0,1764,1390,1273,,0,#N/A,1838,2059,1390,OAK
+1281900,"Treebo Kodai Kings Park, 650 M From Kodai Lake",Kodaikanal,South 2,Summer Leisure,Leisure,Live,2286,2400,Flex,Dynamic,0,3048,-15,1715,2301,2416,844,3175,3245,2400,MAPLE
+1251583,Coastal Grand De Heritage Churned,Pondicherry,South 2,Winter Leisure,Leisure,Churn,796,836,Flex,Dynamic,0,1188,836,891,,0,#N/A,1106,1229,836,ACACIA
+1546115,Blooms & Berries Agro Tourism Churned,Mahabaleshwar,West,Winter Leisure,Leisure,Churn,2859,3002,Nonflex,Dynamic,0,3812,3002,2859,,0,3499,4143,4143,3002,ACACIA
+1211176,Jannat Residency Churned,New Delhi,North 1,Tier-1 Business,Metro,Churn,1040,1092,Flex,Dynamic,0,1387,1092,1040,,0,891,1444,1544,1092,ACACIA
+1615703,Treebo Lazystay Elite,Bhubaneswar,East,Mixed,Non-Metro,Live,1454,1526,Partner,Static,0,1939,425,1454,1049,1101,1950,2019,2119,1526,OAK
+2012334,Treebo Verdisso Churned,Bangalore,South 1,Tier-1 Business,Metro,Churn,1497,1571,Nonflex,Dynamic,0,1996,1571,1497,,0,0,2169,2191,1571,OAK
+1374286,Itsy Hotels Sapphire Residency,Manjeri,South 1,Mixed,Non-Metro,Live,1265,1328,Flex,Dynamic,0,1687,-8,1215,1273,1336,1050,1756,1870,1328,OAK
+3721182,Treebo Prime Elight,New Delhi,North 1,Tier-1 Business,Metro,Live,1609,1690,Flex,Dynamic,0,2145,57,1207,1555,1633,#N/A,2235,2323,1690,OAK
+1292998,Treebo Raga,Visakhapatnam,South 2,Tier-2 Business,Non-Metro,Live,1503,1578,Flex,Dynamic,0,2004,-10,1127,1512,1588,1211,2087,2130,1578,OAK
+1619814,Itsy Hotels Aasma Luxury Villa,Bhubaneswar,East,Mixed,Non-Metro,Live,1048,1100,Flex,Dynamic,0,1397,-7,1048,1054,1107,1730,1455,1490,1100,ACACIA
+2015249,Itsy Hotels Elmas Golden Key,Bangalore,South 1,Tier-1 Business,Metro,Churn,1103,1158,Flex,Dynamic,0,1471,1158,1103,,0,1112,1532,1749,1158,OAK
+2059423,Shubham Sr Nagar Churned,Hyderabad,South 2,Tier-1 Business,Metro,Churn,1714,1800,Flex,Dynamic,0,2285,1800,1286,,0,#N/A,2381,2500,1800,OAK
+1168316,Treebo Pushpak 100 Mtrs From Chottanikkara Temple,Kochi,South 1,Mixed,Non-Metro,Live,1905,2000,Nonflex,Static,0,2540,-100,1905,2000,2100,2005,2761,2761,2000,OAK
+1377754,"Prime Grand, Andheri Churned",Mumbai,West,Tier-1 Business,Metro,Churn,2053,2156,Nonflex,Dynamic,0,2737,2156,2053,,0,#N/A,2976,2976,2156,OAK
+1542646,Garden Cottage & Lawn Mahabaleshwar Churned,Mahabaleshwar,West,Winter Leisure,Leisure,Churn,1643,1725,Nonflex,Dynamic,0,2191,1725,1643,,0,2758,2381,2481,1725,OAK
+2012837,Treebo 98 Street,Bangalore,South 1,Tier-1 Business,Metro,Churn,949,996,Flex,Dynamic,0,1265,996,949,,0,857,1318,1499,996,ACACIA
+2011649,Treebo Zion,Bangalore,South 1,Tier-1 Business,Metro,Live,1174,1233,Flex,Dynamic,0,1565,-7,1124,1181,1240,#N/A,1631,1664,1233,OAK
+3393277,Hinduja Luxury Camp & Resort Churned,Osian,North 1,Winter Leisure,Leisure,Churn,1348,1415,Flex,Dynamic,0,1797,1415,1298,,0,#N/A,1872,1965,1415,ACACIA
+1884844,Itsy Hotels Vedansh,Ludhiana,North 2,Tier-2 Business,Non-Metro,Live,1333,1400,Nonflex,Dynamic,0,1777,-70,1333,1400,1470,990,1932,1932,1400,OAK
+2043509,Noida Grand Churned,Noida,North 1,Tier-1 Business,Metro,Churn,1783,1872,Nonflex,Dynamic,0,2377,1872,1783,,0,644,2584,2584,1872,ACACIA
+1224951,Itsy Hotels Banana Boutique,Varanasi,North 2,Mixed,Non-Metro,Churn,1114,1170,Nonflex,Dynamic,0,1485,1170,1114,,0,#N/A,1615,1795,1170,OAK
+1884312,"Rockland, Zirakpur Churned",Zirakpur,North 2,Mixed,Non-Metro,Churn,1076,1129,Flex,Dynamic,0,1435,1129,1076,,0,921,1494,1494,1129,ACACIA
+1209657,Prime Stay Churneds,New Delhi,North 1,Tier-1 Business,Metro,Churn,1158,1216,Flex,Dynamic,0,1544,1216,1108,,0,985,1609,1609,1216,OAK
+2016484,Treebo Three Street Inn,Bangalore,South 1,Tier-1 Business,Metro,Live,1296,1361,Flex,Static,0,1728,-9,1246,1304,1369,1464,1800,1800,1361,OAK
+1546480,Treebo La Paradise,Mahabaleshwar,West,Winter Leisure,Leisure,Live,2023,2124,Flex,Dynamic,0,2697,-13,1517,2036,2138,#N/A,2810,3042,2124,OAK
+1763086,"Hotels Harsha Comforts, 600 Mts From Coffee Museum Churned",Chikmagalur,South 1,Summer Leisure,Leisure,Churn,963,1011,Flex,Dynamic,0,1284,1011,963,,0,848,1337,1579,1011,OAK
+1446609,Itsy Hotels Rain Forest,Ooty,South 1,Summer Leisure,Leisure,Live,1071,1124,Flex,Dynamic,0,1428,-86,1071,1153,1211,1431,1487,1587,1124,OAK
+2055589,"Treebo Finesta Suites, Nagpur Airport",Nagpur,West,Tier-2 Business,Non-Metro,Live,1878,1972,Flex,Dynamic,0,2504,-12,1409,1890,1985,#N/A,2609,2663,1972,OAK
+3784083,Coastal Grand Sathyam Churned,Trichy,South 2,Mixed,Non-Metro,Churn,873,916,Flex,Dynamic,0,1188,916,891,,0,#N/A,1212,1273,916,OAK
+1314133,Khakhri Haveli Churned,Udaipur,North 1,Winter Leisure,Leisure,Churn,1196,1256,Flex,Dynamic,0,1595,1256,1146,,0,1395,1661,1661,1256,OAK
+1233564,Madhuvan Grand Churned,Vijayawada,South 2,Tier-2 Business,Non-Metro,Churn,1028,1080,Flex,Dynamic,0,1371,1080,1028,,0,1500,1428,1530,1080,OAK
+1231420,Savera Grand Churned,Vijayawada,South 2,Tier-2 Business,Non-Metro,Churn,967,1015,Flex,Dynamic,0,1289,1015,967,,0,#N/A,1343,1316,1015,OAK
+1881388,"Royal Salute, Zirakpur Churned",Zirakpur,North 2,Mixed,Non-Metro,Churn,1098,1153,Flex,Dynamic,0,1464,1153,1098,,0,1228,1525,1573,1153,ACACIA
+1379085,Treebo Castle Rock Inn,Mumbai,West,Tier-1 Business,Metro,Live,3288,3452,Flex,Dynamic,0,4384,-150,2466,3430,3602,2722,4566,4659,3452,OAK
+2016141,Sk Suites Churned,Bangalore,South 1,Tier-1 Business,Metro,Churn,1208,1269,Flex,Dynamic,0,1611,1269,1158,,0,#N/A,1678,1786,1269,OAK
+1402027,Hotels Rk Palace Churned,Vadodara,North 1,Tier-2 Business,Non-Metro,Churn,1071,1125,Flex,Dynamic,0,1428,1125,1071,,0,992,1488,1669,1125,ACACIA
+1207601,Crystal Palace Shimla Churned,Shimla,North 2,Summer Leisure,Leisure,Churn,846,888,Flex,Dynamic,0,1188,888,891,,0,#N/A,1175,1305,888,ACACIA
+1362285,Itsy Hotels Buddha Inn,Patna,East,Tier-2 Business,Non-Metro,Live,1714,1800,Nonflex,Static,0,2285,-90,1714,1800,1890,1993,2484,2484,1800,ACACIA
+2059358,"Treebo Virat Residency, Us Consulate",Hyderabad,South 2,Tier-1 Business,Metro,Churn,1988,2087,Flex,Dynamic,0,2651,2087,1491,,0,0,2761,2761,2087,OAK
+1828376,Itsy Hotels The Waters Edge Beach Resort,Thiruvananthapuram,South 1,Mixed,Non-Metro,Live,2143,2250,Nonflex,Dynamic,0,2857,-112,2143,2250,2363,1241,3106,3106,2250,MAPLE
+1599440,Treebo Destination Inn,Hyderabad,South 2,Tier-1 Business,Metro,Churn,1911,2006,Nonflex,Dynamic,0,2548,2006,1911,,0,2168,2769,2919,2006,MAPLE
+1321363,Rama Hindustani Churned,Jaipur,North 1,Mixed,Non-Metro,Churn,999,1049,Flex,Dynamic,0,1332,1049,999,,0,2669,1388,1436,1049,ACACIA
+1385203,Samara Holiday Homes Churned,Goa,West,Winter Leisure,Leisure,Churn,1200,1260,Flex,Dynamic,0,1600,1260,1150,,0,#N/A,1667,1667,1260,OAK
+1115459,"Itsy Hotels Shri Gv Inn, 600 Mtrs From Tiffin Top",Nainital,North 2,Summer Leisure,Leisure,Live,1315,1381,Flex,Dynamic,0,1753,-30,1265,1344,1411,1939,1827,1864,1381,ACACIA
+1192850,Itsy Hotels O3,Chandigarh,North 2,Mixed,Non-Metro,Churn,1238,1300,Flex,Dynamic,0,1651,1300,1188,,0,2173,1720,1770,1300,OAK
+1984529,"Treebo Cecil Resort, 600 Mtrs From Matheran Railway Station",Matheran,West,Winter Leisure,Leisure,Churn,3048,3200,Nonflex,Dynamic,0,4064,3200,3048,,0,2296,4417,4417,3200,MAPLE
+2013740,Saga Apartment Churned,Bangalore,South 1,Tier-1 Business,Metro,Churn,1354,1422,Flex,Dynamic,0,1805,1422,1304,,0,839,1881,1918,1422,OAK
+2012839,Krishnam Boutique Churnedd,Bangalore,South 1,Tier-1 Business,Metro,Churn,1164,1222,Flex,Dynamic,0,1552,1222,1114,,0,1534,1617,1731,1222,OAK
+2686403,Treebo Naaz Royal,Thanjavur,South 2,Mixed,Leisure,Live,1420,1491,Nonflex,Dynamic,0,1893,-75,1420,1491,1566,958,2058,2158,1491,OAK
+1547096,Treebo Kuber Palace With Swimming Pool,Mahabaleshwar,West,Winter Leisure,Leisure,Live,1737,1824,Flex,Dynamic,0,2316,-11,1303,1748,1836,2081,2413,2513,1824,OAK
+1503847,Itsy Hotels Sky Vista,Pune,West,Tier-1 Business,Metro,Churn,861,904,Flex,Dynamic,0,1188,904,891,,0,#N/A,1196,1282,904,ACACIA
+2019551,Millennium Plaza Churned,Bangalore,South 1,Tier-1 Business,Metro,Churn,965,1013,Flex,Dynamic,0,1287,1013,965,,0,#N/A,1340,1407,1013,OAK
+1448519,Itsy Hotels Twin Falls,Ooty,South 1,Summer Leisure,Leisure,Stop Sell,1547,1625,Flex,Dynamic,0,2063,56,1160,1494,1569,1526,2149,2249,1625,OAK
+1164362,Treebo Torque,Noida,North 1,Tier-1 Business,Metro,Churn,1194,1253,Flex,Dynamic,0,1592,1253,1144,,0,#N/A,1658,1744,1253,OAK
+4138782,"Treebo Sai Village, Manesar",Manesar,North 1,Tier-2 Business,Metro,Live,1905,2000,Nonflex,Dynamic,0,2540,-16,1905,1920,2016,1227,2761,2761,2000,OAK
+1616462,Itsy Hotels Sidhartha Residency,Bhubaneswar,East,Mixed,Non-Metro,Live,1128,1184,Flex,Dynamic,0,1504,-8,1128,1135,1192,1216,1566,1598,1184,ACACIA
+2012106,Treebo Blueberry Inn,Bangalore,South 1,Tier-1 Business,Metro,Live,1762,1850,Nonflex,Dynamic,0,2349,-54,1762,1813,1904,2204,2553,2553,1850,MAPLE
+4146211,Treebo Premium Metropolis,Hyderabad,South 2,Tier-1 Business,Metro,Live,2524,2650,Nonflex,Dynamic,0,3365,-132,2524,2650,2783,2280,3658,3658,2650,OAK
+1198531,Itsy Hotels Gm Residency,Chandigarh,North 2,Mixed,Non-Metro,Live,1214,1275,Flex,Static,0,1619,-8,1164,1221,1282,873,1686,1786,1275,ACACIA
+1112500,"Treebo Kosmos Anamika, 1 Km From Nainital Lake",Nainital,North 2,Summer Leisure,Leisure,Churn,1905,2000,Flex,Dynamic,0,2540,2000,1429,,0,1735,2646,2696,2000,OAK
+1773097,Sreepathi Nirmalyam - 400mtr From Guruvayoor Temple Churned,Guruvayur,South 1,Mixed,Leisure,Churn,1012,1062,Flex,Dynamic,0,1349,1062,1012,,0,1416,1405,1600,1062,OAK
+1114107,Treebo Raj Inn Lalpur,Ranchi,East,Tier-2 Business,Non-Metro,Live,1333,1400,Flex,Dynamic,0,1777,-9,1283,1342,1409,1104,1852,1997,1400,MAPLE
+1521317,Banana Boutique Patrakarpuram Churned,Lucknow,North 2,Tier-2 Business,Non-Metro,Churn,868,911,Nonflex,Dynamic,0,1271,911,953,,0,#N/A,1258,1398,911,ACACIA
+1558967,Seven Suites Churned,Nagpur,West,Tier-2 Business,Non-Metro,Churn,991,1040,Flex,Dynamic,0,1321,1040,991,,0,#N/A,1376,1445,1040,OAK
+1267489,Treebo Kamron Regency Sector 80,Mohali,North 2,Tier-2 Business,Non-Metro,Live,1596,1675,Flex,Dynamic,0,2128,-10,1197,1605,1686,1420,2216,2266,1675,OAK
+1197451,Chandigarh Grand Churned,Chandigarh,North 2,Mixed,Non-Metro,Churn,1643,1725,Nonflex,Static,0,2191,1725,1643,,0,1871,2381,2381,1725,ACACIA
+1452261,"Usha Vasavi Alipiri Road, 2 Km From Tirupati Central Bus Station Churned",Tirupati,South 2,Mixed,Leisure,Churn,1278,1342,Flex,Dynamic,0,1704,1342,1228,,0,1992,1775,1875,1342,OAK
+1243613,Treebo Vetri Supreme Residency,Chennai,South 2,Tier-1 Business,Metro,Churn,2015,2116,Nonflex,Dynamic,0,2687,2116,2015,,0,0,2920,3050,2116,MAPLE
+2017408,Treebo Elite 7,Bangalore,South 1,Tier-1 Business,Metro,Live,1857,1950,Nonflex,Static,0,2476,-97,1857,1950,2047,2355,2692,2830,1950,OAK
+2013937,Treebo Celebrity Hotels And Suites,Bangalore,South 1,Tier-1 Business,Metro,Live,1261,1325,Flex,Dynamic,0,1681,-116,1211,1372,1441,3190,1752,1852,1325,OAK
+1643292,Hotels Palacio Churned,Kanpur,North 2,Tier-2 Business,Non-Metro,Churn,770,808,Flex,Dynamic,0,1188,808,891,,0,#N/A,1069,1273,808,OAK
+1565819,"Abhi Suites, 400 M From Guntur Junction Churned",Guntur,South 2,Tier-2 Business,Non-Metro,Churn,1694,1779,Nonflex,Dynamic,0,2259,1779,1694,,0,1660,2455,2455,1779,OAK
+1304129,C1 Taj Nirvana Churned,Agra,North 2,Mixed,Non-Metro,Churn,1035,1087,Flex,Dynamic,0,1380,1087,1035,,0,1194,1438,1438,1087,ACACIA
+1378391,Treebo Premium Savera Inn,Mumbai,West,Tier-1 Business,Metro,Live,3667,3850,Nonflex,Dynamic,0,4889,-193,3667,3850,4043,3963,5314,5314,3850,OAK
+1227796,Treebo Azure,Varanasi,North 2,Mixed,Non-Metro,Churn,1260,1323,Flex,Dynamic,0,1680,1323,1210,,0,11056,1750,1786,1323,ACACIA
+1439746,Itsy Hotels Vibe 2,Noida,North 1,Tier-1 Business,Metro,Churn,857,900,Flex,Dynamic,0,1188,900,891,,0,#N/A,1190,1276,900,OAK
+1414029,Treebo The Platinum Studio 50,Kolkata,East,Tier-1 Business,Metro,Churn,1800,1890,Flex,Dynamic,0,2400,1890,1350,,0,#N/A,2500,2625,1890,OAK
+2015941,"Treebo Terminus, Koramangala 5th Block",Bangalore,South 1,Tier-1 Business,Metro,Live,1905,2000,Flex,Dynamic,0,2540,-13,1429,1917,2013,1890,2646,2846,2000,OAK
+1379074,"Elvis Inn, Chandivali Churned",Mumbai,West,Tier-1 Business,Metro,Churn,2016,2117,Flex,Dynamic,0,2688,2117,1512,,0,#N/A,2800,3200,2117,OAK
+1434858,Treebo Primeone,Noida,North 1,Tier-1 Business,Metro,Live,1832,1923,Flex,Dynamic,0,2443,-12,1374,1843,1935,2145,2544,2596,1923,OAK
+2011351,"Treebo Global Stay, Uttarahalli",Bangalore,South 1,Tier-1 Business,Metro,Live,1524,1600,Nonflex,Static,0,2032,-81,1524,1600,1680,1440,2208,2208,1600,OAK
+1421319,Treebo Gyani'S,Jamshedpur,East,Tier-2 Business,Non-Metro,Live,1785,1874,Flex,Static,0,2380,-42,1339,1825,1916,1887,2479,2663,1874,OAK
+1149898,Wanderlust Residency With Mountain View Churned2,Munnar,South 1,Summer Leisure,Leisure,Churn,1080,1134,Flex,Dynamic,0,1440,1134,1080,,0,0,1500,1550,1134,OAK
+1619452,Treebo Aasma Downtown,Bhubaneswar,East,Mixed,Non-Metro,Live,1595,1675,Flex,Dynamic,0,2127,-10,1196,1604,1685,1947,2215,2315,1675,OAK
+1291492,Treebo Rushi Grand,Visakhapatnam,South 2,Tier-2 Business,Non-Metro,Churn,1381,1450,Flex,Dynamic,0,1841,1450,1331,,0,1827,1918,1968,1450,OAK
+2025497,"Treebo Golden Inn, 700 Mtrs From Promenade Beach",Pondicherry,South 2,Winter Leisure,Leisure,Live,1592,1672,Flex,Dynamic,0,2123,-11,1194,1602,1682,3846,2211,2261,1672,MAPLE
+1083240,Treebo Staying Center,Shillong,East,Summer Leisure,Leisure,Churn,2667,2800,Nonflex,Static,0,3556,2800,2667,,0,4116,3865,3865,2800,OAK
+1474809,Treebo Alaka Rester Homestay,Coorg,South 1,Summer Leisure,Leisure,Live,1409,1479,Flex,Dynamic,0,1879,-9,1359,1418,1488,1871,1957,1997,1479,OAK
+1307656,Treebo The Empire Near Taj Mahal Agra,Agra,North 2,Mixed,Non-Metro,Live,1033,1085,Flex,Static,0,1377,-24,1033,1056,1109,1297,1435,1464,1085,OAK
+1379105,Treebo Prince Andheri East,Mumbai,West,Tier-1 Business,Metro,Live,2400,2520,Nonflex,Dynamic,0,3200,-126,2400,2520,2646,3484,3478,3478,2520,OAK
+1384613,Code Red Churned,Goa,West,Winter Leisure,Leisure,Churn,2641,2773,Nonflex,Dynamic,0,3521,2773,2641,,0,#N/A,3827,3827,2773,OAK
+1267644,Treebo The King Mohali,Chandigarh,North 2,Mixed,Non-Metro,Live,1619,1700,Nonflex,Static,0,2159,-85,1619,1700,1785,675,2346,2346,1700,OAK
+1962141,Satya Shree Churned,Katra,North 2,Summer Leisure,Leisure,Churn,942,990,Flex,Dynamic,0,1256,990,942,,0,582,1309,1403,990,OAK
+1165642,"Treebo Love Shore Residency, Near Lakeshore Hospital",Kochi,South 1,Mixed,Non-Metro,Live,1619,1700,Nonflex,Dynamic,0,2159,-85,1619,1700,1785,1736,2346,2346,1700,ACACIA
+1126392,"Elysee, Patel Nagar Churned",Dehradun,North 2,Mixed,Leisure,Churn,1786,1875,Nonflex,Dynamic,0,2381,1875,1786,,0,1141,2588,2653,1875,OAK
+1483392,Treebo Shree Sai Suites,Kolhapur,West,Mixed,Leisure,Live,1691,1775,Flex,Dynamic,0,2255,-11,1268,1701,1786,946,2348,2396,1775,OAK
+1505464,Itsy Hotels AY Plus Hotels,Pune,West,Tier-1 Business,Metro,Live,1476,1550,Nonflex,Dynamic,0,1968,-78,1476,1550,1627,2085,2139,2139,1550,OAK
+2341617,"Treebo Royal, Chandrapur",Chandrapur,West,Tier-2 Business,Non-Metro,Live,1666,1750,Nonflex,Static,0,2221,-87,1666,1749,1837,2808,2415,2415,1750,OAK
+1212851,Treebo Corporate Park,New Delhi,North 1,Tier-1 Business,Metro,Live,2190,2300,Flex,Dynamic,0,2920,-14,1643,2204,2314,2459,3042,3258,2300,OAK
+1508837,Treebo White House,Pune,West,Tier-1 Business,Metro,Churn,885,929,Nonflex,Dynamic,0,1271,929,953,,0,#N/A,1282,1282,929,OAK
+1211946,Treebo Rockwell Plaza,New Delhi,North 1,Tier-1 Business,Metro,Live,2161,2269,Flex,Dynamic,0,2881,-15,1621,2175,2283,2833,3001,3062,2269,OAK
+1548369,"Berry Hill Venna Lake, 3 Km From City Center Churned",Mahabaleshwar,West,Winter Leisure,Leisure,Churn,858,901,Flex,Dynamic,0,1188,901,891,,0,324,1192,1192,901,OAK
+1594465,Treebo De Alphabet Kondapur,Hyderabad,South 2,Tier-1 Business,Metro,Live,1666,1749,Nonflex,Dynamic,0,2221,-88,1666,1749,1837,1810,2414,2414,1749,OAK
+1766857,Treebo Sky Vista Suites With Hill View,Chikmagalur,South 1,Summer Leisure,Leisure,Live,2095,2200,Flex,Dynamic,0,2793,-14,1571,2108,2214,#N/A,2910,3010,2200,OAK
+1043825,Treebo Regalia Inn Wayanad With Swimming Pool,Wayanad,South 1,Summer Leisure,Leisure,Live,1503,1578,Flex,Dynamic,0,2004,-35,1127,1536,1613,1424,2087,2130,1578,OAK
+1506055,Itsy Hotels Prince Regency,Pune,West,Tier-1 Business,Metro,Live,1524,1600,Nonflex,Dynamic,0,2032,-81,1524,1600,1680,1393,2208,2208,1600,OAK
+1329928,Treebo Pink City Grand,Jaipur,North 1,Mixed,Non-Metro,Live,1333,1399,Flex,Dynamic,0,1777,-9,1283,1341,1408,1708,1851,2116,1399,OAK
+2013834,Hotels Hiland Suites Churned,Bangalore,South 1,Tier-1 Business,Metro,Churn,1490,1565,Flex,Dynamic,0,1987,1565,1118,,0,1031,2070,2110,1565,OAK
+1101232,"Haveli Resort Roots, Bhupatwala Haridwar Churned",Haridwar,North 2,Mixed,Leisure,Churn,1610,1690,Nonflex,Dynamic,0,2147,1690,1610,,0,#N/A,2333,2381,1690,ACACIA
+1415591,Treebo Asl Prime,Kolkata,East,Tier-1 Business,Metro,Live,2381,2500,Nonflex,Static,0,3175,-72,2381,2450,2572,431,3451,3451,2500,OAK
+1492472,Paradise Inn With Mountain View Churned,Panchgani,West,Winter Leisure,Leisure,Churn,1008,1058,Flex,Dynamic,0,1344,1058,1008,,0,6251,1400,1429,1058,OAK
+1599140,Lavish Palms Churned,Hyderabad,South 2,Tier-1 Business,Metro,Churn,,0,Flex,Dynamic,0,1188,0,891,,0,#N/A,0,0,0,OAK
+1603145,"Itsy Hotels Peak View, 300 Mts From Mall Road",Mussoorie,North 2,Summer Leisure,Leisure,Live,1166,1225,Flex,Dynamic,0,1555,-86,1116,1248,1311,878,1620,1720,1225,OAK
+1453534,Treebo Seven Inn,Tirupati,South 2,Mixed,Leisure,Live,2349,2466,Flex,Dynamic,0,3132,-16,1762,2364,2482,1663,3262,3328,2466,MAPLE
+1549052,"Treebo Mountain Retreat Mahabaleshwar, 600 Mtrs From Lingmala Waterfall",Mahabaleshwar,West,Winter Leisure,Leisure,Churn,1598,1678,Nonflex,Dynamic,0,2131,1678,1598,,0,#N/A,2316,2769,1678,MAPLE
+1399076,Treebo Prince Plaza,Ahmedabad,North 1,Tier-2 Business,Non-Metro,Live,1356,1424,Flex,Dynamic,0,1808,-9,1306,1365,1433,2446,1884,1984,1424,OAK
+1434518,Grand Vista - 62 Churned,Noida,North 1,Tier-1 Business,Metro,Churn,1296,1361,Flex,Dynamic,0,1728,1361,1246,,0,1854,1800,1850,1361,OAK
+1604662,Treebo Raj Mall Road,Mussoorie,North 2,Summer Leisure,Leisure,Live,3262,3425,Flex,Dynamic,0,4349,-22,2447,3282,3446,2128,4530,4630,3425,MAHOGANY
+2037371,Treebo Atithi Inn Malad,Mumbai,West,Tier-1 Business,Metro,Live,2785,2924,Flex,Dynamic,0,3713,-18,2089,2802,2943,3495,3868,3968,2924,OAK
+1596061,Hotels Kruthika Inn Churned,Hyderabad,South 2,Tier-1 Business,Metro,Churn,1408,1479,Nonflex,Dynamic,0,1877,1479,1408,,0,1386,2041,2061,1479,MAPLE
+1217501,Treebo MVM Residency,New Delhi,North 1,Tier-1 Business,Metro,Live,2286,2400,Nonflex,Static,0,3048,-69,2286,2352,2470,1175,3313,3313,2400,OAK
+1253600,"Treebo Aaravi Residency, 800 Mtrs From Promenade Beach",Pondicherry,South 2,Winter Leisure,Leisure,Live,1619,1700,Flex,Dynamic,0,2159,-14,1214,1633,1714,2791,2249,2415,1700,OAK
+1232739,Alankar Inn Churned,Vijayawada,South 2,Tier-2 Business,Non-Metro,Churn,1294,1359,Flex,Dynamic,0,1725,1359,1244,,0,1815,1797,1924,1359,OAK
+2083047,Majestic Retreat Churned,Varkala,South 1,Summer Leisure,Leisure,Churn,2711,2846,Nonflex,Dynamic,0,3615,2846,2711,,0,1058,3929,4167,2846,OAK
+1164752,Treebo Amigos Residency,Kochi,South 1,Mixed,Non-Metro,Live,1809,1900,Nonflex,Dynamic,0,2412,-95,1809,1899,1994,2343,2622,2622,1900,OAK
+1431027,Noida Express Churned,Noida,North 1,Tier-1 Business,Metro,Churn,964,1012,Flex,Dynamic,0,1285,1012,964,,0,#N/A,1339,1382,1012,OAK
+2037169,Treebo De Grandeur Anand Nagar,Mumbai,West,Tier-1 Business,Metro,Live,2200,2310,Nonflex,Dynamic,0,2933,-67,2200,2264,2377,2127,3188,3188,2310,OAK
+1375831,Treebo Zaid International Powai,Mumbai,West,Tier-1 Business,Metro,Live,2286,2400,Nonflex,Dynamic,0,3048,-120,2286,2400,2520,#N/A,3313,3313,2400,ACACIA
+1372632,Treebo Seven Olives,Mumbai,West,Tier-1 Business,Metro,Live,2318,2434,Flex,Dynamic,0,3091,-15,1739,2333,2450,2337,3220,3220,2434,OAK
+1248264,Treebo Golden Swan Tambaram,Chennai,South 2,Tier-1 Business,Metro,Stop Sell,2598,2728,Flex,Dynamic,0,3464,38,1949,2562,2690,1295,3609,3709,2728,OAK
+2018488,Treebo Fortune Stay Inn,Bangalore,South 1,Tier-1 Business,Metro,Churn,1090,1145,Flex,Dynamic,0,1453,1145,1090,,0,2508,1514,1614,1145,ACACIA
+1504786,Treebo Tulip Comfort,Pune,West,Tier-1 Business,Metro,Live,1421,1492,Flex,Dynamic,0,1895,-9,1371,1430,1502,740,1974,1974,1492,OAK
+1406621,Casa Churned,Vadodara,North 1,Tier-2 Business,Non-Metro,Churn,1926,2022,Nonflex,Static,0,2568,2022,1926,,0,#N/A,2791,2791,2022,OAK
+1505893,Treebo Atithi Comforts Inn,Pune,West,Tier-1 Business,Metro,Live,1524,1600,Flex,Dynamic,0,2032,-10,1143,1534,1611,1354,2117,2117,1600,MAPLE
+2053714,Jass Hospitality Services - Sec 53 Churned,Gurgaon,North 1,Tier-1 Business,Metro,Churn,1224,1285,Flex,Dynamic,0,1632,1285,1174,,0,#N/A,1700,1800,1285,MAPLE
+2014478,Itsy Hotels Silver Keys,Bangalore,South 1,Tier-1 Business,Metro,Live,1315,1381,Flex,Static,0,1753,-9,1265,1324,1390,1541,1827,1864,1381,OAK
+1258839,"Treebo Eden Park Hotel, 3 Km From Puducherry Airport",Pondicherry,South 2,Winter Leisure,Leisure,Churn,1699,1784,Flex,Dynamic,0,2265,1784,1274,,0,1614,2360,2360,1784,OAK
+1229511,"Itsy Hotels Kashi Grand, BHU",Varanasi,North 2,Mixed,Non-Metro,Live,1362,1430,Flex,Static,0,1816,-32,1312,1392,1462,3660,1892,2300,1430,OAK
+3001848,Treebo Trinitywood,Bangalore,South 1,Tier-1 Business,Metro,Churn,1315,1381,Flex,Dynamic,0,1753,1381,1265,,0,2183,1827,1864,1381,OAK
+2074334,Treebo Mohit Regency,Bhopal,West,Mixed,Non-Metro,Churn,728,764,Flex,Dynamic,0,1188,764,891,,0,#N/A,1011,1031,764,OAK
+1929807,Treebo Pranav Park,Vellore,South 2,Mixed,Non-Metro,Live,1524,1600,Nonflex,Dynamic,0,2032,-81,1524,1600,1680,1659,2208,2208,1600,OAK
+1506280,"Opal Suites, Mundhwa, Near Koregaon Park Churned",Pune,West,Tier-1 Business,Metro,Churn,1308,1373,Nonflex,Dynamic,0,1744,1373,1308,,0,1560,1895,1895,1373,OAK
+1292558,Treebo Su Casa Grand,Visakhapatnam,South 2,Tier-2 Business,Non-Metro,Live,1597,1677,Flex,Dynamic,0,2129,-10,1198,1607,1687,1570,2218,2218,1677,OAK
+1298183,Seasons Comfort Churned,Visakhapatnam,South 2,Tier-2 Business,Non-Metro,Churn,2112,2218,Nonflex,Dynamic,0,2816,2218,2112,,0,#N/A,3061,3061,2218,MAPLE
+1444313,Treebo Windsor Heights,Ooty,South 1,Summer Leisure,Leisure,Live,2251,2363,Nonflex,Reverse,0,3001,-118,2251,2364,2482,0,3262,3328,2363,ACACIA
+1163628,Hotels Dreams Arcade Churned,Kochi,South 1,Mixed,Non-Metro,Churn,1122,1178,Flex,Dynamic,0,1496,1178,1122,,0,1478,1558,1690,1178,OAK
+1171648,"Treebo Punjabi Nature Residency, Near Faridabad Railway Station",Faridabad,North 1,Mixed,Metro,Live,1928,2025,Flex,Dynamic,0,2571,-13,1446,1940,2037,814,2678,2778,2025,OAK
+1308054,S G Grand Churnedd,Agra,North 2,Mixed,Non-Metro,Churn,770,808,Flex,Dynamic,0,1188,808,891,,0,#N/A,1069,1188,808,OAK
+1356506,"Chandrangan Excellency, 1 Km From Jaisalmer Fort Churned",Jaisalmer,North 1,Winter Leisure,Leisure,Churn,1549,1626,Flex,Dynamic,0,2065,1626,1162,,0,2752,2151,2151,1626,OAK
+2089983,Admiral Suites New Usmanpura Churned,Aurangabad,West,Tier-2 Business,Non-Metro,Churn,1530,1607,Flex,Dynamic,0,2040,1607,1148,,0,1987,2125,2149,1607,MAPLE
+1766640,Treebo Benaka Residency,Chikmagalur,South 1,Summer Leisure,Leisure,Live,1238,1300,Flex,Dynamic,0,1651,-8,1188,1246,1309,1367,1720,1770,1300,ACACIA
+1981273,Midvalley Residence Churned,Yelagiri,South 2,Summer Leisure,Leisure,Churn,1584,1663,Flex,Dynamic,0,2112,1663,1188,,0,1323,2200,2200,1663,MAPLE
+2016331,Treebo Raghavendra Tranquil Inn Bellandur,Bangalore,South 1,Tier-1 Business,Metro,Live,1666,1749,Flex,Dynamic,0,2221,-11,1250,1677,1761,2319,2314,2364,1749,OAK
+1234696,Itsy Hotels N Square,Vijayawada,South 2,Tier-2 Business,Non-Metro,Stop Sell,1190,1250,Nonflex,Dynamic,0,1587,-36,1190,1224,1286,1437,1725,1725,1250,ACACIA
+1432626,Treebo Swastika Premium,Noida,North 1,Tier-1 Business,Metro,Live,1727,1813,Flex,Dynamic,0,2303,-12,1295,1738,1825,1316,2398,2423,1813,OAK
+1749218,Regal Residency A Boutique Churned,Gangtok,East,Summer Leisure,Leisure,Churn,1061,1114,Flex,Dynamic,0,1415,1114,1061,,0,#N/A,1474,1638,1114,OAK
+1881493,Itsy Hotels P Grand,Ludhiana,North 2,Tier-2 Business,Non-Metro,Live,1221,1282,Flex,Dynamic,0,1628,-8,1171,1229,1290,738,1696,1731,1282,ACACIA
+5802951,Treebo Oscar,Rajkot,North 1,Tier-2 Business,Non-Metro,Live,1550,1628,Flex,Dynamic,0,2067,-11,1163,1560,1638,859,2153,2197,1628,ACACIA
+1327100,Treebo Premium Baramasi By Jai Club Prime,Jaipur,North 1,Mixed,Non-Metro,Live,2476,2600,Nonflex,Dynamic,0,3301,-76,2476,2548,2676,2334,3589,3589,2600,OAK
+1273826,Treebo D Grand,Madurai,South 2,Mixed,Leisure,Churn,1749,1837,Nonflex,Dynamic,0,2332,1837,1749,,0,1714,2535,2685,1837,OAK
+1388257,Rock Valley Churned,Goa,West,Winter Leisure,Leisure,Churn,1526,1602,Nonflex,Dynamic,0,2035,1602,1526,,0,3038,2211,2457,1602,ACACIA
+5818346,Treebo The Armani Near Igi Airport,New Delhi,North 1,Tier-1 Business,Metro,Churn,2048,2150,Nonflex,Static,0,2731,2150,2048,,0,1900,2968,2968,2150,OAK
+1547409,Treebo The Venna Hill,Mahabaleshwar,West,Winter Leisure,Leisure,Stop Sell,1314,1380,Flex,Dynamic,0,1752,19,1264,1296,1360,324,1825,1865,1380,OAK
+1376895,Treebo Laaiba Residency,Mumbai,West,Tier-1 Business,Metro,Churn,2254,2367,Nonflex,Dynamic,0,3005,2367,2254,,0,2144,3267,3333,2367,OAK
+1472376,Treebo The Rove,Coorg,South 1,Summer Leisure,Leisure,Live,2286,2400,Nonflex,Dynamic,0,3048,-120,2286,2400,2520,1130,3313,3313,2400,MAPLE
+2067111,Shiv Chhaya Churned,Indore,West,Tier-2 Business,Non-Metro,Churn,805,845,Flex,Dynamic,0,1188,845,891,,0,#N/A,1118,1144,845,OAK
+1463265,Hotels Solitaire Churned,Ambala,North 2,Tier-2 Business,Non-Metro,Churn,1479,1553,Nonflex,Static,0,1972,1553,1479,,0,1064,2143,2143,1553,ACACIA
+2053589,Nearmi Bell House Churned,Gurgaon,North 1,Tier-1 Business,Metro,Churn,1600,1680,Nonflex,Dynamic,0,2133,1680,1600,,0,1976,2319,2319,1680,MAPLE
+1436975,Treebo Premium Embassy Inn,Noida,North 1,Tier-1 Business,Metro,Churn,2227,2338,Flex,Dynamic,0,2969,2338,1670,,0,#N/A,3093,3179,2338,OAK
+1211616,Premium Rose Mallow Churned,New Delhi,North 1,Tier-1 Business,Metro,Churn,2937,3084,Flex,Dynamic,0,3916,3084,2203,,0,#N/A,4079,4165,3084,OAK
+2059301,The Rise Churned,Hyderabad,South 2,Tier-1 Business,Metro,Churn,1804,1894,Nonflex,Dynamic,0,2405,1894,1804,,0,#N/A,2614,2745,1894,MAPLE
+1218034,Treebo Royal Comfort,New Delhi,North 1,Tier-1 Business,Metro,Live,2476,2600,Nonflex,Dynamic,0,3301,-130,2476,2600,2730,1629,3589,3589,2600,OAK
+2013518,Itsy Hotels Ushodaya Royal Residency,Thiruvananthapuram,South 1,Mixed,Non-Metro,Live,1190,1250,Flex,Dynamic,0,1587,-8,1140,1198,1258,1045,1653,1653,1250,OAK
+1517075,Treebo Kaveri,Nashik,West,Mixed,Non-Metro,Live,2275,2389,Nonflex,Dynamic,0,3033,-120,2275,2389,2508,25359,3297,3297,2389,MAPLE
+2018551,Treebo Akshaya Residency,Bangalore,South 1,Tier-1 Business,Metro,Live,1596,1675,Flex,Dynamic,0,2128,-10,1197,1605,1686,92825,2216,2266,1675,OAK
+1593220,Treebo Address Inn Jubilee Hills,Hyderabad,South 2,Tier-1 Business,Metro,Live,2000,2100,Nonflex,Dynamic,0,2667,0,2000,2000,2100,2407,2899,2899,2100,MAPLE
+1608379,Treebo Premium Queen Of Hills Near Mall Road,Mussoorie,North 2,Summer Leisure,Leisure,Live,2572,2700,Nonflex,Dynamic,0,3429,-78,2572,2646,2778,1929,3727,3727,2700,ACACIA
+1747385,Premium Tempo Heritage Spa & Resort Churned,Gangtok,East,Summer Leisure,Leisure,Churn,1396,1466,Nonflex,Dynamic,0,1861,1466,1396,,0,#N/A,2024,2252,1466,OAK
+1391921,Treebo The Square,Ahmedabad,North 1,Tier-2 Business,Non-Metro,Live,1356,1424,Flex,Dynamic,0,1808,-9,1306,1365,1433,1481,1884,1984,1424,OAK
+1150242,"Treebo Urban, 1 Km From Railway Station",Surat,North 1,Tier-2 Business,Non-Metro,Live,1619,1700,Nonflex,Dynamic,0,2159,-85,1619,1700,1785,2070,2346,2346,1700,ACACIA
+2006246,Treebo Suraksha Inn,Bangalore,South 1,Tier-1 Business,Metro,Churn,1571,1650,Nonflex,Dynamic,0,2095,-2,1571,1573,1652,1717,2277,2277,1650,OAK
+2012621,Seven Olives Hal Churned,Bangalore,South 1,Tier-1 Business,Metro,Churn,1028,1080,Flex,Dynamic,0,1371,1080,1028,,0,1678,1428,1499,1080,OAK
+2013117,Treebo Kings Orchid,Bangalore,South 1,Tier-1 Business,Metro,Live,1879,1973,Nonflex,Static,0,2505,-99,1879,1973,2072,2465,2723,2773,1973,MAPLE
+1597934,Treebo Navya The Park,Hyderabad,South 2,Tier-1 Business,Metro,Live,1691,1775,Flex,Dynamic,0,2255,-11,1268,1701,1786,3009,2348,2396,1775,OAK
+1505646,Lemon Wood Suites Churned,Pune,West,Tier-1 Business,Metro,Churn,2053,2156,Nonflex,Dynamic,0,2737,2156,2053,,0,2353,2976,2976,2156,OAK
+2051409,Treebo Prasha,Nashik,West,Mixed,Non-Metro,Live,1905,2000,Flex,Dynamic,0,2540,-13,1429,1917,2013,24839,2646,2696,2000,ACACIA
+1296205,Cool River Churned,Visakhapatnam,South 2,Tier-2 Business,Non-Metro,Churn,1320,1386,Nonflex,Dynamic,0,1760,1386,1320,,0,1443,1913,1932,1386,ACACIA
+3006134,Itsy Hotels Greenland Jungle View,Bhubaneswar,East,Mixed,Non-Metro,Live,1528,1604,Flex,Static,0,2037,-10,1146,1537,1614,933,2122,2222,1604,OAK
+1265433,Treebo Sam Residency,Coimbatore,South 2,Tier-2 Business,Non-Metro,Live,2310,2425,Flex,Dynamic,0,3080,-16,1733,2325,2441,1381,3208,3328,2425,MAPLE
+1597718,Treebo Emerald,Hyderabad,South 2,Tier-1 Business,Metro,Churn,1762,1850,Nonflex,Dynamic,0,2349,1850,1762,,0,1956,2553,2553,1850,MAPLE
+1509593,"Treebo Cocostay, Hadapsar",Pune,West,Tier-1 Business,Metro,Live,2286,2400,Flex,Dynamic,0,3048,-15,1715,2301,2416,887,3175,3225,2400,OAK
+1385556,Treebo Supreme Grande,Goa,West,Winter Leisure,Leisure,Churn,1658,1741,Flex,Dynamic,0,2211,1741,1244,,0,#N/A,2303,2559,1741,OAK
+1538905,"Royal Palace, Zoo Road Churned",Guwahati,East,Mixed,Non-Metro,Churn,1243,1305,Flex,Dynamic,0,1657,1305,1193,,0,1650,1727,1850,1305,ACACIA
+2038886,Treebo Gulmohar Beach Resort With Pool,Goa,West,Winter Leisure,Leisure,Stop Sell,2381,2500,Nonflex,Dynamic,0,3175,-87,2381,2464,2588,1724,3451,3451,2500,OAK
+1555093,Udyam Glory Churned,Nagpur,West,Tier-2 Business,Non-Metro,Churn,1560,1638,Nonflex,Dynamic,0,2080,1638,1560,,0,1245,2261,2261,1638,OAK
+1435311,Treebo La Mirage Suite,Noida,North 1,Tier-1 Business,Metro,Churn,1579,1658,Flex,Dynamic,0,2105,1658,1184,,0,#N/A,2193,2279,1658,OAK
+1472669,Siri Ambari Resorts Churned,Coorg,South 1,Summer Leisure,Leisure,Churn,3521,3697,Nonflex,Dynamic,0,4695,3697,3521,,0,9139,5103,5103,3697,OAK
+1176215,"Ambika Residency, Near Hidimba Devi Temple Churned",Manali,North 2,Winter Leisure,Leisure,Churn,1401,1471,Nonflex,Dynamic,0,1868,1471,1401,,0,1018,2030,2050,1471,ACACIA
+2077586,Lake City Churned,Bhopal,West,Mixed,Non-Metro,Churn,1034,1086,Flex,Dynamic,0,1379,1086,1034,,0,1051,1436,1436,1086,OAK
+1463190,Treebo Four Seasons,Mysore,South 1,Mixed,Leisure,Live,1381,1450,Nonflex,Dynamic,0,1841,-73,1381,1450,1523,1153,2001,2001,1450,OAK
+1308848,Treebo The Royal Taj,Agra,North 2,Mixed,Non-Metro,Stop Sell,1143,1200,Flex,Static,0,1524,40,1143,1105,1160,1109,1587,1637,1200,MAPLE
+1202496,Snow View Resort Kufri With Mountain View Churned,Shimla,North 2,Summer Leisure,Leisure,Churn,1285,1349,Flex,Dynamic,0,1713,1349,1235,,0,1971,1785,1800,1349,ACACIA
+1269018,"Sri Mani'S Residency, Coimbatore Airport Churned",Coimbatore,South 2,Tier-2 Business,Non-Metro,Churn,1389,1458,Nonflex,Dynamic,0,1852,1458,1389,,0,1494,2013,2053,1458,MAPLE
+1135897,Treebo JP Residency,Thiruvananthapuram,South 1,Mixed,Non-Metro,Live,1436,1508,Flex,Dynamic,0,1915,-10,1077,1446,1518,1606,1995,1995,1508,OAK
+1477779,"Treebo Elite Plaza, 700 Mtrs From Madikeri Fort",Coorg,South 1,Summer Leisure,Leisure,Live,1409,1479,Flex,Dynamic,0,1879,-9,1359,1418,1488,2017,1957,1997,1479,ACACIA
+3005921,Itsy Hotels Yogeshwara Grand,Hyderabad,South 2,Tier-1 Business,Metro,Churn,1035,1087,Flex,Dynamic,0,1380,1087,1035,,0,#N/A,1438,1539,1087,OAK
+5000010,Treebo Tiba,Bangalore,South 1,Tier-1 Business,Metro,Live,1905,2000,Nonflex,Dynamic,0,2540,-100,1905,2000,2100,1343,2761,2911,2000,OAK
+1149810,Itsy Hotels Cradle Regency,Ranchi,East,Tier-2 Business,Non-Metro,Live,1166,1225,Flex,Dynamic,0,1555,-8,1116,1174,1233,1584,1620,1720,1225,OAK
+2032117,Omnibliss Churned,Chandigarh,North 2,Mixed,Non-Metro,Churn,1931,2027,Nonflex,Dynamic,0,2575,2027,1931,,0,#N/A,2798,2798,2027,OAK
+1394588,Treebo Shree Krishna Palace,Ahmedabad,North 1,Tier-2 Business,Non-Metro,Live,1597,1677,Flex,Dynamic,0,2129,-10,1198,1607,1687,1322,2218,2263,1677,OAK
+1674098,Hotels Om Pushp Residency Churned,Mathura,North 2,Summer Leisure,Leisure,Churn,858,900,Flex,Dynamic,0,1188,900,891,,0,#N/A,1191,1228,900,ACACIA
+1104071,"Treebo Tropical Roots, Bhupatwala Haridwar",Haridwar,North 2,Mixed,Leisure,Churn,2095,2200,Nonflex,Dynamic,0,2793,-64,2095,2156,2263,1651,3036,3451,2200,ACACIA
+1203839,Daak Bangla Retreat With Mountain View Churned,Shimla,North 2,Summer Leisure,Leisure,Churn,2218,2328,Nonflex,Dynamic,0,2957,2328,2218,,0,436,3214,3571,2328,OAK
+2059541,Treebo Premium D Consulate,Hyderabad,South 2,Tier-1 Business,Metro,Live,2619,2750,Nonflex,Dynamic,0,3492,-137,2619,2750,2887,2741,3796,3796,2750,OAK
+1579509,Golden Birds Churned,Mumbai,West,Tier-1 Business,Metro,Churn,1479,1553,Nonflex,Dynamic,0,1972,1553,1479,,0,1927,2143,2143,1553,OAK
+2015495,Treebo New Plus Point,Bangalore,South 1,Tier-1 Business,Metro,Live,1762,1850,Flex,Dynamic,0,2349,-54,1322,1813,1904,2085,2447,2494,1850,MAPLE
+1304627,Salt Water Beach Resort Churned,Dapoli,West,Mixed,Leisure,Churn,4518,4744,Nonflex,Dynamic,0,6024,4744,4518,,0,1665,6548,6548,4744,OAK
+2324923,"Sreepathi Prayag, Guruvayur Temple Churned",Guruvayur,South 1,Mixed,Leisure,Churn,1112,1168,Flex,Dynamic,0,1483,1168,1112,,0,1508,1545,1545,1168,OAK
+1213613,Treebo Cabana,New Delhi,North 1,Tier-1 Business,Metro,Live,3009,3159,Flex,Dynamic,0,4012,-30,2257,3038,3190,1984,4179,4279,3159,OAK
+2086971,Treebo Varsha Palace,Aurangabad,West,Tier-2 Business,Non-Metro,Churn,1714,1800,Nonflex,Dynamic,0,2285,1800,1714,,0,2214,2484,2484,1800,OAK
+2016425,Fortune Gateway,Bangalore,South 1,Tier-1 Business,Metro,Churn,1372,1440,Flex,Dynamic,0,1829,1440,1322,,0,3077,1905,1905,1440,OAK
+2024354,Treebo Golden Swan Pammal,Chennai,South 2,Tier-1 Business,Metro,Live,2289,2403,Flex,Dynamic,0,3052,-16,1717,2304,2419,2079,3179,3244,2403,OAK
+1222973,Treebo Raj Palace,Varanasi,North 2,Mixed,Non-Metro,Churn,1126,1182,Flex,Dynamic,0,1501,1182,1126,,0,939,1564,1599,1182,OAK
+1456807,Itsy Hotels Vijaya Residency,Manipal,South 1,Mixed,Non-Metro,Live,1314,1380,Flex,Dynamic,0,1752,-8,1264,1322,1388,0,1825,1865,1380,ACACIA
+1384519,Morjim Banyan Resort - Churned,Goa,West,Winter Leisure,Leisure,Churn,1543,1620,Flex,Dynamic,0,2057,1620,1157,,0,#N/A,2143,3571,1620,OAK
+1501731,Treebo Diamond Residency - Ddpk Inn,Pune,West,Tier-1 Business,Metro,Live,1524,1600,Flex,Dynamic,0,2032,-10,1143,1533,1610,1559,2116,2166,1600,OAK
+2098155,Itsy Hotels Kurinji Stay Inn,Yelagiri,South 2,Summer Leisure,Leisure,Live,1597,1677,Flex,Dynamic,0,2129,-10,1198,1607,1687,1537,2218,2264,1677,MAPLE
+1679599,"Krishna Residency, Govardhan Chauraha Churned",Mathura,North 2,Summer Leisure,Leisure,Churn,858,900,Flex,Dynamic,0,1188,900,891,,0,1435,1191,1191,900,OAK
+1497600,Raval Resort With Valley View Churned,Panchgani,West,Winter Leisure,Leisure,Churn,1479,1553,Nonflex,Dynamic,0,1972,1553,1479,,0,3980,2143,3810,1553,ACACIA
+2056887,"Hotels Nv, Sushant Lok Churned",Gurgaon,North 1,Tier-1 Business,Metro,Churn,1426,1498,Nonflex,Dynamic,0,1901,1498,1426,,0,#N/A,2067,2067,1498,OAK
+1548269,Bright Plaza Churn 1,Mahabaleshwar,West,Winter Leisure,Leisure,Churn,857,900,Flex,Dynamic,0,1188,900,891,,0,#N/A,1190,1250,900,OAK
+1894945,Treebo Suvarna Comforts,Hassan,South 1,Mixed,Leisure,Live,1762,1850,Nonflex,Dynamic,0,2349,-92,1762,1850,1943,1702,2554,2554,1850,OAK
+2054962,Anupam Churned,Mahabaleshwar,West,Winter Leisure,Leisure,Churn,1362,1430,Nonflex,Dynamic,0,1816,1430,1362,,0,1918,1974,2024,1430,OAK
+1917876,Olive Lake View Inn June Estate Bhimtal Churned,Bhimtal,North 2,Summer Leisure,Leisure,Churn,1643,1725,Nonflex,Dynamic,0,2191,1725,1643,,0,727,2381,2381,1725,ACACIA
+1209749,Treebo The Northern Retreat Resort With Mountain View,Shimla,North 2,Summer Leisure,Leisure,Live,1503,1578,Flex,Dynamic,0,2004,-36,1127,1537,1614,3024,2087,2130,1578,OAK
+1511908,Itsy Hotels Mansi,Nashik,West,Mixed,Non-Metro,Churn,1166,1225,Flex,Dynamic,0,1555,1225,1116,,0,780,1620,1720,1225,OAK
+2011161,Treebo Anjani Fortune Suites,Bangalore,South 1,Tier-1 Business,Metro,Live,1333,1400,Nonflex,Dynamic,0,1777,-70,1333,1400,1470,1050,1932,1932,1400,OAK
+2055653,Treebo Silver Apartment,Nagpur,West,Tier-2 Business,Non-Metro,Live,1786,1875,Nonflex,Dynamic,0,2381,-94,1786,1875,1969,1255,2588,2588,1875,OAK
+1748509,Itsy Hotels Meraki Grand,Gangtok,East,Summer Leisure,Leisure,Churn,1128,1185,Flex,Dynamic,0,1504,1185,1128,,0,842,1567,1667,1185,ACACIA
+1379742,Treebo Express Inn,Mumbai,West,Tier-1 Business,Metro,Live,2381,2500,Nonflex,Dynamic,0,3175,-125,2381,2500,2625,2508,3451,3451,2500,ACACIA
+1198137,Itsy Hotels Sun N Shade,Matheran,West,Winter Leisure,Leisure,Churn,1269,1332,Flex,Dynamic,0,1692,1332,1219,,0,#N/A,1762,1762,1332,MAPLE
+1528019,Treebo Shakuntalam Churned,Lucknow,North 2,Tier-2 Business,Non-Metro,Churn,1283,1347,Flex,Dynamic,0,1711,1347,1233,,0,1800,1782,1969,1347,OAK
+1613519,"Treebo Y Hotels Elite, Khandagiri",Bhubaneswar,East,Mixed,Non-Metro,Live,874,918,Partner,Static,0,1271,-275,953,1136,1193,#N/A,1214,1614,918,OAK
+2013598,Treebo Premium New Light Suites,Bangalore,South 1,Tier-1 Business,Metro,Live,1690,1774,Nonflex,Static,0,2253,-89,1690,1775,1863,1125,2449,2449,1774,OAK
+1161560,Treebo Seagate,Kochi,South 1,Mixed,Non-Metro,Live,1809,1900,Flex,Dynamic,0,2412,-12,1357,1821,1912,1628,2513,2613,1900,OAK
+1553354,Treebo City Center,Nagpur,West,Tier-2 Business,Non-Metro,Live,1691,1775,Flex,Dynamic,0,2255,-11,1268,1701,1786,1165,2348,2396,1775,OAK
+1474895,"Itsy Hotels Hill Town, 500 Mtrs From Madikeri Fort",Coorg,South 1,Summer Leisure,Leisure,Live,1428,1500,Flex,Dynamic,0,1904,-9,1378,1437,1509,1337,1984,2024,1500,OAK
+1535826,Swagatam Inn Churned,Guwahati,East,Mixed,Non-Metro,Churn,2169,2277,Nonflex,Dynamic,0,2892,2277,2169,,0,2300,3143,3174,2277,OAK
+6147270,Royal Park Churned,Srinagar,North 2,Summer Leisure,Leisure,Churn,1658,1741,Flex,Dynamic,0,2211,1741,1244,,0,#N/A,2303,2559,1741,ACACIA
+1502283,"Natasha, Vesu, Surat Churned",Surat,North 1,Tier-2 Business,Non-Metro,Churn,1320,1386,Nonflex,Static,0,1760,1386,1320,,0,735,1913,1913,1386,OAK
+6478185,Sadhoo Heritage Ayurvedic Spa & Pool,Kannur,South 1,Summer Leisure,Leisure,Churn,1642,1724,Flex,Dynamic,0,2189,1724,1232,,0,1273,2281,2381,1724,OAK
+1503159,Raana Encore - Near Magarpatta Churned,Pune,West,Tier-1 Business,Metro,Churn,1207,1268,Flex,Dynamic,0,1609,1268,1157,,0,#N/A,1677,1763,1268,OAK
+1439552,"Expo Mart Inn, Greater Noida Churned",Noida,North 1,Tier-1 Business,Metro,Churn,1406,1476,Flex,Dynamic,0,1875,1476,1356,,0,1812,1953,2029,1476,OAK
+4471218,"Treebo Down Town, Dalhousie",Dalhousie,North 2,Winter Leisure,Leisure,Churn,1476,1550,Nonflex,Dynamic,0,1968,1550,1476,,0,2174,2139,2139,1550,OAK
+1552629,"Treebo Premium The Memoir, Ramdaspeth",Nagpur,West,Tier-2 Business,Non-Metro,Live,2785,2924,Flex,Dynamic,0,3713,-18,2089,2802,2943,2454,3868,3968,2924,MAPLE
+1558691,"Treebo A1 Residency, Hingna T Point",Nagpur,West,Tier-2 Business,Non-Metro,Live,1905,2000,Flex,Dynamic,0,2540,-13,1429,1917,2013,366,2646,2646,2000,OAK
+1166076,"Itsy Hotels Avani Stays, Vyttila, Kochi",Kochi,South 1,Mixed,Non-Metro,Live,1750,1838,Flex,Static,0,2333,-11,1313,1761,1849,1717,2431,2431,1838,OAK
+1212831,Grand York Churned,New Delhi,North 1,Tier-1 Business,Metro,Churn,1240,1302,Nonflex,Dynamic,0,1653,1302,1240,,0,#N/A,1797,1797,1302,OAK
+2067600,"Treebo Pure Earth Stay, Vijay Nagar",Indore,West,Tier-2 Business,Non-Metro,Live,1409,1479,Flex,Dynamic,0,1879,-9,1359,1418,1488,1062,1957,1997,1479,OAK
+1767502,"Treebo Jaguar Comforts, 3 Kms From Mahatma Gandhi Park",Chikmagalur,South 1,Summer Leisure,Leisure,Churn,1714,1800,Nonflex,Dynamic,0,2285,1800,1714,,0,2456,2484,2584,1800,OAK
+1245809,Treebo Treetops Inn - Anna Nagar,Chennai,South 2,Tier-1 Business,Metro,Churn,1726,1812,Flex,Dynamic,0,2301,1812,1295,,0,#N/A,2397,2566,1812,OAK
+2010412,"Treebo Brahma, Wayanad",Wayanad,South 1,Summer Leisure,Leisure,Live,1315,1381,Flex,Dynamic,0,1753,-31,1265,1345,1412,1619,1827,1864,1381,OAK
+1385955,"Adams Beach Resort, 350 Mtrs From Baga Beach Churned",Goa,West,Winter Leisure,Leisure,Churn,2143,2250,Flex,Dynamic,0,2857,2250,1607,,0,1614,2976,3001,2250,ACACIA
+1218056,\Cordial Home - Jasola Churned,New Delhi,North 1,Tier-1 Business,Metro,Churn,1269,1333,Flex,Dynamic,0,1692,1333,1219,,0,#N/A,1763,1849,1333,OAK
+1509611,"Kharadi Residency, Near Eon It Park Churned",Pune,West,Tier-1 Business,Metro,Churn,1008,1058,Flex,Dynamic,0,1344,1058,1008,,0,#N/A,1400,1500,1058,OAK
+1498227,"Treebo Kaizen, 3 Kms From Paragliding",Panchgani,West,Winter Leisure,Leisure,Churn,1333,1400,Nonflex,Dynamic,0,1777,1400,1333,,0,8064,1932,1932,1400,ACACIA
+1441289,"Treebo Skydale Premium Suites, 1500 Mtrs From Ooty Lake",Ooty,South 1,Summer Leisure,Leisure,Live,2982,3131,Flex,Dynamic,0,3976,-19,2237,3000,3150,#N/A,4141,4241,3131,OAK
+1594082,"Treebo Purva Crest, Gachibowli Dlf",Hyderabad,South 2,Tier-1 Business,Metro,Live,2204,2314,Nonflex,Dynamic,0,2939,-192,2204,2387,2506,2071,3194,3294,2314,OAK
+2013841,"Treebo Nandi Comforts, Peenya",Bangalore,South 1,Tier-1 Business,Metro,Live,1315,1381,Flex,Dynamic,0,1753,-9,1265,1324,1390,1391,1827,1864,1381,OAK
+1191684,"Treebo Vsaffron Regency,Punnamada Lake",Alleppey,South 1,Winter Leisure,Leisure,Live,1714,1800,Flex,Dynamic,0,2285,-11,1286,1725,1811,0,2381,2431,1800,OAK
+1433667,Treebo Fortune Home Expressway,Noida,North 1,Tier-1 Business,Metro,Churn,1800,1890,Flex,Dynamic,0,2400,1890,1350,,0,#N/A,2500,2600,1890,OAK
+1242398,Treebo Nestlay Rooms Gummidipoondi,Chennai,South 2,Tier-1 Business,Metro,Live,2066,2170,Flex,Dynamic,0,2755,-13,1550,2079,2183,1124,2870,2929,2170,OAK
+1373104,Treebo Premium Heritage Grand - Majiwada Thane,Mumbai,West,Tier-1 Business,Metro,Churn,3480,3654,ARR Contract,Dynamic,0,4640,3654,3480,,0,4452,4833,5383,3654,OAK
+2061503,"Treebo Greenland Resort, Patia",Bhubaneswar,East,Mixed,Non-Metro,Live,2857,3000,Nonflex,Static,0,3809,-150,2857,3000,3150,1676,4141,4141,3000,OAK
+1365790,Treebo Megh Niwas - Jodhpur,Jodhpur,North 1,Winter Leisure,Leisure,Live,1905,2000,Nonflex,Dynamic,0,2540,-100,1905,2000,2100,2811,2761,2761,2000,OAK
+2057194,"Flxho Trio, Medanta Medicity Gurgaon Churned",Gurgaon,North 1,Tier-1 Business,Metro,Churn,1479,1553,Nonflex,Dynamic,0,1972,1553,1479,,0,4169,2143,2143,1553,OAK
+1598533,"Treebo Acsys, Gachibowli",Hyderabad,South 2,Tier-1 Business,Metro,Live,2048,2150,Nonflex,Dynamic,0,2731,-212,2048,2250,2363,#N/A,2968,2968,2150,OAK
+2018783,"Treebo Rr Residency, Sanjay Nagar",Bangalore,South 1,Tier-1 Business,Metro,Live,1428,1500,Nonflex,Static,0,1904,-75,1428,1499,1574,2575,2070,2070,1500,OAK
+1182247,"Hotels Sehdev Residency, Near Golden Temple Churned",Amritsar,North 2,Mixed,Non-Metro,Churn,763,801,Flex,Dynamic,0,1188,801,891,,0,#N/A,1060,1060,801,ACACIA
+1384711,"Treebo Premium Rester Select Kings Court With Pool, Calangute",Goa,West,Winter Leisure,Leisure,Churn,1891,1985,Flex,Dynamic,0,2521,1985,1418,,0,3684,2626,2918,1985,MAPLE
+2019978,"Treebo Global Stay, Jayanagar",Bangalore,South 1,Tier-1 Business,Metro,Live,2048,2150,Nonflex,Dynamic,0,2731,-108,2048,2150,2258,1921,2968,2968,2150,OAK
+2051817,"White Rock, Sohna Road Churned",Gurgaon,North 1,Tier-1 Business,Metro,Churn,1457,1530,Flex,Dynamic,0,1943,1530,1093,,0,0,2024,2124,1530,OAK
+1243265,Eco Stay T Nagar Churned,Chennai,South 2,Tier-1 Business,Metro,Churn,1542,1619,Flex,Dynamic,0,2056,1619,1157,,0,1192,2142,2163,1619,OAK
+1399581,"Itsy Hotels Signature, Nehru Nagar",Ahmedabad,North 1,Tier-2 Business,Non-Metro,Live,1356,1424,Flex,Dynamic,0,1808,-9,1306,1365,1433,1313,1884,1984,1424,ACACIA
+6802444,Treebo Heaven Grand Ayodhya,Ayodhya,North 2,Mixed,Leisure,Churn,1555,1632,Nonflex,Dynamic,0,2073,1632,1555,,0,1050,2253,2553,1632,MAPLE
+1332068,"Treebo Eeshan Rodhi Resort, Darjeeling",Darjeeling,East,Summer Leisure,Leisure,Churn,2098,2203,Nonflex,Dynamic,0,2797,2203,2098,,0,1158,3041,3828,2203,OAK
+1506967,"Treebo Empire Executive, Hinjewadi",Pune,West,Tier-1 Business,Metro,Live,1666,1750,Nonflex,Dynamic,0,2221,-87,1666,1749,1837,1258,2415,2415,1750,OAK
+1479104,"Treebo New Redfern, Madikeri",Coorg,South 1,Summer Leisure,Leisure,Live,1524,1600,Flex,Dynamic,0,2032,-10,1143,1533,1610,3217,2116,2216,1600,OAK
+2021308,"Itsy Hotels Raj Resort, Calangute",Goa,West,Winter Leisure,Leisure,Churn,1903,1998,Nonflex,Dynamic,0,2537,1998,1903,,0,2525,2758,2758,1998,ACACIA
+1464876,"Treebo Samanvaya Retreat, Mysore",Mysore,South 1,Mixed,Leisure,Live,1857,1950,Nonflex,Dynamic,0,2476,-97,1857,1950,2047,1527,2692,2692,1950,MAPLE
+1703428,Central Churned,Thrissur,South 1,Tier-2 Business,Non-Metro,Churn,1893,1987,Nonflex,Static,0,2524,1987,1893,,0,#N/A,2743,2770,1987,OAK
+1542862,"Seven Days, Mahabaleshwar Churned",Mahabaleshwar,West,Winter Leisure,Leisure,Churn,1377,1446,Flex,Dynamic,0,1836,1446,1327,,0,2146,1913,3189,1446,MAPLE
+1434818,"Treebo Elite Corporate, Sector 62",Noida,North 1,Tier-1 Business,Metro,Live,1833,1925,Flex,Dynamic,0,2444,-12,1375,1845,1937,1463,2546,2646,1925,OAK
+1161088,"York By D2v, Kochi Churned",Kochi,South 1,Mixed,Non-Metro,Churn,1372,1440,Flex,Dynamic,0,1829,1440,1322,,0,754,1905,2041,1440,OAK
+1307013,Treebo Taj Dream Agra,Agra,North 2,Mixed,Non-Metro,Churn,1238,1300,Flex,Dynamic,0,1651,1300,1188,,0,5039,1720,1771,1300,MAPLE
+1609428,"Stotrak S N Residency, Mussoorie Churned",Mussoorie,North 2,Summer Leisure,Leisure,Churn,1200,1260,Flex,Dynamic,0,1600,1260,1150,,0,424,1667,1667,1260,OAK
+1508980,Treebo Blossom - Viman Nagar,Pune,West,Tier-1 Business,Metro,Live,2190,2300,Flex,Dynamic,0,2920,-14,1643,2204,2314,1942,3042,3042,2300,OAK
+1109883,"Paradise Inn, Haridwar Churned",Haridwar,North 2,Mixed,Leisure,Churn,930,977,Flex,Dynamic,0,1240,977,930,,0,1038,1292,1292,977,OAK
+1067960,"Hotels Shree Anand Dham, Near Prem Mandir Churned",Vrindavan,North 2,Mixed,Leisure,Churn,1643,1725,Nonflex,Dynamic,0,2191,1725,1643,,0,#N/A,2381,2807,1725,ACACIA
+1828651,"Treebo Royal Imperial, Bikaner Railway Station",Bikaner,North 1,Tier-2 Business,Non-Metro,Churn,1409,1479,Flex,Dynamic,0,1879,1479,1359,,0,840,1957,1997,1479,ACACIA
+2047707,"Itsy Hotels Vijaya Comforts, Coorg",Coorg,South 1,Summer Leisure,Leisure,Live,1080,1134,Flex,Dynamic,0,1440,-26,1080,1105,1160,2324,1500,1531,1134,OAK
+1509676,"Treebo Bhairavee, Baner",Pune,West,Tier-1 Business,Metro,Live,2123,2229,Nonflex,Dynamic,0,2831,-111,2123,2229,2341,870,3077,3727,2229,OAK
+1505609,"Treebo Serenity Inn, Koregaon Park",Pune,West,Tier-1 Business,Metro,Live,2788,2927,Nonflex,Dynamic,0,3717,-147,2788,2927,3074,2821,4040,4040,2927,MAPLE
+1248477,Treebo Premium Vapr Ashok Nagar,Chennai,South 2,Tier-1 Business,Metro,Live,3194,3354,Flex,Dynamic,0,4259,-21,2396,3214,3375,1966,4436,4526,3354,MAPLE
+2016775,"Treebo Galaxy Kings Suites, Hebbal",Bangalore,South 1,Tier-1 Business,Metro,Live,1846,1938,Nonflex,Static,0,2461,-97,1846,1938,2035,1637,2675,2675,1938,MAPLE
+1299383,Treebo Marina Grand Vizag - 5 Min Drive From Railway Station & Bus Stand,Visakhapatnam,South 2,Tier-2 Business,Non-Metro,Live,1413,1483,Flex,Dynamic,0,1884,-10,1363,1422,1493,1935,1962,2062,1483,OAK
+2013148,Treebo Sln Heritage,Bangalore,South 1,Tier-1 Business,Metro,Stop Sell,1517,1592,Nonflex,Static,0,2023,-47,1517,1561,1639,1000,2198,2198,1592,OAK
+1766191,"Itsy Hotels Kattari Komforts, Chikmagalur",Chikmagalur,South 1,Summer Leisure,Leisure,Live,1452,1524,Flex,Dynamic,0,1936,-9,1089,1461,1534,2301,2016,2116,1524,OAK
+1281405,Treebo The Regalia Rooms With Mountain View,Kodaikanal,South 2,Summer Leisure,Leisure,Churn,1344,1411,Flex,Dynamic,0,1792,1411,1294,,0,2054,1867,1967,1411,ACACIA
+1219916,"Royal Palace, New Delhi Churned",New Delhi,North 1,Tier-1 Business,Metro,Churn,1152,1210,Flex,Dynamic,0,1536,1210,1102,,0,3821,1600,1600,1210,OAK
+2012251,White Sand Churned,Dehradun,North 2,Mixed,Leisure,Churn,987,1036,Nonflex,Dynamic,0,1316,1036,987,,0,0,1431,1531,1036,OAK
+1391954,"Treebo Eden Park, Ahmedabad",Ahmedabad,North 1,Tier-2 Business,Non-Metro,Churn,1247,1309,Flex,Dynamic,0,1663,1309,1197,,0,1372,1732,1757,1309,ACACIA
+1509969,Savali Inn Executive Churned,Pune,West,Tier-1 Business,Metro,Churn,1760,1847,Nonflex,Dynamic,0,2347,1847,1760,,0,1304,2550,2700,1847,OAK
+1534180,Treebo Park Palace,Guwahati,East,Mixed,Non-Metro,Churn,1831,1923,Flex,Dynamic,0,2441,1923,1373,,0,#N/A,2543,2743,1923,ACACIA
+1419780,Orion Crystal Churned,Kolkata,East,Tier-1 Business,Metro,Churn,2157,2265,Nonflex,Dynamic,0,2876,2265,2157,,0,#N/A,3126,3157,2265,OAK
+1509578,Treebo Grand Lotus - 3 Km From Textile Market,Surat,North 1,Tier-2 Business,Non-Metro,Live,1416,1486,Flex,Dynamic,0,1888,-10,1366,1425,1496,990,1966,1991,1486,OAK
+2012398,Treebo Elmas Grand,Bangalore,South 1,Tier-1 Business,Metro,Live,1809,1900,Nonflex,Static,0,2412,-95,1809,1899,1994,1764,2622,2622,1900,OAK
+1163616,Grand Canyon By D2v Churned,Kochi,South 1,Mixed,Non-Metro,Churn,1496,1571,Nonflex,Static,0,1995,1571,1496,,0,1368,2168,2168,1571,MAPLE
+2053671,"Treebo White Castle, Gurgaon",Gurgaon,North 1,Tier-1 Business,Metro,Churn,1854,1947,Flex,Dynamic,0,2472,1947,1391,,0,0,2575,2875,1947,OAK
+1963434,Treebo Trinetar International,Jammu,North 2,Mixed,Non-Metro,Live,2000,2100,Nonflex,Dynamic,0,2667,-105,2000,2100,2205,#N/A,2899,2999,2100,ACACIA
+2014532,Itsy Hotels Classiyo Munnar Crown Resorts,Munnar,South 1,Summer Leisure,Leisure,Churn,1570,1648,Flex,Dynamic,0,2093,1648,1178,,0,858,2180,2298,1648,OAK
+2012154,Treebo The Sai Leela Suites,Bangalore,South 1,Tier-1 Business,Metro,Live,1921,2017,Nonflex,Dynamic,0,2561,-101,1921,2017,2118,10420,2784,2784,2017,OAK
+2026607,Treebo Sky City Grand,Mangalore,South 1,Mixed,Non-Metro,Live,1714,1800,Flex,Dynamic,0,2285,-11,1286,1725,1811,1329,2381,2431,1800,OAK
+1143227,Treebo Windsong Resort Munnar,Munnar,South 1,Summer Leisure,Leisure,Live,1503,1578,Flex,Dynamic,0,2004,-68,1127,1568,1646,0,2087,2130,1578,OAK
+1435465,Treebo Sunny Feast,Noida,North 1,Tier-1 Business,Metro,Live,1786,1876,Flex,Dynamic,0,2381,-12,1340,1798,1887,1765,2481,2556,1876,OAK
+1781326,Westview Churned,Vapi,North 1,Tier-2 Business,Non-Metro,Churn,1622,1703,Nonflex,Static,0,2163,1703,1622,,0,#N/A,2350,2350,1703,OAK
+1241638,Treebo Nestlay Rooms Nungambakkam,Chennai,South 2,Tier-1 Business,Metro,Live,2778,2917,Flex,Dynamic,0,3704,-19,2084,2796,2936,2552,3859,3959,2917,OAK
+7137580,Treebo Aptin,Velankanni,South 2,Mixed,Leisure,Churn,1624,1706,Flex,Dynamic,0,2165,1706,1218,,0,1566,2256,2356,1706,MAPLE
+1871900,Treebo Sea Heights,Kakinada,South 2,Tier-2 Business,Non-Metro,Churn,1571,1650,Nonflex,Dynamic,0,2095,1650,1571,,0,1643,2277,2277,1650,OAK
+1509602,Treebo Kuval Inn,Pune,West,Tier-1 Business,Metro,Live,2066,2170,Flex,Dynamic,0,2755,-13,1550,2079,2183,#N/A,2870,2929,2170,OAK
+1502698,"Itsy Hotels Anand Executive, Near Amanora",Pune,West,Tier-1 Business,Metro,Live,1503,1578,Flex,Dynamic,0,2004,-10,1127,1512,1588,#N/A,2087,2130,1578,OAK
+1909393,Reveniir Resort With Pool Churned,Lonavala,West,Summer Leisure,Leisure,Churn,2417,2538,Partner,Dynamic,0,3223,2538,2417,,0,1282,3357,7183,2538,MAPLE
+2061111,Treebo Premium Omni Residency,Indore,West,Tier-2 Business,Non-Metro,Live,2405,2525,Nonflex,Dynamic,0,3207,-127,2405,2525,2652,2042,3485,3485,2525,MAPLE
+1472459,Treebo Sandpipers Kushalnagar,Coorg,South 1,Summer Leisure,Leisure,Live,1356,1424,Flex,Dynamic,0,1808,-9,1306,1365,1433,1241,1884,1984,1424,OAK
+1431135,"Treebo Green View, Noida",Noida,North 1,Tier-1 Business,Metro,Live,1452,1524,Flex,Dynamic,0,1936,-9,1089,1461,1534,#N/A,2016,2116,1524,OAK
+1511929,Treebo Sai Rekha Inn,Nashik,West,Mixed,Non-Metro,Live,2166,2274,Flex,Dynamic,0,2888,-144,1625,2303,2418,1922,3008,3108,2274,MAPLE
+2017292,"Treebo The Grand Skyla, Malleshwaram",Bangalore,South 1,Tier-1 Business,Metro,Live,1785,1874,Flex,Dynamic,0,2380,-82,1339,1863,1956,1896,2479,2529,1874,OAK
+1371857,Treebo The Blue Roof,Mumbai,West,Tier-1 Business,Metro,Live,2857,3000,Nonflex,Dynamic,0,3809,-150,2857,3000,3150,2606,4141,4141,3000,OAK
+2067592,Royal Empire Indore Churnedd,Indore,West,Tier-2 Business,Non-Metro,Churn,1157,1215,Flex,Dynamic,0,1543,1215,1107,,0,#N/A,1607,1607,1215,ACACIA
+1311127,Treebo The Aravali Getaway,Udaipur,North 1,Winter Leisure,Leisure,Churn,1314,1380,Nonflex,Dynamic,0,1752,1380,1314,,0,1206,1905,2068,1380,OAK
+1365284,Treebo Taj Square,Patna,East,Tier-2 Business,Non-Metro,Live,1524,1600,Nonflex,Dynamic,0,2032,-81,1524,1600,1680,1118,2208,2208,1600,ACACIA
+1507406,Landmark Near Pune Airport Churned,Pune,West,Tier-1 Business,Metro,Churn,884,928,Flex,Dynamic,0,1188,928,891,,0,600,1228,1488,928,OAK
+1508043,"Spring Brooks, Kalyani Nagar Churned",Pune,West,Tier-1 Business,Metro,Churn,1251,1314,Flex,Dynamic,0,1668,1314,1201,,0,552,1738,2018,1314,OAK
+1246011,Ngh Transit Churned,Chennai,South 2,Tier-1 Business,Metro,Churn,1726,1812,Flex,Dynamic,0,2301,1812,1295,,0,1466,2397,2566,1812,OAK
+1379430,Itsy Hotels Elegant,Mumbai,West,Tier-1 Business,Metro,Live,2095,2200,Nonflex,Dynamic,0,2793,-110,2095,2200,2310,1828,3036,3451,2200,ACACIA
+1418980,Treebo Royal Orbit,Kolkata,East,Tier-1 Business,Metro,Live,2009,2109,Flex,Static,0,2679,-13,1507,2021,2122,730,2790,2790,2109,OAK
+1593321,Treebo The Address Inn Mehdipatnam,Hyderabad,South 2,Tier-1 Business,Metro,Live,1559,1637,Flex,Dynamic,0,2079,24,1169,1536,1613,1680,2165,2165,1637,OAK
+1197891,Treebo Bombay Palace,Chandigarh,North 2,Mixed,Non-Metro,Live,1905,2000,Nonflex,Dynamic,0,2540,-100,1905,2000,2100,1465,2761,2761,2000,ACACIA
+1381541,Treebo Sunshine Beach Resort,Goa,West,Winter Leisure,Leisure,Live,1597,1677,Flex,Dynamic,0,2129,-10,1198,1607,1687,3352,2218,2263,1677,OAK
+2071014,Treebo Kamal Regency,Bhopal,West,Mixed,Non-Metro,Live,1476,1550,Nonflex,Dynamic,0,1968,-78,1476,1550,1627,1362,2139,2139,1550,OAK
+2064479,Treebo Musk,Indore,West,Tier-2 Business,Non-Metro,Live,1143,1200,Flex,Dynamic,0,1524,-7,1143,1150,1207,1548,1587,1637,1200,OAK
+1521131,Treebo Saffron,Lucknow,North 2,Tier-2 Business,Non-Metro,Churn,1115,1170,Flex,Dynamic,0,1487,1170,1115,,0,1540,1548,1548,1170,OAK
+1247536,Treebo Rakshitha,Chennai,South 2,Tier-1 Business,Metro,Live,2349,2466,Flex,Dynamic,0,3132,-16,1762,2364,2482,1060,3262,3328,2466,OAK
+2075188,Treebo Blue Moon,Gandhinagar,North 1,Tier-2 Business,Non-Metro,Churn,1263,1326,Flex,Dynamic,0,1684,1326,1213,,0,1227,1754,1855,1326,OAK
+1166252,Treebo Airsuite Airport Hotel,Kochi,South 1,Mixed,Non-Metro,Live,1143,1200,Nonflex,Dynamic,0,1524,-60,1143,1200,1260,1317,1656,1656,1200,ACACIA
+1398875,Treebo Kbc,Ahmedabad,North 1,Tier-2 Business,Non-Metro,Live,2232,2344,Flex,Dynamic,0,2976,-15,1674,2246,2358,2197,3100,3175,2344,OAK
+1305035,Treebo Empire Red Carpet,Agra,North 2,Mixed,Non-Metro,Live,1048,1100,Flex,Static,0,1397,-7,1048,1054,1107,2335,1455,1487,1100,OAK
+1212380,Treebo Twin Tree,New Delhi,North 1,Tier-1 Business,Metro,Live,2190,2300,Flex,Dynamic,0,2920,-14,1643,2204,2314,1821,3042,3042,2300,OAK
+2066574,Treebo A5,Indore,West,Tier-2 Business,Non-Metro,Churn,1076,1129,Flex,Dynamic,0,1435,1129,1076,,0,595,1494,1494,1129,OAK
+2077876,Treebo Lotus Blue,Bhopal,West,Mixed,Non-Metro,Churn,1297,1362,Nonflex,Dynamic,0,1729,1362,1297,,0,1163,1880,1880,1362,ACACIA
+2018177,Treebo Cranberry Delight,Bangalore,South 1,Tier-1 Business,Metro,Stop Sell,1600,1680,Nonflex,Dynamic,0,2133,-84,1600,1680,1764,1702,2319,2319,1680,OAK
+1544377,Bright Plaza Churneds,Mahabaleshwar,West,Winter Leisure,Leisure,Churn,857,900,Flex,Dynamic,0,1188,900,891,,0,#N/A,1190,1569,900,OAK
+1473721,Treebo River View,Coorg,South 1,Summer Leisure,Leisure,Churn,1297,1362,Nonflex,Dynamic,0,1729,1362,1297,,0,3293,1880,1980,1362,OAK
+1215006,Treebo Stellar Inn,New Delhi,North 1,Tier-1 Business,Metro,Live,2286,2400,Nonflex,Static,0,3048,-120,2286,2400,2520,#N/A,3313,3313,2400,OAK
+2018850,Treebo Fortune Gateway,Bangalore,South 1,Tier-1 Business,Metro,Churn,1533,1610,Flex,Dynamic,0,2044,1610,1150,,0,#N/A,2129,2149,1610,OAK
+2016532,Treebo Skanda Suites,Bangalore,South 1,Tier-1 Business,Metro,Live,1409,1479,Flex,Static,0,1879,-9,1359,1418,1488,#N/A,1957,1997,1479,OAK
+2010531,Treebo Maurice,Baddi,North 2,Tier-2 Business,Non-Metro,Live,1362,1430,Flex,Dynamic,0,1816,-8,1312,1370,1439,1398,1892,1930,1430,OAK
+1291140,Treebo Blak & Wite Rk Beach,Visakhapatnam,South 2,Tier-2 Business,Non-Metro,Churn,2664,2797,Flex,Dynamic,0,3552,2797,1998,,0,#N/A,3700,3728,2797,MAPLE
+1369584,Treebo Blu Vvu,Jodhpur,North 1,Winter Leisure,Leisure,Churn,1597,1677,Flex,Dynamic,0,2129,1677,1198,,0,2238,2218,2263,1677,OAK
+1502379,Itsy Hotels Iconic,Pune,West,Tier-1 Business,Metro,Live,1409,1479,Flex,Dynamic,0,1879,-9,1359,1418,1488,#N/A,1957,1997,1479,ACACIA
+2050302,Treebo Royal Comfort Atithi,Pune,West,Tier-1 Business,Metro,Live,1714,1800,Flex,Dynamic,0,2285,-11,1286,1725,1811,1332,2381,2381,1800,ACACIA
+6807006,Treebo Ramayan Suites Ayodhya,Ayodhya,North 2,Mixed,Leisure,Churn,1524,1600,Flex,Dynamic,0,2032,1600,1143,,0,1827,2116,2216,1600,MAPLE
+1165837,"Treebo Premium Cochin Airport, 5 Min From Cochin Airport",Kochi,South 1,Mixed,Non-Metro,Live,1809,1900,Nonflex,Dynamic,0,2412,-55,1809,1862,1955,#N/A,2622,2622,1900,OAK
+1889348,Sparkle Near Metro Mall Hotel,Zirakpur,North 2,Mixed,Non-Metro,Churn,1892,1987,Nonflex,Dynamic,0,2523,1987,1892,,0,#N/A,2742,2742,1987,ACACIA
+1373213,Palm Olive Churned,Mumbai,West,Tier-1 Business,Metro,Churn,3429,3600,Flex,Dynamic,0,4572,3600,2572,,0,#N/A,4762,4762,3600,OAK
+1584713,Treebo Tiger Pug Mark Resort,Ramnagar,North 2,Summer Leisure,Leisure,Churn,1905,2000,Nonflex,Dynamic,0,2540,2000,1905,,0,#N/A,2761,2830,2000,OAK
+1385250,Treebo Green Village Resort With Pool,Dodamarg,West,Winter Leisure,Leisure,Live,1905,2000,Nonflex,Dynamic,0,2540,-100,1905,2000,2100,#N/A,2761,2761,2000,OAK
+1143596,Treebo Nps Grand,Ranchi,East,Tier-2 Business,Non-Metro,Churn,1534,1610,Flex,Dynamic,0,2045,1610,1151,,0,#N/A,2130,2417,1610,OAK
+1282785,Treebo Tranquil Heights,Kodaikanal,South 2,Summer Leisure,Leisure,Live,2282,2396,Nonflex,Dynamic,0,3043,-120,2282,2396,2516,#N/A,3307,3307,2396,OAK
+1673534,"Itsy Hotels Krishna Residency, Govardhan Chauraha",Mathura,North 2,Summer Leisure,Leisure,Live,953,1000,Flex,Dynamic,0,1271,-6,953,959,1007,#N/A,1323,1389,1000,OAK
+1879480,Itsy Hotels Satya Shree,Katra,North 2,Summer Leisure,Leisure,Live,1143,1200,Flex,Dynamic,0,1524,-7,1143,1150,1207,#N/A,1587,1637,1200,OAK
+1382479,Rock Valley Churneds,Goa,West,Winter Leisure,Leisure,Churn,2857,3000,Nonflex,Dynamic,0,3809,3000,2857,,0,#N/A,4141,4141,3000,ACACIA
+2026848,Treebo Kristal Sands Beach Resort,Goa,West,Winter Leisure,Leisure,Live,1619,1700,Nonflex,Dynamic,0,2159,-85,1619,1700,1785,#N/A,2346,2346,1700,OAK
+1136669,Treebo De Cloud 9 Regency,Thiruvananthapuram,South 1,Mixed,Non-Metro,Live,1833,1925,Flex,Dynamic,0,2444,-12,1375,1845,1937,#N/A,2546,2646,1925,OAK
+3001712,Treebo Ivory White Inn,Bangalore,South 1,Tier-1 Business,Metro,Live,1571,1650,Nonflex,Static,0,2095,-82,1571,1650,1732,#N/A,2277,2277,1650,MAPLE
+1522096,Treebo Resto- Near Lucknow Railway Station,Lucknow,North 2,Tier-2 Business,Non-Metro,Stop Sell,1310,1375,Flex,Dynamic,0,1747,47,1260,1265,1329,#N/A,1819,1869,1375,OAK
+1176148,Treebo Premium Sattva With Mountain View,Manali,North 2,Winter Leisure,Leisure,Live,1221,1282,Flex,Dynamic,0,1628,-29,1171,1248,1311,#N/A,1696,1731,1282,OAK
+1291813,"Treebo Lalitha, Rk Beach",Visakhapatnam,South 2,Tier-2 Business,Non-Metro,Live,2630,2762,Flex,Dynamic,0,3507,-18,1973,2647,2779,#N/A,3653,3728,2762,OAK
+1292171,"Treebo Imperia, Kommadi",Visakhapatnam,South 2,Tier-2 Business,Non-Metro,Live,1878,1972,Flex,Dynamic,0,2504,-12,1409,1890,1985,#N/A,2609,2663,1972,MAHOGANY
+4471338,Treebo Anjukul,Dalhousie,North 2,Winter Leisure,Leisure,Live,1800,1890,Nonflex,Dynamic,0,2400,-94,1800,1890,1985,#N/A,2609,2663,1890,OAK
+1776233,Treebo Sree Varshavilas Regency,Guruvayur,South 1,Mixed,Leisure,Live,1905,2000,Flex,Dynamic,0,2540,-13,1429,1917,2013,#N/A,2646,2700,2000,OAK
+1216141,Treebo Marigold,New Delhi,North 1,Tier-1 Business,Metro,Live,2381,2500,Nonflex,Dynamic,0,3175,-125,2381,2500,2625,#N/A,3451,3451,2500,OAK
+1221551,Treebo Om Shree Banaras,Varanasi,North 2,Mixed,Non-Metro,Live,1071,1124,Flex,Dynamic,0,1428,15,1071,1056,1109,#N/A,1487,1587,1124,ACACIA
+1464901,"Treebo Sanmaya Retreat, Mysore",Mysore,South 1,Mixed,Leisure,Live,1905,2000,Nonflex,Dynamic,0,2540,-100,1905,2000,2100,#N/A,2761,2761,2000,MAPLE
+2082832,Treebo Majestic Retreat,Varkala,South 1,Summer Leisure,Leisure,Live,2381,2500,Nonflex,Dynamic,0,3175,-125,2381,2500,2625,#N/A,3451,3451,2500,OAK
+1439255,Treebo Premium Inn,Noida,North 1,Tier-1 Business,Metro,Stop Sell,1409,1479,Flex,Dynamic,0,1879,50,1359,1362,1430,#N/A,1957,1997,1479,ACACIA
+1211183,Treebo Gemstone,New Delhi,North 1,Tier-1 Business,Metro,Churn,2112,2217,Flex,Dynamic,0,2816,74,1584,2041,2143,#N/A,2933,2997,2217,OAK
+1438370,Treebo Corporate Inn,Noida,North 1,Tier-1 Business,Metro,Live,1596,1675,Flex,Dynamic,0,2128,-10,1197,1605,1686,#N/A,2216,2264,1675,OAK
+1536656,Treebo Kashvijoy,Guwahati,East,Mixed,Non-Metro,Live,1881,1975,Flex,Dynamic,0,2508,-12,1411,1892,1987,#N/A,2612,2712,1975,OAK
+1479075,Treebo Regalia Comforts,Coorg,South 1,Summer Leisure,Leisure,Live,1405,1475,Flex,Dynamic,0,1873,-9,1355,1413,1484,#N/A,1951,2051,1475,OAK
+1204263,Lords Garden Glory With Valley View Churned,Shimla,North 2,Summer Leisure,Leisure,Churn,1400,1470,Flex,Dynamic,0,1867,1470,1350,,0,#N/A,1944,1984,1470,ACACIA
+1581295,Treebo Corbett Hideout Dada'S,Ramnagar,North 2,Summer Leisure,Leisure,Live,976,1024,Flex,Dynamic,0,1301,-85,976,1056,1109,#N/A,1355,1455,1024,ACACIA
+2074266,Premium Zorba - Hoshangabad Road Churned,Bhopal,West,Mixed,Non-Metro,Churn,1713,1798,Nonflex,Dynamic,0,2284,1798,1713,,0,#N/A,2482,2482,1798,OAK
+2092528,Ak Residency Churned,Rishikesh,North 2,Summer Leisure,Leisure,Churn,1029,1080,Flex,Dynamic,0,1372,1080,1029,,0,#N/A,1429,1488,1080,OAK
+8459601,"Treebo Premium Mowgli'S Den, Pench",Pench,West,Mixed,Leisure,Live,2857,3000,Flex,Dynamic,0,3809,-19,2143,2875,3019,#N/A,3968,4018,3000,ACACIA
+1912757,Treebo Spring Birds,Bhimtal,North 2,Summer Leisure,Leisure,Live,1094,1149,Flex,Dynamic,0,1459,-87,1094,1177,1236,#N/A,1520,1620,1149,OAK
+1064422,"Treebo Brij Kaushal, Near Prem Mandir",Vrindavan,North 2,Mixed,Leisure,Live,1128,1184,Flex,Dynamic,0,1504,-27,1128,1153,1211,#N/A,1566,1598,1184,OAK
+2088875,Treebo Aroma Executive,Aurangabad,West,Tier-2 Business,Non-Metro,Live,2187,2296,Flex,Dynamic,0,2916,-59,1640,2243,2355,#N/A,3037,3037,2296,OAK
+1595366,Treebo De Alphabet Gachibowli,Hyderabad,South 2,Tier-1 Business,Metro,Churn,1619,1700,Nonflex,Dynamic,0,2159,1700,1619,,0,#N/A,2346,2346,1700,OAK
+1253341,Treebo Sri Vi Ka Residency,Pondicherry,South 2,Winter Leisure,Leisure,Churn,1619,1700,Flex,Dynamic,0,2159,1700,1214,,0,#N/A,2249,2299,1700,MAPLE
+1767649,Treebo Rc Comforts,Chikmagalur,South 1,Summer Leisure,Leisure,Live,2096,2200,Nonflex,Reverse,0,2795,-111,2096,2201,2311,#N/A,3037,3037,2200,MAPLE
+1386589,Itsy Hotels De Classio,Goa,West,Winter Leisure,Leisure,Churn,1157,1215,Flex,Dynamic,0,1543,1215,1107,,0,#N/A,1607,1607,1215,ACACIA
+1379800,Anam International Churnedd,Mumbai,West,Tier-1 Business,Metro,Churn,2499,2624,ARR Contract,Dynamic,0,3332,2624,2499,,0,#N/A,3471,3571,2624,OAK
+2050130,Hotels Aaditya Inn Tathawade Churned,Pune,West,Tier-1 Business,Metro,Churn,1471,1544,Flex,Dynamic,0,1961,1544,1103,,0,#N/A,2043,2143,1544,OAK
+2022230,Treebo Golden Kashi,Varanasi,North 2,Mixed,Non-Metro,Live,1315,1381,Flex,Static,0,1753,-9,1265,1324,1390,#N/A,1827,1864,1381,OAK
+2019843,"Jagadish Hotel, Jayanagar Churned",Bangalore,South 1,Tier-1 Business,Metro,Churn,1672,1755,Nonflex,Dynamic,0,2229,1755,1672,,0,#N/A,2423,2423,1755,ACACIA
+1383733,Morjim Banyan Resort Churnedd,Goa,West,Winter Leisure,Leisure,Churn,2053,2156,Nonflex,Dynamic,0,2737,2156,2053,,0,1948,2976,2976,2156,OAK
+1136517,Itsy Hotels Adrak,Thiruvananthapuram,South 1,Mixed,Non-Metro,Live,1690,1774,Flex,Dynamic,0,2253,-11,1268,1700,1785,#N/A,2347,2447,1774,MAPLE
+1257158,"Treebo Royal Plaza, 700 Mts From Promenade Beach",Pondicherry,South 2,Winter Leisure,Leisure,Live,1524,1600,Flex,Dynamic,0,2032,-10,1143,1533,1610,#N/A,2116,2216,1600,OAK
+6474322,Treebo Sadhoo Heritage,Kannur,South 1,Summer Leisure,Leisure,Live,1428,1500,Nonflex,Dynamic,0,1904,-75,1428,1499,1574,#N/A,2070,2319,1500,OAK
+2065286,Treebo Cherry Tree,Indore,West,Tier-2 Business,Non-Metro,Live,1809,1900,Nonflex,Dynamic,0,2412,-95,1809,1899,1994,#N/A,2622,2622,1900,OAK
+1553206,Treebo Shembekars Inn,Nagpur,West,Tier-2 Business,Non-Metro,Live,1832,1923,Flex,Dynamic,0,2443,-12,1374,1843,1935,#N/A,2544,2596,1923,OAK
+2074839,Medalio Boutique Gangtok With Mountain View,Gangtok,East,Summer Leisure,Leisure,Live,3500,1511,SOB Properties,Dynamic,0,4667,52,3500,1390,1460,2008,1999,2595,1511,OAK
+1501649,"Treebo Iris Executive, Hinjewadi",Pune,West,Tier-1 Business,Metro,Live,1988,2087,Flex,Dynamic,0,2651,-13,1491,2000,2100,#N/A,2761,2861,2087,MAPLE
+2052847,Prayag Palace Churned,Prayagraj,North 2,Mixed,Non-Metro,Churn,1408,1479,Nonflex,Dynamic,0,1877,1479,1408,,0,#N/A,2041,2041,1479,ACACIA
+2054931,Treebo Divine Stay Prayagraj,Prayagraj,North 2,Mixed,Non-Metro,Live,3500,2458,SOB Properties,Dynamic,0,4667,34,3500,2308,2423,#N/A,3251,3451,2458,OAK
+1207440,Treebo Premium Torrentium - A Heritage Hotel,Shimla,North 2,Summer Leisure,Leisure,Live,1714,1800,Nonflex,Dynamic,0,2285,-90,1714,1800,1890,#N/A,2484,2484,1800,ACACIA
+2027352,Skazka Resort Mandrem Beach With Pool Churned,Goa,West,Winter Leisure,Leisure,Churn,1402,1472,Flex,Dynamic,0,1869,1472,1352,,0,#N/A,1947,1947,1472,OAK
+1377628,Treebo Palm Olive,Mumbai,West,Tier-1 Business,Metro,Stop Sell,1942,2039,Flex,Dynamic,0,2589,-206,1457,2138,2245,#N/A,2697,3123,2039,OAK
+2021121,Ace Luxe Churned,New Delhi,North 1,Tier-1 Business,Metro,Churn,2586,2715,Flex,Dynamic,0,3448,2715,1940,,0,#N/A,3591,3691,2715,OAK
+6141453,Treebo Vitasta Villa,Srinagar,North 2,Summer Leisure,Leisure,Live,2572,2700,Nonflex,Dynamic,0,3429,-135,2572,2701,2836,#N/A,3727,3727,2700,MAPLE
+1639804,Edge Raipur Railway Station Churned,Raipur,West,Tier-2 Business,Non-Metro,Churn,1380,1448,Flex,Dynamic,0,1840,1448,1330,,0,#N/A,1916,1946,1448,OAK
+6473852,Treebo Mr Motel,Kannur,South 1,Summer Leisure,Leisure,Live,1428,1500,Nonflex,Dynamic,0,1904,-75,1428,1499,1574,#N/A,2070,2070,1500,ACACIA
+1172490,Treebo Premium Silverstone Resort With Mountain Valley View,Manali,North 2,Winter Leisure,Leisure,Live,1174,1233,Flex,Dynamic,0,1565,-27,1124,1200,1260,#N/A,1631,1664,1233,MAPLE
+1147235,Treebo Wanderlust Residency With Mountain View,Munnar,South 1,Summer Leisure,Leisure,Live,1597,1677,Flex,Dynamic,0,2129,-38,1198,1633,1714,#N/A,2218,2263,1677,OAK
+1184336,"Treebo Premium The Mustard Inn, Lawrence Road",Amritsar,North 2,Mixed,Non-Metro,Live,3500,1675,SOB Properties,Dynamic,0,4667,57,3500,1541,1618,#N/A,2216,2516,1675,OAK
+1414660,Treebo Petals Suites & Banquet - New Town,Kolkata,East,Tier-1 Business,Metro,Live,1490,1565,Flex,Static,0,1987,-9,1118,1499,1574,#N/A,2070,2070,1565,OAK
+1436029,Treebo Royal City,Noida,North 1,Tier-1 Business,Metro,Live,1727,1813,Flex,Dynamic,0,2303,-12,1295,1738,1825,#N/A,2398,2448,1813,OAK
+1218905,Treebo Elegant Palace,New Delhi,North 1,Tier-1 Business,Metro,Stop Sell,1362,1430,Flex,Dynamic,0,1816,-8,1312,1370,1439,#N/A,1892,1930,1430,OAK
+1869742,Treebo Neel Orchid,Ujjain,West,Mixed,Leisure,Live,2630,2762,Flex,Dynamic,0,3507,-18,1973,2647,2779,#N/A,3653,3728,2762,OAK
+1598691,Treebo The Living Tree Khairatabad,Hyderabad,South 2,Tier-1 Business,Metro,Churn,1881,1975,Flex,Dynamic,0,2508,1975,1411,,0,#N/A,2612,2712,1975,MAPLE
+1503445,"Treebo Grand Royal Imperio, Hinjewadi",Pune,West,Tier-1 Business,Metro,Live,1905,2000,Nonflex,Dynamic,0,2540,-100,1905,2000,2100,#N/A,2761,2761,2000,OAK
+1385153,Grand Royale Eco Residency Churned,Goa,West,Winter Leisure,Leisure,Churn,1629,1710,Flex,Dynamic,0,2172,1710,1222,,0,#N/A,2262,2321,1710,OAK
+1434999,Treebo Luxury Stay Premium Inn,Noida,North 1,Tier-1 Business,Metro,Live,2404,2524,Flex,Dynamic,0,3205,-16,1803,2419,2540,#N/A,3339,3439,2524,OAK
+1986521,Treebo Premium Emerald Dove,Yelagiri,South 2,Summer Leisure,Leisure,Live,2477,2601,Flex,Dynamic,0,3303,-17,1858,2493,2617,#N/A,3440,3452,2601,MAPLE
+2026148,Treebo Venition Inn,Coimbatore,South 2,Tier-2 Business,Non-Metro,Live,1619,1700,Flex,Dynamic,0,2159,-11,1214,1630,1711,#N/A,2249,2349,1700,OAK
+1593945,Treebo Hydotel Kompally,Hyderabad,South 2,Tier-1 Business,Metro,Live,2048,2150,Nonflex,Dynamic,0,2731,-108,2048,2150,2258,#N/A,2968,2968,2150,OAK
+2024867,Treebo Premium Twin Star,Chennai,South 2,Tier-1 Business,Metro,Live,3048,3200,Nonflex,Dynamic,0,4064,-160,3048,3200,3360,#N/A,4417,4417,3200,OAK
+1213625,Itsy Hotels Prime Stay,New Delhi,North 1,Tier-1 Business,Metro,Live,1262,1325,Flex,Dynamic,0,1683,-9,1212,1271,1334,#N/A,1753,1778,1325,ACACIA
+1229920,Treebo Saumendra Residency,Varanasi,North 2,Mixed,Non-Metro,Live,1261,1325,Flex,Dynamic,0,1681,-8,1211,1269,1333,#N/A,1752,1852,1325,ACACIA
+1881696,Medalio Boutique Chandigarh Zirakpur,Zirakpur,North 2,Mixed,Non-Metro,Live,3500,2626,SOB Properties,Dynamic,0,4667,226,3500,2286,2400,#N/A,3474,3704,2626,OAK
+1429250,"Treebo The Golden Sands, Bistupur",Jamshedpur,East,Tier-2 Business,Non-Metro,Live,1391,1461,Nonflex,Static,0,1855,-73,1391,1461,1534,#N/A,2016,2116,1461,OAK
+1365825,Treebo Una Regency - Near Danapur Railway Station,Patna,East,Tier-2 Business,Non-Metro,Live,1332,1399,Flex,Dynamic,0,1776,-9,1282,1341,1408,#N/A,1850,2084,1399,ACACIA
+1319476,"Bella Vista, Shobhagpura Churned",Udaipur,North 1,Winter Leisure,Leisure,Churn,1524,1600,Flex,Dynamic,0,2032,1600,1143,,0,#N/A,2116,2183,1600,ACACIA
+1508400,"Treebo The Tree, Hinjewadi",Pune,West,Tier-1 Business,Metro,Live,1857,1950,Flex,Dynamic,0,2476,-13,1393,1869,1962,#N/A,2579,2579,1950,ACACIA
+1435986,"Treebo Royal Grand, Sector 71",Noida,North 1,Tier-1 Business,Metro,Live,1547,1625,Flex,Dynamic,0,2063,-10,1160,1557,1635,#N/A,2149,2249,1625,OAK
+1613120,"Hotel Moon Waalk, Patia Churned",Bhubaneswar,East,Mixed,Non-Metro,Churn,1536,1613,Flex,Dynamic,0,2048,1613,1152,,0,#N/A,2134,2284,1613,ACACIA
+1405295,"Treebo Rvg, Alkapuri",Vadodara,North 1,Tier-2 Business,Non-Metro,Live,1736,1823,Flex,Dynamic,0,2315,-12,1302,1747,1835,#N/A,2411,2465,1823,MAPLE
+1299460,"Treebo Ocean Echo, Rushikonda",Visakhapatnam,South 2,Tier-2 Business,Non-Metro,Live,1786,1875,Flex,Dynamic,0,2381,-11,1340,1797,1886,#N/A,2480,2485,1875,OAK
+4476459,Treebo Hilldaar Dalhousie,Dalhousie,North 2,Winter Leisure,Leisure,Live,1404,1474,Flex,Dynamic,0,1872,-89,1354,1489,1563,#N/A,1950,2050,1474,OAK
+1432512,Treebo Grand Vista - 62,Noida,North 1,Tier-1 Business,Metro,Churn,1566,1644,Flex,Static,0,2088,1644,1175,,0,#N/A,2175,2231,1644,OAK
+1527908,Treebo Shivam Inn Near Singapore Mall,Lucknow,North 2,Tier-2 Business,Non-Metro,Live,1809,1900,Flex,Dynamic,0,2412,-12,1357,1821,1912,#N/A,2513,2563,1900,OAK
+1294367,Treebo Breeze Way Rushikonda With Swimming Pool,Visakhapatnam,South 2,Tier-2 Business,Non-Metro,Live,1550,1628,Flex,Dynamic,0,2067,-11,1163,1560,1638,#N/A,2153,2197,1628,ACACIA
+1921226,"Treebo Sv Residency, Vellore",Vellore,South 2,Mixed,Non-Metro,Live,1691,1775,Flex,Dynamic,0,2255,-11,1268,1701,1786,#N/A,2348,2396,1775,OAK
+3001862,Treebo Emirates Suites Indiranagar,Bangalore,South 1,Tier-1 Business,Metro,Live,1809,1900,Flex,Dynamic,0,2412,-12,1357,1821,1912,#N/A,2513,2613,1900,OAK
+1324743,Treebo Premium Vinnie - Near Airport,Jaipur,North 1,Mixed,Non-Metro,Live,1714,1800,Nonflex,Dynamic,0,2285,-90,1714,1800,1890,#N/A,2484,2484,1800,OAK
+1328189,"Treebo Vinayak Inn, Jagatpura",Jaipur,North 1,Mixed,Non-Metro,Churn,1251,1313,Flex,Dynamic,0,1668,1313,1201,,0,#N/A,1737,1937,1313,MAPLE
+1126165,"Treebo Elysee, Patel Nagar",Dehradun,North 2,Mixed,Leisure,Live,1905,2000,Nonflex,Dynamic,0,2540,-100,1905,2000,2100,#N/A,2761,2761,2000,OAK
+1212547,Treebo Ace Luxe,New Delhi,North 1,Tier-1 Business,Metro,Live,3166,3324,Flex,Dynamic,0,4221,-96,2375,3257,3420,#N/A,4397,4497,3324,OAK
+1384445,Treebo Grand Royale Eco Residency,Goa,West,Winter Leisure,Leisure,Churn,1238,1300,Flex,Dynamic,0,1651,1300,1188,,0,#N/A,1720,2018,1300,OAK
+1139252,Treebo West Fort Divine – Near Padmanabhaswamy Temple,Thiruvananthapuram,South 1,Mixed,Non-Metro,Live,1858,1951,Flex,Dynamic,0,2477,-12,1394,1870,1964,#N/A,2581,2681,1951,OAK
+1615230,Treebo The Aura,Bhubaneswar,East,Mixed,Non-Metro,Live,1444,1517,Partner,Static,0,1925,535,1444,935,981,#N/A,2006,2299,1517,OAK
+1377622,"Treebo Vro Boutique, Andheri East",Mumbai,West,Tier-1 Business,Metro,Live,2912,3057,Flex,Dynamic,0,3883,-132,2184,3038,3190,#N/A,4044,4127,3057,OAK
+1536242,"Treebo Urban Oasis Inn, Sixmile",Guwahati,East,Mixed,Non-Metro,Live,1531,1608,Flex,Dynamic,0,2041,-10,1148,1541,1618,#N/A,2127,2170,1608,OAK
+1873520,Treebo Iraa,Kakinada,South 2,Tier-2 Business,Non-Metro,Live,1973,2071,Flex,Dynamic,0,2631,-13,1480,1986,2085,#N/A,2740,2796,2071,OAK
+1242203,Treebo Anand The Mall Solan,Solan,North 2,Winter Leisure,Leisure,Live,1691,1775,Flex,Dynamic,0,2255,-11,1268,1701,1786,#N/A,2348,2396,1775,ACACIA
+2059587,Treebo Address Inn Gachibowli,Hyderabad,South 2,Tier-1 Business,Metro,Live,1905,2000,Flex,Dynamic,0,2540,-13,1429,1917,2013,#N/A,2646,2703,2000,OAK
+1591753,"Treebo S3 Suites, Manikonda",Hyderabad,South 2,Tier-1 Business,Metro,Live,1503,1578,Flex,Dynamic,0,2004,-46,1127,1547,1624,#N/A,2087,2130,1578,ACACIA
+1259110,Treebo Aishwarya Grand - 4 Km From Promenade Beach,Pondicherry,South 2,Winter Leisure,Leisure,Live,1619,1700,Flex,Dynamic,0,2159,-11,1214,1630,1711,#N/A,2249,2299,1700,OAK
+1524221,Riddhi Paradise - 15 Mins From Airport,Lucknow,North 2,Tier-2 Business,Non-Metro,Churn,1428,1500,Flex,Dynamic,0,1904,1500,1378,,0,#N/A,1984,2034,1500,ACACIA
+1591774,Treebo De Alphabet Nagole,Hyderabad,South 2,Tier-1 Business,Metro,Churn,1782,1871,Flex,Dynamic,0,2376,1871,1337,,0,#N/A,2475,2475,1871,MAPLE
+1593867,Treebo Pride Inn Raidurg,Hyderabad,South 2,Tier-1 Business,Metro,Live,1500,1575,Flex,Dynamic,0,2000,-123,1125,1617,1698,#N/A,2083,2183,1575,ACACIA
+1256474,"Treebo Seasons, 5 Mins To Rock Beach",Pondicherry,South 2,Winter Leisure,Leisure,Live,1286,1350,Flex,Dynamic,0,1715,-8,1236,1294,1358,#N/A,1786,1836,1350,OAK
+1727724,"Treebo Pratham Inn, Manipal",Udupi,South 1,Summer Leisure,Leisure,Live,1905,2000,Flex,Dynamic,0,2540,-13,1429,1917,2013,#N/A,2646,2681,2000,OAK
+1512203,Itsy Hotels K K Residency Staywell,Roorkee,North 2,Mixed,Non-Metro,Live,1524,1600,Nonflex,Dynamic,0,2032,-81,1524,1600,1680,#N/A,2208,2208,1600,ACACIA
+1501143,Treebo Sayaji Residency,Pune,West,Tier-1 Business,Metro,Live,1221,1282,Flex,Dynamic,0,1628,-8,1171,1229,1290,#N/A,1696,1731,1282,OAK
+1521270,Treebo Silver Grand,Lucknow,North 2,Tier-2 Business,Non-Metro,Stop Sell,1221,1282,Flex,Dynamic,0,1628,43,1171,1180,1239,#N/A,1696,1731,1282,OAK
+3009824,Treebo Ak Residency,Rishikesh,North 2,Summer Leisure,Leisure,Live,1071,1124,Flex,Dynamic,0,1428,-86,1071,1153,1211,#N/A,1487,1587,1124,OAK
+2016552,Hotel Royal Splendid Churned,Bangalore,South 1,Tier-1 Business,Metro,Churn,993,1043,Flex,Dynamic,0,1324,1043,993,,0,#N/A,1379,1741,1043,OAK
+2067711,"Itsy Hotels Anjali Mahal, 500 Mtrs From Mathura Railway Station",Mathura,North 2,Summer Leisure,Leisure,Live,1428,1500,Flex,Static,0,1904,-9,1378,1437,1509,#N/A,1984,2034,1500,OAK
+1174848,"Treebo Premium The Takey'S, Mall Road",Manali,North 2,Winter Leisure,Leisure,Live,1128,1184,Flex,Dynamic,0,1504,-27,1128,1153,1211,#N/A,1566,1598,1184,OAK
+1292850,"Treebo Ar Grand, Gajuwaka",Visakhapatnam,South 2,Tier-2 Business,Non-Metro,Live,1785,1874,Flex,Dynamic,0,2380,-12,1339,1797,1886,#N/A,2479,2529,1874,MAPLE
+1503990,Treebo Riwaayat Regency,Pune,West,Tier-1 Business,Metro,Live,2097,2202,Flex,Dynamic,0,2796,-14,1573,2111,2216,#N/A,2913,2913,2202,OAK
+2015616,Treebo Nestlay Rooms Whitefield,Bangalore,South 1,Tier-1 Business,Metro,Live,1905,2000,Nonflex,Dynamic,0,2540,-100,1905,2000,2100,#N/A,2761,2761,2000,MAPLE
+1611760,Treebo Kt Grand,Bhubaneswar,East,Mixed,Non-Metro,Live,1453,1526,Flex,Dynamic,0,1937,-9,1090,1462,1535,#N/A,2018,2149,1526,OAK
+3005564,Treebo Parashar Max,Nagpur,West,Tier-2 Business,Non-Metro,Live,1690,1774,Flex,Dynamic,0,2253,-11,1268,1700,1785,#N/A,2347,2397,1774,OAK
+1382286,Sava Resort With Pool Churned,Goa,West,Winter Leisure,Leisure,Churn,1905,2000,Flex,Dynamic,0,2540,2000,1429,,0,#N/A,2646,3307,2000,OAK
+1505168,Treebo Aura Inn Regency,Pune,West,Tier-1 Business,Metro,Live,1524,1600,Nonflex,Dynamic,0,2032,-81,1524,1600,1680,#N/A,2208,2208,1600,OAK
+1248723,"Welcome Inn, Porur Churned",Chennai,South 2,Tier-1 Business,Metro,Churn,1416,1486,Flex,Dynamic,0,1888,1486,1366,,0,#N/A,1966,2150,1486,OAK
+2011068,Treebo Purple Orchid Boutique,Bangalore,South 1,Tier-1 Business,Metro,Live,1857,1950,Nonflex,Dynamic,0,2476,-97,1857,1950,2047,#N/A,2692,2692,1950,OAK
+2077421,Treebo Lake City,Bhopal,West,Mixed,Non-Metro,Live,1456,1529,Flex,Dynamic,0,1941,-9,1092,1465,1538,#N/A,2022,2063,1529,OAK
+2010619,Treebo Red Coral,Haridwar,North 2,Mixed,Leisure,Churn,1619,1700,Flex,Dynamic,0,2159,1700,1214,,0,#N/A,2249,2653,1700,OAK
+1206030,"Treebo Bridge View Regency, Mall Road",Shimla,North 2,Summer Leisure,Leisure,Live,3500,3813,SOB Properties,Dynamic,0,4667,54,3500,3581,3760,#N/A,5044,5144,3813,OAK
+2031351,Treebo The Mountain Deer Valley Near Pgi,Nayagaon,North 2,Mixed,Non-Metro,Live,1714,1800,Nonflex,Dynamic,0,2285,-90,1714,1800,1890,#N/A,2484,2484,1800,OAK
+2071224,Treebo Ashirwad Regency,Bhopal,West,Mixed,Non-Metro,Live,1186,1245,Flex,Dynamic,0,1581,-7,1136,1193,1252,#N/A,1647,1647,1245,OAK
+1145980,Treebo Golden Leaf,Ranchi,East,Tier-2 Business,Non-Metro,Live,1785,1874,Flex,Dynamic,0,2380,-12,1339,1797,1886,#N/A,2479,2529,1874,ACACIA
+1619637,Treebo Airport Inn,Bhubaneswar,East,Mixed,Non-Metro,Live,1833,1925,Flex,Dynamic,0,2444,-12,1375,1845,1937,#N/A,2546,2646,1925,OAK
+1395021,Treebo Grand Shivay,Ahmedabad,North 1,Tier-2 Business,Non-Metro,Live,1927,2024,Flex,Dynamic,0,2569,-13,1445,1939,2036,#N/A,2677,2777,2024,OAK
+1065472,Treebo Gaur Vasundhara,Vrindavan,North 2,Mixed,Leisure,Churn,1356,1424,Flex,Dynamic,0,1808,1424,1306,,0,#N/A,1884,1950,1424,OAK
+1378193,Treebo Anam International,Mumbai,West,Tier-1 Business,Metro,Live,3036,3188,ARR Contract,Dynamic,0,4048,-20,3036,3056,3208,#N/A,4217,4417,3188,OAK
+2013416,Treebo Classic Highway Side,Thiruvananthapuram,South 1,Mixed,Non-Metro,Live,1385,1454,Flex,Static,0,1847,-9,1335,1393,1463,#N/A,1923,1939,1454,OAK
+1707943,Treebo Premium Park Calicut Airport,Kozhikode,South 1,Mixed,Non-Metro,Churn,2143,2251,Flex,Dynamic,0,2857,2251,1607,,0,#N/A,2977,3127,2251,OAK
+1245526,"Treebo Deluxe Inn, Chromepet",Chennai,South 2,Tier-1 Business,Metro,Live,2814,2955,Flex,Dynamic,0,3752,95,2111,2724,2860,#N/A,3909,4009,2955,MAPLE
+1505600,Itsy Hotels Metro,Pune,West,Tier-1 Business,Metro,Live,1310,1375,Flex,Dynamic,0,1747,-8,1260,1318,1384,#N/A,1819,1819,1375,OAK
+2043614,Treebo Raahgir Suites,Noida,North 1,Tier-1 Business,Metro,Live,1739,1826,Flex,Dynamic,0,2319,-11,1304,1749,1837,#N/A,2415,2465,1826,ACACIA
+1383439,Treebo Morjim Banyan Resort,Goa,West,Winter Leisure,Leisure,Churn,1292,1356,Flex,Dynamic,0,1723,1356,1242,,0,#N/A,1794,1794,1356,OAK
+1989216,Treebo Midvalley Residence,Yelagiri,South 2,Summer Leisure,Leisure,Live,1572,1651,Flex,Dynamic,0,2096,-10,1179,1582,1661,#N/A,2184,2184,1651,MAPLE
+1242933,Treebo Premium Taara,Chennai,South 2,Tier-1 Business,Metro,Live,3570,3748,Flex,Dynamic,0,4760,-23,2678,3592,3772,#N/A,4958,5059,3748,MAPLE
+2011492,Treebo Memories Inn,Bangalore,South 1,Tier-1 Business,Metro,Live,1832,1923,Flex,Dynamic,0,2443,-12,1374,1843,1935,#N/A,2544,2596,1923,OAK
+1295755,Treebo Premium The Regal Park,Visakhapatnam,South 2,Tier-2 Business,Non-Metro,Live,2166,2274,Flex,Dynamic,0,2888,-65,1625,2228,2340,#N/A,3008,3108,2274,OAK
+2043442,Treebo House Inn,Noida,North 1,Tier-1 Business,Metro,Live,1690,1774,Flex,Dynamic,0,2253,-11,1268,1700,1785,#N/A,2347,2397,1774,OAK
+1391899,Treebo Terrazzo Suites,Ahmedabad,North 1,Tier-2 Business,Non-Metro,Live,1832,1924,Flex,,0,2443,-12,1374,1844,1936,#N/A,2545,2645,1924,OAK
+2017651,Treebo Prime Bliss,Bangalore,South 1,Tier-1 Business,Metro,Churn,1644,1726,Flex,Dynamic,0,2192,1726,1233,,0,#N/A,2283,2330,1726,MAPLE
+1675415,Treebo Basera,Mathura,North 2,Summer Leisure,Leisure,Live,4762,5000,Nonflex,Dynamic,0,6349,-250,4762,5000,5250,#N/A,6901,6901,5000,OAK
+1389059,Treebo Clarissa Resort,Goa,West,Winter Leisure,Leisure,Live,1238,1300,Flex,Dynamic,0,1651,-8,1188,1245,1308,#N/A,1719,1819,1300,ACACIA
+1010517,"Treebo Blue Roof, Kelwa",Palghar,West,Winter Leisure,Leisure,Live,2118,2224,Flex,Dynamic,0,2824,-14,1589,2132,2238,#N/A,2942,2942,2224,MAPLE
+2019252,Treebo Fortune Stay Inn,Bangalore,South 1,Tier-1 Business,Metro,Churn,1353,1421,Nonflex,Dynamic,0,1804,1421,1353,,0,#N/A,1961,1961,1421,ACACIA
+1153937,Treebo Urban Nest,Ernakulam,South 1,Tier-2 Business,Non-Metro,Live,1785,1874,Flex,Dynamic,0,2380,-12,1339,1797,1886,#N/A,2479,2529,1874,OAK
+2019492,Treebo Silent Woods,Bangalore,South 1,Tier-1 Business,Metro,Live,1571,1650,Nonflex,Static,0,2095,-82,1571,1650,1732,#N/A,2277,2277,1650,OAK
+1323582,Treebo Vienna,Jaipur,North 1,Mixed,Non-Metro,Live,1409,1479,Flex,,0,1879,-9,1359,1418,1488,#N/A,1957,1997,1479,OAK
+1261835,Treebo Dunag,Coimbatore,South 2,Tier-2 Business,Non-Metro,Live,1926,2022,Flex,Dynamic,0,2568,-13,1445,1938,2035,#N/A,2675,2729,2022,OAK
+2058505,Treebo Premium Gateway Triveni,Prayagraj,North 2,Mixed,Non-Metro,Live,2381,2500,Nonflex,Dynamic,0,3175,-125,2381,2500,2625,#N/A,3451,3451,2500,OAK
+3001478,Itsy Hotels Abrigo,Munnar,South 1,Summer Leisure,Leisure,Churn,1221,1282,Flex,Dynamic,0,1628,1282,1171,,0,#N/A,1696,1731,1282,OAK
+1597226,Treebo Sapphire Bliss,Hyderabad,South 2,Tier-1 Business,Metro,Live,2381,2500,Nonflex,Dynamic,0,3175,-125,2381,2500,2625,#N/A,3451,3451,2500,OAK
+1596121,"Treebo The Infinity, Banjara",Hyderabad,South 2,Tier-1 Business,Metro,Live,2023,2124,Flex,Dynamic,0,2697,-139,1517,2156,2263,#N/A,2810,2910,2124,OAK
+9112998,Treebo Green Olive,Rourkela,East,Mixed,Non-Metro,Live,1428,1499,Flex,Dynamic,0,1904,-9,1378,1436,1508,#N/A,1983,2083,1499,MAPLE
+2098401,Treebo Sns Grand Inn,Yelagiri,South 2,Summer Leisure,Leisure,Live,1705,1790,Flex,Dynamic,0,2273,-11,1279,1716,1801,#N/A,2368,2468,1790,MAPLE
+1596742,Treebo Destination Inn,Hyderabad,South 2,Tier-1 Business,Metro,Live,1914,2010,Flex,Dynamic,0,2552,-13,1436,1927,2023,#N/A,2659,2709,2010,MAPLE
+2017563,Treebo Sai Fortune Gateway,Bangalore,South 1,Tier-1 Business,Metro,Live,1677,1761,Flex,Dynamic,0,2236,-11,1258,1687,1772,#N/A,2329,2376,1761,OAK
+1505358,"Treebo Luxe Suite, Shivaji Nagar",Pune,West,Tier-1 Business,Metro,Live,2619,2750,Flex,Dynamic,0,3492,-17,1964,2636,2767,#N/A,3638,3688,2750,MAPLE
+1437251,Itsy Hotels Golden Vista,Noida,North 1,Tier-1 Business,Metro,Live,1362,1430,Flex,,0,1816,-32,1312,1392,1462,#N/A,1892,1930,1430,OAK
+1526621,"Treebo Shakuntalam, Near Lucknow Airport",Lucknow,North 2,Tier-2 Business,Non-Metro,Churn,1619,1700,Flex,Static,0,2159,1700,1214,,0,#N/A,2249,2299,1700,OAK
+1763058,Treebo Arabica Valley,Chikmagalur,South 1,Summer Leisure,Leisure,Churn,1714,1800,Flex,Dynamic,0,2285,1800,1286,,0,#N/A,2381,2481,1800,OAK
+2018319,Treebo Millenium Suites,Bangalore,South 1,Tier-1 Business,Metro,Live,1333,1400,Nonflex,Dynamic,0,1777,-13,1333,1345,1412,#N/A,1932,1932,1400,OAK
+2010498,Treebo Premium Aasma Courtyard,Paradeep,East,Tier-2 Business,Non-Metro,Live,1905,2000,Nonflex,Static,0,2540,-100,1905,2000,2100,#N/A,2761,2761,2000,ACACIA
+1247316,Treebo Rkh Palace,Chennai,South 2,Tier-1 Business,Metro,Live,1844,1936,Flex,Dynamic,0,2459,-12,1383,1855,1948,#N/A,2561,2661,1936,OAK
+1076395,Itsy Hotels Everest Leela Residency,Erode,South 2,Tier-2 Business,Non-Metro,Live,1600,1680,Nonflex,Dynamic,0,2133,-84,1600,1680,1764,#N/A,2319,2319,1680,OAK
+1509356,Itsy Hotels Revmantra,Pune,West,Tier-1 Business,Metro,Live,1428,1500,Flex,,0,1904,-9,1378,1437,1509,#N/A,1984,2034,1500,OAK
+2011116,Treebo Comfy Business,Bangalore,South 1,Tier-1 Business,Metro,Live,2238,2350,Nonflex,Static,0,2984,-117,2238,2350,2467,#N/A,3244,3244,2350,OAK
+1502559,Treebo Sunrise Apartments,Pune,West,Tier-1 Business,Metro,Live,1809,1900,Flex,,0,2412,-12,1357,1821,1912,#N/A,2513,2513,1900,OAK
+1374678,Itsy Hotels Bindra Elite,Mumbai,West,Tier-1 Business,Metro,Live,2048,2150,Flex,,0,2731,-13,1536,2060,2163,#N/A,2844,2844,2150,ACACIA
+3001250,Itsy Hotels Manyu Inn,Bangalore,South 1,Tier-1 Business,Metro,Live,1456,1529,Flex,Static,0,1941,-9,1092,1465,1538,#N/A,2022,2063,1529,OAK
+1265722,Treebo Skyry Residency,Coimbatore,South 2,Tier-2 Business,Non-Metro,Churn,1395,1464,Flex,Dynamic,0,1860,1464,1345,,0,#N/A,1937,2037,1464,OAK
+1519378,Itsy Hotels Mansi,Nashik,West,Mixed,Non-Metro,Live,1249,1312,Flex,,0,1665,-8,1199,1257,1320,#N/A,1735,1771,1312,OAK
+1908074,Treebo Reveniir Resort With Pool,Lonavala,West,Summer Leisure,Leisure,Live,1714,1800,Flex,Dynamic,0,2285,-11,1286,1725,1811,#N/A,2381,2631,1800,MAPLE
+1247056,Treebo Flora Embassy,Chennai,South 2,Tier-1 Business,Metro,Live,2690,2824,Flex,Dynamic,0,3587,-18,2018,2707,2842,#N/A,3736,3836,2824,OAK
+1457772,Itsy Hotels Jonna Grand,Tirupati,South 2,Mixed,Leisure,Live,1356,1424,Flex,Dynamic,0,1808,-9,1306,1365,1433,#N/A,1884,1984,1424,MAPLE
+1206822,Treebo Premium Tranquil Inn,Shimla,North 2,Summer Leisure,Leisure,Live,2191,2300,Nonflex,Dynamic,0,2921,-67,2191,2254,2367,#N/A,3175,3175,2300,MAPLE
+1534876,Treebo Park Palace,Guwahati,East,Mixed,Non-Metro,Live,1500,1575,Flex,Dynamic,0,2000,-10,1125,1509,1584,#N/A,2083,2183,1575,ACACIA
+1559260,Itsy Hotels Aditya,Nagpur,West,Tier-2 Business,Non-Metro,Live,2286,2400,Nonflex,Dynamic,0,3048,-20,2286,2305,2420,#N/A,3313,3313,2400,OAK
+1534876,Treebo Park Palace,Guwahati,East,Mixed,Non-Metro,Live,1500,1575,Flex,Dynamic,0,2000,-10,1125,1509,1584,#N/A,2083,2183,1575,ACACIA
+2064788,Treebo Grand,Indore,West,Tier-2 Business,Non-Metro,Churn,1310,1375,Flex,Dynamic,0,1747,1375,1260,,0,#N/A,1819,1869,1375,OAK
+2018373,"Treebo Liyan Orchid, Hsr Layout",Bangalore,South 1,Tier-1 Business,Metro,Live,3024,3175,Flex,Dynamic,0,4032,-20,2268,3043,3195,#N/A,4200,4300,3175,OAK
+1435639,Treebo Accent Park Hotel & Banquet,Noida,North 1,Tier-1 Business,Metro,Live,2143,2250,Flex,Dynamic,0,2857,-14,1607,2156,2263,#N/A,2976,3076,2250,OAK
+1711113,Treebo Grand Town House,Faridabad,North 1,Mixed,Metro,Live,1773,1862,Flex,Dynamic,0,2364,-11,1330,1784,1873,#N/A,2463,2488,1862,MAPLE
+1065859,Treebo Gaur Vasundhara,Vrindavan,North 2,Mixed,Leisure,Stop Sell,1452,1524,Flex,Dynamic,0,1936,61,1089,1393,1463,#N/A,2016,2116,1524,OAK
+1597144,"Treebo Pride Inn Aero, Shamshabad",Hyderabad,South 2,Tier-1 Business,Metro,Live,1644,1726,Flex,Dynamic,0,2192,-76,1233,1716,1801,#N/A,2283,2330,1726,OAK
+1884441,Medalio Signature Chandigarh Zirakpur,Zirakpur,North 2,Mixed,Non-Metro,Live,3500,3023,SOB Properties,Dynamic,0,4667,42,3500,2839,2981,#N/A,3999,5620,3023,OAK
+1435263,Treebo Grand Vista - 63A,Noida,North 1,Tier-1 Business,Metro,Churn,1201,1261,Flex,Dynamic,0,1601,-8,1151,1209,1269,#N/A,1668,1974,1261,OAK
+1176759,Treebo M R Villa,Manali,North 2,Winter Leisure,Leisure,Live,1221,1282,Flex,Dynamic,0,1628,-8,1171,1229,1290,#N/A,1696,1731,1282,MAPLE
+2075824,Treebo Executive Suites,Gandhinagar,North 1,Tier-2 Business,Non-Metro,Live,1644,1726,Flex,Dynamic,0,2192,-10,1233,1654,1736,#N/A,2283,2330,1726,MAPLE
+1436133,Treebo Novis Stayz,Noida,North 1,Tier-1 Business,Metro,Live,1582,1661,Flex,Dynamic,0,2109,-10,1187,1592,1671,#N/A,2197,2247,1661,MAPLE
+1131768,"Treebo Gt Residency, Thiruvananthapuram",Thiruvananthapuram,South 1,Mixed,Non-Metro,Live,1642,1724,Flex,Dynamic,0,2189,-11,1232,1653,1735,#N/A,2281,2381,1724,OAK
+1314078,Treebo Bella Vista By Kaushalya Hospitality,Udaipur,North 1,Winter Leisure,Leisure,Live,1905,2000,Nonflex,Dynamic,0,2540,-58,1905,1960,2058,#N/A,2761,2761,2000,ACACIA
+1452757,Treebo Hr Grand,Tirupati,South 2,Mixed,Leisure,Live,2161,2269,Flex,Dynamic,0,2881,-51,1621,2209,2320,#N/A,3001,3062,2269,MAPLE
+1583653,Treebo Samsara Villas And Spa,Ramnagar,North 2,Summer Leisure,Leisure,Stop Sell,1048,1100,Flex,Dynamic,0,1397,-7,1048,1054,1107,#N/A,1455,1555,1100,OAK
+1447642,Treebo Lumino Crown,Ooty,South 1,Summer Leisure,Leisure,Live,1584,1663,Flex,Dynamic,0,2112,-10,1188,1594,1674,#N/A,2200,2250,1663,OAK
+1381192,Treebo Premium Nova Candolim,Goa,West,Winter Leisure,Leisure,Live,2000,2100,Nonflex,Dynamic,0,2667,-105,2000,2100,2205,#N/A,2899,2899,2100,OAK
+1205898,Treebo Kgf Villa,Prayagraj,North 2,Mixed,Non-Metro,Live,1691,1775,Flex,Dynamic,0,2255,-11,1268,1701,1786,#N/A,2348,2396,1775,OAK
+1219455,Itsy Hotels Svaruchi Inn,New Delhi,North 1,Tier-1 Business,Metro,Live,1973,2071,Flex,Dynamic,0,2631,-17,1480,1989,2088,#N/A,2740,2796,2071,MAPLE
+1412651,Itsy Hotels White Castle,Kolkata,East,Tier-1 Business,Metro,Live,1280,1344,Flex,Static,0,1707,-9,1230,1288,1353,#N/A,1778,1828,1344,ACACIA
+1136293,Treebo Buddha Pride,Patna,East,Tier-2 Business,Non-Metro,Live,1786,1875,Nonflex,Static,0,2381,-94,1786,1875,1969,#N/A,2588,2588,1875,OAK
+1464617,Treebo Global Orchid,Mysore,South 1,Mixed,Leisure,Live,1550,1629,Nonflex,Dynamic,0,2067,-82,1550,1630,1711,#N/A,2249,2249,1629,MAPLE
+1107176,Treebo Golden Paradise,Yercaud,South 2,Summer Leisure,Leisure,Live,1503,1578,Flex,Dynamic,0,2004,-10,1127,1512,1588,#N/A,2087,2130,1578,MAPLE
+1323805,Treebo Fort Mountview,Jaipur,North 1,Mixed,Non-Metro,Live,1095,1150,Nonflex,Dynamic,0,1460,-57,1095,1150,1207,#N/A,1587,1759,1150,OAK
+2065763,Treebo Awadhvue,Indore,West,Tier-2 Business,Non-Metro,Live,1839,1931,Flex,Dynamic,0,2452,-12,1379,1850,1943,#N/A,2554,2754,1931,OAK
+1593820,Treebo Premium Hydotel Gachibowli,Hyderabad,South 2,Tier-1 Business,Metro,Live,2524,2650,Nonflex,Dynamic,0,3365,-132,2524,2650,2783,#N/A,3658,3658,2650,OAK
+1123364,Treebo Golden Leaf Ddn,Dehradun,North 2,Mixed,Leisure,Churn,2096,2200,Nonflex,Dynamic,0,2795,2200,2096,,0,#N/A,3037,3037,2200,OAK
+1146139,Treebo Nps Grand,Ranchi,East,Tier-2 Business,Non-Metro,Live,1315,1381,Flex,Dynamic,0,1753,-9,1265,1324,1390,#N/A,1827,1864,1381,OAK
+1257676,Treebo Golden Bliss,Pondicherry,South 2,Winter Leisure,Leisure,Live,1500,1575,Flex,Dynamic,0,2000,-10,1125,1509,1584,#N/A,2083,2183,1575,OAK
+1545063,Treebo Suyogg Retreat,Mahabaleshwar,West,Winter Leisure,Leisure,Live,1286,1350,Flex,Dynamic,0,1715,-8,1236,1294,1358,#N/A,1786,1823,1350,MAPLE
+2015932,Treebo Orchid Silver,Bangalore,South 1,Tier-1 Business,Metro,Live,1619,1700,Nonflex,Static,0,2159,-85,1619,1700,1785,#N/A,2346,2346,1700,MAPLE
+3007683,Treebo Arabica Valley-Coffee Plantation Retreat,Chikmagalur,South 1,Summer Leisure,Leisure,Live,1714,1800,Flex,Dynamic,0,2285,-11,1286,1725,1811,#N/A,2381,2481,1800,OAK
+1398298,Itsy Hotels Indra Palace,Ahmedabad,North 1,Tier-2 Business,Non-Metro,Live,1262,1325,Flex,Dynamic,0,1683,-9,1212,1271,1334,#N/A,1753,1853,1325,OAK
+1378773,Itsy Hotels Rexton Inn,Mumbai,West,Tier-1 Business,Metro,Live,1619,1700,Flex,Dynamic,0,2159,-11,1214,1630,1711,#N/A,2249,2249,1700,OAK
+1336018,Itsy Hotels Route 55,Darjeeling,East,Summer Leisure,Leisure,Stop Sell,1221,1282,Flex,Dynamic,0,1628,-8,1171,1229,1290,#N/A,1696,1731,1282,OAK
+1557374,Treebo Premium Nagpur Automotive Square,Nagpur,West,Tier-2 Business,Non-Metro,Live,3500,2040,SOB Properties,Dynamic,0,4667,28,3500,1916,2012,#N/A,2699,3999,2040,OAK
+2013490,"Treebo Premium Runway Suites, Marathahalli",Bangalore,South 1,Tier-1 Business,Metro,Live,1440,1512,Flex,Dynamic,0,1920,-9,1080,1449,1521,#N/A,2000,2300,1512,MAPLE
+1218072,Treebo Royal Star,New Delhi,North 1,Tier-1 Business,Metro,Live,3238,3400,Nonflex,Dynamic,0,4317,-170,3238,3400,3570,#N/A,4693,4693,3400,OAK
+1466884,Treebo Akshaya Palace Inn,Mysore,South 1,Mixed,Leisure,Live,1571,1650,Nonflex,Dynamic,0,2095,-82,1571,1650,1732,#N/A,2277,2277,1650,OAK
+1508443,Treebo Maharaja,Pune,West,Tier-1 Business,Metro,Live,1597,1677,Flex,Dynamic,0,2129,-10,1198,1607,1687,#N/A,2218,2263,1677,OAK
+2057538,Treebo Advantage Inn,Prayagraj,North 2,Mixed,Non-Metro,Live,2381,2500,Nonflex,Static,0,3175,-125,2381,2500,2625,#N/A,3451,3451,2500,OAK
+1234388,Treebo Ss Residency Gandhi Nagar,Vijayawada,South 2,Tier-2 Business,Non-Metro,Live,2238,2350,Nonflex,Dynamic,0,2984,-117,2238,2350,2467,#N/A,3244,3244,2350,OAK
+2011302,Treebo Green Oak,Nainital,North 2,Summer Leisure,Leisure,Live,1691,1775,Flex,Dynamic,0,2255,-40,1268,1728,1815,#N/A,2348,2396,1775,OAK
+2052667,Treebo Premium Landmark Prayagraj,Prayagraj,North 2,Mixed,Non-Metro,Live,3000,2722,SOB Properties,Dynamic,0,4000,91,3000,2505,2631,#N/A,3600,3700,2722,OAK
+1291518,Hotel MVP Check Inn,Visakhapatnam,South 2,Tier-2 Business,Non-Metro,Live,1285,1349,Revman,Dynamic,0,1713,-9,1285,1294,1358,#N/A,1785,1875,1349,OAK
+1474039,Hotel Allaranda Homestay,Coorg,South 1,Summer Leisure,Leisure,Churn,1440,1512,Revman,Dynamic,0,1920,-9,1440,1449,1521,#N/A,2000,2050,1512,ACACIA
+2024578,Umaiyyal Home Stay,Chennai,South 2,Tier-1 Business,Metro,Live,1044,1096,Revman,Dynamic,0,1392,-351,1044,1379,1448,#N/A,1450,1550,1096,ACACIA
+2018927,Hotel Verdisso,Bangalore,South 1,Tier-1 Business,Metro,Live,1020,1070,Revman,Dynamic,0,1360,89,1020,935,981,#N/A,1416,1619,1070,OAK
+3001609,Hotel Galaxy Suites Hebbal,Bangalore,South 1,Tier-1 Business,Metro,Live,1137,1194,Revman,Dynamic,0,1516,212,1137,935,981,#N/A,1579,2179,1194,OAK
+2032810,,,,,,,1052,1105,Revman,Dynamic,0,1403,1105,1052,,0,#N/A,1461,1509,1105,ACACIA
+1119600,Hotel Albie Stay Inn,Chandigarh,North 2,Mixed,Non-Metro,Live,948,995,Revman,Dynamic,0,1271,14,953,935,981,#N/A,1316,1316,995,OAK
+2016833,Treebo Brixton Luxe,Bangalore,South 1,Tier-1 Business,Metro,Live,1550,1628,Flex,Static,0,2067,-11,1163,1560,1638,#N/A,2153,2197,1628,OAK
+1245015,Treebo Era City Stay,Chennai,South 2,Tier-1 Business,Metro,Live,1973,2071,Flex,Dynamic,0,2631,-13,1480,1986,2085,#N/A,2740,2796,2071,MAPLE
+1104841,Treebo Red Coral,Haridwar,North 2,Mixed,Leisure,Live,845,888,Flex,Dynamic,0,1188,-20,891,864,907,#N/A,1174,1198,888,OAK
+1507731,Treebo Sairadha,Pune,West,Tier-1 Business,Metro,Live,1645,1727,Nonflex,Dynamic,0,2193,-86,1645,1727,1814,#N/A,2384,2384,1727,ACACIA
+1464454,Treebo Adithi Comforts Inn And Suites,Mysore,South 1,Mixed,Leisure,Live,1572,1650,Flex,Dynamic,0,2096,-10,1179,1581,1660,#N/A,2183,2212,1650,OAK
+1509768,Treebo Himalayan Homestay,Pune,West,Tier-1 Business,Metro,Live,1738,1825,Flex,Dynamic,0,2317,-12,1304,1749,1837,#N/A,2414,2463,1825,OAK
+2057014,Itsy Hotels Saina Stay Inn,Gurgaon,North 1,Tier-1 Business,Metro,Live,1381,1450,Flex,Dynamic,0,1841,-9,1331,1389,1459,#N/A,1918,2018,1450,OAK
+1142308,Itsy Hotels Abrigo,Munnar,South 1,Summer Leisure,Leisure,Stop Sell,1905,2000,Nonflex,Reverse,0,2540,-58,1905,1960,2058,#N/A,2761,2761,2000,OAK
+1393411,Itsy Hotels Prime Unity,Ahmedabad,North 1,Tier-2 Business,Non-Metro,Live,1878,1972,Flex,Dynamic,0,2504,-12,1409,1890,1985,#N/A,2609,2663,1972,OAK
+1619863,Treebo Sri Krishna Palace,Bhubaneswar,East,Mixed,Non-Metro,Live,1356,1424,Flex,Dynamic,0,1808,-9,1306,1365,1433,#N/A,1884,1984,1424,OAK
+1551401,Treebo Aurum Leaf,Nagpur,West,Tier-2 Business,Non-Metro,Live,2096,2200,Nonflex,Dynamic,0,2795,-111,2096,2201,2311,#N/A,3037,3037,2200,OAK
+1396947,Treebo Premium Bizz,Ahmedabad,North 1,Tier-2 Business,Non-Metro,Live,3333,3499,Nonflex,Dynamic,0,4444,-175,3333,3500,3675,#N/A,4830,4830,3499,OAK
+2063330,Treebo Shridhar Stay,Indore,West,Tier-2 Business,Non-Metro,Live,1342,1409,Flex,Dynamic,0,1789,-9,1292,1350,1418,#N/A,1863,1863,1409,OAK
+2052672,Treebo Twin Tree Suites,Gurgaon,North 1,Tier-1 Business,Metro,Live,1785,1874,Flex,Dynamic,0,2380,-12,1339,1797,1886,#N/A,2479,2529,1874,OAK
+1522763,Treebo Masterprice Inn - 15 Mins From Airport,Lucknow,North 2,Tier-2 Business,Non-Metro,Stop Sell,1500,1575,Flex,Dynamic,0,2000,53,1125,1449,1521,#N/A,2083,2083,1575,ACACIA
+1226887,Treebo Royal Divine,Varanasi,North 2,Mixed,Non-Metro,Live,1785,1874,Flex,Dynamic,0,2380,-12,1339,1797,1886,#N/A,2479,2529,1874,OAK
+1593685,Itsy Hotels Saffron Groves,Hyderabad,South 2,Tier-1 Business,Metro,Live,1500,1575,Flex,Dynamic,0,2000,-10,1125,1509,1584,#N/A,2083,2183,1575,OAK
+1767878,Treebo Punarnava Bypass Road,Chikmagalur,South 1,Summer Leisure,Leisure,Live,1333,1400,Flex,Dynamic,0,1777,-9,1283,1342,1409,#N/A,1852,1952,1400,OAK
+5000022,Treebo Skyline,Mangalore,South 1,Mixed,Non-Metro,Live,1762,1850,Flex,Dynamic,0,2349,-11,1322,1772,1861,#N/A,2447,2497,1850,OAK
+1726039,Treebo Pratham Inn Water Park And Resort,Udupi,South 1,Summer Leisure,Leisure,Live,1689,1774,Flex,Dynamic,0,2252,-11,1267,1700,1785,#N/A,2346,2396,1774,OAK
+1433791,Treebo Premium Indus Crown,Noida,North 1,Tier-1 Business,Metro,Live,2818,2959,Flex,Dynamic,0,3757,-19,2114,2836,2978,#N/A,3914,3994,2959,OAK
+1246851,Treebo Sri Anand Residency,Chennai,South 2,Tier-1 Business,Metro,Live,1737,1824,Flex,Dynamic,0,2316,-132,1303,1863,1956,#N/A,2413,2513,1824,OAK
+1371182,Treebo Alfa Suites,Mumbai,West,Tier-1 Business,Metro,Live,2683,2818,Flex,Dynamic,0,3577,-82,2012,2762,2900,#N/A,3727,3994,2818,OAK
+1502324,Itsy Hotels Lotus Executive,Pune,West,Tier-1 Business,Metro,Live,1597,1677,Flex,Dynamic,0,2129,-10,1198,1607,1687,#N/A,2218,2263,1677,OAK
+1126500,Treebo Arya Palace With Swimming Pool,Dehradun,North 2,Mixed,Leisure,Live,1788,1878,Flex,Dynamic,0,2384,-12,1341,1800,1890,#N/A,2484,2484,1878,MAPLE
+1262378,Treebo Premium Cachet Suites,Coimbatore,South 2,Tier-2 Business,Non-Metro,Live,2771,2910,Flex,Dynamic,0,3695,-126,2078,2892,3036,#N/A,3849,3927,2910,MAPLE
+2051131,Treebo Twin Tree Residency,Gurgaon,North 1,Tier-1 Business,Metro,Live,1597,1677,Flex,Dynamic,0,2129,-38,1198,1633,1714,#N/A,2218,2263,1677,OAK
+1759184,Treebo Arizona,Gandhinagar,North 1,Tier-2 Business,Non-Metro,Live,1705,1790,Flex,Dynamic,0,2273,-11,1279,1716,1801,#N/A,2368,2468,1790,ACACIA
+1595502,Treebo De Alphabet Nagole,Hyderabad,South 2,Tier-1 Business,Metro,Live,1853,1946,Flex,Dynamic,0,2471,-12,1390,1865,1958,#N/A,2574,2627,1946,MAPLE
+1982002,Treebo Cecil Resort Matheran With Swimming Pool,Matheran,West,Winter Leisure,Leisure,Live,2818,2959,Flex,Dynamic,0,3757,-19,2114,2836,2978,#N/A,3914,3994,2959,MAPLE
+2013074,Treebo Cocoon Suites,Bangalore,South 1,Tier-1 Business,Metro,Live,1820,1911,Nonflex,Dynamic,0,2427,-95,1820,1911,2007,#N/A,2638,2638,1911,MAPLE
+1374088,Treebo Gateway Mansion,Mumbai,West,Tier-1 Business,Metro,Live,2214,2325,Flex,Dynamic,0,2952,-15,1661,2228,2340,#N/A,3075,3175,2325,OAK
+2019513,Treebo Tranquil Inn Marathalli,Bangalore,South 1,Tier-1 Business,Metro,Live,1491,1565,Flex,Dynamic,0,1988,-10,1118,1500,1575,#N/A,2070,2070,1565,MAPLE
+1277010,Itsy Hotels Sands & Serenity,Gokarna,South 1,Summer Leisure,Leisure,Live,1905,2000,Flex,Dynamic,0,2540,-13,1429,1917,2013,#N/A,2646,2696,2000,OAK
+1436657,Treebo The Royal Corporate,Noida,North 1,Tier-1 Business,Metro,Live,1486,1560,Flex,Dynamic,0,1981,-10,1115,1495,1570,#N/A,2064,2114,1560,OAK
+1247190,Itsy Hotels Relax,Nagaon,East,Mixed,Non-Metro,Live,1690,1774,Flex,Dynamic,0,2253,-11,1268,1700,1785,#N/A,2347,2397,1774,OAK
+1615724,Treebo Grace Stays,Bhubaneswar,East,Mixed,Non-Metro,Churn,1409,1479,Flex,Dynamic,0,1879,1479,1359,,0,#N/A,1957,1997,1479,OAK
+2011435,Treebo Hiland Suites,Bangalore,South 1,Tier-1 Business,Metro,Live,1619,1700,Nonflex,Static,0,2159,-85,1619,1700,1785,#N/A,2346,2346,1700,OAK
+1139087,Treebo New Indraprastha,Thiruvananthapuram,South 1,Mixed,Non-Metro,Live,1590,1670,Flex,Dynamic,0,2120,-11,1193,1600,1680,#N/A,2208,2258,1670,OAK
+1596296,"Treebo Sy Inn, Hi-Tech City",Hyderabad,South 2,Tier-1 Business,Metro,Live,2220,2332,Flex,Dynamic,0,2960,-15,1665,2234,2346,#N/A,3084,3184,2332,ACACIA
+1266739,Treebo Viswa Vikas Residency,Coimbatore,South 2,Tier-2 Business,Non-Metro,Live,1691,1775,Flex,Dynamic,0,2255,-11,1268,1701,1786,#N/A,2348,2396,1775,OAK
+1047446,Treebo Premium Silva Lux,Wayanad,South 1,Summer Leisure,Leisure,Live,1785,1874,Flex,Dynamic,0,2380,-42,1339,1825,1916,#N/A,2479,2529,1874,OAK
+9772256,Treebo Melag Jispa With Mountain View,Jispa,North 2,Winter Leisure,Leisure,Live,3194,3354,Flex,Dynamic,0,4259,-97,2396,3287,3451,#N/A,4436,4526,3354,MAPLE
+1245105,Treebo Premium Pine Tree Courtyard,Chennai,South 2,Tier-1 Business,Metro,Live,3048,3200,Nonflex,Dynamic,0,4064,-160,3048,3200,3360,#N/A,4417,4417,3200,MAPLE
+1509008,Treebo Royal Empire,Pune,West,Tier-1 Business,Metro,Live,1595,1675,Flex,Dynamic,0,2127,-10,1196,1604,1685,#N/A,2215,2315,1675,OAK
+2032928,Treebo Aashirwad Bliss Inn With Swimming Pool,Jaipur,North 1,Mixed,Non-Metro,Live,1152,1210,Flex,Dynamic,0,1536,-8,1102,1159,1217,#N/A,1600,1731,1210,MAPLE
+1266216,Treebo Aiswaryam Residency,Coimbatore,South 2,Tier-2 Business,Non-Metro,Live,1619,1700,Flex,Dynamic,0,2159,-11,1214,1630,1711,#N/A,2249,2329,1700,OAK
+2058446,Treebo Ivy Castle,Gurgaon,North 1,Tier-1 Business,Metro,Live,1905,2000,Nonflex,Dynamic,0,2540,-100,1905,2000,2100,#N/A,2761,2761,2000,OAK
+1219930,Treebo The Armani Near Igi Airport,New Delhi,North 1,Tier-1 Business,Metro,Churn,2013,2114,Flex,Dynamic,0,2684,2114,1510,,0,#N/A,2796,2796,2114,OAK
+1591654,Treebo Living Tree Khairatabad,Hyderabad,South 2,Tier-1 Business,Metro,Live,1942,2039,Flex,Dynamic,0,2589,-13,1457,1954,2052,#N/A,2697,2755,2039,MAPLE
+1247991,"Treebo Gt Meridian, T-Nagar",Chennai,South 2,Tier-1 Business,Metro,Live,2349,2466,Flex,Dynamic,0,3132,-16,1762,2364,2482,#N/A,3262,3328,2466,MAPLE
+2071352,Treebo Holiday Hill,Dharamshala,North 2,Summer Leisure,Leisure,Live,1738,1825,Flex,Dynamic,0,2317,-40,1304,1777,1865,#N/A,2414,2463,1825,ACACIA
+1104342,Treebo Premium Paarth Grand,Haridwar,North 2,Mixed,Leisure,Live,2000,2100,Nonflex,Dynamic,0,2667,25,2000,1976,2075,#N/A,2899,2899,2100,MAPLE
+2017175,Treebo Global Stay Rajajinagar,Bangalore,South 1,Tier-1 Business,Metro,Live,1715,1800,Nonflex,Dynamic,0,2287,-90,1715,1801,1891,#N/A,2485,2485,1800,OAK
+1617471,"Treebo Ayaansh, Patia",Bhubaneswar,East,Mixed,Non-Metro,Live,1409,1479,Flex,Dynamic,0,1879,-64,1359,1470,1544,#N/A,1957,1997,1479,ACACIA
+1503956,Itsy Hotels Sri Nidhi Executive,Pune,West,Tier-1 Business,Metro,Live,1409,1479,Flex,Dynamic,0,1879,-33,1359,1441,1513,#N/A,1957,1997,1479,OAK
+1503729,Treebo Lime Light,Pune,West,Tier-1 Business,Metro,Live,1247,1309,Flex,Dynamic,0,1663,-8,1197,1255,1317,#N/A,1732,1732,1309,OAK
+1386944,Treebo Calangute Beach Stay With Swimming Pool,Goa,West,Winter Leisure,Leisure,Live,1698,1783,Flex,Dynamic,0,2264,-11,1274,1709,1795,#N/A,2359,2359,1783,OAK
+1433343,Treebo Premium Inn 62,Noida,North 1,Tier-1 Business,Metro,Live,1642,1724,Flex,Dynamic,0,2189,-11,1232,1653,1735,#N/A,2281,2381,1724,OAK
+1868924,Treebo Vistara Gold Ujjain Junction,Ujjain,West,Mixed,Leisure,Live,2349,2466,Flex,Dynamic,0,3132,-16,1762,2364,2482,#N/A,3262,3328,2466,OAK
+2014266,Treebo Golden Stay Electronic City,Bangalore,South 1,Tier-1 Business,Metro,Live,1597,1677,Flex,Dynamic,0,2129,-2,1198,1599,1679,#N/A,2218,2263,1677,OAK
+1599535,Treebo De Alphabet Gachibowli,Hyderabad,South 2,Tier-1 Business,Metro,Churn,1597,1677,Flex,Dynamic,0,2129,1677,1198,,0,#N/A,2218,2263,1677,OAK
+1548950,Treebo The Appa'S Resort,Mahabaleshwar,West,Winter Leisure,Leisure,Live,1691,1775,Flex,Dynamic,0,2255,-11,1268,1701,1786,#N/A,2348,2396,1775,MAPLE
+1526474,Treebo Maple Delite,Lucknow,North 2,Tier-2 Business,Non-Metro,Churn,1429,1500,Flex,Dynamic,-424,1905,1500,1379,,0,#N/A,2545,2646,1924,MAPLE
+1257912,"Treebo Grace Inn, 3 Min Walk From Promenade Beach",Pondicherry,South 2,Winter Leisure,Leisure,Live,1629,1711,Flex,Dynamic,0,2172,-10,1222,1639,1721,#N/A,2263,3994,1711,OAK
+1755459,Treebo The Velvet,Gandhinagar,North 1,Tier-2 Business,Non-Metro,Live,2000,2100,Nonflex,Dynamic,0,2667,-18,2000,2017,2118,#N/A,2899,2899,2100,OAK
+1145293,Treebo Sloka Residency,Ranchi,East,Tier-2 Business,Non-Metro,Live,1595,1675,Flex,Dynamic,0,2127,-10,1196,1604,1685,#N/A,2215,2315,1675,OAK
+1364455,Treebo Blu Vvu,Jodhpur,North 1,Winter Leisure,Leisure,Live,1488,1562,Flex,Dynamic,0,1984,-10,1116,1497,1572,#N/A,2066,2116,1562,OAK
+2018823,Treebo Three Street Inn Rr Nagar,Bangalore,South 1,Tier-1 Business,Metro,Live,1324,1390,Flex,Dynamic,0,1765,-9,1274,1332,1399,#N/A,1839,1839,1390,OAK
+1257912,"Treebo Grace Inn, 3 Min Walk From Promenade Beach",Pondicherry,South 2,Winter Leisure,Leisure,Live,1629,1711,Flex,Dynamic,0,2172,-10,1222,1639,1721,#N/A,2263,3994,1711,OAK
+1531125,Treebo Green Pearl Inn,Guwahati,East,Mixed,Non-Metro,Live,1691,1775,Flex,Dynamic,0,2255,-11,1268,1701,1786,#N/A,2348,2396,1775,OAK
+1229040,Treebo Raj Palace,Varanasi,North 2,Mixed,Non-Metro,Live,1071,1124,Flex,Dynamic,0,1428,-38,1071,1107,1162,#N/A,1487,1587,1124,OAK
+1322829,Treebo Indus,Jaipur,North 1,Mixed,Non-Metro,Live,1452,1524,Flex,Dynamic,0,1936,-9,1089,1461,1534,#N/A,2016,2116,1524,OAK
+6809984,Treebo Ramayan Suites Ayodhya,Ayodhya,North 2,Mixed,Leisure,Live,1342,1409,Flex,Dynamic,0,1789,-9,1292,1350,1418,#N/A,1864,1900,1409,MAPLE
+1702054,Treebo Medco Mansion,Kozhikode,South 1,Mixed,Non-Metro,Live,1571,1650,Nonflex,Dynamic,0,2095,-82,1571,1650,1732,#N/A,2277,2277,1650,OAK
+2018823,Treebo Three Street Inn Rr Nagar,Bangalore,South 1,Tier-1 Business,Metro,Live,1324,1390,Flex,Dynamic,0,1765,-9,1274,1332,1399,#N/A,1839,1839,1390,OAK
+1514039,Itsy Hotels Flowers Park,Nashik,West,Mixed,Non-Metro,Live,1202,1263,Flex,Dynamic,0,1603,-8,1152,1210,1270,#N/A,1670,1704,1263,ACACIA
+1419740,Treebo Ivory Inn,Kolkata,East,Tier-1 Business,Metro,Live,1999,2099,Flex,Dynamic,0,2665,-13,1499,2012,2112,#N/A,2777,2830,2099,MAPLE
+1614818,Treebo Greenland Grand,Bhubaneswar,East,Mixed,Non-Metro,Live,1878,1972,Flex,Dynamic,0,2504,-12,1409,1890,1985,#N/A,2609,2663,1972,OAK
+1204404,Treebo The Alpine Heritage Residency,Shimla,North 2,Summer Leisure,Leisure,Live,1452,1524,Flex,Dynamic,0,1936,-218,1089,1659,1742,#N/A,2016,2116,1524,MAPLE
+1147436,Treebo Babu Shivaansh Residency,Ranchi,East,Tier-2 Business,Non-Metro,Live,1221,1282,Flex,Dynamic,0,1628,24,1171,1198,1258,#N/A,1696,1731,1282,OAK
+1261557,Itsy Hotels Snowdrop,Coimbatore,South 2,Tier-2 Business,Non-Metro,Live,1381,1450,Flex,Dynamic,0,1841,-9,1331,1389,1459,#N/A,1918,1968,1450,OAK
+2013677,Itsy Hotels Salees Enclave - Near Padmanabhaswamy Temple,Thiruvananthapuram,South 1,Mixed,Non-Metro,Live,1208,1269,Flex,Dynamic,0,1611,-8,1158,1216,1277,#N/A,1678,1778,1269,OAK
+1914908,Treebo Kaler Hotel And Resorts,Bhimtal,North 2,Summer Leisure,Leisure,Live,1428,1500,Nonflex,Dynamic,0,1904,48,1428,1383,1452,#N/A,2070,2070,1500,OAK
+1594926,"Treebo The Trio, Karmanghat",Hyderabad,South 2,Tier-1 Business,Metro,Live,1524,1600,Flex,Dynamic,0,2032,51,1143,1475,1549,#N/A,2116,2116,1600,OAK
+1432185,Treebo Noida Business Suites,Noida,North 1,Tier-1 Business,Metro,Live,1524,1600,Flex,Dynamic,0,2032,51,1143,1475,1549,#N/A,2116,2166,1600,OAK
+1133570,Treebo Regalia,Thiruvananthapuram,South 1,Mixed,Non-Metro,Live,1524,1600,Flex,Dynamic,0,2032,-10,1143,1533,1610,#N/A,2116,2116,1600,OAK
+1397677,Itsy Hotels Grand Cg,Ahmedabad,North 1,Tier-2 Business,Non-Metro,Live,1409,1479,Flex,Dynamic,0,1879,-9,1359,1418,1488,#N/A,1957,1997,1479,OAK
+1064211,Treebo Chanakya Palm,Vrindavan,North 2,Mixed,Leisure,Live,1033,1085,Flex,Dynamic,0,1377,20,1033,1014,1065,#N/A,1435,1464,1085,MAPLE
+1237644,Itsy Hotels M,Vijayawada,South 2,Tier-2 Business,Non-Metro,Live,1381,1450,Nonflex,Dynamic,0,1841,-440,1381,1800,1890,#N/A,2001,2001,1450,ACACIA
+1211750,Treebo The Kings Plaza Near Airport,New Delhi,North 1,Tier-1 Business,Metro,Stop Sell,1644,1726,Flex,Dynamic,0,2192,125,1233,1525,1601,#N/A,2283,2330,1726,ACACIA
+1215301,Treebo C T International,New Delhi,North 1,Tier-1 Business,Metro,Live,1833,1925,Flex,Dynamic,0,2444,-12,1375,1845,1937,#N/A,2546,2646,1925,OAK
+2317284,Treebo Prem Tower,Haldwani,North 2,Winter Leisure,Leisure,Live,1333,1400,Nonflex,Dynamic,0,1777,17,1333,1317,1383,#N/A,1932,1932,1400,OAK
+1291038,"Treebo Rushi Grand, 1 Km To Rushikonda Beach",Visakhapatnam,South 2,Tier-2 Business,Non-Metro,Live,1452,1525,Flex,Dynamic,0,1936,-10,1089,1462,1535,#N/A,2017,2117,1525,OAK
+2025675,"Treebo Golden Sun Inn, 5 Mins To Rock Beach",Pondicherry,South 2,Winter Leisure,Leisure,Live,1503,1578,Flex,Dynamic,0,2004,-10,1127,1512,1588,#N/A,2087,2087,1578,OAK
+1398627,Treebo Aaram Orchard,Ahmedabad,North 1,Tier-2 Business,Non-Metro,Live,1644,1726,Flex,Dynamic,0,2192,31,1233,1614,1695,#N/A,2283,2330,1726,OAK
+6806341,Treebo Ayodhya Grand,Ayodhya,North 2,Mixed,Leisure,Live,1356,1424,Flex,Dynamic,0,1808,-9,1306,1365,1433,#N/A,1884,1984,1424,OAK
+2052148,Treebo Maple Delite,Lucknow,North 2,Tier-2 Business,Non-Metro,Live,1456,1529,Flex,Dynamic,0,1941,28,1092,1429,1501,#N/A,2022,2063,1529,MAPLE
+1524406,"Treebo Shakuntalam, Near Lucknow Airport",Lucknow,North 2,Tier-2 Business,Non-Metro,Live,1315,1381,Flex,Dynamic,0,1753,26,1265,1290,1355,#N/A,1827,1864,1381,OAK
+1597997,"Treebo Saffron Suites, Near Financial District & Us Consulate",Hyderabad,South 2,Tier-1 Business,Metro,Live,2066,2170,Flex,Dynamic,0,2755,-13,1550,2079,2183,#N/A,2870,2929,2170,OAK
+1591221,Itsy Hotels Aura Stays,Hyderabad,South 2,Tier-1 Business,Metro,Live,1269,1333,Flex,Dynamic,0,1692,-8,1219,1277,1341,#N/A,1763,1763,1333,OAK
+2063523,Treebo Hub,Indore,West,Tier-2 Business,Non-Metro,Live,1452,1524,Flex,Dynamic,0,1936,-9,1089,1461,1534,#N/A,2016,2116,1524,OAK
+1167428,Treebo Premium Lavender Kochi Infopark,Kochi,South 1,Mixed,Non-Metro,Live,1928,2025,Flex,Dynamic,0,2571,-50,1446,1976,2075,#N/A,2678,2778,2025,ACACIA
+1263729,Itsy Hotels Everest Grand,Coimbatore,South 2,Tier-2 Business,Non-Metro,Live,1456,1529,Flex,Dynamic,0,1941,-9,1092,1465,1538,#N/A,2022,2063,1529,OAK
+1468702,Itsy Hotels Nrm Residency - Near Mysore Palace,Mysore,South 1,Mixed,Leisure,Live,1315,1381,Flex,Dynamic,0,1753,-9,1265,1324,1390,#N/A,1827,1864,1381,OAK
+1396900,Treebo Vice President,Ahmedabad,North 1,Tier-2 Business,Non-Metro,Live,1512,1588,Flex,Dynamic,0,2016,-10,1134,1521,1598,#N/A,2100,2225,1588,OAK
+2039275,Treebo Rio Crown Palace,Ahmedabad,North 1,Tier-2 Business,Non-Metro,Live,1512,1588,Flex,Dynamic,0,2016,-10,1134,1521,1598,#N/A,2100,2225,1588,MAPLE
+2016693,"Itsy Hotels Emirates Suites - Near Rmz Ecoworld, Bellandur",Bangalore,South 1,Tier-1 Business,Metro,Live,1597,1677,Flex,Dynamic,0,2129,-10,1198,1607,1687,#N/A,2218,2263,1677,OAK
+2016822,"Treebo Blu Orchid Vista, Indiranagar - Near Bagmane Tech Park",Bangalore,South 1,Tier-1 Business,Metro,Live,2190,2300,Flex,Dynamic,0,2920,73,1643,2121,2227,#N/A,3042,3042,2300,OAK
+1218728,Treebo Premium Royal Gold Palace,New Delhi,North 1,Tier-1 Business,Metro,Live,3382,3551,Flex,Dynamic,0,4509,66,2537,3319,3485,#N/A,4697,4793,3551,OAK
+1451268,"Itsy Hotels R S Bhavan, 2 Km From Mit Gate",Manipal,South 1,Mixed,Non-Metro,Live,1440,1512,Flex,Dynamic,0,1920,-9,1080,1449,1521,#N/A,2000,2032,1512,OAK
+1618342,Treebo Grace Stays,Bhubaneswar,East,Mixed,Non-Metro,Live,1503,1578,Flex,Dynamic,0,2004,-10,1127,1512,1588,#N/A,2087,2130,1578,OAK
+1465445,Itsy Hotels Cozy Retreat - Near Mysore Palace & Zoo,Mysore,South 1,Mixed,Leisure,Live,1336,1402,Flex,Dynamic,0,1781,-9,1286,1344,1411,#N/A,1855,1905,1402,OAK
+1385678,Treebo Grand Royale Eco Residency With Pool,Goa,West,Winter Leisure,Leisure,Live,1238,1300,Flex,Dynamic,0,1651,-8,1188,1246,1309,#N/A,1720,2018,1300,OAK
+1592011,"Treebo Arastu Elite Inn, Lakdikapul Near Nampally Station",Hyderabad,South 2,Tier-1 Business,Metro,Live,1905,2000,Flex,Dynamic,0,2540,-13,1429,1917,2013,#N/A,2646,2646,2000,MAPLE
+3005059,Treebo Horizon Arc,Pune,West,Tier-1 Business,Metro,Live,2066,2170,Flex,Dynamic,0,2755,-13,1550,2079,2183,#N/A,2870,2929,2170,OAK
+4477291,Itsy Hotels Twilight,Dalhousie,North 2,Winter Leisure,Leisure,Live,1452,1524,Flex,Dynamic,0,1936,-9,1089,1461,1534,#N/A,2016,2116,1524,OAK
+1148276,Treebo Misty Garden Resorts & Spa With Swimming Pool,Munnar,South 1,Summer Leisure,Leisure,Live,2340,2458,Nonflex,Dynamic,0,3120,-122,2340,2457,2580,#N/A,3392,3461,2458,OAK
+1208576,Treebo Fagu Peaks,Shimla,North 2,Summer Leisure,Leisure,Live,1642,1724,Flex,Dynamic,0,2189,-11,1232,1653,1735,#N/A,2281,2381,1724,MAPLE
+1383741,Treebo Morjim Banyan Resort With Swimming Pool,Goa,West,Winter Leisure,Leisure,Live,1292,1356,Flex,Dynamic,0,1723,-9,1242,1300,1365,#N/A,1794,1794,1356,OAK
+1593382,Treebo Cultura,Hyderabad,South 2,Tier-1 Business,Metro,Live,1809,1900,Flex,Dynamic,0,2412,-12,1357,1821,1912,#N/A,2513,2513,1900,OAK
+1292887,Treebo Landmark,Visakhapatnam,South 2,Tier-2 Business,Non-Metro,Live,1762,1850,Flex,Dynamic,0,2349,59,1322,1705,1790,#N/A,2447,2447,1850,MAPLE
+1379032,Treebo Premium Merrit,Mumbai,West,Tier-1 Business,Metro,Live,1976,2074,Flex,Dynamic,0,2635,-7,1482,1982,2082,#N/A,2744,2844,2074,MAPLE
+1371682,Treebo Empire Suite,Mumbai,West,Tier-1 Business,Metro,Live,2630,2762,Flex,Dynamic,0,3507,-18,1973,2647,2779,#N/A,3653,3728,2762,OAK
+1541487,Treebo Vhyomaan Resort With Swimming Pool,Mahabaleshwar,West,Winter Leisure,Leisure,Live,1714,1799,Flex,Dynamic,0,2285,56,1286,1660,1743,#N/A,2380,2396,1799,OAK
+1892583,Treebo Ksheera Residency Near Railway Station,Hassan,South 1,Mixed,Leisure,Live,1369,1438,Flex,Dynamic,0,1825,180,1319,1198,1258,#N/A,1902,1952,1438,OAK
+2020755,"Treebo Sheel, Near Mall Road",Shimla,North 2,Summer Leisure,Leisure,Live,2161,2269,Flex,Dynamic,0,2881,42,1621,2121,2227,#N/A,3001,3062,2269,OAK
+2051467,Itsy Hotel Sangam Retreat,Prayagraj,North 2,Mixed,Non-Metro,Live,1033,1085,Flex,Dynamic,0,1377,20,1033,1014,1065,#N/A,1435,1464,1085,OAK
+1124831,Treebo Golden Leaf Ddn,Dehradun,North 2,Mixed,Leisure,Live,1988,2087,Flex,Dynamic,0,2651,151,1491,1844,1936,#N/A,2761,2761,2087,OAK
+1144366,Treebo Belita Resort Munnar With Infinity Pool,Munnar,South 1,Summer Leisure,Leisure,Live,2254,2367,Flex,Dynamic,0,3005,-4,1691,2259,2371,#N/A,3131,3195,2367,ACACIA
+1363971,Treebo Park View Villa,Jodhpur,North 1,Winter Leisure,Leisure,Live,1642,1724,Flex,Dynamic,0,2189,743,1232,935,981,#N/A,2281,2381,1724,OAK
+1371983,Treebo Premium Widlor Boutique With Swimming Pool,Mumbai,West,Tier-1 Business,Metro,Live,3524,3700,Flex,Dynamic,0,4699,118,2643,3411,3582,#N/A,4894,5245,3700,OAK
+1822909,"Treebo Kohinoor Plaza, Bikaner Railway Station",Bikaner,North 1,Tier-2 Business,Non-Metro,Live,1409,1479,Flex,Dynamic,0,1879,498,1359,935,981,#N/A,1957,1997,1479,ACACIA
+1766478,"Treebo Jaguar Comforts, 3 Kms From Mahatma Gandhi Park",Chikmagalur,South 1,Summer Leisure,Leisure,Live,2332,2449,Flex,Dynamic,0,3109,1467,1749,935,981,#N/A,3239,3239,2449,OAK
+1252200,Treebo Skanda Grande,Pondicherry,South 2,Winter Leisure,Leisure,Live,2118,2224,Flex,Dynamic,0,2824,1243,1589,935,981,#N/A,2942,3042,2224,OAK
+2067625,"Treebo Ten Eleven Grand, Scheme 78",Indore,West,Tier-2 Business,Non-Metro,Live,1714,1799,Flex,Dynamic,0,2285,818,1286,935,981,#N/A,2380,2380,1799,OAK
+2031888,Itsy Hotels Jashan,Chandigarh,North 2,Mixed,Non-Metro,Live,1428,1500,Flex,Dynamic,0,1904,519,1378,935,981,#N/A,1984,1984,1500,ACACIA
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,0,1271,0,953,,0,#N/A,,,,
+,,,,,,,,0,,,,,,,,,,,,,
