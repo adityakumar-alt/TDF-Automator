@@ -124,7 +124,7 @@ async function initGoogleSignIn() {
     return;
   }
 
-  let clientId = '906825685733-khfmgsv2dhl427p1fkdv524etudsi39i.apps.googleusercontent.com';
+  let clientId = null;
 
   try {
     const cfgRes = await fetch('/api/auth/config');
@@ -134,10 +134,16 @@ async function initGoogleSignIn() {
       clientId = cfgData.clientId;
     }
   } catch (e) {
-    console.warn('Could not load Google client ID from server. Using fallback.');
+    console.warn('Could not load Google client ID from server:', e.message);
   }
 
   function tryRender() {
+    if (!clientId) {
+      console.warn('Google Sign-In initialization skipped: No Google Client ID provided by server.');
+      googleClientInitStarted = false;
+      return;
+    }
+
     if (
       window.google &&
       window.google.accounts &&
@@ -1187,16 +1193,16 @@ function showAuthModal() {
 
       // Inline the trash icon SVG directly to avoid running lucide.createIcons() on the entire list
       tr.innerHTML = `
-      <td><strong>${row.hotel_ID}</strong></td>
-      <td><span class="badge">${row.rule_type}</span></td>
-      <td>${row.start_range}</td>
-      <td>${row.end_range}</td>
-      <td>${row.multiplier}</td>
-      <td>${row.addition || '-'}</td>
-      <td>${row.start_price || '-'}</td>
-      <td>${row.end_price || '-'}</td>
+      <td><strong>${escapeHtml(row.hotel_ID)}</strong></td>
+      <td><span class="badge">${escapeHtml(row.rule_type)}</span></td>
+      <td>${escapeHtml(row.start_range)}</td>
+      <td>${escapeHtml(row.end_range)}</td>
+      <td>${escapeHtml(row.multiplier)}</td>
+      <td>${escapeHtml(row.addition || '-')}</td>
+      <td>${escapeHtml(row.start_price || '-')}</td>
+      <td>${escapeHtml(row.end_price || '-')}</td>
       <td>
-        <button class="btn-delete-row" data-id="${row.id}" title="Delete Row">
+        <button class="btn-delete-row" data-id="${escapeHtml(row.id)}" title="Delete Row">
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trash-2"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/><line x1="10" x2="10" y1="11" y2="17"/><line x1="14" x2="14" y1="11" y2="17"/></svg>
         </button>
       </td>
@@ -1482,7 +1488,7 @@ function showAuthModal() {
             <span>Part ${partNum} (Hotels ${startIdx + 1}–${endIdx} · ${count} IDs)</span>
           </div>
           <div class="joined-hotels-body">
-            <input type="text" class="joined-hotels-text" readonly value="${joinedText}" onclick="this.select()">
+            <input type="text" class="joined-hotels-text" readonly value="${escapeHtml(joinedText)}" onclick="this.select()">
             <button class="btn btn-secondary btn-sm btn-copy-part" data-part="${partNum}" data-range="${startIdx + 1}–${endIdx}" data-count="${count}" title="Copy Part ${partNum}">
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
               <span>Copy Part ${partNum}</span>
@@ -1493,7 +1499,7 @@ function showAuthModal() {
       } else {
         partsHtml += `
         <div class="joined-hotels-body">
-          <input type="text" id="joined-hotels-text" class="joined-hotels-text" readonly value="${joinedText}" onclick="this.select()">
+          <input type="text" id="joined-hotels-text" class="joined-hotels-text" readonly value="${escapeHtml(joinedText)}" onclick="this.select()">
           <button id="btn-copy-joined" class="btn btn-secondary btn-sm btn-copy-part" data-part="1" data-range="1–${total}" data-count="${total}" title="Copy to Clipboard">
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
             <span>Copy</span>
@@ -3060,7 +3066,7 @@ function showAuthModal() {
       const cardHtml = `
       <div class="opzone-card">
         <div class="opzone-card-title">
-          <span>${zoneName}</span>
+          <span>${escapeHtml(zoneName)}</span>
           <span style="font-size:0.75rem; color:#ea580c; font-weight:600;">${st.hotels.size} Hotels</span>
         </div>
         <div class="opzone-metric-row">
@@ -3203,7 +3209,7 @@ function showAuthModal() {
         const opt = document.createElement('div');
         opt.className = 'dropdown-option' + (this.selectedValue === val ? ' selected' : '');
         opt.dataset.value = val;
-        opt.innerHTML = `<span class="opt-check">✓</span> <span class="opt-label">${val}</span>`;
+        opt.innerHTML = `<span class="opt-check">✓</span> <span class="opt-label">${escapeHtml(val)}</span>`;
         this.optionsContainer.appendChild(opt);
       });
 
@@ -3619,21 +3625,21 @@ function showAuthModal() {
       const desiredVal = (r.desiredPushPrice !== undefined && r.desiredPushPrice !== null) ? r.desiredPushPrice : r.pushedPrice;
 
       tr.innerHTML = `
-      <td><span class="badge-csid">${r.csId}</span></td>
-      <td><strong class="cell-hotel-name" title="${r.hotelName}">${r.hotelName}</strong></td>
-      <td><span class="cell-truncate" title="${r.city}">${r.city}</span></td>
-      <td><span class="cell-truncate" title="${r.opZone}">${r.opZone}</span></td>
-      <td><span class="badge-city-type">${r.cityType}</span></td>
-      <td><span class="cell-date-compact" title="${r.dateStr}">${r.dateDisplayCompact || r.dateStr}</span></td>
-      <td class="cell-num-right"><strong style="color:#6366f1;">${r.benchmarkOccDisplay || '-'}</strong></td>
+      <td><span class="badge-csid">${escapeHtml(r.csId)}</span></td>
+      <td><strong class="cell-hotel-name" title="${escapeHtml(r.hotelName)}">${escapeHtml(r.hotelName)}</strong></td>
+      <td><span class="cell-truncate" title="${escapeHtml(r.city)}">${escapeHtml(r.city)}</span></td>
+      <td><span class="cell-truncate" title="${escapeHtml(r.opZone)}">${escapeHtml(r.opZone)}</span></td>
+      <td><span class="badge-city-type">${escapeHtml(r.cityType)}</span></td>
+      <td><span class="cell-date-compact" title="${escapeHtml(r.dateStr)}">${escapeHtml(r.dateDisplayCompact || r.dateStr)}</span></td>
+      <td class="cell-num-right"><strong style="color:#6366f1;">${escapeHtml(r.benchmarkOccDisplay || '-')}</strong></td>
       <td class="cell-num-right"><strong>${r.occVal.toFixed(1)}%</strong></td>
-      <td class="cell-num-right"><strong style="color:#0284c7;">${r.walkingShareDisplay || '-'}</strong></td>
-      <td class="cell-num-right"><strong style="color:#8b5cf6;">${r.b2bShareDisplay || '-'}</strong></td>
+      <td class="cell-num-right"><strong style="color:#0284c7;">${escapeHtml(r.walkingShareDisplay || '-')}</strong></td>
+      <td class="cell-num-right"><strong style="color:#8b5cf6;">${escapeHtml(r.b2bShareDisplay || '-')}</strong></td>
       <td class="cell-num-right">${r.currentTDF.toFixed(2)}</td>
       <td class="cell-num-right"><strong class="cell-new-tdf" style="color:#059669;">${r.recTDF.toFixed(2)}</strong></td>
-      <td class="cell-num-right"><strong style="color:#0284c7;">${pushedPriceDisplay}</strong></td>
+      <td class="cell-num-right"><strong style="color:#0284c7;">${escapeHtml(pushedPriceDisplay)}</strong></td>
       <td class="cell-num-right cell-desired-price">
-        <input type="text" inputmode="numeric" pattern="[0-9]*" class="desired-push-price-input" data-csid="${r.csId}" data-targetdate="${r.targetDateStr}" value="${desiredVal}" spellcheck="false" autocomplete="off" />
+        <input type="text" inputmode="numeric" pattern="[0-9]*" class="desired-push-price-input" data-csid="${escapeHtml(r.csId)}" data-targetdate="${escapeHtml(r.targetDateStr)}" value="${escapeHtml(desiredVal)}" spellcheck="false" autocomplete="off" />
       </td>
     `;
       tbody.appendChild(tr);
@@ -4439,7 +4445,7 @@ function showAuthModal() {
       const currentVal = resetToAll ? 'all' : subOpzoneSelect.value;
       const subOpzones = Array.from(new Set(hawkeyeBaseRatesMaster.map(item => item.subOpzone).filter(Boolean))).sort();
       subOpzoneSelect.innerHTML = '<option value="all">All Sub Opzones</option>' +
-        subOpzones.map(z => `<option value="${z}">${z}</option>`).join('');
+        subOpzones.map(z => `<option value="${escapeHtml(z)}">${escapeHtml(z)}</option>`).join('');
       subOpzoneSelect.value = (subOpzones.includes(currentVal)) ? currentVal : 'all';
     }
 
@@ -4448,7 +4454,7 @@ function showAuthModal() {
       const currentVal = resetToAll ? 'all' : citySelect.value;
       const cities = Array.from(new Set(hawkeyeBaseRatesMaster.map(item => item.city).filter(Boolean))).sort();
       citySelect.innerHTML = '<option value="all">All Cities</option>' +
-        cities.map(c => `<option value="${c}">${c}</option>`).join('');
+        cities.map(c => `<option value="${escapeHtml(c)}">${escapeHtml(c)}</option>`).join('');
       citySelect.value = (cities.includes(currentVal)) ? currentVal : 'all';
     }
 
@@ -4457,7 +4463,7 @@ function showAuthModal() {
       const currentVal = resetToAll ? 'all' : categorySelect.value;
       const categories = Array.from(new Set(hawkeyeBaseRatesMaster.map(item => item.cityCategory).filter(Boolean))).sort();
       categorySelect.innerHTML = '<option value="all">All Categories</option>' +
-        categories.map(c => `<option value="${c}">${c}</option>`).join('');
+        categories.map(c => `<option value="${escapeHtml(c)}">${escapeHtml(c)}</option>`).join('');
       categorySelect.value = (categories.includes(currentVal)) ? currentVal : 'all';
     }
 
@@ -4472,7 +4478,7 @@ function showAuthModal() {
       const currentVal = resetToAll ? 'all' : baseConfigSelect.value;
       const configs = Array.from(new Set(hawkeyeBaseRatesMaster.map(item => item.baseConfig).filter(Boolean))).sort();
       baseConfigSelect.innerHTML = '<option value="all">All Base Configs</option>' +
-        configs.map(cfg => `<option value="${cfg}">${cfg}</option>`).join('');
+        configs.map(cfg => `<option value="${escapeHtml(cfg)}">${escapeHtml(cfg)}</option>`).join('');
       baseConfigSelect.value = (configs.includes(currentVal)) ? currentVal : 'all';
     }
 
@@ -4583,32 +4589,32 @@ function showAuthModal() {
       }
 
       const configBadge = item.baseConfig
-        ? `<span style="font-size: 0.72rem; font-weight: 600; padding: 2px 7px; background: #f8fafc; color: #334155; border: 1px solid #e2e8f0; border-radius: 4px; font-family: monospace;">${item.baseConfig}</span>`
+        ? `<span style="font-size: 0.72rem; font-weight: 600; padding: 2px 7px; background: #f8fafc; color: #334155; border: 1px solid #e2e8f0; border-radius: 4px; font-family: monospace;">${escapeHtml(item.baseConfig)}</span>`
         : '<span style="color: var(--text-muted);">-</span>';
 
       html += `
       <tr>
-        <td style="font-family: monospace; font-weight: 700; color: var(--text-primary); letter-spacing: 0.5px;">${item.hotelId}</td>
+        <td style="font-family: monospace; font-weight: 700; color: var(--text-primary); letter-spacing: 0.5px;">${escapeHtml(item.hotelId)}</td>
         <td>
-          <span class="cell-hotel-name" style="max-width: 220px;" title="${item.hotelName}">${item.hotelName || '-'}</span>
+          <span class="cell-hotel-name" style="max-width: 220px;" title="${escapeHtml(item.hotelName)}">${escapeHtml(item.hotelName || '-')}</span>
         </td>
-        <td>${item.city || '-'}</td>
+        <td>${escapeHtml(item.city || '-')}</td>
         <td>
-          <span style="font-size: 0.72rem; font-weight: 600; padding: 2px 7px; background: #f1f5f9; color: #475569; border-radius: 4px;">${item.subOpzone || '-'}</span>
+          <span style="font-size: 0.72rem; font-weight: 600; padding: 2px 7px; background: #f1f5f9; color: #475569; border-radius: 4px;">${escapeHtml(item.subOpzone || '-')}</span>
         </td>
         <td>
-          <span style="font-size: 0.72rem; color: var(--text-secondary);">${item.cityCategory || '-'}</span>
+          <span style="font-size: 0.72rem; color: var(--text-secondary);">${escapeHtml(item.cityCategory || '-')}</span>
         </td>
         <td>${statusBadge}</td>
         <td class="col-sep-right">${configBadge}</td>
-        <td class="cell-num-right" style="font-weight: 600; color: #d97706;">${item.min}</td>
-        <td class="cell-num-right" style="font-weight: 600; color: #d97706;">${item.max}</td>
-        <td class="cell-num-right" style="font-weight: 700; color: #0284c7; background: rgba(2, 132, 199, 0.04);">${item.p0}</td>
-        <td class="cell-num-right" style="font-weight: 600; color: #0284c7;">${item.p1}</td>
-        <td class="cell-num-right" style="font-weight: 600; color: #0284c7;">${item.p2}</td>
-        <td class="cell-num-right" style="font-weight: 600; color: #0284c7;">${item.p3}</td>
-        <td class="cell-num-right" style="font-weight: 600; color: #0284c7;">${item.p4}</td>
-        <td class="cell-num-right" style="font-weight: 600; color: #0284c7;">${item.p5}</td>
+        <td class="cell-num-right" style="font-weight: 600; color: #d97706;">${escapeHtml(item.min)}</td>
+        <td class="cell-num-right" style="font-weight: 600; color: #d97706;">${escapeHtml(item.max)}</td>
+        <td class="cell-num-right" style="font-weight: 700; color: #0284c7; background: rgba(2, 132, 199, 0.04);">${escapeHtml(item.p0)}</td>
+        <td class="cell-num-right" style="font-weight: 600; color: #0284c7;">${escapeHtml(item.p1)}</td>
+        <td class="cell-num-right" style="font-weight: 600; color: #0284c7;">${escapeHtml(item.p2)}</td>
+        <td class="cell-num-right" style="font-weight: 600; color: #0284c7;">${escapeHtml(item.p3)}</td>
+        <td class="cell-num-right" style="font-weight: 600; color: #0284c7;">${escapeHtml(item.p4)}</td>
+        <td class="cell-num-right" style="font-weight: 600; color: #0284c7;">${escapeHtml(item.p5)}</td>
       </tr>
     `;
     }
@@ -5350,15 +5356,15 @@ function showAuthModal() {
       return `
         <div class="city-bulk-property-chip ${prop.selected ? '' : 'excluded'}">
           <label style="display: flex; align-items: center; gap: 6px; cursor: pointer; flex: 1; min-width: 0; margin-bottom: 0;">
-            <input type="checkbox" class="city-bulk-prop-cb" data-hotel-id="${prop.rawHotelId}" ${prop.selected ? 'checked' : ''}>
-            <span style="font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: #1e293b;" title="${prop.hotelName}">
-              ${prop.hotelName}
+            <input type="checkbox" class="city-bulk-prop-cb" data-hotel-id="${escapeHtml(prop.rawHotelId)}" ${prop.selected ? 'checked' : ''}>
+            <span style="font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: #1e293b;" title="${escapeHtml(prop.hotelName)}">
+              ${escapeHtml(prop.hotelName)}
             </span>
-            <span style="color: var(--text-muted); font-size: 0.7rem; flex-shrink: 0;">(${prop.rawHotelId})</span>
+            <span style="color: var(--text-muted); font-size: 0.7rem; flex-shrink: 0;">(${escapeHtml(prop.rawHotelId)})</span>
           </label>
           <div style="display: flex; align-items: center; gap: 6px; margin-left: 8px; flex-shrink: 0;">
             <span class="badge-p0" style="background: ${p0Bg}; color: ${p0Color}; border-color: ${hasP0 ? '#bae6fd' : '#fecaca'};" title="Hawkeye P0 Base Rate">
-              ${p0Display}
+              ${escapeHtml(p0Display)}
             </span>
             ${prop.status === 'Stop Sell' ? '<span class="status-badge status-stopsell" style="font-size: 0.65rem; padding: 1px 4px;">StopSell</span>' : ''}
           </div>
@@ -5688,13 +5694,13 @@ function showAuthModal() {
       return `
         <tr>
           <td style="color: var(--text-muted); font-size: 0.75rem;">${rowNum}</td>
-          <td style="font-family: monospace; font-weight: 700; color: #0f172a;">${r.rawHotelId}</td>
-          <td style="font-weight: 600; color: #1e293b; max-width: 240px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="${r.hotelName}">
-            ${r.hotelName}
+          <td style="font-family: monospace; font-weight: 700; color: #0f172a;">${escapeHtml(r.rawHotelId)}</td>
+          <td style="font-weight: 600; color: #1e293b; max-width: 240px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="${escapeHtml(r.hotelName)}">
+            ${escapeHtml(r.hotelName)}
           </td>
-          <td>${r.city}</td>
-          <td style="font-family: monospace; font-weight: 600;">${r.date}</td>
-          <td><span style="font-weight: 600; color: ${r.isWeekend ? '#92400e' : '#475569'};">${r.dayName}</span></td>
+          <td>${escapeHtml(r.city)}</td>
+          <td style="font-family: monospace; font-weight: 600;">${escapeHtml(r.date)}</td>
+          <td><span style="font-weight: 600; color: ${r.isWeekend ? '#92400e' : '#475569'};">${escapeHtml(r.dayName)}</span></td>
           <td>${typeBadge}</td>
           <td class="cell-num-right" style="color: #0284c7; font-weight: 600;">₹${r.p0}</td>
           <td class="cell-num-right" style="color: #ea580c; font-weight: 600;">₹${r.askPrice}</td>

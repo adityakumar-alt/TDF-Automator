@@ -8,10 +8,89 @@ const cookieParser = require("cookie-parser");
 const auth = require("./auth.js");
 
 const app = express();
-app.use(cors({ origin: true, credentials: true }));
+app.set("trust proxy", 1);
+
+// ── M-4 Security Fix: Security Headers & CSP (Report-Only) ──
+app.use((req, res, next) => {
+    res.setHeader("X-Content-Type-Options", "nosniff");
+    res.setHeader("X-Frame-Options", "SAMEORIGIN");
+    res.setHeader("Referrer-Policy", "strict-origin-when-cross-origin");
+    res.setHeader("Permissions-Policy", "camera=(), microphone=(), geolocation=(), payment=()");
+    if (process.env.NODE_ENV === "production" || process.env.VERCEL) {
+        res.setHeader("Strict-Transport-Security", "max-age=31536000; includeSubDomains");
+    }
+    res.setHeader(
+        "Content-Security-Policy-Report-Only",
+        "default-src 'self'; script-src 'self' 'unsafe-inline' https://accounts.google.com/gsi/client https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://lh3.googleusercontent.com; frame-src https://accounts.google.com; connect-src 'self' https://accounts.google.com;"
+    );
+    next();
+});
+
+// ── H-3 Security Fix: Explicit CORS allowlist (replaces wildcard origin: true) ──
+const CORS_ALLOWED_ORIGINS = [
+    "https://tdf-automator.vercel.app",  // Production deployment
+    "http://localhost:3000",              // Local Node server (node server.js / npm start)
+    "http://localhost:5173",              // Vite dev server (npm run dev)
+    "http://localhost:4173",              // Vite preview server (npm run preview)
+    "http://127.0.0.1:3000",             // Alternate local loopback
+];
+app.use(cors({
+    origin: (origin, callback) => {
+        // Allow requests with no Origin header:
+        // - Same-origin browser requests on the production deployment
+        // - Server-to-server fallback fetches inside server.js
+        // - CLI tools (curl, Postman) used by the dev team
+        if (!origin) return callback(null, true);
+        if (CORS_ALLOWED_ORIGINS.includes(origin)) return callback(null, true);
+        return callback(new Error(`CORS: Origin '${origin}' not allowed`));
+    },
+    credentials: true
+}));
 app.use(cookieParser());
 app.use(express.json());
 app.use(auth.extractUser);
+
+// ── M-5 Security Fix: Rate limiting on authentication entry points ──
+function createAuthRateLimiter({ windowMs = 15 * 60 * 1000, max = 30 } = {}) {
+    const hits = new Map();
+
+    const cleanup = () => {
+        const now = Date.now();
+        for (const [ip, data] of hits.entries()) {
+            if (now - data.startTime > windowMs) {
+                hits.delete(ip);
+            }
+        }
+    };
+    const timer = setInterval(cleanup, 5 * 60 * 1000);
+    if (timer.unref) timer.unref();
+
+    return (req, res, next) => {
+        const clientIp = req.ip || (req.headers["x-forwarded-for"] || "").split(",")[0].trim() || "unknown";
+        const now = Date.now();
+        const record = hits.get(clientIp);
+
+        if (!record || (now - record.startTime > windowMs)) {
+            hits.set(clientIp, { count: 1, startTime: now });
+            return next();
+        }
+
+        record.count++;
+
+        if (record.count > max) {
+            const retryAfterSec = Math.max(1, Math.ceil((record.startTime + windowMs - now) / 1000));
+            res.set("Retry-After", String(retryAfterSec));
+            return res.status(429).json({
+                success: false,
+                error: "Too many authentication attempts. Please try again later."
+            });
+        }
+
+        next();
+    };
+}
+
+const authRateLimiter = createAuthRateLimiter({ windowMs: 15 * 60 * 1000, max: 30 });
 const PORT = process.env.PORT || 3000;
 
 console.log("Starting Daily Pricing Dashboard server...");
@@ -91,9 +170,12 @@ if (process.env.GOOGLE_SAVED_TOKENS) {
 // Automatically save refreshed tokens
 sheetsOAuthClient.on("tokens", (tokens) => {
     try {
+        if (process.env.GOOGLE_SAVED_TOKENS) {
+            return;
+        }
         const currentTokens = { ...sheetsOAuthClient.credentials, ...tokens };
         if (fs.existsSync("./oauth")) {
-            fs.writeFileSync(TOKENS_PATH, JSON.stringify(currentTokens, null, 2));
+            fs.writeFileSync(TOKENS_PATH, JSON.stringify(currentTokens, null, 2), { mode: 0o600 });
             console.log("Updated OAuth tokens saved to disk ✅");
         }
     } catch (e) {
@@ -107,7 +189,7 @@ sheetsOAuthClient.on("tokens", (tokens) => {
 // YOUR GOOGLE SPREADSHEET
 // =====================================================
 
-const SPREADSHEET_ID = process.env.SPREADSHEET_ID || "1HbhMErLh8N2CdkBBJ_ubiv6S2FYx5g1_pNqoFOPo8eE";
+const SPREADSHEET_ID = process.env.SPREADSHEET_ID;
 
 // =====================================================
 // LOAD ACCESS CONTROL FROM GOOGLE SHEET
@@ -119,7 +201,7 @@ async function loadAccessControl() {
             console.warn("Access Control: Google Sheets token not available locally. Checking fallback...");
             const fallbackHost = process.env.FALLBACK_DATA_URL || "https://tdf-automator.vercel.app";
             try {
-                const fetchRes = await fetch(`${fallbackHost}/api/sheet-data`);
+                const fetchRes = await fetch(`${fallbackHost}/api/sheet-data`, { redirect: "error" });
                 if (fetchRes.ok) {
                     const fallbackData = await fetchRes.json();
                     if (fallbackData?.data?.accessControl && fallbackData.data.accessControl.length > 1) {
@@ -203,7 +285,7 @@ app.get(["/api/auth/me", "/auth/me"], auth.requireAuth, (req, res) => {
 // GOOGLE OAUTH CALLBACK
 // =====================================================
 
-app.get(["/oauth2callback", "/api/oauth2callback"], async (req, res) => {
+app.get(["/oauth2callback", "/api/oauth2callback"], authRateLimiter, async (req, res) => {
     const { code } = req.query;
 
     if (!code) {
@@ -219,7 +301,7 @@ app.get(["/oauth2callback", "/api/oauth2callback"], async (req, res) => {
             if (!fs.existsSync("./oauth")) {
                 fs.mkdirSync("./oauth", { recursive: true });
             }
-            fs.writeFileSync(TOKENS_PATH, JSON.stringify(tokens, null, 2));
+            fs.writeFileSync(TOKENS_PATH, JSON.stringify(tokens, null, 2), { mode: 0o600 });
             console.log("Updated OAuth tokens saved to disk ✅");
         } catch (e) {
             console.warn("Could not save tokens to disk:", e.message);
@@ -284,7 +366,12 @@ app.get(["/oauth2callback", "/api/oauth2callback"], async (req, res) => {
 // =====================================================
 
 // Localhost-only session bootstrap (strictly disabled on Vercel and Production)
-if (!process.env.VERCEL && process.env.NODE_ENV !== "production") {
+const isDevBootstrapAllowed =
+  process.env.ENABLE_DEV_SESSION_BOOTSTRAP === "true" &&
+  process.env.NODE_ENV !== "production" &&
+  !process.env.VERCEL;
+
+if (isDevBootstrapAllowed) {
     app.get("/api/auth/local-session", (req, res) => {
         const adminUser = auth.findUserByEmail("aditya.kumar@treebo.com");
         if (!adminUser) return res.status(404).send("Admin user not found");
@@ -296,8 +383,8 @@ if (!process.env.VERCEL && process.env.NODE_ENV !== "production") {
 
 app.get(["/api/auth/config", "/auth/config"], (req, res) => {
     res.json({
-        success: true,
-        clientId: client_id || "906825685733-khfmgsv2dhl427p1fkdv524etudsi39i.apps.googleusercontent.com"
+        success: !!client_id,
+        clientId: client_id || null
     });
 });
 
@@ -308,7 +395,7 @@ app.get(["/api/me", "/me"], (req, res) => {
     res.json({ authenticated: true, user: req.user });
 });
 
-app.get(["/api/auth/roster", "/auth/roster"], (req, res) => {
+app.get(["/api/auth/roster", "/auth/roster"], auth.requireRole(["Admin"]), (req, res) => {
     const list = auth.getRoster().filter(u => u.active).map(u => ({
         id: u.id,
         name: u.name,
@@ -318,7 +405,7 @@ app.get(["/api/auth/roster", "/auth/roster"], (req, res) => {
     res.json({ success: true, roster: list });
 });
 
-app.post(["/api/auth/google", "/auth/google"], async (req, res) => {
+app.post(["/api/auth/google", "/auth/google"], authRateLimiter, async (req, res) => {
     try {
         const { credential } = req.body || {};
         if (!credential) {
@@ -361,8 +448,7 @@ app.post(["/api/auth/google", "/auth/google"], async (req, res) => {
                 name: matchedUser.name,
                 role: matchedUser.role,
                 picture: payload.picture
-            },
-            token
+            }
         });
     } catch (err) {
         console.error("Google sign in verification error:", err);
@@ -389,7 +475,7 @@ async function getAccessControlFromSheet() {
     if (!sheetsOAuthClient.credentials.access_token) {
         const fallbackHost = process.env.FALLBACK_DATA_URL || "https://tdf-automator.vercel.app";
         try {
-            const fetchRes = await fetch(`${fallbackHost}/api/sheet-data`);
+            const fetchRes = await fetch(`${fallbackHost}/api/sheet-data`, { redirect: "error" });
             if (fetchRes.ok) {
                 const fallbackData = await fetchRes.json();
                 if (fallbackData?.data?.accessControl && fallbackData.data.accessControl.length > 1) {
@@ -635,7 +721,7 @@ app.get(["/api/sheet-data", "/sheet-data"], async (req, res) => {
             const fallbackHost = process.env.FALLBACK_DATA_URL || "https://tdf-automator.vercel.app";
             try {
                 console.log(`Local Google Sheets credentials not configured. Fetching live portfolio data from ${fallbackHost}/api/sheet-data...`);
-                const fetchRes = await fetch(`${fallbackHost}/api/sheet-data`);
+                const fetchRes = await fetch(`${fallbackHost}/api/sheet-data`, { redirect: "error" });
                 if (fetchRes.ok) {
                     const fallbackData = await fetchRes.json();
                     if (fallbackData && fallbackData.success) {
