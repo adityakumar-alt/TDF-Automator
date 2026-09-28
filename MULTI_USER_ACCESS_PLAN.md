@@ -24,12 +24,14 @@ This document outlines the multi-user authentication and role-based access contr
 | :--- | :---: | :---: | :---: | :---: |
 | **Daily Pricing Dashboard** (Portfolio Rates) | ✅ Full | ✅ Full | ❌ Hidden | ❌ Hidden |
 | **Generate Hawkeye Rules from Dashboard** | ✅ Yes | ✅ Yes | ❌ Hidden | ❌ Hidden |
+| **Hawkeye Base Rates** (Live Sheets Master) | ✅ Full | ✅ Full | ✅ Full | ✅ Full |
+| **City Bulk Action** (Ask Price & Rule Gen) | ✅ Full | ✅ Full | ✅ Full | ✅ Full |
 | **Rule Parameters** (Fixed & Split Multipliers) | ✅ Full | ✅ Full | ✅ Full | ✅ Full |
 | **Joined Hotel IDs (100-hotel chunks)** | ✅ Full | ✅ Full | ✅ Full | ✅ Full |
 | **Copy for Google Sheets & Download CSV** | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes |
 | **TDF Calculator** (P0–P5 price breakdown) | ✅ Full | ✅ Full | ✅ Full | ✅ Full |
 | **Metabase TDF Dashboard Link** | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes |
-| **Default Landing Tab** | Dashboard | Dashboard | Rule Parameters | Rule Parameters |
+| **Default Landing Tab** | Dashboard | Dashboard | Hawkeye Base Rates | Hawkeye Base Rates |
 
 ---
 

@@ -806,17 +806,25 @@
                         <input type="checkbox" id="city-bulk-same-mon-thu" checked>
                         <span>Same price for Mon–Thu</span>
                       </label>
-                      <label style="display: flex; align-items: center; gap: 6px; font-size: 0.76rem; cursor: pointer; user-select: none; color: #92400e; font-weight: 600; background: #fef3c7; padding: 4px 10px; border-radius: 6px; border: 1px solid #fde68a;">
-                        <input type="checkbox" id="city-bulk-same-weekend" checked>
-                        <span>Same price for Weekend</span>
-                      </label>
+                      <div style="display: flex; align-items: center; gap: 6px; background: #fef3c7; padding: 4px 10px; border-radius: 6px; border: 1px solid #fde68a;">
+                        <label style="display: flex; align-items: center; gap: 6px; font-size: 0.76rem; cursor: pointer; user-select: none; color: #92400e; font-weight: 600; margin: 0;">
+                          <input type="checkbox" id="city-bulk-same-weekend" checked>
+                          <span id="city-bulk-same-weekend-label">Same price for Weekend</span>
+                        </label>
+                      </div>
                     </div>
                   </div>
 
                   <div class="city-bulk-7days-grid" style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px;">
                     <!-- Mon -->
                     <div class="city-bulk-day-col" id="city-bulk-day-col-mon">
-                      <div class="city-bulk-day-header badge-weekday">Mon</div>
+                      <div class="city-bulk-day-header badge-weekday" style="display: flex; justify-content: space-between; align-items: center; padding: 2px 6px;">
+                        <span>Mon</span>
+                        <label class="city-bulk-skip-label" title="Skip Monday from rules">
+                          <input type="checkbox" id="city-bulk-skip-mon" class="city-bulk-day-skip-cb">
+                          <span>Skip</span>
+                        </label>
+                      </div>
                       <div class="input-prefix-wrapper" style="height: 34px;">
                         <span class="input-prefix">₹</span>
                         <input type="number" id="city-bulk-ask-mon" class="city-bulk-day-input" placeholder="2400" min="1" step="1" style="height: 34px; font-size: 0.85rem;">
@@ -824,7 +832,13 @@
                     </div>
                     <!-- Tue -->
                     <div class="city-bulk-day-col" id="city-bulk-day-col-tue">
-                      <div class="city-bulk-day-header badge-weekday">Tue</div>
+                      <div class="city-bulk-day-header badge-weekday" style="display: flex; justify-content: space-between; align-items: center; padding: 2px 6px;">
+                        <span>Tue</span>
+                        <label class="city-bulk-skip-label" title="Skip Tuesday from rules">
+                          <input type="checkbox" id="city-bulk-skip-tue" class="city-bulk-day-skip-cb">
+                          <span>Skip</span>
+                        </label>
+                      </div>
                       <div class="input-prefix-wrapper" style="height: 34px;">
                         <span class="input-prefix">₹</span>
                         <input type="number" id="city-bulk-ask-tue" class="city-bulk-day-input" placeholder="2400" min="1" step="1" style="height: 34px; font-size: 0.85rem;" disabled>
@@ -832,7 +846,13 @@
                     </div>
                     <!-- Wed -->
                     <div class="city-bulk-day-col" id="city-bulk-day-col-wed">
-                      <div class="city-bulk-day-header badge-weekday">Wed</div>
+                      <div class="city-bulk-day-header badge-weekday" style="display: flex; justify-content: space-between; align-items: center; padding: 2px 6px;">
+                        <span>Wed</span>
+                        <label class="city-bulk-skip-label" title="Skip Wednesday from rules">
+                          <input type="checkbox" id="city-bulk-skip-wed" class="city-bulk-day-skip-cb">
+                          <span>Skip</span>
+                        </label>
+                      </div>
                       <div class="input-prefix-wrapper" style="height: 34px;">
                         <span class="input-prefix">₹</span>
                         <input type="number" id="city-bulk-ask-wed" class="city-bulk-day-input" placeholder="2400" min="1" step="1" style="height: 34px; font-size: 0.85rem;" disabled>
@@ -840,7 +860,13 @@
                     </div>
                     <!-- Thu -->
                     <div class="city-bulk-day-col" id="city-bulk-day-col-thu">
-                      <div class="city-bulk-day-header badge-weekday">Thu</div>
+                      <div class="city-bulk-day-header badge-weekday" style="display: flex; justify-content: space-between; align-items: center; padding: 2px 6px;">
+                        <span>Thu</span>
+                        <label class="city-bulk-skip-label" title="Skip Thursday from rules">
+                          <input type="checkbox" id="city-bulk-skip-thu" class="city-bulk-day-skip-cb">
+                          <span>Skip</span>
+                        </label>
+                      </div>
                       <div class="input-prefix-wrapper" style="height: 34px;">
                         <span class="input-prefix">₹</span>
                         <input type="number" id="city-bulk-ask-thu" class="city-bulk-day-input" placeholder="2400" min="1" step="1" style="height: 34px; font-size: 0.85rem;" disabled>
@@ -848,7 +874,13 @@
                     </div>
                     <!-- Fri -->
                     <div class="city-bulk-day-col" id="city-bulk-day-col-fri">
-                      <div class="city-bulk-day-header badge-weekend">Fri</div>
+                      <div class="city-bulk-day-header badge-weekend" style="display: flex; justify-content: space-between; align-items: center; padding: 2px 6px;">
+                        <span>Fri</span>
+                        <label class="city-bulk-skip-label" title="Skip Friday from rules">
+                          <input type="checkbox" id="city-bulk-skip-fri" class="city-bulk-day-skip-cb">
+                          <span>Skip</span>
+                        </label>
+                      </div>
                       <div class="input-prefix-wrapper" style="height: 34px;">
                         <span class="input-prefix">₹</span>
                         <input type="number" id="city-bulk-ask-fri" class="city-bulk-day-input" placeholder="2800" min="1" step="1" style="height: 34px; font-size: 0.85rem;">
@@ -856,7 +888,13 @@
                     </div>
                     <!-- Sat -->
                     <div class="city-bulk-day-col" id="city-bulk-day-col-sat">
-                      <div class="city-bulk-day-header badge-weekend">Sat</div>
+                      <div class="city-bulk-day-header badge-weekend" style="display: flex; justify-content: space-between; align-items: center; padding: 2px 6px;">
+                        <span>Sat</span>
+                        <label class="city-bulk-skip-label" title="Skip Saturday from rules">
+                          <input type="checkbox" id="city-bulk-skip-sat" class="city-bulk-day-skip-cb">
+                          <span>Skip</span>
+                        </label>
+                      </div>
                       <div class="input-prefix-wrapper" style="height: 34px;">
                         <span class="input-prefix">₹</span>
                         <input type="number" id="city-bulk-ask-sat" class="city-bulk-day-input" placeholder="2800" min="1" step="1" style="height: 34px; font-size: 0.85rem;" disabled>
@@ -864,7 +902,13 @@
                     </div>
                     <!-- Sun -->
                     <div class="city-bulk-day-col" id="city-bulk-day-col-sun">
-                      <div class="city-bulk-day-header badge-weekend">Sun</div>
+                      <div class="city-bulk-day-header badge-weekend" style="display: flex; justify-content: space-between; align-items: center; padding: 2px 6px;">
+                        <span>Sun</span>
+                        <label class="city-bulk-skip-label" title="Skip Sunday from rules">
+                          <input type="checkbox" id="city-bulk-skip-sun" class="city-bulk-day-skip-cb">
+                          <span>Skip</span>
+                        </label>
+                      </div>
                       <div class="input-prefix-wrapper" style="height: 34px;">
                         <span class="input-prefix">₹</span>
                         <input type="number" id="city-bulk-ask-sun" class="city-bulk-day-input" placeholder="2800" min="1" step="1" style="height: 34px; font-size: 0.85rem;" disabled>
@@ -920,14 +964,51 @@
                   <input type="text" id="city-bulk-preview-search" placeholder="Search preview (ID, Hotel, Date)...">
                 </div>
 
+                <!-- View Switcher -->
+                <div class="btn-group-view-mode" style="display: flex; gap: 4px; background: #f1f5f9; padding: 3px; border-radius: 6px; border: 1px solid #e2e8f0;">
+                  <button type="button" id="btn-city-bulk-view-matrix" class="btn-view-mode active" title="Hotel × Day Pivot Matrix View">
+                    <i data-lucide="layout-grid" style="width: 14px; height: 14px;"></i>
+                    <span>Matrix View</span>
+                  </button>
+                  <button type="button" id="btn-city-bulk-view-list" class="btn-view-mode" title="Detailed Rule Rows Flat View">
+                    <i data-lucide="list" style="width: 14px; height: 14px;"></i>
+                    <span>Detailed List</span>
+                  </button>
+                </div>
+
                 <div style="display: flex; gap: 8px; align-items: center; font-size: 0.8rem;">
                   <span id="city-bulk-preview-count-badge" style="font-weight: 600; color: var(--text-secondary);">
-                    0 Rows
+                    0 Properties
                   </span>
                 </div>
               </div>
 
-              <div class="table-responsive-wrapper" style="border: 1px solid #fed7aa; border-radius: 8px; max-height: 480px; overflow-y: auto;">
+              <!-- Matrix Pivot View Table Container (Active by Default) -->
+              <div id="city-bulk-matrix-container" class="table-responsive-wrapper" style="border: 1px solid #fed7aa; border-radius: 8px; max-height: 480px; overflow-y: auto;">
+                <table class="custom-table hawkeye-rates-table" id="city-bulk-matrix-table" style="width: 100%;">
+                  <thead id="city-bulk-matrix-thead">
+                    <tr>
+                      <th style="min-width: 45px;">#</th>
+                      <th style="min-width: 95px;">CS ID</th>
+                      <th style="min-width: 220px;">Property Name</th>
+                      <th class="cell-num-right" style="min-width: 85px; color: #0284c7;">Base P0</th>
+                      <th class="cell-num-right" style="min-width: 100px;">Target Ask</th>
+                      <th class="cell-num-right" style="min-width: 100px; color: #0284c7; font-weight: 700;">TDF Factor</th>
+                    </tr>
+                  </thead>
+                  <tbody id="city-bulk-matrix-tbody">
+                    <tr>
+                      <td colspan="6" style="text-align: center; padding: 48px 20px; color: var(--text-muted);">
+                        <i data-lucide="layers" style="width: 32px; height: 32px; margin-bottom: 8px; display: inline-block; opacity: 0.5;"></i>
+                        <div>Select a city, set dates &amp; ask price, then click <strong>Generate Preview</strong> to inspect the pricing matrix.</div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- Detailed List View Table Container (Original Flat View) -->
+              <div id="city-bulk-list-container" class="table-responsive-wrapper" style="border: 1px solid #fed7aa; border-radius: 8px; max-height: 480px; overflow-y: auto; display: none;">
                 <table class="custom-table hawkeye-rates-table" id="city-bulk-preview-table" style="width: 100%;">
                   <thead>
                     <tr>

@@ -3262,10 +3262,63 @@ input.desired-push-price-input::-webkit-inner-spin-button {
 }
 
 .city-bulk-day-col.day-skipped {
-  opacity: 0.4;
+  opacity: 0.55;
   background: #f1f5f9;
-  filter: grayscale(0.6);
+  filter: grayscale(0.7);
+  border-color: #e2e8f0;
+}
+
+.city-bulk-day-col.day-skipped .input-prefix-wrapper {
+  opacity: 0.35;
   pointer-events: none;
+}
+
+.city-bulk-skip-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 0;
+  user-select: none;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  padding: 1px 4px;
+  border-radius: 4px;
+  color: #475569;
+  transition: all 0.15s ease;
+  pointer-events: auto;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+
+.city-bulk-day-header.badge-weekend .city-bulk-skip-label {
+  border-color: #fde68a;
+  color: #78350f;
+  background: #fffbeb;
+}
+
+.city-bulk-skip-label:hover {
+  background: #ffffff;
+  border-color: #94a3b8;
+}
+
+.city-bulk-day-header.badge-weekend .city-bulk-skip-label:hover {
+  border-color: #f59e0b;
+}
+
+.city-bulk-day-col.day-skipped .city-bulk-skip-label {
+  background: #fee2e2;
+  border-color: #fca5a5;
+  color: #b91c1c;
+}
+
+.city-bulk-day-skip-cb {
+  width: 12px;
+  height: 12px;
+  cursor: pointer;
+  accent-color: #ea580c;
+  margin: 0;
 }
 
 .city-bulk-day-header {
@@ -3345,6 +3398,67 @@ input.desired-push-price-input::-webkit-inner-spin-button {
   padding: 2px 6px;
   border-radius: 4px;
 }
+
+/* City Bulk View Switcher & Matrix View */
+.btn-view-mode {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #64748b;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+.btn-view-mode:hover {
+  color: #1e293b;
+  background: #ffffff;
+}
+
+.btn-view-mode.active {
+  color: #0f172a;
+  background: #ffffff;
+  font-weight: 600;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+  border-color: #cbd5e1;
+}
+
+.matrix-mult-badge {
+  font-family: 'JetBrains Mono', monospace, -apple-system, sans-serif;
+  font-weight: 700;
+  color: #0369a1;
+  background: #f0f9ff;
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid #bae6fd;
+  display: inline-block;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.matrix-mult-missing {
+  font-weight: 600;
+  color: #dc2626;
+  background: #fef2f2;
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid #fecaca;
+  display: inline-block;
+  font-size: 0.72rem;
+  white-space: nowrap;
+}
+
+.matrix-mult-skipped {
+  color: #94a3b8;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
 
 
 

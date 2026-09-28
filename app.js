@@ -282,14 +282,14 @@ function showAuthModal() {
   // defaults to ['Admin'] only for safe development rollout!
   // =========================================================================
   const TAB_PERMISSIONS = {
-    // 1. Daily Pricing Dashboard
+    // 1. Daily Pricing Dashboard (Exclusive to Admin & Pricing Manager)
     'tab-dashboard': ['Admin', 'Pricing Manager'],
 
     // 2. Hawkeye Base Rates (Live Google Sheets Rates dataset)
-    'tab-hawkeye-rates': ['Admin', 'Pricing Manager', 'RevOps'],
+    'tab-hawkeye-rates': ['Admin', 'Pricing Manager', 'RevOps', 'Zonal Ops'],
 
     // 3. City Bulk Action (Multi-Day Ask Price & Rule Generation)
-    'tab-city-bulk': ['Admin', 'Pricing Manager'],
+    'tab-city-bulk': ['Admin', 'Pricing Manager', 'RevOps', 'Zonal Ops'],
 
     // 4. Rule Parameters (Fixed & Split Multipliers)
     'tab-rules': ['Admin', 'Pricing Manager', 'RevOps', 'Zonal Ops'],
@@ -4706,6 +4706,8 @@ function showAuthModal() {
   let cityBulkPageSize = 100;
   let cityBulkAvailableCities = [];
   let cityBulkActiveIndex = -1;
+  let cityBulkCurrentView = 'matrix'; // 'matrix' | 'list'
+  let cityBulkConfig = null;
 
   function setupCityBulkActionListeners() {
     const citySelect = document.getElementById('city-bulk-city-select');
@@ -4890,21 +4892,27 @@ function showAuthModal() {
     }
 
     // Mon–Thu Sync Logic: Typing in Monday syncs to Tuesday, Wednesday, Thursday
+    const skipMonCb = document.getElementById('city-bulk-skip-mon');
+    const skipTueCb = document.getElementById('city-bulk-skip-tue');
+    const skipWedCb = document.getElementById('city-bulk-skip-wed');
+    const skipThuCb = document.getElementById('city-bulk-skip-thu');
+
+    // Mon–Thu Sync Logic: Typing in Monday syncs to Tuesday, Wednesday, Thursday
     const syncMonToWeekdays = () => {
       if (sameMonThuCb && sameMonThuCb.checked && askMon) {
         const val = askMon.value;
-        if (askTue) askTue.value = val;
-        if (askWed) askWed.value = val;
-        if (askThu) askThu.value = val;
+        if (askTue && !skipTueCb?.checked) askTue.value = val;
+        if (askWed && !skipWedCb?.checked) askWed.value = val;
+        if (askThu && !skipThuCb?.checked) askThu.value = val;
       }
     };
 
     if (sameMonThuCb) {
       sameMonThuCb.addEventListener('change', () => {
         const isSynced = sameMonThuCb.checked;
-        if (askTue) askTue.disabled = isSynced;
-        if (askWed) askWed.disabled = isSynced;
-        if (askThu) askThu.disabled = isSynced;
+        if (askTue) askTue.disabled = isSynced || !!skipTueCb?.checked;
+        if (askWed) askWed.disabled = isSynced || !!skipWedCb?.checked;
+        if (askThu) askThu.disabled = isSynced || !!skipThuCb?.checked;
         if (isSynced) syncMonToWeekdays();
       });
     }
@@ -4913,20 +4921,67 @@ function showAuthModal() {
       askMon.addEventListener('input', syncMonToWeekdays);
     }
 
+    // Individual Weekday Skip Handlers
+    const updateWeekdaySkip = (day) => {
+      if (day === 'mon') {
+        const skipped = !!skipMonCb?.checked;
+        colMon?.classList.toggle('day-skipped', skipped);
+        if (askMon) askMon.disabled = skipped;
+        if (skipped) {
+          if (sameMonThuCb?.checked && askTue && askWed && askThu) {
+            const firstVal = !skipTueCb?.checked ? askTue.value : (!skipWedCb?.checked ? askWed.value : askThu.value);
+            if (!skipWedCb?.checked) askWed.value = firstVal;
+            if (!skipThuCb?.checked) askThu.value = firstVal;
+          }
+        } else {
+          syncMonToWeekdays();
+        }
+      } else if (day === 'tue') {
+        const skipped = !!skipTueCb?.checked;
+        colTue?.classList.toggle('day-skipped', skipped);
+        if (askTue) askTue.disabled = skipped || (sameMonThuCb && sameMonThuCb.checked);
+      } else if (day === 'wed') {
+        const skipped = !!skipWedCb?.checked;
+        colWed?.classList.toggle('day-skipped', skipped);
+        if (askWed) askWed.disabled = skipped || (sameMonThuCb && sameMonThuCb.checked);
+      } else if (day === 'thu') {
+        const skipped = !!skipThuCb?.checked;
+        colThu?.classList.toggle('day-skipped', skipped);
+        if (askThu) askThu.disabled = skipped || (sameMonThuCb && sameMonThuCb.checked);
+      }
+
+      if (cityBulkPreviewRows.length > 0) {
+        generateCityBulkPreview(false);
+      }
+    };
+
+    if (skipMonCb) skipMonCb.addEventListener('change', () => updateWeekdaySkip('mon'));
+    if (skipTueCb) skipTueCb.addEventListener('change', () => updateWeekdaySkip('tue'));
+    if (skipWedCb) skipWedCb.addEventListener('change', () => updateWeekdaySkip('wed'));
+    if (skipThuCb) skipThuCb.addEventListener('change', () => updateWeekdaySkip('thu'));
+
+    const skipFriCb = document.getElementById('city-bulk-skip-fri');
+    const skipSatCb = document.getElementById('city-bulk-skip-sat');
+    const skipSunCb = document.getElementById('city-bulk-skip-sun');
+    const sameWeekendLabel = document.getElementById('city-bulk-same-weekend-label');
+
     // Weekend Sync Logic: Typing in Friday syncs to Saturday and Sunday
     const syncFriToWeekend = () => {
       if (sameWeekendCb && sameWeekendCb.checked && askFri) {
         const val = askFri.value;
-        if (askSat) askSat.value = val;
-        if (askSun) askSun.value = val;
+        if (askSat && !skipSatCb?.checked) askSat.value = val;
+        if (askSun && !skipSunCb?.checked) askSun.value = val;
       }
     };
 
     if (sameWeekendCb) {
       sameWeekendCb.addEventListener('change', () => {
         const isSynced = sameWeekendCb.checked;
-        if (askSat) askSat.disabled = isSynced;
-        if (askSun) askSun.disabled = isSynced;
+        if (sameWeekendLabel) {
+          sameWeekendLabel.textContent = isSynced ? 'Same price for Weekend' : 'Custom price per day';
+        }
+        if (askSat) askSat.disabled = isSynced || !!skipSatCb?.checked;
+        if (askSun) askSun.disabled = isSynced || !!skipSunCb?.checked;
         if (isSynced) syncFriToWeekend();
       });
     }
@@ -4935,27 +4990,123 @@ function showAuthModal() {
       askFri.addEventListener('input', syncFriToWeekend);
     }
 
+    // Individual Weekend Skip Handlers
+    const updateWeekendDaySkip = (day) => {
+      if (day === 'fri') {
+        const skipped = !!skipFriCb?.checked;
+        colFri?.classList.toggle('day-skipped', skipped);
+        if (askFri) askFri.disabled = skipped;
+        if (skipped) {
+          if (sameWeekendCb?.checked && askSat && askSun && !skipSunCb?.checked) {
+            askSun.value = askSat.value;
+          }
+        } else {
+          syncFriToWeekend();
+        }
+      } else if (day === 'sat') {
+        const skipped = !!skipSatCb?.checked;
+        colSat?.classList.toggle('day-skipped', skipped);
+        if (askSat) askSat.disabled = skipped || (sameWeekendCb && sameWeekendCb.checked);
+      } else if (day === 'sun') {
+        const skipped = !!skipSunCb?.checked;
+        colSun?.classList.toggle('day-skipped', skipped);
+        if (askSun) askSun.disabled = skipped || (sameWeekendCb && sameWeekendCb.checked);
+      }
+
+      if (cityBulkPreviewRows.length > 0) {
+        generateCityBulkPreview(false);
+      }
+    };
+
+    if (skipFriCb) skipFriCb.addEventListener('change', () => updateWeekendDaySkip('fri'));
+    if (skipSatCb) skipSatCb.addEventListener('change', () => updateWeekendDaySkip('sat'));
+    if (skipSunCb) skipSunCb.addEventListener('change', () => updateWeekendDaySkip('sun'));
+
     // Day Group Target visibility & skip state adjustment
     if (dayGroupSelect) {
+      let prevDayGroup = dayGroupSelect.value || 'all';
       const updateDayGroupUI = () => {
         const val = dayGroupSelect.value;
+        if (prevDayGroup === 'weekdays_only' && val !== 'weekdays_only') {
+          if (skipFriCb) skipFriCb.checked = false;
+          if (skipSatCb) skipSatCb.checked = false;
+          if (skipSunCb) skipSunCb.checked = false;
+        }
+        if (prevDayGroup === 'weekends_only' && val !== 'weekends_only') {
+          if (skipMonCb) skipMonCb.checked = false;
+          if (skipTueCb) skipTueCb.checked = false;
+          if (skipWedCb) skipWedCb.checked = false;
+          if (skipThuCb) skipThuCb.checked = false;
+        }
+        prevDayGroup = val;
+
         if (val === 'weekdays_only') {
-          // Mon-Thu active, Fri-Sun skipped
-          [colMon, colTue, colWed, colThu].forEach(c => c && c.classList.remove('day-skipped'));
+          // Mon-Thu active (unless individually skipped)
+          [colMon, colTue, colWed, colThu].forEach(c => {
+            const isSkip = (c === colMon && skipMonCb?.checked) || (c === colTue && skipTueCb?.checked) || (c === colWed && skipWedCb?.checked) || (c === colThu && skipThuCb?.checked);
+            if (isSkip) c && c.classList.add('day-skipped');
+            else c && c.classList.remove('day-skipped');
+          });
+          [skipMonCb, skipTueCb, skipWedCb, skipThuCb].forEach(cb => { if (cb) cb.disabled = false; });
+          if (askMon) askMon.disabled = !!skipMonCb?.checked;
+          if (askTue) askTue.disabled = !!skipTueCb?.checked || (sameMonThuCb && sameMonThuCb.checked);
+          if (askWed) askWed.disabled = !!skipWedCb?.checked || (sameMonThuCb && sameMonThuCb.checked);
+          if (askThu) askThu.disabled = !!skipThuCb?.checked || (sameMonThuCb && sameMonThuCb.checked);
+
+          // Fri-Sun skipped by group
           [colFri, colSat, colSun].forEach(c => c && c.classList.add('day-skipped'));
+          [skipFriCb, skipSatCb, skipSunCb].forEach(cb => { if (cb) { cb.checked = true; cb.disabled = true; } });
+          if (askFri) askFri.disabled = true;
+          if (askSat) askSat.disabled = true;
+          if (askSun) askSun.disabled = true;
+
           if (sameMonThuCb?.parentElement) sameMonThuCb.parentElement.style.display = 'flex';
-          if (sameWeekendCb?.parentElement) sameWeekendCb.parentElement.style.display = 'none';
+          if (sameWeekendCb?.parentElement?.parentElement) sameWeekendCb.parentElement.parentElement.style.display = 'none';
         } else if (val === 'weekends_only') {
-          // Fri-Sun active, Mon-Thu skipped
+          // Mon-Thu skipped by group
           [colMon, colTue, colWed, colThu].forEach(c => c && c.classList.add('day-skipped'));
-          [colFri, colSat, colSun].forEach(c => c && c.classList.remove('day-skipped'));
+          [skipMonCb, skipTueCb, skipWedCb, skipThuCb].forEach(cb => { if (cb) { cb.checked = true; cb.disabled = true; } });
+          if (askMon) askMon.disabled = true;
+          if (askTue) askTue.disabled = true;
+          if (askWed) askWed.disabled = true;
+          if (askThu) askThu.disabled = true;
+
+          // Fri-Sun active (unless individually skipped)
+          [skipFriCb, skipSatCb, skipSunCb].forEach(cb => { if (cb) cb.disabled = false; });
+          [colFri, colSat, colSun].forEach(c => {
+            const isSkip = (c === colFri && skipFriCb?.checked) || (c === colSat && skipSatCb?.checked) || (c === colSun && skipSunCb?.checked);
+            if (isSkip) c && c.classList.add('day-skipped');
+            else c && c.classList.remove('day-skipped');
+          });
+          if (askFri) askFri.disabled = !!skipFriCb?.checked;
+          if (askSat) askSat.disabled = !!skipSatCb?.checked || (sameWeekendCb && sameWeekendCb.checked);
+          if (askSun) askSun.disabled = !!skipSunCb?.checked || (sameWeekendCb && sameWeekendCb.checked);
+
           if (sameMonThuCb?.parentElement) sameMonThuCb.parentElement.style.display = 'none';
-          if (sameWeekendCb?.parentElement) sameWeekendCb.parentElement.style.display = 'flex';
+          if (sameWeekendCb?.parentElement?.parentElement) sameWeekendCb.parentElement.parentElement.style.display = 'flex';
         } else {
-          // All Days active
-          [colMon, colTue, colWed, colThu, colFri, colSat, colSun].forEach(c => c && c.classList.remove('day-skipped'));
+          // All Days active (unless individually skipped)
+          [skipMonCb, skipTueCb, skipWedCb, skipThuCb, skipFriCb, skipSatCb, skipSunCb].forEach(cb => { if (cb) cb.disabled = false; });
+          [colMon, colTue, colWed, colThu].forEach(c => {
+            const isSkip = (c === colMon && skipMonCb?.checked) || (c === colTue && skipTueCb?.checked) || (c === colWed && skipWedCb?.checked) || (c === colThu && skipThuCb?.checked);
+            if (isSkip) c && c.classList.add('day-skipped');
+            else c && c.classList.remove('day-skipped');
+          });
+          [colFri, colSat, colSun].forEach(c => {
+            const isSkip = (c === colFri && skipFriCb?.checked) || (c === colSat && skipSatCb?.checked) || (c === colSun && skipSunCb?.checked);
+            if (isSkip) c && c.classList.add('day-skipped');
+            else c && c.classList.remove('day-skipped');
+          });
+          if (askMon) askMon.disabled = !!skipMonCb?.checked;
+          if (askTue) askTue.disabled = !!skipTueCb?.checked || (sameMonThuCb && sameMonThuCb.checked);
+          if (askWed) askWed.disabled = !!skipWedCb?.checked || (sameMonThuCb && sameMonThuCb.checked);
+          if (askThu) askThu.disabled = !!skipThuCb?.checked || (sameMonThuCb && sameMonThuCb.checked);
+          if (askFri) askFri.disabled = !!skipFriCb?.checked;
+          if (askSat) askSat.disabled = !!skipSatCb?.checked || (sameWeekendCb && sameWeekendCb.checked);
+          if (askSun) askSun.disabled = !!skipSunCb?.checked || (sameWeekendCb && sameWeekendCb.checked);
+
           if (sameMonThuCb?.parentElement) sameMonThuCb.parentElement.style.display = 'flex';
-          if (sameWeekendCb?.parentElement) sameWeekendCb.parentElement.style.display = 'flex';
+          if (sameWeekendCb?.parentElement?.parentElement) sameWeekendCb.parentElement.parentElement.style.display = 'flex';
         }
       };
       dayGroupSelect.addEventListener('change', updateDayGroupUI);
@@ -5000,6 +5151,38 @@ function showAuthModal() {
       btnCopy.addEventListener('click', copyCityBulkCSV);
     }
 
+    // View Mode Switcher
+    const btnViewMatrix = document.getElementById('btn-city-bulk-view-matrix');
+    const btnViewList = document.getElementById('btn-city-bulk-view-list');
+    const matrixContainer = document.getElementById('city-bulk-matrix-container');
+    const listContainer = document.getElementById('city-bulk-list-container');
+
+    if (btnViewMatrix) {
+      btnViewMatrix.addEventListener('click', () => {
+        if (cityBulkCurrentView === 'matrix') return;
+        cityBulkCurrentView = 'matrix';
+        btnViewMatrix.classList.add('active');
+        if (btnViewList) btnViewList.classList.remove('active');
+        if (matrixContainer) matrixContainer.style.display = 'block';
+        if (listContainer) listContainer.style.display = 'none';
+        cityBulkCurrentPage = 1;
+        renderCityBulkMatrixTable();
+      });
+    }
+
+    if (btnViewList) {
+      btnViewList.addEventListener('click', () => {
+        if (cityBulkCurrentView === 'list') return;
+        cityBulkCurrentView = 'list';
+        btnViewList.classList.add('active');
+        if (btnViewMatrix) btnViewMatrix.classList.remove('active');
+        if (listContainer) listContainer.style.display = 'block';
+        if (matrixContainer) matrixContainer.style.display = 'none';
+        cityBulkCurrentPage = 1;
+        renderCityBulkPreviewTable();
+      });
+    }
+
     // Table Search
     if (searchInput) {
       searchInput.addEventListener('input', applyCityBulkPreviewFilters);
@@ -5010,7 +5193,8 @@ function showAuthModal() {
       pageSizeSelect.addEventListener('change', () => {
         cityBulkPageSize = pageSizeSelect.value;
         cityBulkCurrentPage = 1;
-        renderCityBulkPreviewTable();
+        if (cityBulkCurrentView === 'matrix') renderCityBulkMatrixTable();
+        else renderCityBulkPreviewTable();
       });
     }
 
@@ -5019,7 +5203,8 @@ function showAuthModal() {
       prevBtn.addEventListener('click', () => {
         if (cityBulkCurrentPage > 1) {
           cityBulkCurrentPage--;
-          renderCityBulkPreviewTable();
+          if (cityBulkCurrentView === 'matrix') renderCityBulkMatrixTable();
+          else renderCityBulkPreviewTable();
         }
       });
     }
@@ -5027,7 +5212,8 @@ function showAuthModal() {
     if (nextBtn) {
       nextBtn.addEventListener('click', () => {
         cityBulkCurrentPage++;
-        renderCityBulkPreviewTable();
+        if (cityBulkCurrentView === 'matrix') renderCityBulkMatrixTable();
+        else renderCityBulkPreviewTable();
       });
     }
 
@@ -5105,6 +5291,22 @@ function showAuthModal() {
 
     if (sameMonThuCb) sameMonThuCb.checked = true;
     if (sameWeekendCb) sameWeekendCb.checked = true;
+    const skipMonCb = document.getElementById('city-bulk-skip-mon');
+    const skipTueCb = document.getElementById('city-bulk-skip-tue');
+    const skipWedCb = document.getElementById('city-bulk-skip-wed');
+    const skipThuCb = document.getElementById('city-bulk-skip-thu');
+    const skipFriCb = document.getElementById('city-bulk-skip-fri');
+    const skipSatCb = document.getElementById('city-bulk-skip-sat');
+    const skipSunCb = document.getElementById('city-bulk-skip-sun');
+    const sameWeekendLabel = document.getElementById('city-bulk-same-weekend-label');
+    if (skipMonCb) skipMonCb.checked = false;
+    if (skipTueCb) skipTueCb.checked = false;
+    if (skipWedCb) skipWedCb.checked = false;
+    if (skipThuCb) skipThuCb.checked = false;
+    if (skipFriCb) skipFriCb.checked = false;
+    if (skipSatCb) skipSatCb.checked = false;
+    if (skipSunCb) skipSunCb.checked = false;
+    if (sameWeekendLabel) sameWeekendLabel.textContent = 'Same price for Weekend';
 
     // Clear day prices
     [askMon, askTue, askWed, askThu, askFri, askSat, askSun].forEach(input => {
@@ -5127,6 +5329,17 @@ function showAuthModal() {
     cityBulkPreviewRows = [];
     cityBulkFilteredRows = [];
     cityBulkCurrentPage = 1;
+    cityBulkConfig = null;
+    cityBulkCurrentView = 'matrix';
+
+    const btnViewMatrix = document.getElementById('btn-city-bulk-view-matrix');
+    const btnViewList = document.getElementById('btn-city-bulk-view-list');
+    const matrixContainer = document.getElementById('city-bulk-matrix-container');
+    const listContainer = document.getElementById('city-bulk-list-container');
+    if (btnViewMatrix) btnViewMatrix.classList.add('active');
+    if (btnViewList) btnViewList.classList.remove('active');
+    if (matrixContainer) matrixContainer.style.display = 'block';
+    if (listContainer) listContainer.style.display = 'none';
 
     // 3. Reset chips & KPIs
     renderCityBulkPropertyChips();
@@ -5146,7 +5359,8 @@ function showAuthModal() {
     if (btnDownload) btnDownload.disabled = true;
     if (btnCopy) btnCopy.disabled = true;
 
-    // 4. Re-render empty preview table
+    // 4. Re-render empty preview tables
+    renderCityBulkMatrixTable();
     renderCityBulkPreviewTable();
 
     showToast('City Bulk Action reset', 'info');
@@ -5280,6 +5494,7 @@ function showAuthModal() {
       }
       renderCityBulkPropertyChips();
       updateCityBulkSelectionKPI();
+      renderCityBulkMatrixTable();
       renderCityBulkPreviewTable();
       return;
     }
@@ -5324,12 +5539,16 @@ function showAuthModal() {
 
     // Auto-generate preview if dates and ask price are already filled
     const askMonInput = document.getElementById('city-bulk-ask-mon');
+    const askFriInput = document.getElementById('city-bulk-ask-fri');
     const monVal = parseFloat(askMonInput?.value);
-    if (!isNaN(monVal) && monVal > 0) {
+    const friVal = parseFloat(askFriInput?.value);
+    const hasAnyPrice = (!isNaN(monVal) && monVal > 0) || (!isNaN(friVal) && friVal > 0);
+    if (hasAnyPrice) {
       generateCityBulkPreview(false);
     } else {
       cityBulkPreviewRows = [];
       cityBulkFilteredRows = [];
+      renderCityBulkMatrixTable();
       renderCityBulkPreviewTable();
     }
   }
@@ -5455,53 +5674,152 @@ function showAuthModal() {
 
     const sameMonThuCb = document.getElementById('city-bulk-same-mon-thu');
     const sameWeekendCb = document.getElementById('city-bulk-same-weekend');
+    const skipMonCb = document.getElementById('city-bulk-skip-mon');
+    const skipTueCb = document.getElementById('city-bulk-skip-tue');
+    const skipWedCb = document.getElementById('city-bulk-skip-wed');
+    const skipThuCb = document.getElementById('city-bulk-skip-thu');
+    const skipFriCb = document.getElementById('city-bulk-skip-fri');
+    const skipSatCb = document.getElementById('city-bulk-skip-sat');
+    const skipSunCb = document.getElementById('city-bulk-skip-sun');
 
-    const valMon = parseFloat(askMon?.value);
-    const valTue = (sameMonThuCb && sameMonThuCb.checked) ? valMon : parseFloat(askTue?.value);
-    const valWed = (sameMonThuCb && sameMonThuCb.checked) ? valMon : parseFloat(askWed?.value);
-    const valThu = (sameMonThuCb && sameMonThuCb.checked) ? valMon : parseFloat(askThu?.value);
+    const skipMon = (dayGroup === 'weekends_only') || !!skipMonCb?.checked;
+    const skipTue = (dayGroup === 'weekends_only') || !!skipTueCb?.checked;
+    const skipWed = (dayGroup === 'weekends_only') || !!skipWedCb?.checked;
+    const skipThu = (dayGroup === 'weekends_only') || !!skipThuCb?.checked;
+    const skipFri = (dayGroup === 'weekdays_only') || !!skipFriCb?.checked;
+    const skipSat = (dayGroup === 'weekdays_only') || !!skipSatCb?.checked;
+    const skipSun = (dayGroup === 'weekdays_only') || !!skipSunCb?.checked;
 
-    const valFri = parseFloat(askFri?.value);
-    const valSat = (sameWeekendCb && sameWeekendCb.checked) ? valFri : parseFloat(askSat?.value);
-    const valSun = (sameWeekendCb && sameWeekendCb.checked) ? valFri : parseFloat(askSun?.value);
+    let valMon = parseFloat(askMon?.value);
+    let valTue = parseFloat(askTue?.value);
+    let valWed = parseFloat(askWed?.value);
+    let valThu = parseFloat(askThu?.value);
+
+    if (sameMonThuCb && sameMonThuCb.checked) {
+      let sharedWeekdayPrice = valMon;
+      if (skipMon && !skipTue) sharedWeekdayPrice = valTue;
+      else if (skipMon && skipTue && !skipWed) sharedWeekdayPrice = valWed;
+      else if (skipMon && skipTue && skipWed && !skipThu) sharedWeekdayPrice = valThu;
+
+      if (!skipMon) valMon = sharedWeekdayPrice;
+      if (!skipTue) valTue = sharedWeekdayPrice;
+      if (!skipWed) valWed = sharedWeekdayPrice;
+      if (!skipThu) valThu = sharedWeekdayPrice;
+    }
+
+    let valFri = parseFloat(askFri?.value);
+    let valSat = parseFloat(askSat?.value);
+    let valSun = parseFloat(askSun?.value);
+
+    if (sameWeekendCb && sameWeekendCb.checked) {
+      let sharedWeekendPrice = valFri;
+      if (skipFri && !skipSat) sharedWeekendPrice = valSat;
+      else if (skipFri && skipSat && !skipSun) sharedWeekendPrice = valSun;
+
+      if (!skipFri) valFri = sharedWeekendPrice;
+      if (!skipSat) valSat = sharedWeekendPrice;
+      if (!skipSun) valSun = sharedWeekendPrice;
+    }
 
     // Validation for active day groups
     if (dayGroup !== 'weekends_only') {
-      if (isNaN(valMon) || valMon <= 0) {
-        if (showNotice) showToast('Please enter a valid positive Ask Price for Monday', 'warning');
-        if (askMon) askMon.focus();
-        return;
-      }
-      if (!sameMonThuCb || !sameMonThuCb.checked) {
-        if (isNaN(valTue) || valTue <= 0 || isNaN(valWed) || valWed <= 0 || isNaN(valThu) || valThu <= 0) {
-          if (showNotice) showToast('Please enter valid positive Ask Prices for all weekdays (Tue, Wed, Thu)', 'warning');
-          return;
+      const allWeekdaySkipped = (skipMon && skipTue && skipWed && skipThu);
+      if (!allWeekdaySkipped) {
+        if (sameMonThuCb && sameMonThuCb.checked) {
+          let sharedWeekdayPrice = valMon;
+          let baseDayName = 'Monday';
+          let baseInput = askMon;
+          if (skipMon && !skipTue) { sharedWeekdayPrice = valTue; baseDayName = 'Tuesday'; baseInput = askTue; }
+          else if (skipMon && skipTue && !skipWed) { sharedWeekdayPrice = valWed; baseDayName = 'Wednesday'; baseInput = askWed; }
+          else if (skipMon && skipTue && skipWed && !skipThu) { sharedWeekdayPrice = valThu; baseDayName = 'Thursday'; baseInput = askThu; }
+
+          if (isNaN(sharedWeekdayPrice) || sharedWeekdayPrice <= 0) {
+            if (showNotice) showToast(`Please enter a valid positive Ask Price for ${baseDayName}`, 'warning');
+            if (baseInput) baseInput.focus();
+            return;
+          }
+          if (!skipMon) valMon = sharedWeekdayPrice;
+          if (!skipTue) valTue = sharedWeekdayPrice;
+          if (!skipWed) valWed = sharedWeekdayPrice;
+          if (!skipThu) valThu = sharedWeekdayPrice;
+        } else {
+          // Custom weekday prices
+          if (!skipMon && (isNaN(valMon) || valMon <= 0)) {
+            if (showNotice) showToast('Please enter a valid positive Ask Price for Monday or check Skip', 'warning');
+            if (askMon) askMon.focus();
+            return;
+          }
+          if (!skipTue && (isNaN(valTue) || valTue <= 0)) {
+            if (showNotice) showToast('Please enter a valid positive Ask Price for Tuesday or check Skip', 'warning');
+            if (askTue) askTue.focus();
+            return;
+          }
+          if (!skipWed && (isNaN(valWed) || valWed <= 0)) {
+            if (showNotice) showToast('Please enter a valid positive Ask Price for Wednesday or check Skip', 'warning');
+            if (askWed) askWed.focus();
+            return;
+          }
+          if (!skipThu && (isNaN(valThu) || valThu <= 0)) {
+            if (showNotice) showToast('Please enter a valid positive Ask Price for Thursday or check Skip', 'warning');
+            if (askThu) askThu.focus();
+            return;
+          }
         }
       }
     }
 
     if (dayGroup !== 'weekdays_only') {
-      if (isNaN(valFri) || valFri <= 0) {
-        if (showNotice) showToast('Please enter a valid positive Ask Price for Friday', 'warning');
-        if (askFri) askFri.focus();
-        return;
-      }
-      if (!sameWeekendCb || !sameWeekendCb.checked) {
-        if (isNaN(valSat) || valSat <= 0 || isNaN(valSun) || valSun <= 0) {
-          if (showNotice) showToast('Please enter valid positive Ask Prices for Saturday and Sunday', 'warning');
-          return;
+      const allWeekendSkipped = (skipFri && skipSat && skipSun);
+      if (!allWeekendSkipped) {
+        if (sameWeekendCb && sameWeekendCb.checked) {
+          let sharedWeekendPrice = valFri;
+          let baseDayName = 'Friday';
+          let baseInput = askFri;
+          if (skipFri && !skipSat) { sharedWeekendPrice = valSat; baseDayName = 'Saturday'; baseInput = askSat; }
+          else if (skipFri && skipSat && !skipSun) { sharedWeekendPrice = valSun; baseDayName = 'Sunday'; baseInput = askSun; }
+
+          if (isNaN(sharedWeekendPrice) || sharedWeekendPrice <= 0) {
+            if (showNotice) showToast(`Please enter a valid positive Ask Price for ${baseDayName}`, 'warning');
+            if (baseInput) baseInput.focus();
+            return;
+          }
+          if (!skipFri) valFri = sharedWeekendPrice;
+          if (!skipSat) valSat = sharedWeekendPrice;
+          if (!skipSun) valSun = sharedWeekendPrice;
+        } else {
+          // Custom Weekend Prices
+          if (!skipFri && (isNaN(valFri) || valFri <= 0)) {
+            if (showNotice) showToast('Please enter a valid positive Ask Price for Friday or check Skip', 'warning');
+            if (askFri) askFri.focus();
+            return;
+          }
+          if (!skipSat && (isNaN(valSat) || valSat <= 0)) {
+            if (showNotice) showToast('Please enter a valid positive Ask Price for Saturday or check Skip', 'warning');
+            if (askSat) askSat.focus();
+            return;
+          }
+          if (!skipSun && (isNaN(valSun) || valSun <= 0)) {
+            if (showNotice) showToast('Please enter a valid positive Ask Price for Sunday or check Skip', 'warning');
+            if (askSun) askSun.focus();
+            return;
+          }
         }
       }
     }
 
+    if (skipMon && skipTue && skipWed && skipThu && skipFri && skipSat && skipSun) {
+      if (showNotice) showToast('All days are skipped. Please uncheck skip for at least one day.', 'warning');
+      return;
+    }
+
     const dayPrices = {
-      1: valMon,
-      2: valTue,
-      3: valWed,
-      4: valThu,
-      5: valFri,
-      6: valSat,
-      0: valSun
+      1: skipMon ? 0 : valMon,
+      2: skipTue ? 0 : valTue,
+      3: skipWed ? 0 : valWed,
+      4: skipThu ? 0 : valThu,
+      5: skipFri ? 0 : valFri,
+      6: skipSat ? 0 : valSat,
+      0: skipSun ? 0 : valSun
     };
 
     const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -5517,6 +5835,13 @@ function showAuthModal() {
       let skip = false;
       if (dayGroup === 'weekdays_only' && isWeekend) skip = true;
       if (dayGroup === 'weekends_only' && !isWeekend) skip = true;
+      if (dow === 1 && skipMon) skip = true;
+      if (dow === 2 && skipTue) skip = true;
+      if (dow === 3 && skipWed) skip = true;
+      if (dow === 4 && skipThu) skip = true;
+      if (dow === 5 && skipFri) skip = true;
+      if (dow === 6 && skipSat) skip = true;
+      if (dow === 0 && skipSun) skip = true;
 
       if (!skip) {
         const yyyy = curDate.getFullYear();
@@ -5564,6 +5889,21 @@ function showAuthModal() {
 
       curDate.setDate(curDate.getDate() + 1);
     }
+
+    cityBulkConfig = {
+      flexFactor: flexFactor,
+      dayGroup: dayGroup,
+      dayPrices: { ...dayPrices },
+      skippedDays: {
+        1: skipMon,
+        2: skipTue,
+        3: skipWed,
+        4: skipThu,
+        5: skipFri,
+        6: skipSat,
+        0: skipSun
+      }
+    };
 
     cityBulkPreviewRows = rows;
 
@@ -5624,7 +5964,292 @@ function showAuthModal() {
     }
 
     cityBulkCurrentPage = 1;
-    renderCityBulkPreviewTable();
+    if (cityBulkCurrentView === 'matrix') {
+      renderCityBulkMatrixTable();
+    } else {
+      renderCityBulkPreviewTable();
+    }
+  }
+
+  // Render Hotel x Day Matrix Pivot View Table
+  function renderCityBulkMatrixTable() {
+    const tbody = document.getElementById('city-bulk-matrix-tbody');
+    const thead = document.getElementById('city-bulk-matrix-thead');
+    const countBadge = document.getElementById('city-bulk-preview-count-badge');
+    const pageBadge = document.getElementById('city-bulk-current-page-badge');
+    const prevBtn = document.getElementById('btn-city-bulk-prev-page');
+    const nextBtn = document.getElementById('btn-city-bulk-next-page');
+    const paginationInfo = document.getElementById('city-bulk-pagination-info');
+
+    if (!tbody || !thead) return;
+
+    const selectedProps = cityBulkProperties.filter(p => p.selected);
+    const searchInput = document.getElementById('city-bulk-preview-search');
+    const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
+
+    const filteredProps = !query ? selectedProps : selectedProps.filter(p =>
+      (p.rawHotelId && p.rawHotelId.toLowerCase().includes(query)) ||
+      (p.hotelId && p.hotelId.toLowerCase().includes(query)) ||
+      (p.hotelName && p.hotelName.toLowerCase().includes(query)) ||
+      (p.city && p.city.toLowerCase().includes(query))
+    );
+
+    const totalFiltered = filteredProps.length;
+    const totalMaster = selectedProps.length;
+
+    if (countBadge) {
+      countBadge.textContent = `${totalFiltered} of ${totalMaster} Properties`;
+    }
+
+    if (totalFiltered === 0 || cityBulkPreviewRows.length === 0) {
+      thead.innerHTML = `
+        <tr>
+          <th style="min-width: 45px;">#</th>
+          <th style="min-width: 95px;">CS ID</th>
+          <th style="min-width: 220px;">Property Name</th>
+          <th class="cell-num-right" style="min-width: 85px; color: #0284c7;">Base P0</th>
+          <th class="cell-num-right" style="min-width: 100px;">Target Ask</th>
+          <th class="cell-num-right" style="min-width: 100px; color: #0284c7; font-weight: 700;">TDF Factor</th>
+        </tr>`;
+      tbody.innerHTML = `
+        <tr>
+          <td colspan="6" style="text-align: center; padding: 48px 20px; color: var(--text-muted);">
+            <i data-lucide="layers" style="width: 32px; height: 32px; margin-bottom: 8px; display: inline-block; opacity: 0.5;"></i>
+            <div>${totalMaster === 0 || cityBulkPreviewRows.length === 0 ? 'Select a city, set dates & ask price, then click <strong>Generate Preview</strong> to inspect the pricing matrix.' : 'No properties match your search filter.'}</div>
+          </td>
+        </tr>`;
+      if (pageBadge) pageBadge.textContent = 'Page 1 of 1';
+      if (prevBtn) prevBtn.disabled = true;
+      if (nextBtn) nextBtn.disabled = true;
+      if (paginationInfo) paginationInfo.textContent = '0 items';
+      if (window.lucide) lucide.createIcons();
+      return;
+    }
+
+    // Determine Situation & Column Setup
+    const weekDays = [
+      { dow: 1, name: 'Mon', fullName: 'Monday', isWeekend: false },
+      { dow: 2, name: 'Tue', fullName: 'Tuesday', isWeekend: false },
+      { dow: 3, name: 'Wed', fullName: 'Wednesday', isWeekend: false },
+      { dow: 4, name: 'Thu', fullName: 'Thursday', isWeekend: false },
+      { dow: 5, name: 'Fri', fullName: 'Friday', isWeekend: true },
+      { dow: 6, name: 'Sat', fullName: 'Saturday', isWeekend: true },
+      { dow: 0, name: 'Sun', fullName: 'Sunday', isWeekend: true }
+    ];
+
+    const dayGroup = cityBulkConfig ? cityBulkConfig.dayGroup : 'all';
+    const flexFactor = (cityBulkConfig && cityBulkConfig.flexFactor) || 0.69;
+    const dayPrices = (cityBulkConfig && cityBulkConfig.dayPrices) || {};
+
+    weekDays.forEach(d => {
+      if (dayGroup === 'weekdays_only' && d.isWeekend) d.skipped = true;
+      else if (dayGroup === 'weekends_only' && !d.isWeekend) d.skipped = true;
+      else if (cityBulkConfig && cityBulkConfig.skippedDays && cityBulkConfig.skippedDays[d.dow]) d.skipped = true;
+      else d.skipped = false;
+      d.askPrice = typeof dayPrices[d.dow] === 'number' ? dayPrices[d.dow] : (parseFloat(dayPrices[d.dow]) || 0);
+    });
+
+    const activeDays = weekDays.filter(d => !d.skipped);
+    const allActivePricesSame = activeDays.length > 0 && activeDays.every(d => d.askPrice === activeDays[0].askPrice);
+
+    // Contiguous groups for Situation 2 vs Situation 1
+    const contiguousGroups = [];
+    let currentGroup = null;
+
+    weekDays.forEach(d => {
+      if (d.skipped) {
+        if (currentGroup && !currentGroup.isSkipped) {
+          contiguousGroups.push(currentGroup);
+          currentGroup = null;
+        }
+        if (!currentGroup) {
+          currentGroup = { isSkipped: true, days: [d], askPrice: 0 };
+        } else {
+          currentGroup.days.push(d);
+        }
+        return;
+      }
+
+      if (currentGroup && currentGroup.isSkipped) {
+        contiguousGroups.push(currentGroup);
+        currentGroup = null;
+      }
+
+      if (!currentGroup) {
+        currentGroup = { isSkipped: false, days: [d], askPrice: d.askPrice };
+      } else if (currentGroup.askPrice === d.askPrice) {
+        currentGroup.days.push(d);
+      } else {
+        contiguousGroups.push(currentGroup);
+        currentGroup = { isSkipped: false, days: [d], askPrice: d.askPrice };
+      }
+    });
+    if (currentGroup) contiguousGroups.push(currentGroup);
+
+    const hasMultiDayGroup = contiguousGroups.some(g => !g.isSkipped && g.days.length > 1);
+
+    // Pagination calculations
+    const effectivePageSize = cityBulkPageSize === 'all' ? totalFiltered : parseInt(cityBulkPageSize, 10);
+    const totalPages = Math.ceil(totalFiltered / effectivePageSize) || 1;
+
+    if (cityBulkCurrentPage > totalPages) cityBulkCurrentPage = totalPages;
+    if (cityBulkCurrentPage < 1) cityBulkCurrentPage = 1;
+
+    const startIdx = (cityBulkCurrentPage - 1) * effectivePageSize;
+    const endIdx = Math.min(startIdx + effectivePageSize, totalFiltered);
+    const pageItems = filteredProps.slice(startIdx, endIdx);
+
+    if (paginationInfo) {
+      paginationInfo.textContent = `Showing ${startIdx + 1}–${endIdx} of ${totalFiltered}`;
+    }
+    if (pageBadge) {
+      pageBadge.textContent = `Page ${cityBulkCurrentPage} of ${totalPages}`;
+    }
+    if (prevBtn) prevBtn.disabled = cityBulkCurrentPage <= 1;
+    if (nextBtn) nextBtn.disabled = cityBulkCurrentPage >= totalPages;
+
+    // SCENARIO 3: Flat Price Across All Active Days
+    if (allActivePricesSame) {
+      const targetAsk = activeDays[0].askPrice;
+      const newPrice = Math.round(targetAsk / 1.05 / flexFactor);
+
+      thead.innerHTML = `
+        <tr>
+          <th style="min-width: 45px;">#</th>
+          <th style="min-width: 95px;">CS ID</th>
+          <th style="min-width: 220px;">Property Name</th>
+          <th class="cell-num-right" style="min-width: 85px; color: #0284c7;" title="Hawkeye P0 Base Rate">Base P0</th>
+          <th class="cell-num-right" style="min-width: 105px; color: #ea580c;" title="User Ask Price">Ask Price (Target)</th>
+          <th class="cell-num-right" style="min-width: 115px; color: #16a34a;" title="Target Price ÷ 1.05 ÷ Flexibility">Calc Price (Effective)</th>
+          <th class="cell-num-right" style="min-width: 105px; color: #0284c7; font-weight: 700;" title="Calculated TDF Multiplier (Calc Price / P0)">TDF Factor</th>
+        </tr>`;
+
+      tbody.innerHTML = pageItems.map((prop, i) => {
+        const rowNum = startIdx + i + 1;
+        const p0Num = parseFloat(String(prop.p0).replace(/,/g, ''));
+        let factorCell = '';
+        if (!isNaN(p0Num) && p0Num > 0) {
+          const mult = (newPrice / p0Num).toFixed(2);
+          factorCell = `<span class="matrix-mult-badge">${mult}×</span>`;
+        } else {
+          factorCell = `<span class="matrix-mult-missing">Missing P0</span>`;
+        }
+
+        return `
+          <tr>
+            <td style="color: var(--text-muted); font-size: 0.75rem;">${rowNum}</td>
+            <td style="font-family: monospace; font-weight: 700; color: #0f172a;">${escapeHtml(prop.rawHotelId)}</td>
+            <td style="font-weight: 600; color: #1e293b; max-width: 240px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="${escapeHtml(prop.hotelName)}">
+              ${escapeHtml(prop.hotelName)}
+            </td>
+            <td class="cell-num-right" style="color: #0284c7; font-weight: 600;">₹${prop.p0 || '-'}</td>
+            <td class="cell-num-right" style="color: #ea580c; font-weight: 600;">₹${targetAsk}</td>
+            <td class="cell-num-right" style="color: #16a34a; font-weight: 600;">₹${newPrice}</td>
+            <td class="cell-num-right">${factorCell}</td>
+          </tr>`;
+      }).join('');
+
+    } else if (hasMultiDayGroup) {
+      // SCENARIO 2: Grouped Day Targets (e.g. Mon-Thu same, Fri-Sat same, Sun different)
+      thead.innerHTML = `
+        <tr>
+          <th style="min-width: 45px;">#</th>
+          <th style="min-width: 95px;">CS ID</th>
+          <th style="min-width: 220px;">Property Name</th>
+          <th class="cell-num-right" style="min-width: 85px; color: #0284c7;" title="Hawkeye P0 Base Rate">Base P0</th>
+          ${contiguousGroups.map(grp => {
+            if (grp.isSkipped) {
+              const label = grp.days.length === 1 ? grp.days[0].name : `${grp.days[0].name}–${grp.days[grp.days.length - 1].name}`;
+              return `<th class="cell-num-right" style="min-width: 95px; color: #94a3b8;">${label}<br><span style="font-weight: 400; font-size: 0.72rem; color: #cbd5e1;">(Skipped)</span></th>`;
+            }
+            const label = grp.days.length === 1
+              ? `${grp.days[0].name} (1 Day)`
+              : `${grp.days[0].name}–${grp.days[grp.days.length - 1].name} (${grp.days.length} Days)`;
+            const isWeekend = grp.days.some(d => d.isWeekend);
+            return `<th class="cell-num-right" style="min-width: 120px; color: ${isWeekend ? '#92400e' : '#1e293b'};">
+              ${label}<br>
+              <span style="font-weight: 500; font-size: 0.72rem; color: #ea580c;">Target: ₹${grp.askPrice}</span>
+            </th>`;
+          }).join('')}
+        </tr>`;
+
+      tbody.innerHTML = pageItems.map((prop, i) => {
+        const rowNum = startIdx + i + 1;
+        const p0Num = parseFloat(String(prop.p0).replace(/,/g, ''));
+
+        const cells = contiguousGroups.map(grp => {
+          if (grp.isSkipped) {
+            return `<td class="cell-num-right"><span class="matrix-mult-skipped">--</span></td>`;
+          }
+          if (isNaN(p0Num) || p0Num <= 0) {
+            return `<td class="cell-num-right"><span class="matrix-mult-missing">Missing P0</span></td>`;
+          }
+          const newPrice = Math.round(grp.askPrice / 1.05 / flexFactor);
+          const mult = (newPrice / p0Num).toFixed(2);
+          return `<td class="cell-num-right"><span class="matrix-mult-badge">${mult}×</span></td>`;
+        }).join('');
+
+        return `
+          <tr>
+            <td style="color: var(--text-muted); font-size: 0.75rem;">${rowNum}</td>
+            <td style="font-family: monospace; font-weight: 700; color: #0f172a;">${escapeHtml(prop.rawHotelId)}</td>
+            <td style="font-weight: 600; color: #1e293b; max-width: 240px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="${escapeHtml(prop.hotelName)}">
+              ${escapeHtml(prop.hotelName)}
+            </td>
+            <td class="cell-num-right" style="color: #0284c7; font-weight: 600;">₹${prop.p0 || '-'}</td>
+            ${cells}
+          </tr>`;
+      }).join('');
+
+    } else {
+      // SCENARIO 1: Different Daily Ask Prices Across All Days
+      thead.innerHTML = `
+        <tr>
+          <th style="min-width: 45px;">#</th>
+          <th style="min-width: 95px;">CS ID</th>
+          <th style="min-width: 220px;">Property Name</th>
+          <th class="cell-num-right" style="min-width: 85px; color: #0284c7;" title="Hawkeye P0 Base Rate">Base P0</th>
+          ${weekDays.map(d => {
+            if (d.skipped) {
+              return `<th class="cell-num-right" style="min-width: 85px; color: #94a3b8;">${d.name}<br><span style="font-weight: 400; font-size: 0.72rem; color: #cbd5e1;">(Skipped)</span></th>`;
+            }
+            return `<th class="cell-num-right" style="min-width: 95px; color: ${d.isWeekend ? '#92400e' : '#1e293b'};">
+              ${d.name}<br>
+              <span style="font-weight: 500; font-size: 0.72rem; color: #ea580c;">Target: ₹${d.askPrice}</span>
+            </th>`;
+          }).join('')}
+        </tr>`;
+
+      tbody.innerHTML = pageItems.map((prop, i) => {
+        const rowNum = startIdx + i + 1;
+        const p0Num = parseFloat(String(prop.p0).replace(/,/g, ''));
+
+        const cells = weekDays.map(d => {
+          if (d.skipped) {
+            return `<td class="cell-num-right"><span class="matrix-mult-skipped">--</span></td>`;
+          }
+          if (isNaN(p0Num) || p0Num <= 0) {
+            return `<td class="cell-num-right"><span class="matrix-mult-missing">Missing P0</span></td>`;
+          }
+          const newPrice = Math.round(d.askPrice / 1.05 / flexFactor);
+          const mult = (newPrice / p0Num).toFixed(2);
+          return `<td class="cell-num-right"><span class="matrix-mult-badge">${mult}×</span></td>`;
+        }).join('');
+
+        return `
+          <tr>
+            <td style="color: var(--text-muted); font-size: 0.75rem;">${rowNum}</td>
+            <td style="font-family: monospace; font-weight: 700; color: #0f172a;">${escapeHtml(prop.rawHotelId)}</td>
+            <td style="font-weight: 600; color: #1e293b; max-width: 240px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="${escapeHtml(prop.hotelName)}">
+              ${escapeHtml(prop.hotelName)}
+            </td>
+            <td class="cell-num-right" style="color: #0284c7; font-weight: 600;">₹${prop.p0 || '-'}</td>
+            ${cells}
+          </tr>`;
+      }).join('');
+    }
+
+    if (window.lucide) lucide.createIcons();
   }
 
   // Render Daily Preview Grid Table
