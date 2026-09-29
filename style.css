@@ -599,6 +599,61 @@ textarea:focus {
   flex-direction: column;
   gap: 10px;
   animation: slideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transition: all 0.2s ease;
+}
+
+/* Scrollable parts list: prevents large multi-part portfolios from covering the preview table */
+#joined-hotels-container,
+#city-bulk-joined-hotels-container {
+  max-height: 165px;
+  overflow-y: auto;
+  padding-right: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Custom sleek scrollbar for joined-hotels containers */
+#joined-hotels-container::-webkit-scrollbar,
+#city-bulk-joined-hotels-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+#joined-hotels-container::-webkit-scrollbar-track,
+#city-bulk-joined-hotels-container::-webkit-scrollbar-track {
+  background: #ffedd5;
+  border-radius: 4px;
+}
+
+#joined-hotels-container::-webkit-scrollbar-thumb,
+#city-bulk-joined-hotels-container::-webkit-scrollbar-thumb {
+  background: #fb923c;
+  border-radius: 4px;
+}
+
+#joined-hotels-container::-webkit-scrollbar-thumb:hover,
+#city-bulk-joined-hotels-container::-webkit-scrollbar-thumb:hover {
+  background: #ea580c;
+}
+
+/* Collapsible Joined Hotels Card state */
+.joined-hotels-box.collapsed {
+  padding: 10px 16px;
+  margin-bottom: 12px;
+  gap: 0;
+}
+
+.joined-hotels-box.collapsed #joined-hotels-container,
+.joined-hotels-box.collapsed #city-bulk-joined-hotels-container {
+  display: none !important;
+}
+
+.btn-toggle-joined {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.2s ease;
+  cursor: pointer;
 }
 
 .joined-hotels-header {
@@ -2334,6 +2389,19 @@ input.desired-push-price-input::-webkit-inner-spin-button {
   border-color: #ea580c !important;
   box-shadow: 0 0 0 2px rgba(234, 88, 12, 0.15);
   background: #fffbfa;
+}
+
+.desired-push-price-input::placeholder {
+  color: #94a3b8;
+  font-weight: 400;
+  opacity: 0.75;
+}
+
+.desired-push-price-input.price-reverted-flash {
+  border-color: #059669 !important;
+  background-color: #ecfdf5 !important;
+  box-shadow: 0 0 0 2.5px rgba(5, 150, 105, 0.25) !important;
+  transition: all 0.25s ease;
 }
 
 /* Collapsible KPI summary section */

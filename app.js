@@ -1457,11 +1457,19 @@ function showAuthModal() {
     // Update header badge and actions
     if (headerActions) {
       if (numParts > 1) {
+        const isCollapsed = joinedBox.classList.contains('collapsed');
+        const iconSvg = isCollapsed
+          ? `<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>`
+          : `<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>`;
         headerActions.innerHTML = `
         <span class="joined-hotels-badge">${total} Hotels · ${numParts} Parts (Max 100 / part)</span>
         <button id="btn-copy-all-joined" class="btn btn-secondary btn-sm" title="Copy all ${total} hotel IDs" style="padding: 4px 10px; font-size: 0.75rem;">
           <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
           <span>Copy All (${total})</span>
+        </button>
+        <button id="btn-toggle-joined-parts" class="btn btn-secondary btn-sm btn-toggle-joined" data-num-parts="${numParts}" title="Collapse or Expand parts list" style="padding: 4px 10px; font-size: 0.75rem;">
+          ${iconSvg}
+          <span class="toggle-text">${isCollapsed ? `Show Parts (${numParts})` : 'Collapse'}</span>
         </button>
       `;
       } else {
@@ -1519,6 +1527,18 @@ function showAuthModal() {
     if (!joinedBox) return;
 
     joinedBox.addEventListener('click', (e) => {
+      // Check if Toggle Collapse / Expand button was clicked
+      const toggleBtn = e.target.closest('#btn-toggle-joined-parts');
+      if (toggleBtn) {
+        const isCollapsed = joinedBox.classList.toggle('collapsed');
+        const iconSvg = isCollapsed
+          ? `<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>`
+          : `<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>`;
+        const numParts = toggleBtn.dataset.numParts || '';
+        toggleBtn.innerHTML = `${iconSvg} <span class="toggle-text">${isCollapsed ? `Show Parts (${numParts})` : 'Collapse'}</span>`;
+        return;
+      }
+
       // Check if Copy All button was clicked
       const copyAllBtn = e.target.closest('#btn-copy-all-joined');
       if (copyAllBtn) {
@@ -2963,10 +2983,15 @@ function showAuthModal() {
         currentTDF: currentTDF,
         pushedPrice: pushedPrice,
         desiredPushPrice: initialDesiredPushPrice,
+        initialDesiredPushPrice: initialDesiredPushPrice,
         recTDF: recTDF,
+        initialRecTDF: recTDF,
         delta: delta,
+        initialDelta: delta,
         strategyKey: strategyKey,
-        strategyLabel: strategyLabel
+        initialStrategyKey: strategyKey,
+        strategyLabel: strategyLabel,
+        initialStrategyLabel: strategyLabel
       });
 
       uniqueHotels.add(displayCsId);
@@ -3622,7 +3647,10 @@ function showAuthModal() {
       const tr = document.createElement('tr');
 
       const pushedPriceDisplay = r.pushedPrice > 0 ? `₹${r.pushedPrice.toLocaleString('en-IN')}` : '-';
-      const desiredVal = (r.desiredPushPrice !== undefined && r.desiredPushPrice !== null) ? r.desiredPushPrice : r.pushedPrice;
+      const desiredVal = (r.desiredPushPrice !== undefined && r.desiredPushPrice !== null && r.desiredPushPrice > 0)
+        ? r.desiredPushPrice
+        : (r.initialDesiredPushPrice || r.pushedPrice);
+      const recPlaceholder = r.initialDesiredPushPrice || r.pushedPrice || '';
 
       tr.innerHTML = `
       <td><span class="badge-csid">${escapeHtml(r.csId)}</span></td>
@@ -3639,7 +3667,7 @@ function showAuthModal() {
       <td class="cell-num-right"><strong class="cell-new-tdf" style="color:#059669;">${r.recTDF.toFixed(2)}</strong></td>
       <td class="cell-num-right"><strong style="color:#0284c7;">${escapeHtml(pushedPriceDisplay)}</strong></td>
       <td class="cell-num-right cell-desired-price">
-        <input type="text" inputmode="numeric" pattern="[0-9]*" class="desired-push-price-input" data-csid="${escapeHtml(r.csId)}" data-targetdate="${escapeHtml(r.targetDateStr)}" value="${escapeHtml(desiredVal)}" spellcheck="false" autocomplete="off" />
+        <input type="text" inputmode="numeric" pattern="[0-9]*" class="desired-push-price-input" data-csid="${escapeHtml(r.csId)}" data-targetdate="${escapeHtml(r.targetDateStr)}" value="${escapeHtml(desiredVal)}" placeholder="${escapeHtml(recPlaceholder)}" title="Recommended: ₹${recPlaceholder} (Occ: ${r.occVal.toFixed(1)}%). Reverts to recommended price if left empty." spellcheck="false" autocomplete="off" />
       </td>
     `;
       tbody.appendChild(tr);
@@ -3659,26 +3687,71 @@ function showAuthModal() {
           const desiredVal = parseFloat(cleaned);
           const match = dashboardState.find(row => row.csId === csId && row.targetDateStr === targetDate);
           if (match) {
-            match.desiredPushPrice = isNaN(desiredVal) ? 0 : desiredVal;
-            if (!isNaN(desiredVal) && desiredVal > 0 && match.pushedPrice > 0) {
-              const calculatedNewTDF = (desiredVal / match.pushedPrice) * match.currentTDF;
-              match.recTDF = Math.round(calculatedNewTDF * 100) / 100;
-              match.delta = Math.round((match.recTDF - match.currentTDF) * 100) / 100;
+            if (!isNaN(desiredVal) && desiredVal > 0) {
+              match.desiredPushPrice = desiredVal;
+              if (match.pushedPrice > 0) {
+                const calculatedNewTDF = (desiredVal / match.pushedPrice) * match.currentTDF;
+                match.recTDF = Math.round(calculatedNewTDF * 100) / 100;
+                match.delta = Math.round((match.recTDF - match.currentTDF) * 100) / 100;
 
-              const tr = e.target.closest('tr');
-              if (tr) {
-                const cellNewTdf = tr.querySelector('.cell-new-tdf');
-                if (cellNewTdf) {
-                  cellNewTdf.innerText = match.recTDF.toFixed(2);
+                const tr = e.target.closest('tr');
+                if (tr) {
+                  const cellNewTdf = tr.querySelector('.cell-new-tdf');
+                  if (cellNewTdf) {
+                    cellNewTdf.innerText = match.recTDF.toFixed(2);
+                  }
                 }
               }
+            } else {
+              match.desiredPushPrice = null;
             }
+          }
+        }
+      };
+
+      const handleDesiredPriceBlur = (e) => {
+        if (e.target && e.target.classList.contains('desired-push-price-input')) {
+          const cleaned = e.target.value.trim().replace(/[^0-9.]/g, '');
+          const desiredVal = parseFloat(cleaned);
+          const csId = e.target.dataset.csid;
+          const targetDate = e.target.dataset.targetdate;
+          const match = dashboardState.find(row => row.csId === csId && row.targetDateStr === targetDate);
+
+          // If the user clears the price and leaves the input empty or <= 0:
+          // Automatically revert to the Recommended Price!
+          if (match && (isNaN(desiredVal) || desiredVal <= 0)) {
+            const fallbackPrice = match.initialDesiredPushPrice || match.pushedPrice;
+            const fallbackRecTDF = match.initialRecTDF || match.currentTDF;
+            const fallbackDelta = match.initialDelta !== undefined ? match.initialDelta : Math.round((fallbackRecTDF - match.currentTDF) * 100) / 100;
+
+            match.desiredPushPrice = fallbackPrice;
+            match.recTDF = fallbackRecTDF;
+            match.delta = fallbackDelta;
+            if (match.initialStrategyKey) match.strategyKey = match.initialStrategyKey;
+            if (match.initialStrategyLabel) match.strategyLabel = match.initialStrategyLabel;
+
+            e.target.value = fallbackPrice;
+
+            const tr = e.target.closest('tr');
+            if (tr) {
+              const cellNewTdf = tr.querySelector('.cell-new-tdf');
+              if (cellNewTdf) {
+                cellNewTdf.innerText = match.recTDF.toFixed(2);
+              }
+            }
+
+            // Subtle visual feedback indicator on the input
+            e.target.classList.add('price-reverted-flash');
+            setTimeout(() => {
+              e.target.classList.remove('price-reverted-flash');
+            }, 1200);
           }
         }
       };
 
       tbody.addEventListener('input', handleDesiredPriceUpdate);
       tbody.addEventListener('change', handleDesiredPriceUpdate);
+      tbody.addEventListener('focusout', handleDesiredPriceBlur);
     }
   }
 
@@ -3960,6 +4033,11 @@ function showAuthModal() {
     // Consolidate consecutive dates with matching recTDF per hotel for selected filter
     const hotelGroups = {};
     targetRows.forEach(r => {
+      // Safety guardrail: if recTDF is missing, 0, or NaN, revert to initial algorithmic recommendation
+      if (!r.recTDF || isNaN(r.recTDF) || r.recTDF <= 0) {
+        r.recTDF = r.initialRecTDF || r.currentTDF || 1.00;
+        r.desiredPushPrice = r.initialDesiredPushPrice || r.pushedPrice;
+      }
       if (!hotelGroups[r.csId]) hotelGroups[r.csId] = [];
       hotelGroups[r.csId].push(r);
     });
@@ -5157,6 +5235,18 @@ function showAuthModal() {
     const cityBulkJoinedBox = document.getElementById('city-bulk-joined-hotels-box');
     if (cityBulkJoinedBox) {
       cityBulkJoinedBox.addEventListener('click', (e) => {
+        // Toggle Collapse / Expand button
+        const toggleBtn = e.target.closest('#btn-city-bulk-toggle-joined-parts');
+        if (toggleBtn) {
+          const isCollapsed = cityBulkJoinedBox.classList.toggle('collapsed');
+          const iconSvg = isCollapsed
+            ? `<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>`
+            : `<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>`;
+          const numParts = toggleBtn.dataset.numParts || '';
+          toggleBtn.innerHTML = `${iconSvg} <span class="toggle-text">${isCollapsed ? `Show Parts (${numParts})` : 'Collapse'}</span>`;
+          return;
+        }
+
         // Copy All button
         const copyAllBtn = e.target.closest('#btn-city-bulk-copy-all-joined');
         if (copyAllBtn) {
@@ -6489,11 +6579,19 @@ function showAuthModal() {
     // Update header badge and actions
     if (headerActions) {
       if (numParts > 1) {
+        const isCollapsed = joinedBox.classList.contains('collapsed');
+        const iconSvg = isCollapsed
+          ? `<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>`
+          : `<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>`;
         headerActions.innerHTML = `
           <span class="joined-hotels-badge">${total} Hotels · ${numParts} Parts (Max 100 / part)</span>
           <button id="btn-city-bulk-copy-all-joined" class="btn btn-secondary btn-sm" title="Copy all ${total} hotel IDs" style="padding: 4px 10px; font-size: 0.75rem;">
             <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
             <span>Copy All (${total})</span>
+          </button>
+          <button id="btn-city-bulk-toggle-joined-parts" class="btn btn-secondary btn-sm btn-toggle-joined" data-num-parts="${numParts}" title="Collapse or Expand parts list" style="padding: 4px 10px; font-size: 0.75rem;">
+            ${iconSvg}
+            <span class="toggle-text">${isCollapsed ? `Show Parts (${numParts})` : 'Collapse'}</span>
           </button>
         `;
       } else {
