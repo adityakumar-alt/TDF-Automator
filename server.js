@@ -767,10 +767,9 @@ app.get(["/api/sheet-data", "/sheet-data"], async (req, res) => {
         const valueRanges = response.data.valueRanges || [];
 
         // Role-based data filtration:
-        // Hawkeye Base Rates is accessible to ALL roles (Admin, Pricing Manager, RevOps, Zonal Ops).
-        // Daily Pricing Dashboard portfolio data is exclusive to Admin & Pricing Managers.
-        const userRole = (req.user?.role || "Pricing Manager").toLowerCase();
-        const canViewDailyPricing = userRole.includes("admin") || userRole.includes("pricing");
+        // Daily Pricing Dashboard and Hawkeye Base Rates are accessible to ALL roles:
+        // Admin, Pricing Manager, RevOps, and Zonal Ops.
+        const canViewDailyPricing = true;
 
         // Sync access control roster in memory if loaded
         if (valueRanges[7]?.values && valueRanges[7].values.length > 1) {
@@ -783,7 +782,7 @@ app.get(["/api/sheet-data", "/sheet-data"], async (req, res) => {
             canViewDailyPricing,
 
             data: {
-                // If RevOps or Zonal Ops, return empty portfolio matrices to save bandwidth and enforce access
+                // All roles (Admin, Pricing Manager, RevOps, Zonal Ops) receive full portfolio matrices
                 futureOcc: canViewDailyPricing ? (valueRanges[0]?.values || []) : [],
                 next10DaysFactors: canViewDailyPricing ? (valueRanges[1]?.values || []) : [],
                 rateFlex: canViewDailyPricing ? (valueRanges[2]?.values || []) : [],

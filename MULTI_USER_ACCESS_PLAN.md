@@ -6,15 +6,13 @@ This document outlines the multi-user authentication and role-based access contr
 
 ### Team Breakdown (14 Users Total):
 1. **Admin (1 user - You / RevOps Lead)**:
-   - **Full Access** across all tools: Daily Pricing Dashboard, Rule Parameters, TDF Calculator, and User/Access Management.
+   - **Full Access** across all tools: Daily Pricing Dashboard, Hawkeye Base Rates, City Bulk Action, Rule Parameters, TDF Calculator, and User/Access Management.
 2. **Pricing Managers (8 users)**:
-   - **Full Access**: Daily Pricing Dashboard (live sheets portfolio data), Rule Parameters (rule generation & export), TDF Calculator, and Metabase link.
+   - **Full Access**: Daily Pricing Dashboard (live sheets portfolio data), Hawkeye Base Rates, City Bulk Action, Rule Parameters (rule generation & export), TDF Calculator, and Metabase link.
 3. **RevOps Team (3 users including Admin)**:
-   - **Focused Access**: **Rule Parameters** & **TDF Calculator**.
-   - Daily Pricing Dashboard tab is hidden from the sidebar to streamline their workflow.
+   - **Full Access**: Daily Pricing Dashboard, Hawkeye Base Rates, City Bulk Action, Rule Parameters, TDF Calculator, and Metabase link.
 4. **Zonal Ops Team (3 users)**:
-   - **Focused Access**: **Rule Parameters** & **TDF Calculator**.
-   - Daily Pricing Dashboard tab is hidden from the sidebar.
+   - **Full Access**: Daily Pricing Dashboard, Hawkeye Base Rates, City Bulk Action, Rule Parameters, TDF Calculator, and Metabase link.
 
 ---
 
@@ -22,8 +20,8 @@ This document outlines the multi-user authentication and role-based access contr
 
 | Tab / Capability | Admin | Pricing Manager (8 users) | RevOps Team (3 users) | Zonal Ops Team (3 users) |
 | :--- | :---: | :---: | :---: | :---: |
-| **Daily Pricing Dashboard** (Portfolio Rates) | ✅ Full | ✅ Full | ❌ Hidden | ❌ Hidden |
-| **Generate Hawkeye Rules from Dashboard** | ✅ Yes | ✅ Yes | ❌ Hidden | ❌ Hidden |
+| **Daily Pricing Dashboard** (Portfolio Rates) | ✅ Full | ✅ Full | ✅ Full | ✅ Full |
+| **Generate Hawkeye Rules from Dashboard** | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes |
 | **Hawkeye Base Rates** (Live Sheets Master) | ✅ Full | ✅ Full | ✅ Full | ✅ Full |
 | **City Bulk Action** (Ask Price & Rule Gen) | ✅ Full | ✅ Full | ✅ Full | ✅ Full |
 | **Rule Parameters** (Fixed & Split Multipliers) | ✅ Full | ✅ Full | ✅ Full | ✅ Full |
@@ -31,7 +29,7 @@ This document outlines the multi-user authentication and role-based access contr
 | **Copy for Google Sheets & Download CSV** | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes |
 | **TDF Calculator** (P0–P5 price breakdown) | ✅ Full | ✅ Full | ✅ Full | ✅ Full |
 | **Metabase TDF Dashboard Link** | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes |
-| **Default Landing Tab** | Dashboard | Dashboard | Hawkeye Base Rates | Hawkeye Base Rates |
+| **Default Landing Tab** | Dashboard | Dashboard | Dashboard | Dashboard |
 
 ---
 
@@ -72,8 +70,7 @@ graph TD
     E -->|Authorized| G[Issue Secure HttpOnly JWT Session Cookie]
     B -->|Yes / Cookie Valid| H[Fetch User Profile from /api/me]
     H --> I{User Role}
-    I -->|Admin or Pricing Manager| J[Render All Tabs: Dashboard, Rules, Calc]
-    I -->|RevOps or Zonal Ops| K[Render Rules & Calc Only, Hide Dashboard Tab]
+    I -->|All Roles: Admin, Pricing Manager, RevOps, Zonal Ops| J[Render All Tabs: Dashboard, Hawkeye Rates, City Bulk, Rules, Calc]
 ```
 
 ---
@@ -89,18 +86,15 @@ graph TD
    - `GET /api/me`: Returns the authenticated user's profile (`{ email, name, picture, role }`).
 3. **API Protection Middleware**:
    - `requireAuth`: Rejects unauthenticated requests to `/api/*` with 401.
-   - `requireRole`: Protects `/api/sheet-data` so only `Admin` and `Pricing Manager` roles can pull the full portfolio sheets data. If a `RevOps` or `Zonal Ops` user requests it, returns 403 Forbidden.
+   - `/api/sheet-data`: Accessible to all authenticated roles (`Admin`, `Pricing Manager`, `RevOps`, and `Zonal Ops`) to provide full portfolio data across all workflows.
 
 ### B. Frontend (`index.html` & `app.js`)
 1. **Header User Badge**:
    - Displays user avatar/initials, full name, colored role badge (`Admin`, `Pricing Manager`, `RevOps`, `Zonal Ops`), and a **Sign Out** button.
 2. **Role-Based Tab Visibility**:
-   - For `RevOps` and `Zonal Ops`:
-     - Hide the `Daily Pricing Dashboard` tab from the sidebar.
-     - Automatically land and activate `Rule Parameters` (`tab-rules`).
-     - `Rule Parameters` and `TDF Calculator` are fully functional.
-   - For `Admin` and `Pricing Manager`:
-     - All tabs are visible and interactive. Defaults to `Daily Pricing Dashboard`.
+   - For all roles (`Admin`, `Pricing Manager`, `RevOps`, and `Zonal Ops`):
+     - `Daily Pricing Dashboard`, `Hawkeye Base Rates`, `City Bulk Action`, `Rule Parameters`, and `TDF Calculator` are all visible and interactive.
+     - Defaults to `Daily Pricing Dashboard`.
 3. **Branded Sign-In Screen**:
    - Renders a clean sign-in screen when no active session exists with a "Sign in with Google Workspace" button.
 
@@ -110,11 +104,10 @@ graph TD
 
 1. **API Endpoints Verification**:
    - `/api/me` without cookie $\rightarrow$ `401 Unauthorized`.
-   - `/api/sheet-data` as `Zonal Ops` or `RevOps` $\rightarrow$ `403 Forbidden`.
-   - `/api/sheet-data` as `Pricing Manager` or `Admin` $\rightarrow$ `200 OK`.
+   - `/api/sheet-data` for all authenticated roles $\rightarrow$ `200 OK`.
 2. **End-to-End Browser Testing**:
-   - Login as `Admin`: verify all 3 tabs visible.
-   - Login as `Pricing Manager`: verify all 3 tabs visible with full rule generation.
-   - Login as `RevOps`: verify `Daily Pricing Dashboard` tab is hidden, lands on `Rule Parameters`.
-   - Login as `Zonal Ops`: verify `Daily Pricing Dashboard` tab is hidden, lands on `Rule Parameters`.
+   - Login as `Admin`: verify all tabs visible and active.
+   - Login as `Pricing Manager`: verify all tabs visible with full rule generation.
+   - Login as `RevOps`: verify `Daily Pricing Dashboard` is visible, accessible, and functional.
+   - Login as `Zonal Ops`: verify `Daily Pricing Dashboard` is visible, accessible, and functional.
    - Sign out: session cleared, returns to login screen.

@@ -7,3 +7,7 @@ oauth/
 !.env.example
 .vercel
 dist/
+csv transformer/uploads/
+csv transformer/outputs/
+__pycache__/
+*.pyc

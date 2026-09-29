@@ -282,8 +282,8 @@ function showAuthModal() {
   // defaults to ['Admin'] only for safe development rollout!
   // =========================================================================
   const TAB_PERMISSIONS = {
-    // 1. Daily Pricing Dashboard (Exclusive to Admin & Pricing Manager)
-    'tab-dashboard': ['Admin', 'Pricing Manager'],
+    // 1. Daily Pricing Dashboard (Accessible to All Roles: Admin, Pricing Manager, RevOps, Zonal Ops)
+    'tab-dashboard': ['Admin', 'Pricing Manager', 'RevOps', 'Zonal Ops'],
 
     // 2. Hawkeye Base Rates (Live Google Sheets Rates dataset)
     'tab-hawkeye-rates': ['Admin', 'Pricing Manager', 'RevOps', 'Zonal Ops'],
