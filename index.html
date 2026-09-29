@@ -785,9 +785,9 @@
                         <i data-lucide="download"></i>
                         <span>Export CSV</span>
                       </button>
-                      <button id="btn-city-bulk-copy" class="btn btn-secondary btn-sm" title="Copy preview rows to clipboard" disabled>
-                        <i data-lucide="copy"></i>
-                        <span>Copy</span>
+                      <button id="btn-city-bulk-copy" class="btn btn-secondary btn-sm" title="Copy Joined Hotel IDs for Hawkeye Admin" disabled>
+                        <i data-lucide="hash"></i>
+                        <span>Copy Hotel IDs</span>
                       </button>
                     </div>
                   </div>
@@ -914,6 +914,27 @@
                         <input type="number" id="city-bulk-ask-sun" class="city-bulk-day-input" placeholder="2800" min="1" step="1" style="height: 34px; font-size: 0.85rem;" disabled>
                       </div>
                     </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Joined Hotel IDs Box (for Hawkeye Admin) -->
+              <div id="city-bulk-joined-hotels-box" class="joined-hotels-box" style="display: none; margin-bottom: 0;">
+                <div class="joined-hotels-header">
+                  <div class="header-title">
+                    <i data-lucide="hash" class="header-icon-sm"></i>
+                    <span>Joined Hotel IDs (for Hawkeye Admin)</span>
+                  </div>
+                  <div id="city-bulk-joined-hotels-header-actions" style="display: flex; align-items: center; gap: 8px;"></div>
+                </div>
+                <div id="city-bulk-joined-hotels-container" style="display: flex; flex-direction: column; gap: 10px;">
+                  <div class="joined-hotels-body">
+                    <input type="text" id="city-bulk-joined-hotels-text" class="joined-hotels-text" readonly
+                      placeholder="Select properties to view joined IDs">
+                    <button id="btn-city-bulk-copy-joined" class="btn btn-secondary btn-sm btn-copy-part" title="Copy to Clipboard">
+                      <i data-lucide="copy"></i>
+                      <span>Copy</span>
+                    </button>
                   </div>
                 </div>
               </div>
